@@ -1,21 +1,429 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Gaming Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QEVRANO PC GAMES</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0d12;
+            color: white;
+        }
+
+        /* HEADER */
+        header {
+            background: #11151d;
+            border-bottom: 1px solid #252b36;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00d9ff;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #00d9ff;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 70px 6%;
+            text-align: center;
+            background: linear-gradient(135deg, #101722, #0b0d12);
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #00d9ff;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .search {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            outline: none;
+            background: #1a202a;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        /* MAIN */
+        .container {
+            width: 88%;
+            max-width: 1300px;
+            margin: 40px auto;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+
+        .section-title span {
+            color: #00d9ff;
+        }
+
+        /* CATEGORIES */
+        .categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .category {
+            background: #171c25;
+            border: 1px solid #272e39;
+            color: #ddd;
+            padding: 10px 17px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .category:hover {
+            background: #00d9ff;
+            color: #000;
+        }
+
+        /* LAYOUT */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+        }
+
+        /* GAME GRID */
+        .games {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .game-card {
+            background: #141820;
+            border: 1px solid #252c37;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.2s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+        }
+
+        .game-image {
+            height: 190px;
+            background: linear-gradient(135deg, #1b2938, #10151d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 55px;
+        }
+
+        .game-info {
+            padding: 18px;
+        }
+
+        .game-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .game-info p {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #00d9ff;
+            color: #001016;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 6px;
+        }
+
+        .button:hover {
+            background: white;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            background: #141820;
+            border: 1px solid #252c37;
+            border-radius: 12px;
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 15px;
+        }
+
+        .ad-box {
+            height: 250px;
+            background: #0d1016;
+            border: 1px dashed #3b424d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 60px;
+            padding: 30px;
+            text-align: center;
+            background: #11151d;
+            border-top: 1px solid #252b36;
+            color: #777;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .games {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>🎮 My Gaming Website</h1>
-    <p>Welcome to my gaming website!</p>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            QEVRANO <span>PC GAMES</span>
+        </div>
 
-    <h2>Games</h2>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#games">Games</a>
+            <a href="#categories">Categories</a>
+        </nav>
+    </header>
 
-    <div>
-        <h3>Far Cry 2</h3>
-        <p>Action • Adventure</p>
-        <p>Information about Far Cry 2 will be available here.</p>
-    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Welcome to <span>QEVRANO</span></h1>
+
+        <p>
+            Discover PC games, information, screenshots and more.
+        </p>
+
+        <div class="search">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search games..."
+                onkeyup="searchGames()"
+            >
+        </div>
+    </section>
+
+
+    <!-- MAIN -->
+    <main class="container">
+
+        <!-- CATEGORIES -->
+        <h2 class="section-title" id="categories">
+            Game <span>Categories</span>
+        </h2>
+
+        <div class="categories">
+            <div class="category">Action</div>
+            <div class="category">Adventure</div>
+            <div class="category">Open World</div>
+            <div class="category">Racing</div>
+            <div class="category">Sports</div>
+            <div class="category">Strategy</div>
+        </div>
+
+
+        <!-- CONTENT -->
+        <div class="content">
+
+            <!-- GAMES -->
+            <section>
+
+                <h2 class="section-title" id="games">
+                    Featured <span>Games</span>
+                </h2>
+
+                <div class="games" id="gameList">
+
+                    <!-- GAME 1 -->
+                    <div class="game-card">
+                        <div class="game-image">🎮</div>
+
+                        <div class="game-info">
+                            <h3>Far Cry 2</h3>
+
+                            <p>
+                                Action • Adventure • Open World
+                            </p>
+
+                            <a href="#" class="button">
+                                View Game
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- GAME 2 -->
+                    <div class="game-card">
+                        <div class="game-image">🎮</div>
+
+                        <div class="game-info">
+                            <h3>Far Cry 3</h3>
+
+                            <p>
+                                Action • Adventure • Open World
+                            </p>
+
+                            <a href="#" class="button">
+                                View Game
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- ADD MORE GAMES ABOVE THIS LINE -->
+
+                </div>
+
+            </section>
+
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+
+                <h2>Featured</h2>
+
+                <div class="ad-box">
+                    AD / FEATURED<br>
+                    GAME SPACE
+                </div>
+
+                <p>
+                    This space can later be used for your own
+                    featured game banners or appropriate advertising.
+                </p>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 QEVRANO PC GAMES</p>
+        <p>All game trademarks belong to their respective owners.</p>
+    </footer>
+
+
+    <!-- SEARCH -->
+    <script>
+        function searchGames() {
+
+            let input =
+                document.getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+            let games =
+                document.querySelectorAll(".game-card");
+
+            games.forEach(function(game) {
+
+                let name =
+                    game.querySelector("h3")
+                    .textContent
+                    .toLowerCase();
+
+                if (name.includes(input)) {
+                    game.style.display = "";
+                } else {
+                    game.style.display = "none";
+                }
+
+            });
+        }
+    </script>
 
 </body>
 </html>
+```
