@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assassin's Creed II - QEVRANO PC GAMES</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #eee;
+    background:
+        linear-gradient(rgba(5,8,15,.88), rgba(5,8,15,.95)),
+        url("./images/ac2-bg.jpg") center/cover fixed no-repeat;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(5,10,18,.96);
+    border-bottom: 1px solid #00b7ff;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #00b7ff;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #00b7ff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 35px auto;
+}
+
+.main-panel {
+    background: rgba(8,13,23,.94);
+    border: 1px solid rgba(0,183,255,.35);
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 0 35px rgba(0,0,0,.5);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #00b7ff;
+    box-shadow: 0 0 25px rgba(0,183,255,.25);
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.subtitle {
+    color: #00b7ff;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    background: #087caf;
+    border: 1px solid #00b7ff;
+    transition: .3s;
+}
+
+.download-btn:hover {
+    background: #00b7ff;
+    color: #001018;
+    transform: translateY(-2px);
+}
+
+.setup-btn {
+    background: #151d29;
+}
+
+.section-title {
+    color: #00b7ff;
+    font-size: 28px;
+    margin: 45px 0 20px;
+    border-left: 4px solid #00b7ff;
+    padding-left: 12px;
+}
+
+/* SCREENSHOTS + AD */
+
+.screenshot-area {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 25px;
+    align-items: start;
+}
+
+.screenshots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.screenshots img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 9px;
+    border: 1px solid #26394a;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.screenshots img:hover {
+    transform: scale(1.02);
+    border-color: #00b7ff;
+}
+
+.ad-box {
+    height: 600px;
+    border: 1px dashed #426176;
+    background: rgba(20,30,42,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #718496;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* VIDEO */
+
+.video-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #05080d;
+    border: 1px solid #26394a;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* TEXT */
+
+.text {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.feature {
+    background: rgba(20,29,42,.8);
+    padding: 15px;
+    border-radius: 7px;
+    border-left: 3px solid #00b7ff;
+    color: #ddd;
+}
+
+/* REQUIREMENTS */
+
+.requirements {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.requirements th,
+.requirements td {
+    border: 1px solid #26394a;
+    padding: 14px;
+    text-align: left;
+}
+
+.requirements th {
+    background: #101b28;
+    color: #00b7ff;
+}
+
+.requirements td {
+    color: #ccc;
+}
+
+.note {
+    margin-top: 12px;
+    color: #8795a3;
+    font-size: 14px;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0,0,0,.92);
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.modal img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 8px;
+    border: 1px solid #00b7ff;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tagline {
+    text-align: center;
+    margin: 45px 0 10px;
+    color: #00b7ff;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    color: #718496;
+    border-top: 1px solid #182635;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero img {
+        max-width: 300px;
+        margin: auto;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .screenshot-area {
+        grid-template-columns: 1fr;
+    }
+
+    .ad-box {
+        height: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .main-panel {
+        padding: 18px;
+    }
+
+    .screenshots {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .requirements {
+        font-size: 13px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">QEVRANO PC GAMES</div>
+
+```
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="index.html">GAMES</a>
+</nav>
+```
+
+</header>
+
+<div class="container">
+
+<div class="main-panel">
+
+```
+<!-- HERO -->
+
+<section class="hero">
+
+    <img src="./images/ac2.jpg" alt="Assassin's Creed II">
+
+    <div>
+        <h1>Assassin's Creed II</h1>
+
+        <div class="subtitle">
+            Action • Adventure • Open World
+        </div>
+
+        <p class="description">
+            Step into Renaissance Italy as Ezio Auditore and experience
+            a legendary journey of revenge, discovery and brotherhood.
+            Explore historic cities, master the art of free-running,
+            uncover secrets and become a master assassin.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="https://store.ubisoft.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="download-btn">
+                OFFICIAL SOURCE
+            </a>
+
+            <a
+                href="YOUR_SETUP_LINK"
+                class="download-btn setup-btn">
+                DOWNLOAD SETUP.EXE
+            </a>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- SCREENSHOTS -->
+
+<h2 class="section-title">Game Screenshots</h2>
+
+<div class="screenshot-area">
+
+    <div class="screenshots">
+
+        <img
+            src="./images/ac2-1.jpg"
+            alt="Assassin's Creed II Screenshot 1"
+            onclick="openImage(this.src)">
+
+        <img
+            src="./images/ac2-2.jpg"
+            alt="Assassin's Creed II Screenshot 2"
+            onclick="openImage(this.src)">
+
+        <img
+            src="./images/ac2-3.jpg"
+            alt="Assassin's Creed II Screenshot 3"
+            onclick="openImage(this.src)">
+
+        <img
+            src="./images/ac2-4.jpg"
+            alt="Assassin's Creed II Screenshot 4"
+            onclick="openImage(this.src)">
+
+    </div>
+
+    <div class="ad-box">
+        ADVERTISEMENT<br>
+        300 × 600
+    </div>
+
+</div>
+
+
+<!-- INSTALLATION VIDEO -->
+
+<h2 class="section-title">Installation Video</h2>
+
+<div class="video-box">
+    <iframe
+        src="YOUR_VIDEO_EMBED_URL"
+        title="Assassin's Creed II Installation Video"
+        allowfullscreen>
+    </iframe>
+</div>
+
+
+<!-- ABOUT -->
+
+<h2 class="section-title">About Game</h2>
+
+<p class="text">
+    Assassin's Creed II is an action-adventure game set during the Italian
+    Renaissance. You play as Ezio Auditore, a young nobleman whose life
+    changes after a personal tragedy. His journey takes him across cities
+    such as Florence, Venice and Monteriggioni while he learns the skills
+    of an assassin and becomes involved in a larger conflict.
+</p>
+
+<p class="text" style="margin-top:15px;">
+    The game combines exploration, stealth, combat, parkour and story-driven
+    missions. Players can explore cities, climb buildings, interact with
+    characters and discover hidden locations throughout Renaissance Italy.
+</p>
+
+
+<!-- FEATURES -->
+
+<h2 class="section-title">Features</h2>
+
+<div class="features">
+
+    <div class="feature">
+        🗡️ Become Ezio Auditore
+    </div>
+
+    <div class="feature">
+        🏛️ Explore Renaissance Italy
+    </div>
+
+    <div class="feature">
+        🧗 Free-running and climbing
+    </div>
+
+    <div class="feature">
+        🕵️ Stealth-based gameplay
+    </div>
+
+    <div class="feature">
+        ⚔️ Sword and hidden-blade combat
+    </div>
+
+    <div class="feature">
+        🌍 Large explorable environments
+    </div>
+
+</div>
+
+
+<!-- MINIMUM REQUIREMENTS -->
+
+<h2 class="section-title">Minimum Requirements</h2>
+
+<table class="requirements">
+
+    <tr>
+        <th>Component</th>
+        <th>Minimum</th>
+    </tr>
+
+    <tr>
+        <td>Operating System</td>
+        <td>Windows XP / Vista / 7</td>
+    </tr>
+
+    <tr>
+        <td>Processor</td>
+        <td>Intel Core 2 Duo 1.8 GHz / AMD Athlon X2 64 2.4 GHz</td>
+    </tr>
+
+    <tr>
+        <td>Memory</td>
+        <td>1.5 GB RAM (XP) / 2 GB RAM (Vista/7)</td>
+    </tr>
+
+    <tr>
+        <td>Graphics</td>
+        <td>256 MB DirectX 9.0c compatible graphics card</td>
+    </tr>
+
+    <tr>
+        <td>DirectX</td>
+        <td>DirectX 9.0c</td>
+    </tr>
+
+    <tr>
+        <td>Storage</td>
+        <td>At least 8 GB available space</td>
+    </tr>
+
+</table>
+
+
+<!-- RECOMMENDED REQUIREMENTS -->
+
+<h2 class="section-title">Recommended Requirements</h2>
+
+<table class="requirements">
+
+    <tr>
+        <th>Component</th>
+        <th>Recommended</th>
+    </tr>
+
+    <tr>
+        <td>Operating System</td>
+        <td>Windows 7 / later compatible Windows version</td>
+    </tr>
+
+    <tr>
+        <td>Processor</td>
+        <td>Intel Core 2 Duo 2.6 GHz / AMD Athlon 64 X2 6000+</td>
+    </tr>
+
+    <tr>
+        <td>Memory</td>
+        <td>2 GB RAM or more</td>
+    </tr>
+
+    <tr>
+        <td>Graphics</td>
+        <td>512 MB DirectX 9.0c compatible graphics card</td>
+    </tr>
+
+    <tr>
+        <td>DirectX</td>
+        <td>DirectX 9.0c</td>
+    </tr>
+
+    <tr>
+        <td>Storage</td>
+        <td>At least 8 GB available space</td>
+    </tr>
+
+</table>
+
+<p class="note">
+    These are historical PC requirements for the original release.
+    Compatibility and performance can vary on modern versions of Windows.
+</p>
+
+
+<div class="tagline">
+    BECOME THE MASTER ASSASSIN.<br>
+    CLIMB • HUNT • STRIKE
+</div>
+```
+
+</div>
+
+</div>
+
+<footer>
+    © 2026 QEVRANO PC GAMES — All Rights Reserved
+</footer>
+
+<!-- IMAGE MODAL -->
+
+<div class="modal" id="imageModal" onclick="closeImage()">
+
+```
+<span class="close">&times;</span>
+
+<img id="modalImage" src="" alt="Screenshot Preview">
+```
+
+</div>
+
+<script>
+
+function openImage(src) {
+    document.getElementById("modalImage").src = src;
+    document.getElementById("imageModal").style.display = "flex";
+}
+
+function closeImage() {
+    document.getElementById("imageModal").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
