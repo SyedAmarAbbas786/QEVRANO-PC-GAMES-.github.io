@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Assassin's Creed II - QEVRANO PC GAMES</title>
+
+<title>Call of Duty - QEVRANO PC GAMES</title>
 
 <style>
 * {
@@ -15,37 +16,47 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #eee;
+    color: #ddd;
     background:
-        linear-gradient(rgba(5,8,15,.88), rgba(5,8,15,.95)),
-        url("./images/ac2-bg.jpg") center/cover fixed no-repeat;
+        linear-gradient(
+            rgba(0,0,0,0.80),
+            rgba(0,0,0,0.93)
+        ),
+        url("./images/cod-bg.jpg") center/cover fixed;
 }
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(5,10,18,.96);
+    height: 70px;
+    background: rgba(0,0,0,0.92);
     border-bottom: 1px solid #00b7ff;
-    padding: 18px 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
     color: #00b7ff;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
+    text-decoration: none;
     letter-spacing: 1px;
 }
 
+nav {
+    display: flex;
+    gap: 25px;
+}
+
 nav a {
-    color: #fff;
+    color: #ddd;
     text-decoration: none;
-    margin-left: 25px;
+    font-size: 14px;
     font-weight: bold;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 nav a:hover {
@@ -53,93 +64,136 @@ nav a:hover {
 }
 
 .container {
-    width: 90%;
+    width: 92%;
     max-width: 1250px;
     margin: 35px auto;
 }
 
-.main-panel {
-    background: rgba(8,13,23,.94);
-    border: 1px solid rgba(0,183,255,.35);
-    border-radius: 14px;
-    padding: 30px;
-    box-shadow: 0 0 35px rgba(0,0,0,.5);
+.back {
+    color: #00b7ff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    background: rgba(10,10,10,0.88);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
 .hero {
     display: grid;
     grid-template-columns: 300px 1fr;
-    gap: 35px;
+    gap: 30px;
     align-items: center;
 }
 
 .hero img {
     width: 100%;
-    border-radius: 12px;
-    border: 1px solid #00b7ff;
-    box-shadow: 0 0 25px rgba(0,183,255,.25);
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 0 20px rgba(0,183,255,0.15);
 }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+.hero-info h1 {
     color: #fff;
+    font-size: 42px;
+    margin-bottom: 12px;
 }
 
 .subtitle {
     color: #00b7ff;
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 15px;
+    margin-bottom: 18px;
 }
 
 .description {
-    color: #ccc;
     line-height: 1.7;
-    margin-bottom: 25px;
+    color: #bbb;
+    margin-bottom: 20px;
 }
 
-.buttons {
+.game-meta {
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.meta {
+    background: rgba(0,183,255,0.08);
+    border: 1px solid rgba(0,183,255,0.25);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #ccc;
+}
+
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .download-btn {
     display: inline-block;
-    padding: 14px 22px;
-    border-radius: 7px;
+    padding: 13px 20px;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    color: #fff;
-    background: #087caf;
-    border: 1px solid #00b7ff;
-    transition: .3s;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.download-btn:hover {
+.official {
     background: #00b7ff;
-    color: #001018;
-    transform: translateY(-2px);
+    color: #000;
 }
 
-.setup-btn {
-    background: #151d29;
+.official:hover {
+    background: #fff;
 }
 
-.section-title {
+.download-btn:not(.official) {
+    background: #111;
+    border: 1px solid #00b7ff;
     color: #00b7ff;
-    font-size: 28px;
-    margin: 45px 0 20px;
+}
+
+.download-btn:not(.official):hover {
+    background: #00b7ff;
+    color: #000;
+}
+
+.section {
+    margin-top: 35px;
+}
+
+.section h2 {
+    color: #00b7ff;
+    font-size: 22px;
+    margin-bottom: 18px;
     border-left: 4px solid #00b7ff;
     padding-left: 12px;
 }
 
-/* SCREENSHOTS + AD */
+.section p {
+    color: #bbb;
+    line-height: 1.8;
+}
 
 .screenshot-area {
     display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 25px;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 20px;
     align-items: start;
 }
 
@@ -151,12 +205,12 @@ nav a:hover {
 
 .screenshots img {
     width: 100%;
-    height: 210px;
+    height: 190px;
     object-fit: cover;
-    border-radius: 9px;
-    border: 1px solid #26394a;
+    border-radius: 7px;
     cursor: pointer;
-    transition: .3s;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
 }
 
 .screenshots img:hover {
@@ -164,27 +218,33 @@ nav a:hover {
     border-color: #00b7ff;
 }
 
-.ad-box {
+.big-ad {
+    width: 300px;
     height: 600px;
-    border: 1px dashed #426176;
-    background: rgba(20,30,42,.8);
+    background: rgba(255,255,255,0.035);
+    border: 1px dashed #666;
+    border-radius: 8px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #718496;
-    font-size: 14px;
     text-align: center;
-    border-radius: 8px;
+    color: #777;
+    padding: 20px;
+    font-size: 14px;
 }
 
-/* VIDEO */
+.big-ad strong {
+    color: #999;
+    margin-bottom: 10px;
+}
 
 .video-box {
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: #05080d;
-    border: 1px solid #26394a;
-    border-radius: 10px;
+    background: #050505;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
     overflow: hidden;
 }
 
@@ -194,117 +254,138 @@ nav a:hover {
     border: 0;
 }
 
-/* TEXT */
-
-.text {
-    color: #ccc;
-    line-height: 1.8;
-}
-
 .features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    margin-top: 15px;
 }
 
 .feature {
-    background: rgba(20,29,42,.8);
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.08);
     padding: 15px;
-    border-radius: 7px;
-    border-left: 3px solid #00b7ff;
-    color: #ddd;
-}
-
-/* REQUIREMENTS */
-
-.requirements {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.requirements th,
-.requirements td {
-    border: 1px solid #26394a;
-    padding: 14px;
-    text-align: left;
-}
-
-.requirements th {
-    background: #101b28;
-    color: #00b7ff;
-}
-
-.requirements td {
+    border-radius: 6px;
     color: #ccc;
 }
 
-.note {
-    margin-top: 12px;
-    color: #8795a3;
+.feature::before {
+    content: "✓";
+    color: #00b7ff;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.requirements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.requirement-box {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.requirement-box h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.requirement-box p {
+    margin-bottom: 8px;
     font-size: 14px;
 }
 
-/* MODAL */
+.requirement-box strong {
+    color: #00b7ff;
+}
+
+.tagline {
+    text-align: center;
+    margin: 45px 0 10px;
+    color: #777;
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
+
+.tagline strong {
+    display: block;
+    color: #00b7ff;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    color: #666;
+    font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+footer a {
+    color: #00b7ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
 
 .modal {
     display: none;
     position: fixed;
     z-index: 2000;
     inset: 0;
-    background: rgba(0,0,0,.92);
+    background: rgba(0,0,0,0.92);
     align-items: center;
     justify-content: center;
-    padding: 25px;
+    padding: 30px;
 }
 
 .modal img {
-    max-width: 95%;
-    max-height: 90vh;
-    border-radius: 8px;
-    border: 1px solid #00b7ff;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 7px;
+    box-shadow: 0 0 40px rgba(0,183,255,0.2);
 }
 
 .close {
     position: absolute;
     top: 20px;
-    right: 35px;
+    right: 30px;
+    color: white;
     font-size: 40px;
-    color: #fff;
     cursor: pointer;
 }
 
-.tagline {
-    text-align: center;
-    margin: 45px 0 10px;
+.close:hover {
     color: #00b7ff;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 2px;
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    margin-top: 40px;
-    color: #718496;
-    border-top: 1px solid #182635;
-}
+@media(max-width: 900px) {
 
-/* MOBILE */
+    header {
+        padding: 0 4%;
+    }
 
-@media (max-width: 850px) {
     .hero {
         grid-template-columns: 1fr;
     }
 
     .hero img {
-        max-width: 300px;
+        max-width: 350px;
         margin: auto;
     }
 
-    .hero h1 {
+    .hero-info h1 {
         font-size: 32px;
     }
 
@@ -312,336 +393,453 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .ad-box {
+    .big-ad {
+        width: 100%;
         height: 250px;
     }
-}
 
-@media (max-width: 600px) {
-    header {
-        padding: 15px 5%;
-    }
-
-    nav a {
-        margin-left: 10px;
-        font-size: 14px;
-    }
-
-    .main-panel {
-        padding: 18px;
-    }
-
-    .screenshots {
+    .requirements {
         grid-template-columns: 1fr;
     }
 
     .features {
         grid-template-columns: 1fr;
     }
+}
 
-    .requirements {
-        font-size: 13px;
+@media(max-width: 600px) {
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .main-content {
+        padding: 17px;
+    }
+
+    .screenshots {
+        grid-template-columns: 1fr;
+    }
+
+    .screenshots img {
+        height: auto;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+    }
+
+    .download-btn {
+        text-align: center;
     }
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-    <div class="logo">QEVRANO PC GAMES</div>
 
-```
-<nav>
-    <a href="index.html">HOME</a>
-    <a href="index.html">GAMES</a>
-</nav>
-```
+    <a href="./index.html" class="logo">
+        QEVRANO PC GAMES
+    </a>
+
+    <nav>
+        <a href="./index.html">HOME</a>
+        <a href="./index.html#games">GAMES</a>
+    </nav>
 
 </header>
 
+
 <div class="container">
 
-<div class="main-panel">
+    <a href="./index.html" class="back">
+        ← BACK TO GAMES
+    </a>
 
-```
-<!-- HERO -->
 
-<section class="hero">
+    <main class="main-content">
 
-    <img src="./images/ac2.jpg" alt="Assassin's Creed II">
+        <section class="hero">
 
-    <div>
-        <h1>Assassin's Creed II</h1>
+            <img
+                src="./images/cod.jpg"
+                alt="Call of Duty"
+            >
 
-        <div class="subtitle">
-            Action • Adventure • Open World
+            <div class="hero-info">
+
+                <h1>CALL OF DUTY</h1>
+
+                <div class="subtitle">
+                    CALL OF DUTY • WWII • FIRST-PERSON SHOOTER
+                </div>
+
+                <p class="description">
+                    Call of Duty is a World War II first-person shooter that
+                    puts players into the middle of major Allied campaigns.
+                    Experience intense infantry combat through American,
+                    British and Soviet perspectives across a cinematic
+                    single-player campaign.
+                </p>
+
+                <div class="game-meta">
+
+                    <div class="meta">
+                        Developer: Infinity Ward
+                    </div>
+
+                    <div class="meta">
+                        Genre: First-Person Shooter
+                    </div>
+
+                    <div class="meta">
+                        Release: 2003
+                    </div>
+
+                    <div class="meta">
+                        PC
+                    </div>
+
+                </div>
+
+
+                <div class="download-buttons">
+
+                    <a
+                        href="https://store.steampowered.com/app/2620/Call_of_Duty/"
+                        class="download-btn official"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        DOWNLOAD OFFICIAL
+                    </a>
+
+                    <a
+                        href="YOUR_SETUP_LINK"
+                        class="download-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        DOWNLOAD SETUP.EXE
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>SCREENSHOTS</h2>
+
+            <div class="screenshot-area">
+
+                <div class="screenshots">
+
+                    <img
+                        src="./images/cod-1.jpg"
+                        alt="Call of Duty Screenshot 1"
+                        onclick="openModal(this.src)"
+                    >
+
+                    <img
+                        src="./images/cod-2.jpg"
+                        alt="Call of Duty Screenshot 2"
+                        onclick="openModal(this.src)"
+                    >
+
+                    <img
+                        src="./images/cod-3.jpg"
+                        alt="Call of Duty Screenshot 3"
+                        onclick="openModal(this.src)"
+                    >
+
+                    <img
+                        src="./images/cod-4.jpg"
+                        alt="Call of Duty Screenshot 4"
+                        onclick="openModal(this.src)"
+                    >
+
+                </div>
+
+
+                <div class="big-ad">
+
+                    <strong>ADVERTISEMENT</strong>
+
+                    <span>
+                        BIG AD SPACE
+                    </span>
+
+                    <br>
+
+                    <small>
+                        300 × 600
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>MUST WATCH INSTALLATION VIDEO</h2>
+
+            <div class="video-box">
+
+                <iframe
+                    src="YOUR_VIDEO_EMBED_URL"
+                    title="Call of Duty Installation Guide"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>ABOUT GAME</h2>
+
+            <p>
+                Call of Duty is the first game in the long-running Call of
+                Duty franchise. Released in 2003, the game focuses on the
+                Second World War and presents its campaign through the
+                perspectives of American, British and Soviet soldiers.
+            </p>
+
+            <br>
+
+            <p>
+                The campaign features infantry battles, vehicle sequences,
+                historically inspired locations and a cinematic presentation
+                designed around teamwork and large-scale battles.
+            </p>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>FEATURES</h2>
+
+            <div class="features">
+
+                <div class="feature">
+                    World War II campaign
+                </div>
+
+                <div class="feature">
+                    American, British and Soviet missions
+                </div>
+
+                <div class="feature">
+                    Cinematic single-player experience
+                </div>
+
+                <div class="feature">
+                    Squad-based combat
+                </div>
+
+                <div class="feature">
+                    Historically inspired battlefields
+                </div>
+
+                <div class="feature">
+                    Classic multiplayer modes
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>MINIMUM REQUIREMENTS</h2>
+
+            <div class="requirements">
+
+                <div class="requirement-box">
+
+                    <h3>Minimum</h3>
+
+                    <p>
+                        <strong>OS:</strong>
+                        Windows 98 / ME / 2000 / XP
+                    </p>
+
+                    <p>
+                        <strong>CPU:</strong>
+                        600 MHz Pentium III or AMD Athlon
+                    </p>
+
+                    <p>
+                        <strong>RAM:</strong>
+                        128 MB
+                    </p>
+
+                    <p>
+                        <strong>GPU:</strong>
+                        DirectX 9 compatible 3D graphics card
+                    </p>
+
+                    <p>
+                        <strong>VRAM:</strong>
+                        32 MB
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong>
+                        Approximately 1.4 GB
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>RECOMMENDED REQUIREMENTS</h2>
+
+            <div class="requirements">
+
+                <div class="requirement-box">
+
+                    <h3>Recommended</h3>
+
+                    <p>
+                        <strong>OS:</strong>
+                        Windows 2000 / XP
+                    </p>
+
+                    <p>
+                        <strong>CPU:</strong>
+                        1 GHz Pentium III or AMD Athlon
+                    </p>
+
+                    <p>
+                        <strong>RAM:</strong>
+                        256 MB
+                    </p>
+
+                    <p>
+                        <strong>GPU:</strong>
+                        DirectX 9 compatible 3D graphics card
+                    </p>
+
+                    <p>
+                        <strong>VRAM:</strong>
+                        64 MB
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong>
+                        Approximately 1.4 GB
+                    </p>
+
+                </div>
+
+            </div>
+
+            <p style="margin-top:15px;font-size:13px;color:#777;">
+                These are historical PC requirements from the game's
+                original era. Compatibility on modern Windows versions
+                may vary.
+            </p>
+
+        </section>
+
+
+        <div class="tagline">
+
+            <strong>
+                REMEMBER THE BATTLE.
+            </strong>
+
+            FIGHT • ADVANCE • VICTORY
+
+            <br>
+
+            QEVRANO PC GAMES
+
         </div>
 
-        <p class="description">
-            Step into Renaissance Italy as Ezio Auditore and experience
-            a legendary journey of revenge, discovery and brotherhood.
-            Explore historic cities, master the art of free-running,
-            uncover secrets and become a master assassin.
-        </p>
-
-        <div class="buttons">
-
-            <a
-                href="https://store.ubisoft.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="download-btn">
-                OFFICIAL SOURCE
-            </a>
-
-            <a
-                href="YOUR_SETUP_LINK"
-                class="download-btn setup-btn">
-                DOWNLOAD SETUP.EXE
-            </a>
-
-        </div>
-    </div>
-
-</section>
-
-
-<!-- SCREENSHOTS -->
-
-<h2 class="section-title">Game Screenshots</h2>
-
-<div class="screenshot-area">
-
-    <div class="screenshots">
-
-        <img
-            src="./images/ac2-1.jpg"
-            alt="Assassin's Creed II Screenshot 1"
-            onclick="openImage(this.src)">
-
-        <img
-            src="./images/ac2-2.jpg"
-            alt="Assassin's Creed II Screenshot 2"
-            onclick="openImage(this.src)">
-
-        <img
-            src="./images/ac2-3.jpg"
-            alt="Assassin's Creed II Screenshot 3"
-            onclick="openImage(this.src)">
-
-        <img
-            src="./images/ac2-4.jpg"
-            alt="Assassin's Creed II Screenshot 4"
-            onclick="openImage(this.src)">
-
-    </div>
-
-    <div class="ad-box">
-        ADVERTISEMENT<br>
-        300 × 600
-    </div>
+    </main>
 
 </div>
 
 
-<!-- INSTALLATION VIDEO -->
+<div
+    class="modal"
+    id="imageModal"
+    onclick="closeModal()"
+>
 
-<h2 class="section-title">Installation Video</h2>
+    <span class="close">
+        &times;
+    </span>
 
-<div class="video-box">
-    <iframe
-        src="YOUR_VIDEO_EMBED_URL"
-        title="Assassin's Creed II Installation Video"
-        allowfullscreen>
-    </iframe>
-</div>
-
-
-<!-- ABOUT -->
-
-<h2 class="section-title">About Game</h2>
-
-<p class="text">
-    Assassin's Creed II is an action-adventure game set during the Italian
-    Renaissance. You play as Ezio Auditore, a young nobleman whose life
-    changes after a personal tragedy. His journey takes him across cities
-    such as Florence, Venice and Monteriggioni while he learns the skills
-    of an assassin and becomes involved in a larger conflict.
-</p>
-
-<p class="text" style="margin-top:15px;">
-    The game combines exploration, stealth, combat, parkour and story-driven
-    missions. Players can explore cities, climb buildings, interact with
-    characters and discover hidden locations throughout Renaissance Italy.
-</p>
-
-
-<!-- FEATURES -->
-
-<h2 class="section-title">Features</h2>
-
-<div class="features">
-
-    <div class="feature">
-        🗡️ Become Ezio Auditore
-    </div>
-
-    <div class="feature">
-        🏛️ Explore Renaissance Italy
-    </div>
-
-    <div class="feature">
-        🧗 Free-running and climbing
-    </div>
-
-    <div class="feature">
-        🕵️ Stealth-based gameplay
-    </div>
-
-    <div class="feature">
-        ⚔️ Sword and hidden-blade combat
-    </div>
-
-    <div class="feature">
-        🌍 Large explorable environments
-    </div>
+    <img
+        id="modalImage"
+        src=""
+        alt="Call of Duty Screenshot"
+        onclick="event.stopPropagation()"
+    >
 
 </div>
 
-
-<!-- MINIMUM REQUIREMENTS -->
-
-<h2 class="section-title">Minimum Requirements</h2>
-
-<table class="requirements">
-
-    <tr>
-        <th>Component</th>
-        <th>Minimum</th>
-    </tr>
-
-    <tr>
-        <td>Operating System</td>
-        <td>Windows XP / Vista / 7</td>
-    </tr>
-
-    <tr>
-        <td>Processor</td>
-        <td>Intel Core 2 Duo 1.8 GHz / AMD Athlon X2 64 2.4 GHz</td>
-    </tr>
-
-    <tr>
-        <td>Memory</td>
-        <td>1.5 GB RAM (XP) / 2 GB RAM (Vista/7)</td>
-    </tr>
-
-    <tr>
-        <td>Graphics</td>
-        <td>256 MB DirectX 9.0c compatible graphics card</td>
-    </tr>
-
-    <tr>
-        <td>DirectX</td>
-        <td>DirectX 9.0c</td>
-    </tr>
-
-    <tr>
-        <td>Storage</td>
-        <td>At least 8 GB available space</td>
-    </tr>
-
-</table>
-
-
-<!-- RECOMMENDED REQUIREMENTS -->
-
-<h2 class="section-title">Recommended Requirements</h2>
-
-<table class="requirements">
-
-    <tr>
-        <th>Component</th>
-        <th>Recommended</th>
-    </tr>
-
-    <tr>
-        <td>Operating System</td>
-        <td>Windows 7 / later compatible Windows version</td>
-    </tr>
-
-    <tr>
-        <td>Processor</td>
-        <td>Intel Core 2 Duo 2.6 GHz / AMD Athlon 64 X2 6000+</td>
-    </tr>
-
-    <tr>
-        <td>Memory</td>
-        <td>2 GB RAM or more</td>
-    </tr>
-
-    <tr>
-        <td>Graphics</td>
-        <td>512 MB DirectX 9.0c compatible graphics card</td>
-    </tr>
-
-    <tr>
-        <td>DirectX</td>
-        <td>DirectX 9.0c</td>
-    </tr>
-
-    <tr>
-        <td>Storage</td>
-        <td>At least 8 GB available space</td>
-    </tr>
-
-</table>
-
-<p class="note">
-    These are historical PC requirements for the original release.
-    Compatibility and performance can vary on modern versions of Windows.
-</p>
-
-
-<div class="tagline">
-    BECOME THE MASTER ASSASSIN.<br>
-    CLIMB • HUNT • STRIKE
-</div>
-```
-
-</div>
-
-</div>
 
 <footer>
+
     © 2026 QEVRANO PC GAMES — All Rights Reserved
+
+    <br><br>
+
+    <a href="./privacy.html">Privacy Policy</a>
+    |
+    <a href="./about.html">About</a>
+    |
+    <a href="./contact.html">Contact</a>
+    |
+    <a href="./terms.html">Terms</a>
+
 </footer>
 
-<!-- IMAGE MODAL -->
-
-<div class="modal" id="imageModal" onclick="closeImage()">
-
-```
-<span class="close">&times;</span>
-
-<img id="modalImage" src="" alt="Screenshot Preview">
-```
-
-</div>
 
 <script>
 
-function openImage(src) {
-    document.getElementById("modalImage").src = src;
+function openModal(src) {
+
     document.getElementById("imageModal").style.display = "flex";
+
+    document.getElementById("modalImage").src = src;
+
 }
 
-function closeImage() {
+function closeModal() {
+
     document.getElementById("imageModal").style.display = "none";
+
 }
 
 </script>
 
 </body>
 </html>
+```
