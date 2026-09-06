@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 
 <html lang="en">
@@ -264,6 +265,8 @@ font-weight:bold;
 letter-spacing:2px;
 }
 
+/* ================= FOOTER ================= */
+
 footer{
 text-align:center;
 padding:30px;
@@ -271,6 +274,19 @@ margin-top:40px;
 color:#718496;
 border-top:1px solid #182635;
 }
+
+footer a{
+color:#00b7ff;
+text-decoration:none;
+transition:.3s;
+}
+
+footer a:hover{
+color:#fff;
+text-decoration:underline;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:850px){
 .hero{grid-template-columns:1fr}
@@ -295,16 +311,23 @@ nav a{margin-left:10px;font-size:14px}
 <body>
 
 <header>
-<div class="logo">QEVRANO PC GAMES</div>
+
+<div class="logo">
+QEVRANO PC GAMES
+</div>
 
 <nav>
 <a href="index.html">HOME</a>
-<a href="index.html">GAMES</a>
+<a href="index.html#games">GAMES</a>
 </nav>
+
 </header>
 
+
 <div class="container">
+
 <div class="main-panel">
+
 
 <section class="hero">
 
@@ -326,40 +349,52 @@ complete missions and uncover the secrets of Rook Island.
 
 <div class="buttons">
 
-<a href="https://store.ubisoft.com/us/far-cry-3/575ffd98a3be1633568b4d6c.html"
+<a
+href="https://store.ubisoft.com/us/far-cry-3/575ffd98a3be1633568b4d6c.html"
 target="_blank"
 rel="noopener noreferrer"
 class="download-btn">
-OFFICIAL SOURCE </a>
+OFFICIAL SOURCE
+</a>
 
-<a href="YOUR_SETUP_LINK"
+<a
+href="YOUR_SETUP_LINK"
 class="download-btn setup-btn">
-DOWNLOAD SETUP.EXE </a>
+DOWNLOAD SETUP.EXE
+</a>
 
 </div>
 
 </div>
+
 </section>
 
-<h2 class="section-title">Game Screenshots</h2>
+
+<h2 class="section-title">
+Game Screenshots
+</h2>
 
 <div class="screenshot-area">
 
 <div class="screenshots">
 
-<img src="./images/farcry3-1.jpg"
+<img
+src="./images/farcry3-1.jpg"
 alt="Far Cry 3 Screenshot 1"
 onclick="openImage(this.src)">
 
-<img src="./images/farcry3-2.jpg"
+<img
+src="./images/farcry3-2.jpg"
 alt="Far Cry 3 Screenshot 2"
 onclick="openImage(this.src)">
 
-<img src="./images/farcry3-3.jpg"
+<img
+src="./images/farcry3-3.jpg"
 alt="Far Cry 3 Screenshot 3"
 onclick="openImage(this.src)">
 
-<img src="./images/farcry3-4.jpg"
+<img
+src="./images/farcry3-4.jpg"
 alt="Far Cry 3 Screenshot 4"
 onclick="openImage(this.src)">
 
@@ -372,7 +407,10 @@ ADVERTISEMENT<br>
 
 </div>
 
-<h2 class="section-title">Installation Video</h2>
+
+<h2 class="section-title">
+Installation Video
+</h2>
 
 <div class="video-box">
 
@@ -384,7 +422,10 @@ allowfullscreen>
 
 </div>
 
-<h2 class="section-title">About Game</h2>
+
+<h2 class="section-title">
+About Game
+</h2>
 
 <p class="text">
 Far Cry 3 is an open-world first-person shooter set on the tropical
@@ -399,20 +440,43 @@ character progression. Players can explore the island, capture
 outposts, complete missions and discover many hidden areas.
 </p>
 
-<h2 class="section-title">Features</h2>
+
+<h2 class="section-title">
+Features
+</h2>
 
 <div class="features">
 
-<div class="feature">🌴 Explore a large tropical open world</div>
-<div class="feature">🔫 Large variety of weapons</div>
-<div class="feature">🎯 Stealth and combat gameplay</div>
-<div class="feature">🏹 Hunting and crafting system</div>
-<div class="feature">🗺️ Capture enemy outposts</div>
-<div class="feature">🚙 Drive and explore the island</div>
+<div class="feature">
+🌴 Explore a large tropical open world
+</div>
+
+<div class="feature">
+🔫 Large variety of weapons
+</div>
+
+<div class="feature">
+🎯 Stealth and combat gameplay
+</div>
+
+<div class="feature">
+🏹 Hunting and crafting system
+</div>
+
+<div class="feature">
+🗺️ Capture enemy outposts
+</div>
+
+<div class="feature">
+🚙 Drive and explore the island
+</div>
 
 </div>
 
-<h2 class="section-title">Minimum Requirements</h2>
+
+<h2 class="section-title">
+Minimum Requirements
+</h2>
 
 <table class="requirements">
 
@@ -453,7 +517,10 @@ outposts, complete missions and discover many hidden areas.
 
 </table>
 
-<h2 class="section-title">Recommended Requirements</h2>
+
+<h2 class="section-title">
+Recommended Requirements
+</h2>
 
 <table class="requirements">
 
@@ -499,40 +566,91 @@ These are historical PC requirements for the original release.
 Modern Windows compatibility and performance may vary.
 </p>
 
+
 <div class="tagline">
+
 ENTER THE WILD.<br>
+
 EXPLORE • SURVIVE • DISCOVER
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
+
 © 2026 QEVRANO PC GAMES — All Rights Reserved
+
+<br><br>
+
+<a href="./privacy.html">
+Privacy Policy
+</a>
+
+|
+
+<a href="./about.html">
+About
+</a>
+
+|
+
+<a href="./contact.html">
+Contact
+</a>
+
+|
+
+<a href="./terms.html">
+Terms
+</a>
+
 </footer>
 
-<div class="modal" id="imageModal" onclick="closeImage()">
 
-<span class="close">×</span>
+<!-- ================= IMAGE MODAL ================= -->
 
-<img id="modalImage"
+<div
+class="modal"
+id="imageModal"
+onclick="closeImage()">
+
+<span class="close">
+×
+</span>
+
+<img
+id="modalImage"
 src=""
 alt="Screenshot Preview">
 
 </div>
 
+
 <script>
 
 function openImage(src){
+
 document.getElementById("modalImage").src=src;
+
 document.getElementById("imageModal").style.display="flex";
+
 }
 
 function closeImage(){
+
 document.getElementById("imageModal").style.display="none";
+
 }
 
 </script>
 
 </body>
 </html>
+```
