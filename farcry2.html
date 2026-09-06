@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Far Cry 2 | QEVRANO PC GAMES</title>
+<title>Far Cry 2 - QEVRANO PC GAMES</title>
 
 <style>
-
 * {
     margin: 0;
     padding: 0;
@@ -17,543 +15,369 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #222;
-
-    background-image:
+    background:
         linear-gradient(
             rgba(255,255,255,0.72),
             rgba(255,255,255,0.82)
         ),
-        url("./images/unity.jpg");
-
+        url("./images/farcry2-bg.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
-    min-height: 100vh;
 }
 
-
 /* HEADER */
-
 header {
-    background: rgba(255,255,255,0.97);
-    border-bottom: 1px solid #ddd;
-
-    padding: 18px 6%;
-
+    background: rgba(10, 10, 10, 0.95);
+    color: white;
+    padding: 18px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 900;
     letter-spacing: 1px;
-    color: #111;
-}
-
-.logo span {
-    color: #e53935;
 }
 
 nav a {
-    color: #222;
+    color: white;
     text-decoration: none;
     margin-left: 25px;
-    font-size: 14px;
     font-weight: bold;
+    font-size: 14px;
 }
 
 nav a:hover {
-    color: #e53935;
+    color: #ffb000;
 }
-
 
 /* MAIN */
-
 .container {
     width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
+    max-width: 1250px;
+    margin: 35px auto;
 }
 
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 30px;
+}
 
-/* HERO */
-
+/* GAME HERO */
 .game-hero {
-    background: rgba(255,255,255,0.96);
-
-    border: 1px solid #ddd;
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.95);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
 }
 
-.hero-image {
+.game-top {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+}
+
+.cover {
     width: 100%;
-    height: 430px;
+    height: 420px;
     overflow: hidden;
+    border-radius: 8px;
 }
 
-.hero-image img {
+.cover img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     display: block;
 }
 
-.hero-content {
-    padding: 30px;
-}
-
-.hero-content h1 {
-    font-size: 40px;
+.game-info h1 {
+    font-size: 38px;
     margin-bottom: 15px;
-    color: #111;
 }
 
-.hero-content p {
+.description {
     color: #555;
     line-height: 1.7;
     margin-bottom: 20px;
 }
 
-
-/* INFO BOXES */
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 12px;
-
-    margin: 25px 0;
+.info-list {
+    line-height: 2;
+    margin-bottom: 20px;
 }
 
-.info-box {
-    background: #f7f7f7;
-
-    border: 1px solid #ddd;
-
-    padding: 15px;
-
-    border-radius: 8px;
-}
-
-.info-box strong {
-    display: block;
-
-    color: #e53935;
-
-    margin-bottom: 6px;
-
-    font-size: 13px;
-}
-
-.info-box span {
-    color: #333;
-    font-size: 14px;
-}
-
-
-/* DOWNLOAD */
-
-.download-btn {
-    display: inline-block;
-
-    background: #e53935;
-    color: white;
-
-    text-decoration: none;
-
-    padding: 14px 30px;
-
-    border-radius: 6px;
-
-    font-weight: bold;
-    font-size: 15px;
-
-    transition: 0.2s;
-
-    box-shadow: 0 4px 10px rgba(229,57,53,0.25);
-}
-
-.download-btn:hover {
-    background: #c62828;
-
-    transform: translateY(-2px);
-}
-
-
-/* BACK BUTTON */
-
-.back-btn {
-    display: inline-block;
-
-    margin-top: 15px;
-
-    color: #666;
-
-    text-decoration: none;
-
-    font-size: 14px;
-}
-
-.back-btn:hover {
-    color: #e53935;
-}
-
-
-/* CONTENT LAYOUT */
-
-.content-layout {
-    display: grid;
-
-    grid-template-columns: 2fr 1fr;
-
-    gap: 25px;
-
-    margin-top: 25px;
-}
-
-
-/* SECTIONS */
-
-.section {
-    background: rgba(255,255,255,0.96);
-
-    border: 1px solid #ddd;
-
-    border-radius: 10px;
-
-    padding: 25px;
-
-    margin-bottom: 25px;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
-.section h2 {
-    font-size: 22px;
-
-    margin-bottom: 18px;
-
-    border-left: 4px solid #e53935;
-
-    padding-left: 12px;
-
+.info-list strong {
     color: #111;
 }
 
-.section p {
-    color: #555;
-
-    line-height: 1.8;
-
-    margin-bottom: 15px;
+/* DOWNLOAD BUTTONS */
+.download-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
+.download-btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.official-btn {
+    background: #222;
+    color: white;
+}
+
+.setup-btn {
+    background: #2e8b57;
+    color: white;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 11px 18px;
+    background: #eee;
+    color: #222;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background: #ddd;
+}
+
+/* SECTIONS */
+.section {
+    background: rgba(255,255,255,0.95);
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+    margin-bottom: 18px;
+    font-size: 25px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.section p {
+    line-height: 1.7;
+    color: #444;
+}
+
+/* MUST WATCH */
+.must-watch {
+    background: #fff3cd;
+    border: 2px solid #ffb000;
+    color: #7a5200;
+    padding: 15px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 18px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+}
+
+/* VIDEO */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #111;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-note {
+    margin-top: 15px;
+    text-align: center;
+}
 
 /* FEATURES */
-
 .features {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 12px;
 }
 
 .feature {
-    background: #f7f7f7;
-
-    border: 1px solid #ddd;
-
-    padding: 14px;
-
-    border-radius: 7px;
-
-    color: #333;
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 6px;
 }
 
-
 /* REQUIREMENTS */
-
 .requirements {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
-    gap: 18px;
+    gap: 20px;
 }
 
 .requirement-box {
-    background: #f7f7f7;
-
-    border: 1px solid #ddd;
-
-    border-radius: 8px;
-
+    background: #f5f5f5;
     padding: 20px;
+    border-radius: 8px;
 }
 
 .requirement-box h3 {
-    color: #e53935;
-
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .requirement-box p {
-    margin-bottom: 9px;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-
-    color: #444;
+    line-height: 1.8;
 }
-
 
 /* SCREENSHOTS */
-
 .screenshots {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
-    gap: 12px;
+    gap: 15px;
 }
 
-.screenshot {
+.screenshots img {
     width: 100%;
-
-    height: 180px;
-
+    height: 220px;
     object-fit: cover;
-
     border-radius: 7px;
-
     cursor: pointer;
-
-    transition: 0.25s;
-
-    border: 1px solid #ddd;
+    transition: 0.2s;
 }
 
-.screenshot:hover {
+.screenshots img:hover {
     transform: scale(1.02);
-
-    border-color: #e53935;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
-
 
 /* SIDEBAR */
-
 .sidebar-box {
-    background: rgba(255,255,255,0.96);
-
-    border: 1px solid #ddd;
-
-    border-radius: 10px;
-
+    background: rgba(255,255,255,0.95);
     padding: 20px;
-
+    border-radius: 10px;
     margin-bottom: 20px;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-.sidebar-box h2 {
-    font-size: 18px;
-
+.sidebar-box h3 {
     margin-bottom: 15px;
-
-    border-left: 4px solid #e53935;
-
-    padding-left: 10px;
-
-    color: #111;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
 }
-
-
-/* AD */
 
 .ad-box {
-    height: 250px;
-
-    background: #f5f5f5;
-
-    border: 1px dashed #aaa;
-
+    height: 220px;
     display: flex;
-
-    justify-content: center;
-
     align-items: center;
-
+    justify-content: center;
+    background: #eee;
     color: #888;
-
-    border-radius: 7px;
+    font-weight: bold;
 }
-
-
-/* POPULAR GAMES */
 
 .popular-game {
     display: flex;
-
+    gap: 10px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #222;
     align-items: center;
-
-    gap: 12px;
-
-    padding: 10px 0;
-
-    border-bottom: 1px solid #ddd;
-}
-
-.popular-game:last-child {
-    border-bottom: none;
 }
 
 .popular-game img {
     width: 65px;
-
-    height: 45px;
-
+    height: 75px;
     object-fit: cover;
-
     border-radius: 5px;
 }
 
-.popular-game span {
-    font-size: 13px;
-
-    color: #333;
+.popular-game strong {
+    font-size: 14px;
 }
 
-
-/* FULLSCREEN IMAGE VIEWER */
-
+/* MODAL */
 dialog {
     border: none;
-
     padding: 0;
-
     background: transparent;
-
-    width: 100vw;
-
-    height: 100vh;
-
-    max-width: none;
-
-    max-height: none;
+    max-width: 95vw;
+    max-height: 95vh;
 }
 
 dialog::backdrop {
-    background: rgba(0,0,0,0.94);
+    background: rgba(0,0,0,0.9);
 }
 
-.viewer {
-    width: 100%;
-
-    height: 100%;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
+.modal-content {
     position: relative;
 }
 
-.viewer img {
-    max-width: 92vw;
-
-    max-height: 90vh;
-
-    object-fit: contain;
-
+.modal-content img {
+    max-width: 90vw;
+    max-height: 85vh;
+    display: block;
     border-radius: 5px;
 }
 
-.close-viewer {
+.close-modal {
     position: absolute;
-
-    top: 25px;
-
-    right: 35px;
-
-    font-size: 35px;
-
-    color: white;
-
-    cursor: pointer;
-
-    background: none;
-
+    right: -10px;
+    top: -45px;
+    width: 35px;
+    height: 35px;
     border: none;
-
-    z-index: 5;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    font-size: 22px;
+    cursor: pointer;
 }
-
-.close-viewer:hover {
-    color: #ff3b30;
-}
-
 
 /* FOOTER */
-
 footer {
+    margin-top: 40px;
+    background: rgba(10,10,10,0.95);
+    color: white;
     text-align: center;
-
-    padding: 35px 20px;
-
-    margin-top: 30px;
-
-    background: rgba(255,255,255,0.97);
-
-    border-top: 1px solid #ddd;
-
-    color: #777;
-
-    font-size: 13px;
+    padding: 25px;
 }
 
-footer strong {
-    color: #333;
-}
-
-
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-
-    .content-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .info-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-@media (max-width: 600px) {
+/* MOBILE */
+@media (max-width: 850px) {
 
     header {
         flex-direction: column;
-
         gap: 15px;
     }
 
@@ -561,377 +385,239 @@ footer strong {
         margin: 0 8px;
     }
 
-    .hero-image {
-        height: 250px;
-    }
-
-    .hero-content h1 {
-        font-size: 30px;
-    }
-
-    .info-grid {
+    .layout {
         grid-template-columns: 1fr;
     }
 
-    .requirements {
+    .game-top {
         grid-template-columns: 1fr;
+    }
+
+    .cover {
+        height: 450px;
     }
 
     .features {
         grid-template-columns: 1fr;
     }
 
-    .screenshots {
+    .requirements {
         grid-template-columns: 1fr;
     }
 }
 
+@media (max-width: 550px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .game-hero,
+    .section,
+    .sidebar-box {
+        padding: 18px;
+    }
+
+    .game-info h1 {
+        font-size: 30px;
+    }
+
+    .cover {
+        height: 400px;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+    }
+
+    .download-btn {
+        width: 100%;
+    }
+
+    .screenshots {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
 
-
 <body>
 
-
 <!-- HEADER -->
-
 <header>
-
-    <div class="logo">
-        QEVRANO <span>PC GAMES</span>
-    </div>
+    <div class="logo">QEVRANO PC GAMES</div>
 
     <nav>
-        <a href="index.html">HOME</a>
-
-        <a href="index.html#games">
-            GAMES
-        </a>
-
-        <a href="index.html#packs">
-            PACKS
-        </a>
+        <a href="./index.html">HOME</a>
+        <a href="./index.html">GAMES</a>
+        <a href="./index.html">PACKS</a>
     </nav>
-
 </header>
-
 
 
 <div class="container">
 
-
-<!-- GAME HERO -->
-
-<div class="game-hero">
-
-    <div class="hero-image">
-
-        <img
-            src="./images/farcry2.jpg"
-            alt="Far Cry 2"
-        >
-
-    </div>
-
-
-    <div class="hero-content">
-
-        <h1>Far Cry 2</h1>
-
-
-        <p>
-            Far Cry 2 is an open-world first-person shooter set in
-            a fictional war-torn African country. Explore a large
-            environment, complete missions, interact with factions,
-            and survive dangerous encounters across the world.
-        </p>
-
-
-        <div class="info-grid">
-
-
-            <div class="info-box">
-
-                <strong>RELEASE DATE</strong>
-
-                <span>
-                    October 2008
-                </span>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <strong>DEVELOPER</strong>
-
-                <span>
-                    Ubisoft Montreal
-                </span>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <strong>GENRE</strong>
-
-                <span>
-                    Action • Adventure • FPS
-                </span>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <strong>SIZE</strong>
-
-                <span>
-                    5–10 GB
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- DOWNLOAD -->
-
-        <a
-            href="https://store.ubisoft.com/us/far-cry-2"
-            target="_blank"
-            class="download-btn"
-        >
-            DOWNLOAD
-        </a>
-
-
-        <br>
-
-
-        <a
-            href="index.html"
-            class="back-btn"
-        >
-            ← BACK TO QEVRANO PC GAMES
-        </a>
-
-    </div>
-
-</div>
-
-
-
-<!-- CONTENT -->
-
-<div class="content-layout">
-
+<div class="layout">
 
 <main>
 
+<!-- GAME HERO -->
+<section class="game-hero">
 
-<!-- ABOUT -->
+    <div class="game-top">
 
+        <div class="cover">
+            <img src="./images/farcry2.jpg" alt="Far Cry 2">
+        </div>
+
+        <div class="game-info">
+
+            <h1>Far Cry 2</h1>
+
+            <p class="description">
+                Far Cry 2 is an open-world first-person shooter developed
+                by Ubisoft Montreal. Explore a large African environment,
+                complete missions and fight through dangerous territory.
+            </p>
+
+            <div class="info-list">
+                <div><strong>Release Date:</strong> October 2008</div>
+                <div><strong>Developer:</strong> Ubisoft Montreal</div>
+                <div><strong>Publisher:</strong> Ubisoft</div>
+                <div><strong>Genre:</strong> Action / Adventure / FPS</div>
+                <div><strong>Platform:</strong> PC</div>
+            </div>
+
+            <!-- DOWNLOAD BUTTONS -->
+            <div class="download-buttons">
+
+                <a href="YOUR_OFFICIAL_DOWNLOAD_LINK"
+                   class="download-btn official-btn"
+                   target="_blank"
+                   rel="noopener">
+                    DOWNLOAD OFFICIAL
+                </a>
+
+                <a href="YOUR_SETUP_LINK"
+                   class="download-btn setup-btn">
+                    DOWNLOAD SETUP.EXE
+                </a>
+
+            </div>
+
+            <a href="./index.html" class="back-btn">
+                ← BACK TO HOME
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MUST WATCH INSTALLATION VIDEO -->
 <section class="section">
 
-    <h2>
-        About Far Cry 2
-    </h2>
+    <h2>🎥 Installation Video</h2>
 
+    <div class="must-watch">
+        ⚠️ MUST WATCH INSTALLATION VIDEO BEFORE PLAYING
+    </div>
 
-    <p>
-        Far Cry 2 puts you in the role of a mercenary operating
-        in a fictional African conflict. Your missions can take
-        you across deserts, savannas, villages and other
-        dangerous areas.
-    </p>
+    <div class="video-container">
 
+        <iframe
+            src="YOUR_VIDEO_EMBED_URL"
+            title="Far Cry 2 Installation Video"
+            allowfullscreen>
+        </iframe>
 
-    <p>
-        The game features an open-world environment where you
-        can approach missions in different ways. You can travel
-        through the world, work with different factions and
-        use a variety of weapons and vehicles.
-    </p>
+    </div>
 
-
-    <p>
-        Dynamic environmental systems, changing weather,
-        fire propagation and non-scripted enemy behavior
-        contribute to the game's survival-focused atmosphere.
+    <p class="video-note">
+        Watch the complete installation guide before launching the game.
+        The video explains the installation and basic setup process.
     </p>
 
 </section>
 
+
+<!-- ABOUT -->
+<section class="section">
+
+    <h2>About Far Cry 2</h2>
+
+    <p>
+        Far Cry 2 takes place in an open-world African setting.
+        Players explore the environment, complete missions and interact
+        with different factions while working through the game's story.
+        The game features dynamic weather, vehicles, weapons and a large
+        explorable world.
+    </p>
+
+</section>
 
 
 <!-- FEATURES -->
-
 <section class="section">
 
-    <h2>
-        Game Features
-    </h2>
-
+    <h2>Game Features</h2>
 
     <div class="features">
 
-
-        <div class="feature">
-            🌍 Large Open World
-        </div>
-
-
-        <div class="feature">
-            🔫 Wide Variety of Weapons
-        </div>
-
-
-        <div class="feature">
-            🚙 Drive Different Vehicles
-        </div>
-
-
-        <div class="feature">
-            🎯 Multiple Mission Approaches
-        </div>
-
-
-        <div class="feature">
-            🔥 Dynamic Fire System
-        </div>
-
-
-        <div class="feature">
-            🌦 Dynamic Weather
-        </div>
-
-
-        <div class="feature">
-            🤖 Non-Scripted AI
-        </div>
-
-
-        <div class="feature">
-            🗺 Large Explorable Environment
-        </div>
+        <div class="feature">🌍 Large open-world environment</div>
+        <div class="feature">🔫 First-person shooter gameplay</div>
+        <div class="feature">🚙 Drivable vehicles</div>
+        <div class="feature">🌦️ Dynamic weather system</div>
+        <div class="feature">🎯 Mission-based gameplay</div>
+        <div class="feature">🔥 Dynamic fire effects</div>
+        <div class="feature">🗺️ Large African setting</div>
+        <div class="feature">🎮 PC keyboard and mouse support</div>
 
     </div>
 
 </section>
-
 
 
 <!-- SYSTEM REQUIREMENTS -->
-
 <section class="section">
 
-    <h2>
-        System Requirements
-    </h2>
-
+    <h2>System Requirements</h2>
 
     <div class="requirements">
 
-
-        <!-- MINIMUM -->
-
         <div class="requirement-box">
 
-            <h3>
-                Minimum Requirements
-            </h3>
-
+            <h3>Minimum Requirements</h3>
 
             <p>
-                <strong>OS:</strong>
-                Windows XP / Windows Vista
-            </p>
-
-
-            <p>
-                <strong>Processor:</strong>
-                Pentium 4 3.2 GHz,
-                Pentium D 2.66 GHz,
-                AMD Athlon 64 3500+
-            </p>
-
-
-            <p>
-                <strong>RAM:</strong>
-                1 GB
-            </p>
-
-
-            <p>
-                <strong>Graphics:</strong>
-                256 MB Shader Model 3,
-                NVIDIA 6800 / ATI X1650
-                or better
-            </p>
-
-
-            <p>
-                <strong>Storage:</strong>
-                Around 3.5 GB
-            </p>
-
-
-            <p>
-                <strong>Sound:</strong>
-                DirectX compatible sound card
+                <strong>OS:</strong> Windows XP / Windows Vista<br>
+                <strong>Processor:</strong> Pentium 4 3.2 GHz,
+                Pentium D 2.66 GHz, AMD Athlon 64 3500+ or better<br>
+                <strong>RAM:</strong> 1 GB<br>
+                <strong>Graphics:</strong> 256 MB Shader Model 3
+                NVIDIA 6800 / ATI X1650 or better<br>
+                <strong>Storage:</strong> Around 3.5 GB<br>
+                <strong>Sound:</strong> DirectX-compatible sound card
             </p>
 
         </div>
 
 
-
-        <!-- RECOMMENDED -->
-
         <div class="requirement-box">
 
-            <h3>
-                Recommended Requirements
-            </h3>
-
+            <h3>Recommended Requirements</h3>
 
             <p>
-                <strong>OS:</strong>
-                Windows XP / Windows Vista
-            </p>
-
-
-            <p>
-                <strong>Processor:</strong>
-                Intel Core 2 Duo,
-                AMD 64 X2 5200+,
-                AMD Phenom or better
-            </p>
-
-
-            <p>
-                <strong>RAM:</strong>
-                2 GB
-            </p>
-
-
-            <p>
-                <strong>Graphics:</strong>
-                512 MB NVIDIA 8600 GTS
-                or ATI X1900 or better
-            </p>
-
-
-            <p>
-                <strong>Storage:</strong>
-                Around 5 GB
-            </p>
-
-
-            <p>
-                <strong>Sound:</strong>
-                5.1 channel sound card recommended
+                <strong>OS:</strong> Windows XP / Windows Vista<br>
+                <strong>Processor:</strong> Intel Core 2 Duo,
+                AMD 64 X2 5200+, AMD Phenom or better<br>
+                <strong>RAM:</strong> 2 GB<br>
+                <strong>Graphics:</strong> 512 MB NVIDIA 8600 GTS
+                / ATI X1900 or better<br>
+                <strong>Storage:</strong> Around 5 GB<br>
+                <strong>Sound:</strong> 5.1 sound card recommended
             </p>
 
         </div>
@@ -939,190 +625,78 @@ footer strong {
     </div>
 
 </section>
-
 
 
 <!-- SCREENSHOTS -->
-
 <section class="section">
 
-    <h2>
-        Far Cry 2 Screenshots
-    </h2>
-
+    <h2>Screenshots</h2>
 
     <div class="screenshots">
 
+        <img src="./images/farcry2-1.jpg"
+             alt="Far Cry 2 Screenshot 1">
 
-        <img
-            class="screenshot"
-            src="./images/farcry2-1.jpg"
-            alt="Far Cry 2 Screenshot 1"
-            onclick="openImage(this.src)"
-        >
+        <img src="./images/farcry2-2.jpg"
+             alt="Far Cry 2 Screenshot 2">
 
+        <img src="./images/farcry2-3.jpg"
+             alt="Far Cry 2 Screenshot 3">
 
-        <img
-            class="screenshot"
-            src="./images/farcry2-2.jpg"
-            alt="Far Cry 2 Screenshot 2"
-            onclick="openImage(this.src)"
-        >
-
-
-        <img
-            class="screenshot"
-            src="./images/farcry2-3.jpg"
-            alt="Far Cry 2 Screenshot 3"
-            onclick="openImage(this.src)"
-        >
-
-
-        <img
-            class="screenshot"
-            src="./images/farcry2-4.jpg"
-            alt="Far Cry 2 Screenshot 4"
-            onclick="openImage(this.src)"
-        >
+        <img src="./images/farcry2-4.jpg"
+             alt="Far Cry 2 Screenshot 4">
 
     </div>
 
 </section>
-
 
 </main>
 
 
-
 <!-- SIDEBAR -->
-
 <aside>
 
+    <div class="sidebar-box">
 
-<!-- AD -->
+        <h3>FEATURED / AD</h3>
 
-<div class="sidebar-box">
-
-    <h2>
-        FEATURED / AD
-    </h2>
-
-
-    <div class="ad-box">
-        ADVERTISEMENT
-    </div>
-
-</div>
-
-
-
-<!-- POPULAR -->
-
-<div class="sidebar-box">
-
-    <h2>
-        POPULAR GAMES
-    </h2>
-
-
-    <div class="popular-game">
-
-        <img
-            src="./images/farcry3.jpg"
-            alt="Far Cry 3"
-        >
-
-        <span>
-            Far Cry 3
-        </span>
+        <div class="ad-box">
+            ADVERTISEMENT
+        </div>
 
     </div>
 
 
-    <div class="popular-game">
+    <div class="sidebar-box">
 
-        <img
-            src="./images/farcry2.jpg"
-            alt="Far Cry 2"
-        >
+        <h3>POPULAR GAMES</h3>
 
-        <span>
-            Far Cry 2
-        </span>
+        <a href="#" class="popular-game">
+            <img src="./images/farcry3.jpg" alt="Far Cry 3">
+            <strong>Far Cry 3</strong>
+        </a>
 
-    </div>
+        <a href="#" class="popular-game">
+            <img src="./images/ac2.jpg" alt="Assassin's Creed II">
+            <strong>Assassin's Creed II</strong>
+        </a>
 
+        <a href="#" class="popular-game">
+            <img src="./images/gta5.jpg" alt="GTA V">
+            <strong>GTA V</strong>
+        </a>
 
-    <div class="popular-game">
+        <a href="#" class="popular-game">
+            <img src="./images/cod.jpg" alt="Call of Duty 1">
+            <strong>Call of Duty 1</strong>
+        </a>
 
-        <img
-            src="./images/gta5.jpg"
-            alt="GTA V"
-        >
-
-        <span>
-            GTA V
-        </span>
-
-    </div>
-
-
-    <div class="popular-game">
-
-        <img
-            src="./images/ac2.jpg"
-            alt="Assassin's Creed II"
-        >
-
-        <span>
-            Assassin's Creed II
-        </span>
+        <a href="#" class="popular-game">
+            <img src="./images/witcher2.jpg" alt="The Witcher 2">
+            <strong>The Witcher 2</strong>
+        </a>
 
     </div>
-
-
-    <div class="popular-game">
-
-        <img
-            src="./images/cod.jpg"
-            alt="Call of Duty 1"
-        >
-
-        <span>
-            Call of Duty 1
-        </span>
-
-    </div>
-
-
-    <div class="popular-game">
-
-        <img
-            src="./images/cricket.jpg"
-            alt="Don Bradman Cricket"
-        >
-
-        <span>
-            Don Bradman Cricket
-        </span>
-
-    </div>
-
-
-    <div class="popular-game">
-
-        <img
-            src="./images/witcher2.jpg"
-            alt="The Witcher 2"
-        >
-
-        <span>
-            The Witcher 2
-        </span>
-
-    </div>
-
-</div>
 
 </aside>
 
@@ -1131,95 +705,60 @@ footer strong {
 </div>
 
 
+<!-- IMAGE FULLSCREEN MODAL -->
+<dialog id="imageModal">
 
-<!-- FULLSCREEN IMAGE VIEWER -->
+    <div class="modal-content">
 
-<dialog id="imageViewer">
-
-    <div class="viewer">
-
-        <button
-            class="close-viewer"
-            onclick="closeImage()"
-        >
+        <button class="close-modal" id="closeModal">
             ×
         </button>
 
-
-        <img
-            id="largeImage"
-            src=""
-            alt="Large Screenshot"
-        >
+        <img id="modalImage" src="" alt="Screenshot">
 
     </div>
 
 </dialog>
 
 
-
 <!-- FOOTER -->
-
 <footer>
 
-    <strong>
-        © 2026 QEVRANO PC GAMES
-    </strong>
-
-    <br><br>
-
-    All Rights Reserved.
-
-    <br><br>
-
-    QEVRANO PC GAMES is an independent gaming information website.
+    <p>© 2026 QEVRANO PC GAMES. All rights reserved.</p>
 
 </footer>
 
 
-
 <script>
 
-const imageViewer =
-    document.getElementById("imageViewer");
+const modal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeModal = document.getElementById("closeModal");
 
-const largeImage =
-    document.getElementById("largeImage");
+document.querySelectorAll(".screenshots img").forEach(image => {
 
+    image.addEventListener("click", () => {
 
-function openImage(src) {
+        modalImage.src = image.src;
+        modal.showModal();
 
-    largeImage.src = src;
+    });
 
-    imageViewer.showModal();
+});
 
-}
+closeModal.addEventListener("click", () => {
+    modal.close();
+});
 
+modal.addEventListener("click", (event) => {
 
-function closeImage() {
-
-    imageViewer.close();
-
-    largeImage.src = "";
-
-}
-
-
-imageViewer.addEventListener(
-    "click",
-    function(event) {
-
-        if (event.target === imageViewer) {
-
-            closeImage();
-
-        }
-
+    if (event.target === modal) {
+        modal.close();
     }
-);
+
+});
 
 </script>
-
 
 </body>
 </html>
