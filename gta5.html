@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>GTA V - QEVRANO PC GAMES</title>
 
 <style>
@@ -15,254 +16,203 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #222;
+    color: #ddd;
     background:
         linear-gradient(
-            rgba(255,255,255,0.72),
-            rgba(255,255,255,0.82)
+            rgba(0,0,0,0.78),
+            rgba(0,0,0,0.92)
         ),
-        url("./images/gta5-bg.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+        url("./images/gta5-bg.jpg") center/cover fixed;
 }
 
 /* HEADER */
+
 header {
-    background: rgba(10, 10, 10, 0.95);
-    color: white;
-    padding: 18px 5%;
+    height: 70px;
+    background: rgba(0,0,0,0.92);
+    border-bottom: 1px solid #00b7ff;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 900;
+    color: #00b7ff;
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
     letter-spacing: 1px;
 }
 
+nav {
+    display: flex;
+    gap: 25px;
+}
+
 nav a {
-    color: white;
+    color: #ddd;
     text-decoration: none;
-    margin-left: 25px;
-    font-weight: bold;
     font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #ffb000;
+    color: #00b7ff;
 }
 
-/* MAIN */
+/* CONTAINER */
+
 .container {
-    width: 90%;
+    width: 92%;
     max-width: 1250px;
     margin: 35px auto;
 }
 
-.layout {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 30px;
+.back {
+    color: #00b7ff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
-/* GAME HERO */
-.game-hero {
-    background: rgba(255,255,255,0.95);
-    padding: 25px;
+.back:hover {
+    text-decoration: underline;
+}
+
+/* MAIN */
+
+.main-content {
+    background: rgba(10,10,10,0.88);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    padding: 25px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
-.game-top {
+/* HERO */
+
+.hero {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 30px;
+    align-items: center;
 }
 
-.cover {
+.hero img {
     width: 100%;
-    height: 420px;
-    overflow: hidden;
     border-radius: 8px;
-}
-
-.cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: block;
+    box-shadow: 0 0 20px rgba(0,183,255,0.15);
 }
 
-.game-info h1 {
-    font-size: 38px;
-    margin-bottom: 15px;
+.hero-info h1 {
+    color: #fff;
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #00b7ff;
+    font-size: 15px;
+    margin-bottom: 18px;
 }
 
 .description {
-    color: #555;
     line-height: 1.7;
+    color: #bbb;
     margin-bottom: 20px;
 }
 
-.info-list {
-    line-height: 2;
-    margin-bottom: 20px;
+/* META */
+
+.game-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 22px;
 }
 
-.info-list strong {
-    color: #111;
+.meta {
+    background: rgba(0,183,255,0.08);
+    border: 1px solid rgba(0,183,255,0.25);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #ccc;
 }
 
-/* DOWNLOAD BUTTONS */
+/* DOWNLOAD */
+
 .download-buttons {
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    gap: 12px;
 }
 
 .download-btn {
     display: inline-block;
-    padding: 14px 22px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 800;
-    transition: 0.2s;
-    text-align: center;
-}
-
-.official-btn {
-    background: #222;
-    color: white;
-}
-
-.setup-btn {
-    background: #2e8b57;
-    color: white;
-}
-
-.download-btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-/* BACK BUTTON */
-.back-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 11px 18px;
-    background: #eee;
-    color: #222;
-    text-decoration: none;
+    padding: 13px 20px;
     border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.back-btn:hover {
-    background: #ddd;
+.official {
+    background: #00b7ff;
+    color: #000;
 }
 
-/* SECTIONS */
+.official:hover {
+    background: #fff;
+}
+
+.download-btn:not(.official) {
+    background: #111;
+    border: 1px solid #00b7ff;
+    color: #00b7ff;
+}
+
+.download-btn:not(.official):hover {
+    background: #00b7ff;
+    color: #000;
+}
+
+/* SECTION */
+
 .section {
-    background: rgba(255,255,255,0.95);
-    padding: 25px;
-    margin-top: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-top: 35px;
 }
 
 .section h2 {
+    color: #00b7ff;
+    font-size: 22px;
     margin-bottom: 18px;
-    font-size: 25px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
+    border-left: 4px solid #00b7ff;
+    padding-left: 12px;
 }
 
 .section p {
-    line-height: 1.7;
-    color: #444;
-}
-
-/* MUST WATCH */
-.must-watch {
-    background: #fff3cd;
-    border: 2px solid #ffb000;
-    color: #7a5200;
-    padding: 15px;
-    text-align: center;
-    font-weight: 900;
-    font-size: 18px;
-    border-radius: 6px;
-    margin-bottom: 18px;
-}
-
-/* VIDEO */
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
-    background: #111;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.video-note {
-    margin-top: 15px;
-    text-align: center;
-}
-
-/* FEATURES */
-.features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-}
-
-.feature {
-    background: #f5f5f5;
-    padding: 15px;
-    border-radius: 6px;
-}
-
-/* REQUIREMENTS */
-.requirements {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.requirement-box {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.requirement-box h3 {
-    margin-bottom: 12px;
-}
-
-.requirement-box p {
+    color: #bbb;
     line-height: 1.8;
 }
 
 /* SCREENSHOTS */
+
+.screenshot-area {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 20px;
+    align-items: start;
+}
+
 .screenshots {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -271,160 +221,233 @@ nav a:hover {
 
 .screenshots img {
     width: 100%;
-    height: 220px;
+    height: 190px;
     object-fit: cover;
     border-radius: 7px;
     cursor: pointer;
-    transition: 0.2s;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
 }
 
 .screenshots img:hover {
     transform: scale(1.02);
+    border-color: #00b7ff;
 }
 
-/* SIDEBAR */
-.sidebar-box {
-    background: rgba(255,255,255,0.95);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
+/* AD */
 
-.sidebar-box h3 {
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-}
+.big-ad {
+    width: 300px;
+    height: 600px;
+    background: rgba(255,255,255,0.035);
+    border: 1px dashed #666;
+    border-radius: 8px;
 
-.ad-box {
-    height: 220px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #eee;
-    color: #888;
-    font-weight: bold;
-}
 
-.popular-game {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-    text-decoration: none;
-    color: #222;
-    align-items: center;
-}
-
-.popular-game img {
-    width: 65px;
-    height: 75px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.popular-game strong {
+    text-align: center;
+    color: #777;
+    padding: 20px;
     font-size: 14px;
 }
 
-/* MODAL */
-dialog {
-    border: none;
-    padding: 0;
-    background: transparent;
-    max-width: 95vw;
-    max-height: 95vh;
+.big-ad strong {
+    color: #999;
+    margin-bottom: 10px;
 }
 
-dialog::backdrop {
-    background: rgba(0,0,0,0.9);
+/* VIDEO */
+
+.video-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #050505;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.modal-content {
-    position: relative;
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
-.modal-content img {
-    max-width: 90vw;
-    max-height: 85vh;
+/* FEATURES */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.feature {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 6px;
+    color: #ccc;
+}
+
+.feature::before {
+    content: "✓";
+    color: #00b7ff;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* REQUIREMENTS */
+
+.requirements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.requirement-box {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.requirement-box h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.requirement-box p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.requirement-box strong {
+    color: #00b7ff;
+}
+
+/* TAGLINE */
+
+.tagline {
+    text-align: center;
+    margin: 45px 0 10px;
+    color: #777;
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
+
+.tagline strong {
     display: block;
-    border-radius: 5px;
-}
-
-.close-modal {
-    position: absolute;
-    right: -10px;
-    top: -45px;
-    width: 35px;
-    height: 35px;
-    border: none;
-    border-radius: 50%;
-    background: white;
-    color: black;
-    font-size: 22px;
-    cursor: pointer;
+    color: #00b7ff;
+    font-size: 25px;
+    letter-spacing: 2px;
 }
 
 /* FOOTER */
+
 footer {
-    margin-top: 40px;
-    background: rgba(10,10,10,0.95);
-    color: white;
     text-align: center;
     padding: 25px;
+    margin-top: 30px;
+    color: #666;
+    font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 7px;
+    box-shadow: 0 0 40px rgba(0,183,255,0.2);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #00b7ff;
 }
 
 /* MOBILE */
-@media (max-width: 850px) {
+
+@media(max-width: 900px) {
 
     header {
-        flex-direction: column;
-        gap: 15px;
+        padding: 0 4%;
     }
 
-    nav a {
-        margin: 0 8px;
-    }
-
-    .layout {
+    .hero {
         grid-template-columns: 1fr;
     }
 
-    .game-top {
+    .hero img {
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .hero-info h1 {
+        font-size: 32px;
+    }
+
+    .screenshot-area {
         grid-template-columns: 1fr;
     }
 
-    .cover {
-        height: 450px;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
+    .big-ad {
+        width: 100%;
+        height: 250px;
     }
 
     .requirements {
         grid-template-columns: 1fr;
     }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
 }
 
-@media (max-width: 550px) {
+@media(max-width: 600px) {
 
-    .container {
-        width: 94%;
+    nav {
+        gap: 12px;
     }
 
-    .game-hero,
-    .section,
-    .sidebar-box {
-        padding: 18px;
+    nav a {
+        font-size: 12px;
     }
 
-    .game-info h1 {
-        font-size: 30px;
+    .main-content {
+        padding: 17px;
     }
 
-    .cover {
-        height: 400px;
+    .screenshots {
+        grid-template-columns: 1fr;
+    }
+
+    .screenshots img {
+        height: auto;
     }
 
     .download-buttons {
@@ -432,15 +455,10 @@ footer {
     }
 
     .download-btn {
-        width: 100%;
-    }
-
-    .screenshots {
-        grid-template-columns: 1fr;
+        text-align: center;
     }
 }
 </style>
-
 </head>
 
 <body>
@@ -449,368 +467,411 @@ footer {
 
 <header>
 
-```
-<div class="logo">QEVRANO PC GAMES</div>
+    <a href="./index.html" class="logo">
+        QEVRANO PC GAMES
+    </a>
 
-<nav>
-    <a href="./index.html">HOME</a>
-    <a href="./index.html">GAMES</a>
-    <a href="./index.html">PACKS</a>
-</nav>
-```
+    <nav>
+        <a href="./index.html">HOME</a>
+        <a href="./index.html#games">GAMES</a>
+    </nav>
 
 </header>
 
+
 <div class="container">
 
-<div class="layout">
+    <a href="./index.html" class="back">
+        ← BACK TO GAMES
+    </a>
 
-<main>
 
-<!-- GAME HERO -->
+    <main class="main-content">
 
-<section class="game-hero">
+        <!-- HERO -->
 
-```
-<div class="game-top">
+        <section class="hero">
 
-    <div class="cover">
-        <img src="./images/gta5.jpg" alt="Grand Theft Auto V">
-    </div>
+            <img
+                src="./images/gta5.jpg"
+                alt="GTA V"
+            >
 
-    <div class="game-info">
+            <div class="hero-info">
 
-        <h1>Grand Theft Auto V</h1>
+                <h1>GTA V</h1>
 
-        <p class="description">
-            Grand Theft Auto V is an open-world action-adventure game
-            developed by Rockstar North and published by Rockstar Games.
-            Explore Los Santos and Blaine County through a story involving
-            three playable protagonists.
-        </p>
+                <div class="subtitle">
+                    GRAND THEFT AUTO V • ACTION • OPEN WORLD
+                </div>
 
-        <div class="info-list">
+                <p class="description">
+                    Grand Theft Auto V takes players to Los Santos and
+                    Blaine County, where three criminals become connected
+                    through a series of dangerous and unpredictable events.
+                    Explore a huge open world, drive vehicles, complete
+                    missions and experience the iconic GTA V story.
+                </p>
 
-            <div>
-                <strong>Release Date:</strong> April 14, 2015 (PC)
+                <div class="game-meta">
+
+                    <div class="meta">
+                        Developer: Rockstar North
+                    </div>
+
+                    <div class="meta">
+                        Genre: Action / Open World
+                    </div>
+
+                    <div class="meta">
+                        Release: 2015 PC
+                    </div>
+
+                    <div class="meta">
+                        PC
+                    </div>
+
+                </div>
+
+
+                <div class="download-buttons">
+
+                    <!-- Official legitimate source -->
+                    <a
+                        href="https://store.rockstargames.com/game/buy-gta-v"
+                        class="download-btn official"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        DOWNLOAD OFFICIAL
+                    </a>
+
+                    <!-- Use only for an installer you are authorized to distribute -->
+                    <a
+                        href="YOUR_SETUP_LINK"
+                        class="download-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        DOWNLOAD SETUP.EXE
+                    </a>
+
+                </div>
+
             </div>
 
-            <div>
-                <strong>Developer:</strong> Rockstar North
+        </section>
+
+
+        <!-- SCREENSHOTS -->
+
+        <section class="section">
+
+            <h2>SCREENSHOTS</h2>
+
+            <div class="screenshot-area">
+
+                <div class="screenshots">
+
+                    <img
+                        src="./images/gta5-1.jpg"
+                        alt="GTA V Screenshot 1"
+                        onclick="openModal(this.src)"
+                    >
+
+                    <img
+                        src="./images/gta5-2.jpg"
+                        alt="GTA V Screenshot 2"
+                        onclick="openModal(this.src)"
+                    >
+
+                    <img
+                        src="./images/gta5-3.jpg"
+                        alt="GTA V Screenshot 3"
+                        onclick="openModal(this.src)"
+                    >
+
+                    <img
+                        src="./images/gta5-4.jpg"
+                        alt="GTA V Screenshot 4"
+                        onclick="openModal(this.src)"
+                    >
+
+                </div>
+
+
+                <!-- BIG AD SPACE -->
+
+                <div class="big-ad">
+
+                    <strong>ADVERTISEMENT</strong>
+
+                    <span>BIG AD SPACE</span>
+
+                    <br>
+
+                    <small>300 × 600</small>
+
+                </div>
+
             </div>
 
-            <div>
-                <strong>Publisher:</strong> Rockstar Games
+        </section>
+
+
+        <!-- INSTALLATION VIDEO -->
+
+        <section class="section">
+
+            <h2>MUST WATCH INSTALLATION VIDEO</h2>
+
+            <div class="video-box">
+
+                <iframe
+                    src="YOUR_VIDEO_EMBED_URL"
+                    title="GTA V Installation Guide"
+                    allowfullscreen>
+                </iframe>
+
             </div>
 
-            <div>
-                <strong>Genre:</strong> Action / Adventure / Open World
+        </section>
+
+
+        <!-- ABOUT GAME -->
+
+        <section class="section">
+
+            <h2>ABOUT GAME</h2>
+
+            <p>
+                Grand Theft Auto V is an open-world action game set in the
+                fictional state of San Andreas. The main story follows
+                Michael De Santa, Franklin Clinton and Trevor Philips as
+                their lives become connected through a series of criminal
+                operations.
+            </p>
+
+            <br>
+
+            <p>
+                Players can freely explore Los Santos and the surrounding
+                countryside, use a wide variety of vehicles, take part in
+                activities and complete story missions.
+            </p>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section class="section">
+
+            <h2>FEATURES</h2>
+
+            <div class="features">
+
+                <div class="feature">
+                    Huge open-world Los Santos
+                </div>
+
+                <div class="feature">
+                    Three playable main characters
+                </div>
+
+                <div class="feature">
+                    Story-driven campaign
+                </div>
+
+                <div class="feature">
+                    Large selection of vehicles
+                </div>
+
+                <div class="feature">
+                    Dynamic weather and day/night cycle
+                </div>
+
+                <div class="feature">
+                    PC graphics and customization options
+                </div>
+
             </div>
 
-            <div>
-                <strong>Platform:</strong> PC
+        </section>
+
+
+        <!-- MINIMUM REQUIREMENTS -->
+
+        <section class="section">
+
+            <h2>MINIMUM REQUIREMENTS</h2>
+
+            <div class="requirements">
+
+                <div class="requirement-box">
+
+                    <h3>Minimum</h3>
+
+                    <p>
+                        <strong>OS:</strong>
+                        Windows 10 64-bit
+                    </p>
+
+                    <p>
+                        <strong>CPU:</strong>
+                        Intel Core 2 Quad Q6600 2.40 GHz /
+                        AMD Phenom 9850 2.5 GHz
+                    </p>
+
+                    <p>
+                        <strong>RAM:</strong>
+                        4 GB
+                    </p>
+
+                    <p>
+                        <strong>GPU:</strong>
+                        NVIDIA 9800 GT 1 GB /
+                        AMD HD 4870 1 GB
+                    </p>
+
+                    <p>
+                        <strong>DirectX:</strong>
+                        Version 10
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong>
+                        65 GB
+                    </p>
+
+                </div>
+
             </div>
+
+        </section>
+
+
+        <!-- RECOMMENDED REQUIREMENTS -->
+
+        <section class="section">
+
+            <h2>RECOMMENDED REQUIREMENTS</h2>
+
+            <div class="requirements">
+
+                <div class="requirement-box">
+
+                    <h3>Recommended</h3>
+
+                    <p>
+                        <strong>OS:</strong>
+                        Windows 10 64-bit
+                    </p>
+
+                    <p>
+                        <strong>CPU:</strong>
+                        Intel Core i5 3470 3.2 GHz /
+                        AMD FX-8350 4.0 GHz
+                    </p>
+
+                    <p>
+                        <strong>RAM:</strong>
+                        8 GB
+                    </p>
+
+                    <p>
+                        <strong>GPU:</strong>
+                        NVIDIA GTX 660 2 GB /
+                        AMD HD 7870 2 GB
+                    </p>
+
+                    <p>
+                        <strong>DirectX:</strong>
+                        Version 10
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong>
+                        65 GB
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TAGLINE -->
+
+        <div class="tagline">
+
+            <strong>
+                WELCOME TO LOS SANTOS.
+            </strong>
+
+            DRIVE • EXPLORE • DOMINATE
+
+            <br>
+
+            QEVRANO PC GAMES
 
         </div>
 
-        <!-- DOWNLOAD BUTTONS -->
-        <div class="download-buttons">
-
-            <a href="https://store.rockstargames.com/game/buy-gta-v"
-               class="download-btn official-btn"
-               target="_blank"
-               rel="noopener">
-                DOWNLOAD OFFICIAL
-            </a>
-
-            <a href="YOUR_SETUP_LINK"
-               class="download-btn setup-btn">
-                DOWNLOAD SETUP.EXE
-            </a>
-
-        </div>
-
-        <a href="./index.html" class="back-btn">
-            ← BACK TO HOME
-        </a>
-
-    </div>
-
-</div>
-```
-
-</section>
-
-<!-- MUST WATCH INSTALLATION VIDEO -->
-
-<section class="section">
-
-```
-<h2>🎥 Installation Video</h2>
-
-<div class="must-watch">
-    ⚠️ MUST WATCH INSTALLATION VIDEO BEFORE PLAYING
-</div>
-
-<div class="video-container">
-
-    <iframe
-        src="YOUR_VIDEO_EMBED_URL"
-        title="GTA V Installation Video"
-        allowfullscreen>
-    </iframe>
-
-</div>
-
-<p class="video-note">
-    Watch the complete installation guide before launching the game.
-    The video explains the installation and basic setup process.
-</p>
-```
-
-</section>
-
-<!-- ABOUT -->
-
-<section class="section">
-
-```
-<h2>About Grand Theft Auto V</h2>
-
-<p>
-    Grand Theft Auto V takes place in the fictional state of San Andreas,
-    featuring the city of Los Santos and the surrounding Blaine County.
-    The story follows three protagonists whose lives become connected
-    through a series of events and heists. The game features a large
-    open world, vehicles, missions, exploration and GTA Online.
-</p>
-```
-
-</section>
-
-<!-- FEATURES -->
-
-<section class="section">
-
-```
-<h2>Game Features</h2>
-
-<div class="features">
-
-    <div class="feature">🌆 Large open-world environment</div>
-    <div class="feature">🎮 Three playable protagonists</div>
-    <div class="feature">🚗 Large selection of vehicles</div>
-    <div class="feature">🗺️ Explore Los Santos and Blaine County</div>
-    <div class="feature">🎯 Story-driven missions</div>
-    <div class="feature">🌐 GTA Online</div>
-    <div class="feature">🏙️ Detailed city and countryside</div>
-    <div class="feature">🎮 PC keyboard and mouse support</div>
-
-</div>
-```
-
-</section>
-
-<!-- SYSTEM REQUIREMENTS -->
-
-<section class="section">
-
-```
-<h2>System Requirements</h2>
-
-<div class="requirements">
-
-    <div class="requirement-box">
-
-        <h3>GTAV Legacy — Minimum</h3>
-
-        <p>
-            <strong>OS:</strong> Windows 10<br>
-            <strong>Processor:</strong> Intel Core 2 Quad
-            Q6600 @ 2.40GHz / AMD Phenom 9850 Quad-Core
-            @ 2.5GHz<br>
-            <strong>RAM:</strong> 4 GB<br>
-            <strong>Graphics:</strong> NVIDIA 9800 GT 1GB /
-            AMD HD 4870 1GB<br>
-            <strong>Storage:</strong> 125 GB<br>
-            <strong>DirectX:</strong> DirectX 10, 10.1 or 11
-        </p>
-
-    </div>
-
-
-    <div class="requirement-box">
-
-        <h3>GTAV Legacy — Recommended</h3>
-
-        <p>
-            <strong>OS:</strong> Windows 10<br>
-            <strong>Processor:</strong> Intel Core i5 3470 @ 3.2GHz /
-            AMD X8 FX-8350 @ 4GHz<br>
-            <strong>RAM:</strong> 8 GB<br>
-            <strong>Graphics:</strong> NVIDIA GTX 660 2GB /
-            AMD HD7870 2GB<br>
-            <strong>Storage:</strong> 125 GB<br>
-            <strong>DirectX:</strong> DirectX 11
-        </p>
-
-    </div>
-
-</div>
-
-<br>
-
-<p>
-    <strong>Note:</strong> Rockstar currently lists separate system
-    requirements for GTAV Enhanced and GTAV Legacy. GTAV Enhanced
-    requires Windows 10, 8 GB RAM, a supported dedicated GPU and
-    105 GB of SSD storage at minimum. The Legacy version has lower
-    minimum requirements.
-</p>
-```
-
-</section>
-
-<!-- SCREENSHOTS -->
-
-<section class="section">
-
-```
-<h2>Screenshots</h2>
-
-<div class="screenshots">
-
-    <img src="./images/gta5-1.jpg"
-         alt="GTA V Screenshot 1">
-
-    <img src="./images/gta5-2.jpg"
-         alt="GTA V Screenshot 2">
-
-    <img src="./images/gta5-3.jpg"
-         alt="GTA V Screenshot 3">
-
-    <img src="./images/gta5-4.jpg"
-         alt="GTA V Screenshot 4">
-
-</div>
-```
-
-</section>
-
-</main>
-
-<!-- SIDEBAR -->
-
-<aside>
-
-```
-<div class="sidebar-box">
-
-    <h3>FEATURED / AD</h3>
-
-    <div class="ad-box">
-        ADVERTISEMENT
-    </div>
+    </main>
 
 </div>
 
 
-<div class="sidebar-box">
+<!-- IMAGE MODAL -->
 
-    <h3>POPULAR GAMES</h3>
+<div
+    class="modal"
+    id="imageModal"
+    onclick="closeModal()"
+>
 
-    <a href="./farcry3.html" class="popular-game">
-        <img src="./images/farcry3.jpg" alt="Far Cry 3">
-        <strong>Far Cry 3</strong>
-    </a>
+    <span class="close">
+        &times;
+    </span>
 
-    <a href="./ac2.html" class="popular-game">
-        <img src="./images/ac2.jpg" alt="Assassin's Creed II">
-        <strong>Assassin's Creed II</strong>
-    </a>
-
-    <a href="./gta-v.html" class="popular-game">
-        <img src="./images/gta5.jpg" alt="GTA V">
-        <strong>GTA V</strong>
-    </a>
-
-    <a href="./cod.html" class="popular-game">
-        <img src="./images/cod.jpg" alt="Call of Duty 1">
-        <strong>Call of Duty 1</strong>
-    </a>
-
-    <a href="./the-witcher-2.html" class="popular-game">
-        <img src="./images/witcher2.jpg" alt="The Witcher 2">
-        <strong>The Witcher 2</strong>
-    </a>
-
-</div>
-```
-
-</aside>
+    <img
+        id="modalImage"
+        src=""
+        alt="GTA V Screenshot"
+        onclick="event.stopPropagation()"
+    >
 
 </div>
 
-</div>
-
-<!-- IMAGE FULLSCREEN MODAL -->
-
-<dialog id="imageModal">
-
-```
-<div class="modal-content">
-
-    <button class="close-modal" id="closeModal">
-        ×
-    </button>
-
-    <img id="modalImage" src="" alt="Screenshot">
-
-</div>
-```
-
-</dialog>
 
 <!-- FOOTER -->
 
 <footer>
 
-```
-<p>© 2026 QEVRANO PC GAMES. All rights reserved.</p>
-```
+    © 2026 QEVRANO PC GAMES — All Rights Reserved
 
 </footer>
 
+
 <script>
 
-const modal = document.getElementById("imageModal");
-const modalImage = document.getElementById("modalImage");
-const closeModal = document.getElementById("closeModal");
+function openModal(src) {
 
-document.querySelectorAll(".screenshots img").forEach(image => {
+    document.getElementById("imageModal").style.display = "flex";
 
-    image.addEventListener("click", () => {
+    document.getElementById("modalImage").src = src;
 
-        modalImage.src = image.src;
-        modal.showModal();
+}
 
-    });
+function closeModal() {
 
-});
+    document.getElementById("imageModal").style.display = "none";
 
-closeModal.addEventListener("click", () => {
-    modal.close();
-});
-
-modal.addEventListener("click", (event) => {
-
-    if (event.target === modal) {
-        modal.close();
-    }
-
-});
+}
 
 </script>
 
 </body>
 </html>
+```
