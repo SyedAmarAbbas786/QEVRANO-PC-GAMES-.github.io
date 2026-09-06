@@ -25,8 +25,6 @@ body {
         url("./images/gta5-bg.jpg") center/cover fixed;
 }
 
-/* HEADER */
-
 header {
     height: 70px;
     background: rgba(0,0,0,0.92);
@@ -65,8 +63,6 @@ nav a:hover {
     color: #00b7ff;
 }
 
-/* CONTAINER */
-
 .container {
     width: 92%;
     max-width: 1250px;
@@ -85,8 +81,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* MAIN */
-
 .main-content {
     background: rgba(10,10,10,0.88);
     border: 1px solid rgba(255,255,255,0.08);
@@ -94,8 +88,6 @@ nav a:hover {
     padding: 25px;
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
-
-/* HERO */
 
 .hero {
     display: grid;
@@ -129,8 +121,6 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-/* META */
-
 .game-meta {
     display: flex;
     flex-wrap: wrap;
@@ -146,8 +136,6 @@ nav a:hover {
     font-size: 13px;
     color: #ccc;
 }
-
-/* DOWNLOAD */
 
 .download-buttons {
     display: flex;
@@ -185,8 +173,6 @@ nav a:hover {
     color: #000;
 }
 
-/* SECTION */
-
 .section {
     margin-top: 35px;
 }
@@ -203,8 +189,6 @@ nav a:hover {
     color: #bbb;
     line-height: 1.8;
 }
-
-/* SCREENSHOTS */
 
 .screenshot-area {
     display: grid;
@@ -234,8 +218,6 @@ nav a:hover {
     border-color: #00b7ff;
 }
 
-/* AD */
-
 .big-ad {
     width: 300px;
     height: 600px;
@@ -259,8 +241,6 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
-/* VIDEO */
-
 .video-box {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -275,8 +255,6 @@ nav a:hover {
     height: 100%;
     border: 0;
 }
-
-/* FEATURES */
 
 .features {
     display: grid;
@@ -298,8 +276,6 @@ nav a:hover {
     font-weight: bold;
     margin-right: 8px;
 }
-
-/* REQUIREMENTS */
 
 .requirements {
     display: grid;
@@ -328,8 +304,6 @@ nav a:hover {
     color: #00b7ff;
 }
 
-/* TAGLINE */
-
 .tagline {
     text-align: center;
     margin: 45px 0 10px;
@@ -345,8 +319,6 @@ nav a:hover {
     letter-spacing: 2px;
 }
 
-/* FOOTER */
-
 footer {
     text-align: center;
     padding: 25px;
@@ -356,7 +328,16 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* MODAL */
+footer a {
+    color: #00b7ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
 
 .modal {
     display: none;
@@ -388,8 +369,6 @@ footer {
 .close:hover {
     color: #00b7ff;
 }
-
-/* MOBILE */
 
 @media(max-width: 900px) {
 
@@ -463,8 +442,6 @@ footer {
 
 <body>
 
-<!-- HEADER -->
-
 <header>
 
     <a href="./index.html" class="logo">
@@ -487,8 +464,6 @@ footer {
 
 
     <main class="main-content">
-
-        <!-- HERO -->
 
         <section class="hero">
 
@@ -536,7 +511,6 @@ footer {
 
                 <div class="download-buttons">
 
-                    <!-- Official legitimate source -->
                     <a
                         href="https://store.rockstargames.com/game/buy-gta-v"
                         class="download-btn official"
@@ -546,7 +520,6 @@ footer {
                         DOWNLOAD OFFICIAL
                     </a>
 
-                    <!-- Use only for an installer you are authorized to distribute -->
                     <a
                         href="YOUR_SETUP_LINK"
                         class="download-btn"
@@ -562,8 +535,6 @@ footer {
 
         </section>
 
-
-        <!-- SCREENSHOTS -->
 
         <section class="section">
 
@@ -600,8 +571,6 @@ footer {
                 </div>
 
 
-                <!-- BIG AD SPACE -->
-
                 <div class="big-ad">
 
                     <strong>ADVERTISEMENT</strong>
@@ -619,8 +588,6 @@ footer {
         </section>
 
 
-        <!-- INSTALLATION VIDEO -->
-
         <section class="section">
 
             <h2>MUST WATCH INSTALLATION VIDEO</h2>
@@ -637,8 +604,6 @@ footer {
 
         </section>
 
-
-        <!-- ABOUT GAME -->
 
         <section class="section">
 
@@ -662,8 +627,6 @@ footer {
 
         </section>
 
-
-        <!-- FEATURES -->
 
         <section class="section">
 
@@ -699,8 +662,6 @@ footer {
 
         </section>
 
-
-        <!-- MINIMUM REQUIREMENTS -->
 
         <section class="section">
 
@@ -751,8 +712,6 @@ footer {
         </section>
 
 
-        <!-- RECOMMENDED REQUIREMENTS -->
-
         <section class="section">
 
             <h2>RECOMMENDED REQUIREMENTS</h2>
@@ -802,8 +761,6 @@ footer {
         </section>
 
 
-        <!-- TAGLINE -->
-
         <div class="tagline">
 
             <strong>
@@ -822,8 +779,6 @@ footer {
 
 </div>
 
-
-<!-- IMAGE MODAL -->
 
 <div
     class="modal"
@@ -845,11 +800,19 @@ footer {
 </div>
 
 
-<!-- FOOTER -->
-
 <footer>
 
     © 2026 QEVRANO PC GAMES — All Rights Reserved
+
+    <br><br>
+
+    <a href="./privacy.html">Privacy Policy</a>
+    |
+    <a href="./about.html">About</a>
+    |
+    <a href="./contact.html">Contact</a>
+    |
+    <a href="./terms.html">Terms</a>
 
 </footer>
 
