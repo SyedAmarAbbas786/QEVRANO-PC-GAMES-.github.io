@@ -16,38 +16,36 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
-    min-height: 100vh;
+    color: #ddd;
     background:
         linear-gradient(
-            rgba(5, 8, 12, 0.45),
-            rgba(5, 8, 12, 0.65)
+            rgba(0,0,0,0.78),
+            rgba(0,0,0,0.92)
         ),
-        url("./images/gta4.jpg");
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+        url("./images/gta4-bg.jpg") center/cover fixed;
 }
 
+/* ================= HEADER ================= */
+
 header {
-    background: rgba(5, 8, 12, 0.95);
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    padding: 18px 6%;
+    height: 70px;
+    background: rgba(0,0,0,0.92);
+    border-bottom: 1px solid #00b7ff;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 25px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.logo span {
     color: #00b7ff;
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
 nav {
@@ -56,188 +54,836 @@ nav {
 }
 
 nav a {
-    color: #fff;
+    color: #ddd;
     text-decoration: none;
-    font-weight: bold;
     font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: #00b7ff;
 }
 
+/* ================= CONTAINER ================= */
+
 .container {
-    width: 88%;
-    max-width: 900px;
-    margin: 60px auto;
+    width: 92%;
+    max-width: 1250px;
+    margin: 35px auto;
 }
 
-.game-page {
-    background: rgba(8, 12, 18, 0.95);
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 30px;
-}
-
-.game-page h1 {
-    font-size: 36px;
-    margin-bottom: 15px;
-}
-
-.game-page h1 span {
+.back {
     color: #00b7ff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
-.game-image {
-    width: 100%;
-    max-height: 450px;
-    object-fit: cover;
-    display: block;
-    margin: 20px 0;
+.back:hover {
+    text-decoration: underline;
 }
 
-.info {
-    color: #ccc;
-    line-height: 1.7;
-    font-size: 15px;
-}
+/* ================= MAIN ================= */
 
-.info strong {
-    color: #fff;
-}
-
-.download-section {
-    margin-top: 30px;
+.main-content {
+    background: rgba(10,10,10,0.88);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
     padding: 25px;
-    background: rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
-.download-section h2 {
-    margin-bottom: 15px;
+/* ================= HERO ================= */
+
+.hero {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 0 20px rgba(0,183,255,0.15);
+}
+
+.hero-info h1 {
+    color: #fff;
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #00b7ff;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.description {
+    line-height: 1.7;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+/* ================= GAME META ================= */
+
+.game-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.meta {
+    background: rgba(0,183,255,0.08);
+    border: 1px solid rgba(0,183,255,0.25);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #ccc;
+}
+
+/* ================= DOWNLOAD BUTTONS ================= */
+
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .download-btn {
     display: inline-block;
-    padding: 13px 25px;
-    margin-top: 10px;
-    background: #00a9ed;
-    color: white;
+    padding: 13px 20px;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.download-btn:hover {
-    background: #008bc4;
+.official {
+    background: #00b7ff;
+    color: #000;
 }
 
-.back-btn {
-    display: inline-block;
-    margin-top: 25px;
-    color: #aaa;
-    text-decoration: none;
+.official:hover {
+    background: #fff;
 }
 
-.back-btn:hover {
+.download-btn:not(.official) {
+    background: #111;
+    border: 1px solid #00b7ff;
     color: #00b7ff;
 }
+
+.download-btn:not(.official):hover {
+    background: #00b7ff;
+    color: #000;
+}
+
+/* ================= SECTION ================= */
+
+.section {
+    margin-top: 35px;
+}
+
+.section h2 {
+    color: #00b7ff;
+    font-size: 22px;
+    margin-bottom: 18px;
+    border-left: 4px solid #00b7ff;
+    padding-left: 12px;
+}
+
+.section p {
+    color: #bbb;
+    line-height: 1.8;
+}
+
+/* ================= SCREENSHOTS ================= */
+
+.screenshot-area {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 20px;
+    align-items: start;
+}
+
+.screenshots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.screenshots img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 7px;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.screenshots img:hover {
+    transform: scale(1.02);
+    border-color: #00b7ff;
+}
+
+/* ================= BIG AD ================= */
+
+.big-ad {
+    width: 300px;
+    height: 600px;
+    background: rgba(255,255,255,0.035);
+    border: 1px dashed #666;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: #777;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.big-ad strong {
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.big-ad span {
+    color: #666;
+    font-size: 13px;
+}
+
+/* ================= VIDEO ================= */
+
+.video-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #050505;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ================= FEATURES ================= */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.feature {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 6px;
+    color: #ccc;
+}
+
+.feature::before {
+    content: "✓";
+    color: #00b7ff;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* ================= REQUIREMENTS ================= */
+
+.requirements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.requirement-box {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.requirement-box h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.requirement-box p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.requirement-box strong {
+    color: #00b7ff;
+}
+
+/* ================= TAGLINE ================= */
+
+.tagline {
+    text-align: center;
+    margin: 45px 0 10px;
+    color: #777;
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
+
+.tagline strong {
+    display: block;
+    color: #00b7ff;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+/* ================= FOOTER ================= */
 
 footer {
-    background: rgba(5,8,12,0.96);
     text-align: center;
-    padding: 28px 15px;
-    color: #888;
+    padding: 25px;
+    margin-top: 30px;
+    color: #666;
     font-size: 13px;
-    margin-top: 50px;
+    border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-footer strong {
+/* ================= MODAL ================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 7px;
+    box-shadow: 0 0 40px rgba(0,183,255,0.2);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.close:hover {
     color: #00b7ff;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 900px) {
+
+    header {
+        padding: 0 4%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero img {
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .hero-info h1 {
+        font-size: 32px;
+    }
+
+    .screenshot-area {
+        grid-template-columns: 1fr;
+    }
+
+    .big-ad {
+        width: 100%;
+        height: 250px;
+    }
+
+    .requirements {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 600px) {
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .main-content {
+        padding: 17px;
+    }
+
+    .screenshots {
+        grid-template-columns: 1fr;
+    }
+
+    .screenshots img {
+        height: auto;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+    }
+
+    .download-btn {
+        text-align: center;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
-    <div class="logo">
-        QEVRANO <span>PC GAMES</span>
-    </div>
+    <a href="./index.html" class="logo">
+        QEVRANO PC GAMES
+    </a>
 
     <nav>
-        <a href="index.html">HOME</a>
-        <a href="index.html#games">GAMES</a>
-        <a href="index.html#packs">PACKS</a>
+        <a href="./index.html">HOME</a>
+        <a href="./index.html#games">GAMES</a>
     </nav>
 
 </header>
 
+
 <div class="container">
 
-    <div class="game-page">
+    <a href="./index.html" class="back">
+        ← BACK TO GAMES
+    </a>
 
-        <h1>GTA <span>IV</span></h1>
 
-        <img
-            src="./images/gta4.jpg"
-            alt="GTA IV"
-            class="game-image"
-        >
+    <main class="main-content">
 
-        <div class="info">
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <img
+                src="./images/gta4.jpg"
+                alt="GTA IV"
+            >
+
+            <div class="hero-info">
+
+                <h1>GTA IV</h1>
+
+                <div class="subtitle">
+                    GRAND THEFT AUTO IV • ACTION • OPEN WORLD
+                </div>
+
+                <p class="description">
+                    Grand Theft Auto IV follows Niko Bellic as he arrives in
+                    Liberty City searching for a new beginning. Explore a
+                    detailed open-world city, complete missions, interact with
+                    characters and experience the story of one of Rockstar's
+                    most iconic GTA games.
+                </p>
+
+                <div class="game-meta">
+
+                    <div class="meta">
+                        Developer: Rockstar North
+                    </div>
+
+                    <div class="meta">
+                        Genre: Action / Open World
+                    </div>
+
+                    <div class="meta">
+                        Release: 2008
+                    </div>
+
+                    <div class="meta">
+                        PC
+                    </div>
+
+                </div>
+
+
+                <div class="download-buttons">
+
+                    <!-- Official legitimate source -->
+                    <a
+                        href="https://store.rockstargames.com/game/buy-gta-iv"
+                        class="download-btn official"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        DOWNLOAD OFFICIAL
+                    </a>
+
+
+                    <!-- Replace only if you have authorization to distribute the installer -->
+                    <a
+                        href="YOUR_SETUP_LINK"
+                        class="download-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        DOWNLOAD SETUP.EXE
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SCREENSHOTS ================= -->
+
+        <section class="section">
+
+            <h2>SCREENSHOTS</h2>
+
+            <div class="screenshot-area">
+
+                <div class="screenshots">
+
+                    <img
+                        src="./images/gta4-1.jpg"
+                        alt="GTA IV Screenshot 1"
+                        onclick="openModal(this.src)"
+                    >
+
+                    <img
+                        src="./images/gta4-2.jpg"
+                        alt="GTA IV Screenshot 2"
+                        onclick="openModal(this.src)"
+                    >
+
+                    <img
+                        src="./images/gta4-3.jpg"
+                        alt="GTA IV Screenshot 3"
+                        onclick="openModal(this.src)"
+                    >
+
+                    <img
+                        src="./images/gta4-4.jpg"
+                        alt="GTA IV Screenshot 4"
+                        onclick="openModal(this.src)"
+                    >
+
+                </div>
+
+
+                <!-- BIG AD SPACE -->
+
+                <div class="big-ad">
+
+                    <strong>ADVERTISEMENT</strong>
+
+                    <span>
+                        BIG AD SPACE
+                    </span>
+
+                    <br>
+
+                    <small>
+                        300 × 600
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INSTALLATION VIDEO ================= -->
+
+        <section class="section">
+
+            <h2>MUST WATCH INSTALLATION VIDEO</h2>
+
+            <div class="video-box">
+
+                <iframe
+                    src="YOUR_VIDEO_EMBED_URL"
+                    title="GTA IV Installation Guide"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="section">
+
+            <h2>ABOUT GAME</h2>
 
             <p>
-                <strong>Grand Theft Auto IV</strong> is an open-world
-                action-adventure game set in Liberty City.
+                Grand Theft Auto IV takes place in Liberty City, a fictional
+                city inspired by New York City. Players control Niko Bellic,
+                an immigrant who becomes involved with criminals while trying
+                to build a new life.
             </p>
 
             <br>
 
             <p>
-                <strong>Genre:</strong> Action • Adventure • Open World
+                The game combines a large open world with story missions,
+                driving, exploration, combat and numerous activities around
+                Liberty City.
             </p>
 
-            <p>
-                <strong>Platform:</strong> PC
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <section class="section">
+
+            <h2>FEATURES</h2>
+
+            <div class="features">
+
+                <div class="feature">
+                    Large open-world Liberty City
+                </div>
+
+                <div class="feature">
+                    Story-driven campaign
+                </div>
+
+                <div class="feature">
+                    Vehicles and driving gameplay
+                </div>
+
+                <div class="feature">
+                    Detailed city environment
+                </div>
+
+                <div class="feature">
+                    Character interaction system
+                </div>
+
+                <div class="feature">
+                    PC graphics and customization options
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MINIMUM REQUIREMENTS ================= -->
+
+        <section class="section">
+
+            <h2>MINIMUM REQUIREMENTS</h2>
+
+            <div class="requirements">
+
+                <div class="requirement-box">
+
+                    <h3>Minimum</h3>
+
+                    <p>
+                        <strong>OS:</strong>
+                        Windows Vista SP1 / XP SP3
+                    </p>
+
+                    <p>
+                        <strong>CPU:</strong>
+                        Intel Core 2 Duo 1.8 GHz / AMD Athlon X2 64 2.4 GHz
+                    </p>
+
+                    <p>
+                        <strong>RAM:</strong>
+                        1.5 GB
+                    </p>
+
+                    <p>
+                        <strong>GPU:</strong>
+                        NVIDIA 7900 / ATI X1900
+                    </p>
+
+                    <p>
+                        <strong>VRAM:</strong>
+                        256 MB
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong>
+                        Approximately 16 GB
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECOMMENDED REQUIREMENTS ================= -->
+
+        <section class="section">
+
+            <h2>RECOMMENDED REQUIREMENTS</h2>
+
+            <div class="requirements">
+
+                <div class="requirement-box">
+
+                    <h3>Recommended</h3>
+
+                    <p>
+                        <strong>OS:</strong>
+                        Windows Vista SP1 / XP SP3
+                    </p>
+
+                    <p>
+                        <strong>CPU:</strong>
+                        Intel Core 2 Quad 2.4 GHz / AMD Phenom X3 2.1 GHz
+                    </p>
+
+                    <p>
+                        <strong>RAM:</strong>
+                        2 GB
+                    </p>
+
+                    <p>
+                        <strong>GPU:</strong>
+                        NVIDIA 8600 / ATI 3870
+                    </p>
+
+                    <p>
+                        <strong>VRAM:</strong>
+                        512 MB
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong>
+                        Approximately 18 GB free space
+                    </p>
+
+                </div>
+
+            </div>
+
+            <p style="margin-top:15px;font-size:13px;color:#777;">
+                These are the original/historical PC system requirements.
+                Actual performance on modern Windows versions may vary.
             </p>
 
-            <p>
-                <strong>Game:</strong> GTA IV
-            </p>
+        </section>
+
+
+        <!-- ================= TAGLINE ================= -->
+
+        <div class="tagline">
+
+            <strong>
+                WELCOME TO LIBERTY CITY.
+            </strong>
+
+            DRIVE • EXPLORE • SURVIVE
+
+            <br>
+
+            QEVRANO PC GAMES
 
         </div>
 
-        <div class="download-section">
-
-            <h2>GTA IV</h2>
-
-            <p class="info">
-                Use the official/legal source to obtain the game.
-            </p>
-
-            <!-- Add your legitimate game-store link here -->
-            <a
-                href="#"
-                class="download-btn"
-            >
-                OFFICIAL SOURCE
-            </a>
-
-        </div>
-
-        <a href="index.html" class="back-btn">
-            ← Back to Games
-        </a>
-
-    </div>
+    </main>
 
 </div>
 
+
+<!-- ================= IMAGE MODAL ================= -->
+
+<div
+    class="modal"
+    id="imageModal"
+    onclick="closeModal()"
+>
+
+    <span class="close">
+        &times;
+    </span>
+
+    <img
+        id="modalImage"
+        src=""
+        alt="GTA IV Screenshot"
+        onclick="event.stopPropagation()"
+    >
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    © 2026 <strong>QEVRANO PC GAMES</strong>. All Rights Reserved.
-    <br><br>
-    QEVRANO PC GAMES is an independent gaming information website.
+
+    © 2026 QEVRANO PC GAMES — All Rights Reserved
+
 </footer>
+
+
+<script>
+
+function openModal(src) {
+
+    document.getElementById("imageModal").style.display = "flex";
+
+    document.getElementById("modalImage").src = src;
+
+}
+
+
+function closeModal() {
+
+    document.getElementById("imageModal").style.display = "none";
+
+}
+
+</script>
 
 </body>
 </html>
