@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Witcher 2 - QEVRANO PC GAMES</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background:
+        linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.88)),
+        url("./images/the-witcher-2-bg.jpg") center/cover fixed;
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(0,0,0,0.92);
+    border-bottom: 2px solid #8b0000;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #e50914;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e50914;
+}
+
+.container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 35px auto;
+}
+
+.back {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: #e50914;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 30px;
+}
+
+.main-content,
+.sidebar-box {
+    background: rgba(0,0,0,0.82);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+}
+
+.game-title {
+    font-size: 38px;
+    color: #e50914;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 22px;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.description {
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.info {
+    list-style: none;
+    margin-bottom: 28px;
+}
+
+.info li {
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #ddd;
+}
+
+.info strong {
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 7px;
+    background: #e50914;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #b0060e;
+    transform: translateY(-2px);
+}
+
+.official {
+    background: #333;
+}
+
+.official:hover {
+    background: #555;
+}
+
+.video-section {
+    margin: 30px 0;
+}
+
+.video-section h2,
+.section h2,
+.sidebar-box h2 {
+    color: #e50914;
+    margin-bottom: 15px;
+    border-left: 4px solid #e50914;
+    padding-left: 10px;
+}
+
+.video-box {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+.section p {
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.features {
+    padding-left: 20px;
+    color: #ddd;
+    line-height: 1.9;
+}
+
+.requirements {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.requirements th,
+.requirements td {
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: left;
+}
+
+.requirements th {
+    background: #e50914;
+    color: white;
+}
+
+.requirements td {
+    background: rgba(255,255,255,0.04);
+    color: #ddd;
+}
+
+.screenshots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.screenshots img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.screenshots img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.2);
+}
+
+.ad {
+    height: 250px;
+    background: rgba(255,255,255,0.04);
+    border: 1px dashed #555;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.popular a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 12px 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.popular a:hover {
+    color: #e50914;
+    padding-left: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 40px;
+    background: rgba(0,0,0,0.9);
+    border-top: 1px solid #333;
+    color: #888;
+}
+
+/* Screenshot Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #e50914;
+}
+
+/* Mobile */
+
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .game-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        width: 94%;
+    }
+
+    .main-content,
+    .sidebar-box {
+        padding: 18px;
+    }
+
+    .screenshots {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .download-btn {
+        text-align: center;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <a href="./index.html" class="logo">QEVRANO PC GAMES</a>
+
+```
+<nav>
+    <a href="./index.html">HOME</a>
+    <a href="./index.html">GAMES</a>
+</nav>
+```
+
+</header>
+
+<div class="container">
+
+```
+<a href="./index.html" class="back">← BACK TO GAMES</a>
+
+<div class="layout">
+
+    <main class="main-content">
+
+        <h1 class="game-title">The Witcher 2</h1>
+
+        <img
+            src="./images/the-witcher-2.jpg"
+            alt="The Witcher 2"
+            class="hero"
+        >
+
+        <p class="description">
+            The Witcher 2: Assassins of Kings is an action role-playing
+            game featuring Geralt of Rivia. Explore a rich fantasy world,
+            make important choices, fight dangerous enemies and uncover
+            a complex story filled with political conflict and adventure.
+        </p>
+
+        <ul class="info">
+            <li><strong>Game:</strong> The Witcher 2: Assassins of Kings</li>
+            <li><strong>Genre:</strong> Action RPG</li>
+            <li><strong>Developer:</strong> CD Projekt RED</li>
+            <li><strong>Publisher:</strong> CD Projekt</li>
+            <li><strong>Platform:</strong> PC</li>
+            <li><strong>Mode:</strong> Single Player</li>
+        </ul>
+
+        <!-- DOWNLOAD BUTTONS -->
+
+        <div class="buttons">
+
+            <a
+                href="https://www.gog.com/en/game/the_witcher_2"
+                class="download-btn official"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                DOWNLOAD OFFICIAL
+            </a>
+
+            <a
+                href="YOUR_SETUP_LINK"
+                class="download-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                DOWNLOAD SETUP.EXE
+            </a>
+
+        </div>
+
+        <!-- INSTALLATION VIDEO -->
+
+        <div class="video-section">
+
+            <h2>MUST WATCH INSTALLATION VIDEO</h2>
+
+            <div class="video-box">
+
+                <iframe
+                    src="YOUR_VIDEO_EMBED_URL"
+                    title="The Witcher 2 Installation Guide"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+        <!-- ABOUT -->
+
+        <section class="section">
+
+            <h2>ABOUT THE WITCHER 2</h2>
+
+            <p>
+                The Witcher 2: Assassins of Kings continues Geralt's
+                adventures in a dangerous fantasy world. The game combines
+                exploration, dialogue, quests, character progression and
+                real-time combat.
+            </p>
+
+            <p>
+                Your decisions can affect characters, quests and the
+                direction of the story, giving the game multiple possible
+                outcomes.
+            </p>
+
+        </section>
+
+        <!-- FEATURES -->
+
+        <section class="section">
+
+            <h2>GAME FEATURES</h2>
+
+            <ul class="features">
+                <li>Story-driven action RPG gameplay</li>
+                <li>Large fantasy world to explore</li>
+                <li>Choice-based storyline</li>
+                <li>Real-time combat system</li>
+                <li>Character progression and equipment</li>
+                <li>Multiple quests and side activities</li>
+                <li>Rich characters and dialogue</li>
+            </ul>
+
+        </section>
+
+        <!-- SYSTEM REQUIREMENTS -->
+
+        <section class="section">
+
+            <h2>SYSTEM REQUIREMENTS</h2>
+
+            <table class="requirements">
+
+                <tr>
+                    <th>Component</th>
+                    <th>Minimum</th>
+                </tr>
+
+                <tr>
+                    <td>OS</td>
+                    <td>Windows XP / Vista / 7</td>
+                </tr>
+
+                <tr>
+                    <td>Processor</td>
+                    <td>Intel Core 2 Duo 2.2 GHz / AMD equivalent</td>
+                </tr>
+
+                <tr>
+                    <td>RAM</td>
+                    <td>1 GB</td>
+                </tr>
+
+                <tr>
+                    <td>Graphics</td>
+                    <td>NVIDIA GeForce 8800 / ATI Radeon HD 3850</td>
+                </tr>
+
+                <tr>
+                    <td>Storage</td>
+                    <td>Approximately 25 GB available space</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <!-- SCREENSHOTS -->
+
+        <section class="section">
+
+            <h2>SCREENSHOTS</h2>
+
+            <div class="screenshots">
+
+                <img
+                    src="./images/the-witcher-2-1.jpg"
+                    alt="The Witcher 2 Screenshot 1"
+                    onclick="openModal(this.src)"
+                >
+
+                <img
+                    src="./images/the-witcher-2-2.jpg"
+                    alt="The Witcher 2 Screenshot 2"
+                    onclick="openModal(this.src)"
+                >
+
+                <img
+                    src="./images/the-witcher-2-3.jpg"
+                    alt="The Witcher 2 Screenshot 3"
+                    onclick="openModal(this.src)"
+                >
+
+                <img
+                    src="./images/the-witcher-2-4.jpg"
+                    alt="The Witcher 2 Screenshot 4"
+                    onclick="openModal(this.src)"
+                >
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+
+    <aside>
+
+        <div class="sidebar-box">
+
+            <div class="ad">
+                ADVERTISEMENT
+            </div>
+
+            <h2>POPULAR GAMES</h2>
+
+            <div class="popular">
+
+                <a href="./farcry2.html">Far Cry 2</a>
+
+                <a href="./farcry3.html">Far Cry 3</a>
+
+                <a href="./ac2.html">Assassin's Creed II</a>
+
+                <a href="./gta5.html">GTA V</a>
+
+                <a href="./cod1.html">Call of Duty</a>
+
+                <a href="./the-witcher.html">The Witcher</a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+```
+
+</div>
+
+<!-- SCREENSHOT MODAL -->
+
+<div class="modal" id="imageModal" onclick="closeModal()">
+
+```
+<span class="close">&times;</span>
+
+<img id="modalImage" src="" alt="The Witcher 2 Screenshot">
+```
+
+</div>
+
+<footer>
+    © 2026 QEVRANO PC GAMES — All Rights Reserved
+</footer>
+
+<script>
+
+function openModal(src) {
+    document.getElementById("imageModal").style.display = "flex";
+    document.getElementById("modalImage").src = src;
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Witcher 2 - QEVRANO PC GAMES</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background:
+        linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.88)),
+        url("./images/the-witcher-2-bg.jpg") center/cover fixed;
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(0,0,0,0.92);
+    border-bottom: 2px solid #8b0000;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #e50914;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e50914;
+}
+
+.container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 35px auto;
+}
+
+.back {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: #e50914;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 30px;
+}
+
+.main-content,
+.sidebar-box {
+    background: rgba(0,0,0,0.82);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+}
+
+.game-title {
+    font-size: 38px;
+    color: #e50914;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 22px;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.description {
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.info {
+    list-style: none;
+    margin-bottom: 28px;
+}
+
+.info li {
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #ddd;
+}
+
+.info strong {
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 7px;
+    background: #e50914;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #b0060e;
+    transform: translateY(-2px);
+}
+
+.official {
+    background: #333;
+}
+
+.official:hover {
+    background: #555;
+}
+
+.video-section {
+    margin: 30px 0;
+}
+
+.video-section h2,
+.section h2,
+.sidebar-box h2 {
+    color: #e50914;
+    margin-bottom: 15px;
+    border-left: 4px solid #e50914;
+    padding-left: 10px;
+}
+
+.video-box {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+.section p {
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.features {
+    padding-left: 20px;
+    color: #ddd;
+    line-height: 1.9;
+}
+
+.requirements {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.requirements th,
+.requirements td {
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: left;
+}
+
+.requirements th {
+    background: #e50914;
+    color: white;
+}
+
+.requirements td {
+    background: rgba(255,255,255,0.04);
+    color: #ddd;
+}
+
+.screenshots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.screenshots img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.screenshots img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.2);
+}
+
+.ad {
+    height: 250px;
+    background: rgba(255,255,255,0.04);
+    border: 1px dashed #555;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.popular a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 12px 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.popular a:hover {
+    color: #e50914;
+    padding-left: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 40px;
+    background: rgba(0,0,0,0.9);
+    border-top: 1px solid #333;
+    color: #888;
+}
+
+/* Screenshot Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #e50914;
+}
+
+/* Mobile */
+
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .game-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        width: 94%;
+    }
+
+    .main-content,
+    .sidebar-box {
+        padding: 18px;
+    }
+
+    .screenshots {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .download-btn {
+        text-align: center;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <a href="./index.html" class="logo">QEVRANO PC GAMES</a>
+
+```
+<nav>
+    <a href="./index.html">HOME</a>
+    <a href="./index.html">GAMES</a>
+</nav>
+```
+
+</header>
+
+<div class="container">
+
+```
+<a href="./index.html" class="back">← BACK TO GAMES</a>
+
+<div class="layout">
+
+    <main class="main-content">
+
+        <h1 class="game-title">The Witcher 2</h1>
+
+        <img
+            src="./images/the-witcher-2.jpg"
+            alt="The Witcher 2"
+            class="hero"
+        >
+
+        <p class="description">
+            The Witcher 2: Assassins of Kings is an action role-playing
+            game featuring Geralt of Rivia. Explore a rich fantasy world,
+            make important choices, fight dangerous enemies and uncover
+            a complex story filled with political conflict and adventure.
+        </p>
+
+        <ul class="info">
+            <li><strong>Game:</strong> The Witcher 2: Assassins of Kings</li>
+            <li><strong>Genre:</strong> Action RPG</li>
+            <li><strong>Developer:</strong> CD Projekt RED</li>
+            <li><strong>Publisher:</strong> CD Projekt</li>
+            <li><strong>Platform:</strong> PC</li>
+            <li><strong>Mode:</strong> Single Player</li>
+        </ul>
+
+        <!-- DOWNLOAD BUTTONS -->
+
+        <div class="buttons">
+
+            <a
+                href="https://www.gog.com/en/game/the_witcher_2"
+                class="download-btn official"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                DOWNLOAD OFFICIAL
+            </a>
+
+            <a
+                href="YOUR_SETUP_LINK"
+                class="download-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                DOWNLOAD SETUP.EXE
+            </a>
+
+        </div>
+
+        <!-- INSTALLATION VIDEO -->
+
+        <div class="video-section">
+
+            <h2>MUST WATCH INSTALLATION VIDEO</h2>
+
+            <div class="video-box">
+
+                <iframe
+                    src="YOUR_VIDEO_EMBED_URL"
+                    title="The Witcher 2 Installation Guide"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+        <!-- ABOUT -->
+
+        <section class="section">
+
+            <h2>ABOUT THE WITCHER 2</h2>
+
+            <p>
+                The Witcher 2: Assassins of Kings continues Geralt's
+                adventures in a dangerous fantasy world. The game combines
+                exploration, dialogue, quests, character progression and
+                real-time combat.
+            </p>
+
+            <p>
+                Your decisions can affect characters, quests and the
+                direction of the story, giving the game multiple possible
+                outcomes.
+            </p>
+
+        </section>
+
+        <!-- FEATURES -->
+
+        <section class="section">
+
+            <h2>GAME FEATURES</h2>
+
+            <ul class="features">
+                <li>Story-driven action RPG gameplay</li>
+                <li>Large fantasy world to explore</li>
+                <li>Choice-based storyline</li>
+                <li>Real-time combat system</li>
+                <li>Character progression and equipment</li>
+                <li>Multiple quests and side activities</li>
+                <li>Rich characters and dialogue</li>
+            </ul>
+
+        </section>
+
+        <!-- SYSTEM REQUIREMENTS -->
+
+        <section class="section">
+
+            <h2>SYSTEM REQUIREMENTS</h2>
+
+            <table class="requirements">
+
+                <tr>
+                    <th>Component</th>
+                    <th>Minimum</th>
+                </tr>
+
+                <tr>
+                    <td>OS</td>
+                    <td>Windows XP / Vista / 7</td>
+                </tr>
+
+                <tr>
+                    <td>Processor</td>
+                    <td>Intel Core 2 Duo 2.2 GHz / AMD equivalent</td>
+                </tr>
+
+                <tr>
+                    <td>RAM</td>
+                    <td>1 GB</td>
+                </tr>
+
+                <tr>
+                    <td>Graphics</td>
+                    <td>NVIDIA GeForce 8800 / ATI Radeon HD 3850</td>
+                </tr>
+
+                <tr>
+                    <td>Storage</td>
+                    <td>Approximately 25 GB available space</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <!-- SCREENSHOTS -->
+
+        <section class="section">
+
+            <h2>SCREENSHOTS</h2>
+
+            <div class="screenshots">
+
+                <img
+                    src="./images/the-witcher-2-1.jpg"
+                    alt="The Witcher 2 Screenshot 1"
+                    onclick="openModal(this.src)"
+                >
+
+                <img
+                    src="./images/the-witcher-2-2.jpg"
+                    alt="The Witcher 2 Screenshot 2"
+                    onclick="openModal(this.src)"
+                >
+
+                <img
+                    src="./images/the-witcher-2-3.jpg"
+                    alt="The Witcher 2 Screenshot 3"
+                    onclick="openModal(this.src)"
+                >
+
+                <img
+                    src="./images/the-witcher-2-4.jpg"
+                    alt="The Witcher 2 Screenshot 4"
+                    onclick="openModal(this.src)"
+                >
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+
+    <aside>
+
+        <div class="sidebar-box">
+
+            <div class="ad">
+                ADVERTISEMENT
+            </div>
+
+            <h2>POPULAR GAMES</h2>
+
+            <div class="popular">
+
+                <a href="./farcry2.html">Far Cry 2</a>
+
+                <a href="./farcry3.html">Far Cry 3</a>
+
+                <a href="./ac2.html">Assassin's Creed II</a>
+
+                <a href="./gta5.html">GTA V</a>
+
+                <a href="./cod1.html">Call of Duty</a>
+
+                <a href="./the-witcher.html">The Witcher</a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+```
+
+</div>
+
+<!-- SCREENSHOT MODAL -->
+
+<div class="modal" id="imageModal" onclick="closeModal()">
+
+```
+<span class="close">&times;</span>
+
+<img id="modalImage" src="" alt="The Witcher 2 Screenshot">
+```
+
+</div>
+
+<footer>
+    © 2026 QEVRANO PC GAMES — All Rights Reserved
+</footer>
+
+<script>
+
+function openModal(src) {
+    document.getElementById("imageModal").style.display = "flex";
+    document.getElementById("modalImage").src = src;
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Witcher 2 - QEVRANO PC GAMES</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background:
+        linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.88)),
+        url("./images/the-witcher-2-bg.jpg") center/cover fixed;
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(0,0,0,0.92);
+    border-bottom: 2px solid #8b0000;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #e50914;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e50914;
+}
+
+.container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 35px auto;
+}
+
+.back {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: #e50914;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 30px;
+}
+
+.main-content,
+.sidebar-box {
+    background: rgba(0,0,0,0.82);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+}
+
+.game-title {
+    font-size: 38px;
+    color: #e50914;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 22px;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.description {
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.info {
+    list-style: none;
+    margin-bottom: 28px;
+}
+
+.info li {
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #ddd;
+}
+
+.info strong {
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 7px;
+    background: #e50914;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #b0060e;
+    transform: translateY(-2px);
+}
+
+.official {
+    background: #333;
+}
+
+.official:hover {
+    background: #555;
+}
+
+.video-section {
+    margin: 30px 0;
+}
+
+.video-section h2,
+.section h2,
+.sidebar-box h2 {
+    color: #e50914;
+    margin-bottom: 15px;
+    border-left: 4px solid #e50914;
+    padding-left: 10px;
+}
+
+.video-box {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+.section p {
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.features {
+    padding-left: 20px;
+    color: #ddd;
+    line-height: 1.9;
+}
+
+.requirements {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.requirements th,
+.requirements td {
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: left;
+}
+
+.requirements th {
+    background: #e50914;
+    color: white;
+}
+
+.requirements td {
+    background: rgba(255,255,255,0.04);
+    color: #ddd;
+}
+
+.screenshots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.screenshots img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.screenshots img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.2);
+}
+
+.ad {
+    height: 250px;
+    background: rgba(255,255,255,0.04);
+    border: 1px dashed #555;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.popular a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 12px 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.popular a:hover {
+    color: #e50914;
+    padding-left: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 40px;
+    background: rgba(0,0,0,0.9);
+    border-top: 1px solid #333;
+    color: #888;
+}
+
+/* Screenshot Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #e50914;
+}
+
+/* Mobile */
+
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .game-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        width: 94%;
+    }
+
+    .main-content,
+    .sidebar-box {
+        padding: 18px;
+    }
+
+    .screenshots {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .download-btn {
+        text-align: center;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <a href="./index.html" class="logo">QEVRANO PC GAMES</a>
+
+```
+<nav>
+    <a href="./index.html">HOME</a>
+    <a href="./index.html">GAMES</a>
+</nav>
+```
+
+</header>
+
+<div class="container">
+
+```
+<a href="./index.html" class="back">← BACK TO GAMES</a>
+
+<div class="layout">
+
+    <main class="main-content">
+
+        <h1 class="game-title">The Witcher 2</h1>
+
+        <img
+            src="./images/the-witcher-2.jpg"
+            alt="The Witcher 2"
+            class="hero"
+        >
+
+        <p class="description">
+            The Witcher 2: Assassins of Kings is an action role-playing
+            game featuring Geralt of Rivia. Explore a rich fantasy world,
+            make important choices, fight dangerous enemies and uncover
+            a complex story filled with political conflict and adventure.
+        </p>
+
+        <ul class="info">
+            <li><strong>Game:</strong> The Witcher 2: Assassins of Kings</li>
+            <li><strong>Genre:</strong> Action RPG</li>
+            <li><strong>Developer:</strong> CD Projekt RED</li>
+            <li><strong>Publisher:</strong> CD Projekt</li>
+            <li><strong>Platform:</strong> PC</li>
+            <li><strong>Mode:</strong> Single Player</li>
+        </ul>
+
+        <!-- DOWNLOAD BUTTONS -->
+
+        <div class="buttons">
+
+            <a
+                href="https://www.gog.com/en/game/the_witcher_2"
+                class="download-btn official"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                DOWNLOAD OFFICIAL
+            </a>
+
+            <a
+                href="YOUR_SETUP_LINK"
+                class="download-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                DOWNLOAD SETUP.EXE
+            </a>
+
+        </div>
+
+        <!-- INSTALLATION VIDEO -->
+
+        <div class="video-section">
+
+            <h2>MUST WATCH INSTALLATION VIDEO</h2>
+
+            <div class="video-box">
+
+                <iframe
+                    src="YOUR_VIDEO_EMBED_URL"
+                    title="The Witcher 2 Installation Guide"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+        <!-- ABOUT -->
+
+        <section class="section">
+
+            <h2>ABOUT THE WITCHER 2</h2>
+
+            <p>
+                The Witcher 2: Assassins of Kings continues Geralt's
+                adventures in a dangerous fantasy world. The game combines
+                exploration, dialogue, quests, character progression and
+                real-time combat.
+            </p>
+
+            <p>
+                Your decisions can affect characters, quests and the
+                direction of the story, giving the game multiple possible
+                outcomes.
+            </p>
+
+        </section>
+
+        <!-- FEATURES -->
+
+        <section class="section">
+
+            <h2>GAME FEATURES</h2>
+
+            <ul class="features">
+                <li>Story-driven action RPG gameplay</li>
+                <li>Large fantasy world to explore</li>
+                <li>Choice-based storyline</li>
+                <li>Real-time combat system</li>
+                <li>Character progression and equipment</li>
+                <li>Multiple quests and side activities</li>
+                <li>Rich characters and dialogue</li>
+            </ul>
+
+        </section>
+
+        <!-- SYSTEM REQUIREMENTS -->
+
+        <section class="section">
+
+            <h2>SYSTEM REQUIREMENTS</h2>
+
+            <table class="requirements">
+
+                <tr>
+                    <th>Component</th>
+                    <th>Minimum</th>
+                </tr>
+
+                <tr>
+                    <td>OS</td>
+                    <td>Windows XP / Vista / 7</td>
+                </tr>
+
+                <tr>
+                    <td>Processor</td>
+                    <td>Intel Core 2 Duo 2.2 GHz / AMD equivalent</td>
+                </tr>
+
+                <tr>
+                    <td>RAM</td>
+                    <td>1 GB</td>
+                </tr>
+
+                <tr>
+                    <td>Graphics</td>
+                    <td>NVIDIA GeForce 8800 / ATI Radeon HD 3850</td>
+                </tr>
+
+                <tr>
+                    <td>Storage</td>
+                    <td>Approximately 25 GB available space</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <!-- SCREENSHOTS -->
+
+        <section class="section">
+
+            <h2>SCREENSHOTS</h2>
+
+            <div class="screenshots">
+
+                <img
+                    src="./images/the-witcher-2-1.jpg"
+                    alt="The Witcher 2 Screenshot 1"
+                    onclick="openModal(this.src)"
+                >
+
+                <img
+                    src="./images/the-witcher-2-2.jpg"
+                    alt="The Witcher 2 Screenshot 2"
+                    onclick="openModal(this.src)"
+                >
+
+                <img
+                    src="./images/the-witcher-2-3.jpg"
+                    alt="The Witcher 2 Screenshot 3"
+                    onclick="openModal(this.src)"
+                >
+
+                <img
+                    src="./images/the-witcher-2-4.jpg"
+                    alt="The Witcher 2 Screenshot 4"
+                    onclick="openModal(this.src)"
+                >
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+
+    <aside>
+
+        <div class="sidebar-box">
+
+            <div class="ad">
+                ADVERTISEMENT
+            </div>
+
+            <h2>POPULAR GAMES</h2>
+
+            <div class="popular">
+
+                <a href="./farcry2.html">Far Cry 2</a>
+
+                <a href="./farcry3.html">Far Cry 3</a>
+
+                <a href="./ac2.html">Assassin's Creed II</a>
+
+                <a href="./gta5.html">GTA V</a>
+
+                <a href="./cod1.html">Call of Duty</a>
+
+                <a href="./the-witcher.html">The Witcher</a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+```
+
+</div>
+
+<!-- SCREENSHOT MODAL -->
+
+<div class="modal" id="imageModal" onclick="closeModal()">
+
+```
+<span class="close">&times;</span>
+
+<img id="modalImage" src="" alt="The Witcher 2 Screenshot">
+```
+
+</div>
+
+<footer>
+    © 2026 QEVRANO PC GAMES — All Rights Reserved
+</footer>
+
+<script>
+
+function openModal(src) {
+    document.getElementById("imageModal").style.display = "flex";
+    document.getElementById("modalImage").src = src;
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
