@@ -25,19 +25,14 @@ body {
         url("./images/cod-bg.jpg") center/cover fixed;
 }
 
-/* ================= HEADER ================= */
-
 header {
     height: 70px;
     background: rgba(0,0,0,0.92);
     border-bottom: 1px solid #00b7ff;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 0 6%;
-
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -68,8 +63,6 @@ nav a:hover {
     color: #00b7ff;
 }
 
-/* ================= CONTAINER ================= */
-
 .container {
     width: 92%;
     max-width: 1250px;
@@ -88,8 +81,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* ================= MAIN ================= */
-
 .main-content {
     background: rgba(10,10,10,0.88);
     border: 1px solid rgba(255,255,255,0.08);
@@ -97,8 +88,6 @@ nav a:hover {
     padding: 25px;
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
-
-/* ================= HERO ================= */
 
 .hero {
     display: grid;
@@ -132,8 +121,6 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-/* ================= GAME META ================= */
-
 .game-meta {
     display: flex;
     flex-wrap: wrap;
@@ -149,8 +136,6 @@ nav a:hover {
     font-size: 13px;
     color: #ccc;
 }
-
-/* ================= DOWNLOAD ================= */
 
 .download-buttons {
     display: flex;
@@ -188,8 +173,6 @@ nav a:hover {
     color: #000;
 }
 
-/* ================= SECTION ================= */
-
 .section {
     margin-top: 35px;
 }
@@ -198,7 +181,6 @@ nav a:hover {
     color: #00b7ff;
     font-size: 22px;
     margin-bottom: 18px;
-
     border-left: 4px solid #00b7ff;
     padding-left: 12px;
 }
@@ -207,8 +189,6 @@ nav a:hover {
     color: #bbb;
     line-height: 1.8;
 }
-
-/* ================= SCREENSHOTS ================= */
 
 .screenshot-area {
     display: grid;
@@ -227,12 +207,9 @@ nav a:hover {
     width: 100%;
     height: 190px;
     object-fit: cover;
-
     border-radius: 7px;
     cursor: pointer;
-
     border: 1px solid rgba(255,255,255,0.1);
-
     transition: 0.3s;
 }
 
@@ -241,29 +218,19 @@ nav a:hover {
     border-color: #00b7ff;
 }
 
-/* ================= BIG AD ================= */
-
 .big-ad {
     width: 300px;
     height: 600px;
-
     background: rgba(255,255,255,0.035);
-
     border: 1px dashed #666;
     border-radius: 8px;
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     color: #777;
-
     padding: 20px;
-
     font-size: 14px;
 }
 
@@ -272,18 +239,12 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
-/* ================= VIDEO ================= */
-
 .video-box {
     width: 100%;
     aspect-ratio: 16 / 9;
-
     background: #050505;
-
     border: 1px solid rgba(255,255,255,0.1);
-
     border-radius: 8px;
-
     overflow: hidden;
 }
 
@@ -293,8 +254,6 @@ nav a:hover {
     border: 0;
 }
 
-/* ================= FEATURES ================= */
-
 .features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -303,13 +262,9 @@ nav a:hover {
 
 .feature {
     background: rgba(255,255,255,0.035);
-
     border: 1px solid rgba(255,255,255,0.08);
-
     padding: 15px;
-
     border-radius: 6px;
-
     color: #ccc;
 }
 
@@ -320,8 +275,6 @@ nav a:hover {
     margin-right: 8px;
 }
 
-/* ================= REQUIREMENTS ================= */
-
 .requirements {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -330,11 +283,8 @@ nav a:hover {
 
 .requirement-box {
     background: rgba(255,255,255,0.035);
-
     border: 1px solid rgba(255,255,255,0.08);
-
     border-radius: 7px;
-
     padding: 20px;
 }
 
@@ -352,27 +302,18 @@ nav a:hover {
     color: #00b7ff;
 }
 
-/* ================= TAGLINE ================= */
-
 .tagline {
     text-align: center;
-
     margin: 45px 0 10px;
-
     color: #777;
-
     line-height: 1.8;
-
     letter-spacing: 1px;
 }
 
 .tagline strong {
     display: block;
-
     color: #00b7ff;
-
     font-size: 25px;
-
     letter-spacing: 2px;
 }
 
@@ -380,65 +321,54 @@ nav a:hover {
 
 footer {
     text-align: center;
-
     padding: 25px;
-
     margin-top: 30px;
-
     color: #666;
-
     font-size: 13px;
-
     border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ================= MODAL ================= */
+footer a {
+    color: #00b7ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
 
 .modal {
     display: none;
-
     position: fixed;
-
     z-index: 2000;
-
     inset: 0;
-
     background: rgba(0,0,0,0.92);
-
     align-items: center;
-
     justify-content: center;
-
     padding: 30px;
 }
 
 .modal img {
     max-width: 90%;
     max-height: 90%;
-
     border-radius: 7px;
-
     box-shadow: 0 0 40px rgba(0,183,255,0.2);
 }
 
 .close {
     position: absolute;
-
     top: 20px;
     right: 30px;
-
     color: white;
-
     font-size: 40px;
-
     cursor: pointer;
 }
 
 .close:hover {
     color: #00b7ff;
 }
-
-/* ================= MOBILE ================= */
 
 @media(max-width: 900px) {
 
@@ -512,8 +442,6 @@ footer {
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header>
 
     <a href="./index.html" class="logo">
@@ -536,8 +464,6 @@ footer {
 
 
     <main class="main-content">
-
-        <!-- ================= HERO ================= -->
 
         <section class="hero">
 
@@ -585,7 +511,6 @@ footer {
 
                 <div class="download-buttons">
 
-                    <!-- Official source -->
                     <a
                         href="https://store.steampowered.com/app/2620/Call_of_Duty/"
                         class="download-btn official"
@@ -595,8 +520,6 @@ footer {
                         DOWNLOAD OFFICIAL
                     </a>
 
-
-                    <!-- Use only for an installer you are authorized to distribute -->
                     <a
                         href="YOUR_SETUP_LINK"
                         class="download-btn"
@@ -612,8 +535,6 @@ footer {
 
         </section>
 
-
-        <!-- ================= SCREENSHOTS ================= -->
 
         <section class="section">
 
@@ -650,8 +571,6 @@ footer {
                 </div>
 
 
-                <!-- BIG AD SPACE -->
-
                 <div class="big-ad">
 
                     <strong>ADVERTISEMENT</strong>
@@ -673,8 +592,6 @@ footer {
         </section>
 
 
-        <!-- ================= INSTALLATION VIDEO ================= -->
-
         <section class="section">
 
             <h2>MUST WATCH INSTALLATION VIDEO</h2>
@@ -691,8 +608,6 @@ footer {
 
         </section>
 
-
-        <!-- ================= ABOUT GAME ================= -->
 
         <section class="section">
 
@@ -715,8 +630,6 @@ footer {
 
         </section>
 
-
-        <!-- ================= FEATURES ================= -->
 
         <section class="section">
 
@@ -752,8 +665,6 @@ footer {
 
         </section>
 
-
-        <!-- ================= MINIMUM REQUIREMENTS ================= -->
 
         <section class="section">
 
@@ -801,8 +712,6 @@ footer {
 
         </section>
 
-
-        <!-- ================= RECOMMENDED REQUIREMENTS ================= -->
 
         <section class="section">
 
@@ -857,8 +766,6 @@ footer {
         </section>
 
 
-        <!-- ================= TAGLINE ================= -->
-
         <div class="tagline">
 
             <strong>
@@ -877,8 +784,6 @@ footer {
 
 </div>
 
-
-<!-- ================= IMAGE MODAL ================= -->
 
 <div
     class="modal"
@@ -900,11 +805,19 @@ footer {
 </div>
 
 
-<!-- ================= FOOTER ================= -->
-
 <footer>
 
     © 2026 QEVRANO PC GAMES — All Rights Reserved
+
+    <br><br>
+
+    <a href="./privacy.html">Privacy Policy</a>
+    |
+    <a href="./about.html">About</a>
+    |
+    <a href="./contact.html">Contact</a>
+    |
+    <a href="./terms.html">Terms</a>
 
 </footer>
 
