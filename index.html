@@ -31,7 +31,6 @@ body {
     background-attachment: fixed;
 }
 
-/* HEADER */
 header {
     background: rgba(5, 8, 12, 0.94);
     border-bottom: 1px solid rgba(255,255,255,0.12);
@@ -70,7 +69,6 @@ nav a:hover {
     color: #00b7ff;
 }
 
-/* HERO */
 .hero {
     text-align: center;
     padding: 75px 20px 55px;
@@ -120,14 +118,12 @@ nav a:hover {
     background: #008bc4;
 }
 
-/* MAIN */
 .container {
     width: 88%;
     max-width: 1400px;
     margin: 35px auto;
 }
 
-/* FILTER BAR */
 .filters {
     display: flex;
     gap: 10px;
@@ -180,7 +176,6 @@ nav a:hover {
     display: block;
 }
 
-/* CONTENT */
 .content {
     display: grid;
     grid-template-columns: 1fr 290px;
@@ -194,7 +189,6 @@ nav a:hover {
     padding-left: 12px;
 }
 
-/* GAME GRID */
 .game-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -258,7 +252,6 @@ nav a:hover {
     background: #008bc4;
 }
 
-/* SIDEBAR */
 .sidebar-box {
     background: rgba(8, 12, 18, 0.94);
     border: 1px solid rgba(255,255,255,0.10);
@@ -296,7 +289,6 @@ nav a:hover {
     color: #00b7ff;
 }
 
-/* PAGINATION */
 .pagination {
     display: flex;
     justify-content: center;
@@ -318,7 +310,6 @@ nav a:hover {
     border-color: #00a9ed;
 }
 
-/* FOOTER */
 footer {
     background: rgba(5,8,12,0.96);
     text-align: center;
@@ -332,7 +323,6 @@ footer strong {
     color: #00b7ff;
 }
 
-/* NO RESULTS */
 .no-results {
     display: none;
     background: rgba(8,12,18,0.95);
@@ -342,7 +332,6 @@ footer strong {
     margin-top: 20px;
 }
 
-/* MOBILE */
 @media (max-width: 1000px) {
     .game-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -392,7 +381,6 @@ footer strong {
 
 <body>
 
-<!-- HEADER -->
 <header>
     <div class="logo">QEVRANO <span>PC GAMES</span></div>
 
@@ -403,8 +391,6 @@ footer strong {
     </nav>
 </header>
 
-
-<!-- HERO -->
 <section class="hero">
     <h1>QEVRANO PC GAMES</h1>
     <p>Discover PC games, game information, categories and more.</p>
@@ -419,11 +405,8 @@ footer strong {
     </div>
 </section>
 
-
-<!-- MAIN -->
 <div class="container">
 
-    <!-- FILTERS -->
     <div class="filters">
 
         <div class="dropdown">
@@ -439,7 +422,6 @@ footer strong {
             </div>
         </div>
 
-
         <div class="dropdown">
             <button class="drop-btn">GAME PACKS ▼</button>
 
@@ -454,7 +436,6 @@ footer strong {
             </div>
         </div>
 
-
         <div class="dropdown">
             <button class="drop-btn">BY SIZE ▼</button>
 
@@ -468,8 +449,6 @@ footer strong {
 
     </div>
 
-
-    <!-- CONTENT -->
     <div class="content">
 
         <main id="games">
@@ -477,7 +456,6 @@ footer strong {
             <h2 class="section-title">LATEST GAMES</h2>
 
             <div class="game-grid" id="gameGrid">
-
 
                 <!-- FAR CRY 2 -->
                 <div class="game-card"
@@ -497,7 +475,7 @@ footer strong {
                             Size: 5–10 GB
                         </div>
 
-                        <a href="#" class="view-btn">VIEW GAME</a>
+                        <a href="farcry2.html" class="view-btn">DOWNLOAD</a>
                     </div>
                 </div>
 
@@ -520,7 +498,7 @@ footer strong {
                             Size: 5–10 GB
                         </div>
 
-                        <a href="#" class="view-btn">VIEW GAME</a>
+                        <a href="farcry3.html" class="view-btn">DOWNLOAD</a>
                     </div>
                 </div>
 
@@ -543,7 +521,7 @@ footer strong {
                             Size: 5–10 GB
                         </div>
 
-                        <a href="#" class="view-btn">VIEW GAME</a>
+                        <a href="ac2.html" class="view-btn">DOWNLOAD</a>
                     </div>
                 </div>
 
@@ -566,7 +544,7 @@ footer strong {
                             Size: 20+ GB
                         </div>
 
-                        <a href="#" class="view-btn">VIEW GAME</a>
+                        <a href="gta5.html" class="view-btn">DOWNLOAD</a>
                     </div>
                 </div>
 
@@ -589,7 +567,7 @@ footer strong {
                             Size: 5–10 GB
                         </div>
 
-                        <a href="#" class="view-btn">VIEW GAME</a>
+                        <a href="fifa.html" class="view-btn">DOWNLOAD</a>
                     </div>
                 </div>
 
@@ -612,7 +590,7 @@ footer strong {
                             Size: 1–5 GB
                         </div>
 
-                        <a href="#" class="view-btn">VIEW GAME</a>
+                        <a href="cricket.html" class="view-btn">DOWNLOAD</a>
                     </div>
                 </div>
 
@@ -635,7 +613,7 @@ footer strong {
                             Size: 5–10 GB
                         </div>
 
-                        <a href="#" class="view-btn">VIEW GAME</a>
+                        <a href="cod1.html" class="view-btn">DOWNLOAD</a>
                     </div>
                 </div>
 
@@ -658,10 +636,9 @@ footer strong {
                             Size: 10–20 GB
                         </div>
 
-                        <a href="#" class="view-btn">VIEW GAME</a>
+                        <a href="witcher2.html" class="view-btn">DOWNLOAD</a>
                     </div>
                 </div>
-
 
             </div>
 
@@ -669,38 +646,27 @@ footer strong {
                 No games found.
             </div>
 
-
-            <!-- PAGINATION -->
             <div class="pagination">
                 <button onclick="previousPage()">←</button>
-
                 <button class="active">1</button>
                 <button onclick="futurePage(2)">2</button>
                 <button onclick="futurePage(3)">3</button>
                 <button onclick="futurePage(4)">4</button>
                 <button onclick="futurePage(5)">5</button>
-
                 <button onclick="nextPage()">→</button>
             </div>
 
         </main>
 
-
-        <!-- SIDEBAR -->
         <aside>
 
             <div class="sidebar-box">
-
-                <div class="sidebar-title">
-                    FEATURED / AD
-                </div>
+                <div class="sidebar-title">FEATURED / AD</div>
 
                 <div class="ad-box">
                     AD SPACE
                 </div>
-
             </div>
-
 
             <div class="sidebar-box">
 
@@ -750,18 +716,13 @@ footer strong {
     </div>
 </div>
 
-
-<!-- FOOTER -->
 <footer>
     © 2026 <strong>QEVRANO PC GAMES</strong>. All Rights Reserved.
     <br><br>
     QEVRANO PC GAMES is an independent gaming information website.
 </footer>
 
-
 <script>
-
-/* DROPDOWNS */
 
 const dropdowns = document.querySelectorAll(".dropdown");
 
@@ -774,17 +735,14 @@ dropdowns.forEach(dropdown => {
         event.stopPropagation();
 
         dropdowns.forEach(other => {
-
             if (other !== dropdown) {
                 other.classList.remove("active");
             }
-
         });
 
         dropdown.classList.toggle("active");
     });
 });
-
 
 document.addEventListener("click", function() {
 
@@ -794,8 +752,6 @@ document.addEventListener("click", function() {
 
 });
 
-
-/* FILTER GAMES */
 
 function filterGames(filter) {
 
@@ -829,15 +785,12 @@ function filterGames(filter) {
         } else {
             card.style.display = "none";
         }
-
     });
 
     document.getElementById("noResults").style.display =
         found === 0 ? "block" : "none";
 }
 
-
-/* SEARCH */
 
 function searchGames() {
 
@@ -876,15 +829,12 @@ function searchGames() {
             card.style.display = "none";
 
         }
-
     });
 
     document.getElementById("noResults").style.display =
         found === 0 ? "block" : "none";
 }
 
-
-/* ENTER KEY SEARCH */
 
 document
     .getElementById("searchInput")
@@ -897,8 +847,6 @@ document
     });
 
 
-/* POPULAR GAME SEARCH */
-
 function searchPopular(game) {
 
     document.getElementById("searchInput").value = game;
@@ -908,8 +856,6 @@ function searchPopular(game) {
     window.location.hash = "games";
 }
 
-
-/* PAGINATION */
 
 function futurePage(page) {
 
