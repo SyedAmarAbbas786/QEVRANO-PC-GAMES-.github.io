@@ -2,1204 +2,943 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>QEVRANO PC GAMES</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #ffffff;
-            min-height: 100vh;
-
-            background-image:
-                linear-gradient(
-                    rgba(5, 8, 12, 0.15),
-                    rgba(5, 8, 12, 0.25)
-                ),
-                url("./images/unity.jpg");
-
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-        }
-
-        /* HEADER */
-        header {
-            background: rgba(13, 17, 24, 0.88);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            padding: 18px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(8px);
-        }
-
-        .logo {
-            font-size: 25px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: #00bfff;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            transition: 0.2s;
-        }
-
-        nav a:hover {
-            color: #00bfff;
-        }
-
-        /* MAIN */
-        .container {
-            width: 88%;
-            max-width: 1400px;
-            margin: auto;
-        }
-
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 55px 15px 25px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 900;
-            text-shadow: 0 3px 15px #000;
-        }
-
-        .hero h1 span {
-            color: #00bfff;
-        }
-
-        .hero p {
-            margin-top: 10px;
-            color: #d7dce2;
-            font-size: 16px;
-            text-shadow: 0 2px 8px #000;
-        }
-
-        /* SEARCH */
-        .search-area {
-            display: flex;
-            justify-content: center;
-            margin: 20px auto 22px;
-            max-width: 800px;
-        }
-
-        .search-area input {
-            flex: 1;
-            padding: 14px 17px;
-            border: none;
-            outline: none;
-            background: rgba(10, 15, 22, 0.92);
-            color: white;
-            border-radius: 6px 0 0 6px;
-            font-size: 15px;
-            border: 1px solid rgba(255,255,255,0.12);
-        }
-
-        .search-area input::placeholder {
-            color: #8994a1;
-        }
-
-        .search-area button {
-            padding: 0 24px;
-            border: none;
-            background: #00a8e8;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 0 6px 6px 0;
-            transition: 0.2s;
-        }
-
-        .search-area button:hover {
-            background: #008dcc;
-        }
-
-        /* FILTER BAR */
-        .filter-bar {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 50;
-        }
-
-        .filter {
-            position: relative;
-        }
-
-        .filter-button {
-            width: 100%;
-            padding: 13px 16px;
-            border: 1px solid rgba(255,255,255,0.12);
-            background: rgba(13, 17, 24, 0.90);
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: 0.2s;
-        }
-
-        .filter-button:hover {
-            background: rgba(0, 168, 232, 0.88);
-        }
-
-        .arrow {
-            font-size: 12px;
-        }
-
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: calc(100% + 5px);
-            left: 0;
-            width: 100%;
-            background: #101720;
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .dropdown.show {
-            display: block;
-        }
-
-        .dropdown button {
-            width: 100%;
-            padding: 11px 14px;
-            background: transparent;
-            border: none;
-            color: #dfe6ed;
-            text-align: left;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .dropdown button:hover {
-            background: #00a8e8;
-            color: white;
-        }
-
-        /* CONTENT LAYOUT */
-        .content-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) 280px;
-            gap: 25px;
-            align-items: start;
-        }
-
-        .section-title {
-            font-size: 22px;
-            margin-bottom: 15px;
-            border-left: 4px solid #00bfff;
-            padding-left: 10px;
-        }
-
-        /* GAME GRID */
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .game-card {
-            background: rgba(13, 17, 24, 0.87);
-            border: 1px solid rgba(255,255,255,0.09);
-            border-radius: 7px;
-            overflow: hidden;
-            transition: transform 0.2s, border-color 0.2s;
-            box-shadow: 0 7px 20px rgba(0,0,0,0.25);
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0,191,255,0.7);
-        }
-
-        .game-cover {
-            width: 100%;
-            height: 230px;
-            background: linear-gradient(135deg, #172330, #0d1118);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #5f6a78;
-            font-size: 45px;
-            overflow: hidden;
-        }
-
-        .game-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .game-info {
-            padding: 15px;
-        }
-
-        .game-info h3 {
-            font-size: 17px;
-            margin-bottom: 7px;
-        }
-
-        .game-info p {
-            color: #9ca7b3;
-            font-size: 13px;
-            margin-bottom: 12px;
-        }
-
-        .game-tags {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin-bottom: 13px;
-        }
-
-        .tag {
-            font-size: 11px;
-            background: rgba(0,168,232,0.15);
-            color: #57d0ff;
-            padding: 4px 7px;
-            border-radius: 3px;
-        }
-
-        .view-btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-            text-decoration: none;
-            background: #00a8e8;
-            color: white;
-            padding: 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 13px;
-            transition: 0.2s;
-        }
-
-        .view-btn:hover {
-            background: #008dcc;
-        }
-
-        /* SIDEBAR */
-        .sidebar {
-            position: sticky;
-            top: 90px;
-        }
-
-        .side-box {
-            background: rgba(13, 17, 24, 0.86);
-            border: 1px solid rgba(255,255,255,0.09);
-            border-radius: 7px;
-            padding: 15px;
-            margin-bottom: 18px;
-        }
-
-        .side-box h3 {
-            font-size: 17px;
-            margin-bottom: 13px;
-            border-left: 3px solid #00bfff;
-            padding-left: 8px;
-        }
-
-        .ad-space {
-            min-height: 260px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #687482;
-            border: 1px dashed #46515e;
-            background: rgba(5,8,12,0.5);
-            border-radius: 5px;
-            font-size: 13px;
-        }
-
-        .featured-list {
-            list-style: none;
-        }
-
-        .featured-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-            color: #cbd3db;
-            font-size: 13px;
-            cursor: pointer;
-        }
-
-        .featured-list li:last-child {
-            border-bottom: none;
-        }
-
-        .featured-list li:hover {
-            color: #00bfff;
-        }
-
-        /* NO RESULTS */
-        .no-results {
-            display: none;
-            padding: 35px;
-            text-align: center;
-            background: rgba(13,17,24,0.85);
-            border-radius: 7px;
-            color: #9da8b4;
-        }
-
-        /* PAGINATION */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 7px;
-            margin: 35px 0 45px;
-        }
-
-        .page-btn {
-            min-width: 38px;
-            height: 38px;
-            padding: 0 12px;
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 4px;
-            background: rgba(13,17,24,0.9);
-            color: white;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .page-btn:hover,
-        .page-btn.active {
-            background: #00a8e8;
-            border-color: #00a8e8;
-        }
-
-        /* FOOTER */
-        footer {
-            background: rgba(13, 17, 24, 0.88);
-            border-top: 1px solid rgba(255,255,255,0.08);
-            text-align: center;
-            padding: 25px 15px;
-            color: #8994a1;
-            font-size: 13px;
-        }
-
-        footer strong {
-            color: #00bfff;
-        }
-
-        /* MOBILE */
-        @media (max-width: 950px) {
-            .content-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                position: static;
-            }
-
-            .games-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 650px) {
-            body {
-                background-attachment: scroll;
-            }
-
-            header {
-                padding: 15px 5%;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            nav {
-                gap: 12px;
-            }
-
-            nav a {
-                font-size: 12px;
-            }
-
-            .hero {
-                padding-top: 35px;
-            }
-
-            .hero h1 {
-                font-size: 34px;
-            }
-
-            .filter-bar {
-                grid-template-columns: 1fr;
-            }
-
-            .games-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .game-cover {
-                height: 260px;
-            }
-
-            .search-area {
-                width: 100%;
-            }
-
-            .search-area input {
-                min-width: 0;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QEVRANO PC GAMES</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(5, 8, 12, 0.15),
+            rgba(5, 8, 12, 0.25)
+        ),
+        url("./images/unity.jpg");
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* HEADER */
+header {
+    background: rgba(5, 8, 12, 0.94);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #00b7ff;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #00b7ff;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 75px 20px 55px;
+    background: rgba(0,0,0,0.30);
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-shadow: 0 4px 15px #000;
+}
+
+.hero p {
+    color: #ddd;
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    max-width: 650px;
+    margin: auto;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 15px 18px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.95);
+    color: #111;
+    font-size: 15px;
+}
+
+.search-box button {
+    padding: 15px 25px;
+    border: none;
+    background: #00a9ed;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #008bc4;
+}
+
+/* MAIN */
+.container {
+    width: 88%;
+    max-width: 1400px;
+    margin: 35px auto;
+}
+
+/* FILTER BAR */
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.drop-btn {
+    background: rgba(8, 12, 18, 0.94);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 12px 18px;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 150px;
+    text-align: left;
+}
+
+.drop-btn:hover {
+    border-color: #00b7ff;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: #10151c;
+    border: 1px solid rgba(255,255,255,0.12);
+    z-index: 100;
+}
+
+.dropdown-menu div {
+    padding: 11px 14px;
+    cursor: pointer;
+    color: #ddd;
+}
+
+.dropdown-menu div:hover {
+    background: #00a9ed;
+    color: white;
+}
+
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* CONTENT */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 290px;
+    gap: 30px;
+}
+
+.section-title {
+    font-size: 25px;
+    margin-bottom: 20px;
+    border-left: 4px solid #00b7ff;
+    padding-left: 12px;
+}
+
+/* GAME GRID */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.game-card {
+    background: rgba(9, 13, 19, 0.94);
+    border: 1px solid rgba(255,255,255,0.10);
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: #00b7ff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.game-cover {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+}
+
+.game-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.game-info {
+    padding: 16px;
+}
+
+.game-info h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.tags {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.view-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #00a9ed;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.view-btn:hover {
+    background: #008bc4;
+}
+
+/* SIDEBAR */
+.sidebar-box {
+    background: rgba(8, 12, 18, 0.94);
+    border: 1px solid rgba(255,255,255,0.10);
+    padding: 18px;
+    margin-bottom: 22px;
+}
+
+.sidebar-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding-bottom: 10px;
+}
+
+.ad-box {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    background: rgba(0,0,0,0.25);
+    border: 1px dashed #555;
+    text-align: center;
+}
+
+.popular-item {
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: #ddd;
+    cursor: pointer;
+}
+
+.popular-item:hover {
+    color: #00b7ff;
+}
+
+/* PAGINATION */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin: 40px 0;
+}
+
+.pagination button {
+    background: rgba(8,12,18,0.95);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.pagination button:hover,
+.pagination .active {
+    background: #00a9ed;
+    border-color: #00a9ed;
+}
+
+/* FOOTER */
+footer {
+    background: rgba(5,8,12,0.96);
+    text-align: center;
+    padding: 28px 15px;
+    color: #888;
+    font-size: 13px;
+    margin-top: 50px;
+}
+
+footer strong {
+    color: #00b7ff;
+}
+
+/* NO RESULTS */
+.no-results {
+    display: none;
+    background: rgba(8,12,18,0.95);
+    padding: 30px;
+    text-align: center;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 1000px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .game-cover {
+        height: 230px;
+    }
+
+    .container {
+        width: 94%;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            QEVRANO <span>PC GAMES</span>
-        </div>
+<!-- HEADER -->
+<header>
+    <div class="logo">QEVRANO <span>PC GAMES</span></div>
 
-        <nav>
-            <a href="#">HOME</a>
-            <a href="#games">GAMES</a>
-            <a href="#packs">PACKS</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#games">GAMES</a>
+        <a href="#packs">PACKS</a>
+    </nav>
+</header>
 
 
-    <main class="container">
+<!-- HERO -->
+<section class="hero">
+    <h1>QEVRANO PC GAMES</h1>
+    <p>Discover PC games, game information, categories and more.</p>
 
-        <!-- HERO -->
-        <section class="hero">
-            <h1>QEVRANO <span>PC GAMES</span></h1>
-            <p>Discover PC games, collections and gaming information.</p>
-        </section>
-
-
-        <!-- SEARCH -->
-        <div class="search-area">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search games..."
-                onkeyup="searchGames()"
-            >
-
-            <button onclick="searchGames()">SEARCH</button>
-        </div>
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search games..."
+        >
+        <button onclick="searchGames()">SEARCH</button>
+    </div>
+</section>
 
 
-        <!-- COMPACT FILTER BAR -->
-        <div class="filter-bar" id="packs">
+<!-- MAIN -->
+<div class="container">
 
-            <!-- CATEGORIES -->
-            <div class="filter">
-                <button class="filter-button" onclick="toggleDropdown('categoryDropdown')">
-                    CATEGORIES
-                    <span class="arrow">▼</span>
-                </button>
+    <!-- FILTERS -->
+    <div class="filters">
 
-                <div class="dropdown" id="categoryDropdown">
-                    <button onclick="filterCategory('all')">All Categories</button>
-                    <button onclick="filterCategory('Action')">Action</button>
-                    <button onclick="filterCategory('Adventure')">Adventure</button>
-                    <button onclick="filterCategory('Racing')">Racing</button>
-                    <button onclick="filterCategory('Sports')">Sports</button>
-                    <button onclick="filterCategory('Strategy')">Strategy</button>
-                    <button onclick="filterCategory('Simulation')">Simulation</button>
-                    <button onclick="filterCategory('Horror')">Horror</button>
-                    <button onclick="filterCategory('Open World')">Open World</button>
-                </div>
+        <div class="dropdown">
+            <button class="drop-btn">CATEGORIES ▼</button>
+
+            <div class="dropdown-menu">
+                <div onclick="filterGames('all')">All Games</div>
+                <div onclick="filterGames('Action')">Action</div>
+                <div onclick="filterGames('Adventure')">Adventure</div>
+                <div onclick="filterGames('Open World')">Open World</div>
+                <div onclick="filterGames('Sports')">Sports</div>
+                <div onclick="filterGames('Simulation')">Simulation</div>
             </div>
-
-
-            <!-- GAME PACKS -->
-            <div class="filter">
-                <button class="filter-button" onclick="toggleDropdown('packDropdown')">
-                    GAME PACKS
-                    <span class="arrow">▼</span>
-                </button>
-
-                <div class="dropdown" id="packDropdown">
-                    <button onclick="showPack('all')">All Games</button>
-                    <button onclick="showPack('Assassin’s Creed')">Assassin's Creed</button>
-                    <button onclick="showPack('Far Cry')">Far Cry</button>
-                    <button onclick="showPack('Call of Duty')">Call of Duty</button>
-                    <button onclick="showPack('GTA')">GTA</button>
-                    <button onclick="showPack('FIFA')">FIFA</button>
-                    <button onclick="showPack('Cricket')">Cricket</button>
-                </div>
-            </div>
-
-
-            <!-- SIZE -->
-            <div class="filter">
-                <button class="filter-button" onclick="toggleDropdown('sizeDropdown')">
-                    BY SIZE
-                    <span class="arrow">▼</span>
-                </button>
-
-                <div class="dropdown" id="sizeDropdown">
-                    <button onclick="filterSize('under500')">Under 500 MB</button>
-                    <button onclick="filterSize('500mb-1gb')">500 MB - 1 GB</button>
-                    <button onclick="filterSize('1-5gb')">1 - 5 GB</button>
-                    <button onclick="filterSize('5-10gb')">5 - 10 GB</button>
-                    <button onclick="filterSize('10-20gb')">10 - 20 GB</button>
-                    <button onclick="filterSize('20gb+')">20+ GB</button>
-                </div>
-            </div>
-
         </div>
 
 
-        <!-- CONTENT -->
-        <div class="content-layout">
+        <div class="dropdown">
+            <button class="drop-btn">GAME PACKS ▼</button>
 
-            <!-- GAMES -->
-            <section id="games">
+            <div class="dropdown-menu">
+                <div onclick="filterGames('Far Cry')">Far Cry</div>
+                <div onclick="filterGames('Assassin’s Creed')">Assassin's Creed</div>
+                <div onclick="filterGames('GTA')">GTA</div>
+                <div onclick="filterGames('FIFA')">FIFA</div>
+                <div onclick="filterGames('Cricket')">Cricket</div>
+                <div onclick="filterGames('Call of Duty')">Call of Duty</div>
+                <div onclick="filterGames('The Witcher')">The Witcher</div>
+            </div>
+        </div>
 
-                <h2 class="section-title">FEATURED GAMES</h2>
 
-                <div class="games-grid" id="gamesGrid">
+        <div class="dropdown">
+            <button class="drop-btn">BY SIZE ▼</button>
 
+            <div class="dropdown-menu">
+                <div onclick="filterGames('1-5gb')">1–5 GB</div>
+                <div onclick="filterGames('5-10gb')">5–10 GB</div>
+                <div onclick="filterGames('10-20gb')">10–20 GB</div>
+                <div onclick="filterGames('20gb+')">20+ GB</div>
+            </div>
+        </div>
 
-                    <!-- FAR CRY 2 -->
-                    <article
-                        class="game-card"
-                        data-name="Far Cry 2"
-                        data-pack="Far Cry"
-                        data-category="Action Adventure Open World"
-                        data-size="5-10gb"
-                    >
-                        <div class="game-cover">
-                            <img src="./images/farcry2.jpg"
-                                 alt="Far Cry 2"
-                                 onerror="this.style.display='none'; this.parentElement.innerHTML='🎮';">
-                        </div>
+    </div>
 
-                        <div class="game-info">
-                            <h3>Far Cry 2</h3>
 
-                            <p>Action • Adventure • Open World</p>
+    <!-- CONTENT -->
+    <div class="content">
 
-                            <div class="game-tags">
-                                <span class="tag">Far Cry</span>
-                                <span class="tag">Open World</span>
-                            </div>
+        <main id="games">
 
-                            <a href="#" class="view-btn">VIEW GAME</a>
-                        </div>
-                    </article>
+            <h2 class="section-title">LATEST GAMES</h2>
 
+            <div class="game-grid" id="gameGrid">
 
-                    <!-- FAR CRY 3 -->
-                    <article
-                        class="game-card"
-                        data-name="Far Cry 3"
-                        data-pack="Far Cry"
-                        data-category="Action Adventure Open World"
-                        data-size="5-10gb"
-                    >
-                        <div class="game-cover">
-                            <img src="./images/farcry3.jpg"
-                                 alt="Far Cry 3"
-                                 onerror="this.style.display='none'; this.parentElement.innerHTML='🎮';">
-                        </div>
 
-                        <div class="game-info">
-                            <h3>Far Cry 3</h3>
+                <!-- FAR CRY 2 -->
+                <div class="game-card"
+                     data-name="Far Cry 2"
+                     data-pack="Far Cry"
+                     data-category="Action Adventure Open World"
+                     data-size="5-10gb">
 
-                            <p>Action • Adventure • Open World</p>
-
-                            <div class="game-tags">
-                                <span class="tag">Far Cry</span>
-                                <span class="tag">Open World</span>
-                            </div>
-
-                            <a href="#" class="view-btn">VIEW GAME</a>
-                        </div>
-                    </article>
-
-
-                    <!-- ASSASSIN'S CREED II -->
-                    <article
-                        class="game-card"
-                        data-name="Assassin's Creed II"
-                        data-pack="Assassin’s Creed"
-                        data-category="Action Adventure"
-                        data-size="5-10gb"
-                    >
-                        <div class="game-cover">
-                            <img src="./images/ac2.jpg"
-                                 alt="Assassin's Creed II"
-                                 onerror="this.style.display='none'; this.parentElement.innerHTML='🎮';">
-                        </div>
-
-                        <div class="game-info">
-                            <h3>Assassin's Creed II</h3>
-
-                            <p>Action • Adventure</p>
-
-                            <div class="game-tags">
-                                <span class="tag">Assassin's Creed</span>
-                                <span class="tag">Adventure</span>
-                            </div>
-
-                            <a href="#" class="view-btn">VIEW GAME</a>
-                        </div>
-                    </article>
-
-
-                    <!-- GTA V -->
-                    <article
-                        class="game-card"
-                        data-name="GTA V"
-                        data-pack="GTA"
-                        data-category="Action Open World"
-                        data-size="20gb+"
-                    >
-                        <div class="game-cover">
-                            <img src="./images/gta5.jpg"
-                                 alt="GTA V"
-                                 onerror="this.style.display='none'; this.parentElement.innerHTML='🎮';">
-                        </div>
-
-                        <div class="game-info">
-                            <h3>GTA V</h3>
-
-                            <p>Action • Open World</p>
-
-                            <div class="game-tags">
-                                <span class="tag">GTA</span>
-                                <span class="tag">Open World</span>
-                            </div>
-
-                            <a href="#" class="view-btn">VIEW GAME</a>
-                        </div>
-                    </article>
-
-
-                    <!-- FIFA -->
-                    <article
-                        class="game-card"
-                        data-name="FIFA"
-                        data-pack="FIFA"
-                        data-category="Sports"
-                        data-size="5-10gb"
-                    >
-                        <div class="game-cover">
-                            <img src="./images/fifa.jpg"
-                                 alt="FIFA"
-                                 onerror="this.style.display='none'; this.parentElement.innerHTML='🎮';">
-                        </div>
-
-                        <div class="game-info">
-                            <h3>FIFA</h3>
-
-                            <p>Sports</p>
-
-                            <div class="game-tags">
-                                <span class="tag">FIFA</span>
-                                <span class="tag">Sports</span>
-                            </div>
-
-                            <a href="#" class="view-btn">VIEW GAME</a>
-                        </div>
-                    </article>
-
-
-                    <!-- CRICKET -->
-                    <article
-                        class="game-card"
-                        data-name="Cricket"
-                        data-pack="Cricket"
-                        data-category="Sports Simulation"
-                        data-size="1-5gb"
-                    >
-                        <div class="game-cover">
-                            <img src="./images/cricket.jpg"
-                                 alt="Cricket"
-                                 onerror="this.style.display='none'; this.parentElement.innerHTML='🎮';">
-                        </div>
-
-                        <div class="game-info">
-                            <h3>Cricket</h3>
-
-                            <p>Sports • Simulation</p>
-
-                            <div class="game-tags">
-                                <span class="tag">Cricket</span>
-                                <span class="tag">Sports</span>
-                            </div>
-
-                            <a href="#" class="view-btn">VIEW GAME</a>
-                        </div>
-                    </article>
-
-
-                    <!-- CALL OF DUTY -->
-                    <article
-                        class="game-card"
-                        data-name="Call of Duty"
-                        data-pack="Call of Duty"
-                        data-category="Action"
-                        data-size="5-10gb"
-                    >
-                        <div class="game-cover">
-                            <img src="./images/cod.jpg"
-                                 alt="Call of Duty"
-                                 onerror="this.style.display='none'; this.parentElement.innerHTML='🎮';">
-                        </div>
-
-                        <div class="game-info">
-                            <h3>Call of Duty</h3>
-
-                            <p>Action</p>
-
-                            <div class="game-tags">
-                                <span class="tag">Call of Duty</span>
-                                <span class="tag">Action</span>
-                            </div>
-
-                            <a href="#" class="view-btn">VIEW GAME</a>
-                        </div>
-                    </article>
-
-
-                </div>
-
-
-                <!-- NO RESULTS -->
-                <div class="no-results" id="noResults">
-                    No games found.
-                </div>
-
-
-                <!-- PAGINATION -->
-                <div class="pagination">
-
-                    <button class="page-btn" onclick="changePage('prev')">
-                        ←
-                    </button>
-
-                    <button class="page-btn active" onclick="changePage(1)">
-                        1
-                    </button>
-
-                    <button class="page-btn" onclick="changePage(2)">
-                        2
-                    </button>
-
-                    <button class="page-btn" onclick="changePage(3)">
-                        3
-                    </button>
-
-                    <button class="page-btn" onclick="changePage(4)">
-                        4
-                    </button>
-
-                    <button class="page-btn" onclick="changePage(5)">
-                        5
-                    </button>
-
-                    <button class="page-btn" onclick="changePage('next')">
-                        →
-                    </button>
-
-                </div>
-
-            </section>
-
-
-            <!-- SIDEBAR -->
-            <aside class="sidebar">
-
-                <div class="side-box">
-
-                    <h3>FEATURED / AD</h3>
-
-                    <div class="ad-space">
-                        AD / FEATURED<br>
-                        SPACE
+                    <div class="game-cover">
+                        <img src="./images/farcry2.jpg" alt="Far Cry 2">
                     </div>
 
+                    <div class="game-info">
+                        <h3>Far Cry 2</h3>
+                        <div class="tags">
+                            Action • Adventure • Open World<br>
+                            Size: 5–10 GB
+                        </div>
+
+                        <a href="#" class="view-btn">VIEW GAME</a>
+                    </div>
                 </div>
 
 
-                <div class="side-box">
+                <!-- FAR CRY 3 -->
+                <div class="game-card"
+                     data-name="Far Cry 3"
+                     data-pack="Far Cry"
+                     data-category="Action Adventure Open World"
+                     data-size="5-10gb">
 
-                    <h3>POPULAR GAMES</h3>
+                    <div class="game-cover">
+                        <img src="./images/farcry3.jpg" alt="Far Cry 3">
+                    </div>
 
-                    <ul class="featured-list">
+                    <div class="game-info">
+                        <h3>Far Cry 3</h3>
+                        <div class="tags">
+                            Action • Adventure • Open World<br>
+                            Size: 5–10 GB
+                        </div>
 
-                        <li onclick="selectGame('Far Cry 3')">
-                            🎮 Far Cry 3
-                        </li>
-
-                        <li onclick="selectGame('Far Cry 2')">
-                            🎮 Far Cry 2
-                        </li>
-
-                        <li onclick="selectGame('GTA V')">
-                            🎮 GTA V
-                        </li>
-
-                        <li onclick="selectGame('Assassin\\'s Creed II')">
-                            🎮 Assassin's Creed II
-                        </li>
-
-                        <li onclick="selectGame('Call of Duty')">
-                            🎮 Call of Duty
-                        </li>
-
-                    </ul>
-
+                        <a href="#" class="view-btn">VIEW GAME</a>
+                    </div>
                 </div>
 
-            </aside>
 
-        </div>
+                <!-- ASSASSIN'S CREED II -->
+                <div class="game-card"
+                     data-name="Assassin's Creed II"
+                     data-pack="Assassin’s Creed"
+                     data-category="Action Adventure"
+                     data-size="5-10gb">
 
-    </main>
+                    <div class="game-cover">
+                        <img src="./images/ac2.jpg" alt="Assassin's Creed II">
+                    </div>
 
+                    <div class="game-info">
+                        <h3>Assassin's Creed II</h3>
+                        <div class="tags">
+                            Action • Adventure<br>
+                            Size: 5–10 GB
+                        </div>
 
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            © 2026 <strong>QEVRANO PC GAMES</strong>. All Rights Reserved.
-        </p>
-
-        <p style="margin-top:8px;">
-            Game names and trademarks belong to their respective owners.
-        </p>
-
-    </footer>
-
-
-    <!-- JAVASCRIPT -->
-    <script>
-
-        let currentPack = "all";
-        let currentCategory = "all";
-        let currentSize = "all";
+                        <a href="#" class="view-btn">VIEW GAME</a>
+                    </div>
+                </div>
 
 
-        /* DROPDOWNS */
+                <!-- GTA V -->
+                <div class="game-card"
+                     data-name="GTA V"
+                     data-pack="GTA"
+                     data-category="Action Open World"
+                     data-size="20gb+">
 
-        function toggleDropdown(id) {
+                    <div class="game-cover">
+                        <img src="./images/gta5.jpg" alt="GTA V">
+                    </div>
 
-            const dropdown = document.getElementById(id);
+                    <div class="game-info">
+                        <h3>GTA V</h3>
+                        <div class="tags">
+                            Action • Open World<br>
+                            Size: 20+ GB
+                        </div>
 
-            document.querySelectorAll(".dropdown").forEach(function(menu) {
-
-                if (menu.id !== id) {
-                    menu.classList.remove("show");
-                }
-
-            });
-
-            dropdown.classList.toggle("show");
-        }
+                        <a href="#" class="view-btn">VIEW GAME</a>
+                    </div>
+                </div>
 
 
-        /* CLOSE DROPDOWNS WHEN CLICKING OUTSIDE */
+                <!-- FIFA -->
+                <div class="game-card"
+                     data-name="FIFA"
+                     data-pack="FIFA"
+                     data-category="Sports"
+                     data-size="5-10gb">
 
-        document.addEventListener("click", function(event) {
+                    <div class="game-cover">
+                        <img src="./images/fifa.jpg" alt="FIFA">
+                    </div>
 
-            if (!event.target.closest(".filter")) {
+                    <div class="game-info">
+                        <h3>FIFA</h3>
+                        <div class="tags">
+                            Sports<br>
+                            Size: 5–10 GB
+                        </div>
 
-                document.querySelectorAll(".dropdown").forEach(function(menu) {
-                    menu.classList.remove("show");
-                });
+                        <a href="#" class="view-btn">VIEW GAME</a>
+                    </div>
+                </div>
 
+
+                <!-- DON BRADMAN CRICKET -->
+                <div class="game-card"
+                     data-name="Don Bradman Cricket"
+                     data-pack="Cricket"
+                     data-category="Sports Simulation"
+                     data-size="1-5gb">
+
+                    <div class="game-cover">
+                        <img src="./images/cricket.jpg" alt="Don Bradman Cricket">
+                    </div>
+
+                    <div class="game-info">
+                        <h3>Don Bradman Cricket</h3>
+                        <div class="tags">
+                            Sports • Simulation<br>
+                            Size: 1–5 GB
+                        </div>
+
+                        <a href="#" class="view-btn">VIEW GAME</a>
+                    </div>
+                </div>
+
+
+                <!-- CALL OF DUTY 1 -->
+                <div class="game-card"
+                     data-name="Call of Duty 1"
+                     data-pack="Call of Duty"
+                     data-category="Action"
+                     data-size="5-10gb">
+
+                    <div class="game-cover">
+                        <img src="./images/cod.jpg" alt="Call of Duty 1">
+                    </div>
+
+                    <div class="game-info">
+                        <h3>Call of Duty 1</h3>
+                        <div class="tags">
+                            Action<br>
+                            Size: 5–10 GB
+                        </div>
+
+                        <a href="#" class="view-btn">VIEW GAME</a>
+                    </div>
+                </div>
+
+
+                <!-- THE WITCHER 2 -->
+                <div class="game-card"
+                     data-name="The Witcher 2"
+                     data-pack="The Witcher"
+                     data-category="Action Adventure"
+                     data-size="10-20gb">
+
+                    <div class="game-cover">
+                        <img src="./images/witcher2.jpg" alt="The Witcher 2">
+                    </div>
+
+                    <div class="game-info">
+                        <h3>The Witcher 2</h3>
+                        <div class="tags">
+                            Action • Adventure<br>
+                            Size: 10–20 GB
+                        </div>
+
+                        <a href="#" class="view-btn">VIEW GAME</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="no-results" id="noResults">
+                No games found.
+            </div>
+
+
+            <!-- PAGINATION -->
+            <div class="pagination">
+                <button onclick="previousPage()">←</button>
+
+                <button class="active">1</button>
+                <button onclick="futurePage(2)">2</button>
+                <button onclick="futurePage(3)">3</button>
+                <button onclick="futurePage(4)">4</button>
+                <button onclick="futurePage(5)">5</button>
+
+                <button onclick="nextPage()">→</button>
+            </div>
+
+        </main>
+
+
+        <!-- SIDEBAR -->
+        <aside>
+
+            <div class="sidebar-box">
+
+                <div class="sidebar-title">
+                    FEATURED / AD
+                </div>
+
+                <div class="ad-box">
+                    AD SPACE
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-box">
+
+                <div class="sidebar-title">
+                    POPULAR GAMES
+                </div>
+
+                <div class="popular-item"
+                     onclick="searchPopular('Far Cry 3')">
+                    Far Cry 3
+                </div>
+
+                <div class="popular-item"
+                     onclick="searchPopular('Far Cry 2')">
+                    Far Cry 2
+                </div>
+
+                <div class="popular-item"
+                     onclick="searchPopular('GTA V')">
+                    GTA V
+                </div>
+
+                <div class="popular-item"
+                     onclick="searchPopular('Assassin’s Creed II')">
+                    Assassin's Creed II
+                </div>
+
+                <div class="popular-item"
+                     onclick="searchPopular('Call of Duty 1')">
+                    Call of Duty 1
+                </div>
+
+                <div class="popular-item"
+                     onclick="searchPopular('Don Bradman Cricket')">
+                    Don Bradman Cricket
+                </div>
+
+                <div class="popular-item"
+                     onclick="searchPopular('The Witcher 2')">
+                    The Witcher 2
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+    © 2026 <strong>QEVRANO PC GAMES</strong>. All Rights Reserved.
+    <br><br>
+    QEVRANO PC GAMES is an independent gaming information website.
+</footer>
+
+
+<script>
+
+/* DROPDOWNS */
+
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(dropdown => {
+
+    const button = dropdown.querySelector(".drop-btn");
+
+    button.addEventListener("click", function(event) {
+
+        event.stopPropagation();
+
+        dropdowns.forEach(other => {
+
+            if (other !== dropdown) {
+                other.classList.remove("active");
             }
 
         });
 
+        dropdown.classList.toggle("active");
+    });
+});
 
-        /* GAME PACK FILTER */
 
-        function showPack(pack) {
+document.addEventListener("click", function() {
 
-            currentPack = pack;
+    dropdowns.forEach(dropdown => {
+        dropdown.classList.remove("active");
+    });
 
-            filterGames();
+});
 
-            closeDropdowns();
+
+/* FILTER GAMES */
+
+function filterGames(filter) {
+
+    const cards = document.querySelectorAll(".game-card");
+    let found = 0;
+
+    cards.forEach(card => {
+
+        const pack = card.dataset.pack || "";
+        const category = card.dataset.category || "";
+        const size = card.dataset.size || "";
+
+        let show = false;
+
+        if (filter === "all") {
+            show = true;
+        }
+        else if (pack === filter) {
+            show = true;
+        }
+        else if (category.includes(filter)) {
+            show = true;
+        }
+        else if (size === filter) {
+            show = true;
         }
 
-
-        /* CATEGORY FILTER */
-
-        function filterCategory(category) {
-
-            currentCategory = category;
-
-            filterGames();
-
-            closeDropdowns();
+        if (show) {
+            card.style.display = "block";
+            found++;
+        } else {
+            card.style.display = "none";
         }
 
+    });
 
-        /* SIZE FILTER */
-
-        function filterSize(size) {
-
-            currentSize = size;
-
-            filterGames();
-
-            closeDropdowns();
-        }
+    document.getElementById("noResults").style.display =
+        found === 0 ? "block" : "none";
+}
 
 
-        /* COMBINED FILTER */
+/* SEARCH */
 
-        function filterGames() {
+function searchGames() {
 
-            const cards = document.querySelectorAll(".game-card");
+    const input =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
 
-            let visibleCount = 0;
+    const cards = document.querySelectorAll(".game-card");
 
-            cards.forEach(function(card) {
+    let found = 0;
 
-                const pack = card.dataset.pack;
-                const category = card.dataset.category;
-                const size = card.dataset.size;
+    cards.forEach(card => {
 
-                let packMatch =
-                    currentPack === "all" ||
-                    pack === currentPack;
+        const name =
+            card.dataset.name.toLowerCase();
 
-                let categoryMatch =
-                    currentCategory === "all" ||
-                    category.includes(currentCategory);
+        const pack =
+            card.dataset.pack.toLowerCase();
 
-                let sizeMatch =
-                    currentSize === "all" ||
-                    size === currentSize;
+        const category =
+            card.dataset.category.toLowerCase();
 
-                if (packMatch && categoryMatch && sizeMatch) {
+        if (
+            name.includes(input) ||
+            pack.includes(input) ||
+            category.includes(input)
+        ) {
 
-                    card.style.display = "";
+            card.style.display = "block";
+            found++;
 
-                    visibleCount++;
+        } else {
 
-                } else {
-
-                    card.style.display = "none";
-
-                }
-
-            });
-
-
-            const noResults = document.getElementById("noResults");
-
-            if (visibleCount === 0) {
-
-                noResults.style.display = "block";
-
-            } else {
-
-                noResults.style.display = "none";
-
-            }
-
-        }
-
-
-        /* SEARCH */
-
-        function searchGames() {
-
-            const searchText =
-                document.getElementById("searchInput")
-                .value
-                .toLowerCase()
-                .trim();
-
-            const cards =
-                document.querySelectorAll(".game-card");
-
-            let visibleCount = 0;
-
-            cards.forEach(function(card) {
-
-                const name =
-                    card.dataset.name.toLowerCase();
-
-                const pack =
-                    card.dataset.pack.toLowerCase();
-
-                const category =
-                    card.dataset.category.toLowerCase();
-
-                const matchesSearch =
-                    name.includes(searchText) ||
-                    pack.includes(searchText) ||
-                    category.includes(searchText);
-
-                const matchesPack =
-                    currentPack === "all" ||
-                    card.dataset.pack === currentPack;
-
-                const matchesCategory =
-                    currentCategory === "all" ||
-                    card.dataset.category.includes(currentCategory);
-
-                const matchesSize =
-                    currentSize === "all" ||
-                    card.dataset.size === currentSize;
-
-
-                if (
-                    matchesSearch &&
-                    matchesPack &&
-                    matchesCategory &&
-                    matchesSize
-                ) {
-
-                    card.style.display = "";
-
-                    visibleCount++;
-
-                } else {
-
-                    card.style.display = "none";
-
-                }
-
-            });
-
-
-            const noResults =
-                document.getElementById("noResults");
-
-            if (visibleCount === 0) {
-
-                noResults.style.display = "block";
-
-            } else {
-
-                noResults.style.display = "none";
-
-            }
+            card.style.display = "none";
 
         }
 
+    });
 
-        /* CLOSE DROPDOWNS */
-
-        function closeDropdowns() {
-
-            document.querySelectorAll(".dropdown").forEach(function(menu) {
-
-                menu.classList.remove("show");
-
-            });
-
-        }
+    document.getElementById("noResults").style.display =
+        found === 0 ? "block" : "none";
+}
 
 
-        /* POPULAR GAME SEARCH */
+/* ENTER KEY SEARCH */
 
-        function selectGame(gameName) {
+document
+    .getElementById("searchInput")
+    .addEventListener("keydown", function(event) {
 
-            const input =
-                document.getElementById("searchInput");
-
-            input.value = gameName;
-
+        if (event.key === "Enter") {
             searchGames();
-
-            document.getElementById("games").scrollIntoView({
-                behavior: "smooth"
-            });
-
         }
 
+    });
 
-        /* PAGINATION */
 
-        function changePage(page) {
+/* POPULAR GAME SEARCH */
 
-            if (page === "prev") {
+function searchPopular(game) {
 
-                alert("You are already on page 1.");
+    document.getElementById("searchInput").value = game;
 
-                return;
-            }
+    searchGames();
 
-            if (page === "next") {
+    window.location.hash = "games";
+}
 
-                alert("More games will appear here as QEVRANO grows.");
 
-                return;
-            }
+/* PAGINATION */
 
-            document.querySelectorAll(".page-btn").forEach(function(button) {
+function futurePage(page) {
 
-                button.classList.remove("active");
+    alert(
+        "Page " + page +
+        " is ready for future games. More games will be added to QEVRANO PC GAMES soon!"
+    );
 
-            });
+}
 
-            const buttons =
-                document.querySelectorAll(".page-btn");
 
-            buttons[page].classList.add("active");
+function nextPage() {
 
-            if (page !== 1) {
+    alert(
+        "More games will appear as QEVRANO PC GAMES grows!"
+    );
 
-                alert(
-                    "Page " +
-                    page +
-                    " is ready for future games."
-                );
+}
 
-            }
 
-        }
+function previousPage() {
 
-    </script>
+    alert(
+        "You are already on page 1."
+    );
+
+}
+
+</script>
 
 </body>
 </html>
