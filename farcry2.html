@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Far Cry 2 - QEVRANO PC GAMES</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(5, 8, 12, 0.35),
+            rgba(5, 8, 12, 0.55)
+        ),
+        url("./images/unity.jpg");
+
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    background: rgba(5, 8, 12, 0.95);
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: #00b7ff;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #00b7ff;
+}
+
+.container {
+    width: 88%;
+    max-width: 1100px;
+    margin: 45px auto;
+}
+
+.game-page {
+    background: rgba(7, 11, 17, 0.94);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 30px;
+}
+
+.game-header {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.game-image {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-details h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.game-details p {
+    color: #bbb;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.info {
+    line-height: 2;
+    color: #ddd;
+}
+
+.info strong {
+    color: #00b7ff;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: #00a9ed;
+    color: white;
+    text-decoration: none;
+    padding: 13px 28px;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background: #008bc4;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 8px;
+    background: #202832;
+    color: white;
+    text-decoration: none;
+    padding: 13px 28px;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background: #303b47;
+}
+
+.section {
+    margin-top: 35px;
+}
+
+.section h2 {
+    border-left: 4px solid #00b7ff;
+    padding-left: 12px;
+    margin-bottom: 15px;
+}
+
+.section p {
+    color: #bbb;
+    line-height: 1.7;
+}
+
+.requirements {
+    background: rgba(0,0,0,0.25);
+    padding: 20px;
+    line-height: 2;
+    color: #bbb;
+}
+
+.requirements strong {
+    color: white;
+}
+
+footer {
+    background: rgba(5,8,12,0.96);
+    text-align: center;
+    padding: 28px 15px;
+    color: #888;
+    font-size: 13px;
+    margin-top: 50px;
+}
+
+footer strong {
+    color: #00b7ff;
+}
+
+@media (max-width: 750px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .game-header {
+        grid-template-columns: 1fr;
+    }
+
+    .game-image {
+        height: 230px;
+    }
+
+    .game-details h1 {
+        font-size: 30px;
+    }
+
+    .download-btn,
+    .back-btn {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        QEVRANO <span>PC GAMES</span>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="index.html#games">GAMES</a>
+    </nav>
+
+</header>
+
+
+<div class="container">
+
+    <div class="game-page">
+
+        <div class="game-header">
+
+            <div class="game-image">
+                <img src="./images/farcry2.jpg" alt="Far Cry 2">
+            </div>
+
+
+            <div class="game-details">
+
+                <h1>Far Cry 2</h1>
+
+                <p>
+                    Explore the dangerous world of Far Cry 2,
+                    featuring open-world gameplay, action,
+                    exploration and missions.
+                </p>
+
+                <div class="info">
+                    <strong>Genre:</strong> Action • Adventure • Open World<br>
+                    <strong>Game:</strong> Far Cry 2<br>
+                    <strong>Size:</strong> 5–10 GB
+                </div>
+
+                <!-- Add your legitimate download URL here -->
+                <a href="#" class="download-btn">
+                    DOWNLOAD
+                </a>
+
+                <a href="index.html" class="back-btn">
+                    ← BACK TO HOME
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2>ABOUT THE GAME</h2>
+
+            <p>
+                Far Cry 2 is an open-world action game where
+                players explore a large African environment,
+                complete missions and interact with different
+                factions.
+            </p>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2>SYSTEM REQUIREMENTS</h2>
+
+            <div class="requirements">
+
+                <strong>Operating System:</strong>
+                Windows PC<br>
+
+                <strong>Processor:</strong>
+                Dual-Core CPU or better<br>
+
+                <strong>RAM:</strong>
+                2 GB or more<br>
+
+                <strong>Graphics:</strong>
+                DirectX-compatible graphics card<br>
+
+                <strong>Storage:</strong>
+                5–10 GB available space
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    © 2026 <strong>QEVRANO PC GAMES</strong>. All Rights Reserved.
+    <br><br>
+    QEVRANO PC GAMES is an independent gaming information website.
+</footer>
+
+</body>
+</html>
