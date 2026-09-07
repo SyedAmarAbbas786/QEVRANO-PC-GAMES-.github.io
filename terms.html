@@ -10,186 +10,140 @@
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#070707;
-color:#eee;
-line-height:1.8;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#070707;
+    color:#eee;
+    line-height:1.7;
 }
 
 header{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(5,5,5,.96);
-border-bottom:1px solid #242424;
-backdrop-filter:blur(12px);
-}
-
-.navbar{
-max-width:1200px;
-margin:auto;
-min-height:76px;
-padding:0 25px;
-display:flex;
-align-items:center;
-justify-content:space-between;
+    background:#090909;
+    border-bottom:1px solid #222;
+    padding:20px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
-color:#fff;
-text-decoration:none;
-font-size:23px;
-font-weight:900;
-letter-spacing:1px;
+    font-size:24px;
+    font-weight:900;
 }
 
 .logo span{color:#e50914}
 
 nav{
-display:flex;
-gap:28px;
+    display:flex;
+    gap:28px;
 }
 
 nav a{
-color:#aaa;
-text-decoration:none;
-font-size:13px;
-font-weight:bold;
-letter-spacing:.8px;
+    color:#bbb;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
 }
 
-nav a:hover,nav a.active{color:#e50914}
+nav a:hover{color:#e50914}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:60px auto;
+}
 
 .hero{
-max-width:1000px;
-margin:auto;
-padding:80px 25px 50px;
-text-align:center;
-}
-
-.hero .label{
-color:#e50914;
-font-size:12px;
-font-weight:bold;
-letter-spacing:3px;
+    background:linear-gradient(135deg,#151515,#090909);
+    border:1px solid #292929;
+    border-left:4px solid #e50914;
+    border-radius:14px;
+    padding:45px;
+    margin-bottom:30px;
 }
 
 .hero h1{
-font-size:48px;
-font-weight:900;
-margin:12px 0;
+    font-size:42px;
+    margin-bottom:10px;
 }
 
-.hero p{
-color:#888;
-font-size:14px;
+.hero p{color:#aaa}
+
+.card{
+    background:#101010;
+    border:1px solid #242424;
+    border-radius:14px;
+    padding:30px;
+    margin-bottom:20px;
 }
 
-.container{
-max-width:950px;
-margin:auto;
-padding:20px 25px 90px;
+.card h2{
+    margin-bottom:12px;
+    font-size:23px;
 }
 
-.terms{
-background:linear-gradient(145deg,#111,#090909);
-border:1px solid #252525;
-border-radius:14px;
-padding:40px;
-box-shadow:0 15px 45px rgba(0,0,0,.3);
+.card h2::before{
+    content:"";
+    display:inline-block;
+    width:5px;
+    height:22px;
+    background:#e50914;
+    margin-right:12px;
+    vertical-align:-3px;
 }
 
-.terms h2{
-font-size:21px;
-margin:32px 0 10px;
+.card p{
+    color:#aaa;
+    margin-bottom:12px;
 }
 
-.terms h2:first-child{margin-top:0}
-
-.terms p,.terms li{
-color:#999;
-font-size:14px;
+.card ul{
+    margin-left:25px;
+    color:#aaa;
 }
 
-.terms p{margin-bottom:14px}
-
-.terms ul{
-padding-left:22px;
-margin-bottom:15px;
-}
-
-.terms li{margin-bottom:7px}
-
-.terms strong{color:#ddd}
-
-.updated{
-display:inline-block;
-margin-top:25px;
-padding:8px 13px;
-border:1px solid #292929;
-border-radius:6px;
-color:#777;
-font-size:12px;
-}
+.card li{margin-bottom:8px}
 
 footer{
-border-top:1px solid #222;
-background:#050505;
-padding:45px 25px;
+    background:#050505;
+    border-top:1px solid #222;
+    padding:35px 6%;
+    text-align:center;
+    margin-top:70px;
 }
 
-.footer-inner{
-max-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-gap:30px;
+footer p{
+    color:#777;
+    margin-bottom:15px;
 }
 
-.footer-brand h3{
-font-size:20px;
-margin-bottom:10px;
+footer a{
+    color:#aaa;
+    text-decoration:none;
+    margin:0 10px;
 }
 
-.footer-brand h3 span{color:#e50914}
+footer a:hover{color:#e50914}
 
-.footer-brand p{
-max-width:420px;
-color:#666;
-font-size:13px;
-line-height:1.7;
-}
+@media(max-width:700px){
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
 
-.footer-links{
-display:flex;
-gap:22px;
-flex-wrap:wrap;
-align-content:flex-start;
-}
+    nav{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
 
-.footer-links a{
-color:#777;
-text-decoration:none;
-font-size:13px;
-}
+    .hero{padding:28px}
 
-.footer-links a:hover{color:#e50914}
+    .hero h1{font-size:32px}
 
-.copyright{
-max-width:1200px;
-margin:30px auto 0;
-padding-top:20px;
-border-top:1px solid #181818;
-color:#555;
-font-size:12px;
-}
-
-@media(max-width:800px){
-.navbar{flex-direction:column;padding:20px;gap:18px}
-nav{gap:15px;flex-wrap:wrap;justify-content:center}
-.hero h1{font-size:37px}
-.terms{padding:25px}
-.footer-inner{flex-direction:column}
+    .card{padding:22px}
 }
 </style>
 
@@ -198,148 +152,99 @@ nav{gap:15px;flex-wrap:wrap;justify-content:center}
 <body>
 
 <header>
-<div class="navbar">
-<a href="./index.html" class="logo">QEVRANO <span>PC GAMES</span></a>
+    <div class="logo">QEVRANO <span>PC GAMES</span></div>
 
+```
 <nav>
-<a href="./index.html">HOME</a>
-<a href="./index.html#games">GAMES</a>
-<a href="./index.html#packs">PACKS</a>
-<a href="./contact.html">CONTACT</a>
+    <a href="./index.html">HOME</a>
+    <a href="./index.html#games">GAMES</a>
+    <a href="./index.html#packs">PACKS</a>
 </nav>
-</div>
-</header>
+```
 
-<section class="hero">
-<div class="label">SITE RULES</div>
-<h1>Terms & <span style="color:#e50914">Conditions</span></h1>
-<p>Please read these terms before using QEVRANO PC GAMES.</p>
-</section>
+</header>
 
 <main class="container">
 
-<article class="terms">
+```
+<section class="hero">
+    <h1>Terms & Conditions</h1>
+    <p>Please read these terms before using QEVRANO PC GAMES.</p>
+</section>
 
-<h2>1. Acceptance of Terms</h2>
-<p>
-By accessing or using QEVRANO PC GAMES, you agree to these Terms &
-Conditions. If you do not agree with these terms, please discontinue
-use of the website.
-</p>
+<section class="card">
+    <h2>Acceptance of Terms</h2>
+    <p>
+        By accessing and using QEVRANO PC GAMES, you agree to follow these
+        Terms & Conditions. If you do not agree with these terms, please
+        discontinue use of the website.
+    </p>
+</section>
 
-<h2>2. Website Purpose</h2>
-<p>
-QEVRANO PC GAMES provides gaming-related information, game discovery
-content and links to relevant sources. The website may provide
-information about games, system requirements, screenshots, trailers
-and other related material.
-</p>
+<section class="card">
+    <h2>Website Purpose</h2>
+    <p>
+        QEVRANO PC GAMES provides information about PC games, including
+        game descriptions, screenshots, system requirements, trailers,
+        and links to external sources.
+    </p>
+</section>
 
-<h2>3. Game Ownership and Copyright</h2>
-<p>
-Games, trademarks, logos, artwork, characters and other intellectual
-property belong to their respective owners unless otherwise stated.
-</p>
+<section class="card">
+    <h2>External Links</h2>
+    <p>
+        Some pages may contain links to third-party websites. These
+        websites operate independently from QEVRANO.
+    </p>
+    <p>
+        Users should review the terms and policies of external websites
+        before using their services.
+    </p>
+</section>
 
-<p>
-QEVRANO PC GAMES does not claim ownership of third-party copyrighted
-game content simply because it is referenced or displayed on the site.
-</p>
+<section class="card">
+    <h2>Game Ownership</h2>
+    <p>
+        Game titles, logos, artwork, trademarks, and other intellectual
+        property belong to their respective owners unless otherwise stated.
+    </p>
+    <p>
+        QEVRANO PC GAMES does not claim ownership of third-party game
+        intellectual property.
+    </p>
+</section>
 
-<h2>4. External Websites</h2>
-<p>
-The website may contain links to external websites. These websites
-operate independently from QEVRANO PC GAMES and may have their own
-terms, policies and requirements.
-</p>
+<section class="card">
+    <h2>Website Content</h2>
+    <p>
+        We try to keep information accurate and useful, but game details,
+        requirements, availability, pricing, and external links may change.
+    </p>
+</section>
 
-<p>
-Users should verify the destination and terms of an external website
-before downloading, purchasing or using any product or service.
-</p>
-
-<h2>5. Accuracy of Information</h2>
-<p>
-We aim to provide useful and accurate information, but game details,
-system requirements, availability, pricing and external links may
-change.
-</p>
-
-<p>
-QEVRANO PC GAMES does not guarantee that every piece of information
-on the website will always be complete, current or error-free.
-</p>
-
-<h2>6. Website Availability</h2>
-<p>
-We may modify, suspend or discontinue parts of the website at any
-time. We do not guarantee that the website will always be available
-without interruption.
-</p>
-
-<h2>7. User Conduct</h2>
-<p>Users agree not to:</p>
-
-<ul>
-<li>Attempt to damage or disrupt the website.</li>
-<li>Use the website for unlawful purposes.</li>
-<li>Attempt unauthorized access to website systems.</li>
-<li>Abuse contact or other website functionality.</li>
-</ul>
-
-<h2>8. Limitation of Liability</h2>
-<p>
-To the extent permitted by applicable law, QEVRANO PC GAMES is not
-responsible for losses, damages or problems resulting from the use
-of external websites, third-party services, inaccurate information,
-website interruptions or other circumstances outside reasonable
-control.
-</p>
-
-<h2>9. Changes to These Terms</h2>
-<p>
-These Terms & Conditions may be updated when necessary. Continued use
-of the website after changes are published may constitute acceptance
-of the updated terms.
-</p>
-
-<h2>10. Contact</h2>
-<p>
-If you have questions regarding these terms, please use our
-<a href="./contact.html" style="color:#e50914">Contact page</a>.
-</p>
-
-<div class="updated">Last updated: September 7, 2026</div>
-
-</article>
+<section class="card">
+    <h2>Changes to These Terms</h2>
+    <p>
+        QEVRANO PC GAMES may update these Terms & Conditions when necessary.
+        The latest version will always be displayed on this page.
+    </p>
+</section>
+```
 
 </main>
 
 <footer>
-<div class="footer-inner">
+    <p>© 2026 QEVRANO PC GAMES. All rights reserved.</p>
 
-<div class="footer-brand">
-<h3>QEVRANO <span>PC GAMES</span></h3>
-<p>
-A premium gaming discovery website built to help PC gamers
-find game information in a clean and simple environment.
-</p>
+```
+<div>
+    <a href="./about.html" target="_blank">About</a>
+    <a href="./contact.html" target="_blank">Contact</a>
+    <a href="./privacy.html" target="_blank">Privacy Policy</a>
+    <a href="./terms.html" target="_blank">Terms & Conditions</a>
 </div>
+```
 
-<div class="footer-links">
-<a href="./index.html">Home</a>
-<a href="./index.html#games">Games</a>
-<a href="./contact.html">Contact</a>
-<a href="./privacy.html">Privacy Policy</a>
-<a href="./terms.html">Terms & Conditions</a>
-<a href="./disclaimer.html">Disclaimer</a>
-</div>
-
-</div>
-
-<div class="copyright">
-© 2026 QEVRANO PC GAMES. All rights reserved.
-</div>
 </footer>
 
 </body>
