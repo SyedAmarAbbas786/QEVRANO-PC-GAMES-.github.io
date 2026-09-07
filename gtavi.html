@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -13,311 +14,416 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
     color:#eee;
     background:
-        linear-gradient(rgba(5,8,15,.88),rgba(5,8,15,.94)),
-        url("./images/gtavi-bg.jpg") center/cover fixed;
+        linear-gradient(rgba(5,5,8,.94),rgba(5,5,8,.97)),
+        url("./images/gtavi-bg.jpg") center/cover fixed no-repeat;
+    line-height:1.6;
 }
 
 /* HEADER */
 
 header{
-    background:rgba(5,8,12,.94);
-    border-bottom:1px solid rgba(255,255,255,.12);
-    padding:18px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
     position:sticky;
     top:0;
     z-index:1000;
+    background:rgba(0,0,0,.94);
+    border-bottom:1px solid rgba(220,0,0,.35);
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    min-height:70px;
+    padding:0 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
 }
 
 .logo{
     color:#fff;
-    font-size:23px;
-    font-weight:bold;
-    text-decoration:none;
+    font-size:24px;
+    font-weight:900;
     letter-spacing:1px;
+    text-decoration:none;
 }
 
 .logo span{
-    color:#00b7ff;
+    color:#e00000;
 }
 
-.header-right{
+.nav-links{
     display:flex;
     align-items:center;
-    gap:22px;
+    gap:28px;
 }
 
-nav{
-    display:flex;
-    gap:25px;
-}
-
-nav a{
-    color:#fff;
+.nav-links a{
+    color:#ddd;
     text-decoration:none;
-    font-weight:bold;
     font-size:14px;
-}
-
-nav a:hover{
-    color:#00b7ff;
-}
-
-/* SEARCH */
-
-.search-container{
-    position:relative;
-}
-
-.search-icon{
-    width:40px;
-    height:40px;
-    border:1px solid #00b7ff;
-    background:#00a9ed;
-    color:#fff;
-    font-size:19px;
-    border-radius:5px;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    font-weight:700;
     transition:.25s;
 }
 
-.search-icon:hover{
-    background:#008bc4;
+.nav-links a:hover{
+    color:#e00000;
 }
 
-.header-search{
+.search-area{
+    position:relative;
+}
+
+.search-btn{
+    border:0;
+    background:none;
+    color:#e00000;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.search-box{
     display:none;
     position:absolute;
     right:0;
-    top:48px;
-    width:280px;
-    background:#10151c;
-    border:1px solid rgba(0,183,255,.5);
-    box-shadow:0 10px 30px rgba(0,0,0,.6);
-    z-index:3000;
+    top:35px;
+    width:250px;
+    padding:10px;
+    background:#111;
+    border:1px solid #e00000;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
 }
 
-.header-search.active{
-    display:block;
-}
-
-.header-search input{
+.search-box input{
     width:100%;
-    padding:12px 14px;
-    border:none;
-    outline:none;
-    background:#fff;
-    color:#111;
-    font-size:14px;
-}
-
-.search-results{
-    display:none;
-    max-height:300px;
-    overflow-y:auto;
-}
-
-.search-result{
-    display:block;
-    padding:12px 14px;
+    padding:10px;
+    background:#080808;
     color:#fff;
+    border:1px solid #333;
+    outline:none;
+}
+
+.search-box input:focus{
+    border-color:#e00000;
+}
+
+/* HERO */
+
+.hero{
+    max-width:1200px;
+    margin:45px auto 30px;
+    padding:0 25px;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:35px;
+    align-items:center;
+}
+
+.hero-image{
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(220,0,0,.35);
+    box-shadow:0 0 40px rgba(180,0,0,.14);
+}
+
+.hero-image img{
+    display:block;
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.hero-image:hover img{
+    transform:scale(1.03);
+}
+
+.hero-content h1{
+    font-size:52px;
+    line-height:1.05;
+    margin-bottom:15px;
+    color:#fff;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.hero-content h1 span{
+    color:#e00000;
+}
+
+.hero-content .tagline{
+    color:#aaa;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    color:#c8c8c8;
+    margin-bottom:22px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 20px;
     text-decoration:none;
-    border-top:1px solid rgba(255,255,255,.08);
+    font-weight:800;
     font-size:14px;
+    border:1px solid #e00000;
+    transition:.25s;
 }
 
-.search-result:hover{
-    background:#00a9ed;
+.btn-red{
+    background:#d00000;
+    color:#fff;
 }
 
-.search-no-result{
-    padding:12px 14px;
-    color:#999;
-    font-size:14px;
-    border-top:1px solid rgba(255,255,255,.08);
+.btn-red:hover{
+    background:#ff0000;
+    box-shadow:0 0 20px rgba(220,0,0,.35);
+    transform:translateY(-2px);
 }
 
-/* MAIN */
-
-.main-panel{
-    max-width:1150px;
-    margin:45px auto;
-    padding:30px;
-    background:rgba(10,14,20,.94);
-    border:1px solid rgba(255,255,255,.1);
-    box-shadow:0 15px 45px rgba(0,0,0,.55);
+.btn-dark{
+    background:#111;
+    color:#fff;
 }
 
-h1{
-    font-size:36px;
+.btn-dark:hover{
+    background:#1b1b1b;
+    box-shadow:0 0 15px rgba(220,0,0,.2);
+}
+
+.btn.disabled{
+    opacity:.45;
+    cursor:not-allowed;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 25px;
+}
+
+section{
+    margin:45px 0;
+}
+
+.section-title{
+    font-size:26px;
+    color:#fff;
+    margin-bottom:22px;
+    padding-left:14px;
+    border-left:4px solid #e00000;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+/* ABOUT */
+
+.about{
+    background:rgba(10,10,12,.86);
+    border:1px solid #222;
+    padding:25px;
+}
+
+.about p{
+    color:#bbb;
     margin-bottom:12px;
 }
 
-.subtitle{
-    color:#00b7ff;
-    font-weight:bold;
-    margin-bottom:25px;
-}
-
-.hero{
-    width:100%;
-    max-height:500px;
-    object-fit:cover;
-    display:block;
-    margin-bottom:30px;
-}
-
-h2{
-    color:#00b7ff;
-    margin:30px 0 15px;
-}
-
-p{
-    line-height:1.7;
-    color:#ccc;
-}
-
-.features{
-    padding-left:20px;
-    line-height:1.8;
-    color:#ccc;
-}
+/* SCREENSHOTS */
 
 .screenshots{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:15px;
-    margin-top:20px;
 }
 
-.screenshots img{
-    width:100%;
-    height:160px;
-    object-fit:cover;
+.screenshot{
+    overflow:hidden;
+    background:#0b0b0d;
+    border:1px solid #292929;
     cursor:pointer;
-    border:1px solid rgba(255,255,255,.1);
-    transition:.25s;
+    position:relative;
 }
 
-.screenshots img:hover{
-    transform:scale(1.03);
-    border-color:#00b7ff;
-}
-
-/* DOWNLOAD */
-
-.download-buttons{
-    display:flex;
-    align-items:flex-start;
-    gap:15px;
-    margin-top:20px;
-}
-
-.download-btn{
-    display:inline-block;
-    padding:14px 24px;
-    background:#00a9ed;
-    color:#fff;
-    text-decoration:none;
+.screenshot::after{
+    content:"VIEW";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:8px;
+    text-align:center;
+    font-size:11px;
     font-weight:bold;
-    border-radius:4px;
+    letter-spacing:1px;
+    color:#fff;
+    background:rgba(0,0,0,.75);
+    opacity:0;
     transition:.25s;
 }
 
-.download-btn:hover{
-    background:#008bc4;
+.screenshot:hover{
+    border-color:#e00000;
 }
 
-.download-btn.official{
-    background:#222;
-    border:1px solid #00b7ff;
+.screenshot:hover::after{
+    opacity:1;
 }
 
-.download-btn.official:hover{
-    background:#00a9ed;
-}
-
-.compressed-link{
+.screenshot img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
     display:block;
-    margin-top:8px;
-    color:#00b7ff;
-    font-size:14px;
-    font-weight:bold;
-    text-decoration:underline;
+    transition:.35s;
 }
 
-.compressed-link:hover{
-    color:#fff;
+.screenshot:hover img{
+    transform:scale(1.06);
 }
 
-/* AD */
-
-.ad-box{
-    width:300px;
-    height:600px;
-    margin:35px auto;
-    background:#111;
-    border:1px solid rgba(255,255,255,.1);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#666;
-}
-
-/* VIDEO */
+/* TRAILER */
 
 .video-box{
+    position:relative;
     width:100%;
-    height:400px;
-    background:#111;
-    border:1px solid rgba(255,255,255,.1);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#777;
-    margin-top:20px;
+    aspect-ratio:16/9;
+    background:#050505;
+    border:1px solid #333;
+    overflow:hidden;
+}
+
+.video-box iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.feature{
+    background:rgba(12,12,14,.92);
+    border:1px solid #252525;
+    padding:22px;
+    transition:.25s;
+}
+
+.feature:hover{
+    border-color:#b00000;
+    transform:translateY(-3px);
+}
+
+.feature h3{
+    color:#e00000;
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.feature p{
+    color:#aaa;
+    font-size:14px;
+}
+
+/* GAME INFO */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+}
+
+.info-card{
+    background:#0d0d0f;
+    border:1px solid #252525;
+    padding:17px 20px;
+}
+
+.info-card strong{
+    color:#e00000;
+    display:block;
+    margin-bottom:4px;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+.info-card span{
+    color:#ccc;
 }
 
 /* REQUIREMENTS */
 
 .requirements{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
 }
 
-.requirements-box{
-    background:#11171f;
-    padding:20px;
-    border:1px solid rgba(255,255,255,.08);
+.requirement-card{
+    background:#0d0d0f;
+    border:1px solid #282828;
+    padding:24px;
 }
 
-.requirements-box h3{
-    color:#00b7ff;
-    margin-bottom:12px;
+.requirement-card h3{
+    color:#e00000;
+    margin-bottom:15px;
+    font-size:20px;
 }
 
-.requirements-box p{
-    margin-bottom:7px;
+.requirement-card ul{
+    list-style:none;
 }
 
-/* FOOTER */
+.requirement-card li{
+    padding:8px 0;
+    border-bottom:1px solid #1e1e1e;
+    color:#bbb;
+}
 
-footer{
-    text-align:center;
-    padding:30px;
-    margin-top:50px;
-    background:#05080c;
-    color:#777;
+.requirement-card li:last-child{
+    border-bottom:0;
+}
+
+.requirement-card li strong{
+    color:#eee;
+}
+
+/* NOTICE */
+
+.notice{
+    background:rgba(60,0,0,.15);
+    border:1px solid rgba(220,0,0,.4);
+    padding:18px 20px;
+    color:#bbb;
+}
+
+.notice strong{
+    color:#e00000;
 }
 
 /* MODAL */
@@ -326,431 +432,748 @@ footer{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.9);
-    z-index:5000;
+    z-index:2000;
+    background:rgba(0,0,0,.92);
     align-items:center;
     justify-content:center;
-}
-
-.modal img{
-    max-width:90%;
-    max-height:90%;
+    padding:25px;
 }
 
 .modal.active{
     display:flex;
 }
 
-/* MOBILE */
+.modal img{
+    max-width:95%;
+    max-height:90vh;
+    border:1px solid #e00000;
+    box-shadow:0 0 40px rgba(220,0,0,.25);
+}
 
-@media(max-width:800px){
+.close{
+    position:absolute;
+    top:18px;
+    right:28px;
+    color:#fff;
+    font-size:38px;
+    cursor:pointer;
+    line-height:1;
+}
 
-    header{
-        padding:15px 4%;
+.close:hover{
+    color:#e00000;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:60px;
+    background:#050505;
+    border-top:1px solid #222;
+    padding:35px 25px;
+    text-align:center;
+}
+
+.footer-logo{
+    color:#fff;
+    font-weight:900;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.footer-logo span{
+    color:#e00000;
+}
+
+footer p{
+    color:#777;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+}
+
+.footer-links a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:#e00000;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+    .hero{
+        grid-template-columns:1fr;
     }
 
-    .header-right{
-        gap:10px;
-    }
-
-    nav{
-        gap:12px;
-    }
-
-    .main-panel{
-        margin:20px;
-        padding:20px;
+    .hero-image img{
+        height:360px;
     }
 
     .screenshots{
         grid-template-columns:repeat(2,1fr);
     }
 
+    .features{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+    .navbar{
+        padding:12px 18px;
+        flex-wrap:wrap;
+    }
+
+    .nav-links{
+        order:3;
+        width:100%;
+        justify-content:center;
+        gap:18px;
+        padding-bottom:5px;
+    }
+
+    .hero{
+        margin-top:25px;
+        padding:0 16px;
+    }
+
+    .container{
+        padding:0 16px;
+    }
+
+    .hero-content h1{
+        font-size:38px;
+    }
+
+    .hero-image img{
+        height:270px;
+    }
+
+    .screenshots{
+        grid-template-columns:1fr;
+    }
+
+    .screenshot img{
+        height:210px;
+    }
+
+    .info-grid,
     .requirements{
         grid-template-columns:1fr;
     }
 
-    .download-buttons{
-        flex-direction:column;
+    section{
+        margin:35px 0;
     }
 
-    .video-box{
-        height:250px;
+    .search-box{
+        right:-20px;
     }
 }
 </style>
+
 </head>
 
 <body>
 
-<header>
+<!-- HEADER -->
 
+<header>
+    <div class="navbar">
+
+```
     <a href="./index.html" class="logo">
         QEVRANO <span>PC GAMES</span>
     </a>
 
-    <div class="header-right">
+    <nav class="nav-links">
+        <a href="./index.html">HOME</a>
+        <a href="./index.html#games">GAMES</a>
+        <a href="./index.html#packs">PACKS</a>
+    </nav>
 
-        <nav>
-            <a href="./index.html">HOME</a>
-            <a href="./index.html#games">GAMES</a>
-            <a href="./index.html#packs">PACKS</a>
-        </nav>
+    <div class="search-area">
+        <button class="search-btn" onclick="toggleSearch()">⌕</button>
 
-        <div class="search-container">
-
-            <button
-                class="search-icon"
-                onclick="toggleSearch()"
-                aria-label="Search"
+        <div class="search-box" id="searchBox">
+            <input
+                type="text"
+                id="gameSearch"
+                placeholder="Search games..."
+                onkeyup="searchGames()"
             >
-                🔍
-            </button>
-
-            <div class="header-search" id="headerSearch">
-
-                <input
-                    type="text"
-                    id="headerSearchInput"
-                    placeholder="Search games..."
-                    autocomplete="off"
-                >
-
-                <div
-                    class="search-results"
-                    id="headerSearchResults"
-                ></div>
-
-            </div>
-
         </div>
-
     </div>
+
+</div>
+```
 
 </header>
 
+<!-- HERO -->
 
-<main class="main-panel">
+<main>
 
-    <h1>Grand Theft Auto VI</h1>
+<section class="hero">
 
-    <div class="subtitle">
-        GTA VI
+```
+<div class="hero-image">
+    <img src="./images/gtavi.jpg" alt="GTA VI">
+</div>
+
+<div class="hero-content">
+
+    <h1>GTA <span>VI</span></h1>
+
+    <div class="tagline">
+        Welcome to Leonida. Welcome to Vice City.
     </div>
-
-    <img
-        src="./images/gtavi.jpg"
-        alt="GTA VI"
-        class="hero"
-    >
-
-
-    <h2>About Game</h2>
 
     <p>
-        Grand Theft Auto VI is an upcoming open-world action-adventure
-        game developed by Rockstar Games. The game takes players to
-        the state of Leonida, including Vice City, and follows Jason
-        Duval and Lucia Caminos as they become involved in a criminal
-        conspiracy.
+        Grand Theft Auto VI is the upcoming open-world action-adventure
+        game from Rockstar Games, set in the fictional state of Leonida
+        and featuring the iconic Vice City.
     </p>
 
-
-    <h2>Features</h2>
-
-    <ul class="features">
-
-        <li>Large open-world environment</li>
-        <li>Vice City and the wider state of Leonida</li>
-        <li>Story focused on Jason and Lucia</li>
-        <li>Open-world exploration</li>
-        <li>Vehicles and varied activities</li>
-        <li>Next-generation visuals and gameplay</li>
-
-    </ul>
-
-
-    <h2>Screenshots</h2>
-
-    <div class="screenshots">
-
-        <img
-            src="./images/gtavi-1.jpg"
-            alt="GTA VI Screenshot 1"
-            onclick="openModal(this.src)"
-        >
-
-        <img
-            src="./images/gtavi-2.jpg"
-            alt="GTA VI Screenshot 2"
-            onclick="openModal(this.src)"
-        >
-
-        <img
-            src="./images/gtavi-3.jpg"
-            alt="GTA VI Screenshot 3"
-            onclick="openModal(this.src)"
-        >
-
-        <img
-            src="./images/gtavi-4.jpg"
-            alt="GTA VI Screenshot 4"
-            onclick="openModal(this.src)"
-        >
-
-    </div>
-
-
-    <h2>Installation Video</h2>
-
-    <div class="video-box">
-        INSTALLATION VIDEO WILL BE ADDED HERE
-    </div>
-
-
-    <h2>Download</h2>
-
-    <div class="download-buttons">
+    <div class="buttons">
 
         <a
             href="https://store.rockstargames.com/game/buy-gta-vi"
-            class="download-btn official"
             target="_blank"
             rel="noopener noreferrer"
+            class="btn btn-red"
         >
-            DOWNLOAD OFFICIAL
+            OFFICIAL STORE
         </a>
 
-        <div>
+        <a
+            href="#installation"
+            class="btn btn-dark"
+        >
+            INSTALLATION VIDEO
+        </a>
 
-            <a
-                href="#"
-                class="download-btn"
-                onclick="return false;"
-            >
-                DOWNLOAD SETUP.EXE
-            </a>
+    </div>
 
-            <a
-                href="#"
-                class="compressed-link"
-                onclick="return false;"
-            >
-                Highly Compressed
-            </a>
+</div>
+```
 
-        </div>
+</section>
+
+<div class="container">
+
+<!-- ABOUT -->
+
+<section>
+
+```
+<h2 class="section-title">About GTA VI</h2>
+
+<div class="about">
+
+    <p>
+        GTA VI takes players back to Vice City in the biggest and most
+        immersive Grand Theft Auto world yet.
+    </p>
+
+    <p>
+        The story follows Jason Duval and Lucia Caminos as they become
+        caught up in a dangerous journey across the fictional state of
+        Leonida.
+    </p>
+
+    <p>
+        Explore cities, highways, beaches, countryside and many other
+        locations while experiencing Rockstar Games' next-generation
+        open-world adventure.
+    </p>
+
+</div>
+```
+
+</section>
+
+<!-- SCREENSHOTS -->
+
+<section>
+
+```
+<h2 class="section-title">Screenshots</h2>
+
+<div class="screenshots">
+
+    <div class="screenshot">
+        <img src="./images/gtavi-1.jpg" alt="GTA VI Screenshot 1">
+    </div>
+
+    <div class="screenshot">
+        <img src="./images/gtavi-2.jpg" alt="GTA VI Screenshot 2">
+    </div>
+
+    <div class="screenshot">
+        <img src="./images/gtavi-3.jpg" alt="GTA VI Screenshot 3">
+    </div>
+
+    <div class="screenshot">
+        <img src="./images/gtavi-4.jpg" alt="GTA VI Screenshot 4">
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- INSTALLATION -->
+
+<section id="installation">
+
+```
+<h2 class="section-title">Installation Video</h2>
+
+<div class="video-box">
+
+    <iframe
+        src="YOUR_VIDEO_EMBED_URL"
+        title="GTA VI Installation Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+</div>
+```
+
+</section>
+
+<!-- FEATURES -->
+
+<section>
+
+```
+<h2 class="section-title">Game Features</h2>
+
+<div class="features">
+
+    <div class="feature">
+        <h3>Huge Open World</h3>
+        <p>
+            Explore a massive open-world environment across the state
+            of Leonida.
+        </p>
+    </div>
+
+    <div class="feature">
+        <h3>Vice City</h3>
+        <p>
+            Return to the legendary Vice City with modern locations,
+            streets and environments.
+        </p>
+    </div>
+
+    <div class="feature">
+        <h3>Jason & Lucia</h3>
+        <p>
+            Follow Jason Duval and Lucia Caminos through their story
+            across Leonida.
+        </p>
+    </div>
+
+    <div class="feature">
+        <h3>Open-World Exploration</h3>
+        <p>
+            Discover cities, roads, beaches, countryside and numerous
+            activities throughout the world.
+        </p>
+    </div>
+
+    <div class="feature">
+        <h3>Vehicles & Activities</h3>
+        <p>
+            Experience a wide range of vehicles, locations and activities
+            throughout the open world.
+        </p>
+    </div>
+
+    <div class="feature">
+        <h3>Next-Generation Experience</h3>
+        <p>
+            Experience Rockstar Games' latest generation of visuals,
+            gameplay and world design.
+        </p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- GAME INFORMATION -->
+
+<section>
+
+```
+<h2 class="section-title">Game Information</h2>
+
+<div class="info-grid">
+
+    <div class="info-card">
+        <strong>Release Date</strong>
+        <span>November 19, 2026</span>
+    </div>
+
+    <div class="info-card">
+        <strong>Developer</strong>
+        <span>Rockstar Games</span>
+    </div>
+
+    <div class="info-card">
+        <strong>Publisher</strong>
+        <span>Rockstar Games</span>
+    </div>
+
+    <div class="info-card">
+        <strong>Genre</strong>
+        <span>Action / Adventure</span>
+    </div>
+
+    <div class="info-card">
+        <strong>Setting</strong>
+        <span>Leonida / Vice City</span>
+    </div>
+
+    <div class="info-card">
+        <strong>Platforms</strong>
+        <span>PlayStation 5 / Xbox Series X|S</span>
+    </div>
+
+    <div class="info-card">
+        <strong>PC Version</strong>
+        <span>Not Announced</span>
+    </div>
+
+    <div class="info-card">
+        <strong>Mode</strong>
+        <span>Single Player</span>
+    </div>
+
+    <div class="info-card">
+        <strong>Status</strong>
+        <span>Coming Soon</span>
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- PC STATUS -->
+
+<section>
+
+```
+<h2 class="section-title">PC Availability</h2>
+
+<div class="notice">
+
+    <strong>Important:</strong>
+    GTA VI is currently listed for PlayStation 5 and Xbox Series X|S.
+    A PC version has not been officially announced in the information
+    shown on this page. The PC download/setup buttons should remain
+    unavailable until an official PC release is confirmed.
+
+</div>
+```
+
+</section>
+
+<!-- REQUIREMENTS -->
+
+<section>
+
+```
+<h2 class="section-title">System Requirements</h2>
+
+<div class="requirements">
+
+    <div class="requirement-card">
+
+        <h3>Minimum</h3>
+
+        <ul>
+            <li>
+                <strong>OS:</strong>
+                Not announced
+            </li>
+
+            <li>
+                <strong>Processor:</strong>
+                Not announced
+            </li>
+
+            <li>
+                <strong>Memory:</strong>
+                Not announced
+            </li>
+
+            <li>
+                <strong>Graphics:</strong>
+                Not announced
+            </li>
+
+            <li>
+                <strong>Storage:</strong>
+                Not announced
+            </li>
+        </ul>
 
     </div>
 
 
-    <h2>Game Information</h2>
+    <div class="requirement-card">
 
-    <div class="requirements">
+        <h3>Recommended</h3>
 
-        <div class="requirements-box">
+        <ul>
+            <li>
+                <strong>OS:</strong>
+                Not announced
+            </li>
 
-            <h3>Release</h3>
+            <li>
+                <strong>Processor:</strong>
+                Not announced
+            </li>
 
-            <p><strong>Release Date:</strong> November 19, 2026</p>
-            <p><strong>Developer:</strong> Rockstar Games</p>
-            <p><strong>Publisher:</strong> Rockstar Games</p>
-            <p><strong>Genre:</strong> Action • Adventure</p>
-            <p><strong>Setting:</strong> Leonida / Vice City</p>
+            <li>
+                <strong>Memory:</strong>
+                Not announced
+            </li>
 
-        </div>
+            <li>
+                <strong>Graphics:</strong>
+                Not announced
+            </li>
 
-
-        <div class="requirements-box">
-
-            <h3>Platforms</h3>
-
-            <p><strong>PlayStation:</strong> PlayStation 5</p>
-            <p><strong>Xbox:</strong> Xbox Series X|S</p>
-            <p><strong>PC:</strong> Not announced</p>
-            <p><strong>Mode:</strong> Single Player</p>
-            <p><strong>Status:</strong> Coming Soon</p>
-
-        </div>
+            <li>
+                <strong>Storage:</strong>
+                Not announced
+            </li>
+        </ul>
 
     </div>
+
+</div>
+```
+
+</section>
+
+</div>
 
 </main>
 
-
-<div class="ad-box">
-    300 × 600 AD
-</div>
-
+<!-- FOOTER -->
 
 <footer>
-    © 2026 QEVRANO PC GAMES. All Rights Reserved.
-</footer>
 
-
-<div
-    class="modal"
-    id="imageModal"
-    onclick="closeModal()"
->
-    <img id="modalImage" src="" alt="Screenshot">
+```
+<div class="footer-logo">
+    QEVRANO <span>PC GAMES</span>
 </div>
 
+<p>
+    Your destination for PC gaming news, information and game pages.
+</p>
+
+<div class="footer-links">
+    <a href="./index.html">Home</a>
+    <a href="./index.html#games">Games</a>
+    <a href="./index.html#packs">Packs</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms</a>
+</div>
+```
+
+</footer>
+
+<!-- IMAGE MODAL -->
+
+<div class="modal" id="imageModal">
+
+```
+<span class="close" onclick="closeModal()">&times;</span>
+
+<img id="modalImage" src="" alt="GTA VI Screenshot">
+```
+
+</div>
 
 <script>
 
+/* SEARCH */
+
+function toggleSearch(){
+
+    const box = document.getElementById("searchBox");
+
+    if(box.style.display === "block"){
+        box.style.display = "none";
+    }else{
+        box.style.display = "block";
+        document.getElementById("gameSearch").focus();
+    }
+
+}
+
+
+/* GAME DATABASE */
+
 const games = [
 
-    {name:"Far Cry 2",file:"./farcry2.html"},
-    {name:"Far Cry 3",file:"./farcry3.html"},
-    {name:"Assassin's Creed II",file:"./ac2.html"},
-    {name:"GTA V",file:"./gta5.html"},
-    {name:"GTA IV",file:"./gta4.html"},
-    {name:"FIFA",file:"./fifa.html"},
-    {name:"Don Bradman Cricket",file:"./cricket.html"},
-    {name:"Call of Duty 1",file:"./cod1.html"},
-    {name:"The Witcher 2",file:"./witcher2.html"},
-    {name:"GTA VI",file:"./gtavi.html"},
-    {name:"Assassin's Creed Syndicate",file:"./acs.html"},
-    {name:"Need for Speed II",file:"./nfs2.html"}
+    {
+        name:"Far Cry 2",
+        url:"./farcry2.html"
+    },
+
+    {
+        name:"Far Cry 3",
+        url:"./farcry3.html"
+    },
+
+    {
+        name:"Assassin's Creed II",
+        url:"./ac2.html"
+    },
+
+    {
+        name:"GTA V",
+        url:"./gta5.html"
+    },
+
+    {
+        name:"GTA IV",
+        url:"./gta4.html"
+    },
+
+    {
+        name:"FIFA",
+        url:"./fifa.html"
+    },
+
+    {
+        name:"Don Bradman Cricket",
+        url:"./cricket.html"
+    },
+
+    {
+        name:"Call of Duty",
+        url:"./cod1.html"
+    },
+
+    {
+        name:"The Witcher 2",
+        url:"./witcher2.html"
+    },
+
+    {
+        name:"GTA VI",
+        url:"./gtavi.html"
+    },
+
+    {
+        name:"Assassin's Creed Syndicate",
+        url:"./acs.html"
+    },
+
+    {
+        name:"Need for Speed II",
+        url:"./nfs2.html"
+    }
 
 ];
 
 
-function toggleSearch(){
+/* SEARCH FUNCTION */
 
-    const search =
-        document.getElementById("headerSearch");
+function searchGames(){
 
     const input =
-        document.getElementById("headerSearchInput");
+        document.getElementById("gameSearch")
+        .value
+        .toLowerCase()
+        .trim();
 
-    search.classList.toggle("active");
+    if(!input){
+        return;
+    }
 
-    if(search.classList.contains("active")){
-        input.focus();
+    const match = games.find(game =>
+        game.name.toLowerCase().includes(input)
+    );
+
+    if(match){
+        window.location.href = match.url;
     }
 
 }
 
 
-const input =
-    document.getElementById("headerSearchInput");
+/* SCREENSHOT MODAL */
 
-const results =
-    document.getElementById("headerSearchResults");
+const screenshots =
+    document.querySelectorAll(".screenshot img");
 
+const modal =
+    document.getElementById("imageModal");
 
-input.addEventListener("input", function(){
-
-    const search =
-        this.value.trim().toLowerCase();
-
-    results.innerHTML = "";
-
-    if(!search){
-
-        results.style.display = "none";
-        return;
-
-    }
+const modalImage =
+    document.getElementById("modalImage");
 
 
-    const matches =
-        games.filter(game =>
-            game.name.toLowerCase().startsWith(search)
-        );
+screenshots.forEach(img => {
 
+    img.addEventListener("click", function(){
 
-    if(!matches.length){
-
-        results.innerHTML =
-            '<div class="search-no-result">No games found</div>';
-
-        results.style.display = "block";
-        return;
-
-    }
-
-
-    matches.forEach(game => {
-
-        const link =
-            document.createElement("a");
-
-        link.className = "search-result";
-
-        link.href = game.file;
-
-        link.textContent = game.name;
-
-        results.appendChild(link);
+        modalImage.src = this.src;
+        modal.classList.add("active");
 
     });
 
-
-    results.style.display = "block";
-
 });
-
-
-input.addEventListener("keydown", function(e){
-
-    if(e.key === "Enter"){
-
-        const search =
-            this.value.trim().toLowerCase();
-
-        const match =
-            games.find(game =>
-                game.name.toLowerCase().startsWith(search)
-            );
-
-        if(match){
-            window.location.href = match.file;
-        }
-
-    }
-
-});
-
-
-document.addEventListener("click", function(e){
-
-    const container =
-        document.querySelector(".search-container");
-
-    if(!container.contains(e.target)){
-
-        document
-            .getElementById("headerSearch")
-            .classList.remove("active");
-
-    }
-
-});
-
-
-function openModal(src){
-
-    document
-        .getElementById("modalImage")
-        .src = src;
-
-    document
-        .getElementById("imageModal")
-        .classList.add("active");
-
-}
 
 
 function closeModal(){
 
-    document
-        .getElementById("imageModal")
-        .classList.remove("active");
+    modal.classList.remove("active");
+    modalImage.src = "";
 
 }
+
+
+modal.addEventListener("click", function(e){
+
+    if(e.target === modal){
+        closeModal();
+    }
+
+});
+
+
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "Escape"){
+        closeModal();
+    }
+
+});
 
 </script>
 
