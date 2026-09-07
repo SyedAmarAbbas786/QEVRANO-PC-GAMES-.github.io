@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Far Cry 3 - QEVRANO PC GAMES</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -16,32 +18,38 @@
 body{
     font-family:Arial,Helvetica,sans-serif;
     color:#eee;
+
     background:
-        linear-gradient(rgba(5,8,15,.88),rgba(5,8,15,.95)),
-        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+        linear-gradient(rgba(5,8,15,.88),rgba(5,8,15,.94)),
+        url("./images/farcry3-bg.jpg") center/cover fixed;
+
     min-height:100vh;
 }
+
 
 /* ================= HEADER ================= */
 
 header{
     background:rgba(5,8,12,.94);
     border-bottom:1px solid rgba(255,255,255,.12);
+
     padding:18px 6%;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     position:sticky;
     top:0;
+
     z-index:1000;
 }
 
 .logo{
-    font-size:25px;
-    font-weight:900;
+    color:#fff;
+    font-size:23px;
+    font-weight:bold;
+    text-decoration:none;
     letter-spacing:1px;
 }
 
@@ -71,6 +79,7 @@ nav a:hover{
     color:#00b7ff;
 }
 
+
 /* ================= SEARCH ================= */
 
 .search-container{
@@ -80,15 +89,20 @@ nav a:hover{
 .search-icon{
     width:40px;
     height:40px;
+
     border:1px solid #00b7ff;
     background:#00a9ed;
     color:#fff;
+
     font-size:19px;
     border-radius:5px;
+
     cursor:pointer;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     transition:.25s;
 }
 
@@ -98,13 +112,20 @@ nav a:hover{
 
 .header-search{
     display:none;
+
     position:absolute;
+
     right:0;
     top:48px;
+
     width:280px;
+
     background:#10151c;
+
     border:1px solid rgba(0,183,255,.5);
+
     box-shadow:0 10px 30px rgba(0,0,0,.6);
+
     z-index:3000;
 }
 
@@ -114,26 +135,35 @@ nav a:hover{
 
 .header-search input{
     width:100%;
+
     padding:12px 14px;
+
     border:none;
     outline:none;
+
     background:#fff;
     color:#111;
+
     font-size:14px;
 }
 
 .search-results{
     display:none;
+
     max-height:300px;
     overflow-y:auto;
 }
 
 .search-result{
     display:block;
+
     padding:12px 14px;
+
     color:#fff;
     text-decoration:none;
+
     border-top:1px solid rgba(255,255,255,.08);
+
     font-size:14px;
 }
 
@@ -143,301 +173,691 @@ nav a:hover{
 
 .search-no-result{
     padding:12px 14px;
+
     color:#999;
+
     font-size:14px;
+
     border-top:1px solid rgba(255,255,255,.08);
 }
 
+
 /* ================= MAIN ================= */
 
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-    padding:40px 0;
-}
+.main-panel{
+    max-width:1150px;
 
-.card{
-    background:rgba(15,20,30,.94);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:15px;
-    padding:35px;
-    box-shadow:0 15px 50px rgba(0,0,0,.5);
+    margin:45px auto;
+
+    padding:30px;
+
+    background:rgba(10,14,20,.94);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:0 15px 45px rgba(0,0,0,.55);
 }
 
 h1{
-    text-align:center;
-    font-size:38px;
-    margin-bottom:10px;
+    font-size:36px;
+    margin-bottom:12px;
 }
 
 .subtitle{
-    text-align:center;
-    color:#aaa;
-    margin-bottom:30px;
-}
+    color:#00b7ff;
 
-.game-info{
-    line-height:1.8;
-    margin-bottom:30px;
-}
+    font-weight:bold;
 
-.game-info strong{
-    color:#fff;
-}
-
-.warning{
-    background:rgba(255,170,0,.1);
-    border:1px solid rgba(255,170,0,.35);
-    padding:18px;
-    border-radius:10px;
     margin-bottom:25px;
-    color:#ddd;
 }
 
-.video-box{
-    text-align:center;
-    margin:30px 0;
+.hero{
+    width:100%;
+    max-height:500px;
+
+    object-fit:cover;
+
+    display:block;
+
+    margin-bottom:30px;
 }
 
-.video-box h2{
-    margin-bottom:15px;
+h2{
+    color:#00b7ff;
+
+    margin:30px 0 15px;
 }
 
-.download-area{
-    text-align:center;
-    margin-top:30px;
+p{
+    line-height:1.7;
+    color:#ccc;
+}
+
+.features{
+    padding-left:20px;
+
+    line-height:1.8;
+
+    color:#ccc;
+}
+
+
+/* ================= SCREENSHOTS ================= */
+
+.screenshots{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+    margin-top:20px;
+}
+
+.screenshots img{
+    width:100%;
+    height:160px;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.25s;
+}
+
+.screenshots img:hover{
+    transform:scale(1.03);
+
+    border-color:#00b7ff;
+}
+
+
+/* ================= DOWNLOAD ================= */
+
+.download-buttons{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    margin-top:20px;
 }
 
 .download-btn{
     display:inline-block;
-    padding:16px 35px;
-    margin:10px;
-    border-radius:8px;
+
+    padding:14px 24px;
+
+    background:#00a9ed;
+
+    color:#fff;
+
     text-decoration:none;
+
     font-weight:bold;
-    font-size:17px;
-    transition:.2s;
+
+    border-radius:4px;
+
+    transition:.25s;
 }
 
-.official{
-    background:#333;
-    color:#fff;
+.download-btn:hover{
+    background:#008bc4;
 }
 
-.official:hover{
-    background:#444;
+.download-btn.official{
+    background:#222;
+
+    border:1px solid #00b7ff;
 }
 
-.mega{
-    background:#555;
-    color:#fff;
-    cursor:pointer;
+.download-btn.official:hover{
+    background:#00a9ed;
 }
 
-.mega:hover{
-    background:#666;
-    transform:translateY(-2px);
-}
 
-.note{
-    color:#999;
-    font-size:14px;
-    margin-top:15px;
-}
+/* ================= HIGHLY COMPRESSED ================= */
 
-.back{
+.compressed-link{
     display:block;
-    text-align:center;
-    margin-top:30px;
-    color:#aaa;
-    text-decoration:none;
+
+    margin-top:8px;
+
+    color:#00b7ff;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    text-decoration:underline;
 }
 
-.back:hover{
+.compressed-link:hover{
     color:#fff;
 }
+
+
+/* ================= AD ================= */
+
+.ad-box{
+    width:300px;
+    height:600px;
+
+    margin:35px auto;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#666;
+}
+
+
+/* ================= VIDEO ================= */
+
+.video-box{
+    width:100%;
+    height:400px;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#777;
+
+    margin-top:20px;
+}
+
+
+/* ================= REQUIREMENTS ================= */
+
+.requirements{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+}
+
+.requirements-box{
+    background:#11171f;
+
+    padding:20px;
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.requirements-box h3{
+    color:#00b7ff;
+
+    margin-bottom:12px;
+}
+
+.requirements-box p{
+    margin-bottom:7px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+
+    padding:30px;
+
+    margin-top:50px;
+
+    background:#05080c;
+
+    color:#777;
+}
+
+
+/* ================= IMAGE MODAL ================= */
+
+.modal{
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.9);
+
+    z-index:5000;
+
+    align-items:center;
+    justify-content:center;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
+}
+
+.modal.active{
+    display:flex;
+}
+
 
 /* ================= MOBILE ================= */
 
-@media(max-width:600px){
+@media(max-width:800px){
 
     header{
-        padding:15px 5%;
+        padding:15px 4%;
     }
 
     .header-right{
         gap:10px;
     }
 
-    .logo{
-        font-size:19px;
-    }
-
     nav{
-        gap:15px;
+        gap:12px;
     }
 
-    nav a{
-        font-size:13px;
+    .main-panel{
+        margin:20px;
+
+        padding:20px;
     }
 
-    .search-icon{
-        width:36px;
-        height:36px;
+    .screenshots{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .header-search{
-        width:250px;
+    .requirements{
+        grid-template-columns:1fr;
     }
 
-    .card{
-        padding:22px;
+    .download-buttons{
+        flex-direction:column;
     }
 
-    h1{
-        font-size:30px;
+    .video-box{
+        height:250px;
     }
 
-    .download-btn{
-        display:block;
-        margin:12px auto;
-    }
 }
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <!-- ================= HEADER ================= -->
 
 <header>
 
-<div class="logo">
-    QEVRANO <span>PC GAMES</span>
-</div>
+    <a href="./index.html" class="logo">
+        QEVRANO <span>PC GAMES</span>
+    </a>
 
-<div class="header-right">
+    <div class="header-right">
 
-<nav>
-    <a href="index.html">HOME</a>
-    <a href="index.html#games">GAMES</a>
-    <a href="index.html#packs">PACKS</a>
-</nav>
+        <nav>
 
-<div class="search-container">
+            <a href="./index.html">
+                HOME
+            </a>
 
-<button
-    class="search-icon"
-    id="searchToggle"
-    aria-label="Open search">
-    🔍
-</button>
+            <a href="./index.html#games">
+                GAMES
+            </a>
 
-<div
-    class="header-search"
-    id="headerSearch">
+            <a href="./index.html#packs">
+                PACKS
+            </a>
 
-    <input
-        type="text"
-        id="headerSearchInput"
-        placeholder="Search games..."
-        autocomplete="off">
+        </nav>
 
-    <div
-        class="search-results"
-        id="headerSearchResults">
+
+        <div class="search-container">
+
+            <button
+                class="search-icon"
+                onclick="toggleSearch()"
+                aria-label="Search"
+            >
+                🔍
+            </button>
+
+
+            <div
+                class="header-search"
+                id="headerSearch"
+            >
+
+                <input
+                    type="text"
+                    id="headerSearchInput"
+                    placeholder="Search games..."
+                    autocomplete="off"
+                >
+
+                <div
+                    class="search-results"
+                    id="headerSearchResults"
+                ></div>
+
+            </div>
+
+        </div>
+
     </div>
-
-</div>
-
-</div>
-
-</div>
 
 </header>
 
 
 <!-- ================= MAIN ================= -->
 
-<div class="container">
+<main class="main-panel">
 
-<div class="card">
 
-<h1>Far Cry 3</h1>
+    <h1>
+        Far Cry 3
+    </h1>
 
-<p class="subtitle">
-QEVRANO PC GAMES
-</p>
 
-<div class="game-info">
+    <div class="subtitle">
+        Action / Adventure / Open World
+    </div>
 
-<p>
-<strong>Game:</strong>
-Far Cry 3
-</p>
 
-<p>
-<strong>Genre:</strong>
-Action / Adventure / Open World
-</p>
+    <!-- HERO -->
 
-<p>
-<strong>Platform:</strong>
-PC
-</p>
+    <img
+        src="./images/farcry3.jpg"
+        alt="Far Cry 3"
+        class="hero"
+    >
 
-</div>
 
-<div class="warning">
+    <!-- ABOUT -->
 
-<strong>Important:</strong>
-Only download and use game files that you have the right to access.
-For the official version, use the publisher's or authorized store's download option.
+    <h2>
+        About Far Cry 3
+    </h2>
 
-</div>
+    <p>
+        Far Cry 3 is an open-world first-person action game set on a
+        dangerous tropical island. Players explore the island, complete
+        missions, discover locations, and fight against hostile forces
+        while progressing through the story.
+    </p>
 
-<div class="video-box">
 
-<h2>Installation Guide</h2>
+    <!-- FEATURES -->
 
-<p>
-Watch the installation instructions before installing the game.
-</p>
+    <h2>
+        Features
+    </h2>
 
-<a href="#" class="download-btn official">
-    MUST WATCH INSTALLATION VIDEO
-</a>
+    <ul class="features">
 
-</div>
+        <li>
+            Open-world tropical island environment
+        </li>
 
-<div class="download-area">
+        <li>
+            First-person action gameplay
+        </li>
 
-<h2>Download</h2>
+        <li>
+            Story-driven campaign
+        </li>
 
-<!-- Mega link removed -->
+        <li>
+            Vehicles and exploration
+        </li>
 
-<a
-href="#"
-class="download-btn mega"
-onclick="return false;">
+        <li>
+            Weapons and character progression
+        </li>
 
-DOWNLOAD SETUP
+        <li>
+            Large variety of missions and activities
+        </li>
 
-</a>
+    </ul>
 
-<p class="note">
-Setup download will be added later.
-</p>
 
-</div>
+    <!-- SCREENSHOTS -->
 
-<a href="./index.html" class="back">
-    ← Back to PC Games
-</a>
+    <h2>
+        Screenshots
+    </h2>
 
-</div>
+    <div class="screenshots">
+
+        <img
+            src="./images/farcry3-1.jpg"
+            alt="Far Cry 3 Screenshot 1"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/farcry3-2.jpg"
+            alt="Far Cry 3 Screenshot 2"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/farcry3-3.jpg"
+            alt="Far Cry 3 Screenshot 3"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/farcry3-4.jpg"
+            alt="Far Cry 3 Screenshot 4"
+            onclick="openModal(this.src)"
+        >
+
+    </div>
+
+
+    <!-- INSTALLATION VIDEO -->
+
+    <h2>
+        Installation Video
+    </h2>
+
+    <div class="video-box">
+
+        <span>
+            Installation video will be added here.
+        </span>
+
+    </div>
+
+
+    <!-- DOWNLOAD -->
+
+    <h2>
+        Download
+    </h2>
+
+    <div class="download-buttons">
+
+
+        <!-- OFFICIAL -->
+
+        <a
+            href="https://store.ubisoft.com/us/far-cry-3"
+            class="download-btn official"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            DOWNLOAD OFFICIAL
+        </a>
+
+
+        <div>
+
+            <!-- SETUP NOT AVAILABLE YET -->
+
+            <a
+                href="#"
+                class="download-btn"
+                onclick="return false;"
+            >
+                DOWNLOAD SETUP.EXE
+            </a>
+
+
+            <!-- HIGHLY COMPRESSED -->
+
+            <a
+                href="./farcry3.html"
+                class="compressed-link"
+            >
+                Highly Compressed
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- AD -->
+
+    <div class="ad-box">
+        ADVERTISEMENT
+    </div>
+
+
+    <!-- REQUIREMENTS -->
+
+    <h2>
+        System Requirements
+    </h2>
+
+
+    <div class="requirements">
+
+
+        <div class="requirements-box">
+
+            <h3>
+                Minimum
+            </h3>
+
+            <p>
+                <strong>OS:</strong>
+                Windows XP / Vista / 7
+            </p>
+
+            <p>
+                <strong>Processor:</strong>
+                Intel Core 2 Duo E6700 / AMD Athlon 64 X2 6000+
+            </p>
+
+            <p>
+                <strong>Memory:</strong>
+                4 GB RAM
+            </p>
+
+            <p>
+                <strong>Graphics:</strong>
+                NVIDIA 8800 GTX / AMD Radeon HD 2900
+            </p>
+
+            <p>
+                <strong>DirectX:</strong>
+                Version 9.0c
+            </p>
+
+            <p>
+                <strong>Storage:</strong>
+                15 GB available space
+            </p>
+
+        </div>
+
+
+        <div class="requirements-box">
+
+            <h3>
+                Recommended
+            </h3>
+
+            <p>
+                <strong>OS:</strong>
+                Windows 7
+            </p>
+
+            <p>
+                <strong>Processor:</strong>
+                Intel Core i3-530 / AMD Phenom II X2 565
+            </p>
+
+            <p>
+                <strong>Memory:</strong>
+                4 GB RAM
+            </p>
+
+            <p>
+                <strong>Graphics:</strong>
+                NVIDIA GTX 480 / AMD Radeon HD 5770
+            </p>
+
+            <p>
+                <strong>DirectX:</strong>
+                Version 11
+            </p>
+
+            <p>
+                <strong>Storage:</strong>
+                15 GB available space
+            </p>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 QEVRANO PC GAMES — All Rights Reserved.
+
+</footer>
+
+
+<!-- ================= IMAGE MODAL ================= -->
+
+<div
+    class="modal"
+    id="imageModal"
+    onclick="closeModal()"
+>
+
+    <img
+        id="modalImage"
+        src=""
+        alt="Far Cry 3 Screenshot"
+    >
 
 </div>
 
@@ -445,10 +865,6 @@ Setup download will be added later.
 <!-- ================= SEARCH SCRIPT ================= -->
 
 <script>
-
-/* ========================================
-   GAME DATABASE
-   ======================================== */
 
 const games = [
 
@@ -500,194 +916,175 @@ const games = [
 ];
 
 
-/* ========================================
-   SEARCH ELEMENTS
-   ======================================== */
-
-const searchToggle =
-    document.getElementById("searchToggle");
-
-const headerSearch =
-    document.getElementById("headerSearch");
-
-const searchInput =
-    document.getElementById("headerSearchInput");
-
-const searchResults =
-    document.getElementById("headerSearchResults");
-
-
-/* ========================================
-   OPEN / CLOSE SEARCH
-   ======================================== */
-
-searchToggle.addEventListener(
-    "click",
-    function(event){
-
-        event.stopPropagation();
-
-        headerSearch.classList.toggle("active");
-
-        if(headerSearch.classList.contains("active")){
-
-            searchInput.focus();
-
-        }else{
-
-            searchResults.style.display="none";
-
-        }
-
-    }
-);
-
-
-/* ========================================
-   SEARCH FUNCTION
-   ======================================== */
-
-function searchGames(){
+function toggleSearch(){
 
     const search =
-        searchInput.value
-        .trim()
-        .toLowerCase();
+        document.getElementById("headerSearch");
 
-    searchResults.innerHTML="";
+    const input =
+        document.getElementById("headerSearchInput");
 
+    search.classList.toggle("active");
 
-    if(search===""){
+    if(search.classList.contains("active")){
 
-        searchResults.style.display="none";
-
-        return;
+        input.focus();
 
     }
-
-
-    /*
-       ONLY MATCH FROM THE
-       BEGINNING OF THE GAME NAME
-    */
-
-    const matches =
-        games.filter(game =>
-            game.name
-            .toLowerCase()
-            .startsWith(search)
-        );
-
-
-    /* NO RESULTS */
-
-    if(matches.length===0){
-
-        searchResults.innerHTML =
-            '<div class="search-no-result">No games found</div>';
-
-        searchResults.style.display="block";
-
-        return;
-
-    }
-
-
-    /* SHOW RESULTS */
-
-    matches.forEach(game=>{
-
-        const link =
-            document.createElement("a");
-
-        link.className="search-result";
-
-        link.href=game.file;
-
-        link.textContent=game.name;
-
-        searchResults.appendChild(link);
-
-    });
-
-
-    searchResults.style.display="block";
 
 }
 
 
-/* ========================================
-   LIVE SEARCH
-   ======================================== */
+const input =
+    document.getElementById("headerSearchInput");
 
-searchInput.addEventListener(
+const results =
+    document.getElementById("headerSearchResults");
+
+
+input.addEventListener(
     "input",
-    searchGames
-);
-
-
-/* ========================================
-   ENTER KEY
-   ======================================== */
-
-searchInput.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key!=="Enter"){
-            return;
-        }
-
+    function(){
 
         const search =
-            searchInput.value
+            this.value
             .trim()
             .toLowerCase();
 
+        results.innerHTML = "";
 
-        const match =
-            games.find(game =>
+
+        if(!search){
+
+            results.style.display = "none";
+
+            return;
+
+        }
+
+
+        const matches =
+            games.filter(game =>
                 game.name
                 .toLowerCase()
                 .startsWith(search)
             );
 
 
-        if(match){
+        if(!matches.length){
 
-            window.location.href =
-                match.file;
+            results.innerHTML =
+                '<div class="search-no-result">No games found</div>';
+
+            results.style.display = "block";
+
+            return;
+
+        }
+
+
+        matches.forEach(game => {
+
+            const link =
+                document.createElement("a");
+
+            link.className =
+                "search-result";
+
+            link.href =
+                game.file;
+
+            link.textContent =
+                game.name;
+
+            results.appendChild(link);
+
+        });
+
+
+        results.style.display = "block";
+
+    }
+);
+
+
+input.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Enter"){
+
+            const search =
+                this.value
+                .trim()
+                .toLowerCase();
+
+            const match =
+                games.find(game =>
+                    game.name
+                    .toLowerCase()
+                    .startsWith(search)
+                );
+
+
+            if(match){
+
+                window.location.href =
+                    match.file;
+
+            }
 
         }
 
     }
 );
 
-
-/* ========================================
-   CLICK OUTSIDE
-   ======================================== */
 
 document.addEventListener(
     "click",
-    function(event){
+    function(e){
 
-        const searchContainer =
+        const container =
             document.querySelector(".search-container");
 
 
-        if(!searchContainer.contains(event.target)){
+        if(!container.contains(e.target)){
 
-            headerSearch.classList.remove("active");
-
-            searchResults.style.display="none";
+            document
+                .getElementById("headerSearch")
+                .classList.remove("active");
 
         }
 
     }
 );
 
+
+/* ================= IMAGE MODAL ================= */
+
+function openModal(src){
+
+    document
+        .getElementById("modalImage")
+        .src = src;
+
+    document
+        .getElementById("imageModal")
+        .classList.add("active");
+
+}
+
+
+function closeModal(){
+
+    document
+        .getElementById("imageModal")
+        .classList.remove("active");
+
+}
+
 </script>
+
 
 </body>
 </html>
