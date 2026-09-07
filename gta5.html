@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,69 +8,132 @@
 <title>GTA V - QEVRANO PC GAMES</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
     color:#eee;
     background:
-        linear-gradient(rgba(5,8,15,.88),rgba(5,8,15,.94)),
+        linear-gradient(
+            rgba(4,4,4,.88),
+            rgba(4,4,4,.96)
+        ),
         url("./images/gta5-bg.jpg") center/cover fixed;
+
+    min-height:100vh;
 }
 
-/* HEADER */
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#070707;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#d90000;
+    border-radius:10px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
-    background:rgba(5,8,12,.94);
-    border-bottom:1px solid rgba(255,255,255,.12);
-    padding:18px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
     position:sticky;
     top:0;
     z-index:1000;
+
+    min-height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    background:rgba(7,7,7,.95);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,0,0,.18);
 }
 
 .logo{
     color:#fff;
+
     font-size:23px;
-    font-weight:bold;
+    font-weight:900;
+
     text-decoration:none;
+
     letter-spacing:1px;
 }
 
 .logo span{
-    color:#00b7ff;
+    color:#e00000;
+}
+
+.logo small{
+    display:block;
+
+    color:#666;
+
+    font-size:8px;
+
+    letter-spacing:3px;
+
+    margin-top:3px;
 }
 
 .header-right{
     display:flex;
     align-items:center;
-    gap:22px;
+
+    gap:25px;
 }
 
 nav{
     display:flex;
-    gap:25px;
+    gap:27px;
 }
 
 nav a{
-    color:#fff;
+    color:#aaa;
+
     text-decoration:none;
+
     font-weight:bold;
-    font-size:14px;
+
+    font-size:12px;
+
+    transition:.25s;
 }
 
 nav a:hover{
-    color:#00b7ff;
+    color:#ff2020;
 }
 
-/* SEARCH */
+
+/* =========================================================
+   SEARCH
+========================================================= */
 
 .search-container{
     position:relative;
@@ -78,32 +142,55 @@ nav a:hover{
 .search-icon{
     width:40px;
     height:40px;
-    border:1px solid #00b7ff;
-    background:#00a9ed;
+
+    border:1px solid #d80000;
+
+    background:#c90000;
+
     color:#fff;
-    font-size:19px;
-    border-radius:5px;
+
+    font-size:17px;
+
+    border-radius:6px;
+
     cursor:pointer;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     transition:.25s;
 }
 
 .search-icon:hover{
-    background:#008bc4;
+    background:#ef0000;
+
+    box-shadow:
+        0 0 18px rgba(220,0,0,.3);
 }
 
 .header-search{
     display:none;
+
     position:absolute;
+
     right:0;
-    top:48px;
+    top:50px;
+
     width:280px;
-    background:#10151c;
-    border:1px solid rgba(0,183,255,.5);
-    box-shadow:0 10px 30px rgba(0,0,0,.6);
+
+    background:#101010;
+
+    border:1px solid rgba(220,0,0,.5);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.7);
+
     z-index:3000;
+
+    border-radius:7px;
+
+    overflow:hidden;
 }
 
 .header-search.active{
@@ -112,254 +199,717 @@ nav a:hover{
 
 .header-search input{
     width:100%;
-    padding:12px 14px;
+
+    padding:13px 14px;
+
     border:none;
+
     outline:none;
-    background:#fff;
-    color:#111;
+
+    background:#171717;
+
+    color:#fff;
+
     font-size:14px;
+}
+
+.header-search input::placeholder{
+    color:#777;
 }
 
 .search-results{
     display:none;
+
     max-height:300px;
+
     overflow-y:auto;
 }
 
 .search-result{
     display:block;
+
     padding:12px 14px;
-    color:#fff;
+
+    color:#ddd;
+
     text-decoration:none;
-    border-top:1px solid rgba(255,255,255,.08);
-    font-size:14px;
+
+    border-top:1px solid #242424;
+
+    font-size:13px;
+
+    transition:.2s;
 }
 
 .search-result:hover{
-    background:#00a9ed;
+    background:#c90000;
+
+    color:#fff;
 }
 
 .search-no-result{
     padding:12px 14px;
-    color:#999;
-    font-size:14px;
-    border-top:1px solid rgba(255,255,255,.08);
+
+    color:#777;
+
+    font-size:13px;
+
+    border-top:1px solid #242424;
 }
 
-/* MAIN */
+
+/* =========================================================
+   MAIN PANEL
+========================================================= */
 
 .main-panel{
-    max-width:1150px;
-    margin:45px auto;
+    position:relative;
+
+    max-width:1180px;
+
+    margin:35px auto;
+
     padding:30px;
-    background:rgba(10,14,20,.94);
-    border:1px solid rgba(255,255,255,.1);
-    box-shadow:0 15px 45px rgba(0,0,0,.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,18,18,.97),
+            rgba(9,9,9,.97)
+        );
+
+    border:1px solid #292929;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.6);
+
+    overflow:hidden;
 }
 
-h1{
-    font-size:36px;
-    margin-bottom:12px;
+.main-panel:before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e00000,
+            transparent
+        );
 }
 
-.subtitle{
-    color:#00b7ff;
-    font-weight:bold;
+
+/* =========================================================
+   GAME TITLE
+========================================================= */
+
+.game-heading{
     margin-bottom:25px;
 }
 
-.hero{
-    width:100%;
-    max-height:500px;
-    object-fit:cover;
-    display:block;
-    margin-bottom:30px;
+.game-heading h1{
+    font-size:42px;
+
+    line-height:1;
+
+    font-weight:1000;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:10px;
 }
 
+.game-heading h1 span{
+    color:#e00000;
+}
+
+.subtitle{
+    display:inline-block;
+
+    color:#ff2222;
+
+    font-weight:bold;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    padding:7px 13px;
+
+    background:rgba(190,0,0,.10);
+
+    border:1px solid rgba(220,0,0,.3);
+
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero{
+    width:100%;
+
+    height:430px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:8px;
+
+    margin-bottom:35px;
+
+    border:1px solid #303030;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.55);
+}
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
 h2{
-    color:#00b7ff;
-    margin:30px 0 15px;
+    position:relative;
+
+    color:#fff;
+
+    font-size:23px;
+
+    margin:38px 0 17px;
+
+    padding-left:14px;
+}
+
+h2:before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:2px;
+
+    width:4px;
+    height:24px;
+
+    background:#e00000;
+
+    border-radius:3px;
+
+    box-shadow:
+        0 0 12px rgba(220,0,0,.35);
 }
 
 p{
-    line-height:1.7;
-    color:#ccc;
+    line-height:1.75;
+
+    color:#aaa;
+
+    font-size:14px;
 }
 
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
 .features{
-    padding-left:20px;
-    line-height:1.8;
-    color:#ccc;
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px 25px;
+
+    padding:0;
+
+    list-style:none;
+
+    margin-top:5px;
 }
+
+.features li{
+    position:relative;
+
+    padding:12px 14px 12px 30px;
+
+    background:#111;
+
+    border:1px solid #242424;
+
+    border-radius:6px;
+
+    color:#aaa;
+
+    font-size:13px;
+}
+
+.features li:before{
+    content:"✓";
+
+    position:absolute;
+
+    left:12px;
+
+    color:#e00000;
+
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   SCREENSHOTS
+========================================================= */
 
 .screenshots{
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
-    gap:15px;
+
+    gap:13px;
+
     margin-top:20px;
 }
 
 .screenshots img{
     width:100%;
-    height:160px;
+
+    height:155px;
+
     object-fit:cover;
+
     cursor:pointer;
-    border:1px solid rgba(255,255,255,.1);
-    transition:.25s;
+
+    border:1px solid #292929;
+
+    border-radius:6px;
+
+    transition:.3s;
 }
 
 .screenshots img:hover{
-    transform:scale(1.03);
-    border-color:#00b7ff;
+    transform:translateY(-4px);
+
+    border-color:#e00000;
+
+    box-shadow:
+        0 10px 25px rgba(210,0,0,.18);
 }
 
-/* DOWNLOAD */
+
+/* =========================================================
+   TRAILER
+========================================================= */
+
+.video-section{
+    margin-top:5px;
+}
+
+.video-wrapper{
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:16 / 9;
+
+    margin-top:20px;
+
+    background:#050505;
+
+    border:1px solid #303030;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.55);
+}
+
+.video-wrapper iframe{
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    border:0;
+}
+
+.video-note{
+    margin-top:9px;
+
+    color:#666;
+
+    font-size:10px;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   DOWNLOAD
+========================================================= */
+
+.download-area{
+    padding:22px;
+
+    margin-top:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(100,0,0,.13),
+            #111 55%
+        );
+
+    border:1px solid #292929;
+
+    border-radius:8px;
+}
 
 .download-buttons{
     display:flex;
-    align-items:flex-start;
-    gap:15px;
-    margin-top:20px;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:5px;
 }
 
 .download-btn{
-    display:inline-block;
-    padding:14px 24px;
-    background:#00a9ed;
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:190px;
+
+    padding:13px 22px;
+
+    background:#d80000;
+
     color:#fff;
+
     text-decoration:none;
-    font-weight:bold;
-    border-radius:4px;
+
+    font-weight:900;
+
+    font-size:12px;
+
+    border-radius:6px;
+
     transition:.25s;
 }
 
 .download-btn:hover{
-    background:#008bc4;
+    background:#ff1717;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(220,0,0,.22);
 }
 
 .download-btn.official{
-    background:#222;
-    border:1px solid #00b7ff;
+    background:#151515;
+
+    border:1px solid #d80000;
 }
 
 .download-btn.official:hover{
-    background:#00a9ed;
+    background:#d80000;
 }
 
 .compressed-link{
     display:block;
-    margin-top:8px;
-    color:#00b7ff;
-    font-size:14px;
+
+    margin-top:9px;
+
+    color:#e00000;
+
+    font-size:11px;
+
     font-weight:bold;
-    text-decoration:underline;
+
+    text-decoration:none;
 }
 
 .compressed-link:hover{
     color:#fff;
 }
 
-/* AD */
 
-.ad-box{
-    width:300px;
-    height:600px;
-    margin:35px auto;
-    background:#111;
-    border:1px solid rgba(255,255,255,.1);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#666;
-}
-
-/* VIDEO */
-
-.video-box{
-    width:100%;
-    height:400px;
-    background:#111;
-    border:1px solid rgba(255,255,255,.1);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#777;
-    margin-top:20px;
-}
-
-/* REQUIREMENTS */
+/* =========================================================
+   REQUIREMENTS
+========================================================= */
 
 .requirements{
     display:grid;
+
     grid-template-columns:1fr 1fr;
-    gap:25px;
+
+    gap:18px;
+
+    margin-top:20px;
 }
 
 .requirements-box{
-    background:#11171f;
+    background:#101010;
+
     padding:20px;
-    border:1px solid rgba(255,255,255,.08);
+
+    border:1px solid #292929;
+
+    border-radius:8px;
+
+    position:relative;
+}
+
+.requirements-box:before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:2px;
+
+    background:#d80000;
 }
 
 .requirements-box h3{
-    color:#00b7ff;
-    margin-bottom:12px;
+    color:#fff;
+
+    margin-bottom:15px;
+
+    font-size:17px;
+}
+
+.requirements-box h3:before{
+    content:"";
+
+    display:inline-block;
+
+    width:4px;
+    height:16px;
+
+    background:#d80000;
+
+    margin-right:8px;
+
+    vertical-align:-2px;
+
+    border-radius:2px;
 }
 
 .requirements-box p{
-    margin-bottom:7px;
+    margin-bottom:8px;
+
+    color:#999;
+
+    font-size:12px;
 }
 
-/* FOOTER */
+.requirements-box p:last-child{
+    margin-bottom:0;
+}
+
+
+/* =========================================================
+   AD
+========================================================= */
+
+.ad-box{
+    width:300px;
+    height:250px;
+
+    margin:30px auto;
+
+    background:#0c0c0c;
+
+    border:1px solid #252525;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#444;
+
+    font-size:11px;
+
+    border-radius:7px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
     text-align:center;
-    padding:30px;
-    margin-top:50px;
-    background:#05080c;
-    color:#777;
+
+    padding:35px 20px;
+
+    margin-top:45px;
+
+    background:#050505;
+
+    border-top:1px solid #222;
+
+    color:#666;
+
+    font-size:11px;
 }
 
-/* MODAL */
+.footer-logo{
+    color:#ddd;
+
+    font-size:18px;
+
+    font-weight:900;
+
+    margin-bottom:15px;
+}
+
+.footer-logo span{
+    color:#e00000;
+}
+
+.footer-links{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-bottom:15px;
+}
+
+.footer-links a{
+    color:#666;
+
+    text-decoration:none;
+
+    transition:.2s;
+}
+
+.footer-links a:hover{
+    color:#e00000;
+}
+
+
+/* =========================================================
+   IMAGE MODAL
+========================================================= */
 
 .modal{
     display:none;
+
     position:fixed;
+
     inset:0;
-    background:rgba(0,0,0,.9);
+
+    background:rgba(0,0,0,.93);
+
     z-index:5000;
+
     align-items:center;
+
     justify-content:center;
+
+    padding:20px;
+
+    cursor:pointer;
 }
 
 .modal img{
-    max-width:90%;
+    max-width:92%;
+
     max-height:90%;
+
+    object-fit:contain;
+
+    border:1px solid #444;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.8);
 }
 
 .modal.active{
     display:flex;
 }
 
-/* MOBILE */
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:800px){
 
     header{
-        padding:15px 4%;
+        min-height:auto;
+
+        padding:14px 20px;
+
+        flex-direction:column;
+
+        gap:14px;
     }
 
     .header-right{
-        gap:10px;
+        width:100%;
+
+        justify-content:center;
+
+        gap:15px;
     }
 
     nav{
-        gap:12px;
+        gap:14px;
     }
 
     .main-panel{
-        margin:20px;
+        margin:20px 12px;
+
         padding:20px;
+    }
+
+    .game-heading h1{
+        font-size:32px;
+    }
+
+    .hero{
+        height:280px;
+
+        margin-bottom:25px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
     }
 
     .screenshots{
@@ -372,369 +922,815 @@ footer{
 
     .download-buttons{
         flex-direction:column;
+
+        align-items:stretch;
     }
 
-    .video-box{
-        height:250px;
+    .download-btn{
+        width:100%;
     }
+
+    .header-search{
+        position:fixed;
+
+        top:110px;
+
+        left:20px;
+        right:20px;
+
+        width:auto;
+    }
+
 }
+
+@media(max-width:450px){
+
+    .game-heading h1{
+        font-size:28px;
+    }
+
+    .hero{
+        height:230px;
+    }
+
+    .screenshots img{
+        height:125px;
+    }
+
+    .main-panel{
+        padding:16px;
+    }
+
+}
+
+
+/* =========================================================
+   TRAILER FALLBACK
+========================================================= */
+
+.video-fallback{
+    display:none;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#777;
+
+    background:#0d0d0d;
+}
+
 </style>
+
 </head>
 
 <body>
 
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header>
 
-    <a href="./index.html" class="logo">
-        QEVRANO <span>PC GAMES</span>
-    </a>
+<a href="./index.html" class="logo">
 
-    <div class="header-right">
+```
+QEVRANO
 
-        <nav>
-            <a href="./index.html">HOME</a>
-            <a href="./index.html#games">GAMES</a>
-            <a href="./index.html#packs">PACKS</a>
-        </nav>
+<span>
+    PC GAMES
+</span>
 
-        <div class="search-container">
+<small>
+    GAMING DISCOVERY
+</small>
+```
 
-            <button
-                class="search-icon"
-                onclick="toggleSearch()"
-                aria-label="Search"
-            >
-                🔍
-            </button>
+</a>
 
-            <div class="header-search" id="headerSearch">
+<div class="header-right">
 
-                <input
-                    type="text"
-                    id="headerSearchInput"
-                    placeholder="Search games..."
-                    autocomplete="off"
-                >
+<nav>
 
-                <div
-                    class="search-results"
-                    id="headerSearchResults"
-                ></div>
+```
+<a href="./index.html">
+    HOME
+</a>
 
-            </div>
+<a href="./index.html#games">
+    GAMES
+</a>
 
-        </div>
+<a href="./index.html#packs">
+    PACKS
+</a>
 
-    </div>
+<a href="./about.html">
+    ABOUT
+</a>
+```
+
+</nav>
+
+<div class="search-container">
+
+<button
+class="search-icon"
+onclick="toggleSearch()"
+aria-label="Search"
+
+>
+
+```
+🔍
+```
+
+</button>
+
+<div
+    class="header-search"
+    id="headerSearch"
+>
+
+<input
+type="text"
+id="headerSearchInput"
+placeholder="Search games..."
+autocomplete="off"
+
+>
+
+<div
+    class="search-results"
+    id="headerSearchResults"
+></div>
+
+</div>
+
+</div>
+
+</div>
 
 </header>
 
+<!-- =========================================================
+     MAIN
+========================================================= -->
 
 <main class="main-panel">
 
-    <h1>Grand Theft Auto V</h1>
+<div class="game-heading">
 
-    <div class="subtitle">
-        GTA V
-    </div>
+<h1>
+    Grand Theft Auto <span>V</span>
+</h1>
 
-    <img
-        src="./images/gta5.jpg"
-        alt="GTA V"
-        class="hero"
-    >
+<div class="subtitle">
+    GTA V • Action • Open World
+</div>
 
+</div>
 
-    <h2>About Game</h2>
+<!-- HERO -->
 
-    <p>
-        Grand Theft Auto V is an open-world action-adventure game
-        developed by Rockstar Games. Explore Los Santos and Blaine
-        County while following the interconnected stories of three
-        protagonists.
-    </p>
+<img
+src="./images/gta5.jpg"
+alt="Grand Theft Auto V"
+class="hero"
 
+>
 
-    <h2>Features</h2>
+<!-- ABOUT -->
 
-    <ul class="features">
+<h2>
+    About Game
+</h2>
 
-        <li>Open-world gameplay</li>
-        <li>Story mode with three protagonists</li>
-        <li>Large detailed world</li>
-        <li>Vehicles and exploration</li>
-        <li>Variety of missions and activities</li>
-        <li>GTA Online support</li>
+<p>
+    Grand Theft Auto V is an open-world action-adventure game
+    developed by Rockstar Games. Explore Los Santos and Blaine
+    County while following the interconnected stories of three
+    protagonists.
+</p>
 
-    </ul>
+<!-- FEATURES -->
 
+<h2>
+    Features
+</h2>
 
-    <h2>Screenshots</h2>
+<ul class="features">
 
-    <div class="screenshots">
+<li>
+    Open-world gameplay
+</li>
 
-        <img
-            src="./images/gta5-1.jpg"
-            alt="GTA V Screenshot 1"
-            onclick="openModal(this.src)"
-        >
+<li>
+    Story mode with three protagonists
+</li>
 
-        <img
-            src="./images/gta5-2.jpg"
-            alt="GTA V Screenshot 2"
-            onclick="openModal(this.src)"
-        >
+<li>
+    Large detailed world
+</li>
 
-        <img
-            src="./images/gta5-3.jpg"
-            alt="GTA V Screenshot 3"
-            onclick="openModal(this.src)"
-        >
+<li>
+    Vehicles and exploration
+</li>
 
-        <img
-            src="./images/gta5-4.jpg"
-            alt="GTA V Screenshot 4"
-            onclick="openModal(this.src)"
-        >
+<li>
+    Variety of missions and activities
+</li>
 
-    </div>
+<li>
+    GTA Online support
+</li>
 
+</ul>
 
-    <h2>Installation Video</h2>
+<!-- SCREENSHOTS -->
 
-    <div class="video-box">
-        INSTALLATION VIDEO WILL BE ADDED HERE
-    </div>
+<h2>
+    Screenshots
+</h2>
 
+<div class="screenshots">
 
-    <h2>Download</h2>
+<img
+src="./images/gta5-1.jpg"
+alt="GTA V Screenshot 1"
+onclick="openModal(this.src)"
 
-    <div class="download-buttons">
+>
 
-        <a
-            href="https://store.rockstargames.com/game/buy-gta-v"
-            class="download-btn official"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            DOWNLOAD OFFICIAL
-        </a>
+<img
+src="./images/gta5-2.jpg"
+alt="GTA V Screenshot 2"
+onclick="openModal(this.src)"
 
-        <div>
+>
 
-            <a
-                href="#"
-                class="download-btn"
-                onclick="return false;"
-            >
-                DOWNLOAD SETUP.EXE
-            </a>
+<img
+src="./images/gta5-3.jpg"
+alt="GTA V Screenshot 3"
+onclick="openModal(this.src)"
 
-            <a
-                href="gta5.html"
-                class="compressed-link"
-            >
-                Highly Compressed
-            </a>
+>
 
-        </div>
+<img
+src="./images/gta5-4.jpg"
+alt="GTA V Screenshot 4"
+onclick="openModal(this.src)"
 
-    </div>
+>
 
+</div>
 
-    <h2>Minimum Requirements</h2>
+<!-- =========================================================
+     OFFICIAL TRAILER
+========================================================= -->
 
-    <div class="requirements">
+<div class="video-section">
 
-        <div class="requirements-box">
+<h2>
+    Official GTA V Trailer
+</h2>
 
-            <h3>Minimum</h3>
+<div class="video-wrapper">
 
-            <p><strong>OS:</strong> Windows 10</p>
-            <p><strong>CPU:</strong> Intel Core 2 Quad Q6600 / AMD Phenom 9850</p>
-            <p><strong>RAM:</strong> 4 GB</p>
-            <p><strong>GPU:</strong> NVIDIA 9800 GT 1GB / AMD HD 4870 1GB</p>
-            <p><strong>Storage:</strong> 125 GB</p>
+<iframe
+    src="https://www.youtube.com/embed/hvoD7ehZPcM"
+    title="Grand Theft Auto V Official Trailer - Rockstar Games"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy"
+></iframe>
 
-        </div>
+</div>
 
+<p class="video-note">
+    Official trailer from Rockstar Games.
+</p>
 
-        <div class="requirements-box">
+</div>
 
-            <h3>Recommended</h3>
+<!-- =========================================================
+     DOWNLOAD
+========================================================= -->
 
-            <p><strong>OS:</strong> Windows 10</p>
-            <p><strong>CPU:</strong> Intel Core i5 3470 / AMD FX-8350</p>
-            <p><strong>RAM:</strong> 8 GB</p>
-            <p><strong>GPU:</strong> NVIDIA GTX 660 2GB / AMD HD7870 2GB</p>
-            <p><strong>Storage:</strong> 125 GB</p>
+<h2>
+    Download
+</h2>
 
-        </div>
+<div class="download-area">
 
-    </div>
+<div class="download-buttons">
+
+<a
+href="https://store.rockstargames.com/game/buy-gta-v"
+class="download-btn official"
+target="_blank"
+rel="noopener noreferrer"
+
+>
+
+```
+DOWNLOAD OFFICIAL
+```
+
+</a>
+
+<a
+href="#"
+class="download-btn"
+onclick="return false;"
+
+>
+
+```
+DOWNLOAD SETUP.EXE
+```
+
+</a>
+
+</div>
+
+<a
+href="#"
+class="compressed-link"
+onclick="return false;"
+
+>
+
+```
+Highly Compressed
+```
+
+</a>
+
+<p style="
+    margin-top:14px;
+    color:#666;
+    font-size:11px;
+">
+    The QEVRANO setup button will become active when
+    your own legitimate installer is uploaded and ready.
+</p>
+
+</div>
+
+<!-- =========================================================
+     REQUIREMENTS
+========================================================= -->
+
+<h2>
+    System Requirements
+</h2>
+
+<div class="requirements">
+
+<div class="requirements-box">
+
+<h3>
+    Minimum
+</h3>
+
+<p>
+    <strong>OS:</strong>
+    Windows 10
+</p>
+
+<p>
+    <strong>CPU:</strong>
+    Intel Core 2 Quad Q6600 / AMD Phenom 9850
+</p>
+
+<p>
+    <strong>RAM:</strong>
+    4 GB
+</p>
+
+<p>
+    <strong>GPU:</strong>
+    NVIDIA 9800 GT 1GB / AMD HD 4870 1GB
+</p>
+
+<p>
+    <strong>Storage:</strong>
+    125 GB
+</p>
+
+</div>
+
+<div class="requirements-box">
+
+<h3>
+    Recommended
+</h3>
+
+<p>
+    <strong>OS:</strong>
+    Windows 10
+</p>
+
+<p>
+    <strong>CPU:</strong>
+    Intel Core i5 3470 / AMD FX-8350
+</p>
+
+<p>
+    <strong>RAM:</strong>
+    8 GB
+</p>
+
+<p>
+    <strong>GPU:</strong>
+    NVIDIA GTX 660 2GB / AMD HD7870 2GB
+</p>
+
+<p>
+    <strong>Storage:</strong>
+    125 GB
+</p>
+
+</div>
+
+</div>
 
 </main>
 
+<!-- =========================================================
+     AD PLACEHOLDER
+========================================================= -->
 
 <div class="ad-box">
-    300 × 600 AD
+    300 × 250 AD
 </div>
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
-    © 2026 QEVRANO PC GAMES. All Rights Reserved.
+
+<div class="footer-logo">
+
+```
+QE<span>V</span>RANO PC GAMES
+```
+
+</div>
+
+<div class="footer-links">
+
+<a href="./about.html">
+    About
+</a>
+
+<a href="./index.html#games">
+    Games
+</a>
+
+<a href="./contact.html">
+    Contact
+</a>
+
+<a href="./privacy.html">
+    Privacy Policy
+</a>
+
+<a href="./terms.html">
+    Terms & Conditions
+</a>
+
+<a href="./disclaimer.html">
+    Disclaimer
+</a>
+
+</div>
+
+<p>
+    © 2026 QEVRANO PC GAMES — All Rights Reserved.
+</p>
+
 </footer>
 
+<!-- =========================================================
+     IMAGE MODAL
+========================================================= -->
 
 <div
     class="modal"
     id="imageModal"
     onclick="closeModal()"
 >
-    <img id="modalImage" src="" alt="Screenshot">
+
+<img
+id="modalImage"
+src=""
+alt="GTA V Screenshot"
+
+>
+
 </div>
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
 
+
+/* =========================================================
+   GAME DATABASE
+========================================================= */
+
 const games = [
 
-    {name:"Far Cry 2",file:"./farcry2.html"},
-    {name:"Far Cry 3",file:"./farcry3.html"},
-    {name:"Assassin's Creed II",file:"./ac2.html"},
-    {name:"GTA V",file:"./gta5.html"},
-    {name:"GTA IV",file:"./gta4.html"},
-    {name:"FIFA",file:"./fifa.html"},
-    {name:"Don Bradman Cricket",file:"./cricket.html"},
-    {name:"Call of Duty 1",file:"./cod1.html"},
-    {name:"The Witcher 2",file:"./witcher2.html"}
+    {
+        name:"Far Cry 2",
+        file:"./farcry2.html"
+    },
+
+    {
+        name:"Far Cry 3",
+        file:"./farcry3.html"
+    },
+
+    {
+        name:"Assassin's Creed II",
+        file:"./ac2.html"
+    },
+
+    {
+        name:"GTA V",
+        file:"./gta5.html"
+    },
+
+    {
+        name:"GTA IV",
+        file:"./gta4.html"
+    },
+
+    {
+        name:"FIFA",
+        file:"./fifa.html"
+    },
+
+    {
+        name:"Don Bradman Cricket",
+        file:"./cricket.html"
+    },
+
+    {
+        name:"Call of Duty 1",
+        file:"./cod1.html"
+    },
+
+    {
+        name:"The Witcher 2",
+        file:"./witcher2.html"
+    },
+
+    {
+        name:"GTA VI",
+        file:"./gtavi.html"
+    },
+
+    {
+        name:"Assassin's Creed Syndicate",
+        file:"./acs.html"
+    },
+
+    {
+        name:"Need for Speed II",
+        file:"./nfs2.html"
+    }
 
 ];
 
 
+/* =========================================================
+   SEARCH TOGGLE
+========================================================= */
+
 function toggleSearch(){
 
     const search =
-        document.getElementById("headerSearch");
+        document.getElementById(
+            "headerSearch"
+        );
 
     const input =
-        document.getElementById("headerSearchInput");
+        document.getElementById(
+            "headerSearchInput"
+        );
 
-    search.classList.toggle("active");
+    search.classList.toggle(
+        "active"
+    );
 
-    if(search.classList.contains("active")){
+    if(
+        search.classList.contains(
+            "active"
+        )
+    ){
+
         input.focus();
+
     }
 
 }
 
 
+/* =========================================================
+   SEARCH
+========================================================= */
+
 const input =
-    document.getElementById("headerSearchInput");
+    document.getElementById(
+        "headerSearchInput"
+    );
 
 const results =
-    document.getElementById("headerSearchResults");
+    document.getElementById(
+        "headerSearchResults"
+    );
 
 
-input.addEventListener("input", function(){
+input.addEventListener(
+    "input",
+    function(){
 
-    const search =
-        this.value.trim().toLowerCase();
-
-    results.innerHTML = "";
-
-    if(!search){
-
-        results.style.display = "none";
-        return;
-
-    }
+        const search =
+            this.value
+                .trim()
+                .toLowerCase();
 
 
-    const matches =
-        games.filter(game =>
-            game.name.toLowerCase().startsWith(search)
+        results.innerHTML = "";
+
+
+        if(!search){
+
+            results.style.display =
+                "none";
+
+            return;
+
+        }
+
+
+        const matches =
+            games.filter(
+                game =>
+                    game.name
+                        .toLowerCase()
+                        .includes(search)
+            );
+
+
+        if(!matches.length){
+
+            results.innerHTML =
+                '<div class="search-no-result">No games found</div>';
+
+            results.style.display =
+                "block";
+
+            return;
+
+        }
+
+
+        matches.forEach(
+            game => {
+
+                const link =
+                    document.createElement(
+                        "a"
+                    );
+
+                link.className =
+                    "search-result";
+
+                link.href =
+                    game.file;
+
+                link.textContent =
+                    game.name;
+
+                results.appendChild(
+                    link
+                );
+
+            }
         );
 
 
-    if(!matches.length){
-
-        results.innerHTML =
-            '<div class="search-no-result">No games found</div>';
-
-        results.style.display = "block";
-        return;
+        results.style.display =
+            "block";
 
     }
+);
 
 
-    matches.forEach(game => {
+/* =========================================================
+   ENTER SEARCH
+========================================================= */
 
-        const link =
-            document.createElement("a");
+input.addEventListener(
+    "keydown",
+    function(event){
 
-        link.className = "search-result";
+        if(
+            event.key !== "Enter"
+        ){
 
-        link.href = game.file;
+            return;
 
-        link.textContent = game.name;
+        }
 
-        results.appendChild(link);
-
-    });
-
-
-    results.style.display = "block";
-
-});
-
-
-input.addEventListener("keydown", function(e){
-
-    if(e.key === "Enter"){
 
         const search =
-            this.value.trim().toLowerCase();
+            this.value
+                .trim()
+                .toLowerCase();
+
 
         const match =
-            games.find(game =>
-                game.name.toLowerCase().startsWith(search)
+            games.find(
+                game =>
+                    game.name
+                        .toLowerCase()
+                        .includes(search)
             );
 
+
         if(match){
-            window.location.href = match.file;
+
+            window.location.href =
+                match.file;
+
         }
 
     }
+);
 
-});
+
+/* =========================================================
+   CLOSE SEARCH
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        const container =
+            document.querySelector(
+                ".search-container"
+            );
 
 
-document.addEventListener("click", function(e){
+        if(
+            !container.contains(
+                event.target
+            )
+        ){
 
-    const container =
-        document.querySelector(".search-container");
+            document
+                .getElementById(
+                    "headerSearch"
+                )
+                .classList.remove(
+                    "active"
+                );
 
-    if(!container.contains(e.target)){
-
-        document
-            .getElementById("headerSearch")
-            .classList.remove("active");
+        }
 
     }
+);
 
-});
 
+/* =========================================================
+   IMAGE MODAL
+========================================================= */
 
 function openModal(src){
 
     document
-        .getElementById("modalImage")
+        .getElementById(
+            "modalImage"
+        )
         .src = src;
 
+
     document
-        .getElementById("imageModal")
-        .classList.add("active");
+        .getElementById(
+            "imageModal"
+        )
+        .classList.add(
+            "active"
+        );
 
 }
 
@@ -742,10 +1738,30 @@ function openModal(src){
 function closeModal(){
 
     document
-        .getElementById("imageModal")
-        .classList.remove("active");
+        .getElementById(
+            "imageModal"
+        )
+        .classList.remove(
+            "active"
+        );
 
 }
+
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Escape"
+        ){
+
+            closeModal();
+
+        }
+
+    }
+);
 
 </script>
 
