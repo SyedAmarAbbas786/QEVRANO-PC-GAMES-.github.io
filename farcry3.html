@@ -50,14 +50,43 @@ body{
     position:relative;
 }
 
-.search-box{
+.search-toggle{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:7px;
+    background:#00a9ed;
+    color:#fff;
+    cursor:pointer;
+    font-size:20px;
     display:flex;
     align-items:center;
+    justify-content:center;
+    transition:.2s;
+}
+
+.search-toggle:hover{
+    background:#008bc4;
+    transform:scale(1.05);
+}
+
+/* SEARCH BOX */
+.search-box{
+    position:absolute;
+    top:50px;
+    right:0;
+    display:none;
+    align-items:center;
+    z-index:1001;
+}
+
+.search-box.active{
+    display:flex;
 }
 
 .search-box input{
-    width:180px;
-    height:36px;
+    width:210px;
+    height:38px;
     padding:0 12px;
     border:1px solid rgba(255,255,255,.2);
     border-radius:6px 0 0 6px;
@@ -72,26 +101,26 @@ body{
 }
 
 .search-btn{
-    height:36px;
-    padding:0 14px;
+    height:38px;
+    padding:0 13px;
     border:none;
     border-radius:0 6px 6px 0;
-    background:#e42529;
+    background:#00a9ed;
     color:#fff;
     cursor:pointer;
     font-weight:bold;
 }
 
 .search-btn:hover{
-    background:#ff3438;
+    background:#008bc4;
 }
 
 /* SEARCH RESULTS */
 .search-results{
     position:absolute;
-    top:44px;
+    top:95px;
     right:0;
-    width:260px;
+    width:270px;
     background:#151b26;
     border:1px solid rgba(255,255,255,.15);
     border-radius:8px;
@@ -110,7 +139,7 @@ body{
 }
 
 .search-results a:hover{
-    background:#222b3a;
+    background:#00a9ed;
 }
 
 .no-result{
@@ -238,11 +267,11 @@ h1{
     }
 
     .search-box input{
-        width:130px;
+        width:170px;
     }
 
     .search-results{
-        width:220px;
+        width:230px;
     }
 
     .card{
@@ -268,7 +297,6 @@ h1{
 
 <header class="banner">
 
-```
 <div class="logo">
     QEVRANO PC GAMES
 </div>
@@ -276,7 +304,18 @@ h1{
 <!-- SEARCH -->
 <div class="search-area">
 
-    <div class="search-box">
+    <!-- BLUE SEARCH ICON -->
+    <button
+        class="search-toggle"
+        id="searchToggle"
+        aria-label="Open search">
+        🔍
+    </button>
+
+    <!-- SEARCH BAR -->
+    <div
+        class="search-box"
+        id="searchBox">
 
         <input
             type="text"
@@ -293,15 +332,16 @@ h1{
 
     </div>
 
+    <!-- SEARCH RESULTS -->
     <div
         class="search-results"
         id="searchResults">
     </div>
 
 </div>
-```
 
 </header>
+
 
 <div class="container">
 
@@ -349,9 +389,7 @@ class="download-btn mega"
 target="_blank"
 rel="noopener noreferrer">
 
-```
 DOWNLOAD SETUP
-```
 
 </a>
 
@@ -369,19 +407,13 @@ Click the button above to open the Mega download page.
 
 </div>
 
+
 <script>
 
 /*
 ========================================
-YOUR GAME DATABASE
+GAME DATABASE
 ========================================
-
-Add every game page here.
-
-The "name" is what appears in search.
-
-The "file" must exactly match
-your HTML filename.
 */
 
 const games = [
@@ -397,16 +429,85 @@ const games = [
     },
 
     {
-        name: "The Witcher 2",
-        file: "./the-witcher-2.html"
+        name: "Assassin's Creed II",
+        file: "./ac2.html"
     },
 
     {
         name: "GTA V",
         file: "./gta5.html"
+    },
+
+    {
+        name: "GTA IV",
+        file: "./gta4.html"
+    },
+
+    {
+        name: "FIFA",
+        file: "./fifa.html"
+    },
+
+    {
+        name: "Don Bradman Cricket",
+        file: "./cricket.html"
+    },
+
+    {
+        name: "Call of Duty 1",
+        file: "./cod1.html"
+    },
+
+    {
+        name: "The Witcher 2",
+        file: "./the-witcher-2.html"
     }
 
 ];
+
+
+/*
+========================================
+SEARCH ELEMENTS
+========================================
+*/
+
+const searchToggle =
+    document.getElementById("searchToggle");
+
+const searchBox =
+    document.getElementById("searchBox");
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const searchResults =
+    document.getElementById("searchResults");
+
+
+/*
+========================================
+OPEN / CLOSE SEARCH
+========================================
+*/
+
+searchToggle.addEventListener("click", function(event){
+
+    event.stopPropagation();
+
+    searchBox.classList.toggle("active");
+
+    if(searchBox.classList.contains("active")){
+
+        searchInput.focus();
+
+    }else{
+
+        searchResults.style.display = "none";
+
+    }
+
+});
 
 
 /*
@@ -417,105 +518,156 @@ SEARCH FUNCTION
 
 function searchGames(){
 
-    const input =
-        document.getElementById("searchInput");
-
-    const results =
-        document.getElementById("searchResults");
-
     const search =
-        input.value.trim().toLowerCase();
+        searchInput.value.trim().toLowerCase();
 
-    results.innerHTML = "";
+    searchResults.innerHTML = "";
 
     if(search === ""){
-        results.style.display = "none";
+
+        searchResults.style.display = "none";
+
         return;
     }
 
+
+    /*
+    ONLY SHOW GAMES THAT
+    START WITH WHAT USER TYPES
+
+    F  = Far Cry 2
+         Far Cry 3
+         FIFA
+
+    FA = Far Cry 2
+         Far Cry 3
+
+    G  = GTA V
+         GTA IV
+    */
+
     const matches = games.filter(game =>
-        game.name.toLowerCase().includes(search)
+        game.name
+        .toLowerCase()
+        .startsWith(search)
     );
+
+
+    /*
+    NO RESULTS
+    */
 
     if(matches.length === 0){
 
-        results.innerHTML =
+        searchResults.innerHTML =
             '<div class="no-result">No games found</div>';
 
-        results.style.display = "block";
+        searchResults.style.display = "block";
 
         return;
     }
+
+
+    /*
+    SHOW RESULTS
+    */
 
     matches.forEach(game => {
 
         const link =
             document.createElement("a");
 
-        link.href = game.file;
-        link.textContent = game.name;
+        link.href =
+            game.file;
 
-        results.appendChild(link);
+        link.textContent =
+            game.name;
+
+        searchResults.appendChild(link);
 
     });
 
-    results.style.display = "block";
+
+    searchResults.style.display =
+        "block";
+
 }
 
 
 /*
-SEARCH WHILE TYPING
+========================================
+LIVE SEARCH WHILE TYPING
+========================================
 */
 
-document
-.getElementById("searchInput")
-.addEventListener("input", searchGames);
+searchInput.addEventListener(
+    "input",
+    searchGames
+);
 
 
 /*
-PRESS ENTER TO OPEN FIRST RESULT
+========================================
+ENTER KEY
+========================================
 */
 
-document
-.getElementById("searchInput")
-.addEventListener("keydown", function(event){
+searchInput.addEventListener(
+    "keydown",
+    function(event){
 
-    if(event.key === "Enter"){
+        if(event.key === "Enter"){
 
-        const search =
-            this.value.trim().toLowerCase();
+            const search =
+                this.value.trim().toLowerCase();
 
-        const match =
-            games.find(game =>
-                game.name.toLowerCase().includes(search)
-            );
 
-        if(match){
-            window.location.href = match.file;
+            const match =
+                games.find(game =>
+                    game.name
+                    .toLowerCase()
+                    .startsWith(search)
+                );
+
+
+            if(match){
+
+                window.location.href =
+                    match.file;
+
+            }
+
         }
 
     }
-
-});
+);
 
 
 /*
-CLOSE RESULTS WHEN CLICKING OUTSIDE
+========================================
+CLOSE SEARCH WHEN CLICKING OUTSIDE
+========================================
 */
 
-document.addEventListener("click", function(event){
+document.addEventListener(
+    "click",
+    function(event){
 
-    const searchArea =
-        document.querySelector(".search-area");
+        const searchArea =
+            document.querySelector(".search-area");
 
-    if(!searchArea.contains(event.target)){
 
-        document.getElementById("searchResults")
-        .style.display = "none";
+        if(!searchArea.contains(event.target)){
+
+            searchBox.classList.remove("active");
+
+            searchResults.style.display =
+                "none";
+
+        }
 
     }
-
-});
+);
 
 </script>
 
