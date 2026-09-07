@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - QEVRANO PC GAMES</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:#eee;
+    background:#070707;
+    min-height:100vh;
+}
+
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,5,5,.96);
+    border-bottom:1px solid #242424;
+    backdrop-filter:blur(12px);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    min-height:76px;
+    padding:0 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo span{color:#e50914}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:#bbb;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:.8px;
+    transition:.25s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#e50914;
+}
+
+/* HERO */
+.page-hero{
+    max-width:1200px;
+    margin:auto;
+    padding:85px 25px 55px;
+    text-align:center;
+}
+
+.page-hero .label{
+    color:#e50914;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.page-hero h1{
+    font-size:52px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.page-hero p{
+    max-width:680px;
+    margin:auto;
+    color:#999;
+    line-height:1.8;
+    font-size:15px;
+}
+
+/* CONTENT */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px 25px 90px;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:25px;
+}
+
+.card{
+    background:linear-gradient(145deg,#111,#0a0a0a);
+    border:1px solid #252525;
+    border-radius:14px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.card h2{
+    font-size:23px;
+    margin-bottom:12px;
+}
+
+.card>p{
+    color:#999;
+    line-height:1.7;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.info{
+    padding:18px 0;
+    border-bottom:1px solid #222;
+}
+
+.info:last-child{border-bottom:0}
+
+.info strong{
+    display:block;
+    color:#fff;
+    margin-bottom:7px;
+}
+
+.info span{
+    color:#888;
+    font-size:14px;
+}
+
+form{
+    display:grid;
+    gap:17px;
+}
+
+label{
+    color:#bbb;
+    font-size:13px;
+    font-weight:bold;
+}
+
+input,textarea{
+    width:100%;
+    margin-top:8px;
+    padding:14px 15px;
+    border-radius:8px;
+    border:1px solid #292929;
+    background:#080808;
+    color:#fff;
+    outline:none;
+    font-family:inherit;
+    transition:.25s;
+}
+
+input:focus,textarea:focus{
+    border-color:#e50914;
+    box-shadow:0 0 0 2px rgba(229,9,20,.08);
+}
+
+textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+button{
+    border:0;
+    border-radius:8px;
+    padding:15px 22px;
+    background:#e50914;
+    color:#fff;
+    font-weight:900;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button:hover{
+    background:#ff1b26;
+    transform:translateY(-2px);
+}
+
+.note{
+    margin-top:15px;
+    color:#777;
+    font-size:12px;
+    line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+    border-top:1px solid #222;
+    background:#050505;
+    padding:45px 25px;
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.footer-brand{
+    max-width:420px;
+}
+
+.footer-brand h3{
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.footer-brand h3 span{color:#e50914}
+
+.footer-brand p{
+    color:#777;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.footer-links{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+    align-content:flex-start;
+}
+
+.footer-links a{
+    color:#888;
+    text-decoration:none;
+    font-size:13px;
+}
+
+.footer-links a:hover{color:#e50914}
+
+.copyright{
+    max-width:1200px;
+    margin:30px auto 0;
+    padding-top:20px;
+    border-top:1px solid #181818;
+    color:#555;
+    font-size:12px;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+    .navbar{flex-direction:column;padding:20px;gap:18px}
+    nav{gap:16px;flex-wrap:wrap;justify-content:center}
+    .page-hero h1{font-size:38px}
+    .contact-grid{grid-template-columns:1fr}
+    .footer-inner{flex-direction:column}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<div class="navbar">
+<a href="./index.html" class="logo">QEVRANO <span>PC GAMES</span></a>
+
+<nav>
+<a href="./index.html">HOME</a>
+<a href="./index.html#games">GAMES</a>
+<a href="./index.html#packs">PACKS</a>
+<a href="./contact.html" class="active">CONTACT</a>
+</nav>
+</div>
+</header>
+
+<section class="page-hero">
+<div class="label">GET IN TOUCH</div>
+<h1>Contact <span style="color:#e50914">QEVRANO</span></h1>
+<p>
+Have a question, found an issue, or want to suggest a game?
+Send us a message and we'll do our best to help.
+</p>
+</section>
+
+<main class="container">
+
+<div class="contact-grid">
+
+<div class="card">
+<h2>Let's Talk</h2>
+<p>
+QEVRANO PC GAMES is focused on making game discovery simple,
+clean and easy to navigate.
+</p>
+
+<div class="info">
+<strong>General Support</strong>
+<span>Use the contact form to send your message.</span>
+</div>
+
+<div class="info">
+<strong>Game Suggestions</strong>
+<span>Tell us which PC game you'd like to see listed.</span>
+</div>
+
+<div class="info">
+<strong>Website Issues</strong>
+<span>Report broken pages, incorrect information or other website problems.</span>
+</div>
+
+<div class="info">
+<strong>Response Time</strong>
+<span>Response times may vary depending on the nature of your message.</span>
+</div>
+</div>
+
+<div class="card">
+<h2>Send a Message</h2>
+<p>Fill in the form below.</p>
+
+<form onsubmit="sendMessage(event)">
+
+<label>
+Your Name
+<input type="text" id="name" placeholder="Enter your name" required>
+</label>
+
+<label>
+Your Email
+<input type="email" id="email" placeholder="Enter your email" required>
+</label>
+
+<label>
+Subject
+<input type="text" id="subject" placeholder="What is your message about?" required>
+</label>
+
+<label>
+Message
+<textarea id="message" placeholder="Write your message..." required></textarea>
+</label>
+
+<button type="submit">SEND MESSAGE</button>
+
+</form>
+
+<div class="note">
+This form is currently a front-end form. To receive submissions,
+connect it to your chosen form-processing or email service.
+</div>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+<div class="footer-inner">
+
+<div class="footer-brand">
+<h3>QEVRANO <span>PC GAMES</span></h3>
+<p>
+A premium gaming discovery website built to help PC gamers
+find game information in a clean and simple environment.
+</p>
+</div>
+
+<div class="footer-links">
+<a href="./index.html">Home</a>
+<a href="./index.html#games">Games</a>
+<a href="./contact.html">Contact</a>
+<a href="./privacy.html">Privacy Policy</a>
+<a href="./terms.html">Terms & Conditions</a>
+<a href="./disclaimer.html">Disclaimer</a>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 QEVRANO PC GAMES. All rights reserved.
+</div>
+</footer>
+
+<script>
+function sendMessage(event){
+    event.preventDefault();
+
+    const name=document.getElementById("name").value.trim();
+
+    alert(
+        "Thanks, " + name +
+        "! Your message has been prepared. " +
+        "Please connect this form to an email/form service to receive submissions."
+    );
+}
+</script>
+
+</body>
+</html>
