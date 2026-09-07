@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,801 +8,1450 @@
 <title>Don Bradman Cricket - QEVRANO PC GAMES</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ddd;
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:#eee;
+
     background:
         linear-gradient(
-            rgba(0,0,0,0.78),
-            rgba(0,0,0,0.92)
+            rgba(4,4,4,.88),
+            rgba(4,4,4,.96)
         ),
         url("./images/cricket-bg.jpg") center/cover fixed;
+
+    min-height:100vh;
 }
 
-header {
-    height: 70px;
-    background: rgba(0,0,0,0.92);
-    border-bottom: 1px solid #00b7ff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 6%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:8px;
 }
 
-.logo {
-    color: #fff;
-    font-size: 23px;
-    font-weight: bold;
-    text-decoration: none;
-    letter-spacing: 1px;
+::-webkit-scrollbar-track{
+    background:#070707;
 }
 
-.logo span {
-    color: #00b7ff;
+::-webkit-scrollbar-thumb{
+    background:#d90000;
+    border-radius:10px;
 }
 
-nav {
-    display: flex;
-    gap: 25px;
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    min-height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    background:rgba(7,7,7,.95);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,0,0,.18);
 }
 
-nav a {
-    color: #ddd;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
+.logo{
+    color:#fff;
+
+    font-size:23px;
+    font-weight:900;
+
+    text-decoration:none;
+
+    letter-spacing:1px;
 }
 
-nav a:hover {
-    color: #00b7ff;
+.logo span{
+    color:#e00000;
 }
 
-.container {
-    width: 92%;
-    max-width: 1250px;
-    margin: 35px auto;
+.logo small{
+    display:block;
+
+    color:#666;
+
+    font-size:8px;
+
+    letter-spacing:3px;
+
+    margin-top:3px;
 }
 
-.back {
-    color: #00b7ff;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    margin-bottom: 20px;
+nav{
+    display:flex;
+    align-items:center;
+
+    gap:27px;
 }
 
-.back:hover {
-    text-decoration: underline;
+nav a{
+    color:#aaa;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    transition:.25s;
 }
 
-.main-content {
-    background: rgba(10,10,10,0.88);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+nav a:hover{
+    color:#ff2020;
 }
 
-.hero {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 30px;
-    align-items: center;
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container{
+    width:92%;
+    max-width:1250px;
+
+    margin:35px auto;
 }
 
-.hero img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-    box-shadow: 0 0 20px rgba(0,183,255,0.15);
+.back{
+    display:inline-block;
+
+    color:#e00000;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    margin-bottom:18px;
+
+    transition:.25s;
 }
 
-.hero-info h1 {
-    color: #fff;
-    font-size: 42px;
-    margin-bottom: 12px;
+.back:hover{
+    color:#fff;
+
+    transform:translateX(-3px);
 }
 
-.subtitle {
-    color: #00b7ff;
-    font-size: 15px;
-    margin-bottom: 18px;
+
+/* =========================================================
+   MAIN PANEL
+========================================================= */
+
+.main-content{
+    position:relative;
+
+    padding:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,18,18,.97),
+            rgba(9,9,9,.97)
+        );
+
+    border:1px solid #292929;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.6);
+
+    overflow:hidden;
 }
 
-.description {
-    line-height: 1.7;
-    color: #bbb;
-    margin-bottom: 20px;
+.main-content:before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e00000,
+            transparent
+        );
 }
 
-.game-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 22px;
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    display:grid;
+
+    grid-template-columns:300px minmax(0,1fr);
+
+    gap:30px;
+
+    align-items:center;
 }
 
-.meta {
-    background: rgba(0,183,255,0.08);
-    border: 1px solid rgba(0,183,255,0.25);
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-size: 13px;
-    color: #ccc;
+.hero img{
+    width:100%;
+
+    height:390px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+    display:block;
+
+    border:1px solid #303030;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.55);
+
+    transition:.3s;
 }
 
-.download-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+.hero img:hover{
+    border-color:#d80000;
+
+    box-shadow:
+        0 15px 45px rgba(210,0,0,.18);
 }
 
-.download-btn {
-    display: inline-block;
-    padding: 13px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    transition: 0.3s;
+.hero-info h1{
+    color:#fff;
+
+    font-size:42px;
+
+    line-height:1;
+
+    font-weight:1000;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:12px;
 }
 
-.official {
-    background: #00b7ff;
-    color: #000;
+.subtitle{
+    display:inline-block;
+
+    color:#ff2222;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:1.5px;
+
+    margin-bottom:18px;
+
+    padding:7px 13px;
+
+    background:rgba(190,0,0,.10);
+
+    border:1px solid rgba(220,0,0,.3);
+
+    border-radius:20px;
 }
 
-.official:hover {
-    background: #fff;
+.description{
+    line-height:1.75;
+
+    color:#aaa;
+
+    font-size:14px;
+
+    margin-bottom:20px;
 }
 
-.download-btn:not(.official) {
-    background: #111;
-    border: 1px solid #00b7ff;
-    color: #00b7ff;
+
+/* =========================================================
+   GAME META
+========================================================= */
+
+.game-meta{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-bottom:22px;
 }
 
-.download-btn:not(.official):hover {
-    background: #00b7ff;
-    color: #000;
+.meta{
+    background:#111;
+
+    border:1px solid #292929;
+
+    padding:8px 11px;
+
+    border-radius:6px;
+
+    font-size:11px;
+
+    color:#999;
 }
 
-.compressed-link {
-    display: block;
-    margin-top: 8px;
-    color: #00b7ff;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: underline;
+.meta strong{
+    color:#ddd;
 }
 
-.compressed-link:hover {
-    color: #fff;
+
+/* =========================================================
+   DOWNLOAD BUTTONS
+========================================================= */
+
+.download-buttons{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:flex-start;
+
+    gap:12px;
 }
 
-.section {
-    margin-top: 35px;
+.download-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:185px;
+
+    padding:13px 20px;
+
+    border-radius:6px;
+
+    text-decoration:none;
+
+    font-weight:900;
+
+    font-size:12px;
+
+    transition:.25s;
 }
 
-.section h2 {
-    color: #00b7ff;
-    font-size: 22px;
-    margin-bottom: 18px;
-    border-left: 4px solid #00b7ff;
-    padding-left: 12px;
+.official{
+    background:#d80000;
+
+    color:#fff;
 }
 
-.section p {
-    color: #bbb;
-    line-height: 1.8;
+.official:hover{
+    background:#ff1717;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(220,0,0,.22);
 }
 
-.screenshot-area {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 20px;
-    align-items: start;
+.download-btn:not(.official){
+    background:#151515;
+
+    border:1px solid #d80000;
+
+    color:#e00000;
 }
 
-.screenshots {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+.download-btn:not(.official):hover{
+    background:#d80000;
+
+    color:#fff;
+
+    transform:translateY(-2px);
 }
 
-.screenshots img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    border-radius: 7px;
-    cursor: pointer;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s;
+.compressed-link{
+    display:block;
+
+    margin-top:8px;
+
+    color:#e00000;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    text-decoration:none;
 }
 
-.screenshots img:hover {
-    transform: scale(1.02);
-    border-color: #00b7ff;
+.compressed-link:hover{
+    color:#fff;
 }
 
-.big-ad {
-    width: 300px;
-    height: 600px;
-    background: rgba(255,255,255,0.035);
-    border: 1px dashed #666;
-    border-radius: 8px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* =========================================================
+   SECTIONS
+========================================================= */
 
-    text-align: center;
-    color: #777;
-    padding: 20px;
-    font-size: 14px;
+.section{
+    margin-top:38px;
 }
 
-.big-ad strong {
-    color: #999;
-    margin-bottom: 10px;
+.section h2{
+    position:relative;
+
+    color:#fff;
+
+    font-size:22px;
+
+    margin-bottom:18px;
+
+    padding-left:14px;
 }
 
-.video-box {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #050505;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    overflow: hidden;
+.section h2:before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:1px;
+
+    width:4px;
+    height:23px;
+
+    background:#e00000;
+
+    border-radius:3px;
+
+    box-shadow:
+        0 0 12px rgba(220,0,0,.35);
 }
 
-.video-box iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
+.section p{
+    color:#aaa;
+
+    line-height:1.8;
+
+    font-size:14px;
 }
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+
+/* =========================================================
+   SCREENSHOTS
+========================================================= */
+
+.screenshot-area{
+    display:grid;
+
+    grid-template-columns:minmax(0,1fr) 300px;
+
+    gap:20px;
+
+    align-items:start;
 }
 
-.feature {
-    background: rgba(255,255,255,0.035);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 15px;
-    border-radius: 6px;
-    color: #ccc;
+.screenshots{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:13px;
 }
 
-.feature::before {
-    content: "✓";
-    color: #00b7ff;
-    font-weight: bold;
-    margin-right: 8px;
+.screenshots img{
+    width:100%;
+
+    height:190px;
+
+    object-fit:cover;
+
+    border-radius:7px;
+
+    cursor:pointer;
+
+    border:1px solid #292929;
+
+    transition:.3s;
 }
 
-.requirements {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+.screenshots img:hover{
+    transform:translateY(-4px);
+
+    border-color:#e00000;
+
+    box-shadow:
+        0 10px 25px rgba(210,0,0,.18);
 }
 
-.requirement-box {
-    background: rgba(255,255,255,0.035);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 7px;
-    padding: 20px;
+
+/* =========================================================
+   AD
+========================================================= */
+
+.big-ad{
+    width:300px;
+
+    height:600px;
+
+    background:#0c0c0c;
+
+    border:1px dashed #333;
+
+    border-radius:8px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:#555;
+
+    padding:20px;
+
+    font-size:12px;
 }
 
-.requirement-box h3 {
-    color: #fff;
-    margin-bottom: 15px;
+.big-ad strong{
+    color:#777;
+
+    margin-bottom:8px;
 }
 
-.requirement-box p {
-    margin-bottom: 8px;
-    font-size: 14px;
+
+/* =========================================================
+   TRAILER / VIDEO
+========================================================= */
+
+.video-box{
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:16 / 9;
+
+    background:#050505;
+
+    border:1px solid #303030;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.55);
 }
 
-.requirement-box strong {
-    color: #00b7ff;
+.video-box iframe{
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    border:0;
 }
 
-.tagline {
-    text-align: center;
-    margin: 45px 0 10px;
-    color: #777;
-    line-height: 1.8;
-    letter-spacing: 1px;
+.video-note{
+    margin-top:9px;
+
+    text-align:center;
+
+    color:#555;
+
+    font-size:10px;
 }
 
-.tagline strong {
-    display: block;
-    color: #00b7ff;
-    font-size: 25px;
-    letter-spacing: 2px;
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px;
 }
 
-footer {
-    text-align: center;
-    padding: 25px;
-    margin-top: 30px;
-    color: #666;
-    font-size: 13px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+.feature{
+    position:relative;
+
+    background:#111;
+
+    border:1px solid #292929;
+
+    padding:14px 15px 14px 32px;
+
+    border-radius:6px;
+
+    color:#aaa;
+
+    font-size:13px;
+
+    transition:.25s;
 }
 
-footer a {
-    color: #00b7ff;
-    text-decoration: none;
-    transition: 0.3s;
+.feature:before{
+    content:"✓";
+
+    position:absolute;
+
+    left:13px;
+
+    color:#e00000;
+
+    font-weight:bold;
 }
 
-footer a:hover {
-    color: #fff;
-    text-decoration: underline;
+.feature:hover{
+    border-color:#d80000;
+
+    transform:translateY(-2px);
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    inset: 0;
-    background: rgba(0,0,0,0.92);
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
+
+/* =========================================================
+   REQUIREMENTS
+========================================================= */
+
+.requirements{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
 }
 
-.modal img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 7px;
-    box-shadow: 0 0 40px rgba(0,183,255,0.2);
+.requirement-box{
+    position:relative;
+
+    background:#101010;
+
+    border:1px solid #292929;
+
+    border-radius:7px;
+
+    padding:20px;
 }
 
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 40px;
-    cursor: pointer;
+.requirement-box:before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:2px;
+
+    background:#d80000;
 }
 
-.close:hover {
-    color: #00b7ff;
+.requirement-box h3{
+    color:#fff;
+
+    margin-bottom:15px;
+
+    font-size:17px;
 }
 
-@media(max-width: 900px) {
+.requirement-box h3:before{
+    content:"";
 
-    header {
-        padding: 0 4%;
+    display:inline-block;
+
+    width:4px;
+    height:16px;
+
+    background:#d80000;
+
+    margin-right:8px;
+
+    vertical-align:-2px;
+
+    border-radius:2px;
+}
+
+.requirement-box p{
+    margin-bottom:8px;
+
+    font-size:12px;
+
+    color:#999;
+}
+
+.requirement-box p:last-child{
+    margin-bottom:0;
+}
+
+.requirement-box strong{
+    color:#ddd;
+}
+
+
+/* =========================================================
+   TAGLINE
+========================================================= */
+
+.tagline{
+    text-align:center;
+
+    margin:45px 0 10px;
+
+    color:#555;
+
+    line-height:1.8;
+
+    letter-spacing:1px;
+
+    font-size:12px;
+}
+
+.tagline strong{
+    display:block;
+
+    color:#e00000;
+
+    font-size:24px;
+
+    letter-spacing:2px;
+
+    margin-bottom:4px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    text-align:center;
+
+    padding:35px 20px;
+
+    margin-top:45px;
+
+    color:#666;
+
+    font-size:11px;
+
+    border-top:1px solid #222;
+
+    background:#050505;
+}
+
+.footer-logo{
+    color:#ddd;
+
+    font-size:18px;
+
+    font-weight:900;
+
+    margin-bottom:15px;
+}
+
+.footer-logo span{
+    color:#e00000;
+}
+
+.footer-links{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-bottom:15px;
+}
+
+.footer-links a{
+    color:#666;
+
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.footer-links a:hover{
+    color:#e00000;
+}
+
+
+/* =========================================================
+   IMAGE MODAL
+========================================================= */
+
+.modal{
+    display:none;
+
+    position:fixed;
+
+    z-index:5000;
+
+    inset:0;
+
+    background:rgba(0,0,0,.93);
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:30px;
+
+    cursor:pointer;
+}
+
+.modal img{
+    max-width:92%;
+
+    max-height:90%;
+
+    border-radius:7px;
+
+    border:1px solid #444;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.8);
+
+    cursor:default;
+}
+
+.close{
+    position:absolute;
+
+    top:20px;
+    right:30px;
+
+    color:#fff;
+
+    font-size:40px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.close:hover{
+    color:#e00000;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    header{
+        padding:0 4%;
     }
 
-    .hero {
-        grid-template-columns: 1fr;
+    .hero{
+        grid-template-columns:1fr;
     }
 
-    .hero img {
-        max-width: 350px;
-        margin: auto;
+    .hero img{
+        width:100%;
+
+        max-width:350px;
+
+        height:380px;
+
+        margin:auto;
     }
 
-    .hero-info h1 {
-        font-size: 32px;
+    .hero-info h1{
+        font-size:34px;
     }
 
-    .screenshot-area {
-        grid-template-columns: 1fr;
+    .screenshot-area{
+        grid-template-columns:1fr;
     }
 
-    .big-ad {
-        width: 100%;
-        height: 250px;
+    .big-ad{
+        width:100%;
+
+        height:250px;
     }
 
-    .requirements {
-        grid-template-columns: 1fr;
+    .requirements{
+        grid-template-columns:1fr;
     }
 
-    .features {
-        grid-template-columns: 1fr;
+    .features{
+        grid-template-columns:1fr;
     }
+
 }
 
-@media(max-width: 600px) {
+@media(max-width:600px){
 
-    nav {
-        gap: 12px;
+    header{
+        min-height:auto;
+
+        padding:14px 20px;
+
+        flex-direction:column;
+
+        gap:14px;
     }
 
-    nav a {
-        font-size: 12px;
+    nav{
+        gap:14px;
     }
 
-    .main-content {
-        padding: 17px;
+    nav a{
+        font-size:11px;
     }
 
-    .screenshots {
-        grid-template-columns: 1fr;
+    .container{
+        width:94%;
+
+        margin:22px auto;
     }
 
-    .screenshots img {
-        height: auto;
+    .main-content{
+        padding:18px;
     }
 
-    .download-buttons {
-        flex-direction: column;
+    .hero-info h1{
+        font-size:29px;
     }
 
-    .download-btn {
-        text-align: center;
+    .hero img{
+        height:330px;
     }
+
+    .screenshots{
+        grid-template-columns:1fr;
+    }
+
+    .screenshots img{
+        height:auto;
+
+        min-height:180px;
+    }
+
+    .download-buttons{
+        flex-direction:column;
+
+        align-items:stretch;
+    }
+
+    .download-btn{
+        width:100%;
+
+        text-align:center;
+    }
+
+    .game-meta{
+        flex-direction:column;
+    }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header>
 
-    <a href="./index.html" class="logo">
-        QEVRANO <span>PC GAMES</span>
-    </a>
+<a href="./index.html" class="logo">
 
-    <nav>
-        <a href="./index.html">HOME</a>
-        <a href="./index.html#games">GAMES</a>
-    </nav>
+```
+QEVRANO
+
+<span>
+    PC GAMES
+</span>
+
+<small>
+    GAMING DISCOVERY
+</small>
+```
+
+</a>
+
+<nav>
+
+<a href="./index.html">
+    HOME
+</a>
+
+<a href="./index.html#games">
+    GAMES
+</a>
+
+<a href="./index.html#packs">
+    PACKS
+</a>
+
+<a href="./about.html">
+    ABOUT
+</a>
+
+</nav>
 
 </header>
 
+<!-- =========================================================
+     PAGE
+========================================================= -->
 
 <div class="container">
 
-    <a href="./index.html" class="back">
-        ← BACK TO GAMES
-    </a>
+<a
+href="./index.html"
+class="back"
 
+>
 
-    <main class="main-content">
+```
+← BACK TO GAMES
+```
 
-        <section class="hero">
+</a>
 
-            <img
-                src="./images/cricket.jpg"
-                alt="Don Bradman Cricket"
-            >
+<main class="main-content">
 
-            <div class="hero-info">
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-                <h1>Don Bradman Cricket</h1>
+<section class="hero">
 
-                <div class="subtitle">
-                    DON BRADMAN CRICKET • SPORTS • CRICKET
-                </div>
+<img
+src="./images/cricket.jpg"
+alt="Don Bradman Cricket"
 
-                <p class="description">
-                    Don Bradman Cricket delivers an immersive cricket
-                    experience with realistic gameplay, detailed controls
-                    and a wide variety of cricketing options. Create your
-                    own player, build your career and experience the game
-                    from the pitch to the championship.
-                </p>
+>
 
-                <div class="game-meta">
+<div class="hero-info">
 
-                    <div class="meta">
-                        Developer: Big Ant Studios
-                    </div>
+<h1>
+    Don Bradman <span>Cricket</span>
+</h1>
 
-                    <div class="meta">
-                        Genre: Sports / Cricket
-                    </div>
+<div class="subtitle">
+    SPORTS • CRICKET • PC
+</div>
 
-                    <div class="meta">
-                        Release: 2014 PC
-                    </div>
+<p class="description">
+    Don Bradman Cricket delivers an immersive cricket
+    experience with realistic gameplay, detailed controls
+    and a wide variety of cricketing options. Create your
+    own player, build your career and experience the game
+    from the pitch to the championship.
+</p>
 
-                    <div class="meta">
-                        PC
-                    </div>
+<div class="game-meta">
 
-                </div>
+<div class="meta">
+    Developer: <strong>Big Ant Studios</strong>
+</div>
 
+<div class="meta">
+    Genre: <strong>Sports / Cricket</strong>
+</div>
 
-                <div class="download-buttons">
+<div class="meta">
+    Release: <strong>2014 PC</strong>
+</div>
 
-                    <a
-                        href="https://store.steampowered.com/"
-                        class="download-btn official"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        DOWNLOAD OFFICIAL
-                    </a>
-
-                    <div>
-
-                        <a
-                            href="#"
-                            class="download-btn"
-                            onclick="return false;"
-                        >
-                            DOWNLOAD SETUP.EXE
-                        </a>
-
-                        <a
-                            href="cricket.html"
-                            class="compressed-link"
-                        >
-                            Highly Compressed
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section class="section">
-
-            <h2>SCREENSHOTS</h2>
-
-            <div class="screenshot-area">
-
-                <div class="screenshots">
-
-                    <img
-                        src="./images/cricket-1.jpg"
-                        alt="Don Bradman Cricket Screenshot 1"
-                        onclick="openModal(this.src)"
-                    >
-
-                    <img
-                        src="./images/cricket-2.jpg"
-                        alt="Don Bradman Cricket Screenshot 2"
-                        onclick="openModal(this.src)"
-                    >
-
-                    <img
-                        src="./images/cricket-3.jpg"
-                        alt="Don Bradman Cricket Screenshot 3"
-                        onclick="openModal(this.src)"
-                    >
-
-                    <img
-                        src="./images/cricket-4.jpg"
-                        alt="Don Bradman Cricket Screenshot 4"
-                        onclick="openModal(this.src)"
-                    >
-
-                </div>
-
-
-                <div class="big-ad">
-
-                    <strong>ADVERTISEMENT</strong>
-
-                    <span>BIG AD SPACE</span>
-
-                    <br>
-
-                    <small>300 × 600</small>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section class="section">
-
-            <h2>MUST WATCH INSTALLATION VIDEO</h2>
-
-            <div class="video-box">
-
-                <iframe
-                    src="YOUR_VIDEO_EMBED_URL"
-                    title="Don Bradman Cricket Installation Guide"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-        </section>
-
-
-        <section class="section">
-
-            <h2>ABOUT GAME</h2>
-
-            <p>
-                Don Bradman Cricket is a cricket simulation game designed
-                to provide players with a detailed and realistic cricket
-                experience. Players can compete in different formats and
-                customize their cricketing experience.
-            </p>
-
-            <br>
-
-            <p>
-                The game features detailed batting and bowling controls,
-                player customization and multiple cricketing modes for
-                players looking for an authentic cricket simulation.
-            </p>
-
-        </section>
-
-
-        <section class="section">
-
-            <h2>FEATURES</h2>
-
-            <div class="features">
-
-                <div class="feature">
-                    Realistic cricket gameplay
-                </div>
-
-                <div class="feature">
-                    Detailed batting controls
-                </div>
-
-                <div class="feature">
-                    Advanced bowling controls
-                </div>
-
-                <div class="feature">
-                    Player customization
-                </div>
-
-                <div class="feature">
-                    Multiple cricket formats
-                </div>
-
-                <div class="feature">
-                    Career and tournament modes
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section class="section">
-
-            <h2>MINIMUM REQUIREMENTS</h2>
-
-            <div class="requirements">
-
-                <div class="requirement-box">
-
-                    <h3>Minimum</h3>
-
-                    <p>
-                        <strong>OS:</strong>
-                        Windows 7
-                    </p>
-
-                    <p>
-                        <strong>CPU:</strong>
-                        Intel Core 2 Duo
-                    </p>
-
-                    <p>
-                        <strong>RAM:</strong>
-                        4 GB
-                    </p>
-
-                    <p>
-                        <strong>GPU:</strong>
-                        NVIDIA GeForce GTX 260 /
-                        AMD Radeon HD 5770
-                    </p>
-
-                    <p>
-                        <strong>DirectX:</strong>
-                        Version 9.0c
-                    </p>
-
-                    <p>
-                        <strong>Storage:</strong>
-                        15 GB
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section class="section">
-
-            <h2>RECOMMENDED REQUIREMENTS</h2>
-
-            <div class="requirements">
-
-                <div class="requirement-box">
-
-                    <h3>Recommended</h3>
-
-                    <p>
-                        <strong>OS:</strong>
-                        Windows 7 / 8 / 10
-                    </p>
-
-                    <p>
-                        <strong>CPU:</strong>
-                        Intel Core i5
-                    </p>
-
-                    <p>
-                        <strong>RAM:</strong>
-                        8 GB
-                    </p>
-
-                    <p>
-                        <strong>GPU:</strong>
-                        NVIDIA GeForce GTX 660 /
-                        AMD Radeon HD 7870
-                    </p>
-
-                    <p>
-                        <strong>DirectX:</strong>
-                        Version 11
-                    </p>
-
-                    <p>
-                        <strong>Storage:</strong>
-                        15 GB
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <div class="tagline">
-
-            <strong>
-                STEP ONTO THE PITCH.
-            </strong>
-
-            BAT • BOWL • WIN
-
-            <br>
-
-            QEVRANO PC GAMES
-
-        </div>
-
-    </main>
+<div class="meta">
+    Platform: <strong>PC</strong>
+</div>
 
 </div>
 
+<div class="download-buttons">
+
+<a
+href="https://store.steampowered.com/"
+class="download-btn official"
+target="_blank"
+rel="noopener noreferrer"
+
+>
+
+```
+DOWNLOAD OFFICIAL
+```
+
+</a>
+
+<a
+href="#"
+class="download-btn"
+onclick="return false;"
+
+>
+
+```
+DOWNLOAD SETUP.EXE
+```
+
+</a>
+
+</div>
+
+<a
+href="#"
+class="compressed-link"
+onclick="return false;"
+
+>
+
+```
+Highly Compressed
+```
+
+</a>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     SCREENSHOTS
+========================================================= -->
+
+<section class="section">
+
+<h2>
+    SCREENSHOTS
+</h2>
+
+<div class="screenshot-area">
+
+<div class="screenshots">
+
+<img
+src="./images/cricket-1.jpg"
+alt="Don Bradman Cricket Screenshot 1"
+onclick="openModal(this.src)"
+
+>
+
+<img
+src="./images/cricket-2.jpg"
+alt="Don Bradman Cricket Screenshot 2"
+onclick="openModal(this.src)"
+
+>
+
+<img
+src="./images/cricket-3.jpg"
+alt="Don Bradman Cricket Screenshot 3"
+onclick="openModal(this.src)"
+
+>
+
+<img
+src="./images/cricket-4.jpg"
+alt="Don Bradman Cricket Screenshot 4"
+onclick="openModal(this.src)"
+
+>
+
+</div>
+
+<div class="big-ad">
+
+<strong>
+    ADVERTISEMENT
+</strong>
+
+<span>
+    BIG AD SPACE
+</span>
+
+<br>
+
+<small>
+    300 × 600
+</small>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     TRAILER
+========================================================= -->
+
+<section class="section">
+
+<h2>
+    OFFICIAL GAME TRAILER
+</h2>
+
+<div class="video-box">
+
+<!-- Replace VIDEO_ID with the verified YouTube video ID
+     when you choose the exact Don Bradman Cricket trailer. -->
+
+<iframe
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    title="Don Bradman Cricket Trailer"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
+
+</div>
+
+<p class="video-note">
+    Trailer video is embedded from YouTube.
+</p>
+
+</section>
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="section">
+
+<h2>
+    ABOUT GAME
+</h2>
+
+<p>
+    Don Bradman Cricket is a cricket simulation game designed
+    to provide players with a detailed and realistic cricket
+    experience. Players can compete in different formats and
+    customize their cricketing experience.
+</p>
+
+<br>
+
+<p>
+    The game features detailed batting and bowling controls,
+    player customization and multiple cricketing modes for
+    players looking for an authentic cricket simulation.
+</p>
+
+</section>
+
+<!-- =========================================================
+     FEATURES
+========================================================= -->
+
+<section class="section">
+
+<h2>
+    FEATURES
+</h2>
+
+<div class="features">
+
+<div class="feature">
+    Realistic cricket gameplay
+</div>
+
+<div class="feature">
+    Detailed batting controls
+</div>
+
+<div class="feature">
+    Advanced bowling controls
+</div>
+
+<div class="feature">
+    Player customization
+</div>
+
+<div class="feature">
+    Multiple cricket formats
+</div>
+
+<div class="feature">
+    Career and tournament modes
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     MINIMUM REQUIREMENTS
+========================================================= -->
+
+<section class="section">
+
+<h2>
+    MINIMUM REQUIREMENTS
+</h2>
+
+<div class="requirements">
+
+<div class="requirement-box">
+
+<h3>
+    Minimum
+</h3>
+
+<p>
+    <strong>OS:</strong>
+    Windows 7
+</p>
+
+<p>
+    <strong>CPU:</strong>
+    Intel Core 2 Duo
+</p>
+
+<p>
+    <strong>RAM:</strong>
+    4 GB
+</p>
+
+<p>
+    <strong>GPU:</strong>
+    NVIDIA GeForce GTX 260 /
+    AMD Radeon HD 5770
+</p>
+
+<p>
+    <strong>DirectX:</strong>
+    Version 9.0c
+</p>
+
+<p>
+    <strong>Storage:</strong>
+    15 GB
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     RECOMMENDED REQUIREMENTS
+========================================================= -->
+
+<section class="section">
+
+<h2>
+    RECOMMENDED REQUIREMENTS
+</h2>
+
+<div class="requirements">
+
+<div class="requirement-box">
+
+<h3>
+    Recommended
+</h3>
+
+<p>
+    <strong>OS:</strong>
+    Windows 7 / 8 / 10
+</p>
+
+<p>
+    <strong>CPU:</strong>
+    Intel Core i5
+</p>
+
+<p>
+    <strong>RAM:</strong>
+    8 GB
+</p>
+
+<p>
+    <strong>GPU:</strong>
+    NVIDIA GeForce GTX 660 /
+    AMD Radeon HD 7870
+</p>
+
+<p>
+    <strong>DirectX:</strong>
+    Version 11
+</p>
+
+<p>
+    <strong>Storage:</strong>
+    15 GB
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     TAGLINE
+========================================================= -->
+
+<div class="tagline">
+
+<strong>
+    STEP ONTO THE PITCH.
+</strong>
+
+BAT • BOWL • WIN
+
+<br>
+
+QEVRANO PC GAMES
+
+</div>
+
+</main>
+
+</div>
+
+<!-- =========================================================
+     IMAGE MODAL
+========================================================= -->
 
 <div
     class="modal"
@@ -809,52 +1459,117 @@ footer a:hover {
     onclick="closeModal()"
 >
 
-    <span class="close">
-        &times;
-    </span>
+<span
+class="close"
+onclick="closeModal()"
 
-    <img
-        id="modalImage"
-        src=""
-        alt="Don Bradman Cricket Screenshot"
-        onclick="event.stopPropagation()"
-    >
+>
+
+```
+&times;
+```
+
+</span>
+
+<img
+id="modalImage"
+src=""
+alt="Don Bradman Cricket Screenshot"
+onclick="event.stopPropagation()"
+
+>
 
 </div>
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
-    © 2026 QEVRANO PC GAMES — All Rights Reserved
+<div class="footer-logo">
 
-    <br><br>
+```
+QE<span>V</span>RANO PC GAMES
+```
 
-    <a href="./privacy.html">Privacy Policy</a>
-    |
-    <a href="./about.html">About</a>
-    |
-    <a href="./contact.html">Contact</a>
-    |
-    <a href="./terms.html">Terms</a>
+</div>
+
+<div class="footer-links">
+
+<a href="./about.html">
+    About
+</a>
+
+<a href="./index.html#games">
+    Games
+</a>
+
+<a href="./contact.html">
+    Contact
+</a>
+
+<a href="./privacy.html">
+    Privacy Policy
+</a>
+
+<a href="./terms.html">
+    Terms & Conditions
+</a>
+
+<a href="./disclaimer.html">
+    Disclaimer
+</a>
+
+</div>
+
+<p>
+    © 2026 QEVRANO PC GAMES — All Rights Reserved.
+</p>
 
 </footer>
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
 
-function openModal(src) {
+function openModal(src){
 
-    document.getElementById("imageModal").style.display = "flex";
+    document
+        .getElementById("imageModal")
+        .style.display = "flex";
 
-    document.getElementById("modalImage").src = src;
+
+    document
+        .getElementById("modalImage")
+        .src = src;
 
 }
 
-function closeModal() {
 
-    document.getElementById("imageModal").style.display = "none";
+function closeModal(){
+
+    document
+        .getElementById("imageModal")
+        .style.display = "none";
 
 }
+
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeModal();
+
+        }
+
+    }
+);
 
 </script>
 
