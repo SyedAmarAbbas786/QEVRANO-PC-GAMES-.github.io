@@ -4,139 +4,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Privacy Policy - QEVRANO PC GAMES</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#070707;
+color:#eee;
+line-height:1.8;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ddd;
-    background:
-        linear-gradient(rgba(5,8,15,.94), rgba(5,8,15,.97)),
-        url("./images/unity.jpg") center/cover fixed no-repeat;
-    line-height: 1.8;
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(5,5,5,.96);
+border-bottom:1px solid #242424;
+backdrop-filter:blur(12px);
 }
 
-header {
-    background: rgba(5,10,18,.97);
-    border-bottom: 1px solid #00b7ff;
-    padding: 18px 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.navbar{
+max-width:1200px;
+margin:auto;
+min-height:76px;
+padding:0 25px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
-.logo {
-    color: #00b7ff;
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 1px;
+.logo{
+color:#fff;
+text-decoration:none;
+font-size:23px;
+font-weight:900;
+letter-spacing:1px;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: bold;
+.logo span{color:#e50914}
+
+nav{
+display:flex;
+gap:28px;
 }
 
-nav a:hover {
-    color: #00b7ff;
+nav a{
+color:#aaa;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
+letter-spacing:.8px;
 }
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto;
+nav a:hover,nav a.active{color:#e50914}
+
+.hero{
+max-width:1000px;
+margin:auto;
+padding:80px 25px 50px;
+text-align:center;
 }
 
-.panel {
-    background: rgba(8,13,23,.96);
-    border: 1px solid rgba(0,183,255,.35);
-    border-radius: 14px;
-    padding: 35px;
-    box-shadow: 0 0 35px rgba(0,0,0,.5);
+.hero .label{
+color:#e50914;
+font-size:12px;
+font-weight:bold;
+letter-spacing:3px;
 }
 
-h1 {
-    color: #00b7ff;
-    font-size: 36px;
-    margin-bottom: 10px;
+.hero h1{
+font-size:48px;
+font-weight:900;
+margin:12px 0;
 }
 
-.updated {
-    color: #8795a3;
-    font-size: 14px;
-    margin-bottom: 30px;
+.hero p{
+color:#888;
+font-size:14px;
 }
 
-h2 {
-    color: #00b7ff;
-    font-size: 24px;
-    margin-top: 35px;
-    margin-bottom: 12px;
-    border-left: 4px solid #00b7ff;
-    padding-left: 12px;
+.container{
+max-width:950px;
+margin:auto;
+padding:20px 25px 90px;
 }
 
-p {
-    margin-bottom: 15px;
+.policy{
+background:linear-gradient(145deg,#111,#090909);
+border:1px solid #252525;
+border-radius:14px;
+padding:40px;
+box-shadow:0 15px 45px rgba(0,0,0,.3);
 }
 
-ul {
-    margin: 10px 0 20px 25px;
+.policy h2{
+font-size:21px;
+margin:32px 0 10px;
+color:#fff;
 }
 
-li {
-    margin-bottom: 8px;
+.policy h2:first-child{margin-top:0}
+
+.policy p{
+color:#999;
+font-size:14px;
+margin-bottom:14px;
 }
 
-a {
-    color: #00b7ff;
+.policy ul{
+padding-left:22px;
+color:#999;
+font-size:14px;
+margin-bottom:15px;
 }
 
-.notice {
-    background: rgba(0,183,255,.08);
-    border-left: 3px solid #00b7ff;
-    padding: 15px;
-    margin: 20px 0;
+.policy li{margin-bottom:7px}
+
+.policy strong{color:#ddd}
+
+.updated{
+display:inline-block;
+margin-top:25px;
+padding:8px 13px;
+border:1px solid #292929;
+border-radius:6px;
+color:#777;
+font-size:12px;
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    margin-top: 40px;
-    color: #718496;
-    border-top: 1px solid #182635;
+footer{
+border-top:1px solid #222;
+background:#050505;
+padding:45px 25px;
 }
 
-@media (max-width: 600px) {
-    header {
-        padding: 15px 5%;
-    }
+.footer-inner{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+gap:30px;
+}
 
-    .logo {
-        font-size: 19px;
-    }
+.footer-brand h3{
+font-size:20px;
+margin-bottom:10px;
+}
 
-    nav a {
-        margin-left: 10px;
-        font-size: 13px;
-    }
+.footer-brand h3 span{color:#e50914}
 
-    .panel {
-        padding: 20px;
-    }
+.footer-brand p{
+max-width:420px;
+color:#666;
+font-size:13px;
+line-height:1.7;
+}
 
-    h1 {
-        font-size: 28px;
-    }
+.footer-links{
+display:flex;
+gap:22px;
+flex-wrap:wrap;
+align-content:flex-start;
+}
+
+.footer-links a{
+color:#777;
+text-decoration:none;
+font-size:13px;
+}
+
+.footer-links a:hover{color:#e50914}
+
+.copyright{
+max-width:1200px;
+margin:30px auto 0;
+padding-top:20px;
+border-top:1px solid #181818;
+color:#555;
+font-size:12px;
+}
+
+@media(max-width:800px){
+.navbar{flex-direction:column;padding:20px;gap:18px}
+nav{gap:15px;flex-wrap:wrap;justify-content:center}
+.hero h1{font-size:37px}
+.policy{padding:25px}
+.footer-inner{flex-direction:column}
 }
 </style>
 
@@ -145,212 +201,141 @@ footer {
 <body>
 
 <header>
-
-```
-<div class="logo">QEVRANO PC GAMES</div>
+<div class="navbar">
+<a href="./index.html" class="logo">QEVRANO <span>PC GAMES</span></a>
 
 <nav>
-    <a href="index.html">HOME</a>
-    <a href="index.html">GAMES</a>
+<a href="./index.html">HOME</a>
+<a href="./index.html#games">GAMES</a>
+<a href="./index.html#packs">PACKS</a>
+<a href="./contact.html">CONTACT</a>
 </nav>
-```
-
+</div>
 </header>
 
-<div class="container">
+<section class="hero">
+<div class="label">YOUR PRIVACY MATTERS</div>
+<h1>Privacy <span style="color:#e50914">Policy</span></h1>
+<p>How QEVRANO PC GAMES handles information when you use this website.</p>
+</section>
 
-<div class="panel">
+<main class="container">
 
-```
-<h1>Privacy Policy</h1>
+<article class="policy">
 
-<div class="updated">
-    Last Updated: September 6, 2026
-</div>
-
+<h2>1. Introduction</h2>
 <p>
-    Welcome to QEVRANO PC GAMES. This Privacy Policy explains how
-    information may be collected, used and shared when you visit
-    our website.
+Welcome to QEVRANO PC GAMES. This Privacy Policy explains how
+information may be handled when you visit or use this website.
+</p>
+
+<h2>2. Information We May Collect</h2>
+<p>
+Depending on the features enabled on the website, information may
+include information you voluntarily provide through contact forms,
+such as your name, email address and message.
 </p>
 
 <p>
-    By using QEVRANO PC GAMES, you acknowledge this Privacy Policy.
+Technical information may also be collected automatically by hosting,
+analytics, security or other third-party services used by the website.
 </p>
 
-
-<h2>1. Information We Collect</h2>
-
-<p>
-    QEVRANO PC GAMES does not intentionally request sensitive
-    personal information from visitors.
-</p>
-
-<p>
-    Depending on the services used on the website, certain
-    technical information may be collected automatically, such as:
-</p>
+<h2>3. How Information May Be Used</h2>
+<p>Information may be used to:</p>
 
 <ul>
-    <li>IP address</li>
-    <li>Browser type and version</li>
-    <li>Device type</li>
-    <li>Operating system</li>
-    <li>Pages visited</li>
-    <li>Approximate usage information</li>
-    <li>Cookies and similar technologies</li>
+<li>Respond to questions or support requests.</li>
+<li>Improve website functionality and usability.</li>
+<li>Maintain website security.</li>
+<li>Understand general website traffic and performance.</li>
 </ul>
 
-
-<h2>2. Cookies</h2>
-
+<h2>4. Cookies</h2>
 <p>
-    QEVRANO PC GAMES may use cookies and similar technologies to
-    improve website functionality, understand website usage and,
-    where applicable, support advertising services.
+QEVRANO PC GAMES may use cookies or similar technologies if required
+by website features, analytics, advertising or third-party services.
+You can control cookies through your browser settings.
+</p>
+
+<h2>5. Third-Party Services</h2>
+<p>
+Some pages may contain links, embedded content or services provided
+by third parties. These third parties may have their own privacy
+policies and data practices.
 </p>
 
 <p>
-    Cookies are small files stored on your device by websites.
-    You can control or delete cookies through your browser settings.
+QEVRANO PC GAMES does not control the privacy practices of external
+websites. You should review their policies before providing personal
+information.
 </p>
-
-
-<h2>3. Advertising</h2>
-
-<p>
-    QEVRANO PC GAMES may use third-party advertising services,
-    including Google AdSense, to display advertisements.
-</p>
-
-<p>
-    Third-party vendors, including Google, may use cookies to serve
-    advertisements based on a user's previous visits to this website
-    or other websites.
-</p>
-
-<p>
-    Google's use of advertising cookies enables Google and its
-    partners to serve advertisements to users based on their visits
-    to this website and/or other websites on the Internet.
-</p>
-
-<div class="notice">
-    Users may learn more about Google's advertising practices and
-    manage personalized advertising choices through Google's
-    advertising settings.
-</div>
-
-<p>
-    For information about how Google uses data when you use
-    partner websites or apps, please visit:
-    <a href="https://policies.google.com/technologies/partner-sites"
-       target="_blank"
-       rel="noopener noreferrer">
-       How Google uses information from sites or apps that use our services
-    </a>.
-</p>
-
-
-<h2>4. Third-Party Services</h2>
-
-<p>
-    QEVRANO PC GAMES may use third-party services such as
-    advertising, analytics, video hosting or other website services.
-</p>
-
-<p>
-    These third parties may collect or process information according
-    to their own privacy policies. QEVRANO PC GAMES does not control
-    the privacy practices of third-party services.
-</p>
-
-
-<h2>5. Analytics</h2>
-
-<p>
-    If analytics services are used in the future, they may collect
-    information about how visitors interact with the website,
-    including pages visited, approximate location information,
-    device information and other technical data.
-</p>
-
 
 <h2>6. External Links</h2>
-
 <p>
-    QEVRANO PC GAMES may contain links to external websites.
-    These websites operate independently and have their own privacy
-    policies and terms.
+This website may link to external websites, including official game
+publishers, stores and other services. Once you leave QEVRANO PC GAMES,
+the privacy policy of the destination website applies.
 </p>
 
+<h2>7. Data Security</h2>
 <p>
-    We recommend reviewing the privacy policy of any external
-    website you visit.
+Reasonable measures may be used to protect information handled by
+the website. However, no internet transmission or storage system can
+be guaranteed to be completely secure.
 </p>
 
-
-<h2>7. Children's Privacy</h2>
-
+<h2>8. Children's Privacy</h2>
 <p>
-    QEVRANO PC GAMES is not intended to knowingly collect personal
-    information from children.
+The website is not intended to knowingly collect personal information
+from children. If you believe personal information has been submitted
+inappropriately, contact the site administrator so the matter can be
+reviewed.
 </p>
 
+<h2>9. Changes to This Policy</h2>
 <p>
-    We do not intentionally request sensitive personal information
-    from visitors through the website.
+This Privacy Policy may be updated from time to time. Changes will be
+posted on this page with an updated date.
 </p>
 
-
-<h2>8. Data Security</h2>
-
+<h2>10. Contact</h2>
 <p>
-    We take reasonable steps to help protect information associated
-    with the website. However, no website or internet transmission
-    can be guaranteed to be completely secure.
+For privacy-related questions, please visit our
+<a href="./contact.html" style="color:#e50914">Contact page</a>.
 </p>
 
+<div class="updated">Last updated: September 7, 2026</div>
 
-<h2>9. Your Choices</h2>
+</article>
 
-<p>
-    You can control certain cookies and similar technologies through
-    your browser settings. You may also have choices regarding
-    personalized advertising depending on your location and the
-    advertising services used on this website.
-</p>
-
-
-<h2>10. Changes to This Privacy Policy</h2>
-
-<p>
-    This Privacy Policy may be updated from time to time to reflect
-    changes to the website, advertising services, applicable
-    requirements or other practices.
-</p>
-
-<p>
-    Any changes will be posted on this page with an updated
-    "Last Updated" date.
-</p>
-
-
-<h2>11. Contact</h2>
-
-<p>
-    If you have questions about this Privacy Policy or QEVRANO
-    PC GAMES, please contact us through the contact method provided
-    on our website.
-</p>
-```
-
-</div>
-
-</div>
+</main>
 
 <footer>
-    © 2026 QEVRANO PC GAMES — All Rights Reserved
+<div class="footer-inner">
+
+<div class="footer-brand">
+<h3>QEVRANO <span>PC GAMES</span></h3>
+<p>
+A premium gaming discovery website built to help PC gamers
+find game information in a clean and simple environment.
+</p>
+</div>
+
+<div class="footer-links">
+<a href="./index.html">Home</a>
+<a href="./index.html#games">Games</a>
+<a href="./contact.html">Contact</a>
+<a href="./privacy.html">Privacy Policy</a>
+<a href="./terms.html">Terms & Conditions</a>
+<a href="./disclaimer.html">Disclaimer</a>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 QEVRANO PC GAMES. All rights reserved.
+</div>
 </footer>
 
 </body>
