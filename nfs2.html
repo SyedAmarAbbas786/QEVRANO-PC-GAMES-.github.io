@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Need for Speed II - QEVRANO PC GAMES</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:#eee;
+    background:
+        linear-gradient(rgba(5,8,15,.88),rgba(5,8,15,.94)),
+        url("./images/nfs2-bg.jpg") center/cover fixed;
+}
+
+/* HEADER */
+
+header{
+    background:rgba(5,8,12,.94);
+    border-bottom:1px solid rgba(255,255,255,.12);
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:#fff;
+    font-size:23px;
+    font-weight:bold;
+    text-decoration:none;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#00b7ff;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#00b7ff;
+}
+
+/* SEARCH */
+
+.search-container{
+    position:relative;
+}
+
+.search-icon{
+    width:40px;
+    height:40px;
+    border:1px solid #00b7ff;
+    background:#00a9ed;
+    color:#fff;
+    font-size:19px;
+    border-radius:5px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.25s;
+}
+
+.search-icon:hover{
+    background:#008bc4;
+}
+
+.header-search{
+    display:none;
+    position:absolute;
+    right:0;
+    top:48px;
+    width:280px;
+    background:#10151c;
+    border:1px solid rgba(0,183,255,.5);
+    box-shadow:0 10px 30px rgba(0,0,0,.6);
+    z-index:3000;
+}
+
+.header-search.active{
+    display:block;
+}
+
+.header-search input{
+    width:100%;
+    padding:12px 14px;
+    border:none;
+    outline:none;
+    background:#fff;
+    color:#111;
+    font-size:14px;
+}
+
+.search-results{
+    display:none;
+    max-height:300px;
+    overflow-y:auto;
+}
+
+.search-result{
+    display:block;
+    padding:12px 14px;
+    color:#fff;
+    text-decoration:none;
+    border-top:1px solid rgba(255,255,255,.08);
+    font-size:14px;
+}
+
+.search-result:hover{
+    background:#00a9ed;
+}
+
+.search-no-result{
+    padding:12px 14px;
+    color:#999;
+    font-size:14px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* MAIN */
+
+.main-panel{
+    max-width:1150px;
+    margin:45px auto;
+    padding:30px;
+    background:rgba(10,14,20,.94);
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 15px 45px rgba(0,0,0,.55);
+}
+
+h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.subtitle{
+    color:#00b7ff;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.hero{
+    width:100%;
+    max-height:500px;
+    object-fit:cover;
+    display:block;
+    margin-bottom:30px;
+}
+
+h2{
+    color:#00b7ff;
+    margin:30px 0 15px;
+}
+
+p{
+    line-height:1.7;
+    color:#ccc;
+}
+
+.features{
+    padding-left:20px;
+    line-height:1.8;
+    color:#ccc;
+}
+
+.screenshots{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.screenshots img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    cursor:pointer;
+    border:1px solid rgba(255,255,255,.1);
+    transition:.25s;
+}
+
+.screenshots img:hover{
+    transform:scale(1.03);
+    border-color:#00b7ff;
+}
+
+/* DOWNLOAD */
+
+.download-buttons{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    margin-top:20px;
+}
+
+.download-btn{
+    display:inline-block;
+    padding:14px 24px;
+    background:#00a9ed;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:4px;
+    transition:.25s;
+}
+
+.download-btn:hover{
+    background:#008bc4;
+}
+
+.download-btn.official{
+    background:#222;
+    border:1px solid #00b7ff;
+}
+
+.download-btn.official:hover{
+    background:#00a9ed;
+}
+
+.compressed-link{
+    display:block;
+    margin-top:8px;
+    color:#00b7ff;
+    font-size:14px;
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+.compressed-link:hover{
+    color:#fff;
+}
+
+/* AD */
+
+.ad-box{
+    width:300px;
+    height:600px;
+    margin:35px auto;
+    background:#111;
+    border:1px solid rgba(255,255,255,.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#666;
+}
+
+/* VIDEO */
+
+.video-box{
+    width:100%;
+    height:400px;
+    background:#111;
+    border:1px solid rgba(255,255,255,.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#777;
+    margin-top:20px;
+}
+
+/* REQUIREMENTS */
+
+.requirements{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.requirements-box{
+    background:#11171f;
+    padding:20px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.requirements-box h3{
+    color:#00b7ff;
+    margin-bottom:12px;
+}
+
+.requirements-box p{
+    margin-bottom:7px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
+    background:#05080c;
+    color:#777;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    z-index:5000;
+    align-items:center;
+    justify-content:center;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
+}
+
+.modal.active{
+    display:flex;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    header{
+        padding:15px 4%;
+    }
+
+    .header-right{
+        gap:10px;
+    }
+
+    nav{
+        gap:12px;
+    }
+
+    .main-panel{
+        margin:20px;
+        padding:20px;
+    }
+
+    .screenshots{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .requirements{
+        grid-template-columns:1fr;
+    }
+
+    .download-buttons{
+        flex-direction:column;
+    }
+
+    .video-box{
+        height:250px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="./index.html" class="logo">
+        QEVRANO <span>PC GAMES</span>
+    </a>
+
+    <div class="header-right">
+
+        <nav>
+            <a href="./index.html">HOME</a>
+            <a href="./index.html#games">GAMES</a>
+            <a href="./index.html#packs">PACKS</a>
+        </nav>
+
+        <div class="search-container">
+
+            <button
+                class="search-icon"
+                onclick="toggleSearch()"
+                aria-label="Search"
+            >
+                🔍
+            </button>
+
+            <div class="header-search" id="headerSearch">
+
+                <input
+                    type="text"
+                    id="headerSearchInput"
+                    placeholder="Search games..."
+                    autocomplete="off"
+                >
+
+                <div
+                    class="search-results"
+                    id="headerSearchResults"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="main-panel">
+
+    <h1>Need for Speed II</h1>
+
+    <div class="subtitle">
+        Need for Speed II
+    </div>
+
+    <img
+        src="./images/nfs2.jpg"
+        alt="Need for Speed II"
+        class="hero"
+    >
+
+
+    <h2>About Game</h2>
+
+    <p>
+        Need for Speed II is a classic racing game developed by
+        Electronic Arts Canada and released in 1997. The game
+        focuses on high-speed racing with a selection of exotic
+        cars and tracks inspired by locations around the world.
+    </p>
+
+
+    <h2>Features</h2>
+
+    <ul class="features">
+
+        <li>Classic arcade-style racing</li>
+        <li>Exotic and high-performance cars</li>
+        <li>Multiple racing tracks</li>
+        <li>Different racing modes</li>
+        <li>Scenic environments and varied locations</li>
+        <li>Classic Need for Speed gameplay</li>
+
+    </ul>
+
+
+    <h2>Screenshots</h2>
+
+    <div class="screenshots">
+
+        <img
+            src="./images/nfs2-1.jpg"
+            alt="Need for Speed II Screenshot 1"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/nfs2-2.jpg"
+            alt="Need for Speed II Screenshot 2"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/nfs2-3.jpg"
+            alt="Need for Speed II Screenshot 3"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/nfs2-4.jpg"
+            alt="Need for Speed II Screenshot 4"
+            onclick="openModal(this.src)"
+        >
+
+    </div>
+
+
+    <h2>Installation Video</h2>
+
+    <div class="video-box">
+        INSTALLATION VIDEO WILL BE ADDED HERE
+    </div>
+
+
+    <h2>Download</h2>
+
+    <div class="download-buttons">
+
+        <a
+            href="#"
+            class="download-btn official"
+            onclick="return false;"
+        >
+            DOWNLOAD OFFICIAL
+        </a>
+
+        <div>
+
+            <a
+                href="#"
+                class="download-btn"
+                onclick="return false;"
+            >
+                DOWNLOAD SETUP.EXE
+            </a>
+
+            <a
+                href="#"
+                class="compressed-link"
+                onclick="return false;"
+            >
+                Highly Compressed
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <h2>Game Information</h2>
+
+    <div class="requirements">
+
+        <div class="requirements-box">
+
+            <h3>Release</h3>
+
+            <p><strong>Release Year:</strong> 1997</p>
+            <p><strong>Developer:</strong> EA Canada</p>
+            <p><strong>Publisher:</strong> Electronic Arts</p>
+            <p><strong>Genre:</strong> Racing</p>
+            <p><strong>Game Type:</strong> Arcade Racing</p>
+
+        </div>
+
+
+        <div class="requirements-box">
+
+            <h3>Classic PC</h3>
+
+            <p><strong>Platform:</strong> PC</p>
+            <p><strong>Era:</strong> 1990s</p>
+            <p><strong>Mode:</strong> Racing</p>
+            <p><strong>Graphics:</strong> 3D Racing</p>
+            <p><strong>Status:</strong> Classic Game</p>
+
+        </div>
+
+    </div>
+
+
+    <h2>System Requirements</h2>
+
+    <div class="requirements">
+
+        <div class="requirements-box">
+
+            <h3>Original Minimum</h3>
+
+            <p>
+                <strong>OS:</strong>
+                Windows 95 / Windows 98
+            </p>
+
+            <p>
+                <strong>CPU:</strong>
+                Pentium-class processor
+            </p>
+
+            <p>
+                <strong>RAM:</strong>
+                16 MB
+            </p>
+
+            <p>
+                <strong>Graphics:</strong>
+                3D-capable graphics hardware
+            </p>
+
+            <p>
+                <strong>Storage:</strong>
+                CD-ROM installation
+            </p>
+
+        </div>
+
+
+        <div class="requirements-box">
+
+            <h3>Compatibility</h3>
+
+            <p>
+                <strong>Original System:</strong>
+                Windows 95 / 98 era PCs
+            </p>
+
+            <p>
+                <strong>Modern Windows:</strong>
+                Compatibility may vary
+            </p>
+
+            <p>
+                <strong>Recommended:</strong>
+                Use a legitimate copy with a compatible setup
+            </p>
+
+            <p>
+                <strong>Game Type:</strong>
+                Classic PC Racing
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<div class="ad-box">
+    300 × 600 AD
+</div>
+
+
+<footer>
+    © 2026 QEVRANO PC GAMES. All Rights Reserved.
+</footer>
+
+
+<div
+    class="modal"
+    id="imageModal"
+    onclick="closeModal()"
+>
+    <img id="modalImage" src="" alt="Screenshot">
+</div>
+
+
+<script>
+
+const games = [
+
+    {name:"Far Cry 2",file:"./farcry2.html"},
+    {name:"Far Cry 3",file:"./farcry3.html"},
+    {name:"Assassin's Creed II",file:"./ac2.html"},
+    {name:"GTA V",file:"./gta5.html"},
+    {name:"GTA IV",file:"./gta4.html"},
+    {name:"FIFA",file:"./fifa.html"},
+    {name:"Don Bradman Cricket",file:"./cricket.html"},
+    {name:"Call of Duty 1",file:"./cod1.html"},
+    {name:"The Witcher 2",file:"./witcher2.html"},
+    {name:"GTA VI",file:"./gtavi.html"},
+    {name:"Assassin's Creed Syndicate",file:"./acs.html"},
+    {name:"Need for Speed II",file:"./nfs2.html"}
+
+];
+
+
+function toggleSearch(){
+
+    const search =
+        document.getElementById("headerSearch");
+
+    const input =
+        document.getElementById("headerSearchInput");
+
+    search.classList.toggle("active");
+
+    if(search.classList.contains("active")){
+        input.focus();
+    }
+
+}
+
+
+const input =
+    document.getElementById("headerSearchInput");
+
+const results =
+    document.getElementById("headerSearchResults");
+
+
+input.addEventListener("input", function(){
+
+    const search =
+        this.value.trim().toLowerCase();
+
+    results.innerHTML = "";
+
+    if(!search){
+
+        results.style.display = "none";
+        return;
+
+    }
+
+
+    const matches =
+        games.filter(game =>
+            game.name.toLowerCase().startsWith(search)
+        );
+
+
+    if(!matches.length){
+
+        results.innerHTML =
+            '<div class="search-no-result">No games found</div>';
+
+        results.style.display = "block";
+        return;
+
+    }
+
+
+    matches.forEach(game => {
+
+        const link =
+            document.createElement("a");
+
+        link.className = "search-result";
+
+        link.href = game.file;
+
+        link.textContent = game.name;
+
+        results.appendChild(link);
+
+    });
+
+
+    results.style.display = "block";
+
+});
+
+
+input.addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+
+        const search =
+            this.value.trim().toLowerCase();
+
+        const match =
+            games.find(game =>
+                game.name.toLowerCase().startsWith(search)
+            );
+
+        if(match){
+            window.location.href = match.file;
+        }
+
+    }
+
+});
+
+
+document.addEventListener("click", function(e){
+
+    const container =
+        document.querySelector(".search-container");
+
+    if(!container.contains(e.target)){
+
+        document
+            .getElementById("headerSearch")
+            .classList.remove("active");
+
+    }
+
+});
+
+
+function openModal(src){
+
+    document
+        .getElementById("modalImage")
+        .src = src;
+
+    document
+        .getElementById("imageModal")
+        .classList.add("active");
+
+}
+
+
+function closeModal(){
+
+    document
+        .getElementById("imageModal")
+        .classList.remove("active");
+
+}
+
+</script>
+
+</body>
+</html>
