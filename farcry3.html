@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -26,128 +25,133 @@ body{
     min-height:100vh;
 }
 
-/* TOP BANNER */
-.banner{
-    width:100%;
-    padding:18px 5%;
-    background:rgba(8,12,20,.96);
-    border-bottom:1px solid rgba(255,255,255,.12);
+/* ================= HEADER ================= */
 
+header{
+    background:rgba(5,8,12,.94);
+    border-bottom:1px solid rgba(255,255,255,.12);
+    padding:18px 6%;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    gap:20px;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
-    font-size:24px;
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#00b7ff;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
     font-weight:bold;
-    color:#fff;
-}
-
-/* SEARCH */
-.search-area{
-    position:relative;
-}
-
-.search-toggle{
-    width:40px;
-    height:40px;
-    border:none;
-    border-radius:7px;
-    background:#00a9ed;
-    color:#fff;
-    cursor:pointer;
-    font-size:20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:.2s;
-}
-
-.search-toggle:hover{
-    background:#008bc4;
-    transform:scale(1.05);
-}
-
-/* SEARCH BOX */
-.search-box{
-    position:absolute;
-    top:50px;
-    right:0;
-    display:none;
-    align-items:center;
-    z-index:1001;
-}
-
-.search-box.active{
-    display:flex;
-}
-
-.search-box input{
-    width:210px;
-    height:38px;
-    padding:0 12px;
-    border:1px solid rgba(255,255,255,.2);
-    border-radius:6px 0 0 6px;
-    outline:none;
-    background:#151b26;
-    color:#fff;
     font-size:14px;
 }
 
-.search-box input::placeholder{
-    color:#888;
+nav a:hover{
+    color:#00b7ff;
 }
 
-.search-btn{
-    height:38px;
-    padding:0 13px;
-    border:none;
-    border-radius:0 6px 6px 0;
+/* ================= SEARCH ================= */
+
+.search-container{
+    position:relative;
+}
+
+.search-icon{
+    width:40px;
+    height:40px;
+    border:1px solid #00b7ff;
     background:#00a9ed;
     color:#fff;
+    font-size:19px;
+    border-radius:5px;
     cursor:pointer;
-    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.25s;
 }
 
-.search-btn:hover{
+.search-icon:hover{
     background:#008bc4;
 }
 
-/* SEARCH RESULTS */
-.search-results{
-    position:absolute;
-    top:95px;
-    right:0;
-    width:270px;
-    background:#151b26;
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:8px;
-    overflow:hidden;
+/* SEARCH BOX */
+
+.header-search{
     display:none;
-    z-index:1000;
-    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    position:absolute;
+    right:0;
+    top:48px;
+    width:280px;
+    background:#10151c;
+    border:1px solid rgba(0,183,255,.5);
+    box-shadow:0 10px 30px rgba(0,0,0,.6);
+    z-index:3000;
 }
 
-.search-results a{
+.header-search.active{
     display:block;
-    padding:12px 15px;
+}
+
+.header-search input{
+    width:100%;
+    padding:12px 14px;
+    border:none;
+    outline:none;
+    background:#fff;
+    color:#111;
+    font-size:14px;
+}
+
+.search-results{
+    display:none;
+    max-height:300px;
+    overflow-y:auto;
+}
+
+.search-result{
+    display:block;
+    padding:12px 14px;
     color:#fff;
     text-decoration:none;
-    border-bottom:1px solid rgba(255,255,255,.08);
+    border-top:1px solid rgba(255,255,255,.08);
+    font-size:14px;
 }
 
-.search-results a:hover{
+.search-result:hover{
     background:#00a9ed;
 }
 
-.no-result{
-    padding:12px 15px;
+.search-no-result{
+    padding:12px 14px;
     color:#999;
+    font-size:14px;
+    border-top:1px solid rgba(255,255,255,.08);
 }
 
-/* MAIN */
+/* ================= MAIN ================= */
+
 .container{
     width:90%;
     max-width:1100px;
@@ -255,23 +259,37 @@ h1{
     color:#fff;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
+
 @media(max-width:600px){
 
-    .banner{
-        padding:15px 4%;
+    header{
+        padding:15px 5%;
+    }
+
+    .header-right{
+        gap:10px;
     }
 
     .logo{
         font-size:19px;
     }
 
-    .search-box input{
-        width:170px;
+    nav{
+        gap:15px;
     }
 
-    .search-results{
-        width:230px;
+    nav a{
+        font-size:13px;
+    }
+
+    .search-icon{
+        width:36px;
+        height:36px;
+    }
+
+    .header-search{
+        width:250px;
     }
 
     .card{
@@ -293,55 +311,56 @@ h1{
 
 <body>
 
-<!-- TOP BANNER -->
+<!-- ================= HEADER ================= -->
 
-<header class="banner">
+<header>
 
 <div class="logo">
-    QEVRANO PC GAMES
+    QEVRANO <span>PC GAMES</span>
 </div>
 
-<!-- SEARCH -->
-<div class="search-area">
+<div class="header-right">
 
-    <!-- BLUE SEARCH ICON -->
-    <button
-        class="search-toggle"
-        id="searchToggle"
-        aria-label="Open search">
-        🔍
-    </button>
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="index.html#games">GAMES</a>
+    <a href="index.html#packs">PACKS</a>
+</nav>
 
-    <!-- SEARCH BAR -->
-    <div
-        class="search-box"
-        id="searchBox">
+<div class="search-container">
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search games..."
-            autocomplete="off"
-        >
+<button
+    class="search-icon"
+    id="searchToggle"
+    aria-label="Open search">
+    🔍
+</button>
 
-        <button
-            class="search-btn"
-            onclick="searchGames()">
-            Search
-        </button>
+<div
+    class="header-search"
+    id="headerSearch">
 
-    </div>
+    <input
+        type="text"
+        id="headerSearchInput"
+        placeholder="Search games..."
+        autocomplete="off">
 
-    <!-- SEARCH RESULTS -->
     <div
         class="search-results"
-        id="searchResults">
+        id="headerSearchResults">
     </div>
+
+</div>
+
+</div>
 
 </div>
 
 </header>
 
+
+<!-- ================= MAIN ================= -->
 
 <div class="container">
 
@@ -349,13 +368,26 @@ h1{
 
 <h1>Far Cry 3</h1>
 
-<p class="subtitle">QEVRANO PC GAMES</p>
+<p class="subtitle">
+QEVRANO PC GAMES
+</p>
 
 <div class="game-info">
 
-<p><strong>Game:</strong> Far Cry 3</p>
-<p><strong>Genre:</strong> Action / Adventure / Open World</p>
-<p><strong>Platform:</strong> PC</p>
+<p>
+<strong>Game:</strong>
+Far Cry 3
+</p>
+
+<p>
+<strong>Genre:</strong>
+Action / Adventure / Open World
+</p>
+
+<p>
+<strong>Platform:</strong>
+PC
+</p>
 
 </div>
 
@@ -371,7 +403,9 @@ For the official version, use the publisher's or authorized store's download opt
 
 <h2>Installation Guide</h2>
 
-<p>Watch the installation instructions before installing the game.</p>
+<p>
+Watch the installation instructions before installing the game.
+</p>
 
 <a href="#" class="download-btn official">
     MUST WATCH INSTALLATION VIDEO
@@ -408,234 +442,100 @@ Click the button above to open the Mega download page.
 </div>
 
 
+<!-- ================= SEARCH SCRIPT ================= -->
+
 <script>
 
-/*
-========================================
-GAME DATABASE
-========================================
-*/
+/* ========================================
+   GAME DATABASE
+   ======================================== */
 
 const games = [
 
     {
-        name: "Far Cry 2",
-        file: "./farcry2.html"
+        name:"Far Cry 2",
+        file:"./farcry2.html"
     },
 
     {
-        name: "Far Cry 3",
-        file: "./farcry3.html"
+        name:"Far Cry 3",
+        file:"./farcry3.html"
     },
 
     {
-        name: "Assassin's Creed II",
-        file: "./ac2.html"
+        name:"Assassin's Creed II",
+        file:"./ac2.html"
     },
 
     {
-        name: "GTA V",
-        file: "./gta5.html"
+        name:"GTA V",
+        file:"./gta5.html"
     },
 
     {
-        name: "GTA IV",
-        file: "./gta4.html"
+        name:"GTA IV",
+        file:"./gta4.html"
     },
 
     {
-        name: "FIFA",
-        file: "./fifa.html"
+        name:"FIFA",
+        file:"./fifa.html"
     },
 
     {
-        name: "Don Bradman Cricket",
-        file: "./cricket.html"
+        name:"Don Bradman Cricket",
+        file:"./cricket.html"
     },
 
     {
-        name: "Call of Duty 1",
-        file: "./cod1.html"
+        name:"Call of Duty 1",
+        file:"./cod1.html"
     },
 
     {
-        name: "The Witcher 2",
-        file: "./the-witcher-2.html"
+        name:"The Witcher 2",
+        file:"./witcher2.html"
     }
 
 ];
 
 
-/*
-========================================
-SEARCH ELEMENTS
-========================================
-*/
+/* ========================================
+   SEARCH ELEMENTS
+   ======================================== */
 
 const searchToggle =
     document.getElementById("searchToggle");
 
-const searchBox =
-    document.getElementById("searchBox");
+const headerSearch =
+    document.getElementById("headerSearch");
 
 const searchInput =
-    document.getElementById("searchInput");
+    document.getElementById("headerSearchInput");
 
 const searchResults =
-    document.getElementById("searchResults");
+    document.getElementById("headerSearchResults");
 
 
-/*
-========================================
-OPEN / CLOSE SEARCH
-========================================
-*/
+/* ========================================
+   OPEN / CLOSE SEARCH
+   ======================================== */
 
-searchToggle.addEventListener("click", function(event){
-
-    event.stopPropagation();
-
-    searchBox.classList.toggle("active");
-
-    if(searchBox.classList.contains("active")){
-
-        searchInput.focus();
-
-    }else{
-
-        searchResults.style.display = "none";
-
-    }
-
-});
-
-
-/*
-========================================
-SEARCH FUNCTION
-========================================
-*/
-
-function searchGames(){
-
-    const search =
-        searchInput.value.trim().toLowerCase();
-
-    searchResults.innerHTML = "";
-
-    if(search === ""){
-
-        searchResults.style.display = "none";
-
-        return;
-    }
-
-
-    /*
-    ONLY SHOW GAMES THAT
-    START WITH WHAT USER TYPES
-
-    F  = Far Cry 2
-         Far Cry 3
-         FIFA
-
-    FA = Far Cry 2
-         Far Cry 3
-
-    G  = GTA V
-         GTA IV
-    */
-
-    const matches = games.filter(game =>
-        game.name
-        .toLowerCase()
-        .startsWith(search)
-    );
-
-
-    /*
-    NO RESULTS
-    */
-
-    if(matches.length === 0){
-
-        searchResults.innerHTML =
-            '<div class="no-result">No games found</div>';
-
-        searchResults.style.display = "block";
-
-        return;
-    }
-
-
-    /*
-    SHOW RESULTS
-    */
-
-    matches.forEach(game => {
-
-        const link =
-            document.createElement("a");
-
-        link.href =
-            game.file;
-
-        link.textContent =
-            game.name;
-
-        searchResults.appendChild(link);
-
-    });
-
-
-    searchResults.style.display =
-        "block";
-
-}
-
-
-/*
-========================================
-LIVE SEARCH WHILE TYPING
-========================================
-*/
-
-searchInput.addEventListener(
-    "input",
-    searchGames
-);
-
-
-/*
-========================================
-ENTER KEY
-========================================
-*/
-
-searchInput.addEventListener(
-    "keydown",
+searchToggle.addEventListener(
+    "click",
     function(event){
 
-        if(event.key === "Enter"){
+        event.stopPropagation();
 
-            const search =
-                this.value.trim().toLowerCase();
+        headerSearch.classList.toggle("active");
 
+        if(headerSearch.classList.contains("active")){
 
-            const match =
-                games.find(game =>
-                    game.name
-                    .toLowerCase()
-                    .startsWith(search)
-                );
+            searchInput.focus();
 
+        }else{
 
-            if(match){
-
-                window.location.href =
-                    match.file;
-
-            }
+            searchResults.style.display="none";
 
         }
 
@@ -643,26 +543,144 @@ searchInput.addEventListener(
 );
 
 
-/*
-========================================
-CLOSE SEARCH WHEN CLICKING OUTSIDE
-========================================
-*/
+/* ========================================
+   SEARCH FUNCTION
+   ======================================== */
+
+function searchGames(){
+
+    const search =
+        searchInput.value
+        .trim()
+        .toLowerCase();
+
+    searchResults.innerHTML="";
+
+
+    if(search===""){
+
+        searchResults.style.display="none";
+
+        return;
+
+    }
+
+
+    /*
+       ONLY MATCH FROM THE
+       BEGINNING OF THE GAME NAME
+    */
+
+    const matches =
+        games.filter(game =>
+            game.name
+            .toLowerCase()
+            .startsWith(search)
+        );
+
+
+    /* NO RESULTS */
+
+    if(matches.length===0){
+
+        searchResults.innerHTML =
+            '<div class="search-no-result">No games found</div>';
+
+        searchResults.style.display="block";
+
+        return;
+
+    }
+
+
+    /* SHOW RESULTS */
+
+    matches.forEach(game=>{
+
+        const link =
+            document.createElement("a");
+
+        link.className="search-result";
+
+        link.href=game.file;
+
+        link.textContent=game.name;
+
+        searchResults.appendChild(link);
+
+    });
+
+
+    searchResults.style.display="block";
+
+}
+
+
+/* ========================================
+   LIVE SEARCH
+   ======================================== */
+
+searchInput.addEventListener(
+    "input",
+    searchGames
+);
+
+
+/* ========================================
+   ENTER KEY
+   ======================================== */
+
+searchInput.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key!=="Enter"){
+            return;
+        }
+
+
+        const search =
+            searchInput.value
+            .trim()
+            .toLowerCase();
+
+
+        const match =
+            games.find(game =>
+                game.name
+                .toLowerCase()
+                .startsWith(search)
+            );
+
+
+        if(match){
+
+            window.location.href =
+                match.file;
+
+        }
+
+    }
+);
+
+
+/* ========================================
+   CLICK OUTSIDE
+   ======================================== */
 
 document.addEventListener(
     "click",
     function(event){
 
-        const searchArea =
-            document.querySelector(".search-area");
+        const searchContainer =
+            document.querySelector(".search-container");
 
 
-        if(!searchArea.contains(event.target)){
+        if(!searchContainer.contains(event.target)){
 
-            searchBox.classList.remove("active");
+            headerSearch.classList.remove("active");
 
-            searchResults.style.display =
-                "none";
+            searchResults.style.display="none";
 
         }
 
