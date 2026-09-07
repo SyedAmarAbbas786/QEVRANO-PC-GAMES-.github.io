@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -13,26 +14,31 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
     color:#eee;
     background:
-        linear-gradient(rgba(5,8,15,.88),rgba(5,8,15,.94)),
+        linear-gradient(rgba(5,5,8,.90),rgba(5,5,8,.96)),
         url("./images/witcher2-bg.jpg") center/cover fixed;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
-    background:rgba(5,8,12,.94);
-    border-bottom:1px solid rgba(255,255,255,.12);
-    padding:18px 6%;
+    background:rgba(5,5,8,.96);
+    border-bottom:1px solid rgba(220,0,0,.35);
+    padding:16px 6%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     position:sticky;
     top:0;
     z-index:1000;
+    box-shadow:0 5px 25px rgba(0,0,0,.5);
 }
 
 .logo{
@@ -44,7 +50,7 @@ header{
 }
 
 .logo span{
-    color:#00b7ff;
+    color:#e00000;
 }
 
 .header-right{
@@ -63,13 +69,14 @@ nav a{
     text-decoration:none;
     font-weight:bold;
     font-size:14px;
+    transition:.25s;
 }
 
 nav a:hover{
-    color:#00b7ff;
+    color:#e00000;
 }
 
-/* SEARCH */
+/* ================= SEARCH ================= */
 
 .search-container{
     position:relative;
@@ -78,8 +85,8 @@ nav a:hover{
 .search-icon{
     width:40px;
     height:40px;
-    border:1px solid #00b7ff;
-    background:#00a9ed;
+    border:1px solid #e00000;
+    background:#d00000;
     color:#fff;
     font-size:19px;
     border-radius:5px;
@@ -91,7 +98,7 @@ nav a:hover{
 }
 
 .search-icon:hover{
-    background:#008bc4;
+    background:#a80000;
 }
 
 .header-search{
@@ -100,9 +107,9 @@ nav a:hover{
     right:0;
     top:48px;
     width:280px;
-    background:#10151c;
-    border:1px solid rgba(0,183,255,.5);
-    box-shadow:0 10px 30px rgba(0,0,0,.6);
+    background:#101014;
+    border:1px solid rgba(220,0,0,.55);
+    box-shadow:0 10px 35px rgba(0,0,0,.7);
     z-index:3000;
 }
 
@@ -133,10 +140,11 @@ nav a:hover{
     text-decoration:none;
     border-top:1px solid rgba(255,255,255,.08);
     font-size:14px;
+    transition:.2s;
 }
 
 .search-result:hover{
-    background:#00a9ed;
+    background:#c00000;
 }
 
 .search-no-result{
@@ -146,26 +154,31 @@ nav a:hover{
     border-top:1px solid rgba(255,255,255,.08);
 }
 
-/* MAIN */
+/* ================= MAIN ================= */
 
 .main-panel{
     max-width:1150px;
     margin:45px auto;
-    padding:30px;
-    background:rgba(10,14,20,.94);
-    border:1px solid rgba(255,255,255,.1);
-    box-shadow:0 15px 45px rgba(0,0,0,.55);
+    padding:35px;
+    background:rgba(10,10,14,.95);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.65),
+        0 0 30px rgba(180,0,0,.08);
 }
 
 h1{
-    font-size:36px;
-    margin-bottom:12px;
+    font-size:38px;
+    margin-bottom:10px;
+    line-height:1.15;
 }
 
 .subtitle{
-    color:#00b7ff;
+    color:#e00000;
     font-weight:bold;
     margin-bottom:25px;
+    font-size:16px;
+    letter-spacing:.5px;
 }
 
 .hero{
@@ -173,12 +186,19 @@ h1{
     max-height:500px;
     object-fit:cover;
     display:block;
-    margin-bottom:30px;
+    margin-bottom:35px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.55);
 }
 
+/* ================= HEADINGS ================= */
+
 h2{
-    color:#00b7ff;
-    margin:30px 0 15px;
+    color:#e00000;
+    margin:35px 0 16px;
+    padding-left:12px;
+    border-left:4px solid #e00000;
+    font-size:24px;
 }
 
 p{
@@ -187,10 +207,16 @@ p{
 }
 
 .features{
-    padding-left:20px;
-    line-height:1.8;
+    padding-left:25px;
+    line-height:2;
     color:#ccc;
 }
+
+.features li::marker{
+    color:#e00000;
+}
+
+/* ================= SCREENSHOTS ================= */
 
 .screenshots{
     display:grid;
@@ -204,16 +230,36 @@ p{
     height:160px;
     object-fit:cover;
     cursor:pointer;
-    border:1px solid rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.10);
     transition:.25s;
+    background:#111;
 }
 
 .screenshots img:hover{
     transform:scale(1.03);
-    border-color:#00b7ff;
+    border-color:#e00000;
+    box-shadow:0 0 18px rgba(220,0,0,.25);
 }
 
-/* DOWNLOAD */
+/* ================= VIDEO ================= */
+
+.video-box{
+    width:100%;
+    height:430px;
+    background:#08080a;
+    border:1px solid rgba(220,0,0,.25);
+    margin-top:20px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.45);
+}
+
+.video-box iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+/* ================= DOWNLOAD ================= */
 
 .download-buttons{
     display:flex;
@@ -225,69 +271,59 @@ p{
 .download-btn{
     display:inline-block;
     padding:14px 24px;
-    background:#00a9ed;
+    background:#d00000;
     color:#fff;
     text-decoration:none;
     font-weight:bold;
     border-radius:4px;
+    border:1px solid #e00000;
     transition:.25s;
 }
 
 .download-btn:hover{
-    background:#008bc4;
+    background:#a80000;
+    border-color:#ff2222;
+    box-shadow:0 0 18px rgba(220,0,0,.25);
 }
 
 .download-btn.official{
-    background:#222;
-    border:1px solid #00b7ff;
+    background:#18181c;
+    border:1px solid #e00000;
 }
 
 .download-btn.official:hover{
-    background:#00a9ed;
+    background:#d00000;
 }
 
 .compressed-link{
     display:block;
-    margin-top:8px;
-    color:#00b7ff;
+    margin-top:9px;
+    color:#e00000;
     font-size:14px;
     font-weight:bold;
     text-decoration:underline;
+    transition:.2s;
 }
 
 .compressed-link:hover{
     color:#fff;
 }
 
-/* AD */
+/* ================= AD ================= */
 
 .ad-box{
     width:300px;
     height:600px;
     margin:35px auto;
-    background:#111;
-    border:1px solid rgba(255,255,255,.1);
+    background:#0c0c0f;
+    border:1px solid rgba(255,255,255,.08);
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#666;
+    color:#555;
 }
 
-/* VIDEO */
-
-.video-box{
-    width:100%;
-    height:400px;
-    background:#111;
-    border:1px solid rgba(255,255,255,.1);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#777;
-    margin-top:20px;
-}
-
-/* REQUIREMENTS */
+/* ================= REQUIREMENTS ================= */
 
 .requirements{
     display:grid;
@@ -296,52 +332,64 @@ p{
 }
 
 .requirements-box{
-    background:#11171f;
-    padding:20px;
+    background:#111116;
+    padding:22px;
     border:1px solid rgba(255,255,255,.08);
+    border-top:2px solid #e00000;
+    transition:.25s;
+}
+
+.requirements-box:hover{
+    border-color:rgba(220,0,0,.45);
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
 .requirements-box h3{
-    color:#00b7ff;
-    margin-bottom:12px;
+    color:#e00000;
+    margin-bottom:14px;
+    font-size:20px;
 }
 
 .requirements-box p{
-    margin-bottom:7px;
+    margin-bottom:8px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     text-align:center;
     padding:30px;
     margin-top:50px;
-    background:#05080c;
+    background:#050508;
+    border-top:1px solid rgba(220,0,0,.25);
     color:#777;
 }
 
-/* MODAL */
+/* ================= MODAL ================= */
 
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.9);
+    background:rgba(0,0,0,.94);
     z-index:5000;
     align-items:center;
     justify-content:center;
+    cursor:pointer;
 }
 
 .modal img{
     max-width:90%;
     max-height:90%;
+    border:1px solid rgba(220,0,0,.5);
+    box-shadow:0 0 35px rgba(0,0,0,.8);
 }
 
 .modal.active{
     display:flex;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
@@ -357,9 +405,17 @@ footer{
         gap:12px;
     }
 
+    nav a{
+        font-size:12px;
+    }
+
     .main-panel{
         margin:20px;
         padding:20px;
+    }
+
+    h1{
+        font-size:30px;
     }
 
     .screenshots{
@@ -378,213 +434,242 @@ footer{
         height:250px;
     }
 }
+
+@media(max-width:500px){
+
+    .logo{
+        font-size:18px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .main-panel{
+        margin:12px;
+        padding:16px;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+    .screenshots{
+        grid-template-columns:1fr;
+    }
+
+    .screenshots img{
+        height:200px;
+    }
+}
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-    <a href="./index.html" class="logo">
-        QEVRANO <span>PC GAMES</span>
-    </a>
+```
+<a href="./index.html" class="logo">
+    QEVRANO <span>PC GAMES</span>
+</a>
 
-    <div class="header-right">
+<div class="header-right">
 
-        <nav>
-            <a href="./index.html">HOME</a>
-            <a href="./index.html#games">GAMES</a>
-            <a href="./index.html#packs">PACKS</a>
-        </nav>
+    <nav>
+        <a href="./index.html">HOME</a>
+        <a href="./index.html#games">GAMES</a>
+        <a href="./index.html#packs">PACKS</a>
+    </nav>
 
-        <div class="search-container">
+    <div class="search-container">
 
-            <button
-                class="search-icon"
-                onclick="toggleSearch()"
-                aria-label="Search"
+        <button
+            class="search-icon"
+            onclick="toggleSearch()"
+            aria-label="Search"
+        >
+            🔍
+        </button>
+
+        <div class="header-search" id="headerSearch">
+
+            <input
+                type="text"
+                id="headerSearchInput"
+                placeholder="Search games..."
+                autocomplete="off"
             >
-                🔍
-            </button>
 
-            <div class="header-search" id="headerSearch">
-
-                <input
-                    type="text"
-                    id="headerSearchInput"
-                    placeholder="Search games..."
-                    autocomplete="off"
-                >
-
-                <div
-                    class="search-results"
-                    id="headerSearchResults"
-                ></div>
-
-            </div>
+            <div
+                class="search-results"
+                id="headerSearchResults"
+            ></div>
 
         </div>
 
     </div>
+
+</div>
+```
 
 </header>
 
-
 <main class="main-panel">
 
-    <h1>The Witcher 2: Assassins of Kings</h1>
+```
+<h1>The Witcher 2: Assassins of Kings</h1>
 
-    <div class="subtitle">
-        Enhanced Edition
-    </div>
+<div class="subtitle">
+    Enhanced Edition
+</div>
+
+<img
+    src="./images/witcher2.jpg"
+    alt="The Witcher 2"
+    class="hero"
+>
+
+
+<h2>About Game</h2>
+
+<p>
+    The Witcher 2: Assassins of Kings is an action RPG developed by
+    CD PROJEKT RED. Follow Geralt of Rivia through a mature fantasy
+    adventure filled with difficult choices, dangerous enemies and
+    a branching storyline.
+</p>
+
+
+<h2>Features</h2>
+
+<ul class="features">
+
+    <li>Story-driven action RPG</li>
+    <li>Large fantasy world</li>
+    <li>Branching choices and consequences</li>
+    <li>Tactical real-time combat</li>
+    <li>Character progression and equipment</li>
+    <li>Multiple possible story outcomes</li>
+
+</ul>
+
+
+<h2>Screenshots</h2>
+
+<div class="screenshots">
 
     <img
-        src="./images/witcher2.jpg"
-        alt="The Witcher 2"
-        class="hero"
+        src="./images/witcher2-1.jpg"
+        alt="The Witcher 2 Screenshot 1"
+        onclick="openModal(this.src)"
     >
 
+    <img
+        src="./images/witcher2-2.jpg"
+        alt="The Witcher 2 Screenshot 2"
+        onclick="openModal(this.src)"
+    >
 
-    <h2>About Game</h2>
+    <img
+        src="./images/witcher2-3.jpg"
+        alt="The Witcher 2 Screenshot 3"
+        onclick="openModal(this.src)"
+    >
 
-    <p>
-        The Witcher 2: Assassins of Kings is an action RPG developed by
-        CD PROJEKT RED. Follow Geralt of Rivia through a mature fantasy
-        adventure filled with difficult choices, dangerous enemies and
-        a branching storyline.
-    </p>
+    <img
+        src="./images/witcher2-4.jpg"
+        alt="The Witcher 2 Screenshot 4"
+        onclick="openModal(this.src)"
+    >
 
-
-    <h2>Features</h2>
-
-    <ul class="features">
-
-        <li>Story-driven action RPG</li>
-        <li>Large fantasy world</li>
-        <li>Branching choices and consequences</li>
-        <li>Tactical real-time combat</li>
-        <li>Character progression and equipment</li>
-        <li>Multiple possible story outcomes</li>
-
-    </ul>
+</div>
 
 
-    <h2>Screenshots</h2>
+<h2>Installation Video</h2>
 
-    <div class="screenshots">
-
-        <img
-            src="./images/witcher2-1.jpg"
-            alt="The Witcher 2 Screenshot 1"
-            onclick="openModal(this.src)"
-        >
-
-        <img
-            src="./images/witcher2-2.jpg"
-            alt="The Witcher 2 Screenshot 2"
-            onclick="openModal(this.src)"
-        >
-
-        <img
-            src="./images/witcher2-3.jpg"
-            alt="The Witcher 2 Screenshot 3"
-            onclick="openModal(this.src)"
-        >
-
-        <img
-            src="./images/witcher2-4.jpg"
-            alt="The Witcher 2 Screenshot 4"
-            onclick="openModal(this.src)"
-        >
-
-    </div>
+<div class="video-box">
+    INSTALLATION VIDEO WILL BE ADDED HERE
+</div>
 
 
-    <h2>Installation Video</h2>
+<h2>Download</h2>
 
-    <div class="video-box">
-        INSTALLATION VIDEO WILL BE ADDED HERE
-    </div>
+<div class="download-buttons">
 
+    <a
+        href="https://store.steampowered.com/app/20920/"
+        class="download-btn official"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        DOWNLOAD OFFICIAL
+    </a>
 
-    <h2>Download</h2>
-
-    <div class="download-buttons">
+    <div>
 
         <a
-            href="https://store.steampowered.com/app/20920/"
-            class="download-btn official"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
+            class="download-btn"
+            onclick="return false;"
         >
-            DOWNLOAD OFFICIAL
+            DOWNLOAD SETUP.EXE
         </a>
 
-        <div>
+        <a
+            href="witcher2.html"
+            class="compressed-link"
+        >
+            Highly Compressed
+        </a>
 
-            <a
-                href="#"
-                class="download-btn"
-                onclick="return false;"
-            >
-                DOWNLOAD SETUP.EXE
-            </a>
+    </div>
 
-            <a
-                href="witcher2.html"
-                class="compressed-link"
-            >
-                Highly Compressed
-            </a>
+</div>
 
-        </div>
+
+<h2>Minimum Requirements</h2>
+
+<div class="requirements">
+
+    <div class="requirements-box">
+
+        <h3>Minimum</h3>
+
+        <p><strong>OS:</strong> Windows XP/Vista/7</p>
+        <p><strong>CPU:</strong> Intel 2.2 GHz Dual Core / AMD equivalent</p>
+        <p><strong>RAM:</strong> 1.5 GB (XP) / 2 GB (Vista/7)</p>
+        <p><strong>GPU:</strong> NVIDIA GeForce 8800 512 MB / ATI Radeon HD 3850 512 MB</p>
+        <p><strong>Storage:</strong> 25 GB</p>
 
     </div>
 
 
-    <h2>Minimum Requirements</h2>
+    <div class="requirements-box">
 
-    <div class="requirements">
+        <h3>Recommended</h3>
 
-        <div class="requirements-box">
-
-            <h3>Minimum</h3>
-
-            <p><strong>OS:</strong> Windows XP/Vista/7</p>
-            <p><strong>CPU:</strong> Intel 2.2 GHz Dual Core / AMD equivalent</p>
-            <p><strong>RAM:</strong> 1.5 GB (XP) / 2 GB (Vista/7)</p>
-            <p><strong>GPU:</strong> NVIDIA GeForce 8800 512 MB / ATI Radeon HD 3850 512 MB</p>
-            <p><strong>Storage:</strong> 25 GB</p>
-
-        </div>
-
-
-        <div class="requirements-box">
-
-            <h3>Recommended</h3>
-
-            <p><strong>OS:</strong> Windows XP/Vista/7</p>
-            <p><strong>CPU:</strong> Intel or AMD Quad Core</p>
-            <p><strong>RAM:</strong> 3 GB (XP) / 4 GB (Vista/7)</p>
-            <p><strong>GPU:</strong> NVIDIA GeForce GTX 260 1 GB / ATI Radeon HD 4850 1 GB</p>
-            <p><strong>Storage:</strong> 25 GB</p>
-
-        </div>
+        <p><strong>OS:</strong> Windows XP/Vista/7</p>
+        <p><strong>CPU:</strong> Intel or AMD Quad Core</p>
+        <p><strong>RAM:</strong> 3 GB (XP) / 4 GB (Vista/7)</p>
+        <p><strong>GPU:</strong> NVIDIA GeForce GTX 260 1 GB / ATI Radeon HD 4850 1 GB</p>
+        <p><strong>Storage:</strong> 25 GB</p>
 
     </div>
+
+</div>
+```
 
 </main>
-
 
 <div class="ad-box">
     300 × 600 AD
 </div>
 
-
 <footer>
     © 2026 QEVRANO PC GAMES. All Rights Reserved.
 </footer>
-
 
 <div
     class="modal"
@@ -593,7 +678,6 @@ footer{
 >
     <img id="modalImage" src="" alt="Screenshot">
 </div>
-
 
 <script>
 
