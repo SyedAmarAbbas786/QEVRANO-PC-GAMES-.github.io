@@ -140,7 +140,7 @@ nav a:hover{
     background:#0095cf;
 }
 
-/* FILTER AREA */
+/* FILTERS */
 
 .filters{
     max-width:1200px;
@@ -201,10 +201,7 @@ nav a:hover{
     max-width:1200px;
     margin:auto;
     padding:0 20px 60px;
-
-    display:grid;
-    grid-template-columns:1fr 290px;
-    gap:30px;
+    display:block;
 }
 
 /* SECTION TITLE */
@@ -281,77 +278,6 @@ nav a:hover{
     background:#0095cf;
 }
 
-/* SIDEBAR */
-
-.sidebar-box{
-    background:rgba(8,12,18,.94);
-    border:1px solid rgba(255,255,255,.10);
-    padding:18px;
-    margin-bottom:22px;
-}
-
-.sidebar-title{
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:15px;
-    border-bottom:1px solid rgba(255,255,255,.12);
-    padding-bottom:10px;
-}
-
-/* POPULAR GAME CARDS */
-
-.popular-card{
-    display:block;
-    background:#10151c;
-    border:1px solid rgba(255,255,255,.08);
-    margin-bottom:15px;
-    overflow:hidden;
-    text-decoration:none;
-    transition:.25s ease;
-}
-
-.popular-card:last-child{
-    margin-bottom:0;
-}
-
-.popular-card:hover{
-    border-color:#00b7ff;
-    transform:translateY(-3px);
-    box-shadow:0 8px 22px rgba(0,0,0,.4);
-}
-
-.popular-card img{
-    width:100%;
-    height:125px;
-    object-fit:cover;
-    display:block;
-}
-
-.popular-info{
-    padding:12px;
-}
-
-.popular-info h3{
-    color:#fff;
-    font-size:16px;
-    margin-bottom:6px;
-}
-
-.popular-info p{
-    color:#999;
-    font-size:12px;
-    line-height:1.5;
-    margin:0;
-}
-
-.popular-view{
-    display:inline-block;
-    margin-top:8px;
-    color:#00b7ff;
-    font-size:12px;
-    font-weight:bold;
-}
-
 /* PAGINATION */
 
 .pagination{
@@ -426,10 +352,6 @@ footer strong{
 
     .hero h1{
         font-size:32px;
-    }
-
-    .content{
-        grid-template-columns:1fr;
     }
 
     .game-grid{
@@ -524,7 +446,6 @@ footer strong{
         Discover PC games, game information, categories and more.
     </p>
 
-
     <div class="search-box">
 
         <input
@@ -547,8 +468,6 @@ footer strong{
 
 <div class="filters">
 
-
-    <!-- CATEGORIES -->
 
     <div class="filter">
 
@@ -582,12 +501,14 @@ footer strong{
                 Simulation
             </div>
 
+            <div onclick="selectCategory('Racing')">
+                Racing
+            </div>
+
         </div>
 
     </div>
 
-
-    <!-- GAME PACKS -->
 
     <div class="filter">
 
@@ -625,12 +546,14 @@ footer strong{
                 The Witcher
             </div>
 
+            <div onclick="selectPack('Need for Speed')">
+                Need for Speed
+            </div>
+
         </div>
 
     </div>
 
-
-    <!-- SIZE -->
 
     <div class="filter">
 
@@ -667,619 +590,547 @@ footer strong{
 
 <div class="content">
 
+<main id="games">
 
-    <!-- GAMES -->
+<h2 class="section-title">
+LATEST GAMES
+</h2>
 
-    <main id="games">
 
-        <h2 class="section-title">
-            LATEST GAMES
-        </h2>
+<div class="game-grid" id="gameGrid">
 
 
-        <div class="game-grid" id="gameGrid">
+<!-- FAR CRY 2 -->
 
+<div
+class="game-card"
+data-name="Far Cry 2"
+data-category="Action Adventure Open World"
+data-pack="Far Cry"
+data-size="5–10 GB"
+>
 
-            <!-- FAR CRY 2 -->
+<img
+src="./images/farcry2.jpg"
+alt="Far Cry 2"
+class="game-cover"
+>
 
-            <div
-                class="game-card"
-                data-name="Far Cry 2"
-                data-category="Action Adventure Open World"
-                data-pack="Far Cry"
-                data-size="5–10 GB"
-            >
+<div class="game-info">
 
-                <img
-                    src="./images/farcry2.jpg"
-                    alt="Far Cry 2"
-                    class="game-cover"
-                >
+<h3>Far Cry 2</h3>
 
-                <div class="game-info">
+<p>
+Action • Adventure • Open World
+</p>
 
-                    <h3>
-                        Far Cry 2
-                    </h3>
+<p class="game-size">
+Size: 5–10 GB
+</p>
 
-                    <p>
-                        Action • Adventure • Open World
-                    </p>
+<a
+href="./farcry2.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-                    <p class="game-size">
-                        Size: 5–10 GB
-                    </p>
+</div>
 
-                    <a
-                        href="./farcry2.html"
-                        class="download-btn"
-                    >
-                        DOWNLOAD
-                    </a>
+</div>
 
-                </div>
 
-            </div>
+<!-- FAR CRY 3 -->
 
+<div
+class="game-card"
+data-name="Far Cry 3"
+data-category="Action Adventure Open World"
+data-pack="Far Cry"
+data-size="5–10 GB"
+>
 
-            <!-- FAR CRY 3 -->
+<img
+src="./images/farcry3.jpg"
+alt="Far Cry 3"
+class="game-cover"
+>
 
-            <div
-                class="game-card"
-                data-name="Far Cry 3"
-                data-category="Action Adventure Open World"
-                data-pack="Far Cry"
-                data-size="5–10 GB"
-            >
+<div class="game-info">
 
-                <img
-                    src="./images/farcry3.jpg"
-                    alt="Far Cry 3"
-                    class="game-cover"
-                >
+<h3>Far Cry 3</h3>
 
-                <div class="game-info">
+<p>
+Action • Adventure • Open World
+</p>
 
-                    <h3>
-                        Far Cry 3
-                    </h3>
+<p class="game-size">
+Size: 5–10 GB
+</p>
 
-                    <p>
-                        Action • Adventure • Open World
-                    </p>
+<a
+href="./farcry3.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-                    <p class="game-size">
-                        Size: 5–10 GB
-                    </p>
+</div>
 
-                    <a
-                        href="./farcry3.html"
-                        class="download-btn"
-                    >
-                        DOWNLOAD
-                    </a>
+</div>
 
-                </div>
 
-            </div>
+<!-- ASSASSIN'S CREED II -->
 
+<div
+class="game-card"
+data-name="Assassin's Creed II"
+data-category="Action Adventure"
+data-pack="Assassin"
+data-size="5–10 GB"
+>
 
-            <!-- ASSASSIN'S CREED II -->
+<img
+src="./images/ac2.jpg"
+alt="Assassin's Creed II"
+class="game-cover"
+>
 
-            <div
-                class="game-card"
-                data-name="Assassin's Creed II"
-                data-category="Action Adventure"
-                data-pack="Assassin"
-                data-size="5–10 GB"
-            >
-
-                <img
-                    src="./images/ac2.jpg"
-                    alt="Assassin's Creed II"
-                    class="game-cover"
-                >
+<div class="game-info">
 
-                <div class="game-info">
-
-                    <h3>
-                        Assassin's Creed II
-                    </h3>
-
-                    <p>
-                        Action • Adventure
-                    </p>
+<h3>Assassin's Creed II</h3>
 
-                    <p class="game-size">
-                        Size: 5–10 GB
-                    </p>
+<p>
+Action • Adventure
+</p>
 
-                    <a
-                        href="./ac2.html"
-                        class="download-btn"
-                    >
-                        DOWNLOAD
-                    </a>
+<p class="game-size">
+Size: 5–10 GB
+</p>
 
-                </div>
+<a
+href="./ac2.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-            </div>
-
-
-            <!-- GTA V -->
+</div>
 
-            <div
-                class="game-card"
-                data-name="GTA V"
-                data-category="Action Open World"
-                data-pack="GTA"
-                data-size="20+ GB"
-            >
+</div>
 
-                <img
-                    src="./images/gta5.jpg"
-                    alt="GTA V"
-                    class="game-cover"
-                >
 
-                <div class="game-info">
+<!-- GTA V -->
 
-                    <h3>
-                        GTA V
-                    </h3>
+<div
+class="game-card"
+data-name="GTA V"
+data-category="Action Open World"
+data-pack="GTA"
+data-size="20+ GB"
+>
 
-                    <p>
-                        Action • Open World
-                    </p>
+<img
+src="./images/gta5.jpg"
+alt="GTA V"
+class="game-cover"
+>
 
-                    <p class="game-size">
-                        Size: 20+ GB
-                    </p>
+<div class="game-info">
 
-                    <a
-                        href="./gta5.html"
-                        class="download-btn"
-                    >
-                        DOWNLOAD
-                    </a>
+<h3>GTA V</h3>
 
-                </div>
+<p>
+Action • Open World
+</p>
 
-            </div>
+<p class="game-size">
+Size: 20+ GB
+</p>
 
+<a
+href="./gta5.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-            <!-- GTA IV -->
+</div>
 
-            <div
-                class="game-card"
-                data-name="GTA IV"
-                data-category="Action Open World"
-                data-pack="GTA"
-                data-size="10–20 GB"
-            >
+</div>
 
-                <img
-                    src="./images/gta4.jpg"
-                    alt="GTA IV"
-                    class="game-cover"
-                >
 
-                <div class="game-info">
+<!-- GTA IV -->
 
-                    <h3>
-                        GTA IV
-                    </h3>
+<div
+class="game-card"
+data-name="GTA IV"
+data-category="Action Open World"
+data-pack="GTA"
+data-size="10–20 GB"
+>
 
-                    <p>
-                        Action • Open World
-                    </p>
+<img
+src="./images/gta4.jpg"
+alt="GTA IV"
+class="game-cover"
+>
 
-                    <p class="game-size">
-                        Size: 10–20 GB
-                    </p>
+<div class="game-info">
 
-                    <a
-                        href="./gta4.html"
-                        class="download-btn"
-                    >
-                        DOWNLOAD
-                    </a>
+<h3>GTA IV</h3>
 
-                </div>
+<p>
+Action • Open World
+</p>
 
-            </div>
+<p class="game-size">
+Size: 10–20 GB
+</p>
 
+<a
+href="./gta4.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-            <!-- FIFA -->
+</div>
 
-            <div
-                class="game-card"
-                data-name="FIFA"
-                data-category="Sports"
-                data-pack="FIFA"
-                data-size="5–10 GB"
-            >
+</div>
 
-                <img
-                    src="./images/fifa.jpg"
-                    alt="FIFA"
-                    class="game-cover"
-                >
 
-                <div class="game-info">
+<!-- FIFA -->
 
-                    <h3>
-                        FIFA
-                    </h3>
+<div
+class="game-card"
+data-name="FIFA"
+data-category="Sports"
+data-pack="FIFA"
+data-size="5–10 GB"
+>
 
-                    <p>
-                        Sports
-                    </p>
+<img
+src="./images/fifa.jpg"
+alt="FIFA"
+class="game-cover"
+>
 
-                    <p class="game-size">
-                        Size: 5–10 GB
-                    </p>
+<div class="game-info">
 
-                    <a
-                        href="./fifa.html"
-                        class="download-btn"
-                    >
-                        DOWNLOAD
-                    </a>
+<h3>FIFA</h3>
 
-                </div>
+<p>
+Sports
+</p>
 
-            </div>
+<p class="game-size">
+Size: 5–10 GB
+</p>
 
+<a
+href="./fifa.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-            <!-- DON BRADMAN CRICKET -->
+</div>
 
-            <div
-                class="game-card"
-                data-name="Don Bradman Cricket"
-                data-category="Sports Simulation"
-                data-pack="Cricket"
-                data-size="1–5 GB"
-            >
+</div>
 
-                <img
-                    src="./images/cricket.jpg"
-                    alt="Don Bradman Cricket"
-                    class="game-cover"
-                >
 
-                <div class="game-info">
+<!-- DON BRADMAN CRICKET -->
 
-                    <h3>
-                        Don Bradman Cricket
-                    </h3>
+<div
+class="game-card"
+data-name="Don Bradman Cricket"
+data-category="Sports Simulation"
+data-pack="Cricket"
+data-size="1–5 GB"
+>
 
-                    <p>
-                        Sports • Simulation
-                    </p>
+<img
+src="./images/cricket.jpg"
+alt="Don Bradman Cricket"
+class="game-cover"
+>
 
-                    <p class="game-size">
-                        Size: 1–5 GB
-                    </p>
+<div class="game-info">
 
-                    <a
-                        href="./cricket.html"
-                        class="download-btn"
-                    >
-                        DOWNLOAD
-                    </a>
+<h3>Don Bradman Cricket</h3>
 
-                </div>
+<p>
+Sports • Simulation
+</p>
 
-            </div>
+<p class="game-size">
+Size: 1–5 GB
+</p>
 
+<a
+href="./cricket.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-            <!-- CALL OF DUTY 1 -->
+</div>
 
-            <div
-                class="game-card"
-                data-name="Call of Duty 1"
-                data-category="Action"
-                data-pack="Call of Duty"
-                data-size="5–10 GB"
-            >
+</div>
 
-                <img
-                    src="./images/cod.jpg"
-                    alt="Call of Duty 1"
-                    class="game-cover"
-                >
 
-                <div class="game-info">
+<!-- CALL OF DUTY 1 -->
 
-                    <h3>
-                        Call of Duty 1
-                    </h3>
+<div
+class="game-card"
+data-name="Call of Duty 1"
+data-category="Action"
+data-pack="Call of Duty"
+data-size="5–10 GB"
+>
 
-                    <p>
-                        Action
-                    </p>
+<img
+src="./images/cod.jpg"
+alt="Call of Duty 1"
+class="game-cover"
+>
 
-                    <p class="game-size">
-                        Size: 5–10 GB
-                    </p>
+<div class="game-info">
 
-                    <a
-                        href="./cod1.html"
-                        class="download-btn"
-                    >
-                        DOWNLOAD
-                    </a>
+<h3>Call of Duty 1</h3>
 
-                </div>
+<p>
+Action
+</p>
 
-            </div>
+<p class="game-size">
+Size: 5–10 GB
+</p>
 
+<a
+href="./cod1.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-            <!-- THE WITCHER 2 -->
+</div>
 
-            <div
-                class="game-card"
-                data-name="The Witcher 2"
-                data-category="Action Adventure"
-                data-pack="Witcher"
-                data-size="10–20 GB"
-            >
+</div>
 
-                <img
-                    src="./images/witcher2.jpg"
-                    alt="The Witcher 2"
-                    class="game-cover"
-                >
 
-                <div class="game-info">
+<!-- THE WITCHER 2 -->
 
-                    <h3>
-                        The Witcher 2
-                    </h3>
+<div
+class="game-card"
+data-name="The Witcher 2"
+data-category="Action Adventure"
+data-pack="Witcher"
+data-size="10–20 GB"
+>
 
-                    <p>
-                        Action • Adventure
-                    </p>
+<img
+src="./images/witcher2.jpg"
+alt="The Witcher 2"
+class="game-cover"
+>
 
-                    <p class="game-size">
-                        Size: 10–20 GB
-                    </p>
+<div class="game-info">
 
-                    <a
-                        href="./witcher2.html"
-                        class="download-btn"
-                    >
-                        DOWNLOAD
-                    </a>
+<h3>The Witcher 2</h3>
 
-                </div>
+<p>
+Action • Adventure
+</p>
 
-            </div>
+<p class="game-size">
+Size: 10–20 GB
+</p>
 
+<a
+href="./witcher2.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-        </div>
+</div>
 
+</div>
 
-        <!-- NO RESULTS -->
 
-        <div
-            class="no-results"
-            id="noResults"
-        >
-            No games found.
-        </div>
+<!-- GTA VI -->
 
+<div
+class="game-card"
+data-name="GTA VI"
+data-category="Action Open World"
+data-pack="GTA"
+data-size="20+ GB"
+>
 
-        <!-- PAGINATION -->
+<img
+src="./images/gtavi.jpg"
+alt="GTA VI"
+class="game-cover"
+>
 
-        <div class="pagination">
+<div class="game-info">
 
-            <button onclick="previousPage()">
-                ←
-            </button>
+<h3>GTA VI</h3>
 
-            <button
-                class="active"
-                onclick="goPage(1)"
-            >
-                1
-            </button>
+<p>
+Action • Open World
+</p>
 
-            <button onclick="goPage(2)">
-                2
-            </button>
+<p class="game-size">
+Size: 20+ GB
+</p>
 
-            <button onclick="goPage(3)">
-                3
-            </button>
+<a
+href="./gtavi.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-            <button onclick="goPage(4)">
-                4
-            </button>
+</div>
 
-            <button onclick="goPage(5)">
-                5
-            </button>
+</div>
 
-            <button onclick="nextPage()">
-                →
-            </button>
 
-        </div>
+<!-- ASSASSIN'S CREED SYNDICATE -->
 
-    </main>
+<div
+class="game-card"
+data-name="Assassin's Creed Syndicate"
+data-category="Action Adventure Open World"
+data-pack="Assassin"
+data-size="20+ GB"
+>
 
+<img
+src="./images/acs.jpg"
+alt="Assassin's Creed Syndicate"
+class="game-cover"
+>
 
-    <!-- SIDEBAR -->
+<div class="game-info">
 
-    <aside id="packs">
+<h3>Assassin's Creed Syndicate</h3>
 
-        <div class="sidebar-box">
+<p>
+Action • Adventure • Open World
+</p>
 
-            <div class="sidebar-title">
-                POPULAR GAMES
-            </div>
+<p class="game-size">
+Size: 20+ GB
+</p>
 
+<a
+href="./acs.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-            <!-- FAR CRY 3 -->
+</div>
 
-            <a
-                href="./farcry3.html"
-                class="popular-card"
-            >
+</div>
 
-                <img
-                    src="./images/farcry3.jpg"
-                    alt="Far Cry 3"
-                >
 
-                <div class="popular-info">
+<!-- NEED FOR SPEED -->
 
-                    <h3>
-                        Far Cry 3
-                    </h3>
+<div
+class="game-card"
+data-name="Need for Speed"
+data-category="Racing Action"
+data-pack="Need for Speed"
+data-size="10–20 GB"
+>
 
-                    <p>
-                        Open-world action adventure game set on a dangerous tropical island.
-                    </p>
+<img
+src="./images/nfs.jpg"
+alt="Need for Speed"
+class="game-cover"
+>
 
-                    <span class="popular-view">
-                        VIEW GAME →
-                    </span>
+<div class="game-info">
 
-                </div>
+<h3>Need for Speed</h3>
 
-            </a>
+<p>
+Racing • Action
+</p>
 
+<p class="game-size">
+Size: 10–20 GB
+</p>
 
-            <!-- GTA V -->
+<a
+href="./nfs.html"
+class="download-btn"
+>
+DOWNLOAD
+</a>
 
-            <a
-                href="./gta5.html"
-                class="popular-card"
-            >
+</div>
 
-                <img
-                    src="./images/gta5.jpg"
-                    alt="GTA V"
-                >
+</div>
 
-                <div class="popular-info">
 
-                    <h3>
-                        GTA V
-                    </h3>
+</div>
 
-                    <p>
-                        Open-world action game featuring a huge city and story-driven gameplay.
-                    </p>
 
-                    <span class="popular-view">
-                        VIEW GAME →
-                    </span>
+<!-- NO RESULTS -->
 
-                </div>
+<div
+class="no-results"
+id="noResults"
+>
+No games found.
+</div>
 
-            </a>
 
+<!-- PAGINATION -->
 
-            <!-- THE WITCHER 2 -->
+<div class="pagination">
 
-            <a
-                href="./witcher2.html"
-                class="popular-card"
-            >
+<button onclick="previousPage()">
+←
+</button>
 
-                <img
-                    src="./images/witcher2.jpg"
-                    alt="The Witcher 2"
-                >
+<button
+class="active"
+onclick="goPage(1)"
+>
+1
+</button>
 
-                <div class="popular-info">
+<button onclick="goPage(2)">
+2
+</button>
 
-                    <h3>
-                        The Witcher 2
-                    </h3>
+<button onclick="goPage(3)">
+3
+</button>
 
-                    <p>
-                        Fantasy action RPG with a deep story, quests and exploration.
-                    </p>
+<button onclick="goPage(4)">
+4
+</button>
 
-                    <span class="popular-view">
-                        VIEW GAME →
-                    </span>
+<button onclick="goPage(5)">
+5
+</button>
 
-                </div>
+<button onclick="nextPage()">
+→
+</button>
 
-            </a>
+</div>
 
-
-            <!-- GTA IV -->
-
-            <a
-                href="./gta4.html"
-                class="popular-card"
-            >
-
-                <img
-                    src="./images/gta4.jpg"
-                    alt="GTA IV"
-                >
-
-                <div class="popular-info">
-
-                    <h3>
-                        GTA IV
-                    </h3>
-
-                    <p>
-                        Open-world action adventure set in Liberty City.
-                    </p>
-
-                    <span class="popular-view">
-                        VIEW GAME →
-                    </span>
-
-                </div>
-
-            </a>
-
-
-            <!-- FAR CRY 2 -->
-
-            <a
-                href="./farcry2.html"
-                class="popular-card"
-            >
-
-                <img
-                    src="./images/farcry2.jpg"
-                    alt="Far Cry 2"
-                >
-
-                <div class="popular-info">
-
-                    <h3>
-                        Far Cry 2
-                    </h3>
-
-                    <p>
-                        First-person open-world action adventure set in Africa.
-                    </p>
-
-                    <span class="popular-view">
-                        VIEW GAME →
-                    </span>
-
-                </div>
-
-            </a>
-
-
-        </div>
-
-    </aside>
+</main>
 
 </div>
 
@@ -1288,13 +1139,13 @@ footer strong{
 
 <footer>
 
-    © 2026
-    <strong>QEVRANO PC GAMES</strong>.
-    All Rights Reserved.
+© 2026
+<strong>QEVRANO PC GAMES</strong>.
+All Rights Reserved.
 
-    <br><br>
+<br><br>
 
-    QEVRANO PC GAMES is an independent gaming information website.
+QEVRANO PC GAMES is an independent gaming information website.
 
 </footer>
 
@@ -1305,77 +1156,101 @@ footer strong{
 
 const games = [
 
-    {
-        name:"Far Cry 2",
-        file:"./farcry2.html",
-        category:"Action Adventure Open World",
-        pack:"Far Cry",
-        size:"5–10 GB"
-    },
+{
+name:"Far Cry 2",
+file:"./farcry2.html",
+category:"Action Adventure Open World",
+pack:"Far Cry",
+size:"5–10 GB"
+},
 
-    {
-        name:"Far Cry 3",
-        file:"./farcry3.html",
-        category:"Action Adventure Open World",
-        pack:"Far Cry",
-        size:"5–10 GB"
-    },
+{
+name:"Far Cry 3",
+file:"./farcry3.html",
+category:"Action Adventure Open World",
+pack:"Far Cry",
+size:"5–10 GB"
+},
 
-    {
-        name:"Assassin's Creed II",
-        file:"./ac2.html",
-        category:"Action Adventure",
-        pack:"Assassin",
-        size:"5–10 GB"
-    },
+{
+name:"Assassin's Creed II",
+file:"./ac2.html",
+category:"Action Adventure",
+pack:"Assassin",
+size:"5–10 GB"
+},
 
-    {
-        name:"GTA V",
-        file:"./gta5.html",
-        category:"Action Open World",
-        pack:"GTA",
-        size:"20+ GB"
-    },
+{
+name:"GTA V",
+file:"./gta5.html",
+category:"Action Open World",
+pack:"GTA",
+size:"20+ GB"
+},
 
-    {
-        name:"GTA IV",
-        file:"./gta4.html",
-        category:"Action Open World",
-        pack:"GTA",
-        size:"10–20 GB"
-    },
+{
+name:"GTA IV",
+file:"./gta4.html",
+category:"Action Open World",
+pack:"GTA",
+size:"10–20 GB"
+},
 
-    {
-        name:"FIFA",
-        file:"./fifa.html",
-        category:"Sports",
-        pack:"FIFA",
-        size:"5–10 GB"
-    },
+{
+name:"FIFA",
+file:"./fifa.html",
+category:"Sports",
+pack:"FIFA",
+size:"5–10 GB"
+},
 
-    {
-        name:"Don Bradman Cricket",
-        file:"./cricket.html",
-        category:"Sports Simulation",
-        pack:"Cricket",
-        size:"1–5 GB"
-    },
+{
+name:"Don Bradman Cricket",
+file:"./cricket.html",
+category:"Sports Simulation",
+pack:"Cricket",
+size:"1–5 GB"
+},
 
-    {
-        name:"Call of Duty 1",
-        file:"./cod1.html",
-        category:"Action",
-        pack:"Call of Duty",
-        size:"5–10 GB"
-    },
+{
+name:"Call of Duty 1",
+file:"./cod1.html",
+category:"Action",
+pack:"Call of Duty",
+size:"5–10 GB"
+},
 
-    {
-        name:"The Witcher 2",
-        file:"./witcher2.html",
-        category:"Action Adventure",
-        pack:"Witcher",
-        size:"10–20 GB"
-    }
+{
+name:"The Witcher 2",
+file:"./witcher2.html",
+category:"Action Adventure",
+pack:"Witcher",
+size:"10–20 GB"
+},
+
+{
+name:"GTA VI",
+file:"./gtavi.html",
+category:"Action Open World",
+pack:"GTA",
+size:"20+ GB"
+},
+
+{
+name:"Assassin's Creed Syndicate",
+file:"./acs.html",
+category:"Action Adventure Open World",
+pack:"Assassin",
+size:"20+ GB"
+},
+
+{
+name:"Need for Speed",
+file:"./nfs.html",
+category:"Racing Action",
+pack:"Need for Speed",
+size:"10–20 GB"
+}
 
 ];
 
@@ -1384,19 +1259,19 @@ const games = [
 
 function toggleFilter(button){
 
-    const parent = button.parentElement;
+const parent=button.parentElement;
 
-    document
-        .querySelectorAll(".filter")
-        .forEach(filter => {
+document
+.querySelectorAll(".filter")
+.forEach(filter=>{
 
-            if(filter !== parent){
-                filter.classList.remove("active");
-            }
+if(filter!==parent){
+filter.classList.remove("active");
+}
 
-        });
+});
 
-    parent.classList.toggle("active");
+parent.classList.toggle("active");
 
 }
 
@@ -1405,17 +1280,15 @@ function toggleFilter(button){
 
 document.addEventListener("click",function(event){
 
-    if(!event.target.closest(".filter")){
+if(!event.target.closest(".filter")){
 
-        document
-            .querySelectorAll(".filter")
-            .forEach(filter => {
+document
+.querySelectorAll(".filter")
+.forEach(filter=>{
+filter.classList.remove("active");
+});
 
-                filter.classList.remove("active");
-
-            });
-
-    }
+}
 
 });
 
@@ -1424,57 +1297,54 @@ document.addEventListener("click",function(event){
 
 function filterGames(){
 
-    const search =
-        document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
+const search=
+document
+.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
 
-    const cards =
-        document.querySelectorAll(".game-card");
+const cards=
+document.querySelectorAll(".game-card");
 
-    let found = 0;
+let found=0;
 
-    cards.forEach(card => {
+cards.forEach(card=>{
 
-        const name =
-            card.dataset.name.toLowerCase();
+const name=
+card.dataset.name.toLowerCase();
 
-        if(
-            search === "" ||
-            name.includes(search)
-        ){
+if(
+search==="" ||
+name.includes(search)
+){
 
-            card.style.display = "";
+card.style.display="";
+found++;
 
-            found++;
+}else{
 
-        }else{
+card.style.display="none";
 
-            card.style.display = "none";
+}
 
-        }
+});
 
-    });
-
-    document.getElementById("noResults").style.display =
-        found === 0 ? "block" : "none";
+document.getElementById("noResults").style.display=
+found===0 ? "block" : "none";
 
 }
 
 
-/* ENTER KEY SEARCH */
+/* ENTER KEY */
 
 document
 .getElementById("searchInput")
 .addEventListener("keydown",function(event){
 
-    if(event.key === "Enter"){
-
-        filterGames();
-
-    }
+if(event.key==="Enter"){
+filterGames();
+}
 
 });
 
@@ -1483,34 +1353,33 @@ document
 
 function selectCategory(category){
 
-    const cards =
-        document.querySelectorAll(".game-card");
+const cards=
+document.querySelectorAll(".game-card");
 
-    let found = 0;
+let found=0;
 
-    cards.forEach(card => {
+cards.forEach(card=>{
 
-        if(
-            category === "all" ||
-            card.dataset.category
-            .toLowerCase()
-            .includes(category.toLowerCase())
-        ){
+if(
+category==="all" ||
+card.dataset.category
+.toLowerCase()
+.includes(category.toLowerCase())
+){
 
-            card.style.display = "";
+card.style.display="";
+found++;
 
-            found++;
+}else{
 
-        }else{
+card.style.display="none";
 
-            card.style.display = "none";
+}
 
-        }
+});
 
-    });
-
-    document.getElementById("noResults").style.display =
-        found === 0 ? "block" : "none";
+document.getElementById("noResults").style.display=
+found===0 ? "block" : "none";
 
 }
 
@@ -1519,33 +1388,32 @@ function selectCategory(category){
 
 function selectPack(pack){
 
-    const cards =
-        document.querySelectorAll(".game-card");
+const cards=
+document.querySelectorAll(".game-card");
 
-    let found = 0;
+let found=0;
 
-    cards.forEach(card => {
+cards.forEach(card=>{
 
-        if(
-            card.dataset.pack
-            .toLowerCase()
-            .includes(pack.toLowerCase())
-        ){
+if(
+card.dataset.pack
+.toLowerCase()
+.includes(pack.toLowerCase())
+){
 
-            card.style.display = "";
+card.style.display="";
+found++;
 
-            found++;
+}else{
 
-        }else{
+card.style.display="none";
 
-            card.style.display = "none";
+}
 
-        }
+});
 
-    });
-
-    document.getElementById("noResults").style.display =
-        found === 0 ? "block" : "none";
+document.getElementById("noResults").style.display=
+found===0 ? "block" : "none";
 
 }
 
@@ -1554,29 +1422,28 @@ function selectPack(pack){
 
 function selectSize(size){
 
-    const cards =
-        document.querySelectorAll(".game-card");
+const cards=
+document.querySelectorAll(".game-card");
 
-    let found = 0;
+let found=0;
 
-    cards.forEach(card => {
+cards.forEach(card=>{
 
-        if(card.dataset.size === size){
+if(card.dataset.size===size){
 
-            card.style.display = "";
+card.style.display="";
+found++;
 
-            found++;
+}else{
 
-        }else{
+card.style.display="none";
 
-            card.style.display = "none";
+}
 
-        }
+});
 
-    });
-
-    document.getElementById("noResults").style.display =
-        found === 0 ? "block" : "none";
+document.getElementById("noResults").style.display=
+found===0 ? "block" : "none";
 
 }
 
@@ -1585,25 +1452,25 @@ function selectSize(size){
 
 function goPage(page){
 
-    alert(
-        "Page " + page + " is coming soon."
-    );
+alert(
+"Page "+page+" is coming soon."
+);
 
 }
 
 function previousPage(){
 
-    alert(
-        "Previous page is coming soon."
-    );
+alert(
+"Previous page is coming soon."
+);
 
 }
 
 function nextPage(){
 
-    alert(
-        "Next page is coming soon."
-    );
+alert(
+"Next page is coming soon."
+);
 
 }
 
