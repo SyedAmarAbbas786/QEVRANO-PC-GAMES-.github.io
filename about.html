@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About QEVRANO PC GAMES</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#070707;
+    color:#eee;
+    line-height:1.7;
+}
+
+header{
+    background:#090909;
+    border-bottom:1px solid #222;
+    padding:20px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:900;
+}
+
+.logo span{color:#e50914}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:#bbb;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
+
+nav a:hover{color:#e50914}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:60px auto;
+}
+
+.hero{
+    background:linear-gradient(135deg,#151515,#090909);
+    border:1px solid #292929;
+    border-left:4px solid #e50914;
+    border-radius:14px;
+    padding:55px 45px;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-size:46px;
+    margin-bottom:12px;
+}
+
+.hero span{color:#e50914}
+
+.hero p{
+    color:#aaa;
+    font-size:18px;
+}
+
+.card{
+    background:#101010;
+    border:1px solid #242424;
+    border-radius:14px;
+    padding:32px;
+    margin-bottom:20px;
+}
+
+.card h2{
+    font-size:24px;
+    margin-bottom:14px;
+}
+
+.card h2::before{
+    content:"";
+    display:inline-block;
+    width:5px;
+    height:23px;
+    background:#e50914;
+    margin-right:12px;
+    vertical-align:-3px;
+}
+
+.card p{
+    color:#aaa;
+    margin-bottom:12px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.feature{
+    background:#0c0c0c;
+    border:1px solid #252525;
+    border-radius:12px;
+    padding:25px;
+}
+
+.feature h3{
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#999;
+    font-size:14px;
+}
+
+footer{
+    background:#050505;
+    border-top:1px solid #222;
+    padding:35px 6%;
+    text-align:center;
+    margin-top:70px;
+}
+
+footer p{
+    color:#777;
+    margin-bottom:15px;
+}
+
+footer a{
+    color:#aaa;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+footer a:hover{color:#e50914}
+
+@media(max-width:750px){
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        padding:35px 25px;
+    }
+
+    .hero h1{font-size:34px}
+
+    .features{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">QEVRANO <span>PC GAMES</span></div>
+
+```
+<nav>
+    <a href="./index.html">HOME</a>
+    <a href="./index.html#games">GAMES</a>
+    <a href="./index.html#packs">PACKS</a>
+</nav>
+```
+
+</header>
+
+<main class="container">
+
+```
+<section class="hero">
+    <h1>About <span>QEVRANO</span></h1>
+    <p>A simple place to discover PC games, information and gaming content.</p>
+</section>
+
+<section class="card">
+    <h2>Who We Are</h2>
+    <p>
+        QEVRANO PC GAMES is a gaming-focused website built to make
+        discovering PC games simple, clean, and enjoyable.
+    </p>
+    <p>
+        Our goal is to organize useful information about games in one
+        convenient place, including screenshots, game descriptions,
+        system requirements, trailers, and relevant external sources.
+    </p>
+</section>
+
+<section class="card">
+    <h2>What We Provide</h2>
+
+    <div class="features">
+
+        <div class="feature">
+            <h3>🎮 Game Discovery</h3>
+            <p>
+                Browse different PC games and discover titles across
+                multiple genres.
+            </p>
+        </div>
+
+        <div class="feature">
+            <h3>🖥 Game Information</h3>
+            <p>
+                Find screenshots, descriptions, features and system
+                requirements.
+            </p>
+        </div>
+
+        <div class="feature">
+            <h3>▶ Trailers</h3>
+            <p>
+                Watch game trailers and gameplay videos directly from
+                supported video platforms.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="card">
+    <h2>Our Goal</h2>
+    <p>
+        We want QEVRANO to become a clean and easy-to-use destination for
+        PC gamers who want to discover games without navigating through
+        confusing pages.
+    </p>
+</section>
+```
+
+</main>
+
+<footer>
+    <p>© 2026 QEVRANO PC GAMES. All rights reserved.</p>
+
+```
+<div>
+    <a href="./about.html" target="_blank">About</a>
+    <a href="./contact.html" target="_blank">Contact</a>
+    <a href="./privacy.html" target="_blank">Privacy Policy</a>
+    <a href="./terms.html" target="_blank">Terms & Conditions</a>
+</div>
+```
+
+</footer>
+
+</body>
+</html>
