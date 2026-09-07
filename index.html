@@ -616,6 +616,47 @@ header nav a:hover{
 }
 
 
+
+/* ================= TRUST / INFO SECTIONS ================= */
+.info-section{
+    max-width:1200px;
+    margin:0 auto 30px;
+    padding:0 20px;
+}
+.about-qevrano{
+    background:rgba(8,12,18,.94);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:8px;
+    padding:25px;
+}
+.about-qevrano p{
+    color:#aaa;
+    font-size:14px;
+    line-height:1.8;
+    margin-bottom:10px;
+}
+.about-qevrano p:last-child{margin-bottom:0;}
+.site-links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:18px;
+}
+.site-links a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:13px;
+}
+.site-links a:hover{color:#00b7ff;}
+.disclaimer{
+    max-width:900px;
+    margin:0 auto;
+    color:#666;
+    font-size:11px;
+    line-height:1.6;
+}
+
 /* ================= FOOTER ================= */
 
 footer{
@@ -739,7 +780,7 @@ footer{
     </h1>
 
     <p>
-        Discover PC games, information, screenshots and more.
+        Discover PC games, explore useful information, check PC requirements and find official sources.
     </p>
 
     <div class="hero-search">
@@ -755,6 +796,16 @@ footer{
 
 </section>
 
+
+
+<!-- ================= QEVRANO INTRO ================= -->
+<section class="info-section" id="about">
+    <div class="about-qevrano">
+        <h2 class="section-title">About QEVRANO</h2>
+        <p>QEVRANO PC GAMES is a PC gaming information website focused on helping players discover games through clear game details, genres, screenshots, system requirements and official sources.</p>
+        <p>Our goal is to make game discovery simple: choose a title, explore its information page, check whether your PC meets the requirements, and use the official publisher or store source when one is available.</p>
+    </div>
+</section>
 
 <!-- ===================================================== -->
 <!-- MAIN CONTENT -->
@@ -877,7 +928,7 @@ footer{
     </div>
 
 
-    <h2 class="section-title">
+    <h2 class="section-title" id="latest">
         Latest Games
     </h2>
 
@@ -926,7 +977,7 @@ footer{
                         href="./farcry2.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -966,7 +1017,7 @@ footer{
                         href="./farcry3.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -1006,7 +1057,7 @@ footer{
                         href="./ac2.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -1046,7 +1097,7 @@ footer{
                         href="./gta5.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -1086,7 +1137,7 @@ footer{
                         href="./gta4.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -1126,7 +1177,7 @@ footer{
                         href="./fifa.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -1166,7 +1217,7 @@ footer{
                         href="./cricket.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -1206,7 +1257,7 @@ footer{
                         href="./cod1.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -1246,7 +1297,7 @@ footer{
                         href="./witcher2.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -1303,7 +1354,7 @@ footer{
                         href="./gtavi.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -1343,7 +1394,7 @@ footer{
                         href="./acs.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -1383,7 +1434,7 @@ footer{
                         href="./nfs2.html"
                         class="download-btn"
                     >
-                        DOWNLOAD
+                        VIEW DETAILS
                     </a>
 
                 </div>
@@ -1472,6 +1523,9 @@ footer{
 
     </div>
 
+    <p style="text-align:center;color:#777;font-size:12px;margin-top:18px;line-height:1.6;">
+        Game pages are provided for information and discovery. Use official publisher or store sources for legitimate purchases and downloads.
+    </p>
 
 </main>
 
@@ -1711,9 +1765,23 @@ footer{
 <!-- FOOTER -->
 <!-- ===================================================== -->
 
-<footer>
+<footer id="contact">
 
-    © 2026 QEVRANO PC GAMES — All Rights Reserved.
+    <div class="site-links">
+        <a href="#about">About</a>
+        <a href="#games">Games</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms &amp; Conditions</a>
+        <a href="#disclaimer">Disclaimer</a>
+    </div>
+
+    <p>© 2026 QEVRANO PC GAMES — All Rights Reserved.</p>
+
+    <p class="disclaimer" id="privacy">Privacy: QEVRANO may use standard analytics tools to understand site traffic and improve the website. If advertising is added in the future, this policy should be updated to explain advertising cookies and user choices.</p>
+    <p class="disclaimer" id="terms" style="margin-top:8px;">Terms: Game names, logos and artwork belong to their respective owners. QEVRANO provides informational pages and links to official sources; availability, pricing and platform support may change.</p>
+    <p class="disclaimer" id="disclaimer" style="margin-top:8px;">Disclaimer: QEVRANO PC GAMES is an independent gaming information website and is not affiliated with the publishers or developers mentioned on this site unless explicitly stated.</p>
+    <p class="disclaimer" style="margin-top:8px;">Contact: Add your official contact email here before publishing a public contact address.</p>
 
 </footer>
 
