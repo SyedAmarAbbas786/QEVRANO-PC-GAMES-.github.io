@@ -4,463 +4,915 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Far Cry 2 - QEVRANO PC GAMES</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-font-family:Arial,Helvetica,sans-serif;
-color:#eee;
-background:
-linear-gradient(rgba(5,8,15,.88),rgba(5,8,15,.95)),
-url("./images/farcry2-bg.jpg") center/cover fixed no-repeat;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* ================= HEADER ================= */
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#080808;
+    color:#eee;
+    overflow-x:hidden;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#090909;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#d60000;
+    border-radius:10px;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header{
-background:rgba(5,8,12,.94);
-border-bottom:1px solid rgba(255,255,255,.12);
-padding:18px 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:1000;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:72px;
+
+    background:rgba(8,8,8,.94);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,0,0,.18);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
 }
 
 .logo{
-font-size:25px;
-font-weight:900;
-letter-spacing:1px;
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:1px;
+    color:white;
 }
 
 .logo span{
-color:#00b7ff;
-}
-
-.header-right{
-display:flex;
-align-items:center;
-gap:22px;
+    color:#e00000;
 }
 
 nav{
-display:flex;
-gap:25px;
+    display:flex;
+    gap:30px;
 }
 
 nav a{
-color:#fff;
-text-decoration:none;
-font-weight:bold;
-font-size:14px;
+    color:#aaa;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+    transition:.25s;
 }
 
 nav a:hover{
-color:#00b7ff;
+    color:#ff2020;
 }
 
-/* ================= SEARCH ICON ================= */
+/* =========================
+   SEARCH
+========================= */
 
-.search-container{
-position:relative;
+.search-area{
+    position:relative;
 }
 
 .search-icon{
-width:40px;
-height:40px;
-border:1px solid #00b7ff;
-background:#00a9ed;
-color:white;
-font-size:19px;
-border-radius:5px;
-cursor:pointer;
-display:flex;
-align-items:center;
-justify-content:center;
-transition:.25s;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+
+    background:#151515;
+    border:1px solid #292929;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+    font-size:18px;
+
+    transition:.25s;
 }
 
 .search-icon:hover{
-background:#008bc4;
+    background:#e00000;
+    border-color:#e00000;
 }
 
-/* SEARCH BOX */
+.search-box{
+    position:absolute;
+    right:0;
+    top:48px;
 
-.header-search{
-display:none;
-position:absolute;
-right:0;
-top:48px;
-width:280px;
-background:#10151c;
-border:1px solid rgba(0,183,255,.5);
-box-shadow:0 10px 30px rgba(0,0,0,.6);
-z-index:3000;
+    width:280px;
+    padding:12px 15px;
+
+    background:#111;
+    border:1px solid #333;
+    border-radius:8px;
+
+    color:white;
+    outline:none;
+
+    display:none;
 }
 
-.header-search.active{
-display:block;
+.search-box:focus{
+    border-color:#e00000;
 }
 
-.header-search input{
-width:100%;
-padding:12px 14px;
-border:none;
-outline:none;
-background:#fff;
-color:#111;
-font-size:14px;
-}
-
-.search-results{
-display:none;
-max-height:300px;
-overflow-y:auto;
-}
-
-.search-result{
-display:block;
-padding:12px 14px;
-color:#fff;
-text-decoration:none;
-border-top:1px solid rgba(255,255,255,.08);
-font-size:14px;
-}
-
-.search-result:hover{
-background:#00a9ed;
-}
-
-.search-no-result{
-padding:12px 14px;
-color:#999;
-font-size:14px;
-border-top:1px solid rgba(255,255,255,.08);
-}
-
-/* ================= MAIN ================= */
-
-.container{
-width:90%;
-max-width:1250px;
-margin:35px auto;
-}
-
-.main-panel{
-background:rgba(8,13,23,.94);
-border:1px solid rgba(0,183,255,.35);
-border-radius:14px;
-padding:30px;
-box-shadow:0 0 35px rgba(0,0,0,.5);
-}
+/* =========================
+   HERO
+========================= */
 
 .hero{
-display:grid;
-grid-template-columns:300px 1fr;
-gap:35px;
-align-items:center;
+    min-height:620px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    padding:80px 7%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,5,.98) 0%,
+            rgba(5,5,5,.88) 40%,
+            rgba(5,5,5,.45) 72%,
+            rgba(5,5,5,.9) 100%
+        ),
+        linear-gradient(
+            0deg,
+            #080808 0%,
+            transparent 35%
+        ),
+        url("./images/farcry2.jpg");
+
+    background-size:cover;
+    background-position:center;
 }
 
-.hero img{
-width:100%;
-border-radius:12px;
-border:1px solid #00b7ff;
-box-shadow:0 0 25px rgba(0,183,255,.25);
+.hero:after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(220,0,0,.20),
+            transparent 35%
+        );
+
+    pointer-events:none;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:720px;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:7px 14px;
+
+    border:1px solid rgba(255,0,0,.5);
+    border-radius:30px;
+
+    color:#ff3333;
+    background:rgba(150,0,0,.12);
+
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1.5px;
+
+    margin-bottom:18px;
 }
 
 .hero h1{
-font-size:42px;
-margin-bottom:15px;
-color:#fff;
+    font-size:clamp(50px,8vw,92px);
+    line-height:.9;
+    text-transform:uppercase;
+    font-weight:1000;
+
+    letter-spacing:-3px;
+
+    margin-bottom:22px;
+
+    text-shadow:
+        0 5px 30px rgba(0,0,0,.9);
 }
 
-.subtitle{
-color:#00b7ff;
-font-size:18px;
-margin-bottom:20px;
+.hero h1 span{
+    color:#e00000;
 }
 
-.description{
-color:#ccc;
-line-height:1.7;
-margin-bottom:25px;
+.hero-description{
+    max-width:620px;
+
+    color:#bbb;
+    line-height:1.7;
+    font-size:16px;
+
+    margin-bottom:30px;
 }
+
+.game-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+    margin-bottom:32px;
+}
+
+.meta{
+    background:rgba(20,20,20,.85);
+
+    border:1px solid #303030;
+    border-radius:6px;
+
+    padding:9px 13px;
+
+    color:#ccc;
+    font-size:13px;
+}
+
+.meta strong{
+    color:white;
+}
+
+/* =========================
+   BUTTONS
+========================= */
 
 .buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
 }
 
-.download-btn{
-display:inline-block;
-padding:14px 22px;
-border-radius:7px;
-text-decoration:none;
-font-weight:bold;
-color:#fff;
-background:#087caf;
-border:1px solid #00b7ff;
-transition:.3s;
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:170px;
+
+    padding:14px 20px;
+
+    border-radius:6px;
+
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:.7px;
+
+    transition:.25s;
+
+    cursor:pointer;
 }
 
-.download-btn:hover{
-background:#00b7ff;
-color:#001018;
-transform:translateY(-2px);
+.btn-red{
+    background:#d90000;
+    color:white;
+
+    box-shadow:
+        0 8px 30px rgba(210,0,0,.25);
 }
 
-.setup-btn{
-background:#151d29;
+.btn-red:hover{
+    background:#ff1010;
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 35px rgba(210,0,0,.4);
 }
 
-/* ================= HIGHLY COMPRESSED ================= */
+.btn-dark{
+    background:#141414;
+    color:#eee;
 
-.compressed-link{
-display:block;
-margin-top:8px;
-color:#00b7ff;
-font-size:14px;
-font-weight:bold;
-text-decoration:underline;
+    border:1px solid #383838;
 }
 
-.compressed-link:hover{
-color:#fff;
+.btn-dark:hover{
+    background:#222;
+    border-color:#e00000;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+    width:86%;
+    max-width:1250px;
+    margin:auto;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    padding:75px 0;
 }
 
 .section-title{
-color:#00b7ff;
-font-size:28px;
-margin:45px 0 20px;
-border-left:4px solid #00b7ff;
-padding-left:12px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:27px;
+    font-weight:900;
+
+    margin-bottom:28px;
 }
 
-.screenshot-area{
-display:grid;
-grid-template-columns:1fr 300px;
-gap:25px;
-align-items:start;
+.section-title:before{
+    content:"";
+
+    width:5px;
+    height:28px;
+
+    background:#e00000;
+
+    border-radius:3px;
 }
 
-.screenshots{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:30px;
 }
 
-.screenshots img{
-width:100%;
-height:210px;
-object-fit:cover;
-border-radius:9px;
-border:1px solid #26394a;
-cursor:pointer;
-transition:.3s;
+.panel{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,30,30,.92),
+            rgba(12,12,12,.92)
+        );
+
+    border:1px solid #252525;
+    border-radius:10px;
+
+    padding:28px;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.25);
 }
 
-.screenshots img:hover{
-transform:scale(1.02);
-border-color:#00b7ff;
-}
-
-.ad-box{
-height:600px;
-border:1px dashed #426176;
-background:rgba(20,30,42,.8);
-display:flex;
-align-items:center;
-justify-content:center;
-color:#718496;
-font-size:14px;
-text-align:center;
-border-radius:8px;
-}
-
-/* ================= GAMEPLAY VIDEO ================= */
-
-.video-box{
-width:100%;
-aspect-ratio:16/9;
-background:#05080d;
-border:1px solid #26394a;
-border-radius:10px;
-overflow:hidden;
-}
-
-.video-box iframe{
-width:100%;
-height:100%;
-border:0;
-}
-
-.text{
-color:#ccc;
-line-height:1.8;
+.panel p{
+    color:#aaa;
+    line-height:1.8;
+    font-size:15px;
 }
 
 .features{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-margin-top:15px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:22px;
 }
 
 .feature{
-background:rgba(20,29,42,.8);
-padding:15px;
-border-radius:7px;
-border-left:3px solid #00b7ff;
-color:#ddd;
+    padding:15px;
+
+    background:#111;
+    border:1px solid #242424;
+    border-radius:7px;
+
+    color:#ccc;
+    font-size:14px;
 }
+
+.feature strong{
+    display:block;
+    color:white;
+    margin-bottom:5px;
+}
+
+.feature span{
+    color:#999;
+    font-size:12px;
+}
+
+/* =========================
+   SCREENSHOTS
+========================= */
+
+.screenshots{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.screenshot{
+    height:190px;
+
+    overflow:hidden;
+    border-radius:8px;
+
+    border:1px solid #292929;
+
+    background:#111;
+
+    cursor:pointer;
+
+    position:relative;
+}
+
+.screenshot img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.4s;
+}
+
+.screenshot:hover img{
+    transform:scale(1.08);
+}
+
+.screenshot:after{
+    content:"VIEW";
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(0,0,0,.45);
+
+    color:white;
+    font-weight:bold;
+
+    opacity:0;
+
+    transition:.3s;
+}
+
+.screenshot:hover:after{
+    opacity:1;
+}
+
+/* =========================
+   TRAILER
+========================= */
+
+.trailer-wrapper{
+    background:#101010;
+
+    border:1px solid #282828;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.45);
+}
+
+.video-container{
+    position:relative;
+
+    width:100%;
+    padding-top:56.25%;
+}
+
+.video-container iframe{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    border:0;
+}
+
+.trailer-info{
+    padding:20px 24px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+}
+
+.trailer-info h3{
+    font-size:18px;
+}
+
+.trailer-info p{
+    color:#777;
+    font-size:13px;
+    margin-top:5px;
+}
+
+/* =========================
+   REQUIREMENTS
+========================= */
 
 .requirements{
-width:100%;
-border-collapse:collapse;
-margin-top:10px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
-.requirements th,
-.requirements td{
-border:1px solid #26394a;
-padding:14px;
-text-align:left;
+.req-card{
+    background:#101010;
+
+    border:1px solid #282828;
+    border-radius:10px;
+
+    padding:25px;
 }
 
-.requirements th{
-background:#101b28;
-color:#00b7ff;
+.req-card h3{
+    color:#fff;
+    margin-bottom:20px;
+
+    font-size:19px;
 }
 
-.requirements td{
-color:#ccc;
+.req-card h3 span{
+    color:#e00000;
 }
+
+.req-row{
+    display:flex;
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:13px 0;
+
+    border-bottom:1px solid #222;
+}
+
+.req-row:last-child{
+    border-bottom:none;
+}
+
+.req-row span:first-child{
+    color:#777;
+    font-size:13px;
+}
+
+.req-row span:last-child{
+    color:#ddd;
+    font-size:13px;
+    text-align:right;
+}
+
+/* =========================
+   DOWNLOAD BOX
+========================= */
+
+.download-box{
+    margin-top:35px;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(120,0,0,.25),
+            rgba(20,20,20,.95)
+        );
+
+    border:1px solid rgba(220,0,0,.35);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+.download-box h2{
+    font-size:25px;
+    margin-bottom:7px;
+}
+
+.download-box p{
+    color:#999;
+    font-size:14px;
+}
+
+/* =========================
+   AD
+========================= */
+
+.ad-wrapper{
+    display:flex;
+    justify-content:center;
+
+    margin:50px 0;
+}
+
+.ad{
+    width:300px;
+    height:600px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#101010;
+
+    border:1px dashed #333;
+
+    color:#555;
+
+    font-size:12px;
+}
+
+/* =========================
+   NOTE
+========================= */
 
 .note{
-margin-top:12px;
-color:#8795a3;
-font-size:14px;
+    margin-top:25px;
+
+    padding:18px 20px;
+
+    background:#111;
+
+    border-left:4px solid #d90000;
+
+    color:#888;
+
+    font-size:13px;
+    line-height:1.7;
 }
 
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    margin-top:50px;
+
+    padding:35px 6%;
+
+    border-top:1px solid #202020;
+
+    background:#060606;
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:13px;
+}
+
+footer strong{
+    color:#ddd;
+}
+
+footer span{
+    color:#e00000;
+}
+
+/* =========================
+   IMAGE MODAL
+========================= */
+
 .modal{
-display:none;
-position:fixed;
-z-index:2000;
-inset:0;
-background:rgba(0,0,0,.92);
-align-items:center;
-justify-content:center;
-padding:25px;
+    display:none;
+
+    position:fixed;
+    z-index:2000;
+
+    inset:0;
+
+    background:rgba(0,0,0,.94);
+
+    align-items:center;
+    justify-content:center;
+
+    padding:30px;
 }
 
 .modal img{
-max-width:95%;
-max-height:90vh;
-border-radius:8px;
-border:1px solid #00b7ff;
+    max-width:95%;
+    max-height:90vh;
+
+    border-radius:8px;
+
+    border:1px solid #333;
+
+    box-shadow:
+        0 20px 100px rgba(0,0,0,.8);
 }
 
 .close{
-position:absolute;
-top:20px;
-right:35px;
-font-size:40px;
-color:#fff;
-cursor:pointer;
+    position:absolute;
+
+    top:20px;
+    right:30px;
+
+    font-size:38px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.2s;
 }
 
-.tagline{
-text-align:center;
-margin:45px 0 10px;
-color:#00b7ff;
-font-size:18px;
-font-weight:bold;
-letter-spacing:2px;
+.close:hover{
+    color:#e00000;
 }
 
-footer{
-text-align:center;
-padding:30px;
-margin-top:40px;
-color:#718496;
-border-top:1px solid #182635;
+/* =========================
+   SEARCH RESULTS
+========================= */
+
+.search-results{
+    position:absolute;
+
+    right:0;
+    top:95px;
+
+    width:280px;
+
+    background:#111;
+
+    border:1px solid #292929;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    display:none;
+
+    z-index:1500;
 }
 
-/* ================= MOBILE ================= */
+.search-result{
+    display:block;
 
-@media(max-width:850px){
+    padding:13px 15px;
 
-.hero{
-grid-template-columns:1fr;
+    color:#ccc;
+
+    text-decoration:none;
+
+    border-bottom:1px solid #222;
+
+    font-size:13px;
 }
 
-.hero img{
-max-width:300px;
-margin:auto;
+.search-result:hover{
+    background:#1c1c1c;
+    color:#ff2222;
 }
 
-.hero h1{
-font-size:32px;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
-.screenshot-area{
-grid-template-columns:1fr;
-}
+@media(max-width:900px){
 
-.ad-box{
-height:250px;
-}
+    nav{
+        display:none;
+    }
 
+    header{
+        padding:0 5%;
+    }
+
+    .hero{
+        min-height:650px;
+
+        padding:70px 6%;
+
+        background-position:center;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .screenshots{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .requirements{
+        grid-template-columns:1fr;
+    }
+
+    .download-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
 }
 
 @media(max-width:600px){
 
-header{
-padding:15px 5%;
-}
+    .logo{
+        font-size:20px;
+    }
 
-.header-right{
-gap:10px;
-}
+    .hero{
+        min-height:620px;
 
-nav{
-gap:15px;
-}
+        padding:60px 5%;
+    }
 
-nav a{
-font-size:13px;
-}
+    .hero h1{
+        font-size:54px;
+    }
 
-.search-icon{
-width:36px;
-height:36px;
-}
+    .hero-description{
+        font-size:14px;
+    }
 
-.header-search{
-width:250px;
-}
+    .buttons{
+        flex-direction:column;
+    }
 
-.main-panel{
-padding:18px;
-}
+    .btn{
+        width:100%;
+    }
 
-.screenshots{
-grid-template-columns:1fr;
-}
+    .container{
+        width:90%;
+    }
 
-.features{
-grid-template-columns:1fr;
-}
+    .section{
+        padding:55px 0;
+    }
 
-.requirements{
-font-size:13px;
-}
+    .screenshots{
+        grid-template-columns:1fr;
+    }
 
+    .screenshot{
+        height:210px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .search-box{
+        width:230px;
+    }
+
+    .search-results{
+        width:230px;
+    }
+
+    .ad{
+        width:280px;
+        height:560px;
+    }
 }
 </style>
 
@@ -468,528 +920,700 @@ font-size:13px;
 
 <body>
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
+```
 <div class="logo">
-QEVRANO <span>PC GAMES</span>
+    QE<span>V</span>RANO
+    <small style="font-size:10px;color:#777;display:block;letter-spacing:2px;">
+        PC GAMES
+    </small>
 </div>
-
-<div class="header-right">
 
 <nav>
-<a href="index.html">HOME</a>
-<a href="index.html#games">GAMES</a>
-<a href="index.html#packs">PACKS</a>
+    <a href="index.html">HOME</a>
+    <a href="games.html">GAMES</a>
+    <a href="packs.html">PACKS</a>
 </nav>
 
-<div class="search-container">
+<div class="search-area">
 
-<button class="search-icon" onclick="toggleSearch()" aria-label="Search">
-🔍
-</button>
+    <div class="search-icon" onclick="toggleSearch()">
+        🔍
+    </div>
 
-<div class="header-search" id="headerSearch">
+    <input
+        type="text"
+        id="searchBox"
+        class="search-box"
+        placeholder="Search games..."
+        onkeyup="searchGames()"
+    >
 
-<input
-type="text"
-id="headerSearchInput"
-placeholder="Search games..."
-autocomplete="off"
-
->
-
-<div
-class="search-results"
-id="headerSearchResults">
-</div>
+    <div id="searchResults" class="search-results"></div>
 
 </div>
-
-</div>
-
-</div>
+```
 
 </header>
 
-<!-- MAIN -->
-
-<div class="container">
-<div class="main-panel">
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-<img src="./images/farcry2.jpg" alt="Far Cry 2">
+```
+<div class="hero-content">
 
-<div>
+    <div class="badge">
+        ACTION • OPEN WORLD • FPS
+    </div>
 
-<h1>Far Cry 2</h1>
+    <h1>
+        FAR <span>CRY 2</span>
+    </h1>
 
-<div class="subtitle">
-Action • Adventure • Open World
+    <p class="hero-description">
+        Enter the dangerous world of Far Cry 2, where you must survive
+        hostile environments, deadly enemies and a ruthless arms dealer
+        in the heart of Africa.
+    </p>
+
+    <div class="game-meta">
+
+        <div class="meta">
+            <strong>Release:</strong> 2008
+        </div>
+
+        <div class="meta">
+            <strong>Genre:</strong> FPS
+        </div>
+
+        <div class="meta">
+            <strong>Developer:</strong> Ubisoft Montreal
+        </div>
+
+        <div class="meta">
+            <strong>Platform:</strong> PC
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <a
+            class="btn btn-red"
+            href="https://www.ubisoft.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            OFFICIAL SOURCE
+        </a>
+
+        <a
+            class="btn btn-dark"
+            href="https://mega.nz/file/gvoiBAib#ojL_AZX9vbXG94fRrlKuWm8u8024CZZoj68pos8FkQw"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            DOWNLOAD SETUP.EXE
+        </a>
+
+        <a
+            class="btn btn-dark"
+            href="farcry2.html"
+        >
+            HIGHLY COMPRESSED
+        </a>
+
+    </div>
+
 </div>
-
-<p class="description">
-Enter the dangerous world of Far Cry 2. Explore a vast African
-landscape, survive hostile environments, complete missions and
-choose your own approach to combat and exploration.
-</p>
-
-<div class="buttons">
-
-<!-- OFFICIAL SOURCE -->
-
-<a
-href="https://www.ubisoft.com/"
-target="_blank"
-rel="noopener noreferrer"
-class="download-btn">
-OFFICIAL SOURCE </a>
-
-<!-- DOWNLOAD SETUP.EXE + HIGHLY COMPRESSED -->
-
-<div>
-
-<a
-href="https://mega.nz/file/gvoiBAib#ojL_AZX9vbXG94fRrlKuWm8u8024CZZoj68pos8FkQw"
-target="_blank"
-rel="noopener noreferrer"
-class="download-btn setup-btn">
-DOWNLOAD SETUP.EXE </a>
-
-<a
-href="farcry2.html"
-class="compressed-link">
-Highly Compressed </a>
-
-</div>
-
-</div>
-
-</div>
+```
 
 </section>
 
-<!-- SCREENSHOTS -->
+<main class="container">
 
-<h2 class="section-title">Game Screenshots</h2>
+<!-- =========================
+     ABOUT
+========================= -->
 
-<div class="screenshot-area">
+<section class="section">
+
+```
+<h2 class="section-title">
+    About the Game
+</h2>
+
+<div class="about">
+
+    <div class="panel">
+
+        <p>
+            Far Cry 2 is an open-world first-person shooter developed
+            by Ubisoft Montreal. Set in Africa, the game places you
+            in a massive environment filled with dangerous wildlife,
+            hostile factions and unpredictable combat situations.
+        </p>
+
+        <br>
+
+        <p>
+            Players can explore the world freely, complete missions,
+            use different weapons and vehicles, and approach objectives
+            in several different ways.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                <strong>OPEN WORLD</strong>
+                <span>Explore a large African environment.</span>
+            </div>
+
+            <div class="feature">
+                <strong>FIRST-PERSON ACTION</strong>
+                <span>Experience intense FPS combat.</span>
+            </div>
+
+            <div class="feature">
+                <strong>VEHICLES</strong>
+                <span>Drive through the African wilderness.</span>
+            </div>
+
+            <div class="feature">
+                <strong>WEAPON SYSTEM</strong>
+                <span>Use a wide selection of firearms.</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <h3 style="margin-bottom:18px;">
+            Game Information
+        </h3>
+
+        <div class="req-row">
+            <span>Developer</span>
+            <span>Ubisoft Montreal</span>
+        </div>
+
+        <div class="req-row">
+            <span>Publisher</span>
+            <span>Ubisoft</span>
+        </div>
+
+        <div class="req-row">
+            <span>Release Date</span>
+            <span>October 2008</span>
+        </div>
+
+        <div class="req-row">
+            <span>Genre</span>
+            <span>Action / FPS</span>
+        </div>
+
+        <div class="req-row">
+            <span>Mode</span>
+            <span>Single Player</span>
+        </div>
+
+        <div class="req-row">
+            <span>Platform</span>
+            <span>Windows PC</span>
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     SCREENSHOTS
+========================= -->
+
+<section class="section">
+
+```
+<h2 class="section-title">
+    Screenshots
+</h2>
 
 <div class="screenshots">
 
-<img src="./images/farcry2-1.jpg"
-alt="Far Cry 2 Screenshot 1"
-onclick="openImage(this.src)">
+    <div class="screenshot"
+         onclick="openImage('./images/farcry2-1.jpg')">
+        <img
+            src="./images/farcry2-1.jpg"
+            alt="Far Cry 2 Screenshot 1"
+        >
+    </div>
 
-<img src="./images/farcry2-2.jpg"
-alt="Far Cry 2 Screenshot 2"
-onclick="openImage(this.src)">
+    <div class="screenshot"
+         onclick="openImage('./images/farcry2-2.jpg')">
+        <img
+            src="./images/farcry2-2.jpg"
+            alt="Far Cry 2 Screenshot 2"
+        >
+    </div>
 
-<img src="./images/farcry2-3.jpg"
-alt="Far Cry 2 Screenshot 3"
-onclick="openImage(this.src)">
+    <div class="screenshot"
+         onclick="openImage('./images/farcry2-3.jpg')">
+        <img
+            src="./images/farcry2-3.jpg"
+            alt="Far Cry 2 Screenshot 3"
+        >
+    </div>
 
-<img src="./images/farcry2-4.jpg"
-alt="Far Cry 2 Screenshot 4"
-onclick="openImage(this.src)">
+    <div class="screenshot"
+         onclick="openImage('./images/farcry2-4.jpg')">
+        <img
+            src="./images/farcry2-4.jpg"
+            alt="Far Cry 2 Screenshot 4"
+        >
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     ADVERTISEMENT
+========================= -->
+
+<div class="ad-wrapper">
+
+```
+<div class="ad">
+    ADVERTISEMENT
+</div>
+```
 
 </div>
 
-<div class="ad-box">
-ADVERTISEMENT<br>
-300 × 600
-</div>
+<!-- =========================
+     TRAILER
+========================= -->
+
+<section class="section">
+
+```
+<h2 class="section-title">
+    Gameplay Trailer
+</h2>
+
+<div class="trailer-wrapper">
+
+    <div class="video-container">
+
+        <iframe
+            src="https://www.youtube.com/embed/gf5h4co4Ydc"
+            title="Far Cry 2 Official Launch Trailer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+    <div class="trailer-info">
+
+        <div>
+            <h3>Far Cry 2 — Official Trailer</h3>
+
+            <p>
+                Watch the official Far Cry 2 trailer.
+            </p>
+        </div>
+
+        <div style="color:#e00000;font-weight:bold;">
+            UBISOFT
+        </div>
+
+    </div>
 
 </div>
+```
 
-<!-- GAMEPLAY TRAILER -->
+</section>
 
-<h2 class="section-title">Gameplay Trailer</h2>
+<!-- =========================
+     SYSTEM REQUIREMENTS
+========================= -->
 
-<div class="video-box">
+<section class="section">
 
-<iframe
-src="https://www.youtube.com/embed/gf5h4co4Ydc"
-title="Far Cry 2 - Launch Trailer"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
+```
+<h2 class="section-title">
+    System Requirements
+</h2>
+
+<div class="requirements">
+
+    <div class="req-card">
+
+        <h3>
+            <span>MINIMUM</span> REQUIREMENTS
+        </h3>
+
+        <div class="req-row">
+            <span>OS</span>
+            <span>Windows XP / Vista</span>
+        </div>
+
+        <div class="req-row">
+            <span>CPU</span>
+            <span>Intel Pentium 4 3.2 GHz</span>
+        </div>
+
+        <div class="req-row">
+            <span>RAM</span>
+            <span>1 GB</span>
+        </div>
+
+        <div class="req-row">
+            <span>GPU</span>
+            <span>256 MB DirectX 10</span>
+        </div>
+
+        <div class="req-row">
+            <span>Storage</span>
+            <span>12 GB</span>
+        </div>
+
+    </div>
+
+
+    <div class="req-card">
+
+        <h3>
+            <span>RECOMMENDED</span> REQUIREMENTS
+        </h3>
+
+        <div class="req-row">
+            <span>OS</span>
+            <span>Windows Vista / 7</span>
+        </div>
+
+        <div class="req-row">
+            <span>CPU</span>
+            <span>Intel Core 2 Duo</span>
+        </div>
+
+        <div class="req-row">
+            <span>RAM</span>
+            <span>2 GB</span>
+        </div>
+
+        <div class="req-row">
+            <span>GPU</span>
+            <span>512 MB DirectX 10</span>
+        </div>
+
+        <div class="req-row">
+            <span>Storage</span>
+            <span>12 GB</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- DOWNLOAD BOX -->
+
+<div class="download-box">
+
+    <div>
+
+        <h2>
+            Ready to Play?
+        </h2>
+
+        <p>
+            Get Far Cry 2 from an authorized source or use your
+            legally obtained installation files.
+        </p>
+
+    </div>
+
+    <a
+        class="btn btn-red"
+        href="https://www.ubisoft.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        VISIT OFFICIAL SOURCE
+    </a>
 
 </div>
 
-<!-- ABOUT GAME -->
 
-<h2 class="section-title">About Game</h2>
+<div class="note">
 
-<p class="text">
-Far Cry 2 is an open-world first-person shooter set in an African
-environment. Players take on the role of a mercenary sent into a
-conflict between rival factions.
-</p>
+    <strong style="color:#ddd;">
+        Note:
+    </strong>
 
-<p class="text" style="margin-top:15px;">
-The game features a large explorable world with vehicles, weapons,
-dynamic weather, stealth options and missions that can be approached
-in different ways.
-</p>
-
-<!-- FEATURES -->
-
-<h2 class="section-title">Features</h2>
-
-<div class="features">
-
-<div class="feature">🌍 Large open-world African environment</div>
-<div class="feature">🔫 Wide selection of weapons</div>
-<div class="feature">🚙 Drive vehicles across the map</div>
-<div class="feature">🔥 Dynamic fire and environmental effects</div>
-<div class="feature">🎯 Flexible mission approaches</div>
-<div class="feature">🗺️ Explore villages, deserts and wilderness</div>
+    QEVRANO PC GAMES is a gaming information and discovery website.
+    Make sure you have the appropriate rights or a legitimate copy
+    of a game before downloading, installing, or distributing it.
 
 </div>
+```
 
-<!-- MINIMUM REQUIREMENTS -->
+</section>
 
-<h2 class="section-title">Minimum Requirements</h2>
+</main>
 
-<table class="requirements">
-
-<tr>
-<th>Component</th>
-<th>Minimum</th>
-</tr>
-
-<tr>
-<td>Operating System</td>
-<td>Windows XP SP2 / Vista</td>
-</tr>
-
-<tr>
-<td>Processor</td>
-<td>Intel Pentium 4 3.2 GHz / AMD Athlon 64 3500+</td>
-</tr>
-
-<tr>
-<td>Memory</td>
-<td>1 GB RAM</td>
-</tr>
-
-<tr>
-<td>Graphics</td>
-<td>256 MB DirectX 9.0c compatible graphics card</td>
-</tr>
-
-<tr>
-<td>DirectX</td>
-<td>DirectX 9.0c</td>
-</tr>
-
-<tr>
-<td>Storage</td>
-<td>12 GB available space</td>
-</tr>
-
-</table>
-
-<!-- RECOMMENDED REQUIREMENTS -->
-
-<h2 class="section-title">Recommended Requirements</h2>
-
-<table class="requirements">
-
-<tr>
-<th>Component</th>
-<th>Recommended</th>
-</tr>
-
-<tr>
-<td>Operating System</td>
-<td>Windows Vista / Windows 7</td>
-</tr>
-
-<tr>
-<td>Processor</td>
-<td>Intel Core 2 Duo 2.6 GHz / AMD Athlon 64 X2 5200+</td>
-</tr>
-
-<tr>
-<td>Memory</td>
-<td>2 GB RAM</td>
-</tr>
-
-<tr>
-<td>Graphics</td>
-<td>512 MB DirectX 10 compatible graphics card</td>
-</tr>
-
-<tr>
-<td>DirectX</td>
-<td>DirectX 10</td>
-</tr>
-
-<tr>
-<td>Storage</td>
-<td>12 GB available space</td>
-</tr>
-
-</table>
-
-<p class="note">
-These are historical PC requirements for the original release.
-Modern Windows compatibility and performance may vary.
-</p>
-
-<div class="tagline">
-ENTER THE WILD.<br>
-EXPLORE • SURVIVE • DISCOVER
-</div>
-
-</div>
-</div>
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-© 2026 QEVRANO PC GAMES — All Rights Reserved
+
+```
+<strong>QE<span>V</span>RANO PC GAMES</strong>
+
+<br><br>
+
+© 2026 QEVRANO PC GAMES. All rights reserved.
+```
+
 </footer>
 
-<!-- IMAGE MODAL -->
+<!-- =========================
+     IMAGE MODAL
+========================= -->
 
 <div
-class="modal"
-id="imageModal"
-onclick="closeImage()">
+    id="imageModal"
+    class="modal"
+    onclick="closeImage()"
+>
 
-<span class="close">×</span>
+```
+<span class="close">
+    &times;
+</span>
 
 <img
-id="modalImage"
-src=""
-alt="Screenshot Preview">
+    id="modalImage"
+    src=""
+    alt="Full Screenshot"
+    onclick="event.stopPropagation()"
+>
+```
 
 </div>
 
 <script>
 
 /* =========================
-   GAME DATABASE
-   ========================= */
+   SEARCH DATABASE
+========================= */
 
 const games = [
 
-{
-name:"Far Cry 2",
-file:"farcry2.html"
-},
+    {
+        name:"Far Cry 2",
+        url:"farcry2.html"
+    },
 
-{
-name:"Far Cry 3",
-file:"farcry3.html"
-},
+    {
+        name:"Far Cry 3",
+        url:"farcry3.html"
+    },
 
-{
-name:"Assassin's Creed II",
-file:"ac2.html"
-},
+    {
+        name:"Assassin's Creed II",
+        url:"assassins-creed-2.html"
+    },
 
-{
-name:"GTA V",
-file:"gta5.html"
-},
+    {
+        name:"Grand Theft Auto V",
+        url:"gta5.html"
+    },
 
-{
-name:"GTA IV",
-file:"gta4.html"
-},
+    {
+        name:"Grand Theft Auto IV",
+        url:"gta4.html"
+    },
 
-{
-name:"FIFA",
-file:"fifa.html"
-},
+    {
+        name:"FIFA",
+        url:"fifa.html"
+    },
 
-{
-name:"Don Bradman Cricket",
-file:"cricket.html"
-},
+    {
+        name:"Don Bradman Cricket",
+        url:"don-bradman-cricket.html"
+    },
 
-{
-name:"Call of Duty 1",
-file:"cod1.html"
-},
+    {
+        name:"Call of Duty 1",
+        url:"call-of-duty-1.html"
+    },
 
-{
-name:"The Witcher 2",
-file:"witcher2.html"
-}
+    {
+        name:"The Witcher 2",
+        url:"the-witcher-2.html"
+    }
 
 ];
 
 
 /* =========================
    SEARCH TOGGLE
-   ========================= */
+========================= */
 
 function toggleSearch(){
 
-const searchBox =
-document.getElementById("headerSearch");
+    const box =
+        document.getElementById("searchBox");
 
-const input =
-document.getElementById("headerSearchInput");
+    if(box.style.display === "block"){
 
-searchBox.classList.toggle("active");
+        box.style.display = "none";
 
-if(searchBox.classList.contains("active")){
+        document
+            .getElementById("searchResults")
+            .style.display = "none";
 
-input.focus();
+    }else{
 
-}
+        box.style.display = "block";
+
+        box.focus();
+
+    }
 
 }
 
 
 /* =========================
    SEARCH
-   ========================= */
+========================= */
 
-const searchInput =
-document.getElementById("headerSearchInput");
+function searchGames(){
 
-const searchResults =
-document.getElementById("headerSearchResults");
+    const input =
+        document
+        .getElementById("searchBox")
+        .value
+        .toLowerCase()
+        .trim();
 
+    const results =
+        document.getElementById("searchResults");
 
-searchInput.addEventListener("input",function(){
+    results.innerHTML = "";
 
-const search =
-searchInput.value
-.toLowerCase()
-.trim();
+    if(!input){
 
-searchResults.innerHTML="";
+        results.style.display = "none";
 
+        return;
 
-if(search===""){
+    }
 
-searchResults.style.display="none";
+    const matches =
+        games.filter(game =>
+            game.name
+            .toLowerCase()
+            .includes(input)
+        );
 
-return;
+    if(matches.length === 0){
+
+        results.innerHTML =
+            '<div class="search-result">No games found</div>';
+
+        results.style.display = "block";
+
+        return;
+
+    }
+
+    matches.forEach(game => {
+
+        const link =
+            document.createElement("a");
+
+        link.className = "search-result";
+
+        link.href = game.url;
+
+        link.textContent = game.name;
+
+        results.appendChild(link);
+
+    });
+
+    results.style.display = "block";
 
 }
-
-
-/* ONLY MATCH BEGINNING OF NAME */
-
-const matches =
-games.filter(game =>
-game.name
-.toLowerCase()
-.startsWith(search)
-);
-
-
-if(matches.length===0){
-
-searchResults.innerHTML =
-'<div class="search-no-result">No games found</div>';
-
-searchResults.style.display="block";
-
-return;
-
-}
-
-
-matches.forEach(game=>{
-
-const link =
-document.createElement("a");
-
-link.className="search-result";
-
-link.href=game.file;
-
-link.textContent=game.name;
-
-searchResults.appendChild(link);
-
-});
-
-
-searchResults.style.display="block";
-
-});
 
 
 /* =========================
-   ENTER KEY
-   ========================= */
-
-searchInput.addEventListener("keydown",function(event){
-
-if(event.key!=="Enter"){
-return;
-}
-
-const search =
-searchInput.value
-.toLowerCase()
-.trim();
-
-const match =
-games.find(game =>
-game.name
-.toLowerCase()
-.startsWith(search)
-);
-
-if(match){
-
-window.location.href=match.file;
-
-}
-
-});
-
-
-/* =========================
-   CLICK OUTSIDE SEARCH
-   ========================= */
-
-document.addEventListener("click",function(event){
-
-const searchContainer =
-document.querySelector(".search-container");
-
-if(!searchContainer.contains(event.target)){
-
-document
-.getElementById("headerSearch")
-.classList.remove("active");
-
-}
-
-});
-
-
-/* =========================
-   IMAGE VIEWER
-   ========================= */
+   IMAGE MODAL
+========================= */
 
 function openImage(src){
 
-document.getElementById("modalImage").src=src;
+    document
+        .getElementById("modalImage")
+        .src = src;
 
-document.getElementById("imageModal").style.display="flex";
+    document
+        .getElementById("imageModal")
+        .style.display = "flex";
 
 }
 
 
 function closeImage(){
 
-document.getElementById("imageModal").style.display="none";
+    document
+        .getElementById("imageModal")
+        .style.display = "none";
 
 }
+
+
+/* =========================
+   ESCAPE KEY
+========================= */
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+
+        closeImage();
+
+        document
+            .getElementById("searchBox")
+            .style.display = "none";
+
+        document
+            .getElementById("searchResults")
+            .style.display = "none";
+
+    }
+
+});
 
 </script>
 
