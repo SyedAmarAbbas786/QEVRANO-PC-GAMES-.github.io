@@ -24,30 +24,29 @@ body {
         url("./images/cricket-bg.jpg") center/cover fixed;
 }
 
-/* ================= HEADER ================= */
-
 header {
     height: 70px;
     background: rgba(0,0,0,0.92);
     border-bottom: 1px solid #00b7ff;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 0 6%;
-
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .logo {
-    color: #00b7ff;
+    color: #fff;
     font-size: 23px;
     font-weight: bold;
     text-decoration: none;
     letter-spacing: 1px;
+}
+
+.logo span {
+    color: #00b7ff;
 }
 
 nav {
@@ -67,8 +66,6 @@ nav a:hover {
     color: #00b7ff;
 }
 
-/* ================= CONTAINER ================= */
-
 .container {
     width: 92%;
     max-width: 1250px;
@@ -87,8 +84,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* ================= MAIN ================= */
-
 .main-content {
     background: rgba(10,10,10,0.88);
     border: 1px solid rgba(255,255,255,0.08);
@@ -96,8 +91,6 @@ nav a:hover {
     padding: 25px;
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
-
-/* ================= HERO ================= */
 
 .hero {
     display: grid;
@@ -131,8 +124,6 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-/* ================= GAME META ================= */
-
 .game-meta {
     display: flex;
     flex-wrap: wrap;
@@ -148,8 +139,6 @@ nav a:hover {
     font-size: 13px;
     color: #ccc;
 }
-
-/* ================= DOWNLOAD ================= */
 
 .download-buttons {
     display: flex;
@@ -187,22 +176,18 @@ nav a:hover {
     color: #000;
 }
 
-/* ================= HIGHLY COMPRESSED ================= */
-
 .compressed-link {
     display: block;
     margin-top: 8px;
     color: #00b7ff;
-    text-decoration: underline;
     font-size: 14px;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .compressed-link:hover {
     color: #fff;
 }
-
-/* ================= SECTION ================= */
 
 .section {
     margin-top: 35px;
@@ -221,8 +206,6 @@ nav a:hover {
     line-height: 1.8;
 }
 
-/* ================= SCREENSHOTS ================= */
-
 .screenshot-area {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 300px;
@@ -240,12 +223,9 @@ nav a:hover {
     width: 100%;
     height: 190px;
     object-fit: cover;
-
     border-radius: 7px;
     cursor: pointer;
-
     border: 1px solid rgba(255,255,255,0.1);
-
     transition: 0.3s;
 }
 
@@ -254,29 +234,21 @@ nav a:hover {
     border-color: #00b7ff;
 }
 
-/* ================= BIG AD ================= */
-
 .big-ad {
     width: 300px;
     height: 600px;
-
     background: rgba(255,255,255,0.035);
-
     border: 1px dashed #666;
     border-radius: 8px;
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
     text-align: center;
-
     color: #777;
-
     padding: 20px;
-
     font-size: 14px;
 }
 
@@ -285,18 +257,12 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
-/* ================= VIDEO ================= */
-
 .video-box {
     width: 100%;
     aspect-ratio: 16 / 9;
-
     background: #050505;
-
     border: 1px solid rgba(255,255,255,0.1);
-
     border-radius: 8px;
-
     overflow: hidden;
 }
 
@@ -306,8 +272,6 @@ nav a:hover {
     border: 0;
 }
 
-/* ================= FEATURES ================= */
-
 .features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -316,13 +280,9 @@ nav a:hover {
 
 .feature {
     background: rgba(255,255,255,0.035);
-
     border: 1px solid rgba(255,255,255,0.08);
-
     padding: 15px;
-
     border-radius: 6px;
-
     color: #ccc;
 }
 
@@ -333,8 +293,6 @@ nav a:hover {
     margin-right: 8px;
 }
 
-/* ================= REQUIREMENTS ================= */
-
 .requirements {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -343,11 +301,8 @@ nav a:hover {
 
 .requirement-box {
     background: rgba(255,255,255,0.035);
-
     border: 1px solid rgba(255,255,255,0.08);
-
     border-radius: 7px;
-
     padding: 20px;
 }
 
@@ -365,43 +320,27 @@ nav a:hover {
     color: #00b7ff;
 }
 
-/* ================= TAGLINE ================= */
-
 .tagline {
     text-align: center;
-
     margin: 45px 0 10px;
-
     color: #777;
-
     line-height: 1.8;
-
     letter-spacing: 1px;
 }
 
 .tagline strong {
     display: block;
-
     color: #00b7ff;
-
     font-size: 25px;
-
     letter-spacing: 2px;
 }
 
-/* ================= FOOTER ================= */
-
 footer {
     text-align: center;
-
     padding: 25px;
-
     margin-top: 30px;
-
     color: #666;
-
     font-size: 13px;
-
     border-top: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -416,53 +355,36 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ================= MODAL ================= */
-
 .modal {
     display: none;
-
     position: fixed;
-
     z-index: 2000;
-
     inset: 0;
-
     background: rgba(0,0,0,0.92);
-
     align-items: center;
-
     justify-content: center;
-
     padding: 30px;
 }
 
 .modal img {
     max-width: 90%;
     max-height: 90%;
-
     border-radius: 7px;
-
     box-shadow: 0 0 40px rgba(0,183,255,0.2);
 }
 
 .close {
     position: absolute;
-
     top: 20px;
     right: 30px;
-
     color: white;
-
     font-size: 40px;
-
     cursor: pointer;
 }
 
 .close:hover {
     color: #00b7ff;
 }
-
-/* ================= MOBILE ================= */
 
 @media(max-width: 900px) {
 
@@ -536,12 +458,10 @@ footer a:hover {
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header>
 
     <a href="./index.html" class="logo">
-        QEVRANO PC GAMES
+        QEVRANO <span>PC GAMES</span>
     </a>
 
     <nav>
@@ -561,8 +481,6 @@ footer a:hover {
 
     <main class="main-content">
 
-        <!-- ================= HERO ================= -->
-
         <section class="hero">
 
             <img
@@ -572,18 +490,18 @@ footer a:hover {
 
             <div class="hero-info">
 
-                <h1>DON BRADMAN CRICKET</h1>
+                <h1>Don Bradman Cricket</h1>
 
                 <div class="subtitle">
                     DON BRADMAN CRICKET • SPORTS • CRICKET
                 </div>
 
                 <p class="description">
-                    Don Bradman Cricket delivers a detailed cricket
-                    experience with batting, bowling, fielding and
-                    realistic match gameplay. Build your team, compete
-                    across different match formats and experience the
-                    challenge of cricket from the pitch.
+                    Don Bradman Cricket delivers an immersive cricket
+                    experience with realistic gameplay, detailed controls
+                    and a wide variety of cricketing options. Create your
+                    own player, build your career and experience the game
+                    from the pitch to the championship.
                 </p>
 
                 <div class="game-meta">
@@ -597,7 +515,7 @@ footer a:hover {
                     </div>
 
                     <div class="meta">
-                        Release: 2014
+                        Release: 2014 PC
                     </div>
 
                     <div class="meta">
@@ -609,7 +527,6 @@ footer a:hover {
 
                 <div class="download-buttons">
 
-                    <!-- Official / legitimate source -->
                     <a
                         href="https://store.steampowered.com/"
                         class="download-btn official"
@@ -618,7 +535,6 @@ footer a:hover {
                     >
                         DOWNLOAD OFFICIAL
                     </a>
-
 
                     <div>
 
@@ -645,8 +561,6 @@ footer a:hover {
 
         </section>
 
-
-        <!-- ================= SCREENSHOTS ================= -->
 
         <section class="section">
 
@@ -683,21 +597,15 @@ footer a:hover {
                 </div>
 
 
-                <!-- BIG AD SPACE -->
-
                 <div class="big-ad">
 
                     <strong>ADVERTISEMENT</strong>
 
-                    <span>
-                        BIG AD SPACE
-                    </span>
+                    <span>BIG AD SPACE</span>
 
                     <br>
 
-                    <small>
-                        300 × 600
-                    </small>
+                    <small>300 × 600</small>
 
                 </div>
 
@@ -705,8 +613,6 @@ footer a:hover {
 
         </section>
 
-
-        <!-- ================= INSTALLATION VIDEO ================= -->
 
         <section class="section">
 
@@ -725,31 +631,27 @@ footer a:hover {
         </section>
 
 
-        <!-- ================= ABOUT GAME ================= -->
-
         <section class="section">
 
             <h2>ABOUT GAME</h2>
 
             <p>
-                Don Bradman Cricket is a cricket simulation developed by
-                Big Ant Studios. The game focuses on realistic cricket
-                gameplay and gives players control over batting, bowling
-                and fielding.
+                Don Bradman Cricket is a cricket simulation game designed
+                to provide players with a detailed and realistic cricket
+                experience. Players can compete in different formats and
+                customize their cricketing experience.
             </p>
 
             <br>
 
             <p>
-                Players can take part in different match formats, create
-                and customize players and teams, and compete through
-                cricket-focused game modes.
+                The game features detailed batting and bowling controls,
+                player customization and multiple cricketing modes for
+                players looking for an authentic cricket simulation.
             </p>
 
         </section>
 
-
-        <!-- ================= FEATURES ================= -->
 
         <section class="section">
 
@@ -758,35 +660,33 @@ footer a:hover {
             <div class="features">
 
                 <div class="feature">
-                    Realistic batting mechanics
+                    Realistic cricket gameplay
                 </div>
 
                 <div class="feature">
-                    Bowling and fielding controls
+                    Detailed batting controls
                 </div>
 
                 <div class="feature">
-                    Multiple cricket match formats
+                    Advanced bowling controls
                 </div>
 
                 <div class="feature">
-                    Player and team customization
+                    Player customization
                 </div>
 
                 <div class="feature">
-                    Career-focused gameplay
+                    Multiple cricket formats
                 </div>
 
                 <div class="feature">
-                    Detailed cricket stadiums
+                    Career and tournament modes
                 </div>
 
             </div>
 
         </section>
 
-
-        <!-- ================= MINIMUM REQUIREMENTS ================= -->
 
         <section class="section">
 
@@ -800,13 +700,12 @@ footer a:hover {
 
                     <p>
                         <strong>OS:</strong>
-                        Windows 7 / 8 / 8.1
+                        Windows 7
                     </p>
 
                     <p>
                         <strong>CPU:</strong>
-                        Intel Core 2 Duo 2.4 GHz
-                        or equivalent AMD processor
+                        Intel Core 2 Duo
                     </p>
 
                     <p>
@@ -816,18 +715,18 @@ footer a:hover {
 
                     <p>
                         <strong>GPU:</strong>
-                        NVIDIA GeForce 8800 GT
-                        or equivalent
+                        NVIDIA GeForce GTX 260 /
+                        AMD Radeon HD 5770
                     </p>
 
                     <p>
-                        <strong>VRAM:</strong>
-                        512 MB
+                        <strong>DirectX:</strong>
+                        Version 9.0c
                     </p>
 
                     <p>
                         <strong>Storage:</strong>
-                        Approximately 8 GB
+                        15 GB
                     </p>
 
                 </div>
@@ -836,8 +735,6 @@ footer a:hover {
 
         </section>
 
-
-        <!-- ================= RECOMMENDED REQUIREMENTS ================= -->
 
         <section class="section">
 
@@ -851,13 +748,12 @@ footer a:hover {
 
                     <p>
                         <strong>OS:</strong>
-                        Windows 7 / 8 / 8.1
+                        Windows 7 / 8 / 10
                     </p>
 
                     <p>
                         <strong>CPU:</strong>
                         Intel Core i5
-                        or equivalent AMD processor
                     </p>
 
                     <p>
@@ -867,34 +763,26 @@ footer a:hover {
 
                     <p>
                         <strong>GPU:</strong>
-                        NVIDIA GeForce GTX 560
-                        or equivalent
+                        NVIDIA GeForce GTX 660 /
+                        AMD Radeon HD 7870
                     </p>
 
                     <p>
-                        <strong>VRAM:</strong>
-                        1 GB
+                        <strong>DirectX:</strong>
+                        Version 11
                     </p>
 
                     <p>
                         <strong>Storage:</strong>
-                        Approximately 8 GB
+                        15 GB
                     </p>
 
                 </div>
 
             </div>
 
-            <p style="margin-top:15px;font-size:13px;color:#777;">
-                These requirements are intended as general PC guidance.
-                Compatibility and performance can vary depending on the
-                Windows version and hardware configuration.
-            </p>
-
         </section>
 
-
-        <!-- ================= TAGLINE ================= -->
 
         <div class="tagline">
 
@@ -902,7 +790,7 @@ footer a:hover {
                 STEP ONTO THE PITCH.
             </strong>
 
-            BAT • BOWL • FIELD
+            BAT • BOWL • WIN
 
             <br>
 
@@ -914,8 +802,6 @@ footer a:hover {
 
 </div>
 
-
-<!-- ================= IMAGE MODAL ================= -->
 
 <div
     class="modal"
@@ -936,8 +822,6 @@ footer a:hover {
 
 </div>
 
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
