@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Far Cry 2 Download - QEVRANO PC GAMES</title>
+<title>Far Cry 3 - QEVRANO PC GAMES</title>
 
 <style>
 *{
@@ -16,325 +17,203 @@
 body{
     font-family:Arial,Helvetica,sans-serif;
     color:#eee;
-    min-height:100vh;
     background:
-        linear-gradient(rgba(5,8,15,.90),rgba(5,8,15,.96)),
-        url("./images/farcry2-bg.jpg") center/cover fixed no-repeat;
-}
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(5,10,18,.97);
-    border-bottom:1px solid #00b7ff;
-    padding:18px 7%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    color:#00b7ff;
-    font-size:25px;
-    font-weight:bold;
-    letter-spacing:1px;
-}
-
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin-left:25px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#00b7ff;
+        linear-gradient(rgba(5,8,15,.88),rgba(5,8,15,.95)),
+        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    min-height:100vh;
 }
 
 .container{
     width:90%;
-    max-width:900px;
-    margin:60px auto;
+    max-width:1100px;
+    margin:auto;
+    padding:40px 0;
 }
 
-.download-panel{
-    background:rgba(8,13,23,.96);
-    border:1px solid rgba(0,183,255,.45);
+.card{
+    background:rgba(15,20,30,.94);
+    border:1px solid rgba(255,255,255,.12);
     border-radius:15px;
-    padding:45px 35px;
+    padding:35px;
+    box-shadow:0 15px 50px rgba(0,0,0,.5);
+}
+
+h1{
     text-align:center;
-    box-shadow:
-        0 0 35px rgba(0,0,0,.6),
-        0 0 20px rgba(0,183,255,.08);
-}
-
-.download-panel h1{
-    color:#fff;
-    font-size:40px;
-    margin-bottom:12px;
-}
-
-.subtitle{
-    color:#00b7ff;
-    font-size:18px;
-    margin-bottom:30px;
-}
-
-.game-name{
-    display:inline-block;
-    padding:12px 25px;
-    background:#101b28;
-    border:1px solid #26394a;
-    border-radius:8px;
-    color:#fff;
-    font-size:22px;
-    font-weight:bold;
-    margin-bottom:25px;
-}
-
-.message{
-    color:#bbb;
-    line-height:1.7;
-    max-width:650px;
-    margin:0 auto;
-}
-
-.arrow{
-    font-size:80px;
-    line-height:1;
-    color:#00b7ff;
-    margin:25px 0 18px;
-    animation:bounce 1.2s infinite;
-    text-shadow:0 0 15px rgba(0,183,255,.45);
-}
-
-@keyframes bounce{
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(12px);
-    }
-}
-
-.download-box{
-    background:rgba(15,24,36,.95);
-    border:1px solid rgba(0,183,255,.4);
-    border-radius:12px;
-    padding:28px;
-    max-width:600px;
-    margin:0 auto;
-}
-
-.download-box h2{
-    color:#00b7ff;
-    font-size:24px;
+    font-size:38px;
     margin-bottom:10px;
 }
 
-.download-box p{
-    color:#9daab7;
-    margin-bottom:20px;
+.subtitle{
+    text-align:center;
+    color:#aaa;
+    margin-bottom:30px;
+}
+
+.game-info{
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.game-info strong{
+    color:#fff;
+}
+
+.warning{
+    background:rgba(255,170,0,.1);
+    border:1px solid rgba(255,170,0,.35);
+    padding:18px;
+    border-radius:10px;
+    margin-bottom:25px;
+    color:#ddd;
+}
+
+.video-box{
+    text-align:center;
+    margin:30px 0;
+}
+
+.video-box h2{
+    margin-bottom:15px;
+}
+
+.download-area{
+    text-align:center;
+    margin-top:30px;
 }
 
 .download-btn{
     display:inline-block;
     padding:16px 35px;
+    margin:10px;
     border-radius:8px;
     text-decoration:none;
     font-weight:bold;
     font-size:17px;
+    transition:.2s;
+}
+
+.official{
+    background:#333;
     color:#fff;
-    background:#087caf;
-    border:1px solid #00b7ff;
-    transition:.3s;
-    box-shadow:0 0 15px rgba(0,183,255,.12);
 }
 
-.download-btn:hover{
-    background:#00b7ff;
-    color:#001018;
-    transform:translateY(-3px);
-    box-shadow:0 0 25px rgba(0,183,255,.3);
+.official:hover{
+    background:#444;
 }
 
-.info{
-    margin-top:30px;
-    padding:18px;
-    background:rgba(20,30,42,.75);
-    border-radius:8px;
-    border-left:3px solid #00b7ff;
-    text-align:left;
+.mega{
+    background:#e42529;
+    color:#fff;
 }
 
-.info p{
-    color:#aaa;
-    line-height:1.7;
+.mega:hover{
+    background:#ff3438;
+    transform:translateY(-2px);
+}
+
+.note{
+    color:#999;
     font-size:14px;
-}
-
-.info strong{
-    color:#00b7ff;
+    margin-top:15px;
 }
 
 .back{
-    margin-top:30px;
-}
-
-.back a{
-    color:#8fa2b3;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.back a:hover{
-    color:#00b7ff;
-}
-
-footer{
+    display:block;
     text-align:center;
-    padding:30px;
-    margin-top:40px;
-    color:#718496;
-    border-top:1px solid #182635;
+    margin-top:30px;
+    color:#aaa;
+    text-decoration:none;
+}
+
+.back:hover{
+    color:#fff;
 }
 
 @media(max-width:600px){
-
-    header{
-        padding:15px 5%;
+    .card{
+        padding:22px;
     }
 
-    .logo{
-        font-size:19px;
-    }
-
-    nav a{
-        margin-left:10px;
-        font-size:13px;
-    }
-
-    .container{
-        width:94%;
-        margin:35px auto;
-    }
-
-    .download-panel{
-        padding:35px 18px;
-    }
-
-    .download-panel h1{
+    h1{
         font-size:30px;
     }
 
-    .subtitle{
-        font-size:16px;
-    }
-
-    .arrow{
-        font-size:60px;
-    }
-
     .download-btn{
-        width:100%;
-        padding:15px 20px;
+        display:block;
+        margin:12px auto;
     }
 }
 </style>
+
 </head>
 
 <body>
 
-<header>
-
-    <div class="logo">
-        QEVRANO PC GAMES
-    </div>
-
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="index.html">GAMES</a>
-    </nav>
-
-</header>
-
-
 <div class="container">
 
-    <div class="download-panel">
+<div class="card">
 
-        <h1>
-            DOWNLOAD
-        </h1>
+<h1>Far Cry 3</h1>
 
-        <div class="subtitle">
-            Your download is ready
-        </div>
+<p class="subtitle">QEVRANO PC GAMES</p>
 
-        <div class="game-name">
-            Far Cry 2
-        </div>
+<div class="game-info">
 
-        <p class="message">
-            You are one step away from accessing the Far Cry 2
-            download. Click the button below to continue.
-        </p>
-
-        <div class="arrow">
-            ↓
-        </div>
-
-        <div class="download-box">
-
-            <h2>
-                Far Cry 2 Setup
-            </h2>
-
-            <p>
-                Click the button below to access the setup file.
-            </p>
-
-            <a
-                href="https://mega.nz/file/gvoiBAib#ojL_AZX9vbXG94fRrlKuWm8u8024CZZoj68pos8FkQw"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="download-btn">
-
-                ⬇ DOWNLOAD SETUP.EXE
-
-            </a>
-
-        </div>
-
-        <div class="info">
-
-            <p>
-                <strong>Important:</strong>
-                Make sure the file you're downloading is the
-                Far Cry 2 setup you intended to upload.
-            </p>
-
-        </div>
-
-        <div class="back">
-
-            <a href="farcry2.html">
-                ← Back to Far Cry 2
-            </a>
-
-        </div>
-
-    </div>
+<p><strong>Game:</strong> Far Cry 3</p>
+<p><strong>Genre:</strong> Action / Adventure / Open World</p>
+<p><strong>Platform:</strong> PC</p>
 
 </div>
 
+<div class="warning">
+<strong>Important:</strong> Only download and use game files that you have the right to access. 
+For the official version, use the publisher's or authorized store's download option.
+</div>
 
-<footer>
-    © 2026 QEVRANO PC GAMES — All Rights Reserved
-</footer>
+<div class="video-box">
+
+<h2>Installation Guide</h2>
+
+<p>Watch the installation instructions before installing the game.</p>
+
+<!-- Replace the # below with your YouTube installation-video link -->
+
+<a href="#" class="download-btn official">
+    MUST WATCH INSTALLATION VIDEO
+</a>
+
+</div>
+
+<div class="download-area">
+
+<h2>Download</h2>
+
+<!-- Your new Mega link -->
+
+<a
+href="https://mega.nz/file/gvoiBAib#ojL_AZX9vbXG94fRrlKuWm8u8024CZZoj68pos8FkQw"
+class="download-btn mega"
+target="_blank"
+rel="noopener noreferrer">
+DOWNLOAD SETUP </a>
+
+<p class="note">
+Click the button above to open the Mega download page.
+</p>
+
+</div>
+
+<a href="./index.html" class="back">
+    ← Back to PC Games
+</a>
+
+</div>
+
+</div>
 
 </body>
 </html>
