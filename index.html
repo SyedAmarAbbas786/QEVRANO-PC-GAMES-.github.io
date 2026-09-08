@@ -42,6 +42,8 @@ header{
     top:0;
     left:0;
 
+    margin:0;
+
     z-index:1000;
 
     display:flex;
@@ -114,23 +116,6 @@ nav a:hover{
 
 nav a:hover::after{
     width:100%;
-}
-
-.price-btn{
-    border:1px solid #6b1717;
-
-    padding:8px 14px;
-
-    border-radius:6px;
-
-    background:#100707;
-
-    cursor:pointer;
-}
-
-.price-btn:hover{
-    background:#e00000;
-    border-color:#e00000;
 }
 
 /* =========================
@@ -866,10 +851,9 @@ nav a:hover::after{
 
 footer{
     width:100%;
-
     margin:0;
 
-    padding:32px 5% 18px;
+    padding:32px 0 18px;
 
     background:
         linear-gradient(
@@ -1025,6 +1009,7 @@ footer{
 @media(max-width:700px){
 
     header{
+        width:100%;
         height:68px;
 
         padding:0 18px;
@@ -1159,14 +1144,6 @@ footer{
 
         <a href="#about">
             ABOUT
-        </a>
-
-        <a
-            href="javascript:void(0)"
-            class="price-btn"
-            onclick="openPriceFilter()"
-        >
-            PRICE
         </a>
 
     </nav>
