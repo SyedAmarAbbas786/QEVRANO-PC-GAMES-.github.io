@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+<title>
+    Warframe - QEVRANO PC GAMES
+</title>
+
+<meta
+name="description"
+content="Warframe official free-to-play PC game information, trailer, screenshots and official download source."
+
+>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    background:#070707;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#070707;
+    color:#eee;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#070707;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#d80000;
+    border-radius:10px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    min-height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    background:rgba(7,7,7,.94);
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(255,0,0,.18);
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+
+    font-size:24px;
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#e00000;
+}
+
+.logo small{
+    display:block;
+
+    color:#666;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    margin-top:3px;
+}
+
+header nav{
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+}
+
+header nav a{
+    color:#aaa;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+header nav a:hover{
+    color:#ff2020;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    position:relative;
+
+    min-height:570px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,3,3,.95),
+            rgba(5,5,5,.62),
+            rgba(3,3,3,.96)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.9),
+            transparent 55%
+        ),
+        url("./images/warframe-bg.jpg") center/cover;
+}
+
+.hero:after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:160px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #070707
+        );
+
+    pointer-events:none;
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+    width:100%;
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    padding:8px 17px;
+
+    border:1px solid rgba(255,0,0,.45);
+
+    border-radius:30px;
+
+    background:rgba(130,0,0,.13);
+
+    color:#ff2929;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+
+    font-size:clamp(
+        48px,
+        8vw,
+        88px
+    );
+
+    line-height:.92;
+
+    font-weight:1000;
+
+    letter-spacing:-4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+    text-shadow:
+        0 10px 50px rgba(0,0,0,.95);
+}
+
+.hero h1 span{
+    color:#e00000;
+}
+
+.hero p{
+
+    max-width:700px;
+
+    margin:0 auto 27px;
+
+    color:#aaa;
+
+    font-size:15px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 24px;
+
+    text-decoration:none;
+
+    border-radius:6px;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    letter-spacing:.6px;
+
+    transition:.25s;
+}
+
+.btn-red{
+
+    background:#d80000;
+
+    color:#fff;
+
+    border:1px solid #e00000;
+
+    box-shadow:
+        0 8px 25px rgba(220,0,0,.18);
+}
+
+.btn-red:hover{
+
+    background:#ff1717;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(220,0,0,.28);
+}
+
+.btn-dark{
+
+    background:#151515;
+
+    color:#ddd;
+
+    border:1px solid #363636;
+}
+
+.btn-dark:hover{
+
+    border-color:#d80000;
+
+    color:#fff;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.container{
+
+    width:90%;
+
+    max-width:1150px;
+
+    margin:auto;
+
+    padding-bottom:70px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+
+    margin-top:55px;
+}
+
+.section-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:27px;
+
+    margin-bottom:23px;
+}
+
+.section-title:before{
+
+    content:"";
+
+    width:5px;
+
+    height:28px;
+
+    background:#e00000;
+
+    border-radius:4px;
+
+    box-shadow:
+        0 0 15px rgba(220,0,0,.35);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-box{
+
+    padding:30px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(100,0,0,.13),
+            #101010 50%
+        );
+
+    border:1px solid #292929;
+
+    border-radius:10px;
+}
+
+.about-box p{
+
+    color:#999;
+
+    font-size:14px;
+
+    line-height:1.85;
+
+    margin-bottom:14px;
+}
+
+.about-box p:last-child{
+    margin-bottom:0;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.feature{
+
+    background:#101010;
+
+    border:1px solid #292929;
+
+    padding:25px;
+
+    border-radius:9px;
+
+    transition:.25s;
+}
+
+.feature:hover{
+
+    border-color:#d80000;
+
+    transform:translateY(-4px);
+}
+
+.feature-icon{
+
+    color:#e00000;
+
+    font-size:23px;
+
+    margin-bottom:12px;
+}
+
+.feature h3{
+
+    color:#fff;
+
+    font-size:15px;
+
+    margin-bottom:8px;
+}
+
+.feature p{
+
+    color:#777;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   SCREENSHOTS
+========================================================= */
+
+.screenshots{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:18px;
+}
+
+.screenshots img{
+
+    width:100%;
+
+    height:290px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:8px;
+
+    border:1px solid #292929;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.screenshots img:hover{
+
+    transform:scale(1.015);
+
+    border-color:#d80000;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.4);
+}
+
+
+/* =========================================================
+   TRAILER
+========================================================= */
+
+.trailer{
+
+    position:relative;
+
+    width:100%;
+
+    padding-bottom:56.25%;
+
+    height:0;
+
+    overflow:hidden;
+
+    background:#000;
+
+    border:1px solid #292929;
+
+    border-radius:10px;
+}
+
+.trailer iframe{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    border:0;
+}
+
+
+/* =========================================================
+   DOWNLOAD BOX
+========================================================= */
+
+.download-box{
+
+    text-align:center;
+
+    padding:42px 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #0d0d0d
+        );
+
+    border:1px solid #292929;
+
+    border-top:2px solid #e00000;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.35);
+}
+
+.download-box h2{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.download-box h2 span{
+    color:#e00000;
+}
+
+.download-box p{
+
+    max-width:700px;
+
+    margin:0 auto 23px;
+
+    color:#888;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+.free-badge{
+
+    display:inline-block;
+
+    padding:7px 14px;
+
+    margin-bottom:17px;
+
+    color:#fff;
+
+    background:#e00000;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+}
+
+
+/* =========================================================
+   REQUIREMENTS
+========================================================= */
+
+.requirements{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+}
+
+.requirement-box{
+
+    background:#101010;
+
+    border:1px solid #292929;
+
+    border-radius:9px;
+
+    padding:25px;
+}
+
+.requirement-box h3{
+
+    color:#e00000;
+
+    font-size:15px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    margin-bottom:15px;
+}
+
+.requirement-box p{
+
+    color:#999;
+
+    font-size:13px;
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.info-box{
+
+    background:#101010;
+
+    border:1px solid #292929;
+
+    padding:22px;
+
+    border-radius:8px;
+}
+
+.info-box span{
+
+    display:block;
+
+    color:#666;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    font-weight:900;
+
+    margin-bottom:8px;
+}
+
+.info-box strong{
+
+    color:#eee;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.notice{
+
+    padding:22px;
+
+    background:#111;
+
+    border-left:4px solid #e00000;
+
+    color:#999;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.notice strong{
+    color:#fff;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:2000;
+
+    background:rgba(0,0,0,.92);
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal img{
+
+    max-width:95%;
+
+    max-height:90vh;
+
+    object-fit:contain;
+
+    border:1px solid #333;
+
+    box-shadow:
+        0 20px 80px rgba(0,0,0,.8);
+}
+
+.modal-close{
+
+    position:absolute;
+
+    top:20px;
+
+    right:30px;
+
+    color:#fff;
+
+    font-size:35px;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    border-top:1px solid #222;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:12px;
+
+    background:#050505;
+}
+
+.footer-logo{
+
+    color:#ddd;
+
+    font-size:18px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    margin-bottom:15px;
+}
+
+.footer-logo span{
+    color:#e00000;
+}
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-bottom:20px;
+}
+
+.footer-links a{
+
+    color:#777;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    transition:.2s;
+}
+
+.footer-links a:hover{
+    color:#e00000;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:800px){
+
+    header{
+
+        min-height:auto;
+
+        padding:15px 20px;
+
+        flex-direction:column;
+
+        gap:14px;
+    }
+
+    header nav{
+        gap:18px;
+    }
+
+    .hero{
+
+        min-height:500px;
+
+        padding:65px 20px;
+    }
+
+    .hero h1{
+
+        font-size:50px;
+
+        letter-spacing:-2px;
+    }
+
+    .features{
+
+        grid-template-columns:1fr;
+    }
+
+    .screenshots{
+
+        grid-template-columns:1fr;
+    }
+
+    .requirements{
+
+        grid-template-columns:1fr;
+    }
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:450px){
+
+    .hero h1{
+        font-size:41px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+        max-width:310px;
+    }
+
+    .container{
+        width:92%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+<a href="./index.html" class="logo">
+
+```
+QE<span>V</span>RANO
+
+<small>
+    PC GAMES
+</small>
+```
+
+</a>
+
+<nav>
+
+<a href="./index.html">
+    HOME
+</a>
+
+<a href="./index.html#games">
+    GAMES
+</a>
+
+<a href="./index.html#packs">
+    PACKS
+</a>
+
+<a href="./about.html">
+    ABOUT
+</a>
+
+</nav>
+
+</header>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-badge">
+    OFFICIALLY FREE TO PLAY
+</div>
+
+<h1>
+    WAR<span>FRAME</span>
+</h1>
+
+<p>
+    A fast-paced third-person action game set in a
+    constantly evolving science-fiction universe.
+    Explore the Origin System, customize your Warframe
+    and play through missions with other players.
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="./download.html?game=warframe"
+class="btn btn-red"
+
+>
+
+```
+DOWNLOAD OFFICIAL FOR FREE
+```
+
+</a>
+
+<a
+href="#trailer"
+class="btn btn-dark"
+
+>
+
+```
+WATCH TRAILER
+```
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<div class="container">
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+    About Warframe
+</h2>
+
+<div class="about-box">
+
+<p>
+    Warframe is a free-to-play third-person action game
+    developed and published by Digital Extremes. Players
+    take the role of the Tenno and explore the Origin System
+    through missions, quests and different combat activities.
+</p>
+
+<p>
+    The game focuses on fast movement, close and ranged
+    combat, character customization and collecting equipment.
+    Players can choose from a large selection of Warframes,
+    each offering different abilities and play styles.
+</p>
+
+<p>
+    Warframe also features cooperative multiplayer and
+    cross-platform play, allowing players on supported
+    platforms to join together.
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     FEATURES
+========================================================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+    Game Features
+</h2>
+
+<div class="features">
+
+<div class="feature">
+
+<div class="feature-icon">
+    ◆
+</div>
+
+<h3>
+    Customizable Warframes
+</h3>
+
+<p>
+    Choose from a large selection of Warframes with
+    different abilities, roles and play styles.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="feature-icon">
+    ⚡
+</div>
+
+<h3>
+    Fast Combat
+</h3>
+
+<p>
+    Move across environments using fast parkour movement
+    while combining weapons and Warframe abilities.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="feature-icon">
+    ◈
+</div>
+
+<h3>
+    Online Co-op
+</h3>
+
+<p>
+    Team up with other players and work together through
+    missions across the Origin System.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     SCREENSHOTS
+========================================================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+    Screenshots
+</h2>
+
+<div class="screenshots">
+
+<img
+src="./images/warframe-1.jpg"
+alt="Warframe gameplay screenshot"
+onclick="openModal(this.src)"
+
+>
+
+<img
+src="./images/warframe-2.jpg"
+alt="Warframe gameplay screenshot"
+onclick="openModal(this.src)"
+
+>
+
+<img
+src="./images/warframe-3.jpg"
+alt="Warframe gameplay screenshot"
+onclick="openModal(this.src)"
+
+>
+
+<img
+src="./images/warframe-4.jpg"
+alt="Warframe gameplay screenshot"
+onclick="openModal(this.src)"
+
+>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     TRAILER
+========================================================= -->
+
+<section
+class="section"
+id="trailer"
+>
+
+<h2 class="section-title">
+    Official Trailer
+</h2>
+
+<div class="trailer">
+
+<iframe
+src="https://www.youtube.com/embed/bRxDf7gu97g"
+title="Warframe Tau Official Trailer"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen
+></iframe>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     DOWNLOAD
+========================================================= -->
+
+<section class="section" id="download">
+
+<div class="download-box">
+
+<div class="free-badge">
+    OFFICIALLY FREE
+</div>
+
+<h2>
+    DOWNLOAD <span>WARFRAME</span>
+</h2>
+
+<p>
+    Warframe is officially free-to-play. Continue to the
+    QEVRANO download page and then to the official Warframe
+    download source.
+</p>
+
+<a
+href="./download.html?game=warframe"
+class="btn btn-red"
+
+>
+
+```
+DOWNLOAD OFFICIAL FOR FREE
+```
+
+</a>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     GAME INFORMATION
+========================================================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+    Game Information
+</h2>
+
+<div class="info-grid">
+
+<div class="info-box">
+
+<span>
+    GENRE
+</span>
+
+<strong>
+    Action • Third-Person Shooter
+</strong>
+
+</div>
+
+<div class="info-box">
+
+<span>
+    PLATFORM
+</span>
+
+<strong>
+    Windows PC
+</strong>
+
+</div>
+
+<div class="info-box">
+
+<span>
+    MODEL
+</span>
+
+<strong>
+    Free-to-Play
+</strong>
+
+</div>
+
+<div class="info-box">
+
+<span>
+    DEVELOPER
+</span>
+
+<strong>
+    Digital Extremes
+</strong>
+
+</div>
+
+<div class="info-box">
+
+<span>
+    MULTIPLAYER
+</span>
+
+<strong>
+    Online Co-op
+</strong>
+
+</div>
+
+<div class="info-box">
+
+<span>
+    SOURCE
+</span>
+
+<strong>
+    Official Warframe
+</strong>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     SYSTEM REQUIREMENTS
+========================================================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+    System Requirements
+</h2>
+
+<div class="requirements">
+
+<div class="requirement-box">
+
+<h3>
+    Minimum
+</h3>
+
+<p>
+
+<strong>
+    OS:
+</strong>
+Windows 7 64-Bit
+<br>
+
+<strong>
+    Processor:
+</strong>
+Intel Core i7-860,
+Intel Core i5-750 or
+AMD FX-4100
+<br>
+
+<strong>
+    Memory:
+</strong>
+4 GB RAM
+<br>
+
+<strong>
+    Graphics:
+</strong>
+DirectX 11+ capable graphics card
+<br>
+
+<strong>
+    Storage:
+</strong>
+75 GB available space
+<br>
+
+<strong>
+    Internet:
+</strong>
+Broadband Internet Connection
+
+</p>
+
+</div>
+
+<div class="requirement-box">
+
+<h3>
+    Recommended
+</h3>
+
+<p>
+
+For recommended hardware,
+check the current official
+Warframe system requirements
+before installation.
+
+<br><br>
+
+Warframe's official support
+pages note that better hardware
+can provide a more optimal
+experience.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     NOTICE
+========================================================= -->
+
+<section class="section">
+
+<div class="notice">
+
+<strong>
+    Official Download Notice
+</strong>
+
+<br><br>
+
+QEVRANO PC GAMES does not host or redistribute
+Warframe game files. The download button leads to
+the official Warframe download process.
+
+Always follow the publisher's current installation
+instructions and system requirements.
+
+</div>
+
+</section>
+
+</div>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<div class="footer-logo">
+
+```
+QE<span>V</span>RANO PC GAMES
+```
+
+</div>
+
+<div class="footer-links">
+
+<a href="./index.html">
+    Home
+</a>
+
+<a href="./about.html">
+    About
+</a>
+
+<a href="./contact.html">
+    Contact
+</a>
+
+<a href="./privacy.html">
+    Privacy Policy
+</a>
+
+<a href="./terms.html">
+    Terms & Conditions
+</a>
+
+<a href="./disclaimer.html">
+    Disclaimer
+</a>
+
+</div>
+
+<p>
+    © 2026 QEVRANO PC GAMES — All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- =========================================================
+     IMAGE MODAL
+========================================================= -->
+
+<div
+class="modal"
+id="imageModal"
+onclick="closeModal()"
+>
+
+<span
+class="modal-close"
+
+>
+
+```
+×
+```
+
+</span>
+
+<img
+id="modalImage"
+src=""
+alt="Warframe screenshot"
+
+>
+
+</div>
+
+<script>
+
+function openModal(src){
+
+    const modal =
+        document.getElementById(
+            "imageModal"
+        );
+
+    const image =
+        document.getElementById(
+            "modalImage"
+        );
+
+    image.src = src;
+
+    modal.classList.add(
+        "active"
+    );
+
+}
+
+
+function closeModal(){
+
+    document
+        .getElementById(
+            "imageModal"
+        )
+        .classList.remove(
+            "active"
+        );
+
+}
+
+</script>
+
+</body>
+
+</html>
