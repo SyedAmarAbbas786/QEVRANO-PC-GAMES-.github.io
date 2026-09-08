@@ -39,9 +39,9 @@ a{
 ========================= */
 
 header{
-    width:100vw;
-    max-width:100vw;
-    height:70px;
+    width:100%;
+    max-width:100%;
+    height:72px;
 
     position:sticky;
     top:0;
@@ -165,16 +165,11 @@ nav a:hover::after{
 
 .sidebar-overlay{
     position:fixed;
-
     inset:0;
-
     z-index:1150;
-
     background:rgba(0,0,0,.58);
-
     opacity:0;
     visibility:hidden;
-
     transition:.3s;
 }
 
@@ -189,17 +184,12 @@ nav a:hover::after{
 
 .dashboard{
     position:fixed;
-
     top:0;
     left:-340px;
-
     width:320px;
     height:100vh;
-
     z-index:1200;
-
     overflow-y:auto;
-
     background:
         linear-gradient(
             180deg,
@@ -207,12 +197,9 @@ nav a:hover::after{
             #070707 60%,
             #050505
         );
-
     border-right:1px solid #571313;
-
     box-shadow:
         15px 0 45px rgba(0,0,0,.7);
-
     transition:.35s;
 }
 
@@ -222,13 +209,10 @@ nav a:hover::after{
 
 .dashboard-header{
     height:70px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     padding:0 22px;
-
     border-bottom:1px solid #351313;
 }
 
@@ -240,11 +224,8 @@ nav a:hover::after{
 .close-dashboard{
     border:0;
     background:none;
-
     color:#fff;
-
     font-size:28px;
-
     cursor:pointer;
 }
 
@@ -254,64 +235,43 @@ nav a:hover::after{
 
 .dashboard-section h3{
     font-size:11px;
-
     letter-spacing:2px;
-
     color:#e00000;
-
     margin-bottom:10px;
 }
 
 .dashboard a,
 .dashboard button{
     width:100%;
-
     display:block;
-
     padding:12px 13px;
-
     margin-bottom:5px;
-
     border:0;
     border-radius:5px;
-
     background:transparent;
-
     color:#ccc;
-
     text-align:left;
-
     font-size:13px;
-
     cursor:pointer;
-
     transition:.2s;
 }
 
 .dashboard a:hover,
 .dashboard button:hover{
     background:#180808;
-
     color:#fff;
-
     padding-left:18px;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     min-height:430px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     text-align:center;
-
     padding:80px 20px;
-
     background:
         linear-gradient(
             rgba(0,0,0,.72),
@@ -323,10 +283,8 @@ nav a:hover::after{
             rgba(0,0,0,.35)
         ),
         url("https://img.uhdpaper.com/wallpaper/assassins-creed-black-flag-resynced-edward-417%405%40p?utm_source=chatgpt.com");
-
     background-size:cover;
     background-position:center;
-
     border-bottom:1px solid #281010;
 }
 
@@ -336,11 +294,8 @@ nav a:hover::after{
 
 .hero h1{
     font-size:52px;
-
     font-weight:900;
-
     letter-spacing:2px;
-
     margin-bottom:18px;
 }
 
@@ -350,52 +305,35 @@ nav a:hover::after{
 
 .hero p{
     color:#bbb;
-
     font-size:16px;
-
     line-height:1.7;
-
     margin-bottom:28px;
 }
 
 .search-box{
     display:flex;
-
     max-width:650px;
-
     margin:auto;
 }
 
 .search-box input{
     flex:1;
-
     padding:15px 17px;
-
     border:1px solid #4b1717;
     border-right:0;
-
     border-radius:7px 0 0 7px;
-
     outline:none;
-
     background:rgba(10,10,10,.9);
-
     color:#fff;
 }
 
 .search-box button{
     padding:0 24px;
-
     border:0;
-
     border-radius:0 7px 7px 0;
-
     background:#d90000;
-
     color:#fff;
-
     font-weight:800;
-
     cursor:pointer;
 }
 
@@ -403,112 +341,79 @@ nav a:hover::after{
     background:#ff0000;
 }
 
-/* =========================
-   INTRO
-========================= */
+/* INTRO */
 
 .intro{
     width:90%;
     max-width:1400px;
-
     margin:55px auto 30px;
-
     text-align:center;
 }
 
 .intro h2{
     font-size:30px;
-
     margin-bottom:12px;
 }
 
 .intro p{
     max-width:800px;
-
     margin:auto;
-
     color:#999;
-
     line-height:1.7;
 }
 
-/* =========================
-   STATS
-========================= */
+/* STATS */
 
 .stats{
     width:90%;
     max-width:1000px;
-
     margin:30px auto 55px;
-
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:18px;
 }
 
 .stat{
     padding:25px 15px;
-
     text-align:center;
-
     background:
         linear-gradient(
             145deg,
             #111,
             #090909
         );
-
     border:1px solid #321212;
-
     border-radius:9px;
-
     box-shadow:
         0 10px 30px rgba(0,0,0,.25);
 }
 
 .stat h3{
     color:#e00000;
-
     font-size:25px;
-
     margin-bottom:8px;
 }
 
 .stat p{
     color:#999;
-
     font-size:13px;
 }
 
-/* =========================
-   MAIN LAYOUT
-========================= */
+/* MAIN LAYOUT */
 
 .main-container{
     width:90%;
     max-width:1400px;
-
     margin:0 auto 60px;
-
     display:grid;
-
-    grid-template-columns:
-        minmax(0,1fr)
-        300px;
-
+    grid-template-columns:minmax(0,1fr) 300px;
     gap:30px;
 }
 
 .section-title{
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     margin-bottom:22px;
 }
 
@@ -518,77 +423,52 @@ nav a:hover::after{
 
 .section-title h2::before{
     content:"";
-
     display:inline-block;
-
     width:4px;
     height:27px;
-
     margin-right:10px;
-
     vertical-align:-4px;
-
     background:#e00000;
 }
 
-/* =========================
-   FILTERS
-========================= */
+/* FILTERS */
 
 .filters{
     display:flex;
-
     gap:10px;
-
     margin-bottom:25px;
-
     flex-wrap:wrap;
 }
 
 .filters select{
     padding:10px 13px;
-
     border:1px solid #3e1414;
-
     border-radius:6px;
-
     background:#0d0d0d;
-
     color:#ddd;
-
     outline:none;
 }
 
-/* =========================
-   GAME GRID
-========================= */
+/* GAME GRID */
 
 .games-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:25px;
 }
 
 .game-card{
     overflow:hidden;
-
     background:
         linear-gradient(
             145deg,
             #111,
             #080808
         );
-
     border:1px solid #321313;
-
     border-radius:10px;
-
     box-shadow:
         0 12px 30px rgba(0,0,0,.3);
-
     transition:
         transform .25s,
         border-color .25s,
@@ -597,38 +477,27 @@ nav a:hover::after{
 
 .game-card:hover{
     transform:translateY(-5px);
-
     border-color:#731717;
-
     box-shadow:
         0 18px 38px rgba(0,0,0,.5),
         0 0 20px rgba(150,0,0,.08);
 }
 
-/* =========================
-   GAME IMAGE
-========================= */
+/* GAME IMAGE */
 
 .game-image{
     width:100%;
-
     height:270px;
-
     overflow:hidden;
-
     background:#090909;
 }
 
 .game-image img{
     width:100%;
     height:100%;
-
     display:block;
-
     object-fit:cover;
-
-    transition:
-        transform .4s;
+    transition:transform .4s;
 }
 
 .game-card:hover .game-image img{
@@ -641,104 +510,71 @@ nav a:hover::after{
 
 .badge{
     display:inline-block;
-
     margin-bottom:10px;
-
     padding:5px 9px;
-
     border-radius:4px;
-
     font-size:10px;
-
     font-weight:800;
-
     letter-spacing:1px;
-
     background:#260707;
-
     color:#ff4a4a;
-
     border:1px solid #531313;
 }
 
 .game-info h3{
     font-size:20px;
-
     margin-bottom:8px;
 }
 
 .game-info p{
     color:#999;
-
     font-size:13px;
-
     line-height:1.5;
-
     min-height:39px;
-
     margin-bottom:15px;
 }
 
 .game-btn{
     display:inline-block;
-
     padding:10px 16px;
-
     border-radius:5px;
-
     background:#d90000;
-
     color:#fff;
-
     font-size:12px;
-
     font-weight:800;
-
     transition:.2s;
 }
 
 .game-btn:hover{
     background:#ff0000;
-
     transform:translateY(-1px);
 }
 
-/* =========================
-   SIDEBAR
-========================= */
+/* SIDEBAR */
 
 .sidebar{
     position:sticky;
-
     top:95px;
-
     align-self:start;
 }
 
 .sidebar-box{
     margin-bottom:20px;
-
     padding:20px;
-
     background:
         linear-gradient(
             145deg,
             #101010,
             #080808
         );
-
     border:1px solid #321313;
-
     border-radius:9px;
 }
 
 .sidebar-box h3{
     font-size:17px;
-
     margin-bottom:15px;
-
     padding-bottom:12px;
-
     border-bottom:1px solid #301313;
 }
 
@@ -748,117 +584,78 @@ nav a:hover::after{
 
 .sidebar-search input{
     width:100%;
-
     padding:11px;
-
     background:#050505;
-
     color:#fff;
-
     border:1px solid #391414;
-
     outline:none;
-
     border-radius:5px 0 0 5px;
 }
 
 .sidebar-search button{
     padding:0 13px;
-
     border:0;
-
     border-radius:0 5px 5px 0;
-
     background:#d90000;
-
     color:#fff;
-
     cursor:pointer;
 }
 
 .popular-list a{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     padding:11px 0;
-
     border-bottom:1px solid #1e1e1e;
-
     color:#bbb;
-
     font-size:13px;
-
     transition:.2s;
 }
 
 .popular-list a:hover{
     color:#fff;
-
     padding-left:5px;
 }
 
 .popular-list span{
     color:#e00000;
-
     font-size:10px;
 }
 
-/* =========================
-   PAGINATION
-========================= */
+/* PAGINATION */
 
 .pagination{
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     gap:8px;
-
     margin:45px 0 55px;
 }
 
 .pagination button{
     min-width:40px;
     height:40px;
-
     border:1px solid #451414;
-
     border-radius:5px;
-
     background:#0d0d0d;
-
     color:#ccc;
-
     cursor:pointer;
 }
 
 .pagination button:hover,
 .pagination button.active{
     background:#d90000;
-
     color:#fff;
-
     border-color:#d90000;
 }
 
-/* =========================
-   PREMIUM FOOTER
-   FULL WIDTH
-========================= */
+/* PREMIUM FOOTER */
 
 footer{
-    width:100vw;
-    max-width:100vw;
-
+    width:100%;
+    max-width:100%;
     margin:0;
-
     padding:32px 0 18px;
-
     background:
         linear-gradient(
             180deg,
@@ -866,9 +663,7 @@ footer{
             #080606 55%,
             #050505 100%
         );
-
     border-top:1px solid #461313;
-
     box-shadow:
         0 -12px 30px rgba(0,0,0,.25);
 }
@@ -876,26 +671,16 @@ footer{
 .footer-inner{
     width:90%;
     max-width:1400px;
-
     margin:auto;
-
     display:grid;
-
-    grid-template-columns:
-        1.5fr
-        1fr
-        1fr;
-
+    grid-template-columns:1.5fr 1fr 1fr;
     gap:40px;
-
     align-items:start;
 }
 
 .footer-brand h3{
     font-size:23px;
-
     margin-bottom:9px;
-
     letter-spacing:1px;
 }
 
@@ -905,81 +690,56 @@ footer{
 
 .footer-brand p{
     max-width:450px;
-
     color:#888;
-
     font-size:12px;
-
     line-height:1.6;
 }
 
 .footer-column h4{
     position:relative;
-
     margin-bottom:12px;
-
     color:#fff;
-
     font-size:12px;
-
     letter-spacing:1.5px;
 }
 
 .footer-column h4::after{
     content:"";
-
     display:block;
-
     width:28px;
     height:2px;
-
     margin-top:6px;
-
     background:#e00000;
 }
 
 .footer-column a{
     display:block;
-
     width:max-content;
-
     margin-bottom:8px;
-
     color:#999;
-
     font-size:12px;
-
     transition:.2s;
 }
 
 .footer-column a:hover{
     color:#fff;
-
     transform:translateX(4px);
 }
 
 .footer-bottom{
     width:90%;
     max-width:1400px;
-
     margin:22px auto 0;
-
     padding-top:13px;
-
     border-top:1px solid #211010;
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     gap:20px;
 }
 
 .footer-bottom p{
     color:#666;
-
     font-size:11px;
 }
 
@@ -987,9 +747,7 @@ footer{
     color:#e00000;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:950px){
 
@@ -1013,10 +771,9 @@ footer{
 @media(max-width:700px){
 
     header{
-        width:100vw;
-        max-width:100vw;
+        width:100%;
+        max-width:100%;
         height:68px;
-
         padding:0 18px;
     }
 
@@ -1031,16 +788,13 @@ footer{
     .menu-btn{
         left:15px;
         right:auto;
-
         top:78px;
-
         width:42px;
         height:42px;
     }
 
     .hero{
         min-height:400px;
-
         padding:65px 18px;
     }
 
@@ -1065,9 +819,7 @@ footer{
     }
 
     .footer-inner{
-        grid-template-columns:
-            1fr 1fr;
-
+        grid-template-columns:1fr 1fr;
         gap:25px;
     }
 
@@ -1077,9 +829,7 @@ footer{
 
     .footer-bottom{
         flex-direction:column;
-
         text-align:center;
-
         gap:7px;
     }
 }
@@ -1092,19 +842,16 @@ footer{
 
     .search-box{
         flex-direction:column;
-
         gap:8px;
     }
 
     .search-box input{
         border-right:1px solid #4b1717;
-
         border-radius:6px;
     }
 
     .search-box button{
         padding:13px;
-
         border-radius:6px;
     }
 
@@ -1121,10 +868,6 @@ footer{
 
 <body>
 
-<!-- =========================
-     TOP HEADER
-========================= -->
-
 <header>
 
     <a href="./index.html" class="logo">
@@ -1132,31 +875,13 @@ footer{
     </a>
 
     <nav>
-
-        <a href="./index.html">
-            HOME
-        </a>
-
-        <a href="#games">
-            GAMES
-        </a>
-
-        <a href="#games">
-            PACKS
-        </a>
-
-        <a href="./about.html">
-            ABOUT
-        </a>
-
+        <a href="./index.html">HOME</a>
+        <a href="#games">GAMES</a>
+        <a href="#games">PACKS</a>
+        <a href="./about.html">ABOUT</a>
     </nav>
 
 </header>
-
-
-<!-- =========================
-     MENU BUTTON
-========================= -->
 
 <button
     class="menu-btn"
@@ -1166,32 +891,17 @@ footer{
     ☰
 </button>
 
-
-<!-- =========================
-     SIDEBAR OVERLAY
-========================= -->
-
 <div
     class="sidebar-overlay"
     id="sidebarOverlay"
     onclick="closeDashboard()"
 ></div>
 
-
-<!-- =========================
-     DASHBOARD
-========================= -->
-
-<aside
-    class="dashboard"
-    id="dashboard"
->
+<aside class="dashboard" id="dashboard">
 
     <div class="dashboard-header">
 
-        <h2>
-            QEVRANO MENU
-        </h2>
+        <h2>QEVRANO MENU</h2>
 
         <button
             class="close-dashboard"
@@ -1203,155 +913,99 @@ footer{
 
     </div>
 
-
     <div class="dashboard-section">
 
-        <h3>
-            NAVIGATION
-        </h3>
+        <h3>NAVIGATION</h3>
 
-        <a
-            href="./index.html"
-            onclick="closeDashboard()"
-        >
+        <a href="./index.html" onclick="closeDashboard()">
             Dashboard / Home
         </a>
 
-        <button
-            onclick="showAllGames();closeDashboard()"
-        >
+        <button onclick="showAllGames();closeDashboard()">
             All Games
         </button>
 
-        <button
-            onclick="showFeatured();closeDashboard()"
-        >
+        <button onclick="showFeatured();closeDashboard()">
             Featured Games
         </button>
 
-        <button
-            onclick="showPopular();closeDashboard()"
-        >
+        <button onclick="showPopular();closeDashboard()">
             Popular Games
         </button>
 
-        <button
-            onclick="showNewGames();closeDashboard()"
-        >
+        <button onclick="showNewGames();closeDashboard()">
             New Games
         </button>
 
     </div>
 
-
     <div class="dashboard-section">
 
-        <h3>
-            PRICE
-        </h3>
+        <h3>PRICE</h3>
 
-        <button
-            onclick="showFreeGames();closeDashboard()"
-        >
+        <button onclick="showFreeGames();closeDashboard()">
             Free Games
         </button>
 
-        <button
-            onclick="showPaidGames();closeDashboard()"
-        >
+        <button onclick="showPaidGames();closeDashboard()">
             Paid Games
         </button>
 
-        <button
-            onclick="showAllGames();closeDashboard()"
-        >
+        <button onclick="showAllGames();closeDashboard()">
             All Prices
         </button>
 
     </div>
 
-
     <div class="dashboard-section">
 
-        <h3>
-            CATEGORIES
-        </h3>
+        <h3>CATEGORIES</h3>
 
-        <button
-            onclick="filterCategory('Action');closeDashboard()"
-        >
+        <button onclick="filterCategory('Action');closeDashboard()">
             Action
         </button>
 
-        <button
-            onclick="filterCategory('Adventure');closeDashboard()"
-        >
+        <button onclick="filterCategory('Adventure');closeDashboard()">
             Adventure
         </button>
 
-        <button
-            onclick="filterCategory('Racing');closeDashboard()"
-        >
+        <button onclick="filterCategory('Racing');closeDashboard()">
             Racing
         </button>
 
-        <button
-            onclick="filterCategory('Sports');closeDashboard()"
-        >
+        <button onclick="filterCategory('Sports');closeDashboard()">
             Sports
         </button>
 
-        <button
-            onclick="filterCategory('Open World');closeDashboard()"
-        >
+        <button onclick="filterCategory('Open World');closeDashboard()">
             Open World
         </button>
 
     </div>
 
-
     <div class="dashboard-section">
 
-        <h3>
-            QEVRANO
-        </h3>
+        <h3>QEVRANO</h3>
 
-        <a
-            href="./about.html"
-            onclick="closeDashboard()"
-        >
+        <a href="./about.html" onclick="closeDashboard()">
             About QEVRANO
         </a>
 
-        <a
-            href="./contact.html"
-            onclick="closeDashboard()"
-        >
+        <a href="./contact.html" onclick="closeDashboard()">
             Contact
         </a>
 
-        <a
-            href="./privacy.html"
-            onclick="closeDashboard()"
-        >
+        <a href="./privacy.html" onclick="closeDashboard()">
             Privacy Policy
         </a>
 
-        <a
-            href="./terms.html"
-            onclick="closeDashboard()"
-        >
+        <a href="./terms.html" onclick="closeDashboard()">
             Terms & Conditions
         </a>
 
     </div>
 
 </aside>
-
-
-<!-- =========================
-     HERO
-========================= -->
 
 <section class="hero">
 
@@ -1385,15 +1039,7 @@ footer{
 
 </section>
 
-
-<!-- =========================
-     ABOUT INTRO
-========================= -->
-
-<section
-    class="intro"
-    id="about"
->
+<section class="intro" id="about">
 
     <h2>
         Welcome to QEVRANO
@@ -1407,18 +1053,11 @@ footer{
 
 </section>
 
-
-<!-- =========================
-     STATS
-========================= -->
-
 <section class="stats">
 
     <div class="stat">
 
-        <h3>
-            18
-        </h3>
+        <h3>18</h3>
 
         <p>
             Games Available
@@ -1426,12 +1065,9 @@ footer{
 
     </div>
 
-
     <div class="stat">
 
-        <h3>
-            3
-        </h3>
+        <h3>3</h3>
 
         <p>
             Game Pages
@@ -1439,12 +1075,9 @@ footer{
 
     </div>
 
-
     <div class="stat">
 
-        <h3>
-            FREE
-        </h3>
+        <h3>FREE</h3>
 
         <p>
             Official Sources
@@ -1454,15 +1087,7 @@ footer{
 
 </section>
 
-
-<!-- =========================
-     MAIN
-========================= -->
-
-<div
-    class="main-container"
-    id="games"
->
+<div class="main-container" id="games">
 
     <main>
 
@@ -1473,7 +1098,6 @@ footer{
             </h2>
 
         </div>
-
 
         <div class="filters">
 
@@ -1495,7 +1119,6 @@ footer{
                 </option>
 
             </select>
-
 
             <select
                 id="categoryFilter"
@@ -1530,12 +1153,10 @@ footer{
 
         </div>
 
-
         <div
             class="games-grid"
             id="gamesGrid"
         ></div>
-
 
         <div
             class="pagination"
@@ -1543,7 +1164,6 @@ footer{
         ></div>
 
     </main>
-
 
     <aside class="sidebar">
 
@@ -1562,16 +1182,13 @@ footer{
                     onkeydown="if(event.key==='Enter') sidebarSearchGame()"
                 >
 
-                <button
-                    onclick="sidebarSearchGame()"
-                >
+                <button onclick="sidebarSearchGame()">
                     🔍
                 </button>
 
             </div>
 
         </div>
-
 
         <div class="sidebar-box">
 
@@ -1654,11 +1271,6 @@ footer{
 
 </div>
 
-
-<!-- =========================
-     PREMIUM FOOTER
-========================= -->
-
 <footer>
 
     <div class="footer-inner">
@@ -1676,7 +1288,6 @@ footer{
             </p>
 
         </div>
-
 
         <div class="footer-column">
 
@@ -1702,7 +1313,6 @@ footer{
 
         </div>
 
-
         <div class="footer-column">
 
             <h4>
@@ -1721,7 +1331,6 @@ footer{
 
     </div>
 
-
     <div class="footer-bottom">
 
         <p>
@@ -1736,7 +1345,6 @@ footer{
     </div>
 
 </footer>
-
 
 <script>
 
@@ -1906,11 +1514,8 @@ const games = [
 
 ];
 
-
 const gamesPerPage = 6;
-
 let currentPage = 1;
-
 
 function openDashboard(){
 
@@ -1936,7 +1541,6 @@ function closeDashboard(){
 
 }
 
-
 document.addEventListener(
     "keydown",
     function(e){
@@ -1947,7 +1551,6 @@ document.addEventListener(
 
     }
 );
-
 
 function getFilteredGames(){
 
@@ -1960,7 +1563,6 @@ function getFilteredGames(){
         document
             .getElementById("categoryFilter")
             .value;
-
 
     return games.filter(game => {
 
@@ -1978,7 +1580,6 @@ function getFilteredGames(){
 
 }
 
-
 function renderGames(){
 
     const grid =
@@ -1987,10 +1588,8 @@ function renderGames(){
     const pagination =
         document.getElementById("pagination");
 
-
     const filteredGames =
         getFilteredGames();
-
 
     const totalPages =
         Math.max(
@@ -2001,16 +1600,13 @@ function renderGames(){
             )
         );
 
-
     if(currentPage > totalPages){
         currentPage = totalPages;
     }
 
-
     const start =
         (currentPage - 1) *
         gamesPerPage;
-
 
     const pageGames =
         filteredGames.slice(
@@ -2018,9 +1614,7 @@ function renderGames(){
             start + gamesPerPage
         );
 
-
     grid.innerHTML = "";
-
 
     pageGames.forEach(game => {
 
@@ -2030,18 +1624,15 @@ function renderGames(){
         card.className =
             "game-card";
 
-
         const badge =
             game.price === "free"
                 ? "FREE"
                 : "PAID";
 
-
         const buttonText =
             game.price === "free"
                 ? "Download Free"
                 : "BUY NOW";
-
 
         card.innerHTML = `
 
@@ -2054,7 +1645,6 @@ function renderGames(){
                 >
 
             </div>
-
 
             <div class="game-info">
 
@@ -2081,14 +1671,11 @@ function renderGames(){
 
         `;
 
-
         grid.appendChild(card);
 
     });
 
-
     pagination.innerHTML = "";
-
 
     if(totalPages > 1){
 
@@ -2103,7 +1690,6 @@ function renderGames(){
 
             button.textContent = i;
 
-
             if(i === currentPage){
 
                 button.classList.add(
@@ -2112,14 +1698,12 @@ function renderGames(){
 
             }
 
-
             button.onclick =
                 function(){
 
                     currentPage = i;
 
                     renderGames();
-
 
                     window.scrollTo({
 
@@ -2134,7 +1718,6 @@ function renderGames(){
 
                 };
 
-
             pagination.appendChild(
                 button
             );
@@ -2145,7 +1728,6 @@ function renderGames(){
 
 }
 
-
 function applyFilters(){
 
     currentPage = 1;
@@ -2153,7 +1735,6 @@ function applyFilters(){
     renderGames();
 
 }
-
 
 function showAllGames(){
 
@@ -2171,13 +1752,11 @@ function showAllGames(){
 
 }
 
-
 function showFeatured(){
 
     showAllGames();
 
 }
-
 
 function showPopular(){
 
@@ -2189,13 +1768,11 @@ function showPopular(){
 
 }
 
-
 function showNewGames(){
 
     showAllGames();
 
 }
-
 
 function showFreeGames(){
 
@@ -2211,7 +1788,6 @@ function showFreeGames(){
 
     renderGames();
 
-
     document
         .getElementById("games")
         .scrollIntoView({
@@ -2219,7 +1795,6 @@ function showFreeGames(){
         });
 
 }
-
 
 function showPaidGames(){
 
@@ -2235,7 +1810,6 @@ function showPaidGames(){
 
     renderGames();
 
-
     document
         .getElementById("games")
         .scrollIntoView({
@@ -2243,7 +1817,6 @@ function showPaidGames(){
         });
 
 }
-
 
 function openPriceFilter(){
 
@@ -2254,7 +1827,6 @@ function openPriceFilter(){
         });
 
 }
-
 
 function filterCategory(category){
 
@@ -2270,7 +1842,6 @@ function filterCategory(category){
 
     renderGames();
 
-
     document
         .getElementById("games")
         .scrollIntoView({
@@ -2278,7 +1849,6 @@ function filterCategory(category){
         });
 
 }
-
 
 function searchGame(){
 
@@ -2289,11 +1859,9 @@ function searchGame(){
             .trim()
             .toLowerCase();
 
-
     if(!query){
         return;
     }
-
 
     const game =
         games.find(game =>
@@ -2301,7 +1869,6 @@ function searchGame(){
                 .toLowerCase()
                 .includes(query)
         );
-
 
     if(game){
 
@@ -2317,7 +1884,6 @@ function searchGame(){
     }
 
 }
-
 
 function sidebarSearchGame(){
 
@@ -2328,11 +1894,9 @@ function sidebarSearchGame(){
             .trim()
             .toLowerCase();
 
-
     if(!query){
         return;
     }
-
 
     const game =
         games.find(game =>
@@ -2340,7 +1904,6 @@ function sidebarSearchGame(){
                 .toLowerCase()
                 .includes(query)
         );
-
 
     if(game){
 
@@ -2356,7 +1919,6 @@ function sidebarSearchGame(){
     }
 
 }
-
 
 renderGames();
 
