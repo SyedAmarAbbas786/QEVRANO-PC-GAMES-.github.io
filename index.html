@@ -1,5 +1,5 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,7 +8,6 @@
 <title>QEVRANO PC GAMES</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -23,2616 +22,1307 @@ body{
     font-family:Arial,Helvetica,sans-serif;
     background:#070707;
     color:#eee;
-    min-height:100vh;
-    overflow-x:hidden;
 }
 
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-track{
-    background:#070707;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#d80000;
-    border-radius:10px;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
+/* HEADER */
 header{
     position:sticky;
     top:0;
     z-index:1000;
-
-    min-height:72px;
-
+    background:#090909;
+    border-bottom:2px solid #d80000;
+    padding:16px 5%;
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    padding:0 5%;
-
-    background:rgba(7,7,7,.94);
-    backdrop-filter:blur(16px);
-
-    border-bottom:1px solid rgba(255,0,0,.18);
 }
 
 .logo{
-    color:#fff;
-    text-decoration:none;
-
     font-size:24px;
-    font-weight:900;
-
-    letter-spacing:1px;
+    font-weight:bold;
+    color:#fff;
 }
 
 .logo span{
-    color:#e00000;
+    color:#d80000;
 }
 
-.logo small{
-    display:block;
-    color:#666;
-    font-size:9px;
-    letter-spacing:3px;
-    margin-top:3px;
-}
-
-header nav{
+nav{
     display:flex;
-    align-items:center;
-    gap:30px;
+    gap:25px;
 }
 
-header nav a{
-    color:#aaa;
+nav a{
+    color:#ddd;
     text-decoration:none;
-    font-size:13px;
     font-weight:bold;
-    transition:.25s;
+    transition:.3s;
 }
 
-header nav a:hover{
-    color:#ff2020;
+nav a:hover{
+    color:#d80000;
 }
 
-
-/* =========================================================
-   COMPACT HERO
-========================================================= */
-
+/* HERO */
 .hero{
-    position:relative;
-
-    min-height:360px;
-
+    min-height:390px;
     display:flex;
     align-items:center;
     justify-content:center;
-
     text-align:center;
-
-    padding:45px 20px 55px;
-
-    overflow:hidden;
-
+    padding:60px 20px;
     background:
-        linear-gradient(
-            90deg,
-            rgba(4,4,4,.98),
-            rgba(8,8,8,.75),
-            rgba(4,4,4,.96)
-        ),
-        url("./images/acbrotherhood.jpg") center/cover;
-}
-
-.hero:before{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:
-        radial-gradient(
-            circle at 50% 45%,
-            rgba(210,0,0,.20),
-            transparent 38%
-        );
-
-    pointer-events:none;
-}
-
-.hero:after{
-    content:"";
-
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:100px;
-
-    background:linear-gradient(
-        transparent,
-        #070707
-    );
-
-    pointer-events:none;
+        linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.88)),
+        url("./images/acbrotherhood.jpg") center/cover no-repeat;
 }
 
 .hero-content{
-    position:relative;
-    z-index:2;
-
-    width:100%;
-    max-width:900px;
-}
-
-.hero-badge{
-    display:inline-block;
-
-    padding:8px 16px;
-
-    border:1px solid rgba(255,0,0,.45);
-    border-radius:30px;
-
-    background:rgba(130,0,0,.13);
-
-    color:#ff2929;
-
-    font-size:11px;
-    font-weight:bold;
-
-    letter-spacing:2px;
-
-    margin-bottom:15px;
+    max-width:850px;
 }
 
 .hero h1{
-    font-size:clamp(45px,7vw,76px);
-
-    line-height:.95;
-
-    font-weight:1000;
-
-    letter-spacing:-4px;
-
-    text-transform:uppercase;
-
-    margin-bottom:16px;
-
-    text-shadow:
-        0 10px 50px rgba(0,0,0,.9);
+    font-size:52px;
+    margin-bottom:15px;
+    color:#fff;
 }
 
 .hero h1 span{
-    color:#e00000;
+    color:#d80000;
 }
 
 .hero p{
-    max-width:650px;
-
-    margin:0 auto 22px;
-
-    color:#aaa;
-
-    font-size:14px;
-
+    color:#ccc;
+    font-size:18px;
     line-height:1.6;
 }
 
-
-/* =========================================================
-   HERO SEARCH
-========================================================= */
-
 .hero-search{
-    position:relative;
-
-    max-width:620px;
-
-    margin:auto;
+    margin-top:28px;
+    display:flex;
+    justify-content:center;
 }
 
 .hero-search input{
-    width:100%;
-
-    padding:15px 20px;
-
-    background:rgba(15,15,15,.9);
-
-    color:#fff;
-
-    border:1px solid #383838;
-
-    border-radius:8px;
-
+    width:600px;
+    max-width:90%;
+    padding:15px 18px;
+    border:none;
     outline:none;
-
-    font-size:14px;
-
-    transition:.25s;
+    border-radius:6px;
+    font-size:16px;
+    background:#fff;
+    color:#111;
 }
 
-.hero-search input:focus{
-    border-color:#e00000;
-
-    box-shadow:
-        0 0 25px rgba(220,0,0,.15);
-}
-
-.hero-search input::placeholder{
-    color:#777;
-}
-
-
-/* =========================================================
-   QUICK STATS
-========================================================= */
-
-.stats{
-    position:relative;
-    z-index:5;
-
-    max-width:1050px;
-
-    margin:-30px auto 0;
-
-    padding:0 20px;
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:12px;
-}
-
-.stat{
-    padding:16px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #151515,
-            #0d0d0d
-        );
-
-    border:1px solid #292929;
-
-    border-radius:9px;
-
+/* INTRO */
+.intro{
+    padding:45px 5%;
     text-align:center;
-
-    box-shadow:
-        0 12px 40px rgba(0,0,0,.45);
+    background:#0c0c0c;
 }
 
-.stat strong{
-    display:block;
-
-    color:#fff;
-
-    font-size:22px;
-
-    margin-bottom:4px;
+.intro h2{
+    font-size:30px;
+    margin-bottom:15px;
 }
 
-.stat span{
-    color:#777;
-
-    font-size:10px;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
+.intro h2 span{
+    color:#d80000;
 }
 
+.intro p{
+    max-width:850px;
+    margin:auto;
+    color:#aaa;
+    line-height:1.7;
+}
 
-/* =========================================================
-   MAIN LAYOUT
-========================================================= */
+/* STATS */
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:70px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
 
-.content{
-    max-width:1250px;
+.stat h3{
+    color:#d80000;
+    font-size:28px;
+}
 
-    margin:32px auto 0;
+.stat p{
+    color:#aaa;
+    margin-top:5px;
+}
 
-    padding:0 20px 70px;
-
+/* MAIN */
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:45px auto;
     display:grid;
-
-    grid-template-columns:minmax(0,1fr) 290px;
-
+    grid-template-columns:1fr 300px;
     gap:30px;
 }
 
-
-/* =========================================================
-   SECTION TITLES
-========================================================= */
-
+/* SECTION TITLE */
 .section-title{
-    display:flex;
-    align-items:center;
-
-    gap:12px;
-
-    font-size:25px;
-
-    margin-bottom:22px;
+    margin-bottom:25px;
 }
 
-.section-title:before{
-    content:"";
-
-    width:5px;
-    height:27px;
-
-    background:#e00000;
-
-    border-radius:4px;
-
-    box-shadow:
-        0 0 15px rgba(220,0,0,.35);
+.section-title h2{
+    font-size:32px;
 }
 
+.section-title h2 span{
+    color:#d80000;
+}
 
-/* =========================================================
-   FILTER BAR
-========================================================= */
-
-.filter-bar{
-    width:100%;
-
-    min-height:62px;
-
-    display:flex;
-    align-items:center;
-
+/* FILTERS */
+.filters{
     background:#101010;
-
-    border:1px solid #292929;
-
-    border-radius:9px;
-
-    margin-bottom:30px;
-
-    overflow:hidden;
-}
-
-.home-button{
-    height:62px;
-
-    padding:0 24px;
-
+    padding:18px;
+    border:1px solid #222;
+    border-radius:8px;
+    margin-bottom:25px;
     display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#d90000;
-
-    color:white;
-
-    text-decoration:none;
-
-    font-size:12px;
-
-    font-weight:900;
-
-    letter-spacing:.8px;
-
-    white-space:nowrap;
-
-    transition:.25s;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
-.home-button:hover{
-    background:#ff1111;
-}
-
-.filter-item{
-    flex:1;
-
-    height:62px;
-
-    display:flex;
-    align-items:center;
-
-    padding:0 9px;
-}
-
-.filter-item select{
-    width:100%;
-
-    height:40px;
-
-    padding:0 11px;
-
-    background:#171717;
-
-    color:#ccc;
-
-    border:1px solid #303030;
-
-    border-radius:6px;
-
+.filters select,
+.filters input{
+    background:#181818;
+    color:#eee;
+    border:1px solid #333;
+    padding:11px 13px;
+    border-radius:5px;
     outline:none;
-
-    cursor:pointer;
 }
 
-.filter-item select:hover,
-.filter-item select:focus{
-    border-color:#d80000;
-}
-
-
-/* =========================================================
-   GAME GRID
-========================================================= */
-
-.game-grid{
+/* GAMES GRID */
+.games-grid{
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
-    gap:20px;
+    gap:22px;
 }
 
+/* CARD */
 .game-card{
-    position:relative;
-
-    background:
-        linear-gradient(
-            145deg,
-            #151515,
-            #0d0d0d
-        );
-
-    border:1px solid #282828;
-
-    border-radius:10px;
-
+    background:#111;
+    border:1px solid #242424;
+    border-radius:8px;
     overflow:hidden;
-
     transition:.3s;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.28);
 }
 
 .game-card:hover{
-    transform:translateY(-7px);
-
+    transform:translateY(-6px);
     border-color:#d80000;
-
-    box-shadow:
-        0 18px 45px rgba(210,0,0,.16);
+    box-shadow:0 10px 25px rgba(216,0,0,.18);
 }
 
-.game-cover{
-    width:100%;
-
+.game-image{
     height:245px;
-
-    display:block;
-
-    object-fit:cover;
-
-    transition:.45s;
+    overflow:hidden;
 }
 
-.game-card:hover .game-cover{
-    transform:scale(1.045);
+.game-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.game-card:hover .game-image img{
+    transform:scale(1.06);
 }
 
 .game-info{
-    padding:17px;
+    padding:18px;
 }
 
 .game-info h3{
-    color:#fff;
-
-    font-size:18px;
-
-    margin-bottom:7px;
+    font-size:20px;
+    margin-bottom:10px;
 }
 
-.game-info p{
+.game-meta{
     color:#999;
+    font-size:13px;
+    margin-bottom:8px;
+}
 
-    font-size:12px;
-
+.game-description{
+    color:#aaa;
+    font-size:14px;
     line-height:1.5;
+    min-height:42px;
 }
 
-.game-size{
-    margin-top:6px;
-
-    color:#bbb !important;
+.game-buttons{
+    display:flex;
+    gap:8px;
+    margin-top:15px;
 }
 
-.download-btn{
-    display:block;
-
-    margin-top:14px;
-
-    padding:11px;
-
+.details-btn,
+.free-download-btn{
+    flex:1;
     text-align:center;
-
-    background:#d80000;
-
-    color:#fff;
-
+    padding:11px 8px;
+    border-radius:5px;
     text-decoration:none;
-
-    border-radius:6px;
-
     font-size:12px;
-
-    font-weight:900;
-
-    letter-spacing:.5px;
-
-    transition:.25s;
+    font-weight:bold;
 }
 
-.download-btn:hover{
-    background:#ff1717;
-
-    box-shadow:
-        0 8px 20px rgba(220,0,0,.25);
+.details-btn{
+    color:#fff;
+    background:#222;
+    border:1px solid #444;
 }
 
-
-/* =========================================================
-   WARFRAME FREE BUTTON
-========================================================= */
+.details-btn:hover{
+    background:#333;
+}
 
 .free-download-btn{
-    background:linear-gradient(
-        135deg,
-        #d80000,
-        #ff2020
-    );
-
-    border:1px solid rgba(255,80,80,.7);
-
-    box-shadow:
-        0 0 18px rgba(220,0,0,.20);
+    color:#fff;
+    background:linear-gradient(135deg,#d80000,#8b0000);
 }
 
 .free-download-btn:hover{
-    background:linear-gradient(
-        135deg,
-        #ff2020,
-        #ff3a3a
-    );
-
-    box-shadow:
-        0 8px 25px rgba(220,0,0,.35);
+    background:linear-gradient(135deg,#ff0000,#a00000);
 }
 
+/* SIDEBAR */
+.sidebar{
+    background:#0f0f0f;
+    border:1px solid #222;
+    border-radius:8px;
+    padding:20px;
+    height:max-content;
+}
 
-/* =========================================================
-   SIDEBAR
-========================================================= */
+.sidebar h3{
+    font-size:21px;
+    margin-bottom:18px;
+    padding-bottom:12px;
+    border-bottom:1px solid #333;
+}
 
 .sidebar-search{
-    position:relative;
-
-    margin-bottom:22px;
+    display:flex;
+    margin-bottom:25px;
 }
 
 .sidebar-search input{
     width:100%;
-
-    padding:13px 14px;
-
-    background:#111;
-
+    padding:12px;
+    background:#181818;
+    border:1px solid #333;
     color:#fff;
-
-    border:1px solid #303030;
-
-    border-radius:7px;
-
     outline:none;
-
-    font-size:13px;
+    border-radius:5px;
 }
 
-.sidebar-search input:focus{
+.popular-game{
+    display:flex;
+    gap:12px;
+    margin-bottom:16px;
+    align-items:center;
+}
+
+.popular-game img{
+    width:75px;
+    height:55px;
+    object-fit:cover;
+    border-radius:5px;
+}
+
+.popular-game a{
+    color:#eee;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.popular-game a:hover{
+    color:#d80000;
+}
+
+/* PAGINATION */
+.pagination{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:40px;
+}
+
+.pagination button{
+    padding:10px 15px;
+    background:#151515;
+    border:1px solid #333;
+    color:#fff;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.pagination button:hover,
+.pagination button.active{
+    background:#d80000;
     border-color:#d80000;
 }
 
-.sidebar-search input::placeholder{
-    color:#666;
-}
-
-.sidebar-search-results{
-    position:absolute;
-
-    top:50px;
-    left:0;
-    right:0;
-
-    background:#111;
-
-    border:1px solid #303030;
-
-    border-radius:7px;
-
-    overflow:hidden;
-
-    display:none;
-
-    z-index:100;
-}
-
-.sidebar-result{
-    padding:12px;
-
-    color:#ccc;
-
-    font-size:12px;
-
-    border-bottom:1px solid #222;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.sidebar-result:hover{
-    background:#1c1c1c;
-
-    color:#ff2020;
-}
-
-
-/* =========================================================
-   SIDEBAR BOX
-========================================================= */
-
-.sidebar-box{
-    background:
-        linear-gradient(
-            145deg,
-            #141414,
-            #0d0d0d
-        );
-
-    border:1px solid #282828;
-
-    padding:18px;
-
-    margin-bottom:22px;
-
-    border-radius:9px;
-}
-
-.sidebar-title{
-    font-size:16px;
-
-    font-weight:900;
-
-    margin-bottom:8px;
-
-    padding-bottom:12px;
-
-    border-bottom:1px solid #292929;
-}
-
-.sidebar-title:before{
-    content:"";
-
-    display:inline-block;
-
-    width:4px;
-    height:17px;
-
-    background:#d80000;
-
-    vertical-align:-3px;
-
-    margin-right:8px;
-
-    border-radius:2px;
-}
-
-
-/* =========================================================
-   POPULAR GAMES
-========================================================= */
-
-.popular-card{
-    display:flex;
-
-    gap:12px;
-
-    padding:12px 0;
-
-    border-bottom:1px solid #242424;
-
-    text-decoration:none;
-
-    color:#fff;
-
-    transition:.25s;
-}
-
-.popular-card:last-child{
-    border-bottom:none;
-}
-
-.popular-card:hover{
-    transform:translateX(4px);
-}
-
-.popular-card img{
-    width:78px;
-
-    height:62px;
-
-    object-fit:cover;
-
-    border-radius:6px;
-
-    flex-shrink:0;
-
-    border:1px solid #303030;
-}
-
-.popular-info{
-    min-width:0;
-}
-
-.popular-info h4{
-    color:#ddd;
-
-    font-size:13px;
-
-    margin-bottom:5px;
-
-    line-height:1.3;
-}
-
-.popular-info p{
-    color:#777;
-
-    font-size:10px;
-
-    line-height:1.4;
-}
-
-.popular-card:hover h4{
-    color:#ff2222;
-}
-
-
-/* =========================================================
-   PAGES
-========================================================= */
-
-.page{
+/* PAGE */
+.game-page{
     display:none;
 }
 
-.page.active-page{
+.game-page.active{
     display:block;
 }
 
-
-/* =========================================================
-   PAGINATION
-========================================================= */
-
-.pagination{
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    gap:7px;
-
-    margin-top:35px;
-}
-
-.page-btn{
-    width:42px;
-    height:42px;
-
-    border:1px solid #303030;
-
-    outline:none;
-
-    background:#141414;
-
-    color:#aaa;
-
-    border-radius:6px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:.2s;
-}
-
-.page-btn:hover{
-    background:#d80000;
-
-    color:#fff;
-
-    border-color:#d80000;
-}
-
-.page-btn.active{
-    background:#d80000;
-
-    color:#fff;
-
-    border-color:#d80000;
-}
-
-.arrow-btn{
-    font-size:17px;
-}
-
-
-/* =========================================================
-   MORE GAMES
-========================================================= */
-
-.no-results{
-    padding:55px 30px;
-
-    text-align:center;
-
-    color:#777;
-
-    background:#101010;
-
-    border:1px solid #292929;
-
-    border-radius:9px;
-}
-
-.no-results h3{
-    color:#ddd;
-
-    margin-bottom:8px;
-}
-
-
-/* =========================================================
-   ABOUT QEVRANO
-========================================================= */
-
-.info-section{
-    max-width:1250px;
-
-    margin:0 auto 40px;
-
-    padding:0 20px;
-}
-
-.about-qevrano{
-    padding:30px;
-
-    background:
-        linear-gradient(
-            120deg,
-            rgba(100,0,0,.15),
-            #101010 45%
-        );
-
-    border:1px solid #292929;
-
-    border-radius:10px;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.about-qevrano:after{
-    content:"";
-
-    position:absolute;
-
-    width:220px;
-    height:220px;
-
-    right:-100px;
-    top:-100px;
-
-    background:rgba(210,0,0,.08);
-
-    border-radius:50%;
-}
-
-.about-qevrano p{
-    color:#999;
-
-    font-size:14px;
-
-    line-height:1.8;
-
-    margin-bottom:10px;
-
-    max-width:950px;
-}
-
-.about-qevrano p:last-child{
-    margin-bottom:0;
-}
-
-
-/* =========================================================
-   TRUST STRIP
-========================================================= */
-
-.trust-strip{
-    max-width:1250px;
-
-    margin:0 auto 45px;
-
-    padding:0 20px;
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:15px;
-}
-
-.trust-item{
-    padding:20px;
-
-    background:#101010;
-
-    border:1px solid #282828;
-
-    border-radius:9px;
-}
-
-.trust-icon{
-    color:#e00000;
-
-    font-size:20px;
-
-    margin-bottom:9px;
-}
-
-.trust-item h3{
-    font-size:14px;
-
-    margin-bottom:6px;
-}
-
-.trust-item p{
-    color:#777;
-
-    font-size:11px;
-
-    line-height:1.6;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
+/* FOOTER */
 footer{
+    margin-top:60px;
+    padding:35px 5%;
+    background:#090909;
     border-top:1px solid #222;
-
-    padding:35px 20px;
-
     text-align:center;
-
-    color:#666;
-
-    font-size:12px;
-
-    background:#050505;
 }
 
-.footer-logo{
-    color:#ddd;
-
-    font-size:18px;
-
-    font-weight:900;
-
-    letter-spacing:1px;
-
-    margin-bottom:15px;
+footer h3{
+    font-size:22px;
+    margin-bottom:10px;
 }
 
-.footer-logo span{
-    color:#e00000;
+footer h3 span{
+    color:#d80000;
 }
 
-.site-links{
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:18px;
-
-    margin-bottom:20px;
-}
-
-.site-links a{
+footer p{
     color:#777;
-
-    text-decoration:none;
-
-    font-size:12px;
-
-    transition:.2s;
+    font-size:14px;
 }
 
-.site-links a:hover{
-    color:#e00000;
+/* RESPONSIVE */
+@media(max-width:1100px){
+    .games-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
-.disclaimer{
-    max-width:900px;
-
-    margin:8px auto 0;
-
-    color:#555;
-
-    font-size:10px;
-
-    line-height:1.6;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:1000px){
-
-    .content{
+@media(max-width:900px){
+    .container{
         grid-template-columns:1fr;
     }
 
-    .game-grid{
-        grid-template-columns:repeat(2,1fr);
+    .sidebar{
+        order:2;
     }
-
 }
 
 @media(max-width:700px){
-
     header{
-        min-height:auto;
-
-        padding:15px 20px;
-
         flex-direction:column;
-
-        gap:14px;
+        gap:15px;
     }
 
-    header nav{
-        gap:18px;
-    }
-
-    .logo{
-        font-size:21px;
-    }
-
-    .hero{
-        min-height:330px;
-
-        padding:45px 20px 55px;
+    nav{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
     .hero h1{
-        font-size:48px;
-
-        letter-spacing:-2px;
+        font-size:38px;
     }
 
-    .hero p{
-        font-size:13px;
+    .games-grid{
+        grid-template-columns:1fr;
+    }
+
+    .game-image{
+        height:230px;
     }
 
     .stats{
-        grid-template-columns:1fr;
-
-        margin-top:-20px;
+        gap:30px;
     }
-
-    .filter-bar{
-        flex-direction:column;
-
-        align-items:stretch;
-    }
-
-    .home-button{
-        width:100%;
-
-        height:50px;
-    }
-
-    .filter-item{
-        width:100%;
-
-        height:58px;
-    }
-
-    .game-grid{
-        grid-template-columns:1fr;
-    }
-
-    .game-cover{
-        height:290px;
-    }
-
-    .trust-strip{
-        grid-template-columns:1fr;
-    }
-
 }
-
-@media(max-width:450px){
-
-    .hero{
-        min-height:310px;
-    }
-
-    .hero h1{
-        font-size:40px;
-    }
-
-    .hero-search input{
-        padding:15px;
-    }
-
-    .content,
-    .info-section,
-    .trust-strip{
-        padding-left:15px;
-        padding-right:15px;
-    }
-
-    .game-cover{
-        height:260px;
-    }
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
+<!-- HEADER -->
 <header>
 
-<a href="./index.html" class="logo">
-    QE<span>V</span>RANO
-    <small>PC GAMES</small>
-</a>
+    <div class="logo">
+        QEVRANO <span>PC GAMES</span>
+    </div>
 
-<nav>
-
-<a href="./index.html">
-    HOME
-</a>
-
-<a href="#games">
-    GAMES
-</a>
-
-<a href="#packs">
-    PACKS
-</a>
-
-<a href="./about.html">
-    ABOUT
-</a>
-
-</nav>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#games">GAMES</a>
+        <a href="#packs">PACKS</a>
+        <a href="#about">ABOUT</a>
+    </nav>
 
 </header>
 
-<!-- =========================================================
-     COMPACT HERO
-========================================================= -->
 
-<section class="hero">
+<!-- HERO -->
+<section class="hero" id="home">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<div class="hero-badge">
-    YOUR PC GAMING HUB
-</div>
+        <h1>
+            QEVRANO <span>PC GAMES</span>
+        </h1>
 
-<h1>
-    QEVRANO <span>PC GAMES</span>
-</h1>
+        <p>
+            Discover featured PC games, explore their details,
+            check system requirements and visit official download sources.
+        </p>
 
-<p>
-    Discover PC games, explore game information, check system
-    requirements and find official sources — all in one place.
-</p>
+        <div class="hero-search">
+            <input
+                type="text"
+                id="heroSearch"
+                placeholder="Search for a game..."
+                onkeyup="heroSearchGame()"
+            >
+        </div>
 
-<div class="hero-search">
-
-<input
-type="text"
-id="heroSearch"
-placeholder="Search for a game..."
-autocomplete="off"
-
->
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- =========================================================
-     STATS
-========================================================= -->
 
-<div class="stats">
+<!-- ABOUT -->
+<section class="intro" id="about">
 
-<div class="stat">
+    <h2>
+        Welcome to <span>QEVRANO</span>
+    </h2>
 
-<strong>13+</strong>
+    <p>
+        Explore our growing collection of PC games.
+        Browse featured titles, filter games by category,
+        discover free-to-play games and open each game page
+        for more information.
+    </p>
 
-<span>
-    Featured Games
-</span>
+    <div class="stats">
 
-</div>
+        <div class="stat">
+            <h3>18+</h3>
+            <p>Featured Games</p>
+        </div>
 
-<div class="stat">
+        <div class="stat">
+            <h3>3</h3>
+            <p>Game Pages</p>
+        </div>
 
-<strong>PC</strong>
+        <div class="stat">
+            <h3>FREE</h3>
+            <p>Official Sources</p>
+        </div>
 
-<span>
-    Gaming Platform
-</span>
+    </div>
 
-</div>
+</section>
 
-<div class="stat">
 
-<strong>24/7</strong>
-
-<span>
-    Game Discovery
-</span>
-
-</div>
-
-</div>
-
-<!-- =========================================================
-     MAIN CONTENT
-========================================================= -->
-
-<div class="content">
+<!-- MAIN -->
+<div class="container">
 
 <main id="games">
 
-<!-- =========================================================
-     FILTER BAR
-========================================================= -->
-
-<div class="filter-bar">
-
-<a
-href="./index.html"
-class="home-button"
-
->
-
-```
-HOME
-```
-
-</a>
-
-<div class="filter-item">
-
-<select id="categoryFilter">
-
-```
-<option value="all">
-    CATEGORIES
-</option>
-
-<option value="action">
-    Action
-</option>
-
-<option value="adventure">
-    Adventure
-</option>
-
-<option value="racing">
-    Racing
-</option>
-
-<option value="sports">
-    Sports
-</option>
-
-<option value="open world">
-    Open World
-</option>
-
-<option value="free to play">
-    Free to Play
-</option>
-```
-
-</select>
-
-</div>
-
-<div class="filter-item">
-
-<select id="packFilter">
-
-```
-<option value="all">
-    GAME PACKS
-</option>
-
-<option value="gta">
-    GTA
-</option>
-
-<option value="assassin">
-    Assassin's Creed
-</option>
-
-<option value="far cry">
-    Far Cry
-</option>
-
-<option value="need for speed">
-    Need for Speed
-</option>
-
-<option value="sports">
-    Sports
-</option>
-
-<option value="call of duty">
-    Call of Duty
-</option>
-
-<option value="the witcher">
-    The Witcher
-</option>
-
-<option value="free to play">
-    Free to Play
-</option>
-```
-
-</select>
-
-</div>
-
-<div class="filter-item">
-
-<select id="sizeFilter">
-
-```
-<option value="all">
-    BY SIZE
-</option>
-
-<option value="1–5 GB">
-    1–5 GB
-</option>
-
-<option value="5–10 GB">
-    5–10 GB
-</option>
-
-<option value="10–20 GB">
-    10–20 GB
-</option>
-
-<option value="20+ GB">
-    20+ GB
-</option>
-```
-
-</select>
-
-</div>
-
-</div>
-
-<!-- =========================================================
-     FEATURED GAMES
-========================================================= -->
-
-<h2
-    class="section-title"
-    id="latest"
->
-    Featured Games
-</h2>
-
-<!-- =========================================================
-     PAGE 1
-========================================================= -->
-
-<div
-    class="page active-page"
-    id="page1Content"
->
-
-<div class="game-grid">
-
-<!-- FAR CRY 2 -->
-
-<div
-    class="game-card"
-    data-name="Far Cry 2"
-    data-category="action open world"
-    data-pack="far cry"
-    data-size="5–10 GB"
->
-
-<img
-src="./images/farcry2.jpg"
-alt="Far Cry 2"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    Far Cry 2
-</h3>
-
-<p>
-    Action • Open World
-</p>
-
-<p class="game-size">
-    Size: 5–10 GB
-</p>
-
-<a
-href="./farcry2.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-<!-- FAR CRY 3 -->
-
-<div
-    class="game-card"
-    data-name="Far Cry 3"
-    data-category="action open world"
-    data-pack="far cry"
-    data-size="5–10 GB"
->
-
-<img
-src="./images/farcry3.jpg"
-alt="Far Cry 3"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    Far Cry 3
-</h3>
-
-<p>
-    Action • Open World
-</p>
-
-<p class="game-size">
-    Size: 5–10 GB
-</p>
-
-<a
-href="./farcry3.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-<!-- ASSASSIN'S CREED II -->
-
-<div
-    class="game-card"
-    data-name="Assassin's Creed II"
-    data-category="action adventure open world"
-    data-pack="assassin"
-    data-size="5–10 GB"
->
-
-<img
-src="./images/ac2.jpg"
-alt="Assassin's Creed II"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    Assassin's Creed II
-</h3>
-
-<p>
-    Action • Adventure • Open World
-</p>
-
-<p class="game-size">
-    Size: 5–10 GB
-</p>
-
-<a
-href="./ac2.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-<!-- GTA V -->
-
-<div
-    class="game-card"
-    data-name="GTA V"
-    data-category="action open world"
-    data-pack="gta"
-    data-size="20+ GB"
->
-
-<img
-src="./images/gta5.jpg"
-alt="GTA V"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    GTA V
-</h3>
-
-<p>
-    Action • Open World
-</p>
-
-<p class="game-size">
-    Size: 20+ GB
-</p>
-
-<a
-href="./gta5.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-<!-- GTA IV -->
-
-<div
-    class="game-card"
-    data-name="GTA IV"
-    data-category="action open world"
-    data-pack="gta"
-    data-size="10–20 GB"
->
-
-<img
-src="./images/gta4.jpg"
-alt="GTA IV"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    GTA IV
-</h3>
-
-<p>
-    Action • Open World
-</p>
-
-<p class="game-size">
-    Size: 10–20 GB
-</p>
-
-<a
-href="./gta4.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-<!-- FIFA -->
-
-<div
-    class="game-card"
-    data-name="FIFA"
-    data-category="sports"
-    data-pack="sports"
-    data-size="5–10 GB"
->
-
-<img
-src="./images/fifa.jpg"
-alt="FIFA"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    FIFA
-</h3>
-
-<p>
-    Sports • Football
-</p>
-
-<p class="game-size">
-    Size: 5–10 GB
-</p>
-
-<a
-href="./fifa.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-<!-- DON BRADMAN CRICKET -->
-
-<div
-    class="game-card"
-    data-name="Don Bradman Cricket"
-    data-category="sports"
-    data-pack="sports"
-    data-size="5–10 GB"
->
-
-<img
-src="./images/cricket.jpg"
-alt="Don Bradman Cricket"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    Don Bradman Cricket
-</h3>
-
-<p>
-    Sports • Cricket
-</p>
-
-<p class="game-size">
-    Size: 5–10 GB
-</p>
-
-<a
-href="./cricket.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-<!-- CALL OF DUTY 1 -->
-
-<div
-    class="game-card"
-    data-name="Call of Duty 1"
-    data-category="action"
-    data-pack="call of duty"
-    data-size="1–5 GB"
->
-
-<img
-src="./images/cod.jpg"
-alt="Call of Duty 1"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    Call of Duty 1
-</h3>
-
-<p>
-    Action • FPS
-</p>
-
-<p class="game-size">
-    Size: 1–5 GB
-</p>
-
-<a
-href="./cod1.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-<!-- THE WITCHER 2 -->
-
-<div
-    class="game-card"
-    data-name="The Witcher 2"
-    data-category="action adventure"
-    data-pack="the witcher"
-    data-size="10–20 GB"
->
-
-<img
-src="./images/witcher2.jpg"
-alt="The Witcher 2"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    The Witcher 2
-</h3>
-
-<p>
-    Action • Adventure
-</p>
-
-<p class="game-size">
-    Size: 10–20 GB
-</p>
-
-<a
-href="./witcher2.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- =========================================================
-     PAGE 2
-========================================================= -->
-
-<div
-    class="page"
-    id="page2Content"
->
-
-<div class="game-grid">
-
-<!-- GTA VI -->
-
-<div
-    class="game-card"
-    data-name="GTA VI"
-    data-category="action open world"
-    data-pack="gta"
-    data-size="20+ GB"
->
-
-<img
-src="./images/gtavi.jpg"
-alt="GTA VI"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    GTA VI
-</h3>
-
-<p>
-    Action • Open World
-</p>
-
-<p class="game-size">
-    Size: 20+ GB
-</p>
-
-<a
-href="./gtavi.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-<!-- ASSASSIN'S CREED SYNDICATE -->
-
-<div
-    class="game-card"
-    data-name="Assassin's Creed Syndicate"
-    data-category="action adventure open world"
-    data-pack="assassin"
-    data-size="20+ GB"
->
-
-<img
-src="./images/acs.jpg"
-alt="Assassin's Creed Syndicate"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    Assassin's Creed Syndicate
-</h3>
-
-<p>
-    Action • Adventure • Open World
-</p>
-
-<p class="game-size">
-    Size: 20+ GB
-</p>
-
-<a
-href="./acs.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-<!-- NEED FOR SPEED II -->
-
-<div
-    class="game-card"
-    data-name="Need for Speed II"
-    data-category="racing"
-    data-pack="need for speed"
-    data-size="1–5 GB"
->
-
-<img
-src="./images/nfs2.jpg"
-alt="Need for Speed II"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    Need for Speed II
-</h3>
-
-<p>
-    Racing • Arcade
-</p>
-
-<p class="game-size">
-    Size: 1–5 GB
-</p>
-
-<a
-href="./nfs2.html"
-class="download-btn"
-
->
-
-```
-VIEW DETAILS
-```
-
-</a>
-
-</div>
-
-</div>
-
-<!-- =========================================================
-     WARFRAME
-========================================================= -->
-
-<div
-    class="game-card"
-    data-name="Warframe"
-    data-category="action adventure free to play"
-    data-pack="free to play"
-    data-size="20+ GB"
->
-
-<img
-src="./images/warframe.jpg"
-alt="Warframe"
-class="game-cover"
-
->
-
-<div class="game-info">
-
-<h3>
-    Warframe
-</h3>
-
-<p>
-    Action • Free to Play
-</p>
-
-<p class="game-size">
-    Officially Free • PC
-</p>
-
-<a
-href="./warframe.html"
-class="download-btn free-download-btn"
-
->
-
-```
-DOWNLOAD OFFICIAL FOR FREE
-```
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- =========================================================
-     PAGE 3
-========================================================= -->
-
-<div
-    class="page"
-    id="page3Content"
->
-
-<div class="no-results">
-
-<h3>
-    More Games Coming Soon
-</h3>
-
-<p>
-    New games will be added here.
-</p>
-
-</div>
-
-</div>
-
-<!-- =========================================================
-     PAGINATION
-========================================================= -->
-
-<div class="pagination">
-
-<button
-class="page-btn arrow-btn"
-id="prevPage"
-onclick="previousPage()"
-
->
-
-```
-←
-```
-
-</button>
-
-<button
-class="page-btn active"
-id="pageButton1"
-onclick="showPage(1)"
-
->
-
-```
-1
-```
-
-</button>
-
-<button
-class="page-btn"
-id="pageButton2"
-onclick="showPage(2)"
-
->
-
-```
-2
-```
-
-</button>
-
-<button
-class="page-btn"
-id="pageButton3"
-onclick="showPage(3)"
-
->
-
-```
-3
-```
-
-</button>
-
-<button
-class="page-btn arrow-btn"
-id="nextPage"
-onclick="nextPage()"
-
->
-
-```
-→
-```
-
-</button>
-
-</div>
-
-<p style="
-    text-align:center;
-    color:#555;
-    font-size:11px;
-    margin-top:20px;
-    line-height:1.7;
-">
-
-Game pages are provided for information and discovery.
-Use official publisher or store sources for legitimate
-purchases and downloads.
-
-</p>
+    <div class="section-title">
+        <h2>
+            Featured <span>Games</span>
+        </h2>
+    </div>
+
+
+    <!-- FILTERS -->
+    <div class="filters">
+
+        <select id="categoryFilter" onchange="applyFilters()">
+            <option value="all">All Categories</option>
+            <option value="action">Action</option>
+            <option value="adventure">Adventure</option>
+            <option value="racing">Racing</option>
+            <option value="sports">Sports</option>
+            <option value="open world">Open World</option>
+            <option value="free to play">Free to Play</option>
+        </select>
+
+        <select id="packFilter" onchange="applyFilters()">
+            <option value="all">All Packs</option>
+            <option value="gta">GTA</option>
+            <option value="assassin's creed">Assassin's Creed</option>
+            <option value="far cry">Far Cry</option>
+            <option value="need for speed">Need for Speed</option>
+            <option value="sports">Sports</option>
+            <option value="call of duty">Call of Duty</option>
+            <option value="the witcher">The Witcher</option>
+            <option value="free to play">Free to Play</option>
+        </select>
+
+        <select id="sizeFilter" onchange="applyFilters()">
+            <option value="all">All Sizes</option>
+            <option value="1–5 GB">1–5 GB</option>
+            <option value="5–10 GB">5–10 GB</option>
+            <option value="10–20 GB">10–20 GB</option>
+            <option value="20+ GB">20+ GB</option>
+        </select>
+
+    </div>
+
+
+    <!-- PAGE 1 -->
+    <div class="game-page active" id="page1">
+
+        <div class="games-grid">
+
+            <!-- FAR CRY 2 -->
+            <div class="game-card"
+                 data-name="Far Cry 2"
+                 data-category="action open world"
+                 data-pack="far cry"
+                 data-size="5–10 GB">
+
+                <div class="game-image">
+                    <img src="./images/farcry2.jpg" alt="Far Cry 2">
+                </div>
+
+                <div class="game-info">
+                    <h3>Far Cry 2</h3>
+                    <div class="game-meta">Action • Open World</div>
+                    <div class="game-meta">Size: 5–10 GB</div>
+                    <p class="game-description">
+                        Explore a dangerous open world in this classic action game.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./farcry2.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- FAR CRY 3 -->
+            <div class="game-card"
+                 data-name="Far Cry 3"
+                 data-category="action open world"
+                 data-pack="far cry"
+                 data-size="5–10 GB">
+
+                <div class="game-image">
+                    <img src="./images/farcry3.jpg" alt="Far Cry 3">
+                </div>
+
+                <div class="game-info">
+                    <h3>Far Cry 3</h3>
+                    <div class="game-meta">Action • Open World</div>
+                    <div class="game-meta">Size: 5–10 GB</div>
+                    <p class="game-description">
+                        Experience an open-world adventure filled with exploration.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./farcry3.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ASSASSIN'S CREED II -->
+            <div class="game-card"
+                 data-name="Assassin's Creed II"
+                 data-category="action adventure open world"
+                 data-pack="assassin's creed"
+                 data-size="5–10 GB">
+
+                <div class="game-image">
+                    <img src="./images/ac2.jpg" alt="Assassin's Creed II">
+                </div>
+
+                <div class="game-info">
+                    <h3>Assassin's Creed II</h3>
+                    <div class="game-meta">Action • Adventure</div>
+                    <div class="game-meta">Size: 5–10 GB</div>
+                    <p class="game-description">
+                        Explore Renaissance Italy in this legendary adventure.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./ac2.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- GTA V -->
+            <div class="game-card"
+                 data-name="GTA V"
+                 data-category="action open world"
+                 data-pack="gta"
+                 data-size="20+ GB">
+
+                <div class="game-image">
+                    <img src="./images/gta5.jpg" alt="GTA V">
+                </div>
+
+                <div class="game-info">
+                    <h3>GTA V</h3>
+                    <div class="game-meta">Action • Open World</div>
+                    <div class="game-meta">Size: 20+ GB</div>
+                    <p class="game-description">
+                        Explore Los Santos in one of the most popular open-world games.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./gta5.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- GTA IV -->
+            <div class="game-card"
+                 data-name="GTA IV"
+                 data-category="action open world"
+                 data-pack="gta"
+                 data-size="10–20 GB">
+
+                <div class="game-image">
+                    <img src="./images/gta4.jpg" alt="GTA IV">
+                </div>
+
+                <div class="game-info">
+                    <h3>GTA IV</h3>
+                    <div class="game-meta">Action • Open World</div>
+                    <div class="game-meta">Size: 10–20 GB</div>
+                    <p class="game-description">
+                        Follow an intense story through Liberty City.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./gta4.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- FIFA -->
+            <div class="game-card"
+                 data-name="FIFA"
+                 data-category="sports"
+                 data-pack="sports"
+                 data-size="10–20 GB">
+
+                <div class="game-image">
+                    <img src="./images/fifa.jpg" alt="FIFA">
+                </div>
+
+                <div class="game-info">
+                    <h3>FIFA</h3>
+                    <div class="game-meta">Sports</div>
+                    <div class="game-meta">Size: 10–20 GB</div>
+                    <p class="game-description">
+                        Enjoy football action with teams and competitions.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./fifa.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- DON BRADMAN CRICKET -->
+            <div class="game-card"
+                 data-name="Don Bradman Cricket"
+                 data-category="sports"
+                 data-pack="sports"
+                 data-size="10–20 GB">
+
+                <div class="game-image">
+                    <img src="./images/cricket.jpg" alt="Don Bradman Cricket">
+                </div>
+
+                <div class="game-info">
+                    <h3>Don Bradman Cricket</h3>
+                    <div class="game-meta">Sports • Cricket</div>
+                    <div class="game-meta">Size: 10–20 GB</div>
+                    <p class="game-description">
+                        Experience cricket gameplay with detailed controls.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./cricket.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- CALL OF DUTY 1 -->
+            <div class="game-card"
+                 data-name="Call of Duty 1"
+                 data-category="action"
+                 data-pack="call of duty"
+                 data-size="1–5 GB">
+
+                <div class="game-image">
+                    <img src="./images/cod.jpg" alt="Call of Duty 1">
+                </div>
+
+                <div class="game-info">
+                    <h3>Call of Duty 1</h3>
+                    <div class="game-meta">Action</div>
+                    <div class="game-meta">Size: 1–5 GB</div>
+                    <p class="game-description">
+                        Experience the classic Call of Duty campaign.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./cod1.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- THE WITCHER 2 -->
+            <div class="game-card"
+                 data-name="The Witcher 2"
+                 data-category="action adventure"
+                 data-pack="the witcher"
+                 data-size="10–20 GB">
+
+                <div class="game-image">
+                    <img src="./images/witcher2.jpg" alt="The Witcher 2">
+                </div>
+
+                <div class="game-info">
+                    <h3>The Witcher 2</h3>
+                    <div class="game-meta">Action • Adventure</div>
+                    <div class="game-meta">Size: 10–20 GB</div>
+                    <p class="game-description">
+                        Enter a fantasy world filled with quests and adventure.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./witcher2.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAGE 2 -->
+    <div class="game-page" id="page2">
+
+        <div class="games-grid">
+
+            <!-- GTA VI -->
+            <div class="game-card"
+                 data-name="GTA VI"
+                 data-category="action open world"
+                 data-pack="gta"
+                 data-size="20+ GB">
+
+                <div class="game-image">
+                    <img src="./images/gtavi.jpg" alt="GTA VI">
+                </div>
+
+                <div class="game-info">
+                    <h3>GTA VI</h3>
+                    <div class="game-meta">Action • Open World</div>
+                    <div class="game-meta">Size: 20+ GB</div>
+                    <p class="game-description">
+                        Discover the next generation of the Grand Theft Auto series.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./gtavi.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ASSASSIN'S CREED SYNDICATE -->
+            <div class="game-card"
+                 data-name="Assassin's Creed Syndicate"
+                 data-category="action adventure open world"
+                 data-pack="assassin's creed"
+                 data-size="20+ GB">
+
+                <div class="game-image">
+                    <img src="./images/acs.jpg" alt="Assassin's Creed Syndicate">
+                </div>
+
+                <div class="game-info">
+                    <h3>Assassin's Creed Syndicate</h3>
+                    <div class="game-meta">Action • Open World</div>
+                    <div class="game-meta">Size: 20+ GB</div>
+                    <p class="game-description">
+                        Explore Victorian London as the Frye twins.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./acs.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- NEED FOR SPEED II -->
+            <div class="game-card"
+                 data-name="Need for Speed II"
+                 data-category="racing"
+                 data-pack="need for speed"
+                 data-size="1–5 GB">
+
+                <div class="game-image">
+                    <img src="./images/nfs2.jpg" alt="Need for Speed II">
+                </div>
+
+                <div class="game-info">
+                    <h3>Need for Speed II</h3>
+                    <div class="game-meta">Racing</div>
+                    <div class="game-meta">Size: 1–5 GB</div>
+                    <p class="game-description">
+                        Enjoy classic arcade racing from the Need for Speed series.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./nfs2.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- WARFRAME -->
+            <div class="game-card"
+                 data-name="Warframe"
+                 data-category="action free to play"
+                 data-pack="free to play"
+                 data-size="20+ GB">
+
+                <div class="game-image">
+                    <img src="./images/warframe.jpg" alt="Warframe">
+                </div>
+
+                <div class="game-info">
+                    <h3>Warframe</h3>
+                    <div class="game-meta">Action • Free to Play</div>
+                    <div class="game-meta">Size: 20+ GB</div>
+                    <p class="game-description">
+                        Explore a fast-paced free-to-play sci-fi adventure.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./warframe.html">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- TRACKMANIA -->
+            <div class="game-card"
+                 data-name="Trackmania"
+                 data-category="racing free to play"
+                 data-pack="free to play"
+                 data-size="5–10 GB">
+
+                <div class="game-image">
+                    <img src="./images/trackmania.jpg" alt="Trackmania">
+                </div>
+
+                <div class="game-info">
+                    <h3>Trackmania</h3>
+                    <div class="game-meta">Racing • Free to Play</div>
+                    <div class="game-meta">Officially Free • PC</div>
+                    <p class="game-description">
+                        Race through challenging tracks and compete for the fastest times.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn" href="./trackmania.html">
+                            VIEW DETAILS
+                        </a>
+
+                        <a class="free-download-btn"
+                           href="./trackmania.html">
+                            DOWNLOAD OFFICIAL FOR FREE
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ROCKET LEAGUE -->
+            <div class="game-card"
+                 data-name="Rocket League"
+                 data-category="sports racing free to play"
+                 data-pack="free to play"
+                 data-size="20+ GB">
+
+                <div class="game-image">
+                    <img src="./images/rocketleague.jpg" alt="Rocket League">
+                </div>
+
+                <div class="game-info">
+                    <h3>Rocket League</h3>
+                    <div class="game-meta">Sports • Racing • Free to Play</div>
+                    <div class="game-meta">Officially Free • PC</div>
+                    <p class="game-description">
+                        Combine football and fast cars in this competitive game.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn"
+                           href="./rocketleague.html">
+                            VIEW DETAILS
+                        </a>
+
+                        <a class="free-download-btn"
+                           href="./rocketleague.html">
+                            DOWNLOAD OFFICIAL FOR FREE
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAGE 3 -->
+    <div class="game-page" id="page3">
+
+        <div class="games-grid">
+
+            <!-- FALL GUYS -->
+            <div class="game-card"
+                 data-name="Fall Guys"
+                 data-category="adventure free to play"
+                 data-pack="free to play"
+                 data-size="5–10 GB">
+
+                <div class="game-image">
+                    <img src="./images/fallguys.jpg" alt="Fall Guys">
+                </div>
+
+                <div class="game-info">
+                    <h3>Fall Guys</h3>
+                    <div class="game-meta">Party • Free to Play</div>
+                    <div class="game-meta">Officially Free • PC</div>
+                    <p class="game-description">
+                        Take on colorful obstacle courses and compete in chaotic rounds.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn"
+                           href="./fallguys.html">
+                            VIEW DETAILS
+                        </a>
+
+                        <a class="free-download-btn"
+                           href="./fallguys.html">
+                            DOWNLOAD OFFICIAL FOR FREE
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- STUMBLE GUYS -->
+            <div class="game-card"
+                 data-name="Stumble Guys"
+                 data-category="action free to play"
+                 data-pack="free to play"
+                 data-size="5–10 GB">
+
+                <div class="game-image">
+                    <img src="./images/stumbleguys.jpg" alt="Stumble Guys">
+                </div>
+
+                <div class="game-info">
+                    <h3>Stumble Guys</h3>
+                    <div class="game-meta">Party • Free to Play</div>
+                    <div class="game-meta">Officially Free • PC</div>
+                    <p class="game-description">
+                        Jump, dodge and race through fun multiplayer knockout rounds.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn"
+                           href="./stumbleguys.html">
+                            VIEW DETAILS
+                        </a>
+
+                        <a class="free-download-btn"
+                           href="./stumbleguys.html">
+                            DOWNLOAD OFFICIAL FOR FREE
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- PALIA -->
+            <div class="game-card"
+                 data-name="Palia"
+                 data-category="adventure free to play"
+                 data-pack="free to play"
+                 data-size="20+ GB">
+
+                <div class="game-image">
+                    <img src="./images/palia.jpg" alt="Palia">
+                </div>
+
+                <div class="game-info">
+                    <h3>Palia</h3>
+                    <div class="game-meta">Adventure • Free to Play</div>
+                    <div class="game-meta">Officially Free • PC</div>
+                    <p class="game-description">
+                        Explore a colorful fantasy world, build your home and play with friends.
+                    </p>
+
+                    <div class="game-buttons">
+                        <a class="details-btn"
+                           href="./palia.html">
+                            VIEW DETAILS
+                        </a>
+
+                        <a class="free-download-btn"
+                           href="./palia.html">
+                            DOWNLOAD OFFICIAL FOR FREE
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+
+        <button onclick="changePage(-1)">
+            ‹
+        </button>
+
+        <button class="active" onclick="showPage(1)">
+            1
+        </button>
+
+        <button onclick="showPage(2)">
+            2
+        </button>
+
+        <button onclick="showPage(3)">
+            3
+        </button>
+
+        <button onclick="changePage(1)">
+            ›
+        </button>
+
+    </div>
 
 </main>
 
-<!-- =========================================================
-     SIDEBAR
-========================================================= -->
 
-<aside>
+<!-- SIDEBAR -->
+<aside class="sidebar">
 
-<div class="sidebar-search">
+    <h3>Search Games</h3>
 
-<input
-type="text"
-id="sidebarSearch"
-placeholder="Search games..."
-autocomplete="off"
+    <div class="sidebar-search">
+        <input
+            type="text"
+            id="sidebarSearch"
+            placeholder="Search games..."
+            onkeyup="sidebarSearchGame()"
+        >
+    </div>
 
->
 
-<div
-    class="sidebar-search-results"
-    id="sidebarSearchResults"
-></div>
+    <h3>Popular Games</h3>
 
-</div>
 
-<div class="sidebar-box" id="packs">
+    <!-- GTA VI -->
+    <div class="popular-game">
+        <img src="./images/gtavi.jpg" alt="GTA VI">
+        <a href="./gtavi.html">GTA VI</a>
+    </div>
 
-<div class="sidebar-title">
-    POPULAR GAMES
-</div>
 
-<a
-href="./gtavi.html"
-class="popular-card"
+    <!-- AC SYNDICATE -->
+    <div class="popular-game">
+        <img src="./images/acs.jpg" alt="Assassin's Creed Syndicate">
+        <a href="./acs.html">Assassin's Creed Syndicate</a>
+    </div>
 
->
 
-<img
-src="./images/gtavi.jpg"
-alt="GTA VI"
+    <!-- NFS II -->
+    <div class="popular-game">
+        <img src="./images/nfs2.jpg" alt="Need for Speed II">
+        <a href="./nfs2.html">Need for Speed II</a>
+    </div>
 
->
 
-<div class="popular-info">
+    <!-- WARFRAME -->
+    <div class="popular-game">
+        <img src="./images/warframe.jpg" alt="Warframe">
+        <a href="./warframe.html">Warframe</a>
+    </div>
 
-<h4>
-    GTA VI
-</h4>
 
-<p>
-    Action • Open World
-</p>
+    <!-- TRACKMANIA -->
+    <div class="popular-game">
+        <img src="./images/trackmania.jpg" alt="Trackmania">
+        <a href="./trackmania.html">Trackmania</a>
+    </div>
 
-</div>
 
-</a>
+    <!-- ROCKET LEAGUE -->
+    <div class="popular-game">
+        <img src="./images/rocketleague.jpg" alt="Rocket League">
+        <a href="./rocketleague.html">Rocket League</a>
+    </div>
 
-<a
-href="./acs.html"
-class="popular-card"
 
->
+    <!-- FALL GUYS -->
+    <div class="popular-game">
+        <img src="./images/fallguys.jpg" alt="Fall Guys">
+        <a href="./fallguys.html">Fall Guys</a>
+    </div>
 
-<img
-src="./images/acs.jpg"
-alt="Assassin's Creed Syndicate"
 
->
+    <!-- STUMBLE GUYS -->
+    <div class="popular-game">
+        <img src="./images/stumbleguys.jpg" alt="Stumble Guys">
+        <a href="./stumbleguys.html">Stumble Guys</a>
+    </div>
 
-<div class="popular-info">
 
-<h4>
-    Assassin's Creed Syndicate
-</h4>
+    <!-- PALIA -->
+    <div class="popular-game">
+        <img src="./images/palia.jpg" alt="Palia">
+        <a href="./palia.html">Palia</a>
+    </div>
 
-<p>
-    Action • Adventure • Open World
-</p>
 
-</div>
+    <!-- FAR CRY 3 -->
+    <div class="popular-game">
+        <img src="./images/farcry3.jpg" alt="Far Cry 3">
+        <a href="./farcry3.html">Far Cry 3</a>
+    </div>
 
-</a>
 
-<a
-href="./nfs2.html"
-class="popular-card"
+    <!-- GTA V -->
+    <div class="popular-game">
+        <img src="./images/gta5.jpg" alt="GTA V">
+        <a href="./gta5.html">GTA V</a>
+    </div>
 
->
 
-<img
-src="./images/nfs2.jpg"
-alt="Need for Speed II"
+    <!-- GTA IV -->
+    <div class="popular-game">
+        <img src="./images/gta4.jpg" alt="GTA IV">
+        <a href="./gta4.html">GTA IV</a>
+    </div>
 
->
 
-<div class="popular-info">
-
-<h4>
-    Need for Speed II
-</h4>
-
-<p>
-    Racing • Arcade
-</p>
-
-</div>
-
-</a>
-
-<!-- WARFRAME POPULAR -->
-
-<a
-href="./warframe.html"
-class="popular-card"
-
->
-
-<img
-src="./images/warframe.jpg"
-alt="Warframe"
-
->
-
-<div class="popular-info">
-
-<h4>
-    Warframe
-</h4>
-
-<p>
-    Action • Free to Play
-</p>
-
-</div>
-
-</a>
-
-<a
-href="./farcry3.html"
-class="popular-card"
-
->
-
-<img
-src="./images/farcry3.jpg"
-alt="Far Cry 3"
-
->
-
-<div class="popular-info">
-
-<h4>
-    Far Cry 3
-</h4>
-
-<p>
-    Action • Open World
-</p>
-
-</div>
-
-</a>
-
-<a
-href="./gta5.html"
-class="popular-card"
-
->
-
-<img
-src="./images/gta5.jpg"
-alt="GTA V"
-
->
-
-<div class="popular-info">
-
-<h4>
-    GTA V
-</h4>
-
-<p>
-    Action • Open World
-</p>
-
-</div>
-
-</a>
-
-<a
-href="./gta4.html"
-class="popular-card"
-
->
-
-<img
-src="./images/gta4.jpg"
-alt="GTA IV"
-
->
-
-<div class="popular-info">
-
-<h4>
-    GTA IV
-</h4>
-
-<p>
-    Action • Open World
-</p>
-
-</div>
-
-</a>
-
-<a
-href="./witcher2.html"
-class="popular-card"
-
->
-
-<img
-src="./images/witcher2.jpg"
-alt="The Witcher 2"
-
->
-
-<div class="popular-info">
-
-<h4>
-    The Witcher 2
-</h4>
-
-<p>
-    Action • Adventure
-</p>
-
-</div>
-
-</a>
-
-</div>
+    <!-- WITCHER 2 -->
+    <div class="popular-game">
+        <img src="./images/witcher2.jpg" alt="The Witcher 2">
+        <a href="./witcher2.html">The Witcher 2</a>
+    </div>
 
 </aside>
 
 </div>
 
-<!-- =========================================================
-     TRUST STRIP
-========================================================= -->
 
-<section class="trust-strip">
-
-<div class="trust-item">
-
-<div class="trust-icon">
-    ✓
-</div>
-
-<h3>
-    Clear Game Information
-</h3>
-
-<p>
-    Explore genres, screenshots and system requirements
-    before choosing a game.
-</p>
-
-</div>
-
-<div class="trust-item">
-
-<div class="trust-icon">
-    ◆
-</div>
-
-<h3>
-    Easy Discovery
-</h3>
-
-<p>
-    Search and filter the collection to quickly find
-    games you are interested in.
-</p>
-
-</div>
-
-<div class="trust-item">
-
-<div class="trust-icon">
-    ↗
-</div>
-
-<h3>
-    Official Sources
-</h3>
-
-<p>
-    When available, use publisher or authorized store
-    sources for legitimate purchases and downloads.
-</p>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     ABOUT
-========================================================= -->
-
-<section class="info-section" id="about">
-
-<div class="about-qevrano">
-
-<h2 class="section-title">
-    About QEVRANO
-</h2>
-
-<p>
-    QEVRANO PC GAMES is a PC gaming information website
-    designed to make discovering games simple and convenient.
-</p>
-
-<p>
-    Explore game pages, screenshots, genres, system requirements
-    and official publisher or store sources before choosing a game.
-</p>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
+<!-- FOOTER -->
 <footer>
 
-<div class="footer-logo">
-    QE<span>V</span>RANO PC GAMES
-</div>
+    <h3>
+        QEVRANO <span>PC GAMES</span>
+    </h3>
 
-<div class="site-links">
-
-<a href="./about.html">
-    About
-</a>
-
-<a href="./index.html#games">
-    Games
-</a>
-
-<a href="./contact.html">
-    Contact
-</a>
-
-<a href="./privacy.html">
-    Privacy Policy
-</a>
-
-<a href="./terms.html">
-    Terms & Conditions
-</a>
-
-<a href="./disclaimer.html">
-    Disclaimer
-</a>
-
-</div>
-
-<p>
-    © 2026 QEVRANO PC GAMES — All Rights Reserved.
-</p>
-
-<p class="disclaimer">
-    QEVRANO provides gaming information and links to
-    official publisher or authorized store sources.
-</p>
-
-<p class="disclaimer">
-    Game names, logos and artwork belong to their respective
-    owners. QEVRANO is not affiliated with publishers or
-    developers unless explicitly stated.
-</p>
+    <p>
+        © 2026 QEVRANO PC GAMES. All rights reserved.
+    </p>
 
 </footer>
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
 
 <script>
 
+/* ALL GAMES FOR SEARCH */
 const games = [
 
     {
@@ -2698,426 +1388,200 @@ const games = [
     {
         name:"Warframe",
         file:"./warframe.html"
+    },
+
+    {
+        name:"Trackmania",
+        file:"./trackmania.html"
+    },
+
+    {
+        name:"Rocket League",
+        file:"./rocketleague.html"
+    },
+
+    {
+        name:"Fall Guys",
+        file:"./fallguys.html"
+    },
+
+    {
+        name:"Stumble Guys",
+        file:"./stumbleguys.html"
+    },
+
+    {
+        name:"Palia",
+        file:"./palia.html"
     }
 
 ];
 
 
+/* HERO SEARCH */
+function heroSearchGame(){
+
+    const input =
+        document.getElementById("heroSearch").value
+        .toLowerCase()
+        .trim();
+
+    if(input === ""){
+        return;
+    }
+
+    const game = games.find(g =>
+        g.name.toLowerCase().includes(input)
+    );
+
+    if(game){
+        window.location.href = game.file;
+    }
+
+}
+
+
+/* SIDEBAR SEARCH */
+function sidebarSearchGame(){
+
+    const input =
+        document.getElementById("sidebarSearch").value
+        .toLowerCase()
+        .trim();
+
+    if(input === ""){
+        return;
+    }
+
+    const game = games.find(g =>
+        g.name.toLowerCase().includes(input)
+    );
+
+    if(game){
+        window.location.href = game.file;
+    }
+
+}
+
+
+/* PAGE CONTROL */
 let currentPage = 1;
 
+function showPage(page){
 
-function showPage(page, scrollToGames = true){
+    if(page < 1 || page > 3){
+        return;
+    }
 
     currentPage = page;
 
+    document.querySelectorAll(".game-page").forEach(p=>{
+        p.classList.remove("active");
+    });
 
     document
-        .querySelectorAll(".page")
-        .forEach(section => {
-
-            section.classList.remove(
-                "active-page"
-            );
-
-        });
-
-
-    const selectedPage =
-        document.getElementById(
-            "page" + page + "Content"
-        );
-
-
-    if(selectedPage){
-
-        selectedPage.classList.add(
-            "active-page"
-        );
-
-    }
+        .getElementById("page" + page)
+        .classList.add("active");
 
 
     document
-        .querySelectorAll(
-            ".pagination .page-btn"
-        )
-        .forEach(button => {
-
-            button.classList.remove(
-                "active"
-            );
-
+        .querySelectorAll(".pagination button")
+        .forEach(btn=>{
+            btn.classList.remove("active");
         });
 
 
-    const activeButton =
-        document.getElementById(
-            "pageButton" + page
-        );
+    const pageButtons =
+        document.querySelectorAll(".pagination button");
 
-
-    if(activeButton){
-
-        activeButton.classList.add(
-            "active"
-        );
-
+    if(pageButtons[page]){
+        pageButtons[page].classList.add("active");
     }
 
-
-    if(scrollToGames){
-
-        const gamesSection =
-            document.getElementById("games");
-
-
-        if(gamesSection){
-
-            window.scrollTo({
-
-                top:
-                    gamesSection.offsetTop - 80,
-
-                behavior:"smooth"
-
-            });
-
-        }
-
-    }
+    window.scrollTo({
+        top:document.getElementById("games").offsetTop - 80,
+        behavior:"smooth"
+    });
 
 }
 
 
-function nextPage(){
+function changePage(direction){
 
-    if(currentPage < 3){
+    let newPage = currentPage + direction;
 
-        showPage(
-            currentPage + 1
-        );
-
+    if(newPage < 1){
+        newPage = 1;
     }
+
+    if(newPage > 3){
+        newPage = 3;
+    }
+
+    showPage(newPage);
 
 }
 
 
-function previousPage(){
-
-    if(currentPage > 1){
-
-        showPage(
-            currentPage - 1
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   HERO SEARCH
-========================================================= */
-
-const heroSearch =
-    document.getElementById(
-        "heroSearch"
-    );
-
-
-heroSearch.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key !== "Enter"){
-            return;
-        }
-
-
-        const value =
-            heroSearch.value
-                .trim()
-                .toLowerCase();
-
-
-        if(!value){
-            return;
-        }
-
-
-        const found =
-            games.find(game =>
-
-                game.name
-                    .toLowerCase()
-                    .includes(value)
-
-            );
-
-
-        if(found){
-
-            window.location.href =
-                found.file;
-
-        }else{
-
-            alert(
-                "Game not found."
-            );
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   SIDEBAR SEARCH
-========================================================= */
-
-const sidebarSearch =
-    document.getElementById(
-        "sidebarSearch"
-    );
-
-
-const sidebarSearchResults =
-    document.getElementById(
-        "sidebarSearchResults"
-    );
-
-
-sidebarSearch.addEventListener(
-    "input",
-    function(){
-
-        const value =
-            this.value
-                .trim()
-                .toLowerCase();
-
-
-        sidebarSearchResults.innerHTML = "";
-
-
-        if(!value){
-
-            sidebarSearchResults.style.display =
-                "none";
-
-            return;
-
-        }
-
-
-        const matches =
-            games.filter(game =>
-
-                game.name
-                    .toLowerCase()
-                    .includes(value)
-
-            );
-
-
-        matches.forEach(game => {
-
-            const result =
-                document.createElement(
-                    "div"
-                );
-
-
-            result.className =
-                "sidebar-result";
-
-
-            result.textContent =
-                game.name;
-
-
-            result.onclick =
-                function(){
-
-                    window.location.href =
-                        game.file;
-
-                };
-
-
-            sidebarSearchResults.appendChild(
-                result
-            );
-
-        });
-
-
-        if(matches.length){
-
-            sidebarSearchResults.style.display =
-                "block";
-
-        }else{
-
-            sidebarSearchResults.style.display =
-                "none";
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   CLOSE SEARCH
-========================================================= */
-
-document.addEventListener(
-    "click",
-    function(event){
-
-        if(
-            !event.target.closest(
-                ".sidebar-search"
-            )
-        ){
-
-            sidebarSearchResults.style.display =
-                "none";
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   FILTERS
-========================================================= */
-
-const categoryFilter =
-    document.getElementById(
-        "categoryFilter"
-    );
-
-
-const packFilter =
-    document.getElementById(
-        "packFilter"
-    );
-
-
-const sizeFilter =
-    document.getElementById(
-        "sizeFilter"
-    );
-
-
+/* FILTERS */
 function applyFilters(){
 
     const category =
-        categoryFilter.value
-            .toLowerCase();
-
+        document
+        .getElementById("categoryFilter")
+        .value
+        .toLowerCase();
 
     const pack =
-        packFilter.value
-            .toLowerCase();
-
+        document
+        .getElementById("packFilter")
+        .value
+        .toLowerCase();
 
     const size =
-        sizeFilter.value
-            .toLowerCase();
+        document
+        .getElementById("sizeFilter")
+        .value
+        .toLowerCase();
 
 
-    document
-        .querySelectorAll(
-            ".game-card"
-        )
-        .forEach(card => {
+    document.querySelectorAll(".game-card").forEach(card=>{
+
+        const cardCategory =
+            card.dataset.category.toLowerCase();
+
+        const cardPack =
+            card.dataset.pack.toLowerCase();
+
+        const cardSize =
+            card.dataset.size.toLowerCase();
 
 
-            const cardCategory =
-                card.dataset.category
-                    .toLowerCase();
+        const categoryMatch =
+            category === "all" ||
+            cardCategory.includes(category);
+
+        const packMatch =
+            pack === "all" ||
+            cardPack.includes(pack);
+
+        const sizeMatch =
+            size === "all" ||
+            cardSize === size;
 
 
-            const cardPack =
-                card.dataset.pack
-                    .toLowerCase();
+        if(categoryMatch && packMatch && sizeMatch){
+            card.style.display = "";
+        }else{
+            card.style.display = "none";
+        }
 
-
-            const cardSize =
-                card.dataset.size
-                    .toLowerCase();
-
-
-            const categoryMatch =
-                category === "all" ||
-                cardCategory.includes(
-                    category
-                );
-
-
-            const packMatch =
-                pack === "all" ||
-                cardPack.includes(
-                    pack
-                );
-
-
-            const sizeMatch =
-                size === "all" ||
-                cardSize === size;
-
-
-            if(
-                categoryMatch &&
-                packMatch &&
-                sizeMatch
-            ){
-
-                card.style.display =
-                    "";
-
-            }else{
-
-                card.style.display =
-                    "none";
-
-            }
-
-        });
+    });
 
 }
-
-
-categoryFilter.addEventListener(
-    "change",
-    applyFilters
-);
-
-
-packFilter.addEventListener(
-    "change",
-    applyFilters
-);
-
-
-sizeFilter.addEventListener(
-    "change",
-    applyFilters
-);
-
-
-/* =========================================================
-   START WITHOUT AUTO-SCROLLING
-========================================================= */
-
-showPage(1, false);
 
 </script>
 
 </body>
 </html>
+```
