@@ -1,5 +1,5 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -20,25 +20,20 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    color:#ddd;
-    background:
-        linear-gradient(
-            rgba(5,5,8,.90),
-            rgba(5,5,8,.96)
-        ),
-        url("./images/gta4-bg.jpg") center/cover fixed;
+    color:#eee;
+    background:#050508;
 }
 
 /* ================= HEADER ================= */
 
 header{
-    height:70px;
+    height:72px;
     background:rgba(5,5,8,.96);
     border-bottom:1px solid rgba(220,0,0,.45);
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 6%;
+    padding:0 7%;
     position:sticky;
     top:0;
     z-index:1000;
@@ -74,97 +69,86 @@ nav a:hover{
     color:#e00000;
 }
 
-/* ================= MAIN ================= */
-
-.container{
-    width:92%;
-    max-width:1250px;
-    margin:35px auto;
-}
-
-.back{
-    color:#e00000;
-    text-decoration:none;
-    font-weight:bold;
-    display:inline-block;
-    margin-bottom:20px;
-    transition:.25s;
-}
-
-.back:hover{
-    color:#fff;
-    text-decoration:underline;
-}
-
-.main-content{
-    background:rgba(10,10,14,.95);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:8px;
-    padding:28px;
-    box-shadow:
-        0 20px 55px rgba(0,0,0,.65),
-        0 0 30px rgba(180,0,0,.08);
-}
-
 /* ================= HERO ================= */
 
 .hero{
-    display:grid;
-    grid-template-columns:300px 1fr;
-    gap:30px;
+    min-height:620px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,8,.98) 0%,
+            rgba(5,5,8,.86) 42%,
+            rgba(5,5,8,.45) 72%,
+            rgba(5,5,8,.78) 100%
+        ),
+        linear-gradient(
+            rgba(5,5,8,.35),
+            rgba(5,5,8,.65)
+        ),
+        url("./images/gta4-bg.jpg") center/cover no-repeat;
+
+    display:flex;
     align-items:center;
+
+    padding:80px 7%;
+    border-bottom:1px solid rgba(220,0,0,.2);
 }
 
-.hero img{
-    width:100%;
-    border-radius:7px;
-    display:block;
-    box-shadow:
-        0 0 25px rgba(220,0,0,.12),
-        0 15px 30px rgba(0,0,0,.55);
-    border:1px solid rgba(255,255,255,.08);
+.hero-content{
+    max-width:760px;
 }
 
-.hero-info h1{
-    color:#fff;
-    font-size:42px;
-    margin-bottom:12px;
-    line-height:1.1;
-}
-
-.subtitle{
+.badge{
+    display:inline-block;
     color:#e00000;
-    font-size:15px;
-    margin-bottom:18px;
+    border:1px solid rgba(220,0,0,.45);
+    background:rgba(0,0,0,.35);
+    padding:8px 13px;
+    border-radius:4px;
+    font-size:12px;
     font-weight:bold;
-    letter-spacing:.4px;
-}
-
-.description{
-    line-height:1.7;
-    color:#bbb;
+    letter-spacing:1px;
     margin-bottom:20px;
 }
 
-/* ================= META ================= */
+.hero h1{
+    color:#fff;
+    font-size:68px;
+    line-height:1;
+    margin-bottom:18px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    text-shadow:0 5px 25px rgba(0,0,0,.7);
+}
+
+.hero h1 span{
+    color:#e00000;
+}
+
+.hero-description{
+    max-width:700px;
+    color:#ccc;
+    line-height:1.8;
+    font-size:16px;
+    margin-bottom:25px;
+}
 
 .game-meta{
     display:flex;
     flex-wrap:wrap;
     gap:10px;
-    margin-bottom:22px;
+    margin-bottom:25px;
 }
 
 .meta{
-    background:rgba(220,0,0,.07);
-    border:1px solid rgba(220,0,0,.25);
-    padding:8px 12px;
+    background:rgba(220,0,0,.08);
+    border:1px solid rgba(220,0,0,.3);
+    padding:9px 13px;
     border-radius:5px;
     font-size:13px;
-    color:#ccc;
+    color:#ddd;
 }
-
-/* ================= DOWNLOAD ================= */
 
 .download-buttons{
     display:flex;
@@ -190,7 +174,7 @@ nav a:hover{
 
 .official:hover{
     background:#a80000;
-    box-shadow:0 0 18px rgba(220,0,0,.25);
+    box-shadow:0 0 20px rgba(220,0,0,.3);
 }
 
 .download-btn:not(.official){
@@ -202,35 +186,26 @@ nav a:hover{
 .download-btn:not(.official):hover{
     background:#d00000;
     color:#fff;
-    box-shadow:0 0 18px rgba(220,0,0,.2);
 }
 
-/* ================= COMPRESSED ================= */
+/* ================= CONTAINER ================= */
 
-.compressed-link{
-    display:block;
-    margin-top:8px;
-    color:#e00000;
-    text-decoration:underline;
-    font-size:14px;
-    font-weight:bold;
-    transition:.25s;
-}
-
-.compressed-link:hover{
-    color:#fff;
+.container{
+    width:86%;
+    max-width:1250px;
+    margin:0 auto;
 }
 
 /* ================= SECTIONS ================= */
 
 .section{
-    margin-top:38px;
+    margin-top:45px;
 }
 
 .section h2{
     color:#e00000;
     font-size:22px;
-    margin-bottom:18px;
+    margin-bottom:20px;
     border-left:4px solid #e00000;
     padding-left:12px;
     letter-spacing:.3px;
@@ -239,6 +214,55 @@ nav a:hover{
 .section p{
     color:#bbb;
     line-height:1.8;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:20px;
+}
+
+.panel{
+    background:#0d0d12;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:7px;
+    padding:22px;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.panel h3{
+    color:#fff;
+    margin-bottom:12px;
+    font-size:17px;
+}
+
+.panel p{
+    color:#aaa;
+    font-size:14px;
+    line-height:1.8;
+}
+
+/* ================= GAME INFO ================= */
+
+.info-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.info-item{
+    background:#111116;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:6px;
+    padding:14px;
+    color:#bbb;
+    font-size:14px;
+}
+
+.info-item strong{
+    color:#e00000;
 }
 
 /* ================= SCREENSHOTS ================= */
@@ -264,6 +288,7 @@ nav a:hover{
     cursor:pointer;
     border:1px solid rgba(255,255,255,.09);
     transition:.25s;
+    display:block;
 }
 
 .screenshots img:hover{
@@ -386,11 +411,66 @@ nav a:hover{
     color:#e00000;
 }
 
+/* ================= DOWNLOAD BOX ================= */
+
+.download-box{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(220,0,0,.10),
+            rgba(10,10,14,.96)
+        );
+
+    border:1px solid rgba(220,0,0,.28);
+    border-radius:8px;
+    padding:28px;
+    text-align:center;
+}
+
+.download-box h2{
+    border-left:0;
+    padding-left:0;
+    margin-bottom:12px;
+}
+
+.download-box p{
+    max-width:750px;
+    margin:0 auto 20px;
+}
+
+.download-box a{
+    display:inline-block;
+    padding:13px 22px;
+    background:#d00000;
+    color:#fff;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.download-box a:hover{
+    background:#a80000;
+    box-shadow:0 0 20px rgba(220,0,0,.25);
+}
+
+/* ================= NOTE ================= */
+
+.note{
+    margin-top:18px;
+    padding:15px 18px;
+    background:#0d0d12;
+    border-left:3px solid #e00000;
+    color:#888;
+    font-size:13px;
+    line-height:1.7;
+}
+
 /* ================= TAGLINE ================= */
 
 .tagline{
     text-align:center;
-    margin:45px 0 10px;
+    margin:50px 0 15px;
     color:#777;
     line-height:1.8;
     letter-spacing:1px;
@@ -407,8 +487,8 @@ nav a:hover{
 
 footer{
     text-align:center;
-    padding:28px;
-    margin-top:30px;
+    padding:30px;
+    margin-top:35px;
     color:#666;
     font-size:13px;
     border-top:1px solid rgba(220,0,0,.25);
@@ -468,21 +548,17 @@ footer a:hover{
 
 @media(max-width:900px){
 
-    header{
-        padding:0 4%;
-    }
-
     .hero{
+        min-height:550px;
+        padding:70px 6%;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .about{
         grid-template-columns:1fr;
-    }
-
-    .hero img{
-        max-width:350px;
-        margin:auto;
-    }
-
-    .hero-info h1{
-        font-size:32px;
     }
 
     .screenshot-area{
@@ -498,12 +574,20 @@ footer a:hover{
         grid-template-columns:1fr;
     }
 
+    .info-list{
+        grid-template-columns:1fr;
+    }
+
     .features{
         grid-template-columns:1fr;
     }
 }
 
 @media(max-width:600px){
+
+    header{
+        padding:0 4%;
+    }
 
     nav{
         gap:12px;
@@ -513,8 +597,21 @@ footer a:hover{
         font-size:12px;
     }
 
-    .main-content{
-        padding:17px;
+    .container{
+        width:92%;
+    }
+
+    .hero{
+        min-height:520px;
+        padding:60px 5%;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero-description{
+        font-size:14px;
     }
 
     .screenshots{
@@ -531,10 +628,7 @@ footer a:hover{
 
     .download-btn{
         text-align:center;
-    }
-
-    .hero-info h1{
-        font-size:29px;
+        width:100%;
     }
 }
 
@@ -552,24 +646,28 @@ footer a:hover{
         display:none;
     }
 
-    .container{
-        width:94%;
-        margin:20px auto;
+    .hero{
+        min-height:500px;
+        padding:50px 5%;
+    }
+
+    .hero h1{
+        font-size:32px;
     }
 
     .section{
-        margin-top:30px;
+        margin-top:32px;
     }
 }
 </style>
-
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
-```
 <a href="./index.html" class="logo">
     QEVRANO <span>PC GAMES</span>
 </a>
@@ -579,350 +677,426 @@ footer a:hover{
     <a href="./index.html#games">GAMES</a>
     <a href="./index.html#packs">PACKS</a>
 </nav>
-```
 
 </header>
 
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+    <div class="badge">
+        ACTION • OPEN WORLD • CRIME
+    </div>
+
+    <h1>
+        GTA <span>IV</span>
+    </h1>
+
+    <p class="hero-description">
+        Grand Theft Auto IV follows Niko Bellic as he arrives in
+        Liberty City searching for a new beginning. Explore a detailed
+        open-world city, complete missions, drive through the streets
+        and experience one of Rockstar's most iconic GTA stories.
+    </p>
+
+    <div class="game-meta">
+
+        <div class="meta">
+            Release: 2008
+        </div>
+
+        <div class="meta">
+            Genre: Action / Open World
+        </div>
+
+        <div class="meta">
+            Developer: Rockstar North
+        </div>
+
+        <div class="meta">
+            Platform: PC
+        </div>
+
+    </div>
+
+    <div class="download-buttons">
+
+        <a
+            href="https://store.rockstargames.com/game/buy-gta-iv"
+            class="download-btn official"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            OFFICIAL SOURCE
+        </a>
+
+        <a
+            href="#download"
+            class="download-btn"
+        >
+            DOWNLOAD SETUP.EXE
+        </a>
+
+        <a
+            href="#download"
+            class="download-btn"
+        >
+            HIGHLY COMPRESSED
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
 <div class="container">
 
-```
-<a href="./index.html" class="back">
-    ← BACK TO GAMES
-</a>
 
+<!-- ================= ABOUT ================= -->
 
-<main class="main-content">
+<section class="section">
 
-    <section class="hero">
+<h2>ABOUT GAME</h2>
 
-        <img
-            src="./images/gta4.jpg"
-            alt="GTA IV"
-        >
+<div class="about">
 
-        <div class="hero-info">
+    <div class="panel">
 
-            <h1>GTA IV</h1>
-
-            <div class="subtitle">
-                GRAND THEFT AUTO IV • ACTION • OPEN WORLD
-            </div>
-
-            <p class="description">
-                Grand Theft Auto IV follows Niko Bellic as he arrives in
-                Liberty City searching for a new beginning. Explore a
-                detailed open-world city, complete missions, interact with
-                characters and experience the story of one of Rockstar's
-                most iconic GTA games.
-            </p>
-
-            <div class="game-meta">
-
-                <div class="meta">
-                    Developer: Rockstar North
-                </div>
-
-                <div class="meta">
-                    Genre: Action / Open World
-                </div>
-
-                <div class="meta">
-                    Release: 2008
-                </div>
-
-                <div class="meta">
-                    PC
-                </div>
-
-            </div>
-
-
-            <div class="download-buttons">
-
-                <a
-                    href="https://store.rockstargames.com/game/buy-gta-iv"
-                    class="download-btn official"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    DOWNLOAD OFFICIAL
-                </a>
-
-
-                <div>
-
-                    <a
-                        href="#"
-                        class="download-btn"
-                        onclick="return false;"
-                    >
-                        DOWNLOAD SETUP.EXE
-                    </a>
-
-                    <a
-                        href="gta4.html"
-                        class="compressed-link"
-                    >
-                        Highly Compressed
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <h2>SCREENSHOTS</h2>
-
-        <div class="screenshot-area">
-
-            <div class="screenshots">
-
-                <img
-                    src="./images/gta4-1.jpg"
-                    alt="GTA IV Screenshot 1"
-                    onclick="openModal(this.src)"
-                >
-
-                <img
-                    src="./images/gta4-2.jpg"
-                    alt="GTA IV Screenshot 2"
-                    onclick="openModal(this.src)"
-                >
-
-                <img
-                    src="./images/gta4-3.jpg"
-                    alt="GTA IV Screenshot 3"
-                    onclick="openModal(this.src)"
-                >
-
-                <img
-                    src="./images/gta4-4.jpg"
-                    alt="GTA IV Screenshot 4"
-                    onclick="openModal(this.src)"
-                >
-
-            </div>
-
-
-            <div class="big-ad">
-
-                <strong>ADVERTISEMENT</strong>
-
-                <span>
-                    BIG AD SPACE
-                </span>
-
-                <br>
-
-                <small>
-                    300 × 600
-                </small>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <h2>MUST WATCH INSTALLATION VIDEO</h2>
-
-        <div class="video-box">
-
-            <iframe
-                src="YOUR_VIDEO_EMBED_URL"
-                title="GTA IV Installation Guide"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <h2>ABOUT GAME</h2>
+        <h3>Liberty City</h3>
 
         <p>
             Grand Theft Auto IV takes place in Liberty City, a fictional
             city inspired by New York City. Players control Niko Bellic,
-            an immigrant who becomes involved with criminals while trying
-            to build a new life.
+            an immigrant who becomes involved with criminals while
+            attempting to build a new life.
         </p>
 
         <br>
 
         <p>
-            The game combines a large open world with story missions,
-            driving, exploration, combat and numerous activities around
-            Liberty City.
+            The game combines an open-world environment with story
+            missions, driving, exploration, combat and activities
+            throughout Liberty City.
         </p>
-
-    </section>
-
-
-    <section class="section">
-
-        <h2>FEATURES</h2>
-
-        <div class="features">
-
-            <div class="feature">
-                Large open-world Liberty City
-            </div>
-
-            <div class="feature">
-                Story-driven campaign
-            </div>
-
-            <div class="feature">
-                Vehicles and driving gameplay
-            </div>
-
-            <div class="feature">
-                Detailed city environment
-            </div>
-
-            <div class="feature">
-                Character interaction system
-            </div>
-
-            <div class="feature">
-                PC graphics and customization options
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <h2>MINIMUM REQUIREMENTS</h2>
-
-        <div class="requirements">
-
-            <div class="requirement-box">
-
-                <h3>Minimum</h3>
-
-                <p>
-                    <strong>OS:</strong>
-                    Windows Vista SP1 / XP SP3
-                </p>
-
-                <p>
-                    <strong>CPU:</strong>
-                    Intel Core 2 Duo 1.8 GHz / AMD Athlon X2 64 2.4 GHz
-                </p>
-
-                <p>
-                    <strong>RAM:</strong>
-                    1.5 GB
-                </p>
-
-                <p>
-                    <strong>GPU:</strong>
-                    NVIDIA 7900 / ATI X1900
-                </p>
-
-                <p>
-                    <strong>VRAM:</strong>
-                    256 MB
-                </p>
-
-                <p>
-                    <strong>Storage:</strong>
-                    Approximately 16 GB
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <h2>RECOMMENDED REQUIREMENTS</h2>
-
-        <div class="requirements">
-
-            <div class="requirement-box">
-
-                <h3>Recommended</h3>
-
-                <p>
-                    <strong>OS:</strong>
-                    Windows Vista SP1 / XP SP3
-                </p>
-
-                <p>
-                    <strong>CPU:</strong>
-                    Intel Core 2 Quad 2.4 GHz / AMD Phenom X3 2.1 GHz
-                </p>
-
-                <p>
-                    <strong>RAM:</strong>
-                    2 GB
-                </p>
-
-                <p>
-                    <strong>GPU:</strong>
-                    NVIDIA 8600 / ATI 3870
-                </p>
-
-                <p>
-                    <strong>VRAM:</strong>
-                    512 MB
-                </p>
-
-                <p>
-                    <strong>Storage:</strong>
-                    Approximately 18 GB free space
-                </p>
-
-            </div>
-
-        </div>
-
-        <p style="margin-top:15px;font-size:13px;color:#777;">
-            These are the original/historical PC system requirements.
-            Actual performance on modern Windows versions may vary.
-        </p>
-
-    </section>
-
-
-    <div class="tagline">
-
-        <strong>
-            WELCOME TO LIBERTY CITY.
-        </strong>
-
-        DRIVE • EXPLORE • SURVIVE
-
-        <br>
-
-        QEVRANO PC GAMES
 
     </div>
 
-</main>
-```
+
+    <div class="panel">
+
+        <h3>Game Information</h3>
+
+        <div class="info-list">
+
+            <div class="info-item">
+                <strong>Developer:</strong><br>
+                Rockstar North
+            </div>
+
+            <div class="info-item">
+                <strong>Publisher:</strong><br>
+                Rockstar Games
+            </div>
+
+            <div class="info-item">
+                <strong>Release:</strong><br>
+                2008
+            </div>
+
+            <div class="info-item">
+                <strong>Mode:</strong><br>
+                Single Player
+            </div>
+
+            <div class="info-item">
+                <strong>Genre:</strong><br>
+                Action / Open World
+            </div>
+
+            <div class="info-item">
+                <strong>Platform:</strong><br>
+                Windows PC
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
+
+</section>
+
+
+<!-- ================= SCREENSHOTS ================= -->
+
+<section class="section">
+
+<h2>SCREENSHOTS</h2>
+
+<div class="screenshot-area">
+
+    <div class="screenshots">
+
+        <img
+            src="./images/gta4-1.jpg"
+            alt="GTA IV Screenshot 1"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/gta4-2.jpg"
+            alt="GTA IV Screenshot 2"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/gta4-3.jpg"
+            alt="GTA IV Screenshot 3"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/gta4-4.jpg"
+            alt="GTA IV Screenshot 4"
+            onclick="openModal(this.src)"
+        >
+
+    </div>
+
+
+    <div class="big-ad">
+
+        <strong>ADVERTISEMENT</strong>
+
+        <span>
+            BIG AD SPACE
+        </span>
+
+        <br>
+
+        <small>
+            300 × 600
+        </small>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= VIDEO ================= -->
+
+<section class="section">
+
+<h2>MUST WATCH INSTALLATION VIDEO</h2>
+
+<div class="video-box">
+
+    <iframe
+        src="YOUR_VIDEO_EMBED_URL"
+        title="GTA IV Installation Guide"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+</div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="section">
+
+<h2>FEATURES</h2>
+
+<div class="features">
+
+    <div class="feature">
+        Large open-world Liberty City
+    </div>
+
+    <div class="feature">
+        Story-driven single-player campaign
+    </div>
+
+    <div class="feature">
+        Vehicles and driving gameplay
+    </div>
+
+    <div class="feature">
+        Detailed city environment
+    </div>
+
+    <div class="feature">
+        Character interaction system
+    </div>
+
+    <div class="feature">
+        PC graphics and customization options
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= REQUIREMENTS ================= -->
+
+<section class="section">
+
+<h2>SYSTEM REQUIREMENTS</h2>
+
+<div class="requirements">
+
+    <div class="requirement-box">
+
+        <h3>Minimum</h3>
+
+        <p>
+            <strong>OS:</strong>
+            Windows Vista SP1 / XP SP3
+        </p>
+
+        <p>
+            <strong>CPU:</strong>
+            Intel Core 2 Duo 1.8 GHz / AMD Athlon X2 64 2.4 GHz
+        </p>
+
+        <p>
+            <strong>RAM:</strong>
+            1.5 GB
+        </p>
+
+        <p>
+            <strong>GPU:</strong>
+            NVIDIA 7900 / ATI X1900
+        </p>
+
+        <p>
+            <strong>VRAM:</strong>
+            256 MB
+        </p>
+
+        <p>
+            <strong>Storage:</strong>
+            Approximately 16 GB
+        </p>
+
+    </div>
+
+
+    <div class="requirement-box">
+
+        <h3>Recommended</h3>
+
+        <p>
+            <strong>OS:</strong>
+            Windows Vista SP1 / XP SP3
+        </p>
+
+        <p>
+            <strong>CPU:</strong>
+            Intel Core 2 Quad 2.4 GHz / AMD Phenom X3 2.1 GHz
+        </p>
+
+        <p>
+            <strong>RAM:</strong>
+            2 GB
+        </p>
+
+        <p>
+            <strong>GPU:</strong>
+            NVIDIA 8600 / ATI 3870
+        </p>
+
+        <p>
+            <strong>VRAM:</strong>
+            512 MB
+        </p>
+
+        <p>
+            <strong>Storage:</strong>
+            Approximately 18 GB free space
+        </p>
+
+    </div>
+
+</div>
+
+<p style="margin-top:15px;font-size:13px;color:#777;">
+    These are the original/historical PC system requirements.
+    Actual performance on modern Windows versions may vary.
+</p>
+
+</section>
+
+
+<!-- ================= DOWNLOAD ================= -->
+
+<section class="section" id="download">
+
+<div class="download-box">
+
+    <h2>DOWNLOAD GTA IV</h2>
+
+    <p>
+        Use official and legitimate sources for obtaining Grand Theft Auto IV.
+        If you provide your own legally distributed setup later, you can place
+        its download link here.
+    </p>
+
+    <a
+        href="https://store.rockstargames.com/game/buy-gta-iv"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        VISIT OFFICIAL SOURCE
+    </a>
+
+</div>
+
+
+<div class="note">
+
+    <strong>NOTE:</strong>
+    QEVRANO PC GAMES does not host or distribute unauthorized copies of
+    copyrighted games. Always make sure you have the appropriate rights
+    to use any game files you download.
+
+</div>
+
+</section>
+
+
+<!-- ================= TAGLINE ================= -->
+
+<div class="tagline">
+
+    <strong>
+        WELCOME TO LIBERTY CITY.
+    </strong>
+
+    DRIVE • EXPLORE • SURVIVE
+
+    <br>
+
+    QEVRANO PC GAMES
+
+</div>
+
+</div>
+
+
+<!-- ================= IMAGE MODAL ================= -->
 
 <div
     class="modal"
@@ -930,7 +1104,6 @@ footer a:hover{
     onclick="closeModal()"
 >
 
-```
 <span class="close">
     &times;
 </span>
@@ -941,13 +1114,14 @@ footer a:hover{
     alt="GTA IV Screenshot"
     onclick="event.stopPropagation()"
 >
-```
 
 </div>
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-```
 © 2026 QEVRANO PC GAMES — All Rights Reserved
 
 <br><br>
@@ -959,9 +1133,9 @@ footer a:hover{
 <a href="./contact.html">Contact</a>
 |
 <a href="./terms.html">Terms</a>
-```
 
 </footer>
+
 
 <script>
 
@@ -977,7 +1151,6 @@ function openModal(src){
 
 }
 
-
 function closeModal(){
 
     document
@@ -985,7 +1158,6 @@ function closeModal(){
         .style.display="none";
 
 }
-
 
 document.addEventListener("keydown",function(e){
 
@@ -999,3 +1171,4 @@ document.addEventListener("keydown",function(e){
 
 </body>
 </html>
+```
