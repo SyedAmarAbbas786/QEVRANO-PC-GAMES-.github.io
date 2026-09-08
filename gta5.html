@@ -4,20 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>GTA V - QEVRANO PC GAMES</title>
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
     font-family:Arial,Helvetica,sans-serif;
@@ -26,30 +18,10 @@ body{
     overflow-x:hidden;
 }
 
-/* =========================
-   SCROLLBAR
-========================= */
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-track{
-    background:#080808;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#e50914;
-    border-radius:10px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:#ff1b26;
-}
-
-/* =========================
-   HEADER
-========================= */
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#080808}
+::-webkit-scrollbar-thumb{background:#e50914;border-radius:10px}
+::-webkit-scrollbar-thumb:hover{background:#ff1b26}
 
 header{
     height:72px;
@@ -78,9 +50,7 @@ header{
     letter-spacing:-1px;
 }
 
-.logo span{
-    color:#e50914;
-}
+.logo span{color:#e50914}
 
 .logo small{
     display:block;
@@ -103,17 +73,9 @@ nav a{
     transition:.2s;
 }
 
-nav a:hover{
-    color:#fff;
-}
+nav a:hover{color:#fff}
 
-/* =========================
-   SEARCH
-========================= */
-
-.search-area{
-    position:relative;
-}
+.search-area{position:relative}
 
 .search-btn{
     width:38px;
@@ -130,9 +92,7 @@ nav a:hover{
     transition:.2s;
 }
 
-.search-btn:hover{
-    border-color:#e50914;
-}
+.search-btn:hover{border-color:#e50914}
 
 .search-box{
     display:none;
@@ -146,9 +106,7 @@ nav a:hover{
     box-shadow:0 15px 40px rgba(0,0,0,.6);
 }
 
-.search-box.active{
-    display:block;
-}
+.search-box.active{display:block}
 
 .search-input{
     width:100%;
@@ -159,9 +117,7 @@ nav a:hover{
     outline:none;
 }
 
-.search-input:focus{
-    border-color:#e50914;
-}
+.search-input:focus{border-color:#e50914}
 
 .search-results{
     margin-top:8px;
@@ -182,10 +138,6 @@ nav a:hover{
     background:#1a1a1a;
     color:#fff;
 }
-
-/* =========================
-   HERO
-========================= */
 
 .hero{
     min-height:620px;
@@ -248,9 +200,7 @@ nav a:hover{
     margin-bottom:18px;
 }
 
-.hero h1 span{
-    color:#e50914;
-}
+.hero h1 span{color:#e50914}
 
 .hero-subtitle{
     color:#bbb;
@@ -283,9 +233,7 @@ nav a:hover{
     color:#bbb;
 }
 
-.meta strong{
-    color:#fff;
-}
+.meta strong{color:#fff}
 
 .buttons{
     display:flex;
@@ -316,9 +264,7 @@ nav a:hover{
     border-color:#e50914;
 }
 
-.btn.primary:hover{
-    background:#c70812;
-}
+.btn.primary:hover{background:#c70812}
 
 .btn.disabled{
     opacity:.45;
@@ -326,19 +272,13 @@ nav a:hover{
     pointer-events:none;
 }
 
-/* =========================
-   CONTAINER / SECTIONS
-========================= */
-
 .container{
     width:86%;
     max-width:1250px;
     margin:auto;
 }
 
-.section{
-    padding:75px 0;
-}
+.section{padding:75px 0}
 
 .section-title{
     position:relative;
@@ -357,10 +297,6 @@ nav a:hover{
     height:25px;
     background:#e50914;
 }
-
-/* =========================
-   ABOUT
-========================= */
 
 .about{
     display:grid;
@@ -435,22 +371,14 @@ nav a:hover{
     font-size:12px;
 }
 
-.req-row:last-child{
-    border-bottom:none;
-}
+.req-row:last-child{border-bottom:none}
 
-.req-row span:first-child{
-    color:#777;
-}
+.req-row span:first-child{color:#777}
 
 .req-row span:last-child{
     color:#ddd;
     text-align:right;
 }
-
-/* =========================
-   SCREENSHOTS
-========================= */
 
 .screenshots{
     display:grid;
@@ -477,9 +405,7 @@ nav a:hover{
     transition:.3s;
 }
 
-.screenshot:hover img{
-    transform:scale(1.05);
-}
+.screenshot:hover img{transform:scale(1.05)}
 
 .screenshot::after{
     content:"VIEW";
@@ -496,13 +422,7 @@ nav a:hover{
     transition:.25s;
 }
 
-.screenshot:hover::after{
-    opacity:1;
-}
-
-/* =========================
-   ADVERTISEMENT
-========================= */
+.screenshot:hover::after{opacity:1}
 
 .ad{
     display:flex;
@@ -522,10 +442,6 @@ nav a:hover{
     font-size:11px;
     letter-spacing:2px;
 }
-
-/* =========================
-   TRAILER
-========================= */
 
 .trailer-wrapper{
     max-width:950px;
@@ -566,13 +482,7 @@ nav a:hover{
     font-size:12px;
 }
 
-.trailer-info strong{
-    color:#e50914;
-}
-
-/* =========================
-   REQUIREMENTS
-========================= */
+.trailer-info strong{color:#e50914}
 
 .version-title{
     color:#e50914;
@@ -604,21 +514,11 @@ nav a:hover{
     border-bottom:1px solid #292929;
 }
 
-.req-card .req-row{
-    align-items:flex-start;
-}
+.req-card .req-row{align-items:flex-start}
 
-.req-card .req-row span:first-child{
-    min-width:75px;
-}
+.req-card .req-row span:first-child{min-width:75px}
 
-.req-card .req-row span:last-child{
-    max-width:72%;
-}
-
-/* =========================
-   DOWNLOAD
-========================= */
+.req-card .req-row span:last-child{max-width:72%}
 
 .download-box{
     margin-top:35px;
@@ -648,9 +548,7 @@ nav a:hover{
     margin:0 auto 20px;
 }
 
-.download-box .btn{
-    margin:4px;
-}
+.download-box .btn{margin:4px}
 
 .note{
     margin-top:15px;
@@ -659,10 +557,6 @@ nav a:hover{
     text-align:center;
     line-height:1.6;
 }
-
-/* =========================
-   MODAL
-========================= */
 
 .modal{
     display:none;
@@ -675,9 +569,7 @@ nav a:hover{
     padding:30px;
 }
 
-.modal.active{
-    display:flex;
-}
+.modal.active{display:flex}
 
 .modal img{
     max-width:95%;
@@ -696,13 +588,7 @@ nav a:hover{
     line-height:1;
 }
 
-.close:hover{
-    color:#e50914;
-}
-
-/* =========================
-   FOOTER
-========================= */
+.close:hover{color:#e50914}
 
 footer{
     border-top:1px solid #222;
@@ -719,58 +605,37 @@ footer strong{
     font-size:14px;
 }
 
-footer strong span{
-    color:#e50914;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
+footer strong span{color:#e50914}
 
 @media(max-width:900px){
+    nav{display:none}
 
-    nav{
-        display:none;
-    }
-
-    .about{
-        grid-template-columns:1fr;
-    }
+    .about{grid-template-columns:1fr}
 
     .screenshots{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .requirements{
-        grid-template-columns:1fr;
-    }
+    .requirements{grid-template-columns:1fr}
 
-    .hero h1{
-        font-size:68px;
-    }
-
+    .hero h1{font-size:68px}
 }
 
 @media(max-width:600px){
-
     .header-inner,
     .hero-content,
     .container{
         width:90%;
     }
 
-    .hero{
-        min-height:650px;
-    }
+    .hero{min-height:650px}
 
     .hero h1{
         font-size:54px;
         letter-spacing:-3px;
     }
 
-    .hero-description{
-        font-size:13px;
-    }
+    .hero-description{font-size:13px}
 
     .buttons{
         flex-direction:column;
@@ -782,25 +647,15 @@ footer strong span{
         text-align:center;
     }
 
-    .features{
-        grid-template-columns:1fr;
-    }
+    .features{grid-template-columns:1fr}
 
-    .screenshots{
-        grid-template-columns:1fr;
-    }
+    .screenshots{grid-template-columns:1fr}
 
-    .screenshot{
-        height:190px;
-    }
+    .screenshot{height:190px}
 
-    .section{
-        padding:55px 0;
-    }
+    .section{padding:55px 0}
 
-    .section-title{
-        font-size:23px;
-    }
+    .section-title{font-size:23px}
 
     .search-box{
         width:250px;
@@ -812,31 +667,21 @@ footer strong span{
         height:560px;
     }
 
-    .req-row{
-        gap:10px;
-    }
+    .req-row{gap:10px}
 
     .req-card .req-row span:last-child{
         max-width:65%;
     }
-
 }
-
 </style>
 
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
-
 <div class="header-inner">
 
-```
 <a href="./index.html" style="text-decoration:none;color:inherit;">
     <div class="logo">
         QE<span>V</span>RANO
@@ -852,38 +697,33 @@ footer strong span{
 
 <div class="search-area">
 
-    <button class="search-btn" onclick="toggleSearch()">🔍</button>
+```
+<button class="search-btn" onclick="toggleSearch()">🔍</button>
 
-    <div class="search-box" id="searchBox">
+<div class="search-box" id="searchBox">
 
-        <input
-            type="text"
-            class="search-input"
-            id="searchInput"
-            placeholder="Search games..."
-            oninput="searchGames()"
-        >
+    <input
+        type="text"
+        class="search-input"
+        id="searchInput"
+        placeholder="Search games..."
+        oninput="searchGames()"
+    >
 
-        <div class="search-results" id="searchResults"></div>
-
-    </div>
+    <div class="search-results" id="searchResults"></div>
 
 </div>
 ```
 
 </div>
 
+</div>
 </header>
-
-<!-- =========================
-     HERO
-========================= -->
 
 <section class="hero">
 
 <div class="hero-content">
 
-```
 <div class="badge">FEATURED PC GAME</div>
 
 <h1>GTA <span>V</span></h1>
@@ -900,826 +740,710 @@ footer strong span{
 
 <div class="meta">
 
-    <span>
-        <strong>Release:</strong> 2015
-    </span>
+```
+<span>
+    <strong>Release:</strong> 2015
+</span>
 
-    <span>
-        <strong>Genre:</strong> Action / Adventure
-    </span>
+<span>
+    <strong>Genre:</strong> Action / Adventure
+</span>
 
-    <span>
-        <strong>Developer:</strong> Rockstar North
-    </span>
+<span>
+    <strong>Developer:</strong> Rockstar North
+</span>
 
-    <span>
-        <strong>Platform:</strong> PC
-    </span>
+<span>
+    <strong>Platform:</strong> PC
+</span>
+```
 
 </div>
 
 <div class="buttons">
 
-    <a
-        class="btn primary"
-        href="https://store.rockstargames.com/game/buy-gta-v"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        VISIT OFFICIAL STORE
-    </a>
-
-    <span class="btn disabled">
-        DOWNLOAD SETUP
-    </span>
-
-    <span class="btn disabled">
-        HIGHLY COMPRESSED
-    </span>
-
-</div>
+```
+<a
+    class="btn primary"
+    href="https://store.rockstargames.com/game/buy-gta-v"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    VISIT OFFICIAL STORE
+</a>
 ```
 
 </div>
 
+</div>
 </section>
-
-<!-- =========================
-     ABOUT
-========================= -->
 
 <section class="section">
 
 <div class="container">
 
-```
 <h2 class="section-title">About the Game</h2>
 
 <div class="about">
 
-    <!-- LEFT PANEL -->
+<div class="panel">
 
-    <div class="panel">
+<p>
+Grand Theft Auto V is an open-world action-adventure game
+developed by Rockstar North and published by Rockstar Games.
+</p>
 
-        <p>
-            Grand Theft Auto V is an open-world action-adventure game
-            developed by Rockstar North and published by Rockstar Games.
-        </p>
+<p>
+The story follows Michael De Santa, Franklin Clinton and
+Trevor Philips as their lives become increasingly connected
+through criminal schemes and major heists.
+</p>
 
-        <p>
-            The story follows Michael De Santa, Franklin Clinton and
-            Trevor Philips as their lives become increasingly connected
-            through criminal schemes and major heists.
-        </p>
+<p>
+Explore Los Santos and Blaine County, complete missions,
+discover activities and experience the single-player
+Story Mode.
+</p>
 
-        <p>
-            Explore Los Santos and Blaine County, complete missions,
-            discover activities and experience the single-player
-            Story Mode.
-        </p>
+<div class="features">
 
-        <div class="features">
-
-            <div class="feature">
-                <strong>OPEN WORLD</strong>
-                <span>
-                    Explore the huge city of Los Santos and surrounding
-                    Blaine County countryside.
-                </span>
-            </div>
-
-            <div class="feature">
-                <strong>THREE PROTAGONISTS</strong>
-                <span>
-                    Switch between Michael, Franklin and Trevor throughout
-                    the single-player story.
-                </span>
-            </div>
-
-            <div class="feature">
-                <strong>STORY MODE</strong>
-                <span>
-                    Experience a large cinematic campaign filled with
-                    missions, characters and heists.
-                </span>
-            </div>
-
-            <div class="feature">
-                <strong>VEHICLES</strong>
-                <span>
-                    Cars, motorcycles, aircraft and many other vehicles.
-                </span>
-            </div>
-
-            <div class="feature">
-                <strong>DETAILED WORLD</strong>
-                <span>
-                    Beaches, mountains, highways, neighborhoods and
-                    countless locations to discover.
-                </span>
-            </div>
-
-            <div class="feature">
-                <strong>PC VERSIONS</strong>
-                <span>
-                    PC players can access both GTAV Legacy and
-                    GTAV Enhanced.
-                </span>
-            </div>
-
-        </div>
-
-        <p class="tagline">
-            WELCOME TO LOS SANTOS.
-        </p>
-
-    </div>
-
-
-    <!-- RIGHT PANEL -->
-
-    <div class="panel">
-
-        <div class="info-title">
-            Game Information
-        </div>
-
-        <div class="req-row">
-            <span>Original Release</span>
-            <span>April 14, 2015</span>
-        </div>
-
-        <div class="req-row">
-            <span>Developer</span>
-            <span>Rockstar North</span>
-        </div>
-
-        <div class="req-row">
-            <span>Publisher</span>
-            <span>Rockstar Games</span>
-        </div>
-
-        <div class="req-row">
-            <span>Genre</span>
-            <span>Action / Adventure</span>
-        </div>
-
-        <div class="req-row">
-            <span>Setting</span>
-            <span>Los Santos / Blaine County</span>
-        </div>
-
-        <div class="req-row">
-            <span>Mode</span>
-            <span>Single Player / Online</span>
-        </div>
-
-        <div class="req-row">
-            <span>PC Versions</span>
-            <span>Enhanced / Legacy</span>
-        </div>
-
-        <div class="req-row">
-            <span>Platform</span>
-            <span>PC</span>
-        </div>
-
-        <div class="req-row">
-            <span>Engine</span>
-            <span>RAGE</span>
-        </div>
-
-    </div>
-
+<div class="feature">
+<strong>OPEN WORLD</strong>
+<span>
+Explore the huge city of Los Santos and surrounding
+Blaine County countryside.
+</span>
 </div>
-```
+
+<div class="feature">
+<strong>THREE PROTAGONISTS</strong>
+<span>
+Switch between Michael, Franklin and Trevor throughout
+the single-player story.
+</span>
+</div>
+
+<div class="feature">
+<strong>STORY MODE</strong>
+<span>
+Experience a large cinematic campaign filled with
+missions, characters and heists.
+</span>
+</div>
+
+<div class="feature">
+<strong>VEHICLES</strong>
+<span>
+Cars, motorcycles, aircraft and many other vehicles.
+</span>
+</div>
+
+<div class="feature">
+<strong>DETAILED WORLD</strong>
+<span>
+Beaches, mountains, highways, neighborhoods and
+countless locations to discover.
+</span>
+</div>
+
+<div class="feature">
+<strong>PC VERSIONS</strong>
+<span>
+PC players can access both GTAV Legacy and
+GTAV Enhanced.
+</span>
+</div>
 
 </div>
 
+<p class="tagline">
+WELCOME TO LOS SANTOS.
+</p>
+
+</div>
+
+<div class="panel">
+
+<div class="info-title">
+Game Information
+</div>
+
+<div class="req-row">
+<span>Original Release</span>
+<span>April 14, 2015</span>
+</div>
+
+<div class="req-row">
+<span>Developer</span>
+<span>Rockstar North</span>
+</div>
+
+<div class="req-row">
+<span>Publisher</span>
+<span>Rockstar Games</span>
+</div>
+
+<div class="req-row">
+<span>Genre</span>
+<span>Action / Adventure</span>
+</div>
+
+<div class="req-row">
+<span>Setting</span>
+<span>Los Santos / Blaine County</span>
+</div>
+
+<div class="req-row">
+<span>Mode</span>
+<span>Single Player / Online</span>
+</div>
+
+<div class="req-row">
+<span>PC Versions</span>
+<span>Enhanced / Legacy</span>
+</div>
+
+<div class="req-row">
+<span>Platform</span>
+<span>PC</span>
+</div>
+
+<div class="req-row">
+<span>Engine</span>
+<span>RAGE</span>
+</div>
+
+</div>
+
+</div>
+</div>
 </section>
-
-<!-- =========================
-     SCREENSHOTS
-========================= -->
 
 <section class="section">
 
 <div class="container">
 
-```
 <h2 class="section-title">Screenshots</h2>
 
 <div class="screenshots">
 
-    <div
-        class="screenshot"
-        onclick="openImage('./images/gta5-1.jpg')"
-    >
-        <img
-            src="./images/gta5-1.jpg"
-            alt="GTA V Screenshot 1"
-        >
-    </div>
-
-    <div
-        class="screenshot"
-        onclick="openImage('./images/gta5-2.jpg')"
-    >
-        <img
-            src="./images/gta5-2.jpg"
-            alt="GTA V Screenshot 2"
-        >
-    </div>
-
-    <div
-        class="screenshot"
-        onclick="openImage('./images/gta5-3.jpg')"
-    >
-        <img
-            src="./images/gta5-3.jpg"
-            alt="GTA V Screenshot 3"
-        >
-    </div>
-
-    <div
-        class="screenshot"
-        onclick="openImage('./images/gta5-4.jpg')"
-    >
-        <img
-            src="./images/gta5-4.jpg"
-            alt="GTA V Screenshot 4"
-        >
-    </div>
-
-</div>
-```
-
+<div
+class="screenshot"
+onclick="openImage('./images/gta5-1.jpg')"
+>
+<img
+src="./images/gta5-1.jpg"
+alt="GTA V Screenshot 1"
+>
 </div>
 
+<div
+class="screenshot"
+onclick="openImage('./images/gta5-2.jpg')"
+>
+<img
+src="./images/gta5-2.jpg"
+alt="GTA V Screenshot 2"
+>
+</div>
+
+<div
+class="screenshot"
+onclick="openImage('./images/gta5-3.jpg')"
+>
+<img
+src="./images/gta5-3.jpg"
+alt="GTA V Screenshot 3"
+>
+</div>
+
+<div
+class="screenshot"
+onclick="openImage('./images/gta5-4.jpg')"
+>
+<img
+src="./images/gta5-4.jpg"
+alt="GTA V Screenshot 4"
+>
+</div>
+
+</div>
+</div>
 </section>
-
-<!-- =========================
-     ADVERTISEMENT
-========================= -->
 
 <section class="section">
 
 <div class="container">
 
-```
 <div class="ad">
 
-    <div class="ad-box">
-        ADVERTISEMENT
-    </div>
-
-</div>
-```
-
+<div class="ad-box">
+ADVERTISEMENT
 </div>
 
+</div>
+</div>
 </section>
-
-<!-- =========================
-     GAMEPLAY TRAILER
-========================= -->
 
 <section class="section">
 
 <div class="container">
 
-```
 <h2 class="section-title">Gameplay Trailer</h2>
 
 <div class="trailer-wrapper">
 
-    <div class="video-container">
+<div class="video-container">
 
-        <iframe
-            src="https://www.youtube.com/embed/hvoD7ehZPcM"
-            title="Grand Theft Auto V - The Official Trailer - Rockstar Games"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-        </iframe>
-
-    </div>
-
-    <div class="trailer-info">
-
-        <h3>
-            Grand Theft Auto V — Official Trailer
-        </h3>
-
-        <p>
-            Official trailer from
-            <strong>ROCKSTAR GAMES</strong>.
-        </p>
-
-    </div>
-
-</div>
-```
+<iframe
+src="https://www.youtube.com/embed/hvoD7ehZPcM"
+title="Grand Theft Auto V - The Official Trailer - Rockstar Games"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
 
 </div>
 
+<div class="trailer-info">
+
+<h3>
+Grand Theft Auto V — Official Trailer
+</h3>
+
+<p>
+Official trailer from
+<strong>ROCKSTAR GAMES</strong>.
+</p>
+
+</div>
+</div>
+</div>
 </section>
-
-<!-- =========================
-     SYSTEM REQUIREMENTS
-========================= -->
 
 <section class="section">
 
 <div class="container">
 
-```
 <h2 class="section-title">System Requirements</h2>
 
-
-<!-- GTAV LEGACY -->
-
 <div class="version-title">
-    GTAV LEGACY
+GTAV LEGACY
 </div>
 
 <div class="requirements">
 
-    <!-- LEGACY MINIMUM -->
+<div class="req-card">
 
-    <div class="req-card">
+<h3>Minimum</h3>
 
-        <h3>Minimum</h3>
+<div class="req-row">
+<span>OS</span>
+<span>Windows 10 64-bit</span>
+</div>
 
-        <div class="req-row">
-            <span>OS</span>
-            <span>Windows 10 64-bit</span>
-        </div>
+<div class="req-row">
+<span>CPU</span>
+<span>
+Intel Core 2 Quad Q6600 @ 2.40 GHz /
+AMD Phenom 9850 @ 2.5 GHz
+</span>
+</div>
 
-        <div class="req-row">
-            <span>CPU</span>
-            <span>
-                Intel Core 2 Quad Q6600 @ 2.40 GHz /
-                AMD Phenom 9850 @ 2.5 GHz
-            </span>
-        </div>
+<div class="req-row">
+<span>GPU</span>
+<span>
+NVIDIA 9800 GT 1GB /
+AMD HD 4870 1GB
+</span>
+</div>
 
-        <div class="req-row">
-            <span>GPU</span>
-            <span>
-                NVIDIA 9800 GT 1GB /
-                AMD HD 4870 1GB
-            </span>
-        </div>
+<div class="req-row">
+<span>RAM</span>
+<span>4 GB</span>
+</div>
 
-        <div class="req-row">
-            <span>RAM</span>
-            <span>4 GB</span>
-        </div>
+<div class="req-row">
+<span>Storage</span>
+<span>125 GB HDD</span>
+</div>
 
-        <div class="req-row">
-            <span>Storage</span>
-            <span>125 GB HDD</span>
-        </div>
-
-        <div class="req-row">
-            <span>DirectX</span>
-            <span>DirectX 10, 10.1 or 11</span>
-        </div>
-
-    </div>
-
-
-    <!-- LEGACY RECOMMENDED -->
-
-    <div class="req-card">
-
-        <h3>Recommended</h3>
-
-        <div class="req-row">
-            <span>OS</span>
-            <span>Windows 10 64-bit</span>
-        </div>
-
-        <div class="req-row">
-            <span>CPU</span>
-            <span>
-                Intel Core i5-3470 @ 3.2 GHz /
-                AMD FX-8350 @ 4 GHz
-            </span>
-        </div>
-
-        <div class="req-row">
-            <span>GPU</span>
-            <span>
-                NVIDIA GTX 660 2GB /
-                AMD HD 7870 2GB
-            </span>
-        </div>
-
-        <div class="req-row">
-            <span>RAM</span>
-            <span>8 GB</span>
-        </div>
-
-        <div class="req-row">
-            <span>Storage</span>
-            <span>125 GB HDD</span>
-        </div>
-
-        <div class="req-row">
-            <span>Audio</span>
-            <span>100% DirectX 10 compatible</span>
-        </div>
-
-    </div>
+<div class="req-row">
+<span>DirectX</span>
+<span>DirectX 10, 10.1 or 11</span>
+</div>
 
 </div>
 
+<div class="req-card">
 
-<!-- GTAV ENHANCED -->
+<h3>Recommended</h3>
+
+<div class="req-row">
+<span>OS</span>
+<span>Windows 10 64-bit</span>
+</div>
+
+<div class="req-row">
+<span>CPU</span>
+<span>
+Intel Core i5-3470 @ 3.2 GHz /
+AMD FX-8350 @ 4 GHz
+</span>
+</div>
+
+<div class="req-row">
+<span>GPU</span>
+<span>
+NVIDIA GTX 660 2GB /
+AMD HD 7870 2GB
+</span>
+</div>
+
+<div class="req-row">
+<span>RAM</span>
+<span>8 GB</span>
+</div>
+
+<div class="req-row">
+<span>Storage</span>
+<span>125 GB HDD</span>
+</div>
+
+<div class="req-row">
+<span>Audio</span>
+<span>100% DirectX 10 compatible</span>
+</div>
+
+</div>
+</div>
 
 <div class="version-title">
-    GTAV ENHANCED
+GTAV ENHANCED
 </div>
 
 <div class="requirements">
 
-    <!-- ENHANCED MINIMUM -->
+<div class="req-card">
 
-    <div class="req-card">
+<h3>Minimum</h3>
 
-        <h3>Minimum</h3>
+<div class="req-row">
+<span>OS</span>
+<span>Windows 10 Build 1909 or above</span>
+</div>
 
-        <div class="req-row">
-            <span>OS</span>
-            <span>Windows 10 Build 1909 or above</span>
-        </div>
+<div class="req-row">
+<span>CPU</span>
+<span>
+Intel Core i7-4770 /
+AMD FX-9590
+</span>
+</div>
 
-        <div class="req-row">
-            <span>CPU</span>
-            <span>
-                Intel Core i7-4770 /
-                AMD FX-9590
-            </span>
-        </div>
+<div class="req-row">
+<span>GPU</span>
+<span>
+NVIDIA GTX 1630 4GB /
+AMD RX 6400 4GB
+</span>
+</div>
 
-        <div class="req-row">
-            <span>GPU</span>
-            <span>
-                NVIDIA GTX 1630 4GB /
-                AMD RX 6400 4GB
-            </span>
-        </div>
+<div class="req-row">
+<span>RAM</span>
+<span>8 GB</span>
+</div>
 
-        <div class="req-row">
-            <span>RAM</span>
-            <span>8 GB</span>
-        </div>
+<div class="req-row">
+<span>Storage</span>
+<span>105 GB SSD</span>
+</div>
 
-        <div class="req-row">
-            <span>Storage</span>
-            <span>105 GB SSD</span>
-        </div>
-
-        <div class="req-row">
-            <span>Audio</span>
-            <span>100% DirectX 10 compatible</span>
-        </div>
-
-    </div>
-
-
-    <!-- ENHANCED RECOMMENDED -->
-
-    <div class="req-card">
-
-        <h3>Recommended</h3>
-
-        <div class="req-row">
-            <span>OS</span>
-            <span>Windows 11</span>
-        </div>
-
-        <div class="req-row">
-            <span>CPU</span>
-            <span>
-                Intel Core i5-9600K /
-                AMD Ryzen 5 3600
-            </span>
-        </div>
-
-        <div class="req-row">
-            <span>GPU</span>
-            <span>
-                NVIDIA RTX 3060 8GB /
-                AMD RX 6600 XT 8GB
-            </span>
-        </div>
-
-        <div class="req-row">
-            <span>RAM</span>
-            <span>16 GB Dual-Channel</span>
-        </div>
-
-        <div class="req-row">
-            <span>Storage</span>
-            <span>105 GB DirectStorage-compatible drive</span>
-        </div>
-
-        <div class="req-row">
-            <span>Audio</span>
-            <span>Windows Spatial Sound compatible</span>
-        </div>
-
-    </div>
+<div class="req-row">
+<span>Audio</span>
+<span>100% DirectX 10 compatible</span>
+</div>
 
 </div>
 
+<div class="req-card">
 
-<!-- DOWNLOAD -->
+<h3>Recommended</h3>
+
+<div class="req-row">
+<span>OS</span>
+<span>Windows 11</span>
+</div>
+
+<div class="req-row">
+<span>CPU</span>
+<span>
+Intel Core i5-9600K /
+AMD Ryzen 5 3600
+</span>
+</div>
+
+<div class="req-row">
+<span>GPU</span>
+<span>
+NVIDIA RTX 3060 8GB /
+AMD RX 6600 XT 8GB
+</span>
+</div>
+
+<div class="req-row">
+<span>RAM</span>
+<span>16 GB Dual-Channel</span>
+</div>
+
+<div class="req-row">
+<span>Storage</span>
+<span>105 GB DirectStorage-compatible drive</span>
+</div>
+
+<div class="req-row">
+<span>Audio</span>
+<span>Windows Spatial Sound compatible</span>
+</div>
+
+</div>
+</div>
 
 <div class="download-box">
 
-    <h2>Ready to Play?</h2>
+<h2>Ready to Play?</h2>
 
-    <p>
-        Purchase Grand Theft Auto V through the official
-        Rockstar Store. The Rockstar Store PC purchase includes
-        both GTAV Enhanced and GTAV Legacy.
-    </p>
+<p>
+Purchase Grand Theft Auto V through the official
+Rockstar Store. The Rockstar Store PC purchase includes
+both GTAV Enhanced and GTAV Legacy.
+</p>
 
-    <a
-        class="btn primary"
-        href="https://store.rockstargames.com/game/buy-gta-v"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        VISIT OFFICIAL STORE
-    </a>
+<a
+class="btn primary"
+href="https://store.rockstargames.com/game/buy-gta-v"
+target="_blank"
+rel="noopener noreferrer"
+
+>
+
+VISIT OFFICIAL STORE </a>
 
 </div>
 
 <div class="note">
-    Rockstar provides separate requirements for GTAV Legacy and
-    GTAV Enhanced. Legacy is available for hardware that does not
-    meet the minimum requirements for Enhanced.
-</div>
-```
-
+Rockstar provides separate requirements for GTAV Legacy and
+GTAV Enhanced. Legacy is available for hardware that does not
+meet the minimum requirements for Enhanced.
 </div>
 
+</div>
 </section>
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
 
-```
 <strong>
-    QE<span>V</span>RANO PC GAMES
+QE<span>V</span>RANO PC GAMES
 </strong>
 
 <br><br>
 
 © 2026 QEVRANO PC GAMES. All rights reserved.
-```
 
 </footer>
 
-<!-- =========================
-     IMAGE MODAL
-========================= -->
-
 <div
-    class="modal"
-    id="imageModal"
-    onclick="closeImage()"
+class="modal"
+id="imageModal"
+onclick="closeImage()"
 >
 
-```
 <span
-    class="close"
-    onclick="closeImage()"
+class="close"
+onclick="closeImage()"
+
 >
-    &times;
-</span>
+
+× </span>
 
 <img
-    id="modalImage"
-    src=""
-    alt="GTA V Screenshot"
-    onclick="event.stopPropagation()"
+id="modalImage"
+src=""
+alt="GTA V Screenshot"
+onclick="event.stopPropagation()"
+
 >
-```
 
 </div>
 
 <script>
 
-/* =========================
-   SEARCH DATABASE
-========================= */
-
 const games = [
 
-    {
-        name:"Far Cry 2",
-        url:"./farcry2.html"
-    },
+{
+name:"Far Cry 2",
+url:"./farcry2.html"
+},
 
-    {
-        name:"Far Cry 3",
-        url:"./farcry3.html"
-    },
+{
+name:"Far Cry 3",
+url:"./farcry3.html"
+},
 
-    {
-        name:"Assassin's Creed II",
-        url:"./ac2.html"
-    },
+{
+name:"Assassin's Creed II",
+url:"./ac2.html"
+},
 
-    {
-        name:"GTA V",
-        url:"./gta5.html"
-    },
+{
+name:"GTA V",
+url:"./gta5.html"
+},
 
-    {
-        name:"GTA IV",
-        url:"./gta4.html"
-    },
+{
+name:"GTA IV",
+url:"./gta4.html"
+},
 
-    {
-        name:"FIFA",
-        url:"./fifa.html"
-    },
+{
+name:"FIFA",
+url:"./fifa.html"
+},
 
-    {
-        name:"Don Bradman Cricket",
-        url:"./cricket.html"
-    },
+{
+name:"Don Bradman Cricket",
+url:"./cricket.html"
+},
 
-    {
-        name:"Call of Duty 1",
-        url:"./cod1.html"
-    },
+{
+name:"Call of Duty 1",
+url:"./cod1.html"
+},
 
-    {
-        name:"The Witcher 2",
-        url:"./witcher2.html"
-    },
+{
+name:"The Witcher 2",
+url:"./witcher2.html"
+},
 
-    {
-        name:"GTA VI",
-        url:"./gtavi.html"
-    },
+{
+name:"GTA VI",
+url:"./gtavi.html"
+},
 
-    {
-        name:"Assassin's Creed Syndicate",
-        url:"./acs.html"
-    },
+{
+name:"Assassin's Creed Syndicate",
+url:"./acs.html"
+},
 
-    {
-        name:"Need for Speed II",
-        url:"./nfs2.html"
-    }
+{
+name:"Need for Speed II",
+url:"./nfs2.html"
+}
 
 ];
 
-
-/* =========================
-   SEARCH TOGGLE
-========================= */
-
 function toggleSearch(){
 
-    const box = document.getElementById("searchBox");
+const box=document.getElementById("searchBox");
 
-    box.classList.toggle("active");
+box.classList.toggle("active");
 
-    if(box.classList.contains("active")){
-
-        document.getElementById("searchInput").focus();
-
-    }
-
+if(box.classList.contains("active")){
+document.getElementById("searchInput").focus();
 }
 
-
-/* =========================
-   SEARCH
-========================= */
+}
 
 function searchGames(){
 
-    const input =
-        document.getElementById("searchInput").value
-        .toLowerCase()
-        .trim();
+const input=
+document.getElementById("searchInput").value
+.toLowerCase()
+.trim();
 
-    const results =
-        document.getElementById("searchResults");
+const results=
+document.getElementById("searchResults");
 
-    results.innerHTML = "";
+results.innerHTML="";
 
-    if(input === ""){
-        return;
-    }
+if(input===""){
+return;
+}
 
-    const matches =
-        games.filter(game =>
-            game.name.toLowerCase().includes(input)
-        );
+const matches=
+games.filter(game =>
+game.name.toLowerCase().includes(input)
+);
 
-    if(matches.length === 0){
+if(matches.length===0){
 
-        results.innerHTML =
-            '<div style="padding:10px;color:#666;font-size:12px;">No games found.</div>';
+results.innerHTML=
+'<div style="padding:10px;color:#666;font-size:12px;">No games found.</div>';
 
-        return;
-
-    }
-
-    matches.forEach(game => {
-
-        const link =
-            document.createElement("a");
-
-        link.href = game.url;
-        link.textContent = game.name;
-
-        results.appendChild(link);
-
-    });
+return;
 
 }
 
+matches.forEach(game => {
 
-/* =========================
-   IMAGE MODAL
-========================= */
+const link=
+document.createElement("a");
 
-function openImage(src){
+link.href=game.url;
+link.textContent=game.name;
 
-    const modal =
-        document.getElementById("imageModal");
-
-    const image =
-        document.getElementById("modalImage");
-
-    image.src = src;
-
-    modal.classList.add("active");
-
-}
-
-
-function closeImage(){
-
-    const modal =
-        document.getElementById("imageModal");
-
-    modal.classList.remove("active");
-
-}
-
-
-/* =========================
-   ESCAPE TO CLOSE MODAL
-========================= */
-
-document.addEventListener("keydown",function(event){
-
-    if(event.key === "Escape"){
-
-        closeImage();
-
-    }
+results.appendChild(link);
 
 });
 
+}
 
-/* =========================
-   CLOSE SEARCH WHEN CLICKING
-   OUTSIDE
-========================= */
+function openImage(src){
+
+const modal=
+document.getElementById("imageModal");
+
+const image=
+document.getElementById("modalImage");
+
+image.src=src;
+
+modal.classList.add("active");
+
+}
+
+function closeImage(){
+
+const modal=
+document.getElementById("imageModal");
+
+modal.classList.remove("active");
+
+}
+
+document.addEventListener("keydown",function(event){
+
+if(event.key==="Escape"){
+closeImage();
+}
+
+});
 
 document.addEventListener("click",function(event){
 
-    const searchArea =
-        document.querySelector(".search-area");
+const searchArea=
+document.querySelector(".search-area");
 
-    const searchBox =
-        document.getElementById("searchBox");
+const searchBox=
+document.getElementById("searchBox");
 
-    if(
-        !searchArea.contains(event.target) &&
-        searchBox.classList.contains("active")
-    ){
+if(
+!searchArea.contains(event.target) &&
+searchBox.classList.contains("active")
+){
 
-        searchBox.classList.remove("active");
+searchBox.classList.remove("active");
 
-    }
+}
 
 });
 
