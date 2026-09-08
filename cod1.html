@@ -21,25 +21,23 @@ html{
 body{
     font-family:Arial,Helvetica,sans-serif;
     color:#ddd;
-    background:
-        linear-gradient(rgba(3,3,3,.88),rgba(3,3,3,.95)),
-        url("./images/cod-bg.jpg") center/cover fixed;
+    background:#050505;
 }
 
 /* HEADER */
 
 header{
-    height:70px;
-    background:rgba(0,0,0,.94);
+    height:72px;
+    background:rgba(0,0,0,.95);
     border-bottom:1px solid #d00000;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 6%;
+    padding:0 7%;
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 4px 20px rgba(0,0,0,.45);
+    box-shadow:0 4px 20px rgba(0,0,0,.5);
 }
 
 .logo{
@@ -56,7 +54,7 @@ header{
 
 nav{
     display:flex;
-    gap:25px;
+    gap:26px;
 }
 
 nav a{
@@ -71,102 +69,101 @@ nav a:hover{
     color:#e00000;
 }
 
-/* CONTAINER */
-
-.container{
-    width:92%;
-    max-width:1150px;
-    margin:30px auto;
-}
-
-.back{
-    color:#e00000;
-    text-decoration:none;
-    font-weight:bold;
-    display:inline-block;
-    margin-bottom:18px;
-    transition:.3s;
-}
-
-.back:hover{
-    color:#fff;
-}
-
-/* MAIN PANEL */
-
-.main-content{
-    background:rgba(8,8,8,.93);
-    border:1px solid rgba(255,255,255,.07);
-    border-radius:10px;
-    padding:25px;
-    box-shadow:
-        0 0 35px rgba(0,0,0,.65),
-        0 0 15px rgba(208,0,0,.05);
-}
-
 /* HERO */
 
 .hero{
-    display:grid;
-    grid-template-columns:300px 1fr;
-    gap:30px;
+    min-height:570px;
+    display:flex;
     align-items:center;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92) 0%,
+            rgba(0,0,0,.72) 48%,
+            rgba(0,0,0,.88) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.8)
+        ),
+        url("./images/cod-bg.jpg") center/cover no-repeat;
 }
 
-.hero img{
-    width:100%;
-    border-radius:8px;
-    display:block;
-    border:1px solid rgba(208,0,0,.3);
-    box-shadow:0 0 25px rgba(208,0,0,.12);
-    transition:.3s;
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(208,0,0,.08),
+            transparent 40%
+        );
+    pointer-events:none;
 }
 
-.hero img:hover{
-    border-color:#d00000;
-    box-shadow:0 0 30px rgba(208,0,0,.25);
+.hero-content{
+    width:86%;
+    max-width:1250px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+    padding:75px 0;
 }
 
-.hero-info h1{
+.badge{
+    display:inline-block;
     color:#fff;
-    font-size:42px;
-    margin-bottom:10px;
-    text-transform:uppercase;
-}
-
-.subtitle{
-    color:#e00000;
-    font-size:14px;
+    background:#d00000;
+    padding:7px 13px;
+    border-radius:3px;
+    font-size:12px;
     font-weight:bold;
-    letter-spacing:.5px;
+    letter-spacing:1px;
     margin-bottom:18px;
 }
 
-.description{
-    line-height:1.7;
-    color:#bbb;
-    margin-bottom:20px;
+.hero h1{
+    color:#fff;
+    font-size:64px;
+    line-height:1;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    text-shadow:0 4px 20px rgba(0,0,0,.7);
 }
 
-/* META */
+.hero h1 span{
+    color:#e00000;
+}
+
+.hero-description{
+    max-width:700px;
+    color:#ccc;
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
 
 .game-meta{
     display:flex;
     flex-wrap:wrap;
     gap:9px;
-    margin-bottom:22px;
+    margin-bottom:25px;
 }
 
 .meta{
-    background:rgba(208,0,0,.06);
-    border:1px solid rgba(208,0,0,.28);
-    padding:8px 12px;
+    background:rgba(0,0,0,.55);
+    border:1px solid rgba(208,0,0,.35);
+    padding:9px 13px;
     border-radius:5px;
     font-size:13px;
-    color:#ccc;
+    color:#ddd;
+    backdrop-filter:blur(4px);
 }
-
-/* DOWNLOAD */
 
 .download-buttons{
     display:flex;
@@ -220,7 +217,44 @@ nav a:hover{
     color:#fff;
 }
 
-/* SECTIONS */
+/* MAIN CONTAINER */
+
+.container{
+    width:86%;
+    max-width:1250px;
+    margin:35px auto;
+}
+
+.back{
+    color:#e00000;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+    margin-bottom:20px;
+    transition:.3s;
+}
+
+.back:hover{
+    color:#fff;
+}
+
+/* PANELS */
+
+.panel{
+    background:rgba(8,8,8,.95);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:9px;
+    padding:25px;
+    box-shadow:
+        0 0 30px rgba(0,0,0,.55),
+        0 0 15px rgba(208,0,0,.04);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:20px;
+}
 
 .section{
     margin-top:35px;
@@ -374,6 +408,30 @@ nav a:hover{
     color:#e00000;
 }
 
+/* DOWNLOAD BOX */
+
+.download-box{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(208,0,0,.09),
+            rgba(255,255,255,.015)
+        );
+    border:1px solid rgba(208,0,0,.3);
+    border-radius:8px;
+    padding:25px;
+    text-align:center;
+}
+
+.download-box h2{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.download-box p{
+    margin-bottom:20px;
+}
+
 /* TAGLINE */
 
 .tagline{
@@ -395,8 +453,8 @@ nav a:hover{
 
 footer{
     text-align:center;
-    padding:25px;
-    margin-top:30px;
+    padding:30px 20px;
+    margin-top:40px;
     color:#555;
     font-size:13px;
     border-top:1px solid rgba(255,255,255,.07);
@@ -471,21 +529,12 @@ footer a:hover{
 
 @media(max-width:900px){
 
-    header{
-        padding:0 4%;
+    .hero h1{
+        font-size:48px;
     }
 
-    .hero{
+    .about-grid{
         grid-template-columns:1fr;
-    }
-
-    .hero img{
-        max-width:350px;
-        margin:auto;
-    }
-
-    .hero-info h1{
-        font-size:32px;
     }
 
     .screenshot-area{
@@ -508,6 +557,10 @@ footer a:hover{
 
 @media(max-width:600px){
 
+    header{
+        padding:0 4%;
+    }
+
     nav{
         gap:12px;
     }
@@ -516,8 +569,29 @@ footer a:hover{
         font-size:12px;
     }
 
-    .main-content{
-        padding:17px;
+    .hero{
+        min-height:520px;
+    }
+
+    .hero-content{
+        width:90%;
+        padding:60px 0;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .container{
+        width:92%;
+    }
+
+    .panel{
+        padding:18px;
     }
 
     .screenshots{
@@ -533,12 +607,8 @@ footer a:hover{
     }
 
     .download-btn{
-        text-align:center;
         width:100%;
-    }
-
-    .hero-info h1{
-        font-size:28px;
+        text-align:center;
     }
 
     .tagline strong{
@@ -565,93 +635,132 @@ footer a:hover{
 
 </header>
 
+<!-- HERO -->
+
+<section class="hero">
+
+```
+<div class="hero-content">
+
+    <div class="badge">
+        CLASSIC PC GAME
+    </div>
+
+    <h1>
+        CALL OF <span>DUTY</span>
+    </h1>
+
+    <p class="hero-description">
+        Call of Duty is a classic first-person shooter that
+        takes players through intense World War II campaigns.
+        Experience historical battles, challenging missions
+        and fast-paced combat across different locations.
+    </p>
+
+    <div class="game-meta">
+
+        <div class="meta">
+            Developer: Infinity Ward
+        </div>
+
+        <div class="meta">
+            Genre: Action / FPS
+        </div>
+
+        <div class="meta">
+            Release: 2003 PC
+        </div>
+
+        <div class="meta">
+            Platform: PC
+        </div>
+
+    </div>
+
+    <div class="download-buttons">
+
+        <a
+            href="https://store.steampowered.com/app/2620/Call_of_Duty/"
+            class="download-btn official"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            DOWNLOAD OFFICIAL
+        </a>
+
+        <div>
+
+            <a
+                href="#download"
+                class="download-btn"
+            >
+                DOWNLOAD SETUP.EXE
+            </a>
+
+            <a
+                href="./cod1.html"
+                class="compressed-link"
+            >
+                Highly Compressed
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
 <div class="container">
 
 <a href="./index.html" class="back">
     ← BACK TO GAMES
 </a>
 
-<main class="main-content">
+<!-- ABOUT -->
+
+<section class="section">
 
 ```
-<!-- HERO -->
+<div class="about-grid">
 
-<section class="hero">
+    <div class="panel">
 
-    <img
-        src="./images/cod.jpg"
-        alt="Call of Duty"
-    >
+        <h2>ABOUT GAME</h2>
 
-    <div class="hero-info">
-
-        <h1>Call of Duty</h1>
-
-        <div class="subtitle">
-            CALL OF DUTY • ACTION • FIRST-PERSON SHOOTER
-        </div>
-
-        <p class="description">
-            Call of Duty is a classic first-person shooter that
-            takes players through intense World War II campaigns.
-            Experience historical battles, challenging missions
-            and fast-paced combat across different locations.
+        <p>
+            Call of Duty is a first-person shooter set during
+            World War II. The campaign follows soldiers from
+            different Allied forces as they participate in major
+            military operations.
         </p>
 
-        <div class="game-meta">
+        <br>
 
-            <div class="meta">
-                Developer: Infinity Ward
-            </div>
-
-            <div class="meta">
-                Genre: Action / FPS
-            </div>
-
-            <div class="meta">
-                Release: 2003 PC
-            </div>
-
-            <div class="meta">
-                Platform: PC
-            </div>
-
-        </div>
-
-        <div class="download-buttons">
-
-            <a
-                href="https://store.steampowered.com/app/2620/Call_of_Duty/"
-                class="download-btn official"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                DOWNLOAD OFFICIAL
-            </a>
-
-            <div>
-
-                <a
-                    href="#"
-                    class="download-btn"
-                    onclick="return false;"
-                    aria-disabled="true"
-                >
-                    DOWNLOAD SETUP.EXE
-                </a>
-
-                <a
-                    href="./cod1.html"
-                    class="compressed-link"
-                >
-                    Highly Compressed
-                </a>
-
-            </div>
-
-        </div>
+        <p>
+            Players experience infantry combat, vehicle sections,
+            historical environments and a variety of missions
+            inspired by events from the Second World War.
+        </p>
 
     </div>
+
+    <div class="panel">
+
+        <h2>GAME INFO</h2>
+
+        <p><strong>Developer:</strong> Infinity Ward</p>
+        <p><strong>Publisher:</strong> Activision</p>
+        <p><strong>Genre:</strong> First-Person Shooter</p>
+        <p><strong>Release:</strong> 2003</p>
+        <p><strong>Platform:</strong> PC</p>
+
+    </div>
+
+</div>
+```
 
 </section>
 
@@ -659,51 +768,53 @@ footer a:hover{
 
 <section class="section">
 
-    <h2>SCREENSHOTS</h2>
+```
+<h2>SCREENSHOTS</h2>
 
-    <div class="screenshot-area">
+<div class="screenshot-area">
 
-        <div class="screenshots">
+    <div class="screenshots">
 
-            <img
-                src="./images/cod-1.jpg"
-                alt="Call of Duty Screenshot 1"
-                onclick="openModal(this.src)"
-            >
+        <img
+            src="./images/cod-1.jpg"
+            alt="Call of Duty Screenshot 1"
+            onclick="openModal(this.src)"
+        >
 
-            <img
-                src="./images/cod-2.jpg"
-                alt="Call of Duty Screenshot 2"
-                onclick="openModal(this.src)"
-            >
+        <img
+            src="./images/cod-2.jpg"
+            alt="Call of Duty Screenshot 2"
+            onclick="openModal(this.src)"
+        >
 
-            <img
-                src="./images/cod-3.jpg"
-                alt="Call of Duty Screenshot 3"
-                onclick="openModal(this.src)"
-            >
+        <img
+            src="./images/cod-3.jpg"
+            alt="Call of Duty Screenshot 3"
+            onclick="openModal(this.src)"
+        >
 
-            <img
-                src="./images/cod-4.jpg"
-                alt="Call of Duty Screenshot 4"
-                onclick="openModal(this.src)"
-            >
-
-        </div>
-
-        <div class="big-ad">
-
-            <strong>ADVERTISEMENT</strong>
-
-            <span>BIG AD SPACE</span>
-
-            <br>
-
-            <small>300 × 600</small>
-
-        </div>
+        <img
+            src="./images/cod-4.jpg"
+            alt="Call of Duty Screenshot 4"
+            onclick="openModal(this.src)"
+        >
 
     </div>
+
+    <div class="big-ad">
+
+        <strong>ADVERTISEMENT</strong>
+
+        <span>BIG AD SPACE</span>
+
+        <br>
+
+        <small>300 × 600</small>
+
+    </div>
+
+</div>
+```
 
 </section>
 
@@ -711,41 +822,20 @@ footer a:hover{
 
 <section class="section">
 
-    <h2>MUST WATCH INSTALLATION VIDEO</h2>
+```
+<h2>MUST WATCH INSTALLATION VIDEO</h2>
 
-    <div class="video-box">
+<div class="video-box">
 
-        <iframe
-            src="YOUR_VIDEO_EMBED_URL"
-            title="Call of Duty Installation Guide"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-        </iframe>
+    <iframe
+        src="YOUR_VIDEO_EMBED_URL"
+        title="Call of Duty Installation Guide"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
 
-    </div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section class="section">
-
-    <h2>ABOUT GAME</h2>
-
-    <p>
-        Call of Duty is a first-person shooter set during World
-        War II. The campaign follows soldiers from different
-        Allied forces as they participate in major military
-        operations.
-    </p>
-
-    <br>
-
-    <p>
-        Players experience infantry combat, vehicle sections,
-        historical environments and a variety of missions inspired
-        by events from the Second World War.
-    </p>
+</div>
+```
 
 </section>
 
@@ -753,35 +843,37 @@ footer a:hover{
 
 <section class="section">
 
-    <h2>FEATURES</h2>
+```
+<h2>FEATURES</h2>
 
-    <div class="features">
+<div class="features">
 
-        <div class="feature">
-            World War II campaign
-        </div>
-
-        <div class="feature">
-            Multiple Allied forces
-        </div>
-
-        <div class="feature">
-            Story-driven missions
-        </div>
-
-        <div class="feature">
-            Classic first-person shooter gameplay
-        </div>
-
-        <div class="feature">
-            Historical battle locations
-        </div>
-
-        <div class="feature">
-            Classic Call of Duty experience
-        </div>
-
+    <div class="feature">
+        World War II campaign
     </div>
+
+    <div class="feature">
+        Multiple Allied forces
+    </div>
+
+    <div class="feature">
+        Story-driven missions
+    </div>
+
+    <div class="feature">
+        Classic first-person shooter gameplay
+    </div>
+
+    <div class="feature">
+        Historical battle locations
+    </div>
+
+    <div class="feature">
+        Classic Call of Duty experience
+    </div>
+
+</div>
+```
 
 </section>
 
@@ -789,95 +881,125 @@ footer a:hover{
 
 <section class="section">
 
-    <h2>MINIMUM REQUIREMENTS</h2>
+```
+<h2>SYSTEM REQUIREMENTS</h2>
 
-    <div class="requirements">
+<div class="requirements">
 
-        <div class="requirement-box">
+    <div class="requirement-box">
 
-            <h3>Minimum</h3>
+        <h3>Minimum</h3>
 
-            <p>
-                <strong>OS:</strong>
-                Windows 98 / ME / 2000 / XP
-            </p>
+        <p>
+            <strong>OS:</strong>
+            Windows 98 / ME / 2000 / XP
+        </p>
 
-            <p>
-                <strong>CPU:</strong>
-                Pentium III 600 MHz
-            </p>
+        <p>
+            <strong>CPU:</strong>
+            Pentium III 600 MHz
+        </p>
 
-            <p>
-                <strong>RAM:</strong>
-                128 MB
-            </p>
+        <p>
+            <strong>RAM:</strong>
+            128 MB
+        </p>
 
-            <p>
-                <strong>GPU:</strong>
-                32 MB DirectX 9 compatible video card
-            </p>
+        <p>
+            <strong>GPU:</strong>
+            32 MB DirectX 9 compatible video card
+        </p>
 
-            <p>
-                <strong>DirectX:</strong>
-                Version 9.0
-            </p>
+        <p>
+            <strong>DirectX:</strong>
+            Version 9.0
+        </p>
 
-            <p>
-                <strong>Storage:</strong>
-                1.4 GB
-            </p>
-
-        </div>
+        <p>
+            <strong>Storage:</strong>
+            1.4 GB
+        </p>
 
     </div>
+
+    <div class="requirement-box">
+
+        <h3>Recommended</h3>
+
+        <p>
+            <strong>OS:</strong>
+            Windows XP or later
+        </p>
+
+        <p>
+            <strong>CPU:</strong>
+            Pentium 4 1.8 GHz
+        </p>
+
+        <p>
+            <strong>RAM:</strong>
+            512 MB
+        </p>
+
+        <p>
+            <strong>GPU:</strong>
+            64 MB DirectX 9 compatible video card
+        </p>
+
+        <p>
+            <strong>DirectX:</strong>
+            Version 9.0
+        </p>
+
+        <p>
+            <strong>Storage:</strong>
+            1.4 GB
+        </p>
+
+    </div>
+
+</div>
+```
 
 </section>
 
-<!-- RECOMMENDED REQUIREMENTS -->
+<!-- DOWNLOAD -->
 
-<section class="section">
+<section class="section" id="download">
 
-    <h2>RECOMMENDED REQUIREMENTS</h2>
+```
+<div class="download-box">
 
-    <div class="requirements">
+    <h2>DOWNLOAD CALL OF DUTY</h2>
 
-        <div class="requirement-box">
+    <p>
+        Get the official version from the publisher's
+        authorized store, or use your own legally distributed
+        setup when available.
+    </p>
 
-            <h3>Recommended</h3>
+    <div class="download-buttons">
 
-            <p>
-                <strong>OS:</strong>
-                Windows XP or later
-            </p>
+        <a
+            href="https://store.steampowered.com/app/2620/Call_of_Duty/"
+            class="download-btn official"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            DOWNLOAD OFFICIAL
+        </a>
 
-            <p>
-                <strong>CPU:</strong>
-                Pentium 4 1.8 GHz
-            </p>
-
-            <p>
-                <strong>RAM:</strong>
-                512 MB
-            </p>
-
-            <p>
-                <strong>GPU:</strong>
-                64 MB DirectX 9 compatible video card
-            </p>
-
-            <p>
-                <strong>DirectX:</strong>
-                Version 9.0
-            </p>
-
-            <p>
-                <strong>Storage:</strong>
-                1.4 GB
-            </p>
-
-        </div>
+        <a
+            href="./cod1.html"
+            class="download-btn"
+        >
+            HIGHLY COMPRESSED
+        </a>
 
     </div>
+
+</div>
+```
 
 </section>
 
@@ -885,20 +1007,19 @@ footer a:hover{
 
 <div class="tagline">
 
-    <strong>
-        NO ONE FIGHTS ALONE.
-    </strong>
+```
+<strong>
+    NO ONE FIGHTS ALONE.
+</strong>
 
-    FIGHT • SURVIVE • COMPLETE THE MISSION
+FIGHT • SURVIVE • COMPLETE THE MISSION
 
-    <br>
+<br>
 
-    QEVRANO PC GAMES
-
-</div>
+QEVRANO PC GAMES
 ```
 
-</main>
+</div>
 
 </div>
 
