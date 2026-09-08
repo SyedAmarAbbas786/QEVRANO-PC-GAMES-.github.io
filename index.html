@@ -35,9 +35,13 @@ a{
 ========================= */
 
 header{
-    height:76px;
+    width:100%;
+    height:70px;
+
     position:sticky;
     top:0;
+    left:0;
+
     z-index:1000;
 
     display:flex;
@@ -47,14 +51,16 @@ header{
     padding:0 5%;
 
     background:
-        linear-gradient(180deg,
-        rgba(15,15,15,.97),
-        rgba(5,5,5,.95));
+        linear-gradient(
+            180deg,
+            rgba(15,15,15,.98),
+            rgba(5,5,5,.97)
+        );
 
     border-bottom:1px solid #351313;
 
     box-shadow:
-        0 8px 30px rgba(0,0,0,.45),
+        0 6px 20px rgba(0,0,0,.35),
         0 1px 0 rgba(255,0,0,.08);
 }
 
@@ -77,21 +83,28 @@ nav{
 
 nav a{
     position:relative;
+
     font-size:13px;
     font-weight:800;
     letter-spacing:1px;
+
     color:#ddd;
+
     transition:.25s;
 }
 
 nav a::after{
     content:"";
+
     position:absolute;
     left:0;
-    bottom:-9px;
+    bottom:-8px;
+
     width:0;
     height:2px;
+
     background:#e00000;
+
     transition:.25s;
 }
 
@@ -105,9 +118,13 @@ nav a:hover::after{
 
 .price-btn{
     border:1px solid #6b1717;
-    padding:9px 15px;
+
+    padding:8px 14px;
+
     border-radius:6px;
+
     background:#100707;
+
     cursor:pointer;
 }
 
@@ -116,12 +133,17 @@ nav a:hover::after{
     border-color:#e00000;
 }
 
-/* MENU BUTTON */
+/* =========================
+   MENU BUTTON
+   BACK TO LEFT SIDE
+========================= */
 
 .menu-btn{
     position:fixed;
-    right:20px;
+
+    left:20px;
     top:88px;
+
     z-index:1100;
 
     width:46px;
@@ -130,17 +152,46 @@ nav a:hover::after{
     border:1px solid #651818;
     border-radius:8px;
 
-    background:rgba(12,12,12,.95);
+    background:rgba(12,12,12,.96);
     color:#fff;
 
     font-size:23px;
+
     cursor:pointer;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.45);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.45);
+
+    transition:.2s;
 }
 
 .menu-btn:hover{
     background:#e00000;
+    border-color:#e00000;
+}
+
+/* =========================
+   SIDEBAR OVERLAY
+========================= */
+
+.sidebar-overlay{
+    position:fixed;
+
+    inset:0;
+
+    z-index:1150;
+
+    background:rgba(0,0,0,.58);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+}
+
+.sidebar-overlay.open{
+    opacity:1;
+    visibility:visible;
 }
 
 /* =========================
@@ -149,6 +200,7 @@ nav a:hover::after{
 
 .dashboard{
     position:fixed;
+
     top:0;
     left:-340px;
 
@@ -160,11 +212,17 @@ nav a:hover::after{
     overflow-y:auto;
 
     background:
-        linear-gradient(180deg,#100707,#070707 60%,#050505);
+        linear-gradient(
+            180deg,
+            #100707,
+            #070707 60%,
+            #050505
+        );
 
     border-right:1px solid #571313;
 
-    box-shadow:15px 0 45px rgba(0,0,0,.7);
+    box-shadow:
+        15px 0 45px rgba(0,0,0,.7);
 
     transition:.35s;
 }
@@ -174,7 +232,8 @@ nav a:hover::after{
 }
 
 .dashboard-header{
-    height:76px;
+    height:70px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -192,8 +251,11 @@ nav a:hover::after{
 .close-dashboard{
     border:0;
     background:none;
+
     color:#fff;
+
     font-size:28px;
+
     cursor:pointer;
 }
 
@@ -203,36 +265,46 @@ nav a:hover::after{
 
 .dashboard-section h3{
     font-size:11px;
+
     letter-spacing:2px;
+
     color:#e00000;
+
     margin-bottom:10px;
 }
 
 .dashboard a,
 .dashboard button{
     width:100%;
+
     display:block;
 
     padding:12px 13px;
+
     margin-bottom:5px;
 
     border:0;
     border-radius:5px;
 
     background:transparent;
+
     color:#ccc;
 
     text-align:left;
+
     font-size:13px;
 
     cursor:pointer;
+
     transition:.2s;
 }
 
 .dashboard a:hover,
 .dashboard button:hover{
     background:#180808;
+
     color:#fff;
+
     padding-left:18px;
 }
 
@@ -252,8 +324,15 @@ nav a:hover::after{
     padding:80px 20px;
 
     background:
-        linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.9)),
-        linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.35)),
+        linear-gradient(
+            rgba(0,0,0,.72),
+            rgba(0,0,0,.9)
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.82),
+            rgba(0,0,0,.35)
+        ),
         url("https://img.uhdpaper.com/wallpaper/assassins-creed-black-flag-resynced-edward-417%405%40p?utm_source=chatgpt.com");
 
     background-size:cover;
@@ -268,8 +347,11 @@ nav a:hover::after{
 
 .hero h1{
     font-size:52px;
+
     font-weight:900;
+
     letter-spacing:2px;
+
     margin-bottom:18px;
 }
 
@@ -279,19 +361,25 @@ nav a:hover::after{
 
 .hero p{
     color:#bbb;
+
     font-size:16px;
+
     line-height:1.7;
+
     margin-bottom:28px;
 }
 
 .search-box{
     display:flex;
+
     max-width:650px;
+
     margin:auto;
 }
 
 .search-box input{
     flex:1;
+
     padding:15px 17px;
 
     border:1px solid #4b1717;
@@ -302,6 +390,7 @@ nav a:hover::after{
     outline:none;
 
     background:rgba(10,10,10,.9);
+
     color:#fff;
 }
 
@@ -309,12 +398,15 @@ nav a:hover::after{
     padding:0 24px;
 
     border:0;
+
     border-radius:0 7px 7px 0;
 
     background:#d90000;
+
     color:#fff;
 
     font-weight:800;
+
     cursor:pointer;
 }
 
@@ -329,19 +421,25 @@ nav a:hover::after{
 .intro{
     width:90%;
     max-width:1400px;
+
     margin:55px auto 30px;
+
     text-align:center;
 }
 
 .intro h2{
     font-size:30px;
+
     margin-bottom:12px;
 }
 
 .intro p{
     max-width:800px;
+
     margin:auto;
+
     color:#999;
+
     line-height:1.7;
 }
 
@@ -352,34 +450,47 @@ nav a:hover::after{
 .stats{
     width:90%;
     max-width:1000px;
+
     margin:30px auto 55px;
 
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:18px;
 }
 
 .stat{
     padding:25px 15px;
+
     text-align:center;
 
     background:
-        linear-gradient(145deg,#111,#090909);
+        linear-gradient(
+            145deg,
+            #111,
+            #090909
+        );
 
     border:1px solid #321212;
+
     border-radius:9px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
 }
 
 .stat h3{
     color:#e00000;
+
     font-size:25px;
+
     margin-bottom:8px;
 }
 
 .stat p{
     color:#999;
+
     font-size:13px;
 }
 
@@ -390,17 +501,23 @@ nav a:hover::after{
 .main-container{
     width:90%;
     max-width:1400px;
+
     margin:0 auto;
 
     display:grid;
-    grid-template-columns:minmax(0,1fr) 300px;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        300px;
 
     gap:30px;
 }
 
 .section-title{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
     margin-bottom:22px;
@@ -412,12 +529,14 @@ nav a:hover::after{
 
 .section-title h2::before{
     content:"";
+
     display:inline-block;
 
     width:4px;
     height:27px;
 
     margin-right:10px;
+
     vertical-align:-4px;
 
     background:#e00000;
@@ -429,8 +548,11 @@ nav a:hover::after{
 
 .filters{
     display:flex;
+
     gap:10px;
+
     margin-bottom:25px;
+
     flex-wrap:wrap;
 }
 
@@ -438,9 +560,11 @@ nav a:hover::after{
     padding:10px 13px;
 
     border:1px solid #3e1414;
+
     border-radius:6px;
 
     background:#0d0d0d;
+
     color:#ddd;
 
     outline:none;
@@ -452,22 +576,29 @@ nav a:hover::after{
 
 .games-grid{
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
     gap:25px;
 }
 
-/* IMPORTANT:
-   Larger image area while keeping card structure */
 .game-card{
     overflow:hidden;
 
     background:
-        linear-gradient(145deg,#111,#080808);
+        linear-gradient(
+            145deg,
+            #111,
+            #080808
+        );
 
     border:1px solid #321313;
+
     border-radius:10px;
 
-    box-shadow:0 12px 30px rgba(0,0,0,.3);
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.3);
 
     transition:
         transform .25s,
@@ -485,11 +616,18 @@ nav a:hover::after{
         0 0 20px rgba(150,0,0,.08);
 }
 
-/* Increased from the smaller version */
+/* =========================
+   GAME IMAGE
+========================= */
+
 .game-image{
-    height:270px;
     width:100%;
+
+    /* LARGE ENOUGH FOR YOUR IMAGES */
+    height:270px;
+
     overflow:hidden;
+
     background:#090909;
 }
 
@@ -501,7 +639,8 @@ nav a:hover::after{
 
     object-fit:cover;
 
-    transition:transform .4s;
+    transition:
+        transform .4s;
 }
 
 .game-card:hover .game-image img{
@@ -522,10 +661,13 @@ nav a:hover::after{
     border-radius:4px;
 
     font-size:10px;
+
     font-weight:800;
+
     letter-spacing:1px;
 
     background:#260707;
+
     color:#ff4a4a;
 
     border:1px solid #531313;
@@ -533,14 +675,19 @@ nav a:hover::after{
 
 .game-info h3{
     font-size:20px;
+
     margin-bottom:8px;
 }
 
 .game-info p{
     color:#999;
+
     font-size:13px;
+
     line-height:1.5;
+
     min-height:39px;
+
     margin-bottom:15px;
 }
 
@@ -552,9 +699,11 @@ nav a:hover::after{
     border-radius:5px;
 
     background:#d90000;
+
     color:#fff;
 
     font-size:12px;
+
     font-weight:800;
 
     transition:.2s;
@@ -562,6 +711,7 @@ nav a:hover::after{
 
 .game-btn:hover{
     background:#ff0000;
+
     transform:translateY(-1px);
 }
 
@@ -571,7 +721,9 @@ nav a:hover::after{
 
 .sidebar{
     position:sticky;
-    top:105px;
+
+    top:95px;
+
     align-self:start;
 }
 
@@ -581,14 +733,20 @@ nav a:hover::after{
     padding:20px;
 
     background:
-        linear-gradient(145deg,#101010,#080808);
+        linear-gradient(
+            145deg,
+            #101010,
+            #080808
+        );
 
     border:1px solid #321313;
+
     border-radius:9px;
 }
 
 .sidebar-box h3{
     font-size:17px;
+
     margin-bottom:15px;
 
     padding-bottom:12px;
@@ -606,9 +764,11 @@ nav a:hover::after{
     padding:11px;
 
     background:#050505;
+
     color:#fff;
 
     border:1px solid #391414;
+
     outline:none;
 
     border-radius:5px 0 0 5px;
@@ -618,9 +778,11 @@ nav a:hover::after{
     padding:0 13px;
 
     border:0;
+
     border-radius:0 5px 5px 0;
 
     background:#d90000;
+
     color:#fff;
 
     cursor:pointer;
@@ -628,7 +790,9 @@ nav a:hover::after{
 
 .popular-list a{
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     padding:11px 0;
@@ -636,6 +800,7 @@ nav a:hover::after{
     border-bottom:1px solid #1e1e1e;
 
     color:#bbb;
+
     font-size:13px;
 
     transition:.2s;
@@ -643,11 +808,13 @@ nav a:hover::after{
 
 .popular-list a:hover{
     color:#fff;
+
     padding-left:5px;
 }
 
 .popular-list span{
     color:#e00000;
+
     font-size:10px;
 }
 
@@ -657,11 +824,14 @@ nav a:hover::after{
 
 .pagination{
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     gap:8px;
 
-    margin:45px 0 65px;
+    margin:45px 0 55px;
 }
 
 .pagination button{
@@ -669,9 +839,11 @@ nav a:hover::after{
     height:40px;
 
     border:1px solid #451414;
+
     border-radius:5px;
 
     background:#0d0d0d;
+
     color:#ccc;
 
     cursor:pointer;
@@ -680,42 +852,62 @@ nav a:hover::after{
 .pagination button:hover,
 .pagination button.active{
     background:#d90000;
+
     color:#fff;
+
     border-color:#d90000;
 }
 
 /* =========================
    PREMIUM FOOTER
+   NORMAL HEIGHT
+   FULL WIDTH
 ========================= */
 
 footer{
-    margin-top:20px;
+    width:100%;
 
-    padding:55px 5% 25px;
+    margin:0;
+
+    padding:32px 5% 18px;
 
     background:
-        linear-gradient(180deg,#0d0707 0%,#060606 65%,#040404 100%);
+        linear-gradient(
+            180deg,
+            #0d0707 0%,
+            #080606 55%,
+            #050505 100%
+        );
 
     border-top:1px solid #461313;
 
     box-shadow:
-        0 -15px 40px rgba(0,0,0,.25);
+        0 -12px 30px rgba(0,0,0,.25);
 }
 
 .footer-inner{
     width:90%;
     max-width:1400px;
+
     margin:auto;
 
     display:grid;
-    grid-template-columns:1.5fr 1fr 1fr;
 
-    gap:55px;
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr;
+
+    gap:40px;
+
+    align-items:start;
 }
 
 .footer-brand h3{
-    font-size:25px;
-    margin-bottom:14px;
+    font-size:23px;
+
+    margin-bottom:9px;
+
     letter-spacing:1px;
 }
 
@@ -727,18 +919,21 @@ footer{
     max-width:450px;
 
     color:#888;
-    font-size:13px;
-    line-height:1.7;
+
+    font-size:12px;
+
+    line-height:1.6;
 }
 
 .footer-column h4{
     position:relative;
 
-    margin-bottom:18px;
+    margin-bottom:12px;
 
     color:#fff;
 
-    font-size:13px;
+    font-size:12px;
+
     letter-spacing:1.5px;
 }
 
@@ -747,10 +942,10 @@ footer{
 
     display:block;
 
-    width:32px;
+    width:28px;
     height:2px;
 
-    margin-top:8px;
+    margin-top:6px;
 
     background:#e00000;
 }
@@ -760,17 +955,18 @@ footer{
 
     width:max-content;
 
-    margin-bottom:11px;
+    margin-bottom:8px;
 
     color:#999;
 
-    font-size:13px;
+    font-size:12px;
 
     transition:.2s;
 }
 
 .footer-column a:hover{
     color:#fff;
+
     transform:translateX(4px);
 }
 
@@ -778,13 +974,16 @@ footer{
     width:90%;
     max-width:1400px;
 
-    margin:40px auto 0;
-    padding-top:20px;
+    margin:22px auto 0;
+
+    padding-top:13px;
 
     border-top:1px solid #211010;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
     gap:20px;
@@ -792,7 +991,8 @@ footer{
 
 .footer-bottom p{
     color:#666;
-    font-size:12px;
+
+    font-size:11px;
 }
 
 .footer-bottom span{
@@ -826,6 +1026,7 @@ footer{
 
     header{
         height:68px;
+
         padding:0 18px;
     }
 
@@ -837,15 +1038,20 @@ footer{
         display:none;
     }
 
+    /* LEFT SIDE MENU */
     .menu-btn{
+        left:15px;
+        right:auto;
+
         top:78px;
-        right:15px;
+
         width:42px;
         height:42px;
     }
 
     .hero{
         min-height:400px;
+
         padding:65px 18px;
     }
 
@@ -865,14 +1071,16 @@ footer{
         grid-template-columns:1fr;
     }
 
-    /* KEEP IMAGE LARGE ON MOBILE TOO */
+    /* KEEP IMAGE LARGE */
     .game-image{
         height:270px;
     }
 
     .footer-inner{
-        grid-template-columns:1fr 1fr;
-        gap:35px;
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:25px;
     }
 
     .footer-brand{
@@ -881,7 +1089,10 @@ footer{
 
     .footer-bottom{
         flex-direction:column;
+
         text-align:center;
+
+        gap:7px;
     }
 }
 
@@ -893,16 +1104,19 @@ footer{
 
     .search-box{
         flex-direction:column;
+
         gap:8px;
     }
 
     .search-box input{
         border-right:1px solid #4b1717;
+
         border-radius:6px;
     }
 
     .search-box button{
         padding:13px;
+
         border-radius:6px;
     }
 
@@ -930,11 +1144,31 @@ footer{
     </a>
 
     <nav>
-        <a href="./index.html">HOME</a>
-        <a href="#games">GAMES</a>
-        <a href="#games">PACKS</a>
-        <a href="#about">ABOUT</a>
-        <a href="javascript:void(0)" class="price-btn" onclick="openPriceFilter()">PRICE</a>
+
+        <a href="./index.html">
+            HOME
+        </a>
+
+        <a href="#games">
+            GAMES
+        </a>
+
+        <a href="#games">
+            PACKS
+        </a>
+
+        <a href="#about">
+            ABOUT
+        </a>
+
+        <a
+            href="javascript:void(0)"
+            class="price-btn"
+            onclick="openPriceFilter()"
+        >
+            PRICE
+        </a>
+
     </nav>
 
 </header>
@@ -944,43 +1178,87 @@ footer{
      MENU BUTTON
 ========================= -->
 
-<button class="menu-btn" onclick="openDashboard()">☰</button>
+<button
+    class="menu-btn"
+    onclick="openDashboard()"
+    aria-label="Open menu"
+>
+    ☰
+</button>
+
+
+<!-- =========================
+     SIDEBAR OVERLAY
+     CLICKING THIS CLOSES MENU
+========================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    onclick="closeDashboard()"
+></div>
 
 
 <!-- =========================
      DASHBOARD
 ========================= -->
 
-<aside class="dashboard" id="dashboard">
+<aside
+    class="dashboard"
+    id="dashboard"
+>
 
     <div class="dashboard-header">
-        <h2>QEVRANO MENU</h2>
 
-        <button class="close-dashboard" onclick="closeDashboard()">×</button>
+        <h2>
+            QEVRANO MENU
+        </h2>
+
+        <button
+            class="close-dashboard"
+            onclick="closeDashboard()"
+            aria-label="Close menu"
+        >
+            ×
+        </button>
+
     </div>
 
 
     <div class="dashboard-section">
 
-        <h3>NAVIGATION</h3>
+        <h3>
+            NAVIGATION
+        </h3>
 
-        <a href="./index.html" onclick="closeDashboard()">
+        <a
+            href="./index.html"
+            onclick="closeDashboard()"
+        >
             Dashboard / Home
         </a>
 
-        <button onclick="showAllGames();closeDashboard()">
+        <button
+            onclick="showAllGames();closeDashboard()"
+        >
             All Games
         </button>
 
-        <button onclick="showFeatured();closeDashboard()">
+        <button
+            onclick="showFeatured();closeDashboard()"
+        >
             Featured Games
         </button>
 
-        <button onclick="showPopular();closeDashboard()">
+        <button
+            onclick="showPopular();closeDashboard()"
+        >
             Popular Games
         </button>
 
-        <button onclick="showNewGames();closeDashboard()">
+        <button
+            onclick="showNewGames();closeDashboard()"
+        >
             New Games
         </button>
 
@@ -989,17 +1267,25 @@ footer{
 
     <div class="dashboard-section">
 
-        <h3>PRICE</h3>
+        <h3>
+            PRICE
+        </h3>
 
-        <button onclick="showFreeGames();closeDashboard()">
+        <button
+            onclick="showFreeGames();closeDashboard()"
+        >
             Free Games
         </button>
 
-        <button onclick="showPaidGames();closeDashboard()">
+        <button
+            onclick="showPaidGames();closeDashboard()"
+        >
             Paid Games
         </button>
 
-        <button onclick="showAllGames();closeDashboard()">
+        <button
+            onclick="showAllGames();closeDashboard()"
+        >
             All Prices
         </button>
 
@@ -1008,25 +1294,37 @@ footer{
 
     <div class="dashboard-section">
 
-        <h3>CATEGORIES</h3>
+        <h3>
+            CATEGORIES
+        </h3>
 
-        <button onclick="filterCategory('Action');closeDashboard()">
+        <button
+            onclick="filterCategory('Action');closeDashboard()"
+        >
             Action
         </button>
 
-        <button onclick="filterCategory('Adventure');closeDashboard()">
+        <button
+            onclick="filterCategory('Adventure');closeDashboard()"
+        >
             Adventure
         </button>
 
-        <button onclick="filterCategory('Racing');closeDashboard()">
+        <button
+            onclick="filterCategory('Racing');closeDashboard()"
+        >
             Racing
         </button>
 
-        <button onclick="filterCategory('Sports');closeDashboard()">
+        <button
+            onclick="filterCategory('Sports');closeDashboard()"
+        >
             Sports
         </button>
 
-        <button onclick="filterCategory('Open World');closeDashboard()">
+        <button
+            onclick="filterCategory('Open World');closeDashboard()"
+        >
             Open World
         </button>
 
@@ -1035,21 +1333,35 @@ footer{
 
     <div class="dashboard-section">
 
-        <h3>QEVRANO</h3>
+        <h3>
+            QEVRANO
+        </h3>
 
-        <a href="./about.html" onclick="closeDashboard()">
+        <a
+            href="./about.html"
+            onclick="closeDashboard()"
+        >
             About QEVRANO
         </a>
 
-        <a href="./contact.html" onclick="closeDashboard()">
+        <a
+            href="./contact.html"
+            onclick="closeDashboard()"
+        >
             Contact
         </a>
 
-        <a href="./privacy.html" onclick="closeDashboard()">
+        <a
+            href="./privacy.html"
+            onclick="closeDashboard()"
+        >
             Privacy Policy
         </a>
 
-        <a href="./terms.html" onclick="closeDashboard()">
+        <a
+            href="./terms.html"
+            onclick="closeDashboard()"
+        >
             Terms & Conditions
         </a>
 
@@ -1099,9 +1411,14 @@ footer{
      ABOUT INTRO
 ========================= -->
 
-<section class="intro" id="about">
+<section
+    class="intro"
+    id="about"
+>
 
-    <h2>Welcome to QEVRANO</h2>
+    <h2>
+        Welcome to QEVRANO
+    </h2>
 
     <p>
         QEVRANO PC GAMES is a gaming-focused platform where
@@ -1119,18 +1436,41 @@ footer{
 <section class="stats">
 
     <div class="stat">
-        <h3>18</h3>
-        <p>Games Available</p>
+
+        <h3>
+            18
+        </h3>
+
+        <p>
+            Games Available
+        </p>
+
     </div>
 
-    <div class="stat">
-        <h3>3</h3>
-        <p>Game Pages</p>
-    </div>
 
     <div class="stat">
-        <h3>FREE</h3>
-        <p>Official Sources</p>
+
+        <h3>
+            3
+        </h3>
+
+        <p>
+            Game Pages
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h3>
+            FREE
+        </h3>
+
+        <p>
+            Official Sources
+        </p>
+
     </div>
 
 </section>
@@ -1140,20 +1480,28 @@ footer{
      MAIN
 ========================= -->
 
-<div class="main-container" id="games">
+<div
+    class="main-container"
+    id="games"
+>
 
     <main>
 
         <div class="section-title">
 
-            <h2>Featured Games</h2>
+            <h2>
+                Featured Games
+            </h2>
 
         </div>
 
 
         <div class="filters">
 
-            <select id="priceFilter" onchange="applyFilters()">
+            <select
+                id="priceFilter"
+                onchange="applyFilters()"
+            >
 
                 <option value="all">
                     All Prices
@@ -1170,7 +1518,10 @@ footer{
             </select>
 
 
-            <select id="categoryFilter" onchange="applyFilters()">
+            <select
+                id="categoryFilter"
+                onchange="applyFilters()"
+            >
 
                 <option value="all">
                     All Categories
@@ -1201,10 +1552,16 @@ footer{
         </div>
 
 
-        <div class="games-grid" id="gamesGrid"></div>
+        <div
+            class="games-grid"
+            id="gamesGrid"
+        ></div>
 
 
-        <div class="pagination" id="pagination"></div>
+        <div
+            class="pagination"
+            id="pagination"
+        ></div>
 
     </main>
 
@@ -1217,7 +1574,9 @@ footer{
 
         <div class="sidebar-box">
 
-            <h3>Search Games</h3>
+            <h3>
+                Search Games
+            </h3>
 
             <div class="sidebar-search">
 
@@ -1228,7 +1587,9 @@ footer{
                     onkeydown="if(event.key==='Enter') sidebarSearchGame()"
                 >
 
-                <button onclick="sidebarSearchGame()">
+                <button
+                    onclick="sidebarSearchGame()"
+                >
                     🔍
                 </button>
 
@@ -1239,7 +1600,9 @@ footer{
 
         <div class="sidebar-box">
 
-            <h3>Popular Games</h3>
+            <h3>
+                Popular Games
+            </h3>
 
             <div class="popular-list">
 
@@ -1342,7 +1705,9 @@ footer{
 
         <div class="footer-column">
 
-            <h4>QUICK LINKS</h4>
+            <h4>
+                QUICK LINKS
+            </h4>
 
             <a href="./index.html">
                 Home
@@ -1365,7 +1730,9 @@ footer{
 
         <div class="footer-column">
 
-            <h4>LEGAL</h4>
+            <h4>
+                LEGAL
+            </h4>
 
             <a href="./privacy.html">
                 Privacy Policy
@@ -1588,6 +1955,10 @@ function openDashboard(){
         .getElementById("dashboard")
         .classList.add("open");
 
+    document
+        .getElementById("sidebarOverlay")
+        .classList.add("open");
+
 }
 
 function closeDashboard(){
@@ -1596,15 +1967,25 @@ function closeDashboard(){
         .getElementById("dashboard")
         .classList.remove("open");
 
+    document
+        .getElementById("sidebarOverlay")
+        .classList.remove("open");
+
 }
 
-document.addEventListener("keydown",function(e){
 
-    if(e.key === "Escape"){
-        closeDashboard();
+/* ESC KEY CLOSE */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+            closeDashboard();
+        }
+
     }
-
-});
+);
 
 
 /* =========================
@@ -1614,10 +1995,14 @@ document.addEventListener("keydown",function(e){
 function getFilteredGames(){
 
     const price =
-        document.getElementById("priceFilter").value;
+        document
+            .getElementById("priceFilter")
+            .value;
 
     const category =
-        document.getElementById("categoryFilter").value;
+        document
+            .getElementById("categoryFilter")
+            .value;
 
 
     return games.filter(game => {
@@ -1657,7 +2042,10 @@ function renderGames(){
     const totalPages =
         Math.max(
             1,
-            Math.ceil(filteredGames.length / gamesPerPage)
+            Math.ceil(
+                filteredGames.length /
+                gamesPerPage
+            )
         );
 
 
@@ -1667,7 +2055,9 @@ function renderGames(){
 
 
     const start =
-        (currentPage - 1) * gamesPerPage;
+        (currentPage - 1) *
+        gamesPerPage;
+
 
     const pageGames =
         filteredGames.slice(
@@ -1684,7 +2074,8 @@ function renderGames(){
         const card =
             document.createElement("article");
 
-        card.className = "game-card";
+        card.className =
+            "game-card";
 
 
         const badge =
@@ -1762,28 +2153,38 @@ function renderGames(){
 
             if(i === currentPage){
 
-                button.classList.add("active");
+                button.classList.add(
+                    "active"
+                );
 
             }
 
 
-            button.onclick = function(){
+            button.onclick =
+                function(){
 
-                currentPage = i;
+                    currentPage = i;
 
-                renderGames();
-
-                window.scrollTo({
-                    top:
-                        document.getElementById("games").offsetTop
-                        - 90,
-                    behavior:"smooth"
-                });
-
-            };
+                    renderGames();
 
 
-            pagination.appendChild(button);
+                    window.scrollTo({
+
+                        top:
+                            document
+                                .getElementById("games")
+                                .offsetTop - 90,
+
+                        behavior:"smooth"
+
+                    });
+
+                };
+
+
+            pagination.appendChild(
+                button
+            );
 
         }
 
@@ -1811,9 +2212,13 @@ function applyFilters(){
 
 function showAllGames(){
 
-    document.getElementById("priceFilter").value = "all";
+    document
+        .getElementById("priceFilter")
+        .value = "all";
 
-    document.getElementById("categoryFilter").value = "all";
+    document
+        .getElementById("categoryFilter")
+        .value = "all";
 
     currentPage = 1;
 
@@ -1839,9 +2244,11 @@ function showFeatured(){
 
 function showPopular(){
 
-    document.querySelector(".sidebar").scrollIntoView({
-        behavior:"smooth"
-    });
+    document
+        .querySelector(".sidebar")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
@@ -1863,17 +2270,24 @@ function showNewGames(){
 
 function showFreeGames(){
 
-    document.getElementById("priceFilter").value = "free";
+    document
+        .getElementById("priceFilter")
+        .value = "free";
 
-    document.getElementById("categoryFilter").value = "all";
+    document
+        .getElementById("categoryFilter")
+        .value = "all";
 
     currentPage = 1;
 
     renderGames();
 
-    document.getElementById("games").scrollIntoView({
-        behavior:"smooth"
-    });
+
+    document
+        .getElementById("games")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
@@ -1884,17 +2298,24 @@ function showFreeGames(){
 
 function showPaidGames(){
 
-    document.getElementById("priceFilter").value = "paid";
+    document
+        .getElementById("priceFilter")
+        .value = "paid";
 
-    document.getElementById("categoryFilter").value = "all";
+    document
+        .getElementById("categoryFilter")
+        .value = "all";
 
     currentPage = 1;
 
     renderGames();
 
-    document.getElementById("games").scrollIntoView({
-        behavior:"smooth"
-    });
+
+    document
+        .getElementById("games")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
@@ -1905,9 +2326,11 @@ function showPaidGames(){
 
 function openPriceFilter(){
 
-    document.getElementById("games").scrollIntoView({
-        behavior:"smooth"
-    });
+    document
+        .getElementById("games")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
@@ -1918,19 +2341,24 @@ function openPriceFilter(){
 
 function filterCategory(category){
 
-    document.getElementById("categoryFilter").value =
-        category;
+    document
+        .getElementById("categoryFilter")
+        .value = category;
 
-    document.getElementById("priceFilter").value =
-        "all";
+    document
+        .getElementById("priceFilter")
+        .value = "all";
 
     currentPage = 1;
 
     renderGames();
 
-    document.getElementById("games").scrollIntoView({
-        behavior:"smooth"
-    });
+
+    document
+        .getElementById("games")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
@@ -1956,17 +2384,22 @@ function searchGame(){
 
     const game =
         games.find(game =>
-            game.name.toLowerCase().includes(query)
+            game.name
+                .toLowerCase()
+                .includes(query)
         );
 
 
     if(game){
 
-        window.location.href = game.file;
+        window.location.href =
+            game.file;
 
     }else{
 
-        alert("Game not found.");
+        alert(
+            "Game not found."
+        );
 
     }
 
@@ -1994,17 +2427,22 @@ function sidebarSearchGame(){
 
     const game =
         games.find(game =>
-            game.name.toLowerCase().includes(query)
+            game.name
+                .toLowerCase()
+                .includes(query)
         );
 
 
     if(game){
 
-        window.location.href = game.file;
+        window.location.href =
+            game.file;
 
     }else{
 
-        alert("Game not found.");
+        alert(
+            "Game not found."
+        );
 
     }
 
