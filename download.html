@@ -5,215 +5,1191 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Far Cry 3 - QEVRANO PC GAMES</title>
+<title>Free Download - QEVRANO PC GAMES</title>
+
+<meta name="description"
+content="Official free PC game download page from QEVRANO PC GAMES.">
 
 <style>
+
+/* =========================================================
+   QEVRANO PREMIUM DOWNLOAD PAGE
+   ========================================================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+    background:#050505;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
     color:#eee;
     background:
-        linear-gradient(rgba(5,8,15,.88),rgba(5,8,15,.95)),
-        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+        radial-gradient(circle at 50% -10%,rgba(229,9,20,.16),transparent 35%),
+        linear-gradient(180deg,#050505 0%,#090909 45%,#050505 100%);
     min-height:100vh;
 }
 
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header{
+    height:72px;
+    padding:0 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(4,4,4,.96);
+    border-bottom:1px solid rgba(255,255,255,.07);
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    backdrop-filter:blur(12px);
+}
+
+.logo{
+    color:#fff;
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#e50914;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:26px;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.7px;
+    transition:.25s;
+}
+
+nav a:hover{
+    color:#e50914;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    position:relative;
+    text-align:center;
+    padding:82px 20px 45px;
+    overflow:hidden;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+
+    left:50%;
+    top:-300px;
+
+    transform:translateX(-50%);
+
+    background:rgba(229,9,20,.08);
+    filter:blur(80px);
+    border-radius:50%;
+
+    pointer-events:none;
+}
+
+.eyebrow{
+    position:relative;
+    color:#e50914;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:4px;
+    margin-bottom:16px;
+}
+
+.hero h1{
+    position:relative;
+    font-size:clamp(38px,7vw,75px);
+    line-height:.95;
+    text-transform:uppercase;
+    font-weight:1000;
+    letter-spacing:-2px;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#e50914;
+}
+
+.hero-subtitle{
+    position:relative;
+    max-width:760px;
+    margin:auto;
+    color:#888;
+    font-size:15px;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
 .container{
     width:90%;
-    max-width:1100px;
+    max-width:1120px;
     margin:auto;
-    padding:40px 0;
 }
 
-.card{
-    background:rgba(15,20,30,.94);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:15px;
-    padding:35px;
-    box-shadow:0 15px 50px rgba(0,0,0,.5);
-}
 
-h1{
+/* =========================================================
+   PREMIUM DOWNLOAD PANEL
+   ========================================================= */
+
+.download-panel{
+    position:relative;
+
+    max-width:850px;
+    margin:25px auto 45px;
+
+    padding:48px 35px;
+
     text-align:center;
-    font-size:38px;
+
+    background:
+        linear-gradient(145deg,
+        rgba(24,24,24,.98),
+        rgba(10,10,10,.98));
+
+    border:1px solid rgba(255,255,255,.09);
+    border-top:2px solid #e50914;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.55),
+        0 0 50px rgba(229,9,20,.04);
+}
+
+.download-panel:before{
+    content:"";
+    position:absolute;
+
+    top:0;
+    left:15%;
+    right:15%;
+
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(229,9,20,.8),
+        transparent
+    );
+}
+
+.download-label{
+    color:#777;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:3px;
+    margin-bottom:12px;
+}
+
+.download-panel h2{
+    font-size:30px;
+    text-transform:uppercase;
     margin-bottom:10px;
 }
 
-.subtitle{
-    text-align:center;
-    color:#aaa;
-    margin-bottom:30px;
+.download-panel h2 span{
+    color:#e50914;
 }
 
-.game-info{
-    line-height:1.8;
-    margin-bottom:30px;
+.download-status{
+    color:#888;
+    line-height:1.7;
+    font-size:14px;
 }
 
-.game-info strong{
-    color:#fff;
+
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
+
+.countdown-wrap{
+    margin:32px auto 22px;
 }
 
-.warning{
-    background:rgba(255,170,0,.1);
-    border:1px solid rgba(255,170,0,.35);
-    padding:18px;
-    border-radius:10px;
-    margin-bottom:25px;
-    color:#ddd;
+.countdown{
+    width:128px;
+    height:128px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:5px solid #222;
+    border-top-color:#e50914;
+
+    box-shadow:
+        0 0 35px rgba(229,9,20,.08);
+
+    font-size:42px;
+    font-weight:900;
+
+    animation:spinBorder 1s linear infinite;
 }
 
-.video-box{
-    text-align:center;
-    margin:30px 0;
+@keyframes spinBorder{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
 }
 
-.video-box h2{
-    margin-bottom:15px;
+.countdown-number{
+    transform:rotate(0deg);
 }
 
-.download-area{
-    text-align:center;
-    margin-top:30px;
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+
+.progress-container{
+    width:100%;
+    max-width:520px;
+    height:5px;
+
+    margin:28px auto;
+
+    background:#202020;
+    overflow:hidden;
 }
+
+.progress{
+    width:0%;
+    height:100%;
+
+    background:#e50914;
+
+    box-shadow:0 0 12px rgba(229,9,20,.55);
+
+    transition:width 1s linear;
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+   ========================================================= */
 
 .download-btn{
     display:inline-block;
-    padding:16px 35px;
-    margin:10px;
-    border-radius:8px;
+
+    padding:16px 34px;
+
+    color:#fff;
+    background:#e50914;
+
     text-decoration:none;
-    font-weight:bold;
-    font-size:17px;
-    transition:.2s;
+
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:1px;
+
+    border:1px solid #e50914;
+
+    transition:.25s;
 }
 
-.official{
-    background:#333;
-    color:#fff;
-}
+.download-btn:hover{
+    background:#b80710;
+    border-color:#b80710;
 
-.official:hover{
-    background:#444;
-}
-
-.mega{
-    background:#e42529;
-    color:#fff;
-}
-
-.mega:hover{
-    background:#ff3438;
     transform:translateY(-2px);
+
+    box-shadow:0 10px 30px rgba(229,9,20,.18);
 }
 
-.note{
-    color:#999;
-    font-size:14px;
-    margin-top:15px;
+.hidden{
+    display:none;
 }
 
-.back{
-    display:block;
+
+/* =========================================================
+   GAME META
+   ========================================================= */
+
+.game-meta{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+
+    margin-bottom:40px;
+}
+
+.meta-box{
+    padding:22px 18px;
+
+    background:#0d0d0d;
+    border:1px solid #202020;
+
     text-align:center;
-    margin-top:30px;
-    color:#aaa;
-    text-decoration:none;
 }
 
-.back:hover{
+.meta-label{
+    display:block;
+
+    color:#666;
+
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:2px;
+
+    margin-bottom:9px;
+}
+
+.meta-value{
+    color:#eee;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   ARTICLE
+   ========================================================= */
+
+.article{
+    background:#0d0d0d;
+
+    border:1px solid #202020;
+
+    padding:40px;
+
+    margin-bottom:28px;
+}
+
+.article h2{
     color:#fff;
+
+    font-size:25px;
+
+    margin-bottom:20px;
+
+    padding-bottom:13px;
+
+    border-bottom:1px solid #202020;
 }
 
-@media(max-width:600px){
-    .card{
-        padding:22px;
-    }
-
-    h1{
-        font-size:30px;
-    }
-
-    .download-btn{
-        display:block;
-        margin:12px auto;
-    }
+.article h2 span{
+    color:#e50914;
 }
+
+.article h3{
+    color:#ddd;
+
+    font-size:18px;
+
+    margin:28px 0 12px;
+}
+
+.article p{
+    color:#999;
+
+    font-size:14px;
+
+    line-height:1.9;
+
+    margin-bottom:17px;
+}
+
+
+/* =========================================================
+   INFO BOX
+   ========================================================= */
+
+.notice{
+    margin-top:25px;
+
+    padding:22px;
+
+    background:#121212;
+
+    border-left:3px solid #e50914;
+
+    color:#999;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.notice strong{
+    color:#eee;
+}
+
+
+/* =========================================================
+   REQUIREMENTS
+   ========================================================= */
+
+.requirements{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+}
+
+.requirement-box{
+    background:#111;
+
+    border:1px solid #222;
+
+    padding:25px;
+}
+
+.requirement-box h3{
+    color:#e50914;
+
+    margin:0 0 15px;
+
+    font-size:14px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+.requirement-box p{
+    margin:0;
+
+    font-size:13px;
+
+    line-height:1.9;
+
+    color:#999;
+}
+
+
+/* =========================================================
+   ADVERTISEMENT
+   ========================================================= */
+
+.ad-section{
+    margin:35px auto;
+
+    min-height:110px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#080808;
+
+    border:1px solid #171717;
+
+    color:#444;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+    margin-top:70px;
+
+    padding:38px 20px;
+
+    text-align:center;
+
+    background:#030303;
+
+    border-top:1px solid #191919;
+}
+
+footer p{
+    color:#666;
+
+    font-size:12px;
+
+    line-height:1.8;
+}
+
+footer span{
+    color:#e50914;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:800px){
+
+    header{
+        height:auto;
+        padding:16px 5%;
+
+        flex-direction:column;
+        gap:14px;
+    }
+
+    nav{
+        gap:17px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        padding:60px 15px 35px;
+    }
+
+    .game-meta{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .requirements{
+        grid-template-columns:1fr;
+    }
+
+    .article{
+        padding:25px 20px;
+    }
+
+    .download-panel{
+        padding:38px 20px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .game-meta{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        letter-spacing:-1px;
+    }
+
+}
+
 </style>
 
 </head>
 
 <body>
 
+<!-- =======================================================
+     HEADER
+     ======================================================= -->
+
+<header>
+
+```
+<div class="logo">
+    QEVRANO <span>PC GAMES</span>
+</div>
+
+<nav>
+    <a href="./index.html">HOME</a>
+    <a href="./games.html">GAMES</a>
+    <a href="./packs.html">PACKS</a>
+</nav>
+```
+
+</header>
+
+<!-- =======================================================
+     HERO
+     ======================================================= -->
+
+<section class="hero">
+
+```
+<div class="eyebrow">
+    OFFICIAL FREE DOWNLOAD
+</div>
+
+<h1 id="gameTitle">
+    GAME <span>NAME</span>
+</h1>
+
+<p class="hero-subtitle">
+    Your official free download is being prepared.
+    Please wait while the countdown completes.
+</p>
+```
+
+</section>
+
 <div class="container">
 
-<div class="card">
+<!-- =======================================================
+     DOWNLOAD PANEL
+     ======================================================= -->
 
-<h1>Far Cry 3</h1>
+<section class="download-panel">
 
-<p class="subtitle">QEVRANO PC GAMES</p>
-
-<div class="game-info">
-
-<p><strong>Game:</strong> Far Cry 3</p>
-<p><strong>Genre:</strong> Action / Adventure / Open World</p>
-<p><strong>Platform:</strong> PC</p>
-
+```
+<div class="download-label">
+    QEVRANO DOWNLOAD CENTER
 </div>
 
-<div class="warning">
-<strong>Important:</strong> Only download and use game files that you have the right to access. 
-For the official version, use the publisher's or authorized store's download option.
-</div>
+<h2>
+    YOUR DOWNLOAD IS <span>STARTING</span>
+</h2>
 
-<div class="video-box">
-
-<h2>Installation Guide</h2>
-
-<p>Watch the installation instructions before installing the game.</p>
-
-<!-- Replace the # below with your YouTube installation-video link -->
-
-<a href="#" class="download-btn official">
-    MUST WATCH INSTALLATION VIDEO
-</a>
-
-</div>
-
-<div class="download-area">
-
-<h2>Download</h2>
-
-<!-- Your new Mega link -->
-
-<a
-href="https://mega.nz/file/gvoiBAib#ojL_AZX9vbXG94fRrlKuWm8u8024CZZoj68pos8FkQw"
-class="download-btn mega"
-target="_blank"
-rel="noopener noreferrer">
-DOWNLOAD SETUP </a>
-
-<p class="note">
-Click the button above to open the Mega download page.
+<p class="download-status" id="downloadStatus">
+    Requested file will automatically start after a few seconds.
+    Please wait while we prepare your official download.
 </p>
 
+
+<div class="countdown-wrap">
+
+    <div class="countdown" id="countdown">
+
+        <span class="countdown-number" id="countdownNumber">
+            10
+        </span>
+
+    </div>
+
 </div>
 
-<a href="./index.html" class="back">
-    ← Back to PC Games
+
+<div class="progress-container">
+
+    <div class="progress" id="progress"></div>
+
+</div>
+
+
+<a
+    id="manualDownload"
+    class="download-btn hidden"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    DOWNLOAD OFFICIAL
 </a>
+```
+
+</section>
+
+<!-- =======================================================
+     GAME META
+     ======================================================= -->
+
+<section class="game-meta">
+
+```
+<div class="meta-box">
+    <span class="meta-label">GAME</span>
+    <span class="meta-value" id="metaGame">Game Name</span>
+</div>
+
+<div class="meta-box">
+    <span class="meta-label">PLATFORM</span>
+    <span class="meta-value" id="metaPlatform">Windows PC</span>
+</div>
+
+<div class="meta-box">
+    <span class="meta-label">LICENSE</span>
+    <span class="meta-value">FREE</span>
+</div>
+
+<div class="meta-box">
+    <span class="meta-label">SOURCE</span>
+    <span class="meta-value">OFFICIAL</span>
+</div>
+```
+
+</section>
+
+<!-- =======================================================
+     ADVERTISEMENT
+     ======================================================= -->
+
+<div class="ad-section">
+    ADVERTISEMENT
+</div>
+
+<!-- =======================================================
+     ARTICLE
+     ======================================================= -->
+
+<section class="article">
+
+```
+<h2>
+    About <span id="articleGame">GAME NAME</span>
+</h2>
+
+<p>
+    Welcome to the official free download page for
+    <strong id="articleGame2">GAME NAME</strong> on
+    QEVRANO PC GAMES. This page is designed to provide
+    visitors with useful information before they continue
+    to the game's authorized download source.
+</p>
+
+<p>
+    The download link provided on this page leads to an
+    official source. Availability, launcher requirements,
+    account requirements, download size and installation
+    procedures may vary depending on the publisher and the
+    game.
+</p>
+
+<h3>
+    Download Information
+</h3>
+
+<p>
+    The download countdown above is simply a short waiting
+    page before continuing to the official source. Once the
+    countdown reaches zero, the official download destination
+    will open automatically.
+</p>
+
+<p>
+    If the automatic process does not begin, the
+    <strong>DOWNLOAD OFFICIAL</strong> button will appear so
+    you can continue manually.
+</p>
+
+<h3>
+    Before Installing
+</h3>
+
+<p>
+    Make sure your computer has enough free storage and meets
+    the game's published system requirements. It is also a
+    good idea to keep Windows, graphics drivers and required
+    game components up to date.
+</p>
+
+<p>
+    Some free PC games use their own launcher or require an
+    account with the publisher. Follow the instructions
+    provided by the official publisher during installation.
+</p>
+
+<div class="notice">
+
+    <strong>Official Source Notice</strong><br>
+
+    QEVRANO PC GAMES does not host, crack, modify or
+    redistribute copyrighted game files. This page is intended
+    to help visitors reach the game's authorized official
+    download source.
+
+</div>
+```
+
+</section>
+
+<!-- =======================================================
+     SECOND ADVERTISEMENT
+     ======================================================= -->
+
+<div class="ad-section">
+    ADVERTISEMENT
+</div>
+
+<!-- =======================================================
+     SYSTEM REQUIREMENTS
+     ======================================================= -->
+
+<section class="article">
+
+```
+<h2>
+    System <span>Requirements</span>
+</h2>
+
+<div class="requirements">
+
+    <div class="requirement-box">
+
+        <h3>Minimum</h3>
+
+        <p id="minimumRequirements">
+            OS: Windows 10 / 11<br>
+            Processor: Check official requirements<br>
+            Memory: Check official requirements<br>
+            Graphics: Check official requirements<br>
+            Storage: Check official requirements
+        </p>
+
+    </div>
+
+
+    <div class="requirement-box">
+
+        <h3>Recommended</h3>
+
+        <p id="recommendedRequirements">
+            OS: Windows 10 / 11<br>
+            Processor: Check official requirements<br>
+            Memory: Check official requirements<br>
+            Graphics: Check official requirements<br>
+            Storage: Check official requirements
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =======================================================
+     FINAL INFORMATION
+     ======================================================= -->
+
+<section class="article">
+
+```
+<h2>
+    Important <span>Information</span>
+</h2>
+
+<p>
+    Download availability can change over time. If the
+    publisher changes its launcher, download location or
+    system requirements, always follow the information shown
+    by the official source.
+</p>
+
+<p>
+    For the safest experience, only download the game through
+    the authorized source provided by the publisher or an
+    officially recognized distribution platform.
+</p>
+```
+
+</section>
 
 </div>
 
-</div>
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
+
+<footer>
+
+```
+<p>
+    © 2026 <span>QEVRANO PC GAMES</span>
+    — Official Free Game Resources
+</p>
+```
+
+</footer>
+
+<!-- =======================================================
+     JAVASCRIPT
+     ======================================================= -->
+
+<script>
+
+/*
+=============================================================
+QEVRANO GAME DATABASE
+=============================================================
+
+Add officially free games here.
+
+IMPORTANT:
+Use the actual official download destination for each game.
+Do not put unofficial file-hosting links here.
+=============================================================
+*/
+
+const games = {
+
+    warframe: {
+
+        name: "WARFRAME",
+
+        platform: "Windows PC",
+
+        officialURL: "YOUR_OFFICIAL_WARFRAME_DOWNLOAD_URL",
+
+        minimum:
+            "OS: Check official requirements<br>" +
+            "Processor: Check official requirements<br>" +
+            "Memory: Check official requirements<br>" +
+            "Graphics: Check official requirements<br>" +
+            "Storage: Check official requirements",
+
+        recommended:
+            "OS: Check official requirements<br>" +
+            "Processor: Check official requirements<br>" +
+            "Memory: Check official requirements<br>" +
+            "Graphics: Check official requirements<br>" +
+            "Storage: Check official requirements"
+    },
+
+
+    fortnite: {
+
+        name: "FORTNITE",
+
+        platform: "Windows PC",
+
+        officialURL: "YOUR_OFFICIAL_FORTNITE_DOWNLOAD_URL",
+
+        minimum:
+            "OS: Check official requirements<br>" +
+            "Processor: Check official requirements<br>" +
+            "Memory: Check official requirements<br>" +
+            "Graphics: Check official requirements<br>" +
+            "Storage: Check official requirements",
+
+        recommended:
+            "OS: Check official requirements<br>" +
+            "Processor: Check official requirements<br>" +
+            "Memory: Check official requirements<br>" +
+            "Graphics: Check official requirements<br>" +
+            "Storage: Check official requirements"
+    },
+
+
+    valorant: {
+
+        name: "VALORANT",
+
+        platform: "Windows PC",
+
+        officialURL: "YOUR_OFFICIAL_VALORANT_DOWNLOAD_URL",
+
+        minimum:
+            "OS: Check official requirements<br>" +
+            "Processor: Check official requirements<br>" +
+            "Memory: Check official requirements<br>" +
+            "Graphics: Check official requirements<br>" +
+            "Storage: Check official requirements",
+
+        recommended:
+            "OS: Check official requirements<br>" +
+            "Processor: Check official requirements<br>" +
+            "Memory: Check official requirements<br>" +
+            "Graphics: Check official requirements<br>" +
+            "Storage: Check official requirements"
+    }
+
+};
+
+
+/*
+=============================================================
+READ GAME FROM URL
+
+Example:
+
+download.html?game=warframe
+
+download.html?game=fortnite
+
+download.html?game=valorant
+=============================================================
+*/
+
+const params = new URLSearchParams(window.location.search);
+
+const gameKey = params.get("game");
+
+const game = games[gameKey] || games.warframe;
+
+
+/*
+=============================================================
+INSERT GAME INFORMATION
+=============================================================
+*/
+
+document.title =
+    "Download " + game.name + " - QEVRANO PC GAMES";
+
+document.getElementById("gameTitle").innerHTML =
+    game.name;
+
+document.getElementById("metaGame").textContent =
+    game.name;
+
+document.getElementById("metaPlatform").textContent =
+    game.platform;
+
+document.getElementById("articleGame").textContent =
+    game.name;
+
+document.getElementById("articleGame2").textContent =
+    game.name;
+
+document.getElementById("minimumRequirements").innerHTML =
+    game.minimum;
+
+document.getElementById("recommendedRequirements").innerHTML =
+    game.recommended;
+
+
+/*
+=============================================================
+DOWNLOAD ELEMENTS
+=============================================================
+*/
+
+const countdownNumber =
+    document.getElementById("countdownNumber");
+
+const countdown =
+    document.getElementById("countdown");
+
+const progress =
+    document.getElementById("progress");
+
+const status =
+    document.getElementById("downloadStatus");
+
+const manualDownload =
+    document.getElementById("manualDownload");
+
+
+/*
+=============================================================
+SET OFFICIAL URL
+=============================================================
+*/
+
+manualDownload.href = game.officialURL;
+
+
+/*
+=============================================================
+10 SECOND COUNTDOWN
+=============================================================
+*/
+
+let seconds = 10;
+
+const timer = setInterval(function(){
+
+    seconds--;
+
+    countdownNumber.textContent =
+        seconds;
+
+    const percentage =
+        ((10 - seconds) / 10) * 100;
+
+    progress.style.width =
+        percentage + "%";
+
+
+    if(seconds <= 0){
+
+        clearInterval(timer);
+
+        countdown.style.animation =
+            "none";
+
+        countdown.style.borderColor =
+            "#e50914";
+
+        countdownNumber.textContent =
+            "✓";
+
+        progress.style.width =
+            "100%";
+
+
+        status.innerHTML =
+            "Your official download is ready. " +
+            "If it does not begin automatically, " +
+            "use the button below.";
+
+
+        manualDownload.classList.remove(
+            "hidden"
+        );
+
+
+        /*
+        =====================================================
+        OPEN OFFICIAL DOWNLOAD
+        =====================================================
+
+        The browser will handle the destination.
+
+        If the official URL is a direct downloadable file,
+        Chrome may begin the download.
+
+        If the official URL is a launcher/store page,
+        that page will open instead.
+        =====================================================
+        */
+
+        if(
+            game.officialURL &&
+            !game.officialURL.startsWith(
+                "YOUR_"
+            )
+        ){
+
+            window.location.href =
+                game.officialURL;
+
+        }
+
+    }
+
+},1000);
+
+</script>
 
 </body>
 </html>
