@@ -380,7 +380,12 @@ nav a:hover{
     left:0;
     right:0;
     height:2px;
-    background:linear-gradient(90deg,transparent,#e00000,transparent);
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #e00000,
+        transparent
+    );
 }
 
 .stat::after{
@@ -496,7 +501,7 @@ main{
 
 /* =========================================================
    GAME GRID
-   SIZE KEPT EXACTLY THE SAME
+   CARD SIZE KEPT
 ========================================================= */
 
 .games-grid{
@@ -529,18 +534,25 @@ main{
     box-shadow:0 12px 35px rgba(0,0,0,.45);
 }
 
-/* EXACT ORIGINAL SIZE */
+/* SAME CARD IMAGE HEIGHT */
 
 .game-image{
     height:245px;
     position:relative;
     overflow:hidden;
+    background:#090909;
 }
+
+/*
+   Smaller images are automatically enlarged/cropped
+   to fill the SAME card size.
+*/
 
 .game-image img{
     width:100%;
     height:100%;
     object-fit:cover;
+    object-position:center;
     display:block;
     transition:.35s;
 }
@@ -568,7 +580,7 @@ main{
     background:#168a38;
 }
 
-/* EXACT ORIGINAL PADDING */
+/* SAME ORIGINAL CARD PADDING */
 
 .game-info{
     padding:18px;
@@ -757,29 +769,73 @@ main{
 }
 
 /* =========================================================
-   FOOTER
+   PREMIUM FOOTER
 ========================================================= */
 
 footer{
     margin-top:60px;
-    padding:40px 20px;
-    background:#070707;
-    border-top:1px solid #241313;
+    padding:45px 20px 25px;
+    background:
+        linear-gradient(
+            180deg,
+            #090909,
+            #050505
+        );
+    border-top:1px solid #321414;
     text-align:center;
 }
 
-footer h3{
-    margin-bottom:10px;
-    font-size:20px;
+.footer-logo{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:1px;
+    margin-bottom:9px;
 }
 
-footer h3 span{
+.footer-logo span{
     color:#e00000;
 }
 
-footer p{
+.footer-description{
+    max-width:600px;
+    margin:0 auto 25px;
     color:#666;
     font-size:12px;
+    line-height:1.6;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px 22px;
+    margin-bottom:28px;
+}
+
+.footer-links a{
+    color:#999;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.footer-links a:hover{
+    color:#e00000;
+}
+
+.footer-divider{
+    width:90%;
+    max-width:1000px;
+    height:1px;
+    background:#211313;
+    margin:0 auto 20px;
+}
+
+.footer-copy{
+    color:#555;
+    font-size:11px;
 }
 
 /* =========================================================
@@ -868,6 +924,10 @@ footer p{
     .section-title{
         align-items:flex-start;
     }
+
+    .footer-links{
+        gap:14px 18px;
+    }
 }
 
 @media(max-width:450px){
@@ -904,7 +964,7 @@ footer p{
         <a href="./index.html">HOME</a>
         <a href="#games">GAMES</a>
         <a href="#games">PACKS</a>
-        <a href="#about">ABOUT</a>
+        <a href="./about.html">ABOUT</a>
         <a href="javascript:void(0)" onclick="openPriceFilter()">PRICE</a>
     </nav>
 
@@ -1025,12 +1085,20 @@ footer p{
             QEVRANO
         </div>
 
-        <a href="#about" onclick="closeDashboard()">
+        <a href="./about.html">
             About QEVRANO
         </a>
 
-        <a href="#contact" onclick="closeDashboard()">
+        <a href="./contact.html">
             Contact
+        </a>
+
+        <a href="./privacy.html">
+            Privacy Policy
+        </a>
+
+        <a href="./terms.html">
+            Terms & Conditions
         </a>
 
     </div>
@@ -1101,35 +1169,18 @@ footer p{
 <section class="stats">
 
     <div class="stat">
-
         <h3>18</h3>
-
-        <p>
-            Games Available
-        </p>
-
+        <p>Games Available</p>
     </div>
 
-
     <div class="stat">
-
         <h3>3</h3>
-
-        <p>
-            Game Pages
-        </p>
-
+        <p>Game Pages</p>
     </div>
 
-
     <div class="stat">
-
         <h3>FREE</h3>
-
-        <p>
-            Official Sources
-        </p>
-
+        <p>Official Sources</p>
     </div>
 
 </section>
@@ -1140,7 +1191,6 @@ footer p{
 ========================================================= -->
 
 <div class="container">
-
 
 <main id="games">
 
@@ -1157,46 +1207,21 @@ footer p{
 
         <select id="priceFilter" onchange="applyFilters()">
 
-            <option value="all">
-                All Prices
-            </option>
-
-            <option value="free">
-                Free Games
-            </option>
-
-            <option value="paid">
-                Paid Games
-            </option>
+            <option value="all">All Prices</option>
+            <option value="free">Free Games</option>
+            <option value="paid">Paid Games</option>
 
         </select>
 
 
         <select id="categoryFilter" onchange="applyFilters()">
 
-            <option value="all">
-                All Categories
-            </option>
-
-            <option value="Action">
-                Action
-            </option>
-
-            <option value="Adventure">
-                Adventure
-            </option>
-
-            <option value="Racing">
-                Racing
-            </option>
-
-            <option value="Sports">
-                Sports
-            </option>
-
-            <option value="Open World">
-                Open World
-            </option>
+            <option value="all">All Categories</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Racing">Racing</option>
+            <option value="Sports">Sports</option>
+            <option value="Open World">Open World</option>
 
         </select>
 
@@ -1211,13 +1236,11 @@ footer p{
         <article class="game-card" data-order="1">
 
             <div class="game-image">
-
                 <img src="./images/farcry2.jpg" alt="Far Cry 2">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1244,13 +1267,11 @@ footer p{
         <article class="game-card" data-order="2">
 
             <div class="game-image">
-
                 <img src="./images/farcry3.jpg" alt="Far Cry 3">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1277,13 +1298,11 @@ footer p{
         <article class="game-card" data-order="3">
 
             <div class="game-image">
-
                 <img src="./images/ac2.jpg" alt="Assassin's Creed II">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1310,13 +1329,11 @@ footer p{
         <article class="game-card" data-order="4">
 
             <div class="game-image">
-
                 <img src="./images/warframe.jpg" alt="Warframe">
 
                 <span class="price-stamp free">
                     FREE
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1343,13 +1360,11 @@ footer p{
         <article class="game-card" data-order="5">
 
             <div class="game-image">
-
                 <img src="./images/trackmania.jpg" alt="Trackmania">
 
                 <span class="price-stamp free">
                     FREE
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1376,13 +1391,11 @@ footer p{
         <article class="game-card" data-order="6">
 
             <div class="game-image">
-
                 <img src="./images/rocketleague.jpg" alt="Rocket League">
 
                 <span class="price-stamp free">
                     FREE
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1409,13 +1422,11 @@ footer p{
         <article class="game-card" data-order="7">
 
             <div class="game-image">
-
                 <img src="./images/gta5.jpg" alt="GTA V">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1442,13 +1453,11 @@ footer p{
         <article class="game-card" data-order="8">
 
             <div class="game-image">
-
                 <img src="./images/gta4.jpg" alt="GTA IV">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1475,13 +1484,11 @@ footer p{
         <article class="game-card" data-order="9">
 
             <div class="game-image">
-
                 <img src="./images/fifa.jpg" alt="FIFA">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1508,13 +1515,11 @@ footer p{
         <article class="game-card" data-order="10">
 
             <div class="game-image">
-
                 <img src="./images/cricket.jpg" alt="Don Bradman Cricket">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1541,13 +1546,11 @@ footer p{
         <article class="game-card" data-order="11">
 
             <div class="game-image">
-
                 <img src="./images/cod.jpg" alt="Call of Duty 1">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1574,13 +1577,11 @@ footer p{
         <article class="game-card" data-order="12">
 
             <div class="game-image">
-
                 <img src="./images/witcher2.jpg" alt="The Witcher 2">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1607,13 +1608,11 @@ footer p{
         <article class="game-card" data-order="13">
 
             <div class="game-image">
-
                 <img src="./images/gtavi.jpg" alt="GTA VI">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1640,13 +1639,11 @@ footer p{
         <article class="game-card" data-order="14">
 
             <div class="game-image">
-
                 <img src="./images/acs.jpg" alt="Assassin's Creed Syndicate">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1673,13 +1670,11 @@ footer p{
         <article class="game-card" data-order="15">
 
             <div class="game-image">
-
                 <img src="./images/nfs2.jpg" alt="Need for Speed II">
 
                 <span class="price-stamp">
                     PAID
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1706,13 +1701,11 @@ footer p{
         <article class="game-card" data-order="16">
 
             <div class="game-image">
-
                 <img src="./images/fallguys.jpg" alt="Fall Guys">
 
                 <span class="price-stamp free">
                     FREE
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1739,13 +1732,11 @@ footer p{
         <article class="game-card" data-order="17">
 
             <div class="game-image">
-
                 <img src="./images/stumbleguys.jpg" alt="Stumble Guys">
 
                 <span class="price-stamp free">
                     FREE
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1772,13 +1763,11 @@ footer p{
         <article class="game-card" data-order="18">
 
             <div class="game-image">
-
                 <img src="./images/palia.jpg" alt="Palia">
 
                 <span class="price-stamp free">
                     FREE
                 </span>
-
             </div>
 
             <div class="game-info">
@@ -1812,7 +1801,6 @@ footer p{
 ========================================================= -->
 
 <aside class="sidebar" id="popular">
-
 
     <div class="sidebar-search">
 
@@ -1974,11 +1962,45 @@ footer p{
 
 <footer id="contact">
 
-    <h3>
+    <div class="footer-logo">
         QEVRANO <span>PC GAMES</span>
-    </h3>
+    </div>
 
-    <p>
+    <p class="footer-description">
+        Discover PC games, explore free and paid titles,
+        and find your next gaming experience with QEVRANO PC GAMES.
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="./index.html">
+            Home
+        </a>
+
+        <a href="./about.html">
+            About
+        </a>
+
+        <a href="./contact.html">
+            Contact
+        </a>
+
+        <a href="./privacy.html">
+            Privacy Policy
+        </a>
+
+        <a href="./terms.html">
+            Terms &amp; Conditions
+        </a>
+
+    </div>
+
+
+    <div class="footer-divider"></div>
+
+
+    <p class="footer-copy">
         © 2026 QEVRANO PC GAMES. All rights reserved.
     </p>
 
