@@ -129,17 +129,20 @@ header{
     margin:auto;
 }
 
+/* HERO */
+
 .hero{
     min-height:570px;
     display:grid;
     grid-template-columns:1.15fr .85fr;
-    align-items:center;
+    align-items:start;
     gap:45px;
-    padding:70px 0;
+    padding:45px 0 35px;
 }
 
 .hero-content{
     max-width:700px;
+    padding-top:45px;
 }
 
 .eyebrow{
@@ -224,9 +227,11 @@ header{
 
 .hero-image{
     position:relative;
+    margin-top:0;
 }
 
 .hero-image img{
+    display:block;
     width:100%;
     max-height:500px;
     object-fit:cover;
@@ -236,6 +241,8 @@ header{
         0 0 0 1px rgba(255,0,0,.06),
         0 20px 60px rgba(0,0,0,.8);
 }
+
+/* SECTIONS */
 
 section{
     padding:65px 0;
@@ -294,6 +301,32 @@ section{
     font-size:14px;
 }
 
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.gallery img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    border-radius:6px;
+    border:1px solid #29292e;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.025);
+    border-color:#d00000;
+    box-shadow:0 0 22px rgba(208,0,0,.2);
+}
+
+/* VIDEO */
+
 .video-wrap{
     width:100%;
     max-width:1000px;
@@ -320,27 +353,7 @@ section{
     margin-top:12px;
 }
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
-}
-
-.gallery img{
-    width:100%;
-    height:190px;
-    object-fit:cover;
-    border-radius:6px;
-    border:1px solid #29292e;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.gallery img:hover{
-    transform:scale(1.025);
-    border-color:#d00000;
-    box-shadow:0 0 22px rgba(208,0,0,.2);
-}
+/* DOWNLOAD */
 
 .download-box{
     background:rgba(10,10,14,.95);
@@ -362,6 +375,8 @@ section{
     gap:14px;
 }
 
+/* AD */
+
 .ad-box{
     min-height:110px;
     display:flex;
@@ -372,6 +387,8 @@ section{
     color:#666;
     border-radius:7px;
 }
+
+/* INFO */
 
 .info-grid{
     display:grid;
@@ -398,6 +415,8 @@ section{
     font-size:14px;
     margin:5px 0;
 }
+
+/* REQUIREMENTS */
 
 .requirements{
     display:grid;
@@ -439,6 +458,8 @@ section{
     font-size:13px;
 }
 
+/* TAGLINE */
+
 .tagline{
     text-align:center;
     padding:45px 20px;
@@ -447,6 +468,8 @@ section{
     letter-spacing:3px;
     font-size:14px;
 }
+
+/* FOOTER */
 
 footer{
     margin-top:40px;
@@ -488,6 +511,8 @@ footer p{
     font-size:12px;
 }
 
+/* MODAL */
+
 .modal{
     position:fixed;
     inset:0;
@@ -515,10 +540,17 @@ footer p{
     cursor:pointer;
 }
 
+/* RESPONSIVE */
+
 @media(max-width:900px){
+
     .hero{
         grid-template-columns:1fr;
-        padding:55px 0;
+        padding:45px 0 35px;
+    }
+
+    .hero-content{
+        padding-top:0;
     }
 
     .hero-image{
@@ -536,6 +568,7 @@ footer p{
 }
 
 @media(max-width:700px){
+
     .navbar{
         flex-wrap:wrap;
         padding:14px 16px;
@@ -580,6 +613,7 @@ footer p{
 }
 
 @media(max-width:450px){
+
     .search-box input{
         width:120px;
     }
@@ -639,6 +673,8 @@ footer p{
 
 <main>
 
+<!-- HERO -->
+
 <section class="hero">
     <div class="container" style="display:contents;">
 
@@ -664,6 +700,7 @@ footer p{
         </p>
 
         <div class="hero-buttons">
+
             <a
                 class="btn btn-outline"
                 href="https://store.ubisoft.com/us/assassins-creed-syndicate/56c4947988a7e300458b45c6.html"
@@ -681,6 +718,7 @@ footer p{
             >
                 DOWNLOAD SETUP.EXE
             </a>
+
         </div>
 
     </div>
@@ -697,33 +735,7 @@ footer p{
 
 </section>
 
-<section>
-    <div class="container">
-
-```
-    <h2 class="section-title">
-        GAMEPLAY <span>TRAILER</span>
-    </h2>
-
-    <div class="video-wrap">
-
-        <iframe
-            src="https://www.youtube.com/embed/HFFcXwIBMPc"
-            title="Assassin's Creed Syndicate E3 Cinematic Trailer"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-        </iframe>
-
-        <div class="video-note">
-            Official Assassin's Creed Syndicate E3 Cinematic Trailer.
-        </div>
-
-    </div>
-
-</div>
-```
-
-</section>
+<!-- ABOUT -->
 
 <section>
     <div class="container">
@@ -749,6 +761,8 @@ footer p{
 ```
 
 </section>
+
+<!-- FEATURES -->
 
 <section>
     <div class="container">
@@ -815,6 +829,8 @@ footer p{
 
 </section>
 
+<!-- SCREENSHOTS MOVED UP -->
+
 <section>
     <div class="container">
 
@@ -855,6 +871,38 @@ footer p{
 ```
 
 </section>
+
+<!-- TRAILER NOW AFTER SCREENSHOTS -->
+
+<section>
+    <div class="container">
+
+```
+    <h2 class="section-title">
+        GAMEPLAY <span>TRAILER</span>
+    </h2>
+
+    <div class="video-wrap">
+
+        <iframe
+            src="https://www.youtube.com/embed/HFFcXwIBMPc"
+            title="Assassin's Creed Syndicate E3 Cinematic Trailer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+
+        <div class="video-note">
+            Official Assassin's Creed Syndicate E3 Cinematic Trailer.
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- DOWNLOAD -->
 
 <section>
     <div class="container">
@@ -907,6 +955,8 @@ footer p{
 
 </section>
 
+<!-- ADVERTISEMENT -->
+
 <section>
     <div class="container">
 
@@ -923,6 +973,8 @@ footer p{
 ```
 
 </section>
+
+<!-- GAME INFORMATION -->
 
 <section>
     <div class="container">
@@ -970,6 +1022,8 @@ footer p{
 ```
 
 </section>
+
+<!-- SYSTEM REQUIREMENTS -->
 
 <section>
     <div class="container">
@@ -1024,7 +1078,6 @@ footer p{
             </p>
 
         </div>
-
 
         <div class="req-card">
 
@@ -1183,7 +1236,6 @@ const games = [
     }
 ];
 
-
 function searchGames(){
 
     const input =
@@ -1231,7 +1283,6 @@ function searchGames(){
     results.style.display = "block";
 }
 
-
 document.addEventListener("click",function(event){
 
     const searchBox =
@@ -1246,7 +1297,6 @@ document.addEventListener("click",function(event){
 
 });
 
-
 function openModal(src){
 
     document.getElementById("modalImage").src = src;
@@ -1255,21 +1305,16 @@ function openModal(src){
         .style.display = "flex";
 }
 
-
 function closeModal(){
 
     document.getElementById("imageModal")
         .style.display = "none";
-
 }
-
 
 document.addEventListener("keydown",function(event){
 
     if(event.key === "Escape"){
-
         closeModal();
-
     }
 
 });
