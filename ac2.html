@@ -20,185 +20,262 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
+    background:#080808;
     color:#eee;
-    background:
-        linear-gradient(rgba(5,7,12,.91),rgba(5,7,12,.97)),
-        url("./images/ac2-bg.jpg") center/cover fixed no-repeat;
-    line-height:1.6;
+    overflow-x:hidden;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width:8px;
 }
 
-img{
-    max-width:100%;
-    display:block;
+::-webkit-scrollbar-track{
+    background:#090909;
 }
 
-/* HEADER */
+::-webkit-scrollbar-thumb{
+    background:#d60000;
+    border-radius:10px;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(5,5,8,.96);
-    border-bottom:1px solid #2b2b2b;
-    backdrop-filter:blur(10px);
-}
+    height:72px;
 
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    min-height:72px;
-    padding:0 22px;
+    background:rgba(8,8,8,.94);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,0,0,.18);
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:25px;
+
+    padding:0 6%;
 }
 
 .logo{
-    font-size:22px;
+    font-size:25px;
     font-weight:900;
     letter-spacing:1px;
-    white-space:nowrap;
+    color:white;
 }
 
 .logo span{
-    color:#d00000;
+    color:#e00000;
 }
 
-.nav-links{
+nav{
     display:flex;
-    align-items:center;
-    gap:28px;
+    gap:30px;
 }
 
-.nav-links a{
-    color:#ccc;
+nav a{
+    color:#aaa;
+    text-decoration:none;
     font-size:14px;
     font-weight:bold;
     transition:.25s;
 }
 
-.nav-links a:hover{
-    color:#e00000;
+nav a:hover{
+    color:#ff2020;
 }
 
-.search-box{
+/* =========================
+   SEARCH
+========================= */
+
+.search-area{
     position:relative;
 }
 
-.search-box input{
-    width:170px;
-    padding:10px 35px 10px 13px;
-    background:#111;
-    color:#fff;
-    border:1px solid #333;
-    border-radius:5px;
-    outline:none;
-}
-
-.search-box input:focus{
-    border-color:#d00000;
-}
-
 .search-icon{
-    position:absolute;
-    right:11px;
-    top:8px;
-    color:#e00000;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+
+    background:#151515;
+    border:1px solid #292929;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
     font-size:18px;
+
+    transition:.25s;
 }
 
-.search-results{
+.search-icon:hover{
+    background:#e00000;
+    border-color:#e00000;
+}
+
+.search-box{
     position:absolute;
-    top:47px;
     right:0;
-    width:270px;
-    background:#101014;
+    top:48px;
+
+    width:280px;
+    padding:12px 15px;
+
+    background:#111;
     border:1px solid #333;
-    border-top:2px solid #d00000;
+    border-radius:8px;
+
+    color:white;
+    outline:none;
+
     display:none;
-    max-height:350px;
-    overflow-y:auto;
-    box-shadow:0 10px 30px rgba(0,0,0,.6);
 }
 
-.search-results a{
-    display:block;
-    padding:12px 14px;
-    border-bottom:1px solid #222;
-    color:#ddd;
-    font-size:14px;
+.search-box:focus{
+    border-color:#e00000;
 }
 
-.search-results a:hover{
-    background:#181818;
-    color:#fff;
-}
-
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    max-width:1200px;
-    margin:0 auto;
-    padding:65px 22px 45px;
-}
+    min-height:620px;
 
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:45px;
+    position:relative;
+
+    display:flex;
     align-items:center;
+
+    padding:80px 7%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,5,.98) 0%,
+            rgba(5,5,5,.88) 40%,
+            rgba(5,5,5,.45) 72%,
+            rgba(5,5,5,.9) 100%
+        ),
+        linear-gradient(
+            0deg,
+            #080808 0%,
+            transparent 35%
+        ),
+        url("./images/ac2.jpg");
+
+    background-size:cover;
+    background-position:center;
 }
 
-.hero-image img{
-    width:100%;
-    border-radius:10px;
-    border:1px solid #333;
-    box-shadow:
-        0 0 0 1px rgba(208,0,0,.15),
-        0 20px 50px rgba(0,0,0,.65);
+.hero:after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(220,0,0,.20),
+            transparent 35%
+        );
+
+    pointer-events:none;
 }
 
-.hero-content .eyebrow{
-    color:#e00000;
-    font-size:13px;
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:720px;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:7px 14px;
+
+    border:1px solid rgba(255,0,0,.5);
+    border-radius:30px;
+
+    color:#ff3333;
+    background:rgba(150,0,0,.12);
+
+    font-size:12px;
     font-weight:bold;
-    letter-spacing:3px;
-    margin-bottom:12px;
+    letter-spacing:1.5px;
+
+    margin-bottom:18px;
 }
 
-.hero-content h1{
-    font-size:52px;
-    line-height:1;
-    margin-bottom:16px;
+.hero h1{
+    font-size:clamp(50px,8vw,92px);
+    line-height:.9;
     text-transform:uppercase;
-    letter-spacing:-2px;
+    font-weight:1000;
+
+    letter-spacing:-3px;
+
+    margin-bottom:22px;
+
+    text-shadow:
+        0 5px 30px rgba(0,0,0,.9);
 }
 
-.hero-content h1 span{
+.hero h1 span{
     color:#e00000;
 }
 
-.hero-content .subtitle{
-    color:#aaa;
-    font-size:15px;
-    font-weight:bold;
-    letter-spacing:2px;
-    margin-bottom:25px;
-}
+.hero-description{
+    max-width:620px;
 
-.hero-content p{
     color:#bbb;
-    max-width:650px;
-    margin-bottom:28px;
+    line-height:1.7;
+    font-size:16px;
+
+    margin-bottom:30px;
 }
 
-.hero-buttons{
+.game-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+    margin-bottom:32px;
+}
+
+.meta{
+    background:rgba(20,20,20,.85);
+
+    border:1px solid #303030;
+    border-radius:6px;
+
+    padding:9px 13px;
+
+    color:#ccc;
+    font-size:13px;
+}
+
+.meta strong{
+    color:white;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons{
     display:flex;
     flex-wrap:wrap;
     gap:12px;
@@ -206,444 +283,608 @@ header{
 
 .btn{
     display:inline-flex;
-    justify-content:center;
     align-items:center;
-    min-width:180px;
-    padding:13px 20px;
-    border-radius:5px;
+    justify-content:center;
+
+    min-width:170px;
+
+    padding:14px 20px;
+
+    border-radius:6px;
+
+    text-decoration:none;
+
     font-size:13px;
-    font-weight:bold;
+    font-weight:900;
+    letter-spacing:.7px;
+
     transition:.25s;
+
+    cursor:pointer;
 }
 
-.btn-official{
-    border:1px solid #d00000;
-    color:#fff;
-    background:#100b0b;
+.btn-red{
+    background:#d90000;
+    color:white;
+
+    box-shadow:
+        0 8px 30px rgba(210,0,0,.25);
 }
 
-.btn-official:hover{
-    background:#d00000;
+.btn-red:hover{
+    background:#ff1010;
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 35px rgba(210,0,0,.4);
+}
+
+.btn-dark{
+    background:#141414;
+    color:#eee;
+
+    border:1px solid #383838;
+}
+
+.btn-dark:hover{
+    background:#222;
+    border-color:#e00000;
+    transform:translateY(-2px);
 }
 
 .btn-disabled{
-    background:#d00000;
-    color:#fff;
-    opacity:.45;
+    background:#141414;
+    color:#777;
+
+    border:1px solid #292929;
+
     cursor:not-allowed;
+
+    opacity:.65;
 }
 
-/* MAIN */
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container{
-    max-width:1200px;
+    width:86%;
+    max-width:1250px;
     margin:auto;
-    padding:0 22px 60px;
 }
 
+/* =========================
+   SECTION
+========================= */
+
 .section{
-    margin-top:55px;
+    padding:75px 0;
 }
 
 .section-title{
     display:flex;
     align-items:center;
     gap:12px;
-    margin-bottom:25px;
-    font-size:25px;
-    text-transform:uppercase;
-    letter-spacing:1px;
+
+    font-size:27px;
+    font-weight:900;
+
+    margin-bottom:28px;
 }
 
-.section-title::before{
+.section-title:before{
     content:"";
+
     width:5px;
-    height:30px;
-    background:#d00000;
-    display:block;
+    height:28px;
+
+    background:#e00000;
+
+    border-radius:3px;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
-.about-card{
-    background:rgba(12,12,16,.94);
-    border:1px solid #292929;
-    border-left:3px solid #d00000;
-    padding:25px;
-    border-radius:7px;
+.about{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:30px;
 }
 
-.about-card p{
-    color:#bbb;
-    margin-bottom:15px;
+.panel{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,30,30,.92),
+            rgba(12,12,12,.92)
+        );
+
+    border:1px solid #252525;
+    border-radius:10px;
+
+    padding:28px;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.25);
 }
 
-.about-card p:last-child{
-    margin-bottom:0;
+.panel p{
+    color:#aaa;
+    line-height:1.8;
+    font-size:15px;
 }
-
-.tagline{
-    color:#e00000;
-    font-weight:bold;
-    letter-spacing:2px;
-    margin-top:20px;
-}
-
-/* FEATURES */
 
 .features{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:22px;
 }
 
 .feature{
-    background:#0d0d11;
-    border:1px solid #292929;
-    padding:22px;
+    padding:15px;
+
+    background:#111;
+    border:1px solid #242424;
     border-radius:7px;
-    transition:.25s;
-}
 
-.feature:hover{
-    transform:translateY(-3px);
-    border-color:#d00000;
-    box-shadow:0 8px 25px rgba(208,0,0,.12);
-}
-
-.feature h3{
-    color:#e00000;
-    font-size:17px;
-    margin-bottom:8px;
-}
-
-.feature p{
-    color:#aaa;
+    color:#ccc;
     font-size:14px;
 }
 
-/* SCREENSHOTS */
+.feature strong{
+    display:block;
+    color:white;
+    margin-bottom:5px;
+}
+
+.feature span{
+    color:#999;
+    font-size:12px;
+}
+
+/* =========================
+   SCREENSHOTS
+========================= */
 
 .screenshots{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    gap:14px;
 }
 
 .screenshot{
+    height:190px;
+
     overflow:hidden;
-    border-radius:7px;
+    border-radius:8px;
+
     border:1px solid #292929;
+
+    background:#111;
+
     cursor:pointer;
-    background:#0b0b0e;
+
+    position:relative;
 }
 
 .screenshot img{
     width:100%;
-    aspect-ratio:16/9;
+    height:100%;
+
     object-fit:cover;
-    transition:.35s;
+
+    transition:.4s;
 }
 
 .screenshot:hover img{
-    transform:scale(1.06);
+    transform:scale(1.08);
 }
 
-/* VIDEO */
+.screenshot:after{
+    content:"VIEW";
 
-.video-wrapper{
-    background:#0b0b0e;
-    border:1px solid #292929;
-    border-top:2px solid #d00000;
-    padding:12px;
-    border-radius:7px;
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(0,0,0,.45);
+
+    color:white;
+    font-weight:bold;
+
+    opacity:0;
+
+    transition:.3s;
+}
+
+.screenshot:hover:after{
+    opacity:1;
+}
+
+/* =========================
+   TRAILER
+========================= */
+
+.trailer-wrapper{
+    background:#101010;
+
+    border:1px solid #282828;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.45);
 }
 
 .video-container{
     position:relative;
+
     width:100%;
-    aspect-ratio:16/9;
-    overflow:hidden;
-    background:#000;
+    padding-top:56.25%;
 }
 
 .video-container iframe{
+    position:absolute;
+    inset:0;
+
     width:100%;
     height:100%;
+
     border:0;
 }
 
-/* DOWNLOAD */
+.trailer-info{
+    padding:20px 24px;
 
-.download-card{
-    background:
-        linear-gradient(135deg,rgba(208,0,0,.10),rgba(10,10,14,.96));
-    border:1px solid #333;
-    border-left:3px solid #d00000;
-    padding:28px;
-    border-radius:7px;
-}
-
-.download-card h3{
-    font-size:22px;
-    margin-bottom:8px;
-}
-
-.download-card p{
-    color:#aaa;
-    margin-bottom:20px;
-}
-
-.download-buttons{
     display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-/* ADVERTISEMENT */
-
-.ad-box{
-    min-height:130px;
-    display:flex;
+    justify-content:space-between;
     align-items:center;
-    justify-content:center;
-    background:#0a0a0d;
-    border:1px dashed #333;
-    color:#666;
-    border-radius:7px;
+
+    gap:20px;
+}
+
+.trailer-info h3{
+    font-size:18px;
+}
+
+.trailer-info p{
+    color:#777;
     font-size:13px;
-    letter-spacing:1px;
+    margin-top:5px;
 }
 
-/* GAME INFO */
+/* =========================
+   REQUIREMENTS
+========================= */
 
-.info-grid{
+.requirements{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-}
-
-.info-card{
-    background:#0d0d11;
-    border:1px solid #292929;
-    padding:20px;
-    border-radius:7px;
-}
-
-.info-card span{
-    display:block;
-    color:#e00000;
-    font-size:11px;
-    font-weight:bold;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:6px;
-}
-
-.info-card strong{
-    color:#eee;
-    font-size:15px;
-}
-
-/* REQUIREMENTS */
-
-.req-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
 .req-card{
-    background:#0d0d11;
-    border:1px solid #292929;
-    border-top:2px solid #d00000;
-    padding:22px;
-    border-radius:7px;
-}
+    background:#101010;
 
-.req-card h3{
-    color:#e00000;
-    margin-bottom:15px;
-}
+    border:1px solid #282828;
+    border-radius:10px;
 
-.req-card ul{
-    list-style:none;
-}
-
-.req-card li{
-    padding:9px 0;
-    border-bottom:1px solid #202024;
-    color:#aaa;
-    font-size:14px;
-}
-
-.req-card li:last-child{
-    border-bottom:0;
-}
-
-.req-card li strong{
-    color:#ddd;
-}
-
-.req-note{
-    margin-top:18px;
-    background:#0d0d11;
-    border:1px solid #292929;
-    border-left:3px solid #d00000;
-    padding:20px;
-    border-radius:7px;
-    color:#aaa;
-    font-size:14px;
-}
-
-/* MODAL */
-
-.modal{
-    position:fixed;
-    inset:0;
-    z-index:2000;
-    background:rgba(0,0,0,.92);
-    display:none;
-    align-items:center;
-    justify-content:center;
     padding:25px;
 }
 
-.modal.active{
+.req-card h3{
+    color:#fff;
+    margin-bottom:20px;
+
+    font-size:19px;
+}
+
+.req-card h3 span{
+    color:#e00000;
+}
+
+.req-row{
     display:flex;
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:13px 0;
+
+    border-bottom:1px solid #222;
+}
+
+.req-row:last-child{
+    border-bottom:none;
+}
+
+.req-row span:first-child{
+    color:#777;
+    font-size:13px;
+}
+
+.req-row span:last-child{
+    color:#ddd;
+    font-size:13px;
+    text-align:right;
+}
+
+/* =========================
+   DOWNLOAD BOX
+========================= */
+
+.download-box{
+    margin-top:35px;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(120,0,0,.25),
+            rgba(20,20,20,.95)
+        );
+
+    border:1px solid rgba(220,0,0,.35);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+.download-box h2{
+    font-size:25px;
+    margin-bottom:7px;
+}
+
+.download-box p{
+    color:#999;
+    font-size:14px;
+}
+
+/* =========================
+   AD
+========================= */
+
+.ad-wrapper{
+    display:flex;
+    justify-content:center;
+
+    margin:50px 0;
+}
+
+.ad{
+    width:300px;
+    height:600px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#101010;
+
+    border:1px dashed #333;
+
+    color:#555;
+
+    font-size:12px;
+}
+
+/* =========================
+   NOTE
+========================= */
+
+.note{
+    margin-top:25px;
+
+    padding:18px 20px;
+
+    background:#111;
+
+    border-left:4px solid #d90000;
+
+    color:#888;
+
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    margin-top:50px;
+
+    padding:35px 6%;
+
+    border-top:1px solid #202020;
+
+    background:#060606;
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:13px;
+}
+
+footer strong{
+    color:#ddd;
+}
+
+footer span{
+    color:#e00000;
+}
+
+/* =========================
+   IMAGE MODAL
+========================= */
+
+.modal{
+    display:none;
+
+    position:fixed;
+    z-index:2000;
+
+    inset:0;
+
+    background:rgba(0,0,0,.94);
+
+    align-items:center;
+    justify-content:center;
+
+    padding:30px;
 }
 
 .modal img{
     max-width:95%;
     max-height:90vh;
-    border:2px solid #d00000;
-    border-radius:6px;
+
+    border-radius:8px;
+
+    border:1px solid #333;
+
+    box-shadow:
+        0 20px 100px rgba(0,0,0,.8);
 }
 
-.close-modal{
+.close{
     position:absolute;
+
     top:20px;
     right:30px;
-    color:#fff;
+
     font-size:38px;
+
+    color:#fff;
+
     cursor:pointer;
+
+    transition:.2s;
 }
 
-/* FOOTER */
-
-footer{
-    margin-top:40px;
-    background:#070709;
-    border-top:1px solid #292929;
-}
-
-.footer-inner{
-    max-width:1200px;
-    margin:auto;
-    padding:35px 22px;
-    display:flex;
-    justify-content:space-between;
-    gap:25px;
-    flex-wrap:wrap;
-}
-
-.footer-logo{
-    font-size:19px;
-    font-weight:bold;
-}
-
-.footer-logo span{
-    color:#d00000;
-}
-
-.footer-links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:18px;
-}
-
-.footer-links a{
-    color:#888;
-    font-size:13px;
-}
-
-.footer-links a:hover{
+.close:hover{
     color:#e00000;
 }
 
-.copyright{
-    width:100%;
-    color:#555;
-    font-size:12px;
-    padding-top:15px;
-    border-top:1px solid #1c1c1f;
+/* =========================
+   SEARCH RESULTS
+========================= */
+
+.search-results{
+    position:absolute;
+
+    right:0;
+    top:95px;
+
+    width:280px;
+
+    background:#111;
+
+    border:1px solid #292929;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    display:none;
+
+    z-index:1500;
 }
 
-/* RESPONSIVE */
+.search-result{
+    display:block;
+
+    padding:13px 15px;
+
+    color:#ccc;
+
+    text-decoration:none;
+
+    border-bottom:1px solid #222;
+
+    font-size:13px;
+}
+
+.search-result:hover{
+    background:#1c1c1c;
+    color:#ff2222;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:900px){
 
-    .hero-grid{
-        grid-template-columns:1fr;
+    nav{
+        display:none;
     }
 
-    .hero-content h1{
-        font-size:46px;
-    }
-
-    .features{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .screenshots{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .info-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:650px){
-
-    .navbar{
-        min-height:auto;
-        padding:15px 18px;
-        flex-wrap:wrap;
-    }
-
-    .nav-links{
-        order:3;
-        width:100%;
-        justify-content:center;
-        gap:20px;
-    }
-
-    .search-box{
-        margin-left:auto;
-    }
-
-    .search-box input{
-        width:140px;
+    header{
+        padding:0 5%;
     }
 
     .hero{
-        padding-top:40px;
+        min-height:650px;
+
+        padding:70px 6%;
+
+        background-position:center;
     }
 
-    .hero-content h1{
-        font-size:38px;
-    }
-
-    .features,
-    .screenshots,
-    .info-grid,
-    .req-grid{
+    .about{
         grid-template-columns:1fr;
     }
 
-    .hero-buttons,
-    .download-buttons{
+    .screenshots{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .requirements{
+        grid-template-columns:1fr;
+    }
+
+    .download-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:600px){
+
+    .logo{
+        font-size:20px;
+    }
+
+    .hero{
+        min-height:620px;
+
+        padding:60px 5%;
+    }
+
+    .hero h1{
+        font-size:54px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .buttons{
         flex-direction:column;
     }
 
@@ -651,8 +892,37 @@ footer{
         width:100%;
     }
 
-    .footer-inner{
-        flex-direction:column;
+    .container{
+        width:90%;
+    }
+
+    .section{
+        padding:55px 0;
+    }
+
+    .screenshots{
+        grid-template-columns:1fr;
+    }
+
+    .screenshot{
+        height:210px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .search-box{
+        width:230px;
+    }
+
+    .search-results{
+        width:230px;
+    }
+
+    .ad{
+        width:280px;
+        height:560px;
     }
 }
 </style>
@@ -661,121 +931,139 @@ footer{
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
+<div class="logo">
+    QE<span>V</span>RANO
+    <small style="font-size:10px;color:#777;display:block;letter-spacing:2px;">
+        PC GAMES
+    </small>
+</div>
+
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="games.html">GAMES</a>
+    <a href="packs.html">PACKS</a>
+</nav>
+
+<div class="search-area">
+
 ```
-<div class="navbar">
+<div class="search-icon" onclick="toggleSearch()">
+    🔍
+</div>
 
-    <a href="./index.html" class="logo">
-        QEVRANO <span>PC GAMES</span>
-    </a>
+<input
+    type="text"
+    id="searchBox"
+    class="search-box"
+    placeholder="Search games..."
+    onkeyup="searchGames()"
+>
 
-    <nav class="nav-links">
-        <a href="./index.html">HOME</a>
-        <a href="./index.html#games">GAMES</a>
-        <a href="./index.html#packs">PACKS</a>
-    </nav>
-
-    <div class="search-box">
-
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search games..."
-            autocomplete="off"
-        >
-
-        <span class="search-icon">⌕</span>
-
-        <div
-            class="search-results"
-            id="searchResults">
-        </div>
-
-    </div>
+<div id="searchResults" class="search-results"></div>
+```
 
 </div>
-```
 
 </header>
 
-<main>
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
+<div class="hero-content">
+
 ```
-<div class="hero-grid">
+<div class="badge">
+    ACTION • ADVENTURE • OPEN WORLD
+</div>
 
-    <div class="hero-image">
+<h1>
+    ASSASSIN'S <span>CREED II</span>
+</h1>
 
-        <img
-            src="./images/ac2.jpg"
-            alt="Assassin's Creed II"
-        >
+<p class="hero-description">
+    Step into Renaissance Italy as Ezio Auditore da Firenze
+    and experience an unforgettable journey of family, revenge,
+    conspiracy and the Assassin Brotherhood.
+</p>
 
+<div class="game-meta">
+
+    <div class="meta">
+        <strong>Release:</strong> 2009
     </div>
 
-
-    <div class="hero-content">
-
-        <div class="eyebrow">
-            FEATURED PC GAME
-        </div>
-
-        <h1>
-            ASSASSIN'S <span>CREED II</span>
-        </h1>
-
-        <div class="subtitle">
-            ACTION • ADVENTURE • OPEN WORLD
-        </div>
-
-        <p>
-            Step into Renaissance Italy as Ezio Auditore da Firenze
-            and experience one of the most celebrated entries in the
-            Assassin's Creed series.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a
-                class="btn btn-official"
-                href="https://store.ubisoft.com/us/assassins-creed-ii?lang=default"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                OFFICIAL STORE
-            </a>
-
-            <a
-                class="btn btn-disabled"
-                href="#"
-                onclick="return false;"
-            >
-                DOWNLOAD SETUP
-            </a>
-
-        </div>
-
+    <div class="meta">
+        <strong>Genre:</strong> Action / Adventure
     </div>
+
+    <div class="meta">
+        <strong>Developer:</strong> Ubisoft Montreal
+    </div>
+
+    <div class="meta">
+        <strong>Platform:</strong> PC
+    </div>
+
+</div>
+
+<div class="buttons">
+
+    <a
+        class="btn btn-red"
+        href="https://store.ubisoft.com/us/assassins-creed-ii?lang=default"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        OFFICIAL SOURCE
+    </a>
+
+    <a
+        class="btn btn-disabled"
+        href="#"
+        onclick="return false;"
+    >
+        DOWNLOAD SETUP.EXE
+    </a>
+
+    <a
+        class="btn btn-dark"
+        href="ac2.html"
+    >
+        HIGHLY COMPRESSED
+    </a>
 
 </div>
 ```
 
+</div>
+
 </section>
 
-<div class="container">
+<main class="container">
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section class="section">
 
-```
 <h2 class="section-title">
-    About Game
+    About the Game
 </h2>
 
-<div class="about-card">
+<div class="about">
+
+```
+<div class="panel">
 
     <p>
         Assassin's Creed II follows Ezio Auditore da Firenze,
@@ -783,770 +1071,601 @@ footer{
         the Renaissance.
     </p>
 
+    <br>
+
     <p>
         Explore historic locations including Florence and Venice,
         climb buildings, move through crowded streets and uncover
         a story of family, vengeance and conspiracy.
     </p>
 
-    <p>
-        The game expands on the original Assassin's Creed with a
-        larger world, new abilities, equipment, characters and
-        a deeper progression system.
-    </p>
+    <div class="features">
 
-    <div class="tagline">
-        NOTHING IS TRUE. EVERYTHING IS PERMITTED.
+        <div class="feature">
+            <strong>RENAISSANCE ITALY</strong>
+            <span>Explore historic cities and landmarks.</span>
+        </div>
+
+        <div class="feature">
+            <strong>PLAY AS EZIO</strong>
+            <span>Follow Ezio's transformation into an Assassin.</span>
+        </div>
+
+        <div class="feature">
+            <strong>OPEN WORLD</strong>
+            <span>Explore rooftops, cities and countryside.</span>
+        </div>
+
+        <div class="feature">
+            <strong>ASSASSIN ABILITIES</strong>
+            <span>Use stealth, climbing and combat abilities.</span>
+        </div>
+
+        <div class="feature">
+            <strong>LEONARDO DA VINCI</strong>
+            <span>Discover inventions and equipment from Leonardo.</span>
+        </div>
+
+        <div class="feature">
+            <strong>SINGLE PLAYER</strong>
+            <span>Experience Ezio's complete story campaign.</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="panel">
+
+    <h3 style="margin-bottom:18px;">
+        Game Information
+    </h3>
+
+    <div class="req-row">
+        <span>Developer</span>
+        <span>Ubisoft Montreal</span>
+    </div>
+
+    <div class="req-row">
+        <span>Publisher</span>
+        <span>Ubisoft</span>
+    </div>
+
+    <div class="req-row">
+        <span>Release Date</span>
+        <span>November 2009</span>
+    </div>
+
+    <div class="req-row">
+        <span>Genre</span>
+        <span>Action / Adventure</span>
+    </div>
+
+    <div class="req-row">
+        <span>Mode</span>
+        <span>Single Player</span>
+    </div>
+
+    <div class="req-row">
+        <span>Platform</span>
+        <span>Windows PC</span>
+    </div>
+
+    <div class="req-row">
+        <span>Setting</span>
+        <span>Renaissance Italy</span>
+    </div>
+
+    <div class="req-row">
+        <span>Engine</span>
+        <span>Anvil</span>
     </div>
 
 </div>
 ```
 
-</section>
-
-<!-- FEATURES -->
-
-<section class="section">
-
-```
-<h2 class="section-title">
-    Features
-</h2>
-
-<div class="features">
-
-    <div class="feature">
-
-        <h3>Renaissance Italy</h3>
-
-        <p>
-            Explore beautifully recreated Renaissance-era cities,
-            streets and landmarks across Italy.
-        </p>
-
-    </div>
-
-
-    <div class="feature">
-
-        <h3>Play as Ezio</h3>
-
-        <p>
-            Follow Ezio Auditore's transformation from nobleman
-            to experienced Assassin.
-        </p>
-
-    </div>
-
-
-    <div class="feature">
-
-        <h3>Open-World Exploration</h3>
-
-        <p>
-            Freely explore cities, rooftops, countryside and
-            hidden locations throughout the game world.
-        </p>
-
-    </div>
-
-
-    <div class="feature">
-
-        <h3>Leonardo da Vinci</h3>
-
-        <p>
-            Meet Leonardo da Vinci and use inventions and
-            equipment created during Ezio's journey.
-        </p>
-
-    </div>
-
-
-    <div class="feature">
-
-        <h3>Assassin Abilities</h3>
-
-        <p>
-            Use stealth, climbing, movement and a variety of
-            equipment to approach missions in different ways.
-        </p>
-
-    </div>
-
-
-    <div class="feature">
-
-        <h3>Single Player</h3>
-
-        <p>
-            Experience the complete story campaign as Ezio
-            across Renaissance Italy.
-        </p>
-
-    </div>
-
 </div>
-```
 
 </section>
 
-<!-- SCREENSHOTS -->
+<!-- =========================
+     SCREENSHOTS
+========================= -->
 
 <section class="section">
 
-```
 <h2 class="section-title">
     Screenshots
 </h2>
 
 <div class="screenshots">
 
-    <div class="screenshot">
+```
+<div class="screenshot"
+     onclick="openImage('./images/ac2-1.jpg')">
+    <img
+        src="./images/ac2-1.jpg"
+        alt="Assassin's Creed II Screenshot 1"
+    >
+</div>
 
-        <img
-            src="./images/ac2-1.jpg"
-            alt="Assassin's Creed II Screenshot 1"
-            onclick="openModal(this.src)"
-        >
+<div class="screenshot"
+     onclick="openImage('./images/ac2-2.jpg')">
+    <img
+        src="./images/ac2-2.jpg"
+        alt="Assassin's Creed II Screenshot 2"
+    >
+</div>
 
-    </div>
+<div class="screenshot"
+     onclick="openImage('./images/ac2-3.jpg')">
+    <img
+        src="./images/ac2-3.jpg"
+        alt="Assassin's Creed II Screenshot 3"
+    >
+</div>
 
-
-    <div class="screenshot">
-
-        <img
-            src="./images/ac2-2.jpg"
-            alt="Assassin's Creed II Screenshot 2"
-            onclick="openModal(this.src)"
-        >
-
-    </div>
-
-
-    <div class="screenshot">
-
-        <img
-            src="./images/ac2-3.jpg"
-            alt="Assassin's Creed II Screenshot 3"
-            onclick="openModal(this.src)"
-        >
-
-    </div>
-
-
-    <div class="screenshot">
-
-        <img
-            src="./images/ac2-4.jpg"
-            alt="Assassin's Creed II Screenshot 4"
-            onclick="openModal(this.src)"
-        >
-
-    </div>
-
+<div class="screenshot"
+     onclick="openImage('./images/ac2-4.jpg')">
+    <img
+        src="./images/ac2-4.jpg"
+        alt="Assassin's Creed II Screenshot 4"
+    >
 </div>
 ```
 
+</div>
+
 </section>
 
-<!-- TRAILER -->
+<!-- =========================
+     ADVERTISEMENT
+========================= -->
+
+<div class="ad-wrapper">
+
+<div class="ad">
+    ADVERTISEMENT
+</div>
+
+</div>
+
+<!-- =========================
+     TRAILER
+========================= -->
 
 <section class="section">
 
-```
 <h2 class="section-title">
     Gameplay Trailer
 </h2>
 
-<div class="video-wrapper">
+<div class="trailer-wrapper">
 
-    <div class="video-container">
+```
+<div class="video-container">
 
-        <iframe
-            src="https://www.youtube.com/embed/lTYSKzUfrMk"
-            title="Assassin's Creed II PC Launch Trailer - Ubisoft"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-        </iframe>
+    <iframe
+        src="https://www.youtube.com/embed/lTYSKzUfrMk"
+        title="Assassin's Creed II PC Launch Trailer - Ubisoft"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
 
+</div>
+
+<div class="trailer-info">
+
+    <div>
+        <h3>Assassin's Creed II — Official Trailer</h3>
+
+        <p>
+            Watch the Assassin's Creed II trailer.
+        </p>
+    </div>
+
+    <div style="color:#e00000;font-weight:bold;">
+        UBISOFT
     </div>
 
 </div>
 ```
 
-</section>
-
-<!-- DOWNLOAD -->
-
-<section class="section">
-
-```
-<h2 class="section-title">
-    Download
-</h2>
-
-<div class="download-card">
-
-    <h3>
-        Assassin's Creed II
-    </h3>
-
-    <p>
-        Purchase and download Assassin's Creed II through the
-        official Ubisoft Store.
-    </p>
-
-    <div class="download-buttons">
-
-        <a
-            class="btn btn-official"
-            href="https://store.ubisoft.com/us/assassins-creed-ii?lang=default"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            OFFICIAL STORE
-        </a>
-
-        <a
-            class="btn btn-disabled"
-            href="#"
-            onclick="return false;"
-        >
-            DOWNLOAD SETUP.EXE
-        </a>
-
-        <a
-            class="btn btn-disabled"
-            href="#"
-            onclick="return false;"
-        >
-            HIGHLY COMPRESSED
-        </a>
-
-    </div>
-
 </div>
-```
 
 </section>
 
-<!-- ADVERTISEMENT -->
+<!-- =========================
+     SYSTEM REQUIREMENTS
+========================= -->
 
 <section class="section">
 
-```
-<h2 class="section-title">
-    Advertisement
-</h2>
-
-<div class="ad-box">
-    ADVERTISEMENT SPACE
-</div>
-```
-
-</section>
-
-<!-- GAME INFORMATION -->
-
-<section class="section">
-
-```
-<h2 class="section-title">
-    Game Information
-</h2>
-
-<div class="info-grid">
-
-    <div class="info-card">
-
-        <span>Release Date</span>
-
-        <strong>
-            November 17, 2009
-        </strong>
-
-    </div>
-
-
-    <div class="info-card">
-
-        <span>Developer</span>
-
-        <strong>
-            Ubisoft Montreal
-        </strong>
-
-    </div>
-
-
-    <div class="info-card">
-
-        <span>Publisher</span>
-
-        <strong>
-            Ubisoft
-        </strong>
-
-    </div>
-
-
-    <div class="info-card">
-
-        <span>Genre</span>
-
-        <strong>
-            Action / Adventure
-        </strong>
-
-    </div>
-
-
-    <div class="info-card">
-
-        <span>Setting</span>
-
-        <strong>
-            Renaissance Italy
-        </strong>
-
-    </div>
-
-
-    <div class="info-card">
-
-        <span>Mode</span>
-
-        <strong>
-            Single Player
-        </strong>
-
-    </div>
-
-
-    <div class="info-card">
-
-        <span>Platform</span>
-
-        <strong>
-            PC
-        </strong>
-
-    </div>
-
-
-    <div class="info-card">
-
-        <span>Engine</span>
-
-        <strong>
-            Anvil
-        </strong>
-
-    </div>
-
-
-    <div class="info-card">
-
-        <span>Series</span>
-
-        <strong>
-            Assassin's Creed
-        </strong>
-
-    </div>
-
-</div>
-```
-
-</section>
-
-<!-- SYSTEM REQUIREMENTS -->
-
-<section class="section">
-
-```
 <h2 class="section-title">
     System Requirements
 </h2>
 
+<div class="requirements">
 
-<div class="req-grid">
+```
+<div class="req-card">
 
+    <h3>
+        <span>MINIMUM</span> REQUIREMENTS
+    </h3>
 
-    <div class="req-card">
-
-        <h3>
-            Minimum Requirements
-        </h3>
-
-        <ul>
-
-            <li>
-                <strong>OS:</strong>
-                Windows 10
-            </li>
-
-            <li>
-                <strong>CPU:</strong>
-                Intel Core 2 Duo 1.8 GHz
-                / AMD Athlon X2 64 2.4 GHz
-            </li>
-
-            <li>
-                <strong>GPU:</strong>
-                256 MB DirectX 9.0-compliant
-                Shader Model 3.0 or higher
-            </li>
-
-            <li>
-                <strong>RAM:</strong>
-                2 GB
-            </li>
-
-            <li>
-                <strong>VRAM:</strong>
-                256 MB
-            </li>
-
-            <li>
-                <strong>Storage:</strong>
-                8 GB
-            </li>
-
-        </ul>
-
+    <div class="req-row">
+        <span>OS</span>
+        <span>Windows 10</span>
     </div>
 
+    <div class="req-row">
+        <span>CPU</span>
+        <span>Intel Core 2 Duo 1.8 GHz / AMD Athlon X2 64 2.4 GHz</span>
+    </div>
 
-    <div class="req-card">
+    <div class="req-row">
+        <span>RAM</span>
+        <span>2 GB</span>
+    </div>
 
-        <h3>
-            Recommended Requirements
-        </h3>
+    <div class="req-row">
+        <span>GPU</span>
+        <span>256 MB DirectX 9.0-compliant</span>
+    </div>
 
-        <ul>
+    <div class="req-row">
+        <span>VRAM</span>
+        <span>256 MB</span>
+    </div>
 
-            <li>
-                <strong>OS:</strong>
-                Windows 10
-            </li>
-
-            <li>
-                <strong>CPU:</strong>
-                Intel Core 2 Duo E6700 2.6 GHz
-                / AMD Athlon 64 X2 6000+
-            </li>
-
-            <li>
-                <strong>GPU:</strong>
-                512 MB DirectX 9.0-compliant
-                Shader Model 3.0 or higher
-            </li>
-
-            <li>
-                <strong>RAM:</strong>
-                4 GB
-            </li>
-
-            <li>
-                <strong>VRAM:</strong>
-                512 MB
-            </li>
-
-            <li>
-                <strong>Storage:</strong>
-                8 GB
-            </li>
-
-        </ul>
-
+    <div class="req-row">
+        <span>Storage</span>
+        <span>8 GB</span>
     </div>
 
 </div>
 
 
-<div class="req-note">
+<div class="req-card">
 
-    These requirements are based on the current Ubisoft Store
-    listing for Assassin's Creed II. Ubisoft also states that
-    Ubisoft Connect is required to activate and play the PC
-    version. Online and multiplayer features are no longer
-    available for this product.
+    <h3>
+        <span>RECOMMENDED</span> REQUIREMENTS
+    </h3>
+
+    <div class="req-row">
+        <span>OS</span>
+        <span>Windows 10</span>
+    </div>
+
+    <div class="req-row">
+        <span>CPU</span>
+        <span>Intel Core 2 Duo E6700 2.6 GHz / AMD Athlon 64 X2 6000+</span>
+    </div>
+
+    <div class="req-row">
+        <span>RAM</span>
+        <span>4 GB</span>
+    </div>
+
+    <div class="req-row">
+        <span>GPU</span>
+        <span>512 MB DirectX 9.0-compliant</span>
+    </div>
+
+    <div class="req-row">
+        <span>VRAM</span>
+        <span>512 MB</span>
+    </div>
+
+    <div class="req-row">
+        <span>Storage</span>
+        <span>8 GB</span>
+    </div>
 
 </div>
 ```
+
+</div>
+
+<!-- DOWNLOAD BOX -->
+
+<div class="download-box">
+
+```
+<div>
+
+    <h2>
+        Ready to Play?
+    </h2>
+
+    <p>
+        Get Assassin's Creed II from an authorized source or
+        use your legally obtained installation files.
+    </p>
+
+</div>
+
+<a
+    class="btn btn-red"
+    href="https://store.ubisoft.com/us/assassins-creed-ii?lang=default"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    VISIT OFFICIAL SOURCE
+</a>
+```
+
+</div>
+
+<div class="note">
+
+```
+<strong style="color:#ddd;">
+    Note:
+</strong>
+
+QEVRANO PC GAMES is a gaming information and discovery website.
+Make sure you have the appropriate rights or a legitimate copy
+of a game before downloading, installing, or distributing it.
+Ubisoft Connect may be required for activation and play.
+```
+
+</div>
 
 </section>
 
-</div>
-
 </main>
 
-<!-- IMAGE MODAL -->
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<strong>QE<span>V</span>RANO PC GAMES</strong>
+
+<br><br>
+
+© 2026 QEVRANO PC GAMES. All rights reserved.
+
+</footer>
+
+<!-- =========================
+     IMAGE MODAL
+========================= -->
 
 <div
-    class="modal"
     id="imageModal"
-    onclick="closeModal()"
+    class="modal"
+    onclick="closeImage()"
 >
 
-```
-<span class="close-modal">
+<span class="close">
     &times;
 </span>
 
 <img
-    id="modalImage"
-    src=""
-    alt="Assassin's Creed II Screenshot"
-    onclick="event.stopPropagation()"
+id="modalImage"
+src=""
+alt="Full Screenshot"
+onclick="event.stopPropagation()"
+
 >
-```
 
 </div>
-
-<!-- FOOTER -->
-
-<footer>
-
-```
-<div class="footer-inner">
-
-    <div class="footer-logo">
-        QEVRANO <span>PC GAMES</span>
-    </div>
-
-
-    <div class="footer-links">
-
-        <a href="./index.html">
-            Home
-        </a>
-
-        <a href="./index.html#games">
-            Games
-        </a>
-
-        <a href="#">
-            Contact
-        </a>
-
-        <a href="#">
-            Privacy Policy
-        </a>
-
-        <a href="#">
-            Terms & Conditions
-        </a>
-
-        <a href="#">
-            Disclaimer
-        </a>
-
-    </div>
-
-
-    <div class="copyright">
-        © 2026 QEVRANO PC GAMES. All rights reserved.
-    </div>
-
-</div>
-```
-
-</footer>
 
 <script>
 
-/* SEARCH */
+/* =========================
+   SEARCH DATABASE
+========================= */
 
 const games = [
 
     {
         name:"Far Cry 2",
-        url:"./farcry2.html"
+        url:"farcry2.html"
     },
 
     {
         name:"Far Cry 3",
-        url:"./farcry3.html"
+        url:"farcry3.html"
     },
 
     {
         name:"Assassin's Creed II",
-        url:"./ac2.html"
+        url:"ac2.html"
     },
 
     {
-        name:"GTA V",
-        url:"./gta5.html"
+        name:"Grand Theft Auto V",
+        url:"gta5.html"
     },
 
     {
-        name:"GTA IV",
-        url:"./gta4.html"
+        name:"Grand Theft Auto IV",
+        url:"gta4.html"
     },
 
     {
         name:"FIFA",
-        url:"./fifa.html"
+        url:"fifa.html"
     },
 
     {
         name:"Don Bradman Cricket",
-        url:"./cricket.html"
+        url:"cricket.html"
     },
 
     {
         name:"Call of Duty 1",
-        url:"./cod1.html"
+        url:"cod1.html"
     },
 
     {
         name:"The Witcher 2",
-        url:"./witcher2.html"
+        url:"witcher2.html"
     },
 
     {
         name:"GTA VI",
-        url:"./gtavi.html"
+        url:"gtavi.html"
     },
 
     {
         name:"Assassin's Creed Syndicate",
-        url:"./acs.html"
+        url:"acs.html"
     },
 
     {
         name:"Need for Speed II",
-        url:"./nfs2.html"
+        url:"nfs2.html"
     }
 
 ];
 
 
-const searchInput =
-    document.getElementById("searchInput");
+/* =========================
+   SEARCH TOGGLE
+========================= */
 
-const searchResults =
-    document.getElementById("searchResults");
+function toggleSearch(){
 
+    const box =
+        document.getElementById("searchBox");
 
-searchInput.addEventListener(
-    "input",
-    function(){
+    if(box.style.display === "block"){
 
-        const search =
-            this.value.toLowerCase().trim();
+        box.style.display = "none";
 
-        searchResults.innerHTML = "";
+        document
+            .getElementById("searchResults")
+            .style.display = "none";
 
+    }else{
 
-        if(!search){
+        box.style.display = "block";
 
-            searchResults.style.display =
-                "none";
-
-            return;
-        }
-
-
-        const results =
-            games.filter(game =>
-                game.name
-                    .toLowerCase()
-                    .includes(search)
-            );
-
-
-        if(results.length === 0){
-
-            searchResults.innerHTML =
-                '<div style="padding:14px;color:#777;">No games found</div>';
-
-            searchResults.style.display =
-                "block";
-
-            return;
-        }
-
-
-        results.forEach(game => {
-
-            const link =
-                document.createElement("a");
-
-            link.href =
-                game.url;
-
-            link.textContent =
-                game.name;
-
-            searchResults.appendChild(link);
-
-        });
-
-
-        searchResults.style.display =
-            "block";
+        box.focus();
 
     }
-);
-
-
-document.addEventListener(
-    "click",
-    function(e){
-
-        if(!e.target.closest(".search-box")){
-
-            searchResults.style.display =
-                "none";
-
-        }
-
-    }
-);
-
-
-/* IMAGE MODAL */
-
-function openModal(src){
-
-    const modal =
-        document.getElementById("imageModal");
-
-    const image =
-        document.getElementById("modalImage");
-
-    image.src = src;
-
-    modal.classList.add("active");
 
 }
 
 
-function closeModal(){
+/* =========================
+   SEARCH
+========================= */
+
+function searchGames(){
+
+    const input =
+        document
+        .getElementById("searchBox")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const results =
+        document.getElementById("searchResults");
+
+    results.innerHTML = "";
+
+    if(!input){
+
+        results.style.display = "none";
+
+        return;
+
+    }
+
+    const matches =
+        games.filter(game =>
+            game.name
+            .toLowerCase()
+            .includes(input)
+        );
+
+    if(matches.length === 0){
+
+        results.innerHTML =
+            '<div class="search-result">No games found</div>';
+
+        results.style.display = "block";
+
+        return;
+
+    }
+
+    matches.forEach(game => {
+
+        const link =
+            document.createElement("a");
+
+        link.className = "search-result";
+
+        link.href = game.url;
+
+        link.textContent = game.name;
+
+        results.appendChild(link);
+
+    });
+
+    results.style.display = "block";
+
+}
+
+
+/* =========================
+   IMAGE MODAL
+========================= */
+
+function openImage(src){
+
+    document
+        .getElementById("modalImage")
+        .src = src;
 
     document
         .getElementById("imageModal")
-        .classList.remove("active");
+        .style.display = "flex";
 
 }
 
 
-document.addEventListener(
-    "keydown",
-    function(e){
+function closeImage(){
 
-        if(e.key === "Escape"){
+    document
+        .getElementById("imageModal")
+        .style.display = "none";
 
-            closeModal();
+}
 
-        }
+
+/* =========================
+   ESCAPE KEY
+========================= */
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+
+        closeImage();
+
+        document
+            .getElementById("searchBox")
+            .style.display = "none";
+
+        document
+            .getElementById("searchResults")
+            .style.display = "none";
 
     }
-);
+
+});
 
 </script>
 
