@@ -8,6 +8,7 @@
 <title>QEVRANO PC GAMES</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -20,11 +21,14 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#070707;
     color:#eee;
+    background:#070707;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
+
 header{
     position:sticky;
     top:0;
@@ -50,6 +54,7 @@ header{
 nav{
     display:flex;
     gap:25px;
+    align-items:center;
 }
 
 nav a{
@@ -63,7 +68,11 @@ nav a:hover{
     color:#d80000;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
     min-height:390px;
     display:flex;
@@ -71,6 +80,7 @@ nav a:hover{
     justify-content:center;
     text-align:center;
     padding:60px 20px;
+
     background:
         linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.88)),
         url("./images/acbrotherhood.jpg") center/cover no-repeat;
@@ -114,7 +124,11 @@ nav a:hover{
     color:#111;
 }
 
-/* INTRO */
+
+/* =========================
+   INTRO
+========================= */
+
 .intro{
     padding:45px 5%;
     text-align:center;
@@ -137,7 +151,11 @@ nav a:hover{
     line-height:1.7;
 }
 
-/* STATS */
+
+/* =========================
+   STATS
+========================= */
+
 .stats{
     display:flex;
     justify-content:center;
@@ -156,7 +174,11 @@ nav a:hover{
     margin-top:5px;
 }
 
-/* MAIN */
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
 .container{
     width:90%;
     max-width:1400px;
@@ -166,7 +188,11 @@ nav a:hover{
     gap:30px;
 }
 
-/* SECTION TITLE */
+
+/* =========================
+   SECTION TITLE
+========================= */
+
 .section-title{
     margin-bottom:25px;
 }
@@ -179,13 +205,18 @@ nav a:hover{
     color:#d80000;
 }
 
-/* FILTERS */
+
+/* =========================
+   FILTERS
+========================= */
+
 .filters{
     background:#101010;
     padding:18px;
     border:1px solid #222;
     border-radius:8px;
     margin-bottom:25px;
+
     display:flex;
     gap:12px;
     flex-wrap:wrap;
@@ -201,15 +232,28 @@ nav a:hover{
     outline:none;
 }
 
-/* GAMES GRID */
+.filters select:focus{
+    border-color:#d80000;
+}
+
+
+/* =========================
+   GAMES GRID
+========================= */
+
 .games-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:22px;
 }
 
-/* CARD */
+
+/* =========================
+   GAME CARD
+========================= */
+
 .game-card{
+    position:relative;
     background:#111;
     border:1px solid #242424;
     border-radius:8px;
@@ -222,6 +266,44 @@ nav a:hover{
     border-color:#d80000;
     box-shadow:0 10px 25px rgba(216,0,0,.18);
 }
+
+
+/* =========================
+   PRICE STAMPS
+========================= */
+
+.price-stamp{
+    position:absolute;
+    z-index:5;
+    bottom:10px;
+
+    padding:5px 9px;
+
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:.7px;
+
+    border-radius:3px;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.5);
+}
+
+.paid-stamp{
+    left:10px;
+    background:#d80000;
+    color:#fff;
+}
+
+.free-stamp{
+    right:10px;
+    background:#18a558;
+    color:#fff;
+}
+
+
+/* =========================
+   GAME IMAGE
+========================= */
 
 .game-image{
     height:245px;
@@ -238,6 +320,11 @@ nav a:hover{
 .game-card:hover .game-image img{
     transform:scale(1.06);
 }
+
+
+/* =========================
+   GAME INFO
+========================= */
 
 .game-info{
     padding:18px;
@@ -260,6 +347,11 @@ nav a:hover{
     line-height:1.5;
     min-height:42px;
 }
+
+
+/* =========================
+   BUTTONS
+========================= */
 
 .game-buttons{
     display:flex;
@@ -297,7 +389,11 @@ nav a:hover{
     background:linear-gradient(135deg,#ff0000,#a00000);
 }
 
-/* SIDEBAR */
+
+/* =========================
+   SIDEBAR
+========================= */
+
 .sidebar{
     background:#0f0f0f;
     border:1px solid #222;
@@ -353,7 +449,24 @@ nav a:hover{
     color:#d80000;
 }
 
-/* PAGINATION */
+
+/* =========================
+   GAME PAGES
+========================= */
+
+.game-page{
+    display:none;
+}
+
+.game-page.active{
+    display:block;
+}
+
+
+/* =========================
+   PAGINATION
+========================= */
+
 .pagination{
     display:flex;
     justify-content:center;
@@ -368,6 +481,7 @@ nav a:hover{
     color:#fff;
     cursor:pointer;
     border-radius:5px;
+    transition:.3s;
 }
 
 .pagination button:hover,
@@ -376,16 +490,11 @@ nav a:hover{
     border-color:#d80000;
 }
 
-/* PAGE */
-.game-page{
-    display:none;
-}
 
-.game-page.active{
-    display:block;
-}
+/* =========================
+   FOOTER
+========================= */
 
-/* FOOTER */
 footer{
     margin-top:60px;
     padding:35px 5%;
@@ -408,14 +517,21 @@ footer p{
     font-size:14px;
 }
 
-/* RESPONSIVE */
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media(max-width:1100px){
+
     .games-grid{
         grid-template-columns:repeat(2,1fr);
     }
+
 }
 
 @media(max-width:900px){
+
     .container{
         grid-template-columns:1fr;
     }
@@ -423,9 +539,11 @@ footer p{
     .sidebar{
         order:2;
     }
+
 }
 
 @media(max-width:700px){
+
     header{
         flex-direction:column;
         gap:15px;
@@ -452,13 +570,20 @@ footer p{
     .stats{
         gap:30px;
     }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
     <div class="logo">
@@ -466,16 +591,36 @@ footer p{
     </div>
 
     <nav>
-        <a href="#home">HOME</a>
-        <a href="#games">GAMES</a>
-        <a href="#packs">PACKS</a>
-        <a href="#about">ABOUT</a>
+
+        <a href="#home">
+            HOME
+        </a>
+
+        <a href="#games">
+            GAMES
+        </a>
+
+        <a href="#packs">
+            PACKS
+        </a>
+
+        <a href="#about">
+            ABOUT
+        </a>
+
+        <a href="#price" onclick="openPriceFilter()">
+            PRICE
+        </a>
+
     </nav>
 
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero" id="home">
 
     <div class="hero-content">
@@ -490,12 +635,14 @@ footer p{
         </p>
 
         <div class="hero-search">
+
             <input
                 type="text"
                 id="heroSearch"
                 placeholder="Search for a game..."
                 onkeyup="heroSearchGame()"
             >
+
         </div>
 
     </div>
@@ -503,7 +650,10 @@ footer p{
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section class="intro" id="about">
 
     <h2>
@@ -516,6 +666,7 @@ footer p{
         discover free-to-play games and open each game page
         for more information.
     </p>
+
 
     <div class="stats">
 
@@ -539,315 +690,632 @@ footer p{
 </section>
 
 
-<!-- MAIN -->
+<!-- =========================
+     MAIN
+========================= -->
+
 <div class="container">
+
 
 <main id="games">
 
-    <div class="section-title">
+
+    <div class="section-title" id="price">
+
         <h2>
             Featured <span>Games</span>
         </h2>
+
     </div>
 
 
-    <!-- FILTERS -->
+    <!-- =========================
+         FILTERS
+    ========================= -->
+
     <div class="filters">
 
         <select id="categoryFilter" onchange="applyFilters()">
-            <option value="all">All Categories</option>
-            <option value="action">Action</option>
-            <option value="adventure">Adventure</option>
-            <option value="racing">Racing</option>
-            <option value="sports">Sports</option>
-            <option value="open world">Open World</option>
-            <option value="free to play">Free to Play</option>
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="action">
+                Action
+            </option>
+
+            <option value="adventure">
+                Adventure
+            </option>
+
+            <option value="racing">
+                Racing
+            </option>
+
+            <option value="sports">
+                Sports
+            </option>
+
+            <option value="open world">
+                Open World
+            </option>
+
+            <option value="free to play">
+                Free to Play
+            </option>
+
         </select>
+
 
         <select id="packFilter" onchange="applyFilters()">
-            <option value="all">All Packs</option>
-            <option value="gta">GTA</option>
-            <option value="assassin's creed">Assassin's Creed</option>
-            <option value="far cry">Far Cry</option>
-            <option value="need for speed">Need for Speed</option>
-            <option value="sports">Sports</option>
-            <option value="call of duty">Call of Duty</option>
-            <option value="the witcher">The Witcher</option>
-            <option value="free to play">Free to Play</option>
+
+            <option value="all">
+                All Packs
+            </option>
+
+            <option value="gta">
+                GTA
+            </option>
+
+            <option value="assassin's creed">
+                Assassin's Creed
+            </option>
+
+            <option value="far cry">
+                Far Cry
+            </option>
+
+            <option value="need for speed">
+                Need for Speed
+            </option>
+
+            <option value="sports">
+                Sports
+            </option>
+
+            <option value="call of duty">
+                Call of Duty
+            </option>
+
+            <option value="the witcher">
+                The Witcher
+            </option>
+
+            <option value="free to play">
+                Free to Play
+            </option>
+
         </select>
 
+
         <select id="sizeFilter" onchange="applyFilters()">
-            <option value="all">All Sizes</option>
-            <option value="1–5 GB">1–5 GB</option>
-            <option value="5–10 GB">5–10 GB</option>
-            <option value="10–20 GB">10–20 GB</option>
-            <option value="20+ GB">20+ GB</option>
+
+            <option value="all">
+                All Sizes
+            </option>
+
+            <option value="1–5 GB">
+                1–5 GB
+            </option>
+
+            <option value="5–10 GB">
+                5–10 GB
+            </option>
+
+            <option value="10–20 GB">
+                10–20 GB
+            </option>
+
+            <option value="20+ GB">
+                20+ GB
+            </option>
+
+        </select>
+
+
+        <!-- NEW PRICE FILTER -->
+
+        <select id="priceFilter" onchange="applyFilters()">
+
+            <option value="all">
+                All Prices
+            </option>
+
+            <option value="free">
+                Free Games
+            </option>
+
+            <option value="paid">
+                Paid Games
+            </option>
+
         </select>
 
     </div>
 
 
-    <!-- PAGE 1 -->
+    <!-- =========================
+         PAGE 1
+    ========================= -->
+
     <div class="game-page active" id="page1">
 
         <div class="games-grid">
 
+
             <!-- FAR CRY 2 -->
+
             <div class="game-card"
                  data-name="Far Cry 2"
                  data-category="action open world"
                  data-pack="far cry"
-                 data-size="5–10 GB">
+                 data-size="5–10 GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/farcry2.jpg" alt="Far Cry 2">
+
+                    <img
+                        src="./images/farcry2.jpg"
+                        alt="Far Cry 2"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Far Cry 2</h3>
-                    <div class="game-meta">Action • Open World</div>
-                    <div class="game-meta">Size: 5–10 GB</div>
+
+                    <div class="game-meta">
+                        Action • Open World
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 5–10 GB
+                    </div>
+
                     <p class="game-description">
                         Explore a dangerous open world in this classic action game.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./farcry2.html">
+
+                        <a
+                            class="details-btn"
+                            href="./farcry2.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- FAR CRY 3 -->
+
             <div class="game-card"
                  data-name="Far Cry 3"
                  data-category="action open world"
                  data-pack="far cry"
-                 data-size="5–10 GB">
+                 data-size="5–10 GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/farcry3.jpg" alt="Far Cry 3">
+
+                    <img
+                        src="./images/farcry3.jpg"
+                        alt="Far Cry 3"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Far Cry 3</h3>
-                    <div class="game-meta">Action • Open World</div>
-                    <div class="game-meta">Size: 5–10 GB</div>
+
+                    <div class="game-meta">
+                        Action • Open World
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 5–10 GB
+                    </div>
+
                     <p class="game-description">
                         Experience an open-world adventure filled with exploration.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./farcry3.html">
+
+                        <a
+                            class="details-btn"
+                            href="./farcry3.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- ASSASSIN'S CREED II -->
+
             <div class="game-card"
                  data-name="Assassin's Creed II"
                  data-category="action adventure open world"
                  data-pack="assassin's creed"
-                 data-size="5–10 GB">
+                 data-size="5–10 GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/ac2.jpg" alt="Assassin's Creed II">
+
+                    <img
+                        src="./images/ac2.jpg"
+                        alt="Assassin's Creed II"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Assassin's Creed II</h3>
-                    <div class="game-meta">Action • Adventure</div>
-                    <div class="game-meta">Size: 5–10 GB</div>
+
+                    <div class="game-meta">
+                        Action • Adventure
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 5–10 GB
+                    </div>
+
                     <p class="game-description">
                         Explore Renaissance Italy in this legendary adventure.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./ac2.html">
+
+                        <a
+                            class="details-btn"
+                            href="./ac2.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- GTA V -->
+
             <div class="game-card"
                  data-name="GTA V"
                  data-category="action open world"
                  data-pack="gta"
-                 data-size="20+ GB">
+                 data-size="20+ GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/gta5.jpg" alt="GTA V">
+
+                    <img
+                        src="./images/gta5.jpg"
+                        alt="GTA V"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>GTA V</h3>
-                    <div class="game-meta">Action • Open World</div>
-                    <div class="game-meta">Size: 20+ GB</div>
+
+                    <div class="game-meta">
+                        Action • Open World
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 20+ GB
+                    </div>
+
                     <p class="game-description">
                         Explore Los Santos in one of the most popular open-world games.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./gta5.html">
+
+                        <a
+                            class="details-btn"
+                            href="./gta5.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- GTA IV -->
+
             <div class="game-card"
                  data-name="GTA IV"
                  data-category="action open world"
                  data-pack="gta"
-                 data-size="10–20 GB">
+                 data-size="10–20 GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/gta4.jpg" alt="GTA IV">
+
+                    <img
+                        src="./images/gta4.jpg"
+                        alt="GTA IV"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>GTA IV</h3>
-                    <div class="game-meta">Action • Open World</div>
-                    <div class="game-meta">Size: 10–20 GB</div>
+
+                    <div class="game-meta">
+                        Action • Open World
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 10–20 GB
+                    </div>
+
                     <p class="game-description">
                         Follow an intense story through Liberty City.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./gta4.html">
+
+                        <a
+                            class="details-btn"
+                            href="./gta4.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- FIFA -->
+
             <div class="game-card"
                  data-name="FIFA"
                  data-category="sports"
                  data-pack="sports"
-                 data-size="10–20 GB">
+                 data-size="10–20 GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/fifa.jpg" alt="FIFA">
+
+                    <img
+                        src="./images/fifa.jpg"
+                        alt="FIFA"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>FIFA</h3>
-                    <div class="game-meta">Sports</div>
-                    <div class="game-meta">Size: 10–20 GB</div>
+
+                    <div class="game-meta">
+                        Sports
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 10–20 GB
+                    </div>
+
                     <p class="game-description">
                         Enjoy football action with teams and competitions.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./fifa.html">
+
+                        <a
+                            class="details-btn"
+                            href="./fifa.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- DON BRADMAN CRICKET -->
+
             <div class="game-card"
                  data-name="Don Bradman Cricket"
                  data-category="sports"
                  data-pack="sports"
-                 data-size="10–20 GB">
+                 data-size="10–20 GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/cricket.jpg" alt="Don Bradman Cricket">
+
+                    <img
+                        src="./images/cricket.jpg"
+                        alt="Don Bradman Cricket"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Don Bradman Cricket</h3>
-                    <div class="game-meta">Sports • Cricket</div>
-                    <div class="game-meta">Size: 10–20 GB</div>
+
+                    <div class="game-meta">
+                        Sports • Cricket
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 10–20 GB
+                    </div>
+
                     <p class="game-description">
                         Experience cricket gameplay with detailed controls.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./cricket.html">
+
+                        <a
+                            class="details-btn"
+                            href="./cricket.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- CALL OF DUTY 1 -->
+
             <div class="game-card"
                  data-name="Call of Duty 1"
                  data-category="action"
                  data-pack="call of duty"
-                 data-size="1–5 GB">
+                 data-size="1–5 GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/cod.jpg" alt="Call of Duty 1">
+
+                    <img
+                        src="./images/cod.jpg"
+                        alt="Call of Duty 1"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Call of Duty 1</h3>
-                    <div class="game-meta">Action</div>
-                    <div class="game-meta">Size: 1–5 GB</div>
+
+                    <div class="game-meta">
+                        Action
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 1–5 GB
+                    </div>
+
                     <p class="game-description">
                         Experience the classic Call of Duty campaign.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./cod1.html">
+
+                        <a
+                            class="details-btn"
+                            href="./cod1.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- THE WITCHER 2 -->
+
             <div class="game-card"
                  data-name="The Witcher 2"
                  data-category="action adventure"
                  data-pack="the witcher"
-                 data-size="10–20 GB">
+                 data-size="10–20 GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/witcher2.jpg" alt="The Witcher 2">
+
+                    <img
+                        src="./images/witcher2.jpg"
+                        alt="The Witcher 2"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>The Witcher 2</h3>
-                    <div class="game-meta">Action • Adventure</div>
-                    <div class="game-meta">Size: 10–20 GB</div>
+
+                    <div class="game-meta">
+                        Action • Adventure
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 10–20 GB
+                    </div>
+
                     <p class="game-description">
                         Enter a fantasy world filled with quests and adventure.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./witcher2.html">
+
+                        <a
+                            class="details-btn"
+                            href="./witcher2.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
@@ -857,191 +1325,340 @@ footer p{
     </div>
 
 
-    <!-- PAGE 2 -->
+    <!-- =========================
+         PAGE 2
+    ========================= -->
+
     <div class="game-page" id="page2">
 
         <div class="games-grid">
 
+
             <!-- GTA VI -->
+
             <div class="game-card"
                  data-name="GTA VI"
                  data-category="action open world"
                  data-pack="gta"
-                 data-size="20+ GB">
+                 data-size="20+ GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/gtavi.jpg" alt="GTA VI">
+
+                    <img
+                        src="./images/gtavi.jpg"
+                        alt="GTA VI"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>GTA VI</h3>
-                    <div class="game-meta">Action • Open World</div>
-                    <div class="game-meta">Size: 20+ GB</div>
+
+                    <div class="game-meta">
+                        Action • Open World
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 20+ GB
+                    </div>
+
                     <p class="game-description">
                         Discover the next generation of the Grand Theft Auto series.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./gtavi.html">
+
+                        <a
+                            class="details-btn"
+                            href="./gtavi.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
-            <!-- ASSASSIN'S CREED SYNDICATE -->
+            <!-- AC SYNDICATE -->
+
             <div class="game-card"
                  data-name="Assassin's Creed Syndicate"
                  data-category="action adventure open world"
                  data-pack="assassin's creed"
-                 data-size="20+ GB">
+                 data-size="20+ GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/acs.jpg" alt="Assassin's Creed Syndicate">
+
+                    <img
+                        src="./images/acs.jpg"
+                        alt="Assassin's Creed Syndicate"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Assassin's Creed Syndicate</h3>
-                    <div class="game-meta">Action • Open World</div>
-                    <div class="game-meta">Size: 20+ GB</div>
+
+                    <div class="game-meta">
+                        Action • Open World
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 20+ GB
+                    </div>
+
                     <p class="game-description">
                         Explore Victorian London as the Frye twins.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./acs.html">
+
+                        <a
+                            class="details-btn"
+                            href="./acs.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
-            <!-- NEED FOR SPEED II -->
+            <!-- NFS II -->
+
             <div class="game-card"
                  data-name="Need for Speed II"
                  data-category="racing"
                  data-pack="need for speed"
-                 data-size="1–5 GB">
+                 data-size="1–5 GB"
+                 data-price="paid">
+
+                <div class="price-stamp paid-stamp">
+                    PAID
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/nfs2.jpg" alt="Need for Speed II">
+
+                    <img
+                        src="./images/nfs2.jpg"
+                        alt="Need for Speed II"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Need for Speed II</h3>
-                    <div class="game-meta">Racing</div>
-                    <div class="game-meta">Size: 1–5 GB</div>
+
+                    <div class="game-meta">
+                        Racing
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 1–5 GB
+                    </div>
+
                     <p class="game-description">
                         Enjoy classic arcade racing from the Need for Speed series.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./nfs2.html">
+
+                        <a
+                            class="details-btn"
+                            href="./nfs2.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- WARFRAME -->
+
             <div class="game-card"
                  data-name="Warframe"
                  data-category="action free to play"
                  data-pack="free to play"
-                 data-size="20+ GB">
+                 data-size="20+ GB"
+                 data-price="free">
+
+                <div class="price-stamp free-stamp">
+                    FREE
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/warframe.jpg" alt="Warframe">
+
+                    <img
+                        src="./images/warframe.jpg"
+                        alt="Warframe"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Warframe</h3>
-                    <div class="game-meta">Action • Free to Play</div>
-                    <div class="game-meta">Size: 20+ GB</div>
+
+                    <div class="game-meta">
+                        Action • Free to Play
+                    </div>
+
+                    <div class="game-meta">
+                        Size: 20+ GB
+                    </div>
+
                     <p class="game-description">
                         Explore a fast-paced free-to-play sci-fi adventure.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./warframe.html">
+
+                        <a
+                            class="details-btn"
+                            href="./warframe.html">
                             VIEW DETAILS
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- TRACKMANIA -->
+
             <div class="game-card"
                  data-name="Trackmania"
                  data-category="racing free to play"
                  data-pack="free to play"
-                 data-size="5–10 GB">
+                 data-size="5–10 GB"
+                 data-price="free">
+
+                <div class="price-stamp free-stamp">
+                    FREE
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/trackmania.jpg" alt="Trackmania">
+
+                    <img
+                        src="./images/trackmania.jpg"
+                        alt="Trackmania"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Trackmania</h3>
-                    <div class="game-meta">Racing • Free to Play</div>
-                    <div class="game-meta">Officially Free • PC</div>
+
+                    <div class="game-meta">
+                        Racing • Free to Play
+                    </div>
+
+                    <div class="game-meta">
+                        Officially Free • PC
+                    </div>
+
                     <p class="game-description">
                         Race through challenging tracks and compete for the fastest times.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn" href="./trackmania.html">
+
+                        <a
+                            class="details-btn"
+                            href="./trackmania.html">
                             VIEW DETAILS
                         </a>
 
-                        <a class="free-download-btn"
-                           href="./trackmania.html">
+                        <a
+                            class="free-download-btn"
+                            href="./trackmania.html">
                             DOWNLOAD OFFICIAL FOR FREE
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- ROCKET LEAGUE -->
+
             <div class="game-card"
                  data-name="Rocket League"
                  data-category="sports racing free to play"
                  data-pack="free to play"
-                 data-size="20+ GB">
+                 data-size="20+ GB"
+                 data-price="free">
+
+                <div class="price-stamp free-stamp">
+                    FREE
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/rocketleague.jpg" alt="Rocket League">
+
+                    <img
+                        src="./images/rocketleague.jpg"
+                        alt="Rocket League"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Rocket League</h3>
-                    <div class="game-meta">Sports • Racing • Free to Play</div>
-                    <div class="game-meta">Officially Free • PC</div>
+
+                    <div class="game-meta">
+                        Sports • Racing • Free to Play
+                    </div>
+
+                    <div class="game-meta">
+                        Officially Free • PC
+                    </div>
+
                     <p class="game-description">
                         Combine football and fast cars in this competitive game.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn"
-                           href="./rocketleague.html">
+
+                        <a
+                            class="details-btn"
+                            href="./rocketleague.html">
                             VIEW DETAILS
                         </a>
 
-                        <a class="free-download-btn"
-                           href="./rocketleague.html">
+                        <a
+                            class="free-download-btn"
+                            href="./rocketleague.html">
                             DOWNLOAD OFFICIAL FOR FREE
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
@@ -1051,111 +1668,187 @@ footer p{
     </div>
 
 
-    <!-- PAGE 3 -->
+    <!-- =========================
+         PAGE 3
+    ========================= -->
+
     <div class="game-page" id="page3">
 
         <div class="games-grid">
 
+
             <!-- FALL GUYS -->
+
             <div class="game-card"
                  data-name="Fall Guys"
                  data-category="adventure free to play"
                  data-pack="free to play"
-                 data-size="5–10 GB">
+                 data-size="5–10 GB"
+                 data-price="free">
+
+                <div class="price-stamp free-stamp">
+                    FREE
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/fallguys.jpg" alt="Fall Guys">
+
+                    <img
+                        src="./images/fallguys.jpg"
+                        alt="Fall Guys"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Fall Guys</h3>
-                    <div class="game-meta">Party • Free to Play</div>
-                    <div class="game-meta">Officially Free • PC</div>
+
+                    <div class="game-meta">
+                        Party • Free to Play
+                    </div>
+
+                    <div class="game-meta">
+                        Officially Free • PC
+                    </div>
+
                     <p class="game-description">
                         Take on colorful obstacle courses and compete in chaotic rounds.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn"
-                           href="./fallguys.html">
+
+                        <a
+                            class="details-btn"
+                            href="./fallguys.html">
                             VIEW DETAILS
                         </a>
 
-                        <a class="free-download-btn"
-                           href="./fallguys.html">
+                        <a
+                            class="free-download-btn"
+                            href="./fallguys.html">
                             DOWNLOAD OFFICIAL FOR FREE
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- STUMBLE GUYS -->
+
             <div class="game-card"
                  data-name="Stumble Guys"
                  data-category="action free to play"
                  data-pack="free to play"
-                 data-size="5–10 GB">
+                 data-size="5–10 GB"
+                 data-price="free">
+
+                <div class="price-stamp free-stamp">
+                    FREE
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/stumbleguys.jpg" alt="Stumble Guys">
+
+                    <img
+                        src="./images/stumbleguys.jpg"
+                        alt="Stumble Guys"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Stumble Guys</h3>
-                    <div class="game-meta">Party • Free to Play</div>
-                    <div class="game-meta">Officially Free • PC</div>
+
+                    <div class="game-meta">
+                        Party • Free to Play
+                    </div>
+
+                    <div class="game-meta">
+                        Officially Free • PC
+                    </div>
+
                     <p class="game-description">
                         Jump, dodge and race through fun multiplayer knockout rounds.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn"
-                           href="./stumbleguys.html">
+
+                        <a
+                            class="details-btn"
+                            href="./stumbleguys.html">
                             VIEW DETAILS
                         </a>
 
-                        <a class="free-download-btn"
-                           href="./stumbleguys.html">
+                        <a
+                            class="free-download-btn"
+                            href="./stumbleguys.html">
                             DOWNLOAD OFFICIAL FOR FREE
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
 
 
             <!-- PALIA -->
+
             <div class="game-card"
                  data-name="Palia"
                  data-category="adventure free to play"
                  data-pack="free to play"
-                 data-size="20+ GB">
+                 data-size="20+ GB"
+                 data-price="free">
+
+                <div class="price-stamp free-stamp">
+                    FREE
+                </div>
 
                 <div class="game-image">
-                    <img src="./images/palia.jpg" alt="Palia">
+
+                    <img
+                        src="./images/palia.jpg"
+                        alt="Palia"
+                    >
+
                 </div>
 
                 <div class="game-info">
+
                     <h3>Palia</h3>
-                    <div class="game-meta">Adventure • Free to Play</div>
-                    <div class="game-meta">Officially Free • PC</div>
+
+                    <div class="game-meta">
+                        Adventure • Free to Play
+                    </div>
+
+                    <div class="game-meta">
+                        Officially Free • PC
+                    </div>
+
                     <p class="game-description">
                         Explore a colorful fantasy world, build your home and play with friends.
                     </p>
 
                     <div class="game-buttons">
-                        <a class="details-btn"
-                           href="./palia.html">
+
+                        <a
+                            class="details-btn"
+                            href="./palia.html">
                             VIEW DETAILS
                         </a>
 
-                        <a class="free-download-btn"
-                           href="./palia.html">
+                        <a
+                            class="free-download-btn"
+                            href="./palia.html">
                             DOWNLOAD OFFICIAL FOR FREE
                         </a>
+
                     </div>
+
                 </div>
 
             </div>
@@ -1165,14 +1858,19 @@ footer p{
     </div>
 
 
-    <!-- PAGINATION -->
+    <!-- =========================
+         PAGINATION
+    ========================= -->
+
     <div class="pagination">
 
         <button onclick="changePage(-1)">
             ‹
         </button>
 
-        <button class="active" onclick="showPage(1)">
+        <button
+            class="active"
+            onclick="showPage(1)">
             1
         </button>
 
@@ -1193,120 +1891,252 @@ footer p{
 </main>
 
 
-<!-- SIDEBAR -->
+<!-- =========================
+     SIDEBAR
+========================= -->
+
 <aside class="sidebar">
 
-    <h3>Search Games</h3>
+
+    <h3>
+        Search Games
+    </h3>
+
 
     <div class="sidebar-search">
+
         <input
             type="text"
             id="sidebarSearch"
             placeholder="Search games..."
             onkeyup="sidebarSearchGame()"
         >
+
     </div>
 
 
-    <h3>Popular Games</h3>
+    <h3>
+        Popular Games
+    </h3>
 
 
     <!-- GTA VI -->
+
     <div class="popular-game">
-        <img src="./images/gtavi.jpg" alt="GTA VI">
-        <a href="./gtavi.html">GTA VI</a>
+
+        <img
+            src="./images/gtavi.jpg"
+            alt="GTA VI"
+        >
+
+        <a href="./gtavi.html">
+            GTA VI
+        </a>
+
     </div>
 
 
     <!-- AC SYNDICATE -->
+
     <div class="popular-game">
-        <img src="./images/acs.jpg" alt="Assassin's Creed Syndicate">
-        <a href="./acs.html">Assassin's Creed Syndicate</a>
+
+        <img
+            src="./images/acs.jpg"
+            alt="Assassin's Creed Syndicate"
+        >
+
+        <a href="./acs.html">
+            Assassin's Creed Syndicate
+        </a>
+
     </div>
 
 
     <!-- NFS II -->
+
     <div class="popular-game">
-        <img src="./images/nfs2.jpg" alt="Need for Speed II">
-        <a href="./nfs2.html">Need for Speed II</a>
+
+        <img
+            src="./images/nfs2.jpg"
+            alt="Need for Speed II"
+        >
+
+        <a href="./nfs2.html">
+            Need for Speed II
+        </a>
+
     </div>
 
 
     <!-- WARFRAME -->
+
     <div class="popular-game">
-        <img src="./images/warframe.jpg" alt="Warframe">
-        <a href="./warframe.html">Warframe</a>
+
+        <img
+            src="./images/warframe.jpg"
+            alt="Warframe"
+        >
+
+        <a href="./warframe.html">
+            Warframe
+        </a>
+
     </div>
 
 
     <!-- TRACKMANIA -->
+
     <div class="popular-game">
-        <img src="./images/trackmania.jpg" alt="Trackmania">
-        <a href="./trackmania.html">Trackmania</a>
+
+        <img
+            src="./images/trackmania.jpg"
+            alt="Trackmania"
+        >
+
+        <a href="./trackmania.html">
+            Trackmania
+        </a>
+
     </div>
 
 
     <!-- ROCKET LEAGUE -->
+
     <div class="popular-game">
-        <img src="./images/rocketleague.jpg" alt="Rocket League">
-        <a href="./rocketleague.html">Rocket League</a>
+
+        <img
+            src="./images/rocketleague.jpg"
+            alt="Rocket League"
+        >
+
+        <a href="./rocketleague.html">
+            Rocket League
+        </a>
+
     </div>
 
 
     <!-- FALL GUYS -->
+
     <div class="popular-game">
-        <img src="./images/fallguys.jpg" alt="Fall Guys">
-        <a href="./fallguys.html">Fall Guys</a>
+
+        <img
+            src="./images/fallguys.jpg"
+            alt="Fall Guys"
+        >
+
+        <a href="./fallguys.html">
+            Fall Guys
+        </a>
+
     </div>
 
 
     <!-- STUMBLE GUYS -->
+
     <div class="popular-game">
-        <img src="./images/stumbleguys.jpg" alt="Stumble Guys">
-        <a href="./stumbleguys.html">Stumble Guys</a>
+
+        <img
+            src="./images/stumbleguys.jpg"
+            alt="Stumble Guys"
+        >
+
+        <a href="./stumbleguys.html">
+            Stumble Guys
+        </a>
+
     </div>
 
 
     <!-- PALIA -->
+
     <div class="popular-game">
-        <img src="./images/palia.jpg" alt="Palia">
-        <a href="./palia.html">Palia</a>
+
+        <img
+            src="./images/palia.jpg"
+            alt="Palia"
+        >
+
+        <a href="./palia.html">
+            Palia
+        </a>
+
     </div>
 
 
     <!-- FAR CRY 3 -->
+
     <div class="popular-game">
-        <img src="./images/farcry3.jpg" alt="Far Cry 3">
-        <a href="./farcry3.html">Far Cry 3</a>
+
+        <img
+            src="./images/farcry3.jpg"
+            alt="Far Cry 3"
+        >
+
+        <a href="./farcry3.html">
+            Far Cry 3
+        </a>
+
     </div>
 
 
     <!-- GTA V -->
+
     <div class="popular-game">
-        <img src="./images/gta5.jpg" alt="GTA V">
-        <a href="./gta5.html">GTA V</a>
+
+        <img
+            src="./images/gta5.jpg"
+            alt="GTA V"
+        >
+
+        <a href="./gta5.html">
+            GTA V
+        </a>
+
     </div>
 
 
     <!-- GTA IV -->
+
     <div class="popular-game">
-        <img src="./images/gta4.jpg" alt="GTA IV">
-        <a href="./gta4.html">GTA IV</a>
+
+        <img
+            src="./images/gta4.jpg"
+            alt="GTA IV"
+        >
+
+        <a href="./gta4.html">
+            GTA IV
+        </a>
+
     </div>
 
 
     <!-- WITCHER 2 -->
+
     <div class="popular-game">
-        <img src="./images/witcher2.jpg" alt="The Witcher 2">
-        <a href="./witcher2.html">The Witcher 2</a>
+
+        <img
+            src="./images/witcher2.jpg"
+            alt="The Witcher 2"
+        >
+
+        <a href="./witcher2.html">
+            The Witcher 2
+        </a>
+
     </div>
+
 
 </aside>
 
 </div>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
     <h3>
@@ -1322,7 +2152,10 @@ footer p{
 
 <script>
 
-/* ALL GAMES FOR SEARCH */
+/* =========================
+   GAME SEARCH DATABASE
+========================= */
+
 const games = [
 
     {
@@ -1418,11 +2251,16 @@ const games = [
 ];
 
 
-/* HERO SEARCH */
+/* =========================
+   HERO SEARCH
+========================= */
+
 function heroSearchGame(){
 
     const input =
-        document.getElementById("heroSearch").value
+        document
+        .getElementById("heroSearch")
+        .value
         .toLowerCase()
         .trim();
 
@@ -1441,11 +2279,16 @@ function heroSearchGame(){
 }
 
 
-/* SIDEBAR SEARCH */
+/* =========================
+   SIDEBAR SEARCH
+========================= */
+
 function sidebarSearchGame(){
 
     const input =
-        document.getElementById("sidebarSearch").value
+        document
+        .getElementById("sidebarSearch")
+        .value
         .toLowerCase()
         .trim();
 
@@ -1464,8 +2307,12 @@ function sidebarSearchGame(){
 }
 
 
-/* PAGE CONTROL */
+/* =========================
+   PAGE CONTROL
+========================= */
+
 let currentPage = 1;
+
 
 function showPage(page){
 
@@ -1475,9 +2322,13 @@ function showPage(page){
 
     currentPage = page;
 
-    document.querySelectorAll(".game-page").forEach(p=>{
-        p.classList.remove("active");
-    });
+
+    document
+        .querySelectorAll(".game-page")
+        .forEach(p=>{
+            p.classList.remove("active");
+        });
+
 
     document
         .getElementById("page" + page)
@@ -1494,13 +2345,19 @@ function showPage(page){
     const pageButtons =
         document.querySelectorAll(".pagination button");
 
+
     if(pageButtons[page]){
         pageButtons[page].classList.add("active");
     }
 
+
     window.scrollTo({
-        top:document.getElementById("games").offsetTop - 80,
+
+        top:
+            document.getElementById("games").offsetTop - 80,
+
         behavior:"smooth"
+
     });
 
 }
@@ -1508,22 +2365,46 @@ function showPage(page){
 
 function changePage(direction){
 
-    let newPage = currentPage + direction;
+    let newPage =
+        currentPage + direction;
+
 
     if(newPage < 1){
         newPage = 1;
     }
 
+
     if(newPage > 3){
         newPage = 3;
     }
+
 
     showPage(newPage);
 
 }
 
 
-/* FILTERS */
+/* =========================
+   PRICE NAVIGATION
+========================= */
+
+function openPriceFilter(){
+
+    setTimeout(function(){
+
+        document
+            .getElementById("priceFilter")
+            .focus();
+
+    },500);
+
+}
+
+
+/* =========================
+   FILTER SYSTEM
+========================= */
+
 function applyFilters(){
 
     const category =
@@ -1532,11 +2413,13 @@ function applyFilters(){
         .value
         .toLowerCase();
 
+
     const pack =
         document
         .getElementById("packFilter")
         .value
         .toLowerCase();
+
 
     const size =
         document
@@ -1545,38 +2428,70 @@ function applyFilters(){
         .toLowerCase();
 
 
-    document.querySelectorAll(".game-card").forEach(card=>{
-
-        const cardCategory =
-            card.dataset.category.toLowerCase();
-
-        const cardPack =
-            card.dataset.pack.toLowerCase();
-
-        const cardSize =
-            card.dataset.size.toLowerCase();
+    const price =
+        document
+        .getElementById("priceFilter")
+        .value
+        .toLowerCase();
 
 
-        const categoryMatch =
-            category === "all" ||
-            cardCategory.includes(category);
-
-        const packMatch =
-            pack === "all" ||
-            cardPack.includes(pack);
-
-        const sizeMatch =
-            size === "all" ||
-            cardSize === size;
+    document
+        .querySelectorAll(".game-card")
+        .forEach(card=>{
 
 
-        if(categoryMatch && packMatch && sizeMatch){
-            card.style.display = "";
-        }else{
-            card.style.display = "none";
-        }
+            const cardCategory =
+                card.dataset.category.toLowerCase();
 
-    });
+
+            const cardPack =
+                card.dataset.pack.toLowerCase();
+
+
+            const cardSize =
+                card.dataset.size.toLowerCase();
+
+
+            const cardPrice =
+                card.dataset.price.toLowerCase();
+
+
+            const categoryMatch =
+                category === "all" ||
+                cardCategory.includes(category);
+
+
+            const packMatch =
+                pack === "all" ||
+                cardPack.includes(pack);
+
+
+            const sizeMatch =
+                size === "all" ||
+                cardSize === size;
+
+
+            const priceMatch =
+                price === "all" ||
+                cardPrice === price;
+
+
+            if(
+                categoryMatch &&
+                packMatch &&
+                sizeMatch &&
+                priceMatch
+            ){
+
+                card.style.display = "";
+
+            }else{
+
+                card.style.display = "none";
+
+            }
+
+        });
 
 }
 
