@@ -27,6 +27,7 @@ body{
 }
 
 /* HEADER */
+
 header{
     height:70px;
     background:rgba(0,0,0,.94);
@@ -71,6 +72,7 @@ nav a:hover{
 }
 
 /* CONTAINER */
+
 .container{
     width:92%;
     max-width:1150px;
@@ -91,6 +93,7 @@ nav a:hover{
 }
 
 /* MAIN PANEL */
+
 .main-content{
     background:rgba(8,8,8,.93);
     border:1px solid rgba(255,255,255,.07);
@@ -102,6 +105,7 @@ nav a:hover{
 }
 
 /* HERO */
+
 .hero{
     display:grid;
     grid-template-columns:300px 1fr;
@@ -145,6 +149,7 @@ nav a:hover{
 }
 
 /* META */
+
 .game-meta{
     display:flex;
     flex-wrap:wrap;
@@ -162,6 +167,7 @@ nav a:hover{
 }
 
 /* DOWNLOAD */
+
 .download-buttons{
     display:flex;
     flex-wrap:wrap;
@@ -215,6 +221,7 @@ nav a:hover{
 }
 
 /* SECTIONS */
+
 .section{
     margin-top:35px;
 }
@@ -235,6 +242,7 @@ nav a:hover{
 }
 
 /* SCREENSHOTS */
+
 .screenshot-area{
     display:grid;
     grid-template-columns:minmax(0,1fr) 300px;
@@ -265,6 +273,7 @@ nav a:hover{
 }
 
 /* ADVERTISEMENT */
+
 .big-ad{
     width:300px;
     height:600px;
@@ -289,6 +298,7 @@ nav a:hover{
 }
 
 /* VIDEO */
+
 .video-box{
     width:100%;
     aspect-ratio:16/9;
@@ -306,6 +316,7 @@ nav a:hover{
 }
 
 /* FEATURES */
+
 .features{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -334,6 +345,7 @@ nav a:hover{
 }
 
 /* REQUIREMENTS */
+
 .requirements{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -363,6 +375,7 @@ nav a:hover{
 }
 
 /* TAGLINE */
+
 .tagline{
     text-align:center;
     margin:45px 0 10px;
@@ -379,6 +392,7 @@ nav a:hover{
 }
 
 /* FOOTER */
+
 footer{
     text-align:center;
     padding:25px;
@@ -400,6 +414,7 @@ footer a:hover{
 }
 
 /* MODAL */
+
 .modal{
     display:none;
     position:fixed;
@@ -434,6 +449,7 @@ footer a:hover{
 }
 
 /* SCROLLBAR */
+
 ::-webkit-scrollbar{
     width:8px;
 }
@@ -452,6 +468,7 @@ footer a:hover{
 }
 
 /* RESPONSIVE */
+
 @media(max-width:900px){
 
     header{
@@ -536,7 +553,6 @@ footer a:hover{
 
 <header>
 
-```
 <a href="./index.html" class="logo">
     QEVRANO <span>PC GAMES</span>
 </a>
@@ -546,352 +562,343 @@ footer a:hover{
     <a href="./index.html#games">GAMES</a>
     <a href="./index.html#packs">PACKS</a>
 </nav>
-```
 
 </header>
 
 <div class="container">
 
-```
 <a href="./index.html" class="back">
     ← BACK TO GAMES
 </a>
 
-
 <main class="main-content">
 
-    <!-- HERO -->
+```
+<!-- HERO -->
 
-    <section class="hero">
+<section class="hero">
 
-        <img
-            src="./images/cod.jpg"
-            alt="Call of Duty"
-        >
+    <img
+        src="./images/cod.jpg"
+        alt="Call of Duty"
+    >
 
-        <div class="hero-info">
+    <div class="hero-info">
 
-            <h1>Call of Duty</h1>
+        <h1>Call of Duty</h1>
 
-            <div class="subtitle">
-                CALL OF DUTY • ACTION • FIRST-PERSON SHOOTER
+        <div class="subtitle">
+            CALL OF DUTY • ACTION • FIRST-PERSON SHOOTER
+        </div>
+
+        <p class="description">
+            Call of Duty is a classic first-person shooter that
+            takes players through intense World War II campaigns.
+            Experience historical battles, challenging missions
+            and fast-paced combat across different locations.
+        </p>
+
+        <div class="game-meta">
+
+            <div class="meta">
+                Developer: Infinity Ward
             </div>
 
-            <p class="description">
-                Call of Duty is a classic first-person shooter that
-                takes players through intense World War II campaigns.
-                Experience historical battles, challenging missions
-                and fast-paced combat across different locations.
-            </p>
-
-            <div class="game-meta">
-
-                <div class="meta">
-                    Developer: Infinity Ward
-                </div>
-
-                <div class="meta">
-                    Genre: Action / FPS
-                </div>
-
-                <div class="meta">
-                    Release: 2003 PC
-                </div>
-
-                <div class="meta">
-                    Platform: PC
-                </div>
-
+            <div class="meta">
+                Genre: Action / FPS
             </div>
 
+            <div class="meta">
+                Release: 2003 PC
+            </div>
 
-            <div class="download-buttons">
+            <div class="meta">
+                Platform: PC
+            </div>
+
+        </div>
+
+        <div class="download-buttons">
+
+            <a
+                href="https://store.steampowered.com/app/2620/Call_of_Duty/"
+                class="download-btn official"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                DOWNLOAD OFFICIAL
+            </a>
+
+            <div>
 
                 <a
-                    href="https://store.steampowered.com/app/2620/Call_of_Duty/"
-                    class="download-btn official"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#"
+                    class="download-btn"
+                    onclick="return false;"
+                    aria-disabled="true"
                 >
-                    DOWNLOAD OFFICIAL
+                    DOWNLOAD SETUP.EXE
                 </a>
 
-                <div>
-
-                    <a
-                        href="#"
-                        class="download-btn"
-                        onclick="return false;"
-                    >
-                        DOWNLOAD SETUP.EXE
-                    </a>
-
-                    <a
-                        href="./cod1.html"
-                        class="compressed-link"
-                    >
-                        Highly Compressed
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SCREENSHOTS -->
-
-    <section class="section">
-
-        <h2>SCREENSHOTS</h2>
-
-        <div class="screenshot-area">
-
-            <div class="screenshots">
-
-                <img
-                    src="./images/cod-1.jpg"
-                    alt="Call of Duty Screenshot 1"
-                    onclick="openModal(this.src)"
+                <a
+                    href="./cod1.html"
+                    class="compressed-link"
                 >
-
-                <img
-                    src="./images/cod-2.jpg"
-                    alt="Call of Duty Screenshot 2"
-                    onclick="openModal(this.src)"
-                >
-
-                <img
-                    src="./images/cod-3.jpg"
-                    alt="Call of Duty Screenshot 3"
-                    onclick="openModal(this.src)"
-                >
-
-                <img
-                    src="./images/cod-4.jpg"
-                    alt="Call of Duty Screenshot 4"
-                    onclick="openModal(this.src)"
-                >
-
-            </div>
-
-
-            <div class="big-ad">
-
-                <strong>ADVERTISEMENT</strong>
-
-                <span>BIG AD SPACE</span>
-
-                <br>
-
-                <small>300 × 600</small>
+                    Highly Compressed
+                </a>
 
             </div>
 
         </div>
-
-    </section>
-
-
-    <!-- INSTALLATION VIDEO -->
-
-    <section class="section">
-
-        <h2>MUST WATCH INSTALLATION VIDEO</h2>
-
-        <div class="video-box">
-
-            <iframe
-                src="YOUR_VIDEO_EMBED_URL"
-                title="Call of Duty Installation Guide"
-                allowfullscreen>
-            </iframe>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section class="section">
-
-        <h2>ABOUT GAME</h2>
-
-        <p>
-            Call of Duty is a first-person shooter set during World
-            War II. The campaign follows soldiers from different
-            Allied forces as they participate in major military
-            operations.
-        </p>
-
-        <br>
-
-        <p>
-            Players experience infantry combat, vehicle sections,
-            historical environments and a variety of missions inspired
-            by events from the Second World War.
-        </p>
-
-    </section>
-
-
-    <!-- FEATURES -->
-
-    <section class="section">
-
-        <h2>FEATURES</h2>
-
-        <div class="features">
-
-            <div class="feature">
-                World War II campaign
-            </div>
-
-            <div class="feature">
-                Multiple Allied forces
-            </div>
-
-            <div class="feature">
-                Story-driven missions
-            </div>
-
-            <div class="feature">
-                Classic first-person shooter gameplay
-            </div>
-
-            <div class="feature">
-                Historical battle locations
-            </div>
-
-            <div class="feature">
-                Classic Call of Duty experience
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- MINIMUM REQUIREMENTS -->
-
-    <section class="section">
-
-        <h2>MINIMUM REQUIREMENTS</h2>
-
-        <div class="requirements">
-
-            <div class="requirement-box">
-
-                <h3>Minimum</h3>
-
-                <p>
-                    <strong>OS:</strong>
-                    Windows 98 / ME / 2000 / XP
-                </p>
-
-                <p>
-                    <strong>CPU:</strong>
-                    Pentium III 600 MHz
-                </p>
-
-                <p>
-                    <strong>RAM:</strong>
-                    128 MB
-                </p>
-
-                <p>
-                    <strong>GPU:</strong>
-                    32 MB DirectX 9 compatible video card
-                </p>
-
-                <p>
-                    <strong>DirectX:</strong>
-                    Version 9.0
-                </p>
-
-                <p>
-                    <strong>Storage:</strong>
-                    1.4 GB
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- RECOMMENDED REQUIREMENTS -->
-
-    <section class="section">
-
-        <h2>RECOMMENDED REQUIREMENTS</h2>
-
-        <div class="requirements">
-
-            <div class="requirement-box">
-
-                <h3>Recommended</h3>
-
-                <p>
-                    <strong>OS:</strong>
-                    Windows XP or later
-                </p>
-
-                <p>
-                    <strong>CPU:</strong>
-                    Pentium 4 1.8 GHz
-                </p>
-
-                <p>
-                    <strong>RAM:</strong>
-                    512 MB
-                </p>
-
-                <p>
-                    <strong>GPU:</strong>
-                    64 MB DirectX 9 compatible video card
-                </p>
-
-                <p>
-                    <strong>DirectX:</strong>
-                    Version 9.0
-                </p>
-
-                <p>
-                    <strong>Storage:</strong>
-                    1.4 GB
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- TAGLINE -->
-
-    <div class="tagline">
-
-        <strong>
-            NO ONE FIGHTS ALONE.
-        </strong>
-
-        FIGHT • SURVIVE • COMPLETE THE MISSION
-
-        <br>
-
-        QEVRANO PC GAMES
 
     </div>
 
-</main>
+</section>
+
+<!-- SCREENSHOTS -->
+
+<section class="section">
+
+    <h2>SCREENSHOTS</h2>
+
+    <div class="screenshot-area">
+
+        <div class="screenshots">
+
+            <img
+                src="./images/cod-1.jpg"
+                alt="Call of Duty Screenshot 1"
+                onclick="openModal(this.src)"
+            >
+
+            <img
+                src="./images/cod-2.jpg"
+                alt="Call of Duty Screenshot 2"
+                onclick="openModal(this.src)"
+            >
+
+            <img
+                src="./images/cod-3.jpg"
+                alt="Call of Duty Screenshot 3"
+                onclick="openModal(this.src)"
+            >
+
+            <img
+                src="./images/cod-4.jpg"
+                alt="Call of Duty Screenshot 4"
+                onclick="openModal(this.src)"
+            >
+
+        </div>
+
+        <div class="big-ad">
+
+            <strong>ADVERTISEMENT</strong>
+
+            <span>BIG AD SPACE</span>
+
+            <br>
+
+            <small>300 × 600</small>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- INSTALLATION VIDEO -->
+
+<section class="section">
+
+    <h2>MUST WATCH INSTALLATION VIDEO</h2>
+
+    <div class="video-box">
+
+        <iframe
+            src="YOUR_VIDEO_EMBED_URL"
+            title="Call of Duty Installation Guide"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section">
+
+    <h2>ABOUT GAME</h2>
+
+    <p>
+        Call of Duty is a first-person shooter set during World
+        War II. The campaign follows soldiers from different
+        Allied forces as they participate in major military
+        operations.
+    </p>
+
+    <br>
+
+    <p>
+        Players experience infantry combat, vehicle sections,
+        historical environments and a variety of missions inspired
+        by events from the Second World War.
+    </p>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="section">
+
+    <h2>FEATURES</h2>
+
+    <div class="features">
+
+        <div class="feature">
+            World War II campaign
+        </div>
+
+        <div class="feature">
+            Multiple Allied forces
+        </div>
+
+        <div class="feature">
+            Story-driven missions
+        </div>
+
+        <div class="feature">
+            Classic first-person shooter gameplay
+        </div>
+
+        <div class="feature">
+            Historical battle locations
+        </div>
+
+        <div class="feature">
+            Classic Call of Duty experience
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MINIMUM REQUIREMENTS -->
+
+<section class="section">
+
+    <h2>MINIMUM REQUIREMENTS</h2>
+
+    <div class="requirements">
+
+        <div class="requirement-box">
+
+            <h3>Minimum</h3>
+
+            <p>
+                <strong>OS:</strong>
+                Windows 98 / ME / 2000 / XP
+            </p>
+
+            <p>
+                <strong>CPU:</strong>
+                Pentium III 600 MHz
+            </p>
+
+            <p>
+                <strong>RAM:</strong>
+                128 MB
+            </p>
+
+            <p>
+                <strong>GPU:</strong>
+                32 MB DirectX 9 compatible video card
+            </p>
+
+            <p>
+                <strong>DirectX:</strong>
+                Version 9.0
+            </p>
+
+            <p>
+                <strong>Storage:</strong>
+                1.4 GB
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- RECOMMENDED REQUIREMENTS -->
+
+<section class="section">
+
+    <h2>RECOMMENDED REQUIREMENTS</h2>
+
+    <div class="requirements">
+
+        <div class="requirement-box">
+
+            <h3>Recommended</h3>
+
+            <p>
+                <strong>OS:</strong>
+                Windows XP or later
+            </p>
+
+            <p>
+                <strong>CPU:</strong>
+                Pentium 4 1.8 GHz
+            </p>
+
+            <p>
+                <strong>RAM:</strong>
+                512 MB
+            </p>
+
+            <p>
+                <strong>GPU:</strong>
+                64 MB DirectX 9 compatible video card
+            </p>
+
+            <p>
+                <strong>DirectX:</strong>
+                Version 9.0
+            </p>
+
+            <p>
+                <strong>Storage:</strong>
+                1.4 GB
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TAGLINE -->
+
+<div class="tagline">
+
+    <strong>
+        NO ONE FIGHTS ALONE.
+    </strong>
+
+    FIGHT • SURVIVE • COMPLETE THE MISSION
+
+    <br>
+
+    QEVRANO PC GAMES
+
+</div>
 ```
+
+</main>
 
 </div>
 
@@ -903,21 +910,25 @@ footer a:hover{
     onclick="closeModal()"
 >
 
-```
 <span
-    class="close"
-    onclick="closeModal()"
+class="close"
+onclick="closeModal()"
+
 >
-    &times;
+
+```
+&times;
+```
+
 </span>
 
 <img
-    id="modalImage"
-    src=""
-    alt="Call of Duty Screenshot"
-    onclick="event.stopPropagation()"
+id="modalImage"
+src=""
+alt="Call of Duty Screenshot"
+onclick="event.stopPropagation()"
+
 >
-```
 
 </div>
 
@@ -925,19 +936,14 @@ footer a:hover{
 
 <footer>
 
-```
 © 2026 QEVRANO PC GAMES — All Rights Reserved
 
 <br><br>
 
 <a href="./privacy.html">Privacy Policy</a>
-|
-<a href="./about.html">About</a>
-|
-<a href="./contact.html">Contact</a>
-|
-<a href="./terms.html">Terms</a>
-```
+| <a href="./about.html">About</a>
+| <a href="./contact.html">Contact</a>
+| <a href="./terms.html">Terms</a>
 
 </footer>
 
