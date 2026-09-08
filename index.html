@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -174,10 +175,6 @@ nav a:hover{
     color:#fff;
 }
 
-.dashboard .red{
-    color:#d80000;
-}
-
 /* ================= OVERLAY ================= */
 
 .overlay{
@@ -195,12 +192,12 @@ nav a:hover{
 /* ================= HERO ================= */
 
 .hero{
-    min-height:470px;
+    min-height:330px;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:80px 20px;
+    padding:45px 20px;
     background:
         linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.88)),
         url("./images/acbrotherhood.jpg") center/cover;
@@ -211,8 +208,8 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:52px;
-    margin-bottom:14px;
+    font-size:46px;
+    margin-bottom:10px;
     letter-spacing:1px;
 }
 
@@ -222,13 +219,13 @@ nav a:hover{
 
 .hero p{
     color:#bbb;
-    font-size:16px;
-    line-height:1.7;
-    margin-bottom:28px;
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:18px;
 }
 
 .search-box{
-    max-width:600px;
+    max-width:560px;
     margin:auto;
     display:flex;
     gap:8px;
@@ -237,7 +234,7 @@ nav a:hover{
 .search-box input{
     flex:1;
     min-width:0;
-    padding:14px 16px;
+    padding:11px 14px;
     background:#111;
     border:1px solid #333;
     color:#fff;
@@ -250,7 +247,7 @@ nav a:hover{
 }
 
 .search-box button{
-    padding:0 22px;
+    padding:0 18px;
     border:0;
     border-radius:5px;
     background:#d80000;
@@ -268,13 +265,13 @@ nav a:hover{
 .intro{
     width:90%;
     max-width:1400px;
-    margin:55px auto 30px;
+    margin:25px auto 15px;
     text-align:center;
 }
 
 .intro h2{
-    font-size:30px;
-    margin-bottom:14px;
+    font-size:28px;
+    margin-bottom:8px;
 }
 
 .intro h2 span{
@@ -285,7 +282,8 @@ nav a:hover{
     max-width:850px;
     margin:auto;
     color:#999;
-    line-height:1.7;
+    line-height:1.55;
+    font-size:14px;
 }
 
 /* ================= STATS ================= */
@@ -293,7 +291,7 @@ nav a:hover{
 .stats{
     width:90%;
     max-width:1000px;
-    margin:35px auto;
+    margin:20px auto;
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:15px;
@@ -303,14 +301,14 @@ nav a:hover{
     background:#101010;
     border:1px solid #252525;
     border-radius:7px;
-    padding:20px;
+    padding:16px;
     text-align:center;
 }
 
 .stat h3{
     color:#d80000;
-    font-size:27px;
-    margin-bottom:6px;
+    font-size:25px;
+    margin-bottom:5px;
 }
 
 .stat p{
@@ -323,7 +321,7 @@ nav a:hover{
 .container{
     width:90%;
     max-width:1400px;
-    margin:45px auto;
+    margin:25px auto;
     display:grid;
     grid-template-columns:minmax(0,1fr) 300px;
     gap:30px;
@@ -340,7 +338,7 @@ main{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:22px;
+    margin-bottom:18px;
 }
 
 .section-title h2{
@@ -357,7 +355,7 @@ main{
     display:flex;
     gap:10px;
     flex-wrap:wrap;
-    margin-bottom:25px;
+    margin-bottom:22px;
 }
 
 .filters select{
@@ -383,6 +381,7 @@ main{
 }
 
 /* ================= GAME CARD ================= */
+/* CARD SIZE LEFT UNCHANGED */
 
 .game-card{
     background:#101010;
@@ -616,7 +615,7 @@ main{
 /* ================= FOOTER ================= */
 
 footer{
-    margin-top:70px;
+    margin-top:60px;
     padding:35px 20px;
     background:#090909;
     border-top:1px solid #222;
@@ -682,8 +681,8 @@ footer p{
     }
 
     .hero{
-        min-height:420px;
-        padding:70px 18px;
+        min-height:380px;
+        padding:55px 18px;
     }
 
     .hero h1{
@@ -741,6 +740,60 @@ footer p{
 
 }
 
+/* ================================================= */
+/* 1366x786 / LARGE LAPTOP: PULL EVERYTHING UP      */
+/* GAME CARD SIZE IS NOT CHANGED                     */
+/* ================================================= */
+
+@media(min-width:1100px){
+
+    .hero{
+        min-height:260px;
+        padding:25px 20px;
+    }
+
+    .hero h1{
+        margin-bottom:6px;
+    }
+
+    .hero p{
+        margin-bottom:10px;
+    }
+
+    .intro{
+        margin:12px auto 8px;
+    }
+
+    .intro h2{
+        margin-bottom:5px;
+    }
+
+    .intro p{
+        line-height:1.35;
+    }
+
+    .stats{
+        margin:10px auto;
+    }
+
+    .stat{
+        padding:12px;
+    }
+
+    .container{
+        margin:15px auto;
+    }
+
+    .section-title{
+        margin-bottom:12px;
+    }
+
+    .filters{
+        margin-bottom:15px;
+    }
+
+}
+
 </style>
 </head>
 
@@ -780,9 +833,15 @@ footer p{
 <aside class="dashboard" id="dashboard">
 
     <div class="dashboard-header">
-        <h2>QEVRANO <span>MENU</span></h2>
 
-        <button class="close-btn" onclick="closeDashboard()">×</button>
+        <h2>
+            QEVRANO <span>MENU</span>
+        </h2>
+
+        <button class="close-btn" onclick="closeDashboard()">
+            ×
+        </button>
+
     </div>
 
 
@@ -1050,12 +1109,10 @@ footer p{
 
         <!-- 1 FAR CRY 2 -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Action"
-            data-order="1"
-        >
+            data-order="1">
 
             <div class="game-image">
 
@@ -1072,9 +1129,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Far Cry 2
-                </h3>
+                <h3>Far Cry 2</h3>
 
                 <p>
                     Action adventure first-person shooter.
@@ -1098,12 +1153,10 @@ footer p{
 
         <!-- 2 FAR CRY 3 -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Action"
-            data-order="2"
-        >
+            data-order="2">
 
             <div class="game-image">
 
@@ -1120,9 +1173,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Far Cry 3
-                </h3>
+                <h3>Far Cry 3</h3>
 
                 <p>
                     Open-world action adventure shooter.
@@ -1146,12 +1197,10 @@ footer p{
 
         <!-- 3 ASSASSIN'S CREED II -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Adventure"
-            data-order="3"
-        >
+            data-order="3">
 
             <div class="game-image">
 
@@ -1168,9 +1217,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Assassin's Creed II
-                </h3>
+                <h3>Assassin's Creed II</h3>
 
                 <p>
                     Historical action adventure experience.
@@ -1194,12 +1241,10 @@ footer p{
 
         <!-- 4 WARFRAME -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="free"
             data-category="Action"
-            data-order="4"
-        >
+            data-order="4">
 
             <div class="game-image">
 
@@ -1216,9 +1261,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Warframe
-                </h3>
+                <h3>Warframe</h3>
 
                 <p>
                     Free online action game.
@@ -1242,12 +1285,10 @@ footer p{
 
         <!-- 5 TRACKMANIA -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="free"
             data-category="Racing"
-            data-order="5"
-        >
+            data-order="5">
 
             <div class="game-image">
 
@@ -1264,9 +1305,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Trackmania
-                </h3>
+                <h3>Trackmania</h3>
 
                 <p>
                     Fast-paced racing experience.
@@ -1290,12 +1329,10 @@ footer p{
 
         <!-- 6 ROCKET LEAGUE -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="free"
             data-category="Sports"
-            data-order="6"
-        >
+            data-order="6">
 
             <div class="game-image">
 
@@ -1312,9 +1349,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Rocket League
-                </h3>
+                <h3>Rocket League</h3>
 
                 <p>
                     Football meets high-speed racing.
@@ -1338,12 +1373,10 @@ footer p{
 
         <!-- 7 GTA V -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Open World"
-            data-order="7"
-        >
+            data-order="7">
 
             <div class="game-image">
 
@@ -1360,9 +1393,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    GTA V
-                </h3>
+                <h3>GTA V</h3>
 
                 <p>
                     Open-world action adventure game.
@@ -1386,12 +1417,10 @@ footer p{
 
         <!-- 8 GTA IV -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Open World"
-            data-order="8"
-        >
+            data-order="8">
 
             <div class="game-image">
 
@@ -1408,9 +1437,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    GTA IV
-                </h3>
+                <h3>GTA IV</h3>
 
                 <p>
                     Open-world action experience.
@@ -1434,12 +1461,10 @@ footer p{
 
         <!-- 9 FIFA -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Sports"
-            data-order="9"
-        >
+            data-order="9">
 
             <div class="game-image">
 
@@ -1456,9 +1481,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    FIFA
-                </h3>
+                <h3>FIFA</h3>
 
                 <p>
                     Football sports gaming experience.
@@ -1482,12 +1505,10 @@ footer p{
 
         <!-- 10 DON BRADMAN CRICKET -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Sports"
-            data-order="10"
-        >
+            data-order="10">
 
             <div class="game-image">
 
@@ -1504,9 +1525,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Don Bradman Cricket
-                </h3>
+                <h3>Don Bradman Cricket</h3>
 
                 <p>
                     Cricket sports simulation game.
@@ -1530,12 +1549,10 @@ footer p{
 
         <!-- 11 CALL OF DUTY 1 -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Action"
-            data-order="11"
-        >
+            data-order="11">
 
             <div class="game-image">
 
@@ -1552,9 +1569,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Call of Duty 1
-                </h3>
+                <h3>Call of Duty 1</h3>
 
                 <p>
                     Classic first-person action game.
@@ -1578,12 +1593,10 @@ footer p{
 
         <!-- 12 THE WITCHER 2 -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Adventure"
-            data-order="12"
-        >
+            data-order="12">
 
             <div class="game-image">
 
@@ -1600,9 +1613,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    The Witcher 2
-                </h3>
+                <h3>The Witcher 2</h3>
 
                 <p>
                     Fantasy action role-playing adventure.
@@ -1626,12 +1637,10 @@ footer p{
 
         <!-- 13 GTA VI -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Open World"
-            data-order="13"
-        >
+            data-order="13">
 
             <div class="game-image">
 
@@ -1648,9 +1657,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    GTA VI
-                </h3>
+                <h3>GTA VI</h3>
 
                 <p>
                     Next-generation open-world action.
@@ -1674,12 +1681,10 @@ footer p{
 
         <!-- 14 ASSASSIN'S CREED SYNDICATE -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Adventure"
-            data-order="14"
-        >
+            data-order="14">
 
             <div class="game-image">
 
@@ -1696,9 +1701,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Assassin's Creed Syndicate
-                </h3>
+                <h3>Assassin's Creed Syndicate</h3>
 
                 <p>
                     Action adventure in Victorian London.
@@ -1722,12 +1725,10 @@ footer p{
 
         <!-- 15 NEED FOR SPEED II -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="paid"
             data-category="Racing"
-            data-order="15"
-        >
+            data-order="15">
 
             <div class="game-image">
 
@@ -1744,9 +1745,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Need for Speed II
-                </h3>
+                <h3>Need for Speed II</h3>
 
                 <p>
                     Classic arcade racing experience.
@@ -1770,12 +1769,10 @@ footer p{
 
         <!-- 16 FALL GUYS -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="free"
             data-category="Action"
-            data-order="16"
-        >
+            data-order="16">
 
             <div class="game-image">
 
@@ -1792,9 +1789,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Fall Guys
-                </h3>
+                <h3>Fall Guys</h3>
 
                 <p>
                     Colorful multiplayer obstacle game.
@@ -1818,12 +1813,10 @@ footer p{
 
         <!-- 17 STUMBLE GUYS -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="free"
             data-category="Action"
-            data-order="17"
-        >
+            data-order="17">
 
             <div class="game-image">
 
@@ -1840,9 +1833,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Stumble Guys
-                </h3>
+                <h3>Stumble Guys</h3>
 
                 <p>
                     Fun multiplayer knockout game.
@@ -1866,12 +1857,10 @@ footer p{
 
         <!-- 18 PALIA -->
 
-        <article
-            class="game-card"
+        <article class="game-card"
             data-price="free"
             data-category="Adventure"
-            data-order="18"
-        >
+            data-order="18">
 
             <div class="game-image">
 
@@ -1888,9 +1877,7 @@ footer p{
 
             <div class="game-info">
 
-                <h3>
-                    Palia
-                </h3>
+                <h3>Palia</h3>
 
                 <p>
                     Relaxing multiplayer adventure world.
@@ -1911,7 +1898,6 @@ footer p{
 
         </article>
 
-
     </div>
 
 
@@ -1922,19 +1908,15 @@ footer p{
         id="pagination"
     ></div>
 
-
 </main>
 
 
 <!-- ================= RIGHT SIDEBAR ================= -->
 
-<aside
-    class="sidebar"
-    id="popular"
->
+<aside class="sidebar" id="popular">
 
 
-    <!-- SEARCH GAMES -->
+    <!-- SEARCH -->
 
     <div class="sidebar-search">
 
@@ -1960,7 +1942,7 @@ footer p{
     </div>
 
 
-    <!-- POPULAR GAMES -->
+    <!-- POPULAR -->
 
     <div class="popular-section">
 
@@ -1969,10 +1951,7 @@ footer p{
         </h3>
 
 
-        <a
-            class="popular-game"
-            href="./gtavi.html"
-        >
+        <a class="popular-game" href="./gtavi.html">
 
             <img
                 src="./images/gtavi.jpg"
@@ -1981,23 +1960,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    GTA VI
-                </h4>
-
-                <p>
-                    Open World
-                </p>
+                <h4>GTA VI</h4>
+                <p>Open World</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./acs.html"
-        >
+        <a class="popular-game" href="./acs.html">
 
             <img
                 src="./images/acs.jpg"
@@ -2006,23 +1977,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    Assassin's Creed Syndicate
-                </h4>
-
-                <p>
-                    Adventure
-                </p>
+                <h4>Assassin's Creed Syndicate</h4>
+                <p>Adventure</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./nfs2.html"
-        >
+        <a class="popular-game" href="./nfs2.html">
 
             <img
                 src="./images/nfs2.jpg"
@@ -2031,23 +1994,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    Need for Speed II
-                </h4>
-
-                <p>
-                    Racing
-                </p>
+                <h4>Need for Speed II</h4>
+                <p>Racing</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./warframe.html"
-        >
+        <a class="popular-game" href="./warframe.html">
 
             <img
                 src="./images/warframe.jpg"
@@ -2056,23 +2011,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    Warframe
-                </h4>
-
-                <p>
-                    Free
-                </p>
+                <h4>Warframe</h4>
+                <p>Free</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./trackmania.html"
-        >
+        <a class="popular-game" href="./trackmania.html">
 
             <img
                 src="./images/trackmania.jpg"
@@ -2081,23 +2028,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    Trackmania
-                </h4>
-
-                <p>
-                    Free Racing
-                </p>
+                <h4>Trackmania</h4>
+                <p>Free Racing</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./rocketleague.html"
-        >
+        <a class="popular-game" href="./rocketleague.html">
 
             <img
                 src="./images/rocketleague.jpg"
@@ -2106,23 +2045,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    Rocket League
-                </h4>
-
-                <p>
-                    Sports
-                </p>
+                <h4>Rocket League</h4>
+                <p>Sports</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./fallguys.html"
-        >
+        <a class="popular-game" href="./fallguys.html">
 
             <img
                 src="./images/fallguys.jpg"
@@ -2131,23 +2062,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    Fall Guys
-                </h4>
-
-                <p>
-                    Free
-                </p>
+                <h4>Fall Guys</h4>
+                <p>Free</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./stumbleguys.html"
-        >
+        <a class="popular-game" href="./stumbleguys.html">
 
             <img
                 src="./images/stumbleguys.jpg"
@@ -2156,23 +2079,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    Stumble Guys
-                </h4>
-
-                <p>
-                    Free
-                </p>
+                <h4>Stumble Guys</h4>
+                <p>Free</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./palia.html"
-        >
+        <a class="popular-game" href="./palia.html">
 
             <img
                 src="./images/palia.jpg"
@@ -2181,23 +2096,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    Palia
-                </h4>
-
-                <p>
-                    Free Adventure
-                </p>
+                <h4>Palia</h4>
+                <p>Free Adventure</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./farcry3.html"
-        >
+        <a class="popular-game" href="./farcry3.html">
 
             <img
                 src="./images/farcry3.jpg"
@@ -2206,23 +2113,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    Far Cry 3
-                </h4>
-
-                <p>
-                    Action
-                </p>
+                <h4>Far Cry 3</h4>
+                <p>Action</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./gta5.html"
-        >
+        <a class="popular-game" href="./gta5.html">
 
             <img
                 src="./images/gta5.jpg"
@@ -2231,23 +2130,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    GTA V
-                </h4>
-
-                <p>
-                    Open World
-                </p>
+                <h4>GTA V</h4>
+                <p>Open World</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./gta4.html"
-        >
+        <a class="popular-game" href="./gta4.html">
 
             <img
                 src="./images/gta4.jpg"
@@ -2256,23 +2147,15 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    GTA IV
-                </h4>
-
-                <p>
-                    Open World
-                </p>
+                <h4>GTA IV</h4>
+                <p>Open World</p>
 
             </div>
 
         </a>
 
 
-        <a
-            class="popular-game"
-            href="./witcher2.html"
-        >
+        <a class="popular-game" href="./witcher2.html">
 
             <img
                 src="./images/witcher2.jpg"
@@ -2281,13 +2164,8 @@ footer p{
 
             <div class="popular-game-info">
 
-                <h4>
-                    The Witcher 2
-                </h4>
-
-                <p>
-                    Adventure
-                </p>
+                <h4>The Witcher 2</h4>
+                <p>Adventure</p>
 
             </div>
 
@@ -2492,9 +2370,7 @@ function closeDashboard(){
 document.addEventListener("keydown",function(event){
 
     if(event.key === "Escape"){
-
         closeDashboard();
-
     }
 
 });
@@ -2536,9 +2412,6 @@ function getFilteredGames(){
 
 function renderGames(){
 
-    const grid =
-        document.getElementById("gamesGrid");
-
     const pagination =
         document.getElementById("pagination");
 
@@ -2556,9 +2429,7 @@ function renderGames(){
 
 
     if(currentPage > totalPages){
-
         currentPage = totalPages;
-
     }
 
 
@@ -2581,9 +2452,7 @@ function renderGames(){
     cards.forEach(card => {
 
         const order =
-            Number(
-                card.dataset.order
-            );
+            Number(card.dataset.order);
 
         const game =
             games[order - 1];
@@ -2613,10 +2482,9 @@ function renderGames(){
 
         button.textContent = i;
 
+
         if(i === currentPage){
-
             button.classList.add("active");
-
         }
 
 
@@ -2637,25 +2505,6 @@ function renderGames(){
 
 
         pagination.appendChild(button);
-
-    }
-
-
-    if(filtered.length === 0){
-
-        grid.innerHTML =
-            "<p style='grid-column:1/-1;color:#777;padding:30px 0;text-align:center;'>No games found.</p>";
-
-    }
-    else{
-
-        if(
-            !grid.querySelector(".game-card")
-        ){
-
-            location.reload();
-
-        }
 
     }
 
@@ -2704,25 +2553,7 @@ function showAllGames(){
 
 function showFeatured(){
 
-    document
-        .getElementById("priceFilter")
-        .value = "all";
-
-    document
-        .getElementById("categoryFilter")
-        .value = "all";
-
-    currentPage = 1;
-
-    renderGames();
-
-    closeDashboard();
-
-    document
-        .getElementById("games")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+    showAllGames();
 
 }
 
@@ -2731,18 +2562,14 @@ function showFeatured(){
 
 function showPopular(){
 
-    showAllGames();
+    closeDashboard();
 
-    setTimeout(function(){
-
-        document
-            .getElementById("popular")
-            ?.scrollIntoView({
-                behavior:"smooth",
-                block:"start"
-            });
-
-    },100);
+    document
+        .getElementById("popular")
+        ?.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
 
 }
 
@@ -2810,13 +2637,9 @@ function showPaidGames(){
 }
 
 
-/* ================= PRICE FILTER ================= */
+/* ================= PRICE ================= */
 
 function openPriceFilter(){
-
-    document
-        .getElementById("priceFilter")
-        .focus();
 
     closeDashboard();
 
@@ -2825,6 +2648,14 @@ function openPriceFilter(){
         .scrollIntoView({
             behavior:"smooth"
         });
+
+    setTimeout(function(){
+
+        document
+            .getElementById("priceFilter")
+            .focus();
+
+    },500);
 
 }
 
@@ -2869,9 +2700,7 @@ function searchGame(){
 
 
     if(!input){
-
         return;
-
     }
 
 
@@ -2912,9 +2741,7 @@ function sidebarSearchGame(){
 
 
     if(!input){
-
         return;
-
     }
 
 
@@ -2950,3 +2777,4 @@ renderGames();
 
 </body>
 </html>
+```
