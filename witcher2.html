@@ -1,10 +1,9 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>The Witcher 2 - QEVRANO PC GAMES</title>
 
 <style>
@@ -20,423 +19,296 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    color:#ddd;
-    background:#050505;
+    color:#eee;
+    background:#080808;
+    line-height:1.6;
 }
 
-/* ================= HEADER ================= */
-
+/* HEADER */
 header{
-    height:72px;
-    background:rgba(0,0,0,.95);
-    border-bottom:1px solid #d00000;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 7%;
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 4px 20px rgba(0,0,0,.5);
+    height:72px;
+    background:rgba(5,5,5,.96);
+    border-bottom:1px solid #222;
+    display:flex;
+    align-items:center;
+}
+
+.nav{
+    width:86%;
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
+    font-size:24px;
+    font-weight:900;
+    letter-spacing:2px;
     color:#fff;
-    font-size:23px;
-    font-weight:bold;
-    text-decoration:none;
-    letter-spacing:1px;
 }
 
 .logo span{
-    color:#e00000;
-}
-
-.header-right{
-    display:flex;
-    align-items:center;
-    gap:22px;
-}
-
-nav{
-    display:flex;
-    gap:26px;
+    color:#e50914;
 }
 
 nav a{
     color:#ddd;
     text-decoration:none;
+    margin-left:28px;
     font-size:14px;
     font-weight:bold;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#e00000;
-}
-
-/* ================= SEARCH ================= */
-
-.search-container{
-    position:relative;
-}
-
-.search-icon{
-    width:40px;
-    height:40px;
-    border:1px solid #e00000;
-    background:#d00000;
-    color:#fff;
-    font-size:19px;
-    border-radius:5px;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
     transition:.25s;
 }
 
-.search-icon:hover{
-    background:#a80000;
+nav a:hover{
+    color:#e50914;
 }
 
-.header-search{
-    display:none;
-    position:absolute;
-    right:0;
-    top:48px;
-    width:280px;
-    background:#101014;
-    border:1px solid rgba(220,0,0,.55);
-    box-shadow:0 10px 35px rgba(0,0,0,.7);
-    z-index:3000;
-}
-
-.header-search.active{
-    display:block;
-}
-
-.header-search input{
-    width:100%;
-    padding:12px 14px;
-    border:none;
-    outline:none;
-    background:#fff;
-    color:#111;
-    font-size:14px;
-}
-
-.search-results{
-    display:none;
-    max-height:300px;
-    overflow-y:auto;
-}
-
-.search-result{
-    display:block;
-    padding:12px 14px;
-    color:#fff;
-    text-decoration:none;
-    border-top:1px solid rgba(255,255,255,.08);
-    font-size:14px;
-    transition:.2s;
-}
-
-.search-result:hover{
-    background:#c00000;
-}
-
-.search-no-result{
-    padding:12px 14px;
-    color:#999;
-    font-size:14px;
-    border-top:1px solid rgba(255,255,255,.08);
-}
-
-/* ================= HERO ================= */
-
+/* HERO */
 .hero{
-    min-height:590px;
+    min-height:650px;
+    position:relative;
     display:flex;
     align-items:center;
-    position:relative;
     overflow:hidden;
-
     background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.94) 0%,
-            rgba(0,0,0,.72) 48%,
-            rgba(0,0,0,.88) 100%
-        ),
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,.10),
-            rgba(0,0,0,.82)
-        ),
+        linear-gradient(to right,rgba(0,0,0,.9),rgba(0,0,0,.48),rgba(0,0,0,.82)),
+        linear-gradient(to top,rgba(8,8,8,1),transparent 35%),
         url("./images/witcher2-bg.jpg") center/cover no-repeat;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(208,0,0,.07),
-            transparent 45%
-        );
-    pointer-events:none;
 }
 
 .hero-content{
     width:86%;
     max-width:1250px;
     margin:auto;
-    position:relative;
-    z-index:2;
-    padding:80px 0;
+    padding:100px 0 80px;
 }
 
 .badge{
     display:inline-block;
+    padding:7px 14px;
+    background:#e50914;
     color:#fff;
-    background:#d00000;
-    padding:7px 13px;
-    border-radius:3px;
     font-size:12px;
     font-weight:bold;
     letter-spacing:1px;
+    border-radius:3px;
     margin-bottom:18px;
 }
 
 .hero h1{
-    color:#fff;
-    font-size:58px;
-    line-height:1.05;
+    font-size:clamp(48px,8vw,100px);
+    line-height:.95;
+    font-weight:900;
     text-transform:uppercase;
-    margin-bottom:15px;
-    max-width:850px;
-    text-shadow:0 4px 20px rgba(0,0,0,.8);
+    letter-spacing:-3px;
+    max-width:900px;
 }
 
 .hero h1 span{
-    color:#e00000;
+    color:#e50914;
 }
 
-.subtitle{
-    color:#e00000;
-    font-size:14px;
+.hero-subtitle{
+    margin-top:18px;
+    font-size:18px;
+    color:#ccc;
     font-weight:bold;
     letter-spacing:1px;
-    margin-bottom:20px;
 }
 
 .hero-description{
     max-width:720px;
-    color:#ccc;
+    margin-top:18px;
+    color:#bbb;
     font-size:16px;
-    line-height:1.8;
-    margin-bottom:25px;
-}
-
-.game-meta{
-    display:flex;
-    flex-wrap:wrap;
-    gap:9px;
-    margin-bottom:25px;
 }
 
 .meta{
-    background:rgba(0,0,0,.58);
-    border:1px solid rgba(208,0,0,.35);
-    padding:9px 13px;
-    border-radius:5px;
-    font-size:13px;
-    color:#ddd;
-    backdrop-filter:blur(4px);
-}
-
-.download-buttons{
     display:flex;
     flex-wrap:wrap;
     gap:12px;
-    align-items:flex-start;
+    margin-top:25px;
 }
 
-.download-btn{
+.meta span{
+    padding:8px 13px;
+    border:1px solid #333;
+    background:rgba(0,0,0,.5);
+    color:#ccc;
+    font-size:13px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
+
+.btn{
     display:inline-block;
-    padding:13px 20px;
-    border-radius:5px;
+    padding:13px 22px;
     text-decoration:none;
     font-weight:bold;
     font-size:14px;
-    transition:.3s;
+    border-radius:3px;
+    transition:.25s;
 }
 
-.official{
-    background:#d00000;
-    color:#fff;
-    border:1px solid #d00000;
-}
-
-.official:hover{
-    background:#fff;
-    color:#000;
-    border-color:#fff;
-}
-
-.download-btn:not(.official){
-    background:#111;
-    border:1px solid #d00000;
-    color:#e00000;
-}
-
-.download-btn:not(.official):hover{
-    background:#d00000;
+.btn-red{
+    background:#e50914;
     color:#fff;
 }
 
-.compressed-link{
-    display:block;
-    margin-top:9px;
-    color:#e00000;
-    font-size:13px;
-    font-weight:bold;
-    text-decoration:underline;
+.btn-red:hover{
+    background:#b90710;
 }
 
-.compressed-link:hover{
+.btn-dark{
+    background:#151515;
     color:#fff;
+    border:1px solid #444;
 }
 
-/* ================= MAIN ================= */
+.btn-dark:hover{
+    border-color:#e50914;
+    color:#e50914;
+}
 
+/* GENERAL */
 .container{
     width:86%;
     max-width:1250px;
-    margin:35px auto;
+    margin:auto;
 }
 
-.back{
-    color:#e00000;
-    text-decoration:none;
-    font-weight:bold;
-    display:inline-block;
-    margin-bottom:20px;
-    transition:.3s;
+section{
+    padding:75px 0;
 }
 
-.back:hover{
-    color:#fff;
+.section-title{
+    font-size:32px;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:28px;
 }
 
-/* ================= PANELS ================= */
+.section-title span{
+    color:#e50914;
+}
 
 .panel{
-    background:rgba(8,8,8,.95);
-    border:1px solid rgba(255,255,255,.07);
-    border-radius:9px;
-    padding:25px;
-    box-shadow:
-        0 0 30px rgba(0,0,0,.55),
-        0 0 15px rgba(208,0,0,.04);
+    background:#101010;
+    border:1px solid #222;
+    border-radius:6px;
 }
 
+/* ABOUT */
 .about-grid{
     display:grid;
     grid-template-columns:1.5fr 1fr;
-    gap:20px;
+    gap:24px;
 }
 
-/* ================= SECTIONS ================= */
-
-.section{
-    margin-top:35px;
+.about{
+    padding:30px;
 }
 
-.section h2{
-    color:#e00000;
-    font-size:21px;
-    margin-bottom:18px;
-    border-left:4px solid #d00000;
-    padding-left:12px;
-    text-transform:uppercase;
-    letter-spacing:.3px;
+.about h3{
+    font-size:22px;
+    margin-bottom:15px;
 }
 
-.section p{
+.about p{
+    color:#aaa;
+    margin-bottom:14px;
+}
+
+.info-list{
+    list-style:none;
+}
+
+.info-list li{
+    padding:10px 0;
+    border-bottom:1px solid #222;
     color:#bbb;
-    line-height:1.8;
 }
 
-/* ================= SCREENSHOTS ================= */
+.info-list strong{
+    color:#fff;
+}
 
-.screenshot-area{
+/* SCREENSHOTS */
+.screens-section{
+    background:#0b0b0b;
+}
+
+.screens-layout{
     display:grid;
-    grid-template-columns:minmax(0,1fr) 300px;
-    gap:20px;
+    grid-template-columns:1fr 300px;
+    gap:25px;
     align-items:start;
 }
 
-.screenshots{
+.screens{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:18px;
 }
 
-.screenshots img{
-    width:100%;
-    height:190px;
-    object-fit:cover;
-    border-radius:7px;
+.screenshot{
+    position:relative;
+    overflow:hidden;
+    border-radius:5px;
+    border:1px solid #292929;
     cursor:pointer;
-    border:1px solid rgba(255,255,255,.09);
-    transition:.3s;
+    background:#111;
 }
 
-.screenshots img:hover{
-    transform:scale(1.02);
-    border-color:#d00000;
-    box-shadow:0 0 18px rgba(208,0,0,.2);
+.screenshot img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+    transition:.35s;
 }
 
-/* ================= ADVERTISEMENT ================= */
+.screenshot:hover img{
+    transform:scale(1.04);
+    opacity:.78;
+}
 
-.big-ad{
+.ad-box{
     width:300px;
     height:600px;
-    background:rgba(255,255,255,.025);
-    border:1px dashed #555;
-    border-radius:8px;
-
+    background:#111;
+    border:1px solid #292929;
     display:flex;
-    flex-direction:column;
     align-items:center;
     justify-content:center;
-
+    color:#555;
+    font-size:13px;
     text-align:center;
-    color:#666;
-    padding:20px;
-    font-size:14px;
 }
 
-.big-ad strong{
-    color:#888;
-    margin-bottom:10px;
+/* VIDEO */
+.video-section{
+    background:#080808;
 }
-
-/* ================= VIDEO ================= */
 
 .video-box{
     width:100%;
     aspect-ratio:16/9;
-    background:#050505;
-    border:1px solid rgba(208,0,0,.25);
-    border-radius:8px;
+    background:#000;
+    border:1px solid #292929;
     overflow:hidden;
-    box-shadow:0 0 20px rgba(0,0,0,.4);
+    border-radius:6px;
 }
 
 .video-box iframe{
@@ -445,136 +317,161 @@ nav a:hover{
     border:0;
 }
 
-/* ================= FEATURES ================= */
-
+/* FEATURES */
 .features{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
 .feature{
-    background:rgba(255,255,255,.025);
-    border:1px solid rgba(255,255,255,.07);
-    padding:15px;
-    border-radius:6px;
-    color:#ccc;
-    transition:.3s;
+    padding:25px;
+    background:#101010;
+    border:1px solid #242424;
+    border-radius:5px;
 }
 
-.feature:hover{
-    border-color:rgba(208,0,0,.4);
-    background:rgba(208,0,0,.035);
-}
-
-.feature::before{
-    content:"✓";
-    color:#e00000;
-    font-weight:bold;
-    margin-right:8px;
-}
-
-/* ================= REQUIREMENTS ================= */
-
-.requirements{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-.requirement-box{
-    background:rgba(255,255,255,.025);
-    border:1px solid rgba(255,255,255,.07);
-    border-top:2px solid #d00000;
-    border-radius:7px;
-    padding:20px;
-}
-
-.requirement-box h3{
+.feature h3{
     color:#fff;
-    margin-bottom:15px;
+    margin-bottom:8px;
+    font-size:18px;
 }
 
-.requirement-box p{
-    margin-bottom:8px;
+.feature p{
+    color:#999;
     font-size:14px;
 }
 
-.requirement-box strong{
-    color:#e00000;
+/* REQUIREMENTS */
+.requirements{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
 }
 
-/* ================= DOWNLOAD BOX ================= */
+.req-box{
+    padding:30px;
+    background:#101010;
+    border:1px solid #252525;
+    border-radius:6px;
+}
 
+.req-box h3{
+    color:#e50914;
+    font-size:21px;
+    margin-bottom:18px;
+    text-transform:uppercase;
+}
+
+.req-box p{
+    padding:9px 0;
+    border-bottom:1px solid #222;
+    color:#aaa;
+}
+
+.req-box strong{
+    color:#eee;
+}
+
+/* DOWNLOAD */
 .download-box{
-    background:
-        linear-gradient(
-            135deg,
-            rgba(208,0,0,.09),
-            rgba(255,255,255,.015)
-        );
-    border:1px solid rgba(208,0,0,.3);
-    border-radius:8px;
-    padding:25px;
+    padding:40px;
     text-align:center;
+    background:
+        linear-gradient(rgba(229,9,20,.08),rgba(229,9,20,.02)),
+        #101010;
+    border:1px solid #292929;
+    border-radius:6px;
 }
 
 .download-box h2{
-    color:#fff;
-    margin-bottom:10px;
-    border-left:0;
-    padding-left:0;
+    font-size:30px;
+    margin-bottom:12px;
 }
 
 .download-box p{
-    margin-bottom:20px;
+    color:#999;
+    margin-bottom:25px;
 }
 
-/* ================= TAGLINE ================= */
+.download-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
 
+.note{
+    margin-top:22px;
+    color:#777;
+    font-size:13px;
+}
+
+/* TAGLINE */
 .tagline{
     text-align:center;
-    margin:45px 0 10px;
-    color:#666;
-    line-height:1.8;
-    letter-spacing:1px;
+    padding:70px 20px;
+    border-top:1px solid #181818;
+    border-bottom:1px solid #181818;
 }
 
-.tagline strong{
-    display:block;
-    color:#e00000;
-    font-size:25px;
-    letter-spacing:2px;
+.tagline h2{
+    font-size:clamp(28px,5vw,55px);
+    font-weight:900;
+    letter-spacing:3px;
 }
 
-/* ================= FOOTER ================= */
+.tagline span{
+    color:#e50914;
+}
 
+/* FOOTER */
 footer{
-    text-align:center;
-    padding:30px 20px;
-    margin-top:40px;
-    color:#555;
-    font-size:13px;
-    border-top:1px solid rgba(255,255,255,.07);
+    background:#050505;
+    padding:45px 0 25px;
+    border-top:1px solid #222;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:35px;
+}
+
+footer h3{
+    margin-bottom:13px;
+}
+
+footer p,
+footer a{
+    color:#777;
+    font-size:14px;
 }
 
 footer a{
-    color:#d00000;
     text-decoration:none;
-    transition:.3s;
+    display:block;
+    margin:6px 0;
 }
 
 footer a:hover{
-    color:#fff;
-    text-decoration:underline;
+    color:#e50914;
 }
 
-/* ================= MODAL ================= */
+.copyright{
+    text-align:center;
+    color:#555;
+    font-size:13px;
+    margin-top:35px;
+    padding-top:20px;
+    border-top:1px solid #181818;
+}
 
+/* MODAL */
 .modal{
     display:none;
     position:fixed;
-    z-index:5000;
+    z-index:2000;
     inset:0;
     background:rgba(0,0,0,.94);
     align-items:center;
@@ -583,851 +480,544 @@ footer a:hover{
 }
 
 .modal img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:7px;
-    border:1px solid #d00000;
-    box-shadow:0 0 40px rgba(208,0,0,.2);
-}
-
-.modal.active{
-    display:flex;
+    max-width:95%;
+    max-height:90vh;
+    border:1px solid #333;
 }
 
 .close{
     position:absolute;
-    top:18px;
+    top:20px;
     right:30px;
-    color:#fff;
     font-size:40px;
+    color:#fff;
     cursor:pointer;
-    transition:.3s;
 }
 
-.close:hover{
-    color:#e00000;
-}
-
-/* ================= SCROLLBAR ================= */
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-track{
-    background:#050505;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#a00000;
-    border-radius:10px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:#e00000;
-}
-
-/* ================= RESPONSIVE ================= */
-
+/* RESPONSIVE */
 @media(max-width:900px){
 
+    .about-grid,
+    .screens-layout,
+    .requirements{
+        grid-template-columns:1fr;
+    }
+
+    .ad-box{
+        width:100%;
+        max-width:300px;
+        margin:auto;
+    }
+
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:650px){
+
     header{
-        padding:0 4%;
+        height:auto;
+        padding:18px 0;
+    }
+
+    .nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav a{
+        margin:0 7px;
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:620px;
+    }
+
+    .hero-content{
+        padding:80px 0 60px;
     }
 
     .hero h1{
-        font-size:46px;
+        letter-spacing:-2px;
     }
 
-    .about-grid{
+    .screens{
         grid-template-columns:1fr;
     }
 
-    .screenshot-area{
-        grid-template-columns:1fr;
-    }
-
-    .big-ad{
-        width:100%;
-        height:250px;
-    }
-
-    .requirements{
-        grid-template-columns:1fr;
+    .screenshot img{
+        height:220px;
     }
 
     .features{
         grid-template-columns:1fr;
     }
-}
 
-@media(max-width:600px){
-
-    header{
-        padding:0 4%;
-    }
-
-    .header-right{
-        gap:10px;
-    }
-
-    nav{
-        gap:12px;
-    }
-
-    nav a{
-        font-size:12px;
-    }
-
-    .hero{
-        min-height:540px;
-    }
-
-    .hero-content{
-        width:90%;
-        padding:60px 0;
-    }
-
-    .hero h1{
-        font-size:34px;
-    }
-
-    .hero-description{
-        font-size:14px;
-    }
-
-    .container{
-        width:92%;
-    }
-
-    .panel{
-        padding:18px;
-    }
-
-    .screenshots{
+    .footer-grid{
         grid-template-columns:1fr;
     }
 
-    .screenshots img{
-        height:auto;
-    }
-
-    .download-buttons{
-        flex-direction:column;
-    }
-
-    .download-btn{
-        width:100%;
-        text-align:center;
-    }
-
-    .tagline strong{
-        font-size:21px;
-    }
-
-    .header-search{
-        right:-10px;
-        width:250px;
-    }
-}
-
-@media(max-width:450px){
-
-    .logo{
-        font-size:18px;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:29px;
+    .download-box{
+        padding:28px 18px;
     }
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
+    <div class="nav">
+        <div class="logo">QEVRANO <span>PC GAMES</span></div>
 
-<a href="./index.html" class="logo">
-    QEVRANO <span>PC GAMES</span>
-</a>
-
-<div class="header-right">
-
-```
-<nav>
-    <a href="./index.html">HOME</a>
-    <a href="./index.html#games">GAMES</a>
-    <a href="./index.html#packs">PACKS</a>
-</nav>
-
-<div class="search-container">
-
-    <button
-        class="search-icon"
-        onclick="toggleSearch()"
-        aria-label="Search"
-    >
-        🔍
-    </button>
-
-    <div class="header-search" id="headerSearch">
-
-        <input
-            type="text"
-            id="headerSearchInput"
-            placeholder="Search games..."
-            autocomplete="off"
-        >
-
-        <div
-            class="search-results"
-            id="headerSearchResults"
-        ></div>
-
+        <nav>
+            <a href="./index.html">HOME</a>
+            <a href="./index.html#games">GAMES</a>
+            <a href="./index.html#packs">PACKS</a>
+        </nav>
     </div>
-
-</div>
-```
-
-</div>
-
 </header>
 
-<!-- HERO -->
 
+<!-- HERO -->
 <section class="hero">
 
-```
-<div class="hero-content">
+    <div class="hero-content">
 
-    <div class="badge">
-        RPG CLASSIC
-    </div>
+        <div class="badge">ACTION RPG</div>
 
-    <h1>
-        THE WITCHER <span>2</span>
-    </h1>
+        <h1>
+            THE WITCHER <span>2</span>
+        </h1>
 
-    <div class="subtitle">
-        ASSASSINS OF KINGS • ENHANCED EDITION
-    </div>
-
-    <p class="hero-description">
-        The Witcher 2: Assassins of Kings is an action RPG
-        developed by CD PROJEKT RED. Follow Geralt of Rivia
-        through a dark fantasy adventure filled with difficult
-        choices, dangerous enemies and a branching storyline.
-    </p>
-
-    <div class="game-meta">
-
-        <div class="meta">
-            Developer: CD PROJEKT RED
+        <div class="hero-subtitle">
+            ASSASSINS OF KINGS • ENHANCED EDITION
         </div>
 
-        <div class="meta">
-            Genre: Action RPG
-        </div>
+        <p class="hero-description">
+            Experience the epic journey of Geralt of Rivia in one of the most acclaimed
+            action RPGs ever created. Explore a dangerous world, make difficult choices,
+            and shape the story through your decisions.
+        </p>
 
         <div class="meta">
-            Release: 2011 PC
+            <span>2011</span>
+            <span>CD PROJEKT RED</span>
+            <span>ACTION RPG</span>
+            <span>WINDOWS PC</span>
         </div>
 
-        <div class="meta">
-            Platform: PC
-        </div>
-
-    </div>
-
-    <div class="download-buttons">
-
-        <a
-            href="https://store.steampowered.com/app/20920/"
-            class="download-btn official"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            DOWNLOAD OFFICIAL
-        </a>
-
-        <div>
-
-            <a
-                href="#download"
-                class="download-btn"
-            >
-                DOWNLOAD SETUP.EXE
+        <div class="buttons">
+            <a class="btn btn-red"
+               href="https://store.steampowered.com/app/20920/"
+               target="_blank">
+                OFFICIAL SOURCE
             </a>
 
-            <a
-                href="./witcher2.html"
-                class="compressed-link"
-            >
-                Highly Compressed
+            <a class="btn btn-dark" href="#download">
+                DOWNLOAD
             </a>
-
         </div>
 
     </div>
-
-</div>
-```
 
 </section>
 
-<div class="container">
-
-<a href="./index.html" class="back">
-    ← BACK TO GAMES
-</a>
 
 <!-- ABOUT -->
+<section>
 
-<section class="section">
+    <div class="container">
 
-```
-<div class="about-grid">
+        <h2 class="section-title">
+            ABOUT <span>THE GAME</span>
+        </h2>
 
-    <div class="panel">
+        <div class="about-grid">
 
-        <h2>ABOUT GAME</h2>
+            <div class="panel about">
 
-        <p>
-            The Witcher 2: Assassins of Kings is an action RPG
-            developed by CD PROJEKT RED. Follow Geralt of Rivia
-            through a mature fantasy adventure filled with
-            difficult choices, dangerous enemies and a
-            branching storyline.
-        </p>
+                <h3>The Witcher 2: Assassins of Kings</h3>
 
-        <br>
+                <p>
+                    The Witcher 2 is a story-driven action RPG following Geralt of Rivia,
+                    a professional monster hunter known as a witcher.
+                </p>
 
-        <p>
-            Explore a detailed fantasy world, develop Geralt's
-            abilities and make decisions that can influence
-            characters, events and the direction of the story.
-        </p>
+                <p>
+                    The game features an expansive world, tactical combat, branching
+                    choices, memorable characters and a story that changes depending
+                    on the decisions you make.
+                </p>
 
-    </div>
+                <p>
+                    The Enhanced Edition includes additional content, improvements
+                    and extra adventures.
+                </p>
 
-    <div class="panel">
+            </div>
 
-        <h2>GAME INFO</h2>
+            <div class="panel about">
 
-        <p>
-            <strong>Developer:</strong>
-            CD PROJEKT RED
-        </p>
+                <h3>Game Information</h3>
 
-        <p>
-            <strong>Publisher:</strong>
-            CD PROJEKT RED
-        </p>
+                <ul class="info-list">
+                    <li><strong>Developer:</strong> CD PROJEKT RED</li>
+                    <li><strong>Publisher:</strong> CD PROJEKT</li>
+                    <li><strong>Release:</strong> 2011</li>
+                    <li><strong>Genre:</strong> Action RPG</li>
+                    <li><strong>Platform:</strong> PC</li>
+                    <li><strong>Engine:</strong> REDengine</li>
+                </ul>
 
-        <p>
-            <strong>Genre:</strong>
-            Action RPG
-        </p>
+            </div>
 
-        <p>
-            <strong>Release:</strong>
-            2011
-        </p>
-
-        <p>
-            <strong>Platform:</strong>
-            PC
-        </p>
-
-        <p>
-            <strong>Edition:</strong>
-            Enhanced Edition
-        </p>
+        </div>
 
     </div>
-
-</div>
-```
 
 </section>
+
 
 <!-- SCREENSHOTS -->
+<section class="screens-section">
 
-<section class="section">
+    <div class="container">
 
-```
-<h2>SCREENSHOTS</h2>
+        <h2 class="section-title">
+            GAME <span>SCREENSHOTS</span>
+        </h2>
 
-<div class="screenshot-area">
+        <div class="screens-layout">
 
-    <div class="screenshots">
+            <div class="screens">
 
-        <img
-            src="./images/witcher2-1.jpg"
-            alt="The Witcher 2 Screenshot 1"
-            onclick="openModal(this.src)"
-        >
+                <div class="screenshot">
+                    <img src="./images/witcher2-1.jpg"
+                         alt="The Witcher 2 Screenshot 1"
+                         onclick="openModal(this.src)">
+                </div>
 
-        <img
-            src="./images/witcher2-2.jpg"
-            alt="The Witcher 2 Screenshot 2"
-            onclick="openModal(this.src)"
-        >
+                <div class="screenshot">
+                    <img src="./images/witcher2-2.jpg"
+                         alt="The Witcher 2 Screenshot 2"
+                         onclick="openModal(this.src)">
+                </div>
 
-        <img
-            src="./images/witcher2-3.jpg"
-            alt="The Witcher 2 Screenshot 3"
-            onclick="openModal(this.src)"
-        >
+                <div class="screenshot">
+                    <img src="./images/witcher2-3.jpg"
+                         alt="The Witcher 2 Screenshot 3"
+                         onclick="openModal(this.src)">
+                </div>
 
-        <img
-            src="./images/witcher2-4.jpg"
-            alt="The Witcher 2 Screenshot 4"
-            onclick="openModal(this.src)"
-        >
+                <div class="screenshot">
+                    <img src="./images/witcher2-4.jpg"
+                         alt="The Witcher 2 Screenshot 4"
+                         onclick="openModal(this.src)">
+                </div>
+
+            </div>
+
+            <div class="ad-box">
+                ADVERTISEMENT<br>
+                300 × 600
+            </div>
+
+        </div>
 
     </div>
 
-    <div class="big-ad">
+</section>
 
-        <strong>ADVERTISEMENT</strong>
 
-        <span>BIG AD SPACE</span>
+<!-- TRAILER -->
+<section class="video-section">
 
-        <br>
+    <div class="container">
 
-        <small>300 × 600</small>
+        <h2 class="section-title">
+            THE WITCHER 2 <span>TRAILER</span>
+        </h2>
+
+        <div class="video-box">
+
+            <iframe
+                src="https://www.youtube.com/embed/3L2p6hQ0H8M"
+                title="The Witcher 2 Trailer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+        </div>
 
     </div>
 
-</div>
-```
-
 </section>
 
-<!-- INSTALLATION VIDEO -->
-
-<section class="section">
-
-```
-<h2>MUST WATCH INSTALLATION VIDEO</h2>
-
-<div class="video-box">
-
-    <iframe
-        src="YOUR_VIDEO_EMBED_URL"
-        title="The Witcher 2 Installation Guide"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-    </iframe>
-
-</div>
-```
-
-</section>
 
 <!-- FEATURES -->
+<section>
 
-<section class="section">
+    <div class="container">
 
-```
-<h2>FEATURES</h2>
+        <h2 class="section-title">
+            GAME <span>FEATURES</span>
+        </h2>
 
-<div class="features">
+        <div class="features">
 
-    <div class="feature">
-        Story-driven action RPG
+            <div class="feature">
+                <h3>Branching Story</h3>
+                <p>
+                    Your decisions can influence characters, events and the direction
+                    of the adventure.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Tactical Combat</h3>
+                <p>
+                    Use swords, signs, bombs and different tactics to overcome enemies.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Open World Adventures</h3>
+                <p>
+                    Explore detailed environments filled with quests, characters and secrets.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Enhanced Edition</h3>
+                <p>
+                    Includes additional content and improvements over the original release.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Character Progression</h3>
+                <p>
+                    Develop Geralt's abilities and customize your preferred play style.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Rich World</h3>
+                <p>
+                    Discover a mature fantasy world filled with political conflicts,
+                    monsters and memorable characters.
+                </p>
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="feature">
-        Detailed fantasy world
-    </div>
-
-    <div class="feature">
-        Branching choices and consequences
-    </div>
-
-    <div class="feature">
-        Tactical real-time combat
-    </div>
-
-    <div class="feature">
-        Character progression and equipment
-    </div>
-
-    <div class="feature">
-        Multiple possible story outcomes
-    </div>
-
-</div>
-```
 
 </section>
+
 
 <!-- SYSTEM REQUIREMENTS -->
+<section class="screens-section">
 
-<section class="section">
+    <div class="container">
 
-```
-<h2>SYSTEM REQUIREMENTS</h2>
+        <h2 class="section-title">
+            SYSTEM <span>REQUIREMENTS</span>
+        </h2>
 
-<div class="requirements">
+        <div class="requirements">
 
-    <div class="requirement-box">
+            <div class="req-box">
 
-        <h3>Minimum</h3>
+                <h3>Minimum</h3>
 
-        <p>
-            <strong>OS:</strong>
-            Windows XP / Vista / 7
-        </p>
+                <p>
+                    <strong>OS:</strong> Windows XP / Vista / 7
+                </p>
 
-        <p>
-            <strong>CPU:</strong>
-            Intel 2.2 GHz Dual Core / AMD equivalent
-        </p>
+                <p>
+                    <strong>Processor:</strong> Intel 2.2 GHz Dual Core
+                </p>
 
-        <p>
-            <strong>RAM:</strong>
-            1.5 GB XP / 2 GB Vista & 7
-        </p>
+                <p>
+                    <strong>Memory:</strong> 1 GB RAM
+                </p>
 
-        <p>
-            <strong>GPU:</strong>
-            NVIDIA GeForce 8800 512 MB /
-            ATI Radeon HD 3850 512 MB
-        </p>
+                <p>
+                    <strong>Graphics:</strong> NVIDIA GeForce 8800 / ATI Radeon HD 3850
+                </p>
 
-        <p>
-            <strong>Storage:</strong>
-            25 GB
-        </p>
+                <p>
+                    <strong>DirectX:</strong> Version 9.0c
+                </p>
+
+                <p>
+                    <strong>Storage:</strong> 23 GB available space
+                </p>
+
+            </div>
+
+
+            <div class="req-box">
+
+                <h3>Recommended</h3>
+
+                <p>
+                    <strong>OS:</strong> Windows XP / Vista / 7
+                </p>
+
+                <p>
+                    <strong>Processor:</strong> Intel Quad Core / AMD equivalent
+                </p>
+
+                <p>
+                    <strong>Memory:</strong> 2 GB RAM
+                </p>
+
+                <p>
+                    <strong>Graphics:</strong> NVIDIA GeForce GTX 260 / ATI Radeon HD 4850
+                </p>
+
+                <p>
+                    <strong>DirectX:</strong> Version 9.0c
+                </p>
+
+                <p>
+                    <strong>Storage:</strong> 23 GB available space
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
-
-    <div class="requirement-box">
-
-        <h3>Recommended</h3>
-
-        <p>
-            <strong>OS:</strong>
-            Windows XP / Vista / 7
-        </p>
-
-        <p>
-            <strong>CPU:</strong>
-            Intel or AMD Quad Core
-        </p>
-
-        <p>
-            <strong>RAM:</strong>
-            3 GB XP / 4 GB Vista & 7
-        </p>
-
-        <p>
-            <strong>GPU:</strong>
-            NVIDIA GeForce GTX 260 1 GB /
-            ATI Radeon HD 4850 1 GB
-        </p>
-
-        <p>
-            <strong>Storage:</strong>
-            25 GB
-        </p>
-
-    </div>
-
-</div>
-```
 
 </section>
+
 
 <!-- DOWNLOAD -->
+<section id="download">
 
-<section class="section" id="download">
+    <div class="container">
 
-```
-<div class="download-box">
+        <div class="download-box">
 
-    <h2>DOWNLOAD THE WITCHER 2</h2>
+            <h2>DOWNLOAD THE WITCHER 2</h2>
 
-    <p>
-        Get the official version from an authorized store,
-        or use your own legally distributed setup when
-        available.
-    </p>
+            <p>
+                Choose an official source or continue to the QEVRANO download page.
+            </p>
 
-    <div class="download-buttons">
+            <div class="download-buttons">
 
-        <a
-            href="https://store.steampowered.com/app/20920/"
-            class="download-btn official"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            DOWNLOAD OFFICIAL
-        </a>
+                <a class="btn btn-red"
+                   href="https://store.steampowered.com/app/20920/"
+                   target="_blank">
+                    OFFICIAL SOURCE
+                </a>
 
-        <a
-            href="./witcher2.html"
-            class="download-btn"
-        >
-            HIGHLY COMPRESSED
-        </a>
+                <a class="btn btn-dark"
+                   href="./witcher2.html">
+                    COMPRESSED DOWNLOAD
+                </a>
+
+            </div>
+
+            <div class="note">
+                Please check the system requirements before downloading or installing.
+            </div>
+
+        </div>
 
     </div>
 
-</div>
-```
-
 </section>
 
-<!-- TAGLINE -->
 
+<!-- TAGLINE -->
 <div class="tagline">
 
-```
-<strong>
-    CHOOSE YOUR PATH.
-</strong>
-
-FIGHT • EXPLORE • MAKE YOUR CHOICES
-
-<br>
-
-QEVRANO PC GAMES
-```
+    <h2>
+        CHOOSE YOUR <span>PATH.</span>
+    </h2>
 
 </div>
 
-</div>
-
-<!-- IMAGE MODAL -->
-
-<div
-    class="modal"
-    id="imageModal"
-    onclick="closeModal()"
->
-
-<span
-class="close"
-onclick="closeModal()"
-
->
-
-```
-&times;
-```
-
-</span>
-
-<img
-id="modalImage"
-src=""
-alt="The Witcher 2 Screenshot"
-onclick="event.stopPropagation()"
-
->
-
-</div>
 
 <!-- FOOTER -->
-
 <footer>
 
-© 2026 QEVRANO PC GAMES — All Rights Reserved
+    <div class="container">
 
-<br><br>
+        <div class="footer-grid">
 
-<a href="./privacy.html">Privacy Policy</a>
-| <a href="./about.html">About</a>
-| <a href="./contact.html">Contact</a>
-| <a href="./terms.html">Terms</a>
+            <div>
+                <h3>QEVRANO PC GAMES</h3>
+
+                <p>
+                    Your gaming destination for discovering PC games,
+                    information and downloads.
+                </p>
+            </div>
+
+            <div>
+                <h3>QUICK LINKS</h3>
+
+                <a href="./index.html">Home</a>
+                <a href="./index.html#games">Games</a>
+                <a href="./index.html#packs">Packs</a>
+            </div>
+
+            <div>
+                <h3>INFORMATION</h3>
+
+                <a href="#">Contact</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Disclaimer</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 QEVRANO PC GAMES. All rights reserved.
+        </div>
+
+    </div>
 
 </footer>
 
+
+<!-- IMAGE MODAL -->
+<div class="modal" id="imageModal" onclick="closeModal()">
+
+    <span class="close">&times;</span>
+
+    <img id="modalImage" src="" alt="Screenshot Preview">
+
+</div>
+
+
 <script>
 
-/* ================= SEARCH DATA ================= */
-
-const games = [
-
-    {name:"Far Cry 2",file:"./farcry2.html"},
-    {name:"Far Cry 3",file:"./farcry3.html"},
-    {name:"Assassin's Creed II",file:"./ac2.html"},
-    {name:"GTA V",file:"./gta5.html"},
-    {name:"GTA IV",file:"./gta4.html"},
-    {name:"FIFA",file:"./fifa.html"},
-    {name:"Don Bradman Cricket",file:"./cricket.html"},
-    {name:"Call of Duty 1",file:"./cod1.html"},
-    {name:"The Witcher 2",file:"./witcher2.html"}
-
-];
-
-
-/* ================= SEARCH TOGGLE ================= */
-
-function toggleSearch(){
-
-    const search =
-        document.getElementById("headerSearch");
-
-    const input =
-        document.getElementById("headerSearchInput");
-
-    search.classList.toggle("active");
-
-    if(search.classList.contains("active")){
-        input.focus();
-    }
-
-}
-
-
-/* ================= SEARCH ================= */
-
-const input =
-    document.getElementById("headerSearchInput");
-
-const results =
-    document.getElementById("headerSearchResults");
-
-
-input.addEventListener("input", function(){
-
-    const search =
-        this.value.trim().toLowerCase();
-
-    results.innerHTML = "";
-
-    if(!search){
-
-        results.style.display = "none";
-        return;
-
-    }
-
-    const matches =
-        games.filter(game =>
-            game.name.toLowerCase().startsWith(search)
-        );
-
-
-    if(!matches.length){
-
-        results.innerHTML =
-            '<div class="search-no-result">No games found</div>';
-
-        results.style.display = "block";
-        return;
-
-    }
-
-
-    matches.forEach(game => {
-
-        const link =
-            document.createElement("a");
-
-        link.className = "search-result";
-
-        link.href = game.file;
-
-        link.textContent = game.name;
-
-        results.appendChild(link);
-
-    });
-
-
-    results.style.display = "block";
-
-});
-
-
-/* ================= ENTER SEARCH ================= */
-
-input.addEventListener("keydown", function(e){
-
-    if(e.key === "Enter"){
-
-        const search =
-            this.value.trim().toLowerCase();
-
-        const match =
-            games.find(game =>
-                game.name.toLowerCase().startsWith(search)
-            );
-
-        if(match){
-            window.location.href = match.file;
-        }
-
-    }
-
-});
-
-
-/* ================= CLOSE SEARCH ================= */
-
-document.addEventListener("click", function(e){
-
-    const container =
-        document.querySelector(".search-container");
-
-    if(!container.contains(e.target)){
-
-        document
-            .getElementById("headerSearch")
-            .classList.remove("active");
-
-    }
-
-});
-
-
-/* ================= IMAGE MODAL ================= */
-
 function openModal(src){
-
-    document
-        .getElementById("modalImage")
-        .src = src;
-
-    document
-        .getElementById("imageModal")
-        .classList.add("active");
-
+    document.getElementById("imageModal").style.display="flex";
+    document.getElementById("modalImage").src=src;
 }
-
 
 function closeModal(){
-
-    document
-        .getElementById("imageModal")
-        .classList.remove("active");
-
+    document.getElementById("imageModal").style.display="none";
 }
-
-
-/* ================= ESCAPE KEY ================= */
-
-document.addEventListener("keydown", function(event){
-
-    if(event.key === "Escape"){
-        closeModal();
-    }
-
-});
 
 </script>
 
 </body>
 </html>
+```
