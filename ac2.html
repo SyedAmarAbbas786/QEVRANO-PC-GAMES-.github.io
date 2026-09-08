@@ -19,7 +19,6 @@ body{
     min-height:100vh;
 }
 
-/* HEADER */
 header{
     position:sticky;
     top:0;
@@ -71,7 +70,6 @@ nav a{
 
 nav a:hover{color:#e50914}
 
-/* SEARCH */
 .search-container{position:relative}
 
 .search-icon{
@@ -138,7 +136,6 @@ nav a:hover{color:#e50914}
     color:#777;
 }
 
-/* PAGE */
 .container{
     width:92%;
     max-width:1250px;
@@ -157,7 +154,6 @@ nav a:hover{color:#e50914}
 
 .back:hover{color:#fff}
 
-/* MAIN CARD */
 .main-content{
     background:linear-gradient(145deg,rgba(18,18,18,.97),rgba(8,8,8,.97));
     border:1px solid #252525;
@@ -166,7 +162,6 @@ nav a:hover{color:#e50914}
     box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
 
-/* HERO */
 .hero{
     display:grid;
     grid-template-columns:320px 1fr;
@@ -275,14 +270,9 @@ nav a:hover{color:#e50914}
 
 .download-btn.secondary{
     background:#111;
-    color:#ddd;
+    color:#777;
     border:1px solid #383838;
-}
-
-.download-btn.secondary:hover{
-    border-color:#e50914;
-    color:#fff;
-    background:#171717;
+    cursor:not-allowed;
 }
 
 .compressed-link{
@@ -293,9 +283,6 @@ nav a:hover{color:#e50914}
     text-decoration:none;
 }
 
-.compressed-link:hover{color:#e50914}
-
-/* SECTION */
 .section{
     margin-top:48px;
 }
@@ -327,7 +314,6 @@ nav a:hover{color:#e50914}
     font-size:14px;
 }
 
-/* SCREENSHOTS */
 .screenshot-area{
     display:grid;
     grid-template-columns:minmax(0,1fr) 300px;
@@ -377,7 +363,6 @@ nav a:hover{color:#e50914}
     margin-bottom:8px;
 }
 
-/* TRAILER */
 .trailer-box{
     width:100%;
     aspect-ratio:16/9;
@@ -394,7 +379,6 @@ nav a:hover{color:#e50914}
     border:0;
 }
 
-/* FEATURES */
 .features{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -417,7 +401,6 @@ nav a:hover{color:#e50914}
     margin-right:9px;
 }
 
-/* REQUIREMENTS */
 .requirements{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -444,7 +427,16 @@ nav a:hover{color:#e50914}
 
 .requirement-box strong{color:#e50914}
 
-/* TAGLINE */
+.requirement-note{
+    margin-top:15px;
+    padding:13px 15px;
+    background:#160707;
+    border-left:3px solid #e50914;
+    color:#999;
+    font-size:12px;
+    line-height:1.7;
+}
+
 .tagline{
     text-align:center;
     margin:55px 0 10px;
@@ -461,7 +453,6 @@ nav a:hover{color:#e50914}
     letter-spacing:2px;
 }
 
-/* FOOTER */
 footer{
     border-top:1px solid #222;
     background:#050505;
@@ -486,7 +477,6 @@ footer{
 
 .footer-links a:hover{color:#e50914}
 
-/* MODAL */
 .modal{
     display:none;
     position:fixed;
@@ -518,7 +508,6 @@ footer{
 
 .close:hover{color:#e50914}
 
-/* MOBILE */
 @media(max-width:900px){
     .hero{grid-template-columns:1fr}
     .hero-cover img{max-width:340px;margin:auto}
@@ -621,7 +610,7 @@ stealth, combat and adventure.
 
 <div class="meta">Developer: Ubisoft Montreal</div>
 <div class="meta">Genre: Action / Adventure</div>
-<div class="meta">Release: 2010 PC</div>
+<div class="meta">Release: 2009 PC</div>
 <div class="meta">Platform: PC</div>
 
 </div>
@@ -629,7 +618,7 @@ stealth, combat and adventure.
 <div class="download-buttons">
 
 <a
-href="https://store.ubisoft.com/"
+href="https://store.ubisoft.com/sea/assassin-s-creed-ii/57062e7e88a7e316728b4584.html?lang=en_ID"
 class="download-btn official"
 target="_blank"
 rel="noopener noreferrer"
@@ -649,7 +638,8 @@ DOWNLOAD SETUP.EXE </a>
 
 </div>
 
-<a href="#"
+<a
+href="#"
 class="compressed-link"
 onclick="return false;"
 
@@ -685,6 +675,7 @@ Highly Compressed </a>
 </div>
 
 </div>
+
 </section>
 
 <section class="section">
@@ -697,7 +688,7 @@ Highly Compressed </a>
 
 <iframe
 src="https://www.youtube.com/embed/UBzWURM02Ks"
-title="Assassin's Creed II Launch Trailer"
+title="Assassin's Creed II Launch Trailer - Ubisoft"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
@@ -760,15 +751,15 @@ and interact with different environments.
 
 <h3>Minimum</h3>
 
-<p><strong>OS:</strong> Windows XP / Vista / 7</p>
+<p><strong>OS:</strong> Windows 10</p>
 
 <p><strong>CPU:</strong> Intel Core 2 Duo 1.8 GHz / AMD Athlon X2 64 2.4 GHz</p>
 
-<p><strong>RAM:</strong> 1.5 GB Windows XP / 2 GB Windows Vista / 7</p>
+<p><strong>RAM:</strong> 2 GB</p>
 
-<p><strong>GPU:</strong> NVIDIA GeForce 8800 GT / ATI Radeon HD 4700</p>
+<p><strong>GPU:</strong> 256 MB DirectX 9.0-compliant graphics card with Shader Model 3.0 or higher</p>
 
-<p><strong>DirectX:</strong> Version 9.0c</p>
+<p><strong>VRAM:</strong> 256 MB</p>
 
 <p><strong>Storage:</strong> 8 GB</p>
 
@@ -790,20 +781,24 @@ and interact with different environments.
 
 <h3>Recommended</h3>
 
-<p><strong>OS:</strong> Windows 7 / 8 / 10</p>
+<p><strong>OS:</strong> Windows 10</p>
 
-<p><strong>CPU:</strong> Intel Core 2 Quad / AMD Phenom II</p>
+<p><strong>CPU:</strong> Intel Core 2 Duo E6700 2.6 GHz / AMD Athlon 64 X2 6000+ or better</p>
 
 <p><strong>RAM:</strong> 4 GB</p>
 
-<p><strong>GPU:</strong> NVIDIA GeForce GTX series / AMD Radeon HD series</p>
+<p><strong>GPU:</strong> 512 MB DirectX 9.0-compliant graphics card with Shader Model 3.0 or higher</p>
 
-<p><strong>DirectX:</strong> Version 9.0c</p>
+<p><strong>VRAM:</strong> 512 MB</p>
 
 <p><strong>Storage:</strong> 8 GB</p>
 
 </div>
 
+</div>
+
+<div class="requirement-note">
+These are the current PC requirements listed by Ubisoft for the digital version of Assassin's Creed II. The original 2009 requirements were written for older Windows versions, but Ubisoft's current store listing specifies Windows 10.
 </div>
 
 </section>
@@ -812,155 +807,4 @@ and interact with different environments.
 
 <strong>NOTHING IS TRUE. EVERYTHING IS PERMITTED.</strong>
 
-EXPLORE • CLIMB • ASSASSINATE
-
-<br>
-
-QEVRANO PC GAMES
-
-</div>
-
-</main>
-</div>
-
-<div class="modal" id="imageModal" onclick="closeModal()">
-
-<span class="close">×</span>
-
-<img
-id="modalImage"
-src=""
-alt="Assassin's Creed II Screenshot"
-onclick="event.stopPropagation()"
-
->
-
-</div>
-
-<footer>
-
-<div class="footer-links">
-<a href="./index.html">Home</a>
-<a href="./contact.html">Contact</a>
-<a href="./privacy.html">Privacy Policy</a>
-<a href="./terms.html">Terms & Conditions</a>
-<a href="./disclaimer.html">Disclaimer</a>
-</div>
-
-© 2026 QEVRANO PC GAMES — All Rights Reserved
-
-</footer>
-
-<script>
-
-const games=[
-{name:"Far Cry 2",file:"./farcry2.html"},
-{name:"Far Cry 3",file:"./farcry3.html"},
-{name:"Assassin's Creed II",file:"./ac2.html"},
-{name:"GTA V",file:"./gta5.html"},
-{name:"GTA IV",file:"./gta4.html"},
-{name:"FIFA",file:"./fifa.html"},
-{name:"Don Bradman Cricket",file:"./cricket.html"},
-{name:"Call of Duty 1",file:"./cod1.html"},
-{name:"The Witcher 2",file:"./witcher2.html"},
-{name:"GTA VI",file:"./gtavi.html"},
-{name:"Assassin's Creed Syndicate",file:"./acs.html"},
-{name:"Need for Speed II",file:"./nfs2.html"}
-];
-
-function toggleSearch(){
-
-const search=document.getElementById("headerSearch");
-const input=document.getElementById("headerSearchInput");
-
-search.classList.toggle("active");
-
-if(search.classList.contains("active")) input.focus();
-
-}
-
-const input=document.getElementById("headerSearchInput");
-const results=document.getElementById("headerSearchResults");
-
-input.addEventListener("input",function(){
-
-const search=this.value.trim().toLowerCase();
-
-results.innerHTML="";
-
-if(!search){
-results.style.display="none";
-return;
-}
-
-const matches=games.filter(game=>
-game.name.toLowerCase().startsWith(search)
-);
-
-if(!matches.length){
-
-results.innerHTML='<div class="search-no-result">No games found</div>';
-results.style.display="block";
-return;
-
-}
-
-matches.forEach(game=>{
-
-const link=document.createElement("a");
-
-link.className="search-result";
-link.href=game.file;
-link.textContent=game.name;
-
-results.appendChild(link);
-
-});
-
-results.style.display="block";
-
-});
-
-input.addEventListener("keydown",function(e){
-
-if(e.key==="Enter"){
-
-const search=this.value.trim().toLowerCase();
-
-const match=games.find(game=>
-game.name.toLowerCase().startsWith(search)
-);
-
-if(match) window.location.href=match.file;
-
-}
-
-});
-
-document.addEventListener("click",function(e){
-
-const container=document.querySelector(".search-container");
-
-if(!container.contains(e.target)){
-document.getElementById("headerSearch").classList.remove("active");
-}
-
-});
-
-function openModal(src){
-
-document.getElementById("modalImage").src=src;
-document.getElementById("imageModal").classList.add("active");
-
-}
-
-function closeModal(){
-
-document.getElementById("imageModal").classList.remove("active");
-
-}
-
-</script>
-
-</body>
-</html>
+EXPLORE • CLIMB • ASSASSIN
