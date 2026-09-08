@@ -4,534 +4,601 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Assassin's Creed Syndicate - QEVRANO PC GAMES</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-color:#eee;
-background:
-linear-gradient(rgba(4,4,5,.88),rgba(4,4,5,.97)),
-url("./images/acs-bg.jpg") center/cover fixed;
-min-height:100vh;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#eee;
+    background:
+        linear-gradient(rgba(5,7,12,.90),rgba(5,7,12,.97)),
+        url("./images/acs-bg.jpg") center/cover fixed no-repeat;
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
 header{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(5,5,5,.96);
-border-bottom:1px solid #2a2a2a;
-backdrop-filter:blur(14px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,5,8,.96);
+    border-bottom:1px solid #250000;
+    box-shadow:0 5px 25px rgba(0,0,0,.65);
 }
 
 .navbar{
-max-width:1250px;
-min-height:76px;
-margin:auto;
-padding:0 25px;
-display:flex;
-align-items:center;
-justify-content:space-between;
+    max-width:1250px;
+    margin:auto;
+    min-height:70px;
+    padding:0 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
 .logo{
-color:#fff;
-text-decoration:none;
-font-size:23px;
-font-weight:900;
-letter-spacing:1px;
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:1px;
+    color:#fff;
 }
 
-.logo span{color:#e50914}
-
-.header-right{
-display:flex;
-align-items:center;
-gap:25px;
+.logo span{
+    color:#e00000;
 }
 
-nav{
-display:flex;
-gap:25px;
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:26px;
 }
 
-nav a{
-color:#aaa;
-text-decoration:none;
-font-size:13px;
-font-weight:bold;
-letter-spacing:.8px;
-transition:.25s;
+.nav-links a{
+    font-size:14px;
+    font-weight:700;
+    color:#ddd;
+    transition:.25s;
 }
 
-nav a:hover{color:#e50914}
-
-.search-container{position:relative}
-
-.search-icon{
-width:40px;
-height:40px;
-border:1px solid #3a3a3a;
-background:#111;
-color:#fff;
-border-radius:7px;
-cursor:pointer;
-font-size:17px;
-transition:.25s;
+.nav-links a:hover{
+    color:#e00000;
 }
 
-.search-icon:hover{
-background:#e50914;
-border-color:#e50914;
+.search-box{
+    position:relative;
 }
 
-.header-search{
-display:none;
-position:absolute;
-right:0;
-top:50px;
-width:285px;
-background:#101010;
-border:1px solid #333;
-box-shadow:0 15px 40px rgba(0,0,0,.7);
+.search-box input{
+    width:180px;
+    padding:10px 13px;
+    border:1px solid #333;
+    border-radius:5px;
+    outline:none;
+    background:#101015;
+    color:#fff;
 }
 
-.header-search.active{display:block}
-
-.header-search input{
-width:100%;
-padding:13px;
-border:0;
-outline:0;
-background:#181818;
-color:#fff;
+.search-box input:focus{
+    border-color:#d00000;
 }
 
 .search-results{
-display:none;
-max-height:300px;
-overflow:auto;
+    position:absolute;
+    top:45px;
+    right:0;
+    width:240px;
+    background:#0b0b0f;
+    border:1px solid #350000;
+    border-radius:6px;
+    overflow:hidden;
+    display:none;
+    box-shadow:0 12px 30px rgba(0,0,0,.8);
 }
 
-.search-result{
-display:block;
-padding:12px 14px;
-color:#ddd;
-text-decoration:none;
-border-top:1px solid #242424;
-font-size:13px;
+.search-results a{
+    display:block;
+    padding:11px 13px;
+    border-bottom:1px solid #1e1e22;
+    font-size:13px;
+    color:#ddd;
 }
 
-.search-result:hover{
-background:#e50914;
-color:#fff;
-}
-
-.search-no-result{
-padding:13px;
-color:#777;
+.search-results a:hover{
+    background:#170000;
+    color:#fff;
 }
 
 .container{
-width:92%;
-max-width:1250px;
-margin:35px auto 80px;
-}
-
-.back{
-display:inline-block;
-color:#e50914;
-text-decoration:none;
-font-size:13px;
-font-weight:bold;
-letter-spacing:.5px;
-margin-bottom:18px;
-}
-
-.back:hover{color:#fff}
-
-.main-content{
-background:linear-gradient(145deg,rgba(18,18,18,.97),rgba(8,8,8,.97));
-border:1px solid #252525;
-border-radius:16px;
-padding:30px;
-box-shadow:0 20px 60px rgba(0,0,0,.45);
+    width:min(1150px,92%);
+    margin:auto;
 }
 
 .hero{
-display:grid;
-grid-template-columns:320px 1fr;
-gap:35px;
-align-items:center;
+    min-height:570px;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    align-items:center;
+    gap:45px;
+    padding:70px 0;
 }
 
-.hero-cover img{
-width:100%;
-display:block;
-border-radius:12px;
-border:1px solid #333;
-box-shadow:0 20px 45px rgba(0,0,0,.6);
+.hero-content{
+    max-width:700px;
 }
 
 .eyebrow{
-color:#e50914;
-font-size:12px;
-font-weight:900;
-letter-spacing:3px;
-margin-bottom:12px;
+    display:inline-block;
+    color:#ff1616;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:13px;
 }
 
-.hero-info h1{
-font-size:48px;
-line-height:1.08;
-color:#fff;
-margin-bottom:12px;
+.hero h1{
+    font-size:clamp(40px,6vw,76px);
+    line-height:1.02;
+    margin-bottom:18px;
+    text-transform:uppercase;
+    letter-spacing:-2px;
+}
+
+.hero h1 span{
+    color:#e00000;
 }
 
 .subtitle{
-color:#999;
-font-size:13px;
-font-weight:bold;
-letter-spacing:1px;
-margin-bottom:20px;
+    color:#aaa;
+    font-size:15px;
+    letter-spacing:1.5px;
+    font-weight:700;
+    margin-bottom:25px;
 }
 
-.description{
-color:#aaa;
-line-height:1.8;
-font-size:14px;
-margin-bottom:22px;
+.hero p{
+    color:#c6c6c6;
+    max-width:680px;
+    font-size:16px;
 }
 
-.game-meta{
-display:flex;
-flex-wrap:wrap;
-gap:9px;
-margin-bottom:25px;
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-top:28px;
 }
 
-.meta{
-padding:8px 11px;
-background:#111;
-border:1px solid #2b2b2b;
-border-radius:6px;
-color:#aaa;
-font-size:12px;
+.btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    min-width:180px;
+    padding:13px 20px;
+    border-radius:5px;
+    font-weight:800;
+    font-size:14px;
+    transition:.25s;
 }
 
-.download-buttons{
-display:flex;
-flex-wrap:wrap;
-gap:12px;
+.btn-red{
+    background:#d00000;
+    border:1px solid #d00000;
+    color:#fff;
 }
 
-.download-btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-min-height:48px;
-padding:0 20px;
-border-radius:7px;
-text-decoration:none;
-font-size:13px;
-font-weight:900;
-letter-spacing:.4px;
-transition:.25s;
+.btn-red:hover{
+    background:#ff0000;
+    box-shadow:0 0 22px rgba(220,0,0,.35);
 }
 
-.official{
-background:#e50914;
-color:#fff;
-border:1px solid #e50914;
-box-shadow:0 8px 25px rgba(229,9,20,.18);
+.btn-outline{
+    border:1px solid #b00000;
+    background:#0d0d11;
+    color:#fff;
 }
 
-.official:hover{
-background:#ff1723;
-transform:translateY(-2px);
+.btn-outline:hover{
+    background:#220000;
 }
 
-.download-btn.secondary{
-background:#111;
-color:#ddd;
-border:1px solid #383838;
+.btn-disabled{
+    opacity:.45;
+    cursor:not-allowed;
 }
 
-.download-btn.secondary:hover{
-border-color:#e50914;
-color:#fff;
-background:#171717;
+.hero-image{
+    position:relative;
 }
 
-.compressed-link{
-display:block;
-margin-top:8px;
-color:#777;
-font-size:11px;
-text-decoration:none;
+.hero-image img{
+    width:100%;
+    max-height:500px;
+    object-fit:cover;
+    border-radius:8px;
+    border:1px solid #500000;
+    box-shadow:
+        0 0 0 1px rgba(255,0,0,.06),
+        0 20px 60px rgba(0,0,0,.8);
 }
 
-.compressed-link:hover{color:#e50914}
-
-.section{
-margin-top:48px;
+section{
+    padding:65px 0;
 }
 
 .section-title{
-display:flex;
-align-items:center;
-gap:12px;
-margin-bottom:20px;
+    font-size:27px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+    padding-left:14px;
+    border-left:4px solid #d00000;
 }
 
-.section-title::before{
-content:"";
-width:4px;
-height:24px;
-background:#e50914;
-border-radius:3px;
+.section-title span{
+    color:#e00000;
 }
 
-.section h2{
-color:#fff;
-font-size:21px;
-letter-spacing:.5px;
+.about{
+    max-width:900px;
 }
 
-.section p{
-color:#aaa;
-line-height:1.85;
-font-size:14px;
-}
-
-.screenshot-area{
-display:grid;
-grid-template-columns:minmax(0,1fr) 300px;
-gap:25px;
-align-items:start;
-}
-
-.screenshots{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-}
-
-.screenshots img{
-width:100%;
-height:205px;
-object-fit:cover;
-border-radius:9px;
-border:1px solid #292929;
-cursor:pointer;
-transition:.3s;
-}
-
-.screenshots img:hover{
-transform:translateY(-3px);
-border-color:#e50914;
-box-shadow:0 10px 30px rgba(0,0,0,.5);
-}
-
-.big-ad{
-width:300px;
-height:600px;
-background:#0c0c0c;
-border:1px dashed #3a3a3a;
-border-radius:10px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:#555;
-font-size:13px;
-}
-
-.big-ad strong{
-color:#777;
-margin-bottom:8px;
-}
-
-.trailer-box{
-width:100%;
-aspect-ratio:16/9;
-background:#050505;
-border:1px solid #292929;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,.4);
-}
-
-.trailer-box iframe{
-width:100%;
-height:100%;
-border:0;
+.about p{
+    color:#c6c6c6;
+    font-size:16px;
 }
 
 .features{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
-.feature{
-background:#101010;
-border:1px solid #282828;
-border-radius:8px;
-padding:17px;
-color:#aaa;
-font-size:13px;
+.feature-card{
+    background:rgba(12,12,17,.92);
+    border:1px solid #29292e;
+    border-top:2px solid #8d0000;
+    padding:24px;
+    border-radius:7px;
+    transition:.25s;
 }
 
-.feature::before{
-content:"✓";
-color:#e50914;
-font-weight:bold;
-margin-right:9px;
+.feature-card:hover{
+    transform:translateY(-4px);
+    border-color:#b00000;
+    box-shadow:0 12px 30px rgba(0,0,0,.45);
+}
+
+.feature-card h3{
+    color:#fff;
+    font-size:17px;
+    margin-bottom:9px;
+}
+
+.feature-card p{
+    color:#aaa;
+    font-size:14px;
+}
+
+.video-wrap{
+    width:100%;
+    max-width:1000px;
+    margin:auto;
+    background:#08080b;
+    border:1px solid #420000;
+    padding:10px;
+    border-radius:8px;
+    box-shadow:0 15px 45px rgba(0,0,0,.6);
+}
+
+.video-wrap iframe{
+    display:block;
+    width:100%;
+    aspect-ratio:16/9;
+    border:0;
+    border-radius:5px;
+}
+
+.video-note{
+    text-align:center;
+    color:#888;
+    font-size:13px;
+    margin-top:12px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.gallery img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    border-radius:6px;
+    border:1px solid #29292e;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.025);
+    border-color:#d00000;
+    box-shadow:0 0 22px rgba(208,0,0,.2);
+}
+
+.download-box{
+    background:rgba(10,10,14,.95);
+    border:1px solid #3a0000;
+    border-radius:8px;
+    padding:30px;
+    text-align:center;
+}
+
+.download-box p{
+    color:#aaa;
+    margin-bottom:22px;
+}
+
+.download-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+.ad-box{
+    min-height:110px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:1px dashed #3a3a3a;
+    background:rgba(8,8,11,.8);
+    color:#666;
+    border-radius:7px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.info-card{
+    background:rgba(11,11,15,.94);
+    border:1px solid #28282d;
+    border-left:3px solid #a00000;
+    border-radius:6px;
+    padding:21px;
+}
+
+.info-card h3{
+    color:#e00000;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.info-card p{
+    color:#bbb;
+    font-size:14px;
+    margin:5px 0;
 }
 
 .requirements{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
 }
 
-.requirement-box{
-background:#101010;
-border:1px solid #282828;
-border-radius:9px;
-padding:22px;
+.req-card{
+    background:#0b0b0f;
+    border:1px solid #29292e;
+    border-radius:7px;
+    padding:25px;
 }
 
-.requirement-box h3{
-color:#fff;
-margin-bottom:17px;
-font-size:17px;
+.req-card h3{
+    color:#e00000;
+    text-transform:uppercase;
+    font-size:18px;
+    margin-bottom:17px;
 }
 
-.requirement-box p{
-margin-bottom:9px;
-font-size:13px;
+.req-card p{
+    color:#bbb;
+    font-size:14px;
+    padding:7px 0;
+    border-bottom:1px solid #1d1d21;
 }
 
-.requirement-box strong{color:#e50914}
+.req-card p:last-child{
+    border-bottom:none;
+}
+
+.warning{
+    margin-top:18px;
+    padding:15px;
+    border-left:3px solid #d00000;
+    background:#160707;
+    color:#aaa;
+    font-size:13px;
+}
 
 .tagline{
-text-align:center;
-margin:55px 0 10px;
-color:#555;
-font-size:12px;
-letter-spacing:1px;
-line-height:2;
-}
-
-.tagline strong{
-display:block;
-color:#e50914;
-font-size:22px;
-letter-spacing:2px;
+    text-align:center;
+    padding:45px 20px;
+    color:#777;
+    font-weight:800;
+    letter-spacing:3px;
+    font-size:14px;
 }
 
 footer{
-border-top:1px solid #222;
-background:#050505;
-padding:40px 25px;
-text-align:center;
-color:#555;
-font-size:12px;
+    margin-top:40px;
+    padding:35px 20px;
+    background:#060609;
+    border-top:1px solid #280000;
+    text-align:center;
+}
+
+.footer-logo{
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:13px;
+}
+
+.footer-logo span{
+    color:#e00000;
 }
 
 .footer-links{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:20px;
-margin-bottom:18px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-bottom:14px;
 }
 
 .footer-links a{
-color:#777;
-text-decoration:none;
+    color:#888;
+    font-size:13px;
 }
 
-.footer-links a:hover{color:#e50914}
+.footer-links a:hover{
+    color:#e00000;
+}
+
+footer p{
+    color:#555;
+    font-size:12px;
+}
 
 .modal{
-display:none;
-position:fixed;
-z-index:3000;
-inset:0;
-background:rgba(0,0,0,.94);
-align-items:center;
-justify-content:center;
-padding:30px;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.92);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+    padding:25px;
 }
 
-.modal.active{display:flex}
-
 .modal img{
-max-width:92%;
-max-height:90%;
-border-radius:8px;
+    max-width:95%;
+    max-height:90vh;
+    border:1px solid #700000;
+    border-radius:6px;
 }
 
 .close{
-position:absolute;
-top:18px;
-right:28px;
-color:#fff;
-font-size:40px;
-cursor:pointer;
+    position:absolute;
+    top:18px;
+    right:28px;
+    color:#fff;
+    font-size:38px;
+    cursor:pointer;
 }
-
-.close:hover{color:#e50914}
 
 @media(max-width:900px){
-.hero{grid-template-columns:1fr}
-.hero-cover img{max-width:340px;margin:auto}
-.hero-info h1{font-size:37px}
-.screenshot-area{grid-template-columns:1fr}
-.big-ad{width:100%;height:250px}
-.requirements{grid-template-columns:1fr}
+    .hero{
+        grid-template-columns:1fr;
+        padding:55px 0;
+    }
+
+    .hero-image{
+        max-width:700px;
+        margin:auto;
+    }
+
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
 }
 
-@media(max-width:650px){
-.navbar{
-padding:18px 15px;
-flex-direction:column;
-gap:16px;
+@media(max-width:700px){
+    .navbar{
+        flex-wrap:wrap;
+        padding:14px 16px;
+    }
+
+    .nav-links{
+        order:3;
+        width:100%;
+        justify-content:center;
+        gap:18px;
+    }
+
+    .search-box{
+        margin-left:auto;
+    }
+
+    .search-box input{
+        width:140px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .features,
+    .requirements,
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery img{
+        height:140px;
+    }
+
+    section{
+        padding:48px 0;
+    }
 }
 
-.header-right{
-width:100%;
-justify-content:center;
-}
+@media(max-width:450px){
+    .search-box input{
+        width:120px;
+    }
 
-nav{gap:14px}
+    .hero h1{
+        font-size:35px;
+    }
 
-.container{
-width:94%;
-margin-top:22px;
-}
+    .gallery{
+        grid-template-columns:1fr;
+    }
 
-.main-content{padding:18px}
+    .gallery img{
+        height:190px;
+    }
 
-.screenshots{grid-template-columns:1fr}
-
-.screenshots img{height:auto}
-
-.features{grid-template-columns:1fr}
-
-.download-buttons{flex-direction:column}
-
-.download-btn{width:100%}
-
-.hero-info h1{font-size:31px}
+    .btn{
+        width:100%;
+    }
 }
 </style>
 
@@ -540,401 +607,672 @@ margin-top:22px;
 <body>
 
 <header>
+    <div class="navbar">
 
-<div class="navbar">
+```
+    <a href="./index.html" class="logo">
+        QEVRANO <span>PC GAMES</span>
+    </a>
 
-<a href="./index.html" class="logo">
-QEVRANO <span>PC GAMES</span>
-</a>
+    <nav class="nav-links">
+        <a href="./index.html">HOME</a>
+        <a href="./index.html#games">GAMES</a>
+        <a href="./index.html#packs">PACKS</a>
+    </nav>
 
-<div class="header-right">
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search games..."
+            autocomplete="off"
+            oninput="searchGames()"
+        >
 
-<nav>
-<a href="./index.html">HOME</a>
-<a href="./index.html#games">GAMES</a>
-<a href="./index.html#packs">PACKS</a>
-</nav>
-
-<div class="search-container">
-
-<button class="search-icon" onclick="toggleSearch()" aria-label="Search">
-⌕
-</button>
-
-<div class="header-search" id="headerSearch">
-
-<input
-type="text"
-id="headerSearchInput"
-placeholder="Search games..."
-autocomplete="off"
-
->
-
-<div class="search-results" id="headerSearchResults"></div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
 
 </div>
-
-</div>
-
-</div>
-
-</div>
+```
 
 </header>
 
-<div class="container">
-
-<a href="./index.html" class="back">← BACK TO GAMES</a>
-
-<main class="main-content">
+<main>
 
 <section class="hero">
+    <div class="container" style="display:contents;">
 
-<div class="hero-cover">
+```
+    <div class="hero-content">
 
-<img src="./images/acs.jpg" alt="Assassin's Creed Syndicate">
+        <div class="eyebrow">FEATURED PC GAME</div>
 
-</div>
+        <h1>
+            ASSASSIN'S CREED
+            <span>SYNDICATE</span>
+        </h1>
 
-<div class="hero-info">
+        <div class="subtitle">
+            ACTION • ADVENTURE • OPEN WORLD
+        </div>
 
-<div class="eyebrow">FEATURED PC GAME</div>
+        <p>
+            Assassin's Creed Syndicate takes you to London in 1868,
+            during the Industrial Revolution. Play as Jacob and Evie
+            Frye as they build their gang and fight to take control
+            of the city's criminal underworld.
+        </p>
 
-<h1>Assassin's Creed Syndicate</h1>
+        <div class="hero-buttons">
+            <a
+                class="btn btn-outline"
+                href="https://store.ubisoft.com/us/assassins-creed-syndicate/56c4947988a7e300458b45c6.html"
+                target="_blank"
+                rel="noopener"
+            >
+                OFFICIAL SOURCE
+            </a>
 
-<div class="subtitle">
-ACTION • ADVENTURE • OPEN WORLD
-</div>
+            <a
+                class="btn btn-red btn-disabled"
+                href="#"
+                onclick="return false;"
+                title="Setup will be available when QEVRANO's legitimate setup is uploaded."
+            >
+                DOWNLOAD SETUP.EXE
+            </a>
+        </div>
 
-<p class="description">
-Assassin's Creed Syndicate is an action-adventure game set in
-London during the Industrial Revolution. Follow twins Jacob and
-Evie Frye as they build their influence across the city while
-challenging rival forces.
-</p>
+    </div>
 
-<div class="game-meta">
-
-<div class="meta">Developer: Ubisoft Quebec</div>
-<div class="meta">Genre: Action / Adventure</div>
-<div class="meta">Release: 2015 PC</div>
-<div class="meta">Platform: PC</div>
-
-</div>
-
-<div class="download-buttons">
-
-<a
-href="https://store.ubisoft.com/us/assassins-creed-syndicate/56c4947988a7e300458b45c6.html"
-class="download-btn official"
-target="_blank"
-rel="noopener noreferrer"
-
->
-
-OFFICIAL SOURCE </a>
-
-<a
-href="#"
-class="download-btn secondary"
-onclick="return false;"
-
->
-
-DOWNLOAD SETUP.EXE </a>
+    <div class="hero-image">
+        <img
+            src="./images/acs.jpg"
+            alt="Assassin's Creed Syndicate"
+        >
+    </div>
 
 </div>
-
-<a
-href="#"
-class="compressed-link"
-onclick="return false;"
-
->
-
-Highly Compressed </a>
-
-</div>
+```
 
 </section>
 
-<section class="section">
+<section>
+    <div class="container">
 
-<div class="section-title">
-<h2>SCREENSHOTS</h2>
+```
+    <h2 class="section-title">
+        GAMEPLAY <span>TRAILER</span>
+    </h2>
+
+    <div class="video-wrap">
+
+        <iframe
+            src="https://www.youtube.com/embed/HFFcXwIBMPc"
+            title="Assassin's Creed Syndicate E3 Cinematic Trailer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+
+        <div class="video-note">
+            Official Assassin's Creed Syndicate E3 Cinematic Trailer.
+        </div>
+
+    </div>
+
 </div>
-
-<div class="screenshot-area">
-
-<div class="screenshots">
-
-<img src="./images/acs-1.jpg" alt="Assassin's Creed Syndicate Screenshot 1" onclick="openModal(this.src)">
-<img src="./images/acs-2.jpg" alt="Assassin's Creed Syndicate Screenshot 2" onclick="openModal(this.src)">
-<img src="./images/acs-3.jpg" alt="Assassin's Creed Syndicate Screenshot 3" onclick="openModal(this.src)">
-<img src="./images/acs-4.jpg" alt="Assassin's Creed Syndicate Screenshot 4" onclick="openModal(this.src)">
-
-</div>
-
-<div class="big-ad">
-
-<strong>ADVERTISEMENT</strong> <span>BIG AD SPACE</span> <br> <small>300 × 600</small>
-
-</div>
-
-</div>
+```
 
 </section>
 
-<section class="section">
+<section>
+    <div class="container">
 
-<div class="section-title">
-<h2>GAMEPLAY TRAILER</h2>
+```
+    <h2 class="section-title">
+        ABOUT <span>THE GAME</span>
+    </h2>
+
+    <div class="about">
+
+        <p>
+            Assassin's Creed Syndicate is an open-world action-adventure
+            game developed by Ubisoft Quebec and published by Ubisoft.
+            Set in London in 1868, the game follows twin Assassins
+            Jacob Frye and Evie Frye as they work to free the city
+            from corrupt forces during the Industrial Revolution.
+        </p>
+
+    </div>
+
 </div>
-
-<div class="trailer-box">
-
-<iframe
-src="https://www.youtube.com/embed/HFFcXwIBMPc"
-title="Assassin's Creed Syndicate E3 Cinematic Trailer"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
-
-</div>
+```
 
 </section>
 
-<section class="section">
+<section>
+    <div class="container">
 
-<div class="section-title">
-<h2>ABOUT GAME</h2>
+```
+    <h2 class="section-title">
+        KEY <span>FEATURES</span>
+    </h2>
+
+    <div class="features">
+
+        <div class="feature-card">
+            <h3>Industrial London</h3>
+            <p>
+                Explore a large open-world version of Victorian London
+                during the Industrial Revolution.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Jacob & Evie Frye</h3>
+            <p>
+                Switch between the twin Assassins and experience
+                different approaches to missions.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Open-World Exploration</h3>
+            <p>
+                Travel across London using rooftops, streets,
+                trains and carriages.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Gang System</h3>
+            <p>
+                Build and lead your own gang while taking control
+                of London's criminal underworld.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Rope Launcher</h3>
+            <p>
+                Quickly reach rooftops and move across London's
+                buildings with the rope launcher.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Single Player</h3>
+            <p>
+                Experience a story-driven single-player adventure
+                set in 1868 London.
+            </p>
+        </div>
+
+    </div>
+
 </div>
-
-<p>
-Assassin's Creed Syndicate is an action-adventure game
-developed by Ubisoft. Set in London in 1868 during the
-Industrial Revolution, the game follows twin Assassins
-Jacob Frye and Evie Frye as they challenge rival gangs
-and the Templars while building their influence across
-the city.
-</p>
+```
 
 </section>
 
-<section class="section">
+<section>
+    <div class="container">
 
-<div class="section-title">
-<h2>FEATURES</h2>
+```
+    <h2 class="section-title">
+        GAME <span>SCREENSHOTS</span>
+    </h2>
+
+    <div class="gallery">
+
+        <img
+            src="./images/acs-1.jpg"
+            alt="Assassin's Creed Syndicate screenshot 1"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/acs-2.jpg"
+            alt="Assassin's Creed Syndicate screenshot 2"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/acs-3.jpg"
+            alt="Assassin's Creed Syndicate screenshot 3"
+            onclick="openModal(this.src)"
+        >
+
+        <img
+            src="./images/acs-4.jpg"
+            alt="Assassin's Creed Syndicate screenshot 4"
+            onclick="openModal(this.src)"
+        >
+
+    </div>
+
 </div>
-
-<div class="features">
-
-<div class="feature">Open-world Victorian London</div>
-<div class="feature">Play as Jacob Frye and Evie Frye</div>
-<div class="feature">Large city to explore</div>
-<div class="feature">Stealth and action gameplay</div>
-<div class="feature">Gang activities and missions</div>
-<div class="feature">Rope launcher for fast traversal</div>
-
-</div>
+```
 
 </section>
 
-<section class="section">
+<section>
+    <div class="container">
 
-<div class="section-title">
-<h2>REQUIREMENTS</h2>
+```
+    <h2 class="section-title">
+        DOWNLOAD <span>GAME</span>
+    </h2>
+
+    <div class="download-box">
+
+        <p>
+            Purchase or download Assassin's Creed Syndicate
+            through an official source.
+        </p>
+
+        <div class="download-buttons">
+
+            <a
+                class="btn btn-outline"
+                href="https://store.ubisoft.com/us/assassins-creed-syndicate/56c4947988a7e300458b45c6.html"
+                target="_blank"
+                rel="noopener"
+            >
+                OFFICIAL DOWNLOAD
+            </a>
+
+            <a
+                class="btn btn-red btn-disabled"
+                href="#"
+                onclick="return false;"
+            >
+                DOWNLOAD SETUP.EXE
+            </a>
+
+            <a
+                class="btn btn-outline btn-disabled"
+                href="#"
+                onclick="return false;"
+            >
+                HIGHLY COMPRESSED
+            </a>
+
+        </div>
+
+    </div>
+
 </div>
+```
 
-<div class="requirements">
+</section>
 
-<div class="requirement-box">
+<section>
+    <div class="container">
 
-<h3>Minimum</h3>
+```
+    <h2 class="section-title">
+        <span>ADVERTISEMENT</span>
+    </h2>
 
-<p><strong>OS:</strong> Windows 10</p>
-
-<p><strong>CPU:</strong> Intel Core i5 2400S @ 2.5 GHz / AMD FX 6350 @ 3.9 GHz</p>
-
-<p><strong>RAM:</strong> 6 GB</p>
-
-<p><strong>GPU:</strong> NVIDIA GeForce GTX 660 / AMD Radeon R9 270</p>
-
-<p><strong>VRAM:</strong> 2 GB</p>
-
-<p><strong>Storage:</strong> 40 GB</p>
+    <div class="ad-box">
+        ADVERTISEMENT SPACE
+    </div>
 
 </div>
+```
 
-<div class="requirement-box">
+</section>
 
-<h3>Recommended</h3>
+<section>
+    <div class="container">
 
-<p><strong>OS:</strong> Windows 10</p>
+```
+    <h2 class="section-title">
+        GAME <span>INFORMATION</span>
+    </h2>
 
-<p><strong>CPU:</strong> Intel Core i7 3770 @ 3.5 GHz / AMD FX 8350 @ 4.0 GHz</p>
+    <div class="info-grid">
 
-<p><strong>RAM:</strong> 8 GB</p>
+        <div class="info-card">
+            <h3>Release Date</h3>
+            <p>October 23, 2015</p>
+        </div>
 
-<p><strong>GPU:</strong> NVIDIA GTX 760 4GB / GTX 970 4GB / AMD Radeon R9 280X 3GB</p>
+        <div class="info-card">
+            <h3>Developer</h3>
+            <p>Ubisoft Quebec</p>
+        </div>
 
-<p><strong>VRAM:</strong> 4 GB</p>
+        <div class="info-card">
+            <h3>Publisher</h3>
+            <p>Ubisoft</p>
+        </div>
 
-<p><strong>Storage:</strong> 40 GB</p>
+        <div class="info-card">
+            <h3>Genre</h3>
+            <p>Action / Adventure / Open World</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Setting</h3>
+            <p>London, 1868</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Mode</h3>
+            <p>Single Player</p>
+        </div>
+
+    </div>
 
 </div>
+```
+
+</section>
+
+<section>
+    <div class="container">
+
+```
+    <h2 class="section-title">
+        SYSTEM <span>REQUIREMENTS</span>
+    </h2>
+
+    <div class="requirements">
+
+        <div class="req-card">
+
+            <h3>Minimum</h3>
+
+            <p>
+                <strong>OS:</strong>
+                Windows 7 SP1 / Windows 8.1 / Windows 10
+                (64-bit)
+            </p>
+
+            <p>
+                <strong>CPU:</strong>
+                Intel Core i5-2400S @ 2.5 GHz
+                / AMD FX-6350 @ 3.9 GHz
+            </p>
+
+            <p>
+                <strong>RAM:</strong>
+                6 GB
+            </p>
+
+            <p>
+                <strong>GPU:</strong>
+                NVIDIA GeForce GTX 660
+                / AMD Radeon R9 270
+            </p>
+
+            <p>
+                <strong>VRAM:</strong>
+                2 GB
+            </p>
+
+            <p>
+                <strong>DirectX:</strong>
+                DirectX June 2010 Redistributable
+            </p>
+
+            <p>
+                <strong>Storage:</strong>
+                40 GB available space
+            </p>
+
+        </div>
+
+
+        <div class="req-card">
+
+            <h3>Recommended</h3>
+
+            <p>
+                <strong>OS:</strong>
+                Windows 7 SP1 / Windows 8.1 / Windows 10
+                (64-bit)
+            </p>
+
+            <p>
+                <strong>CPU:</strong>
+                Intel Core i7-3770 @ 3.5 GHz
+                / AMD FX-8350 @ 4.0 GHz
+            </p>
+
+            <p>
+                <strong>RAM:</strong>
+                8 GB
+            </p>
+
+            <p>
+                <strong>GPU:</strong>
+                NVIDIA GeForce GTX 760 4 GB
+                / GTX 970 4 GB
+                / AMD Radeon R9 280X 3 GB
+            </p>
+
+            <p>
+                <strong>VRAM:</strong>
+                4 GB recommended
+            </p>
+
+            <p>
+                <strong>DirectX:</strong>
+                DirectX June 2010 Redistributable
+            </p>
+
+            <p>
+                <strong>Storage:</strong>
+                50 GB available space
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="warning">
+        <strong>Important:</strong>
+        Assassin's Creed Syndicate requires
+        <strong>6 GB RAM minimum</strong>.
+        A PC with only 2 GB RAM does not meet the official
+        minimum requirements. Ubisoft also recommends a
+        dedicated graphics card with at least 2 GB VRAM
+        for the minimum configuration.
+    </div>
 
 </div>
+```
 
 </section>
 
 <div class="tagline">
-
-<strong>NOTHING IS TRUE. EVERYTHING IS PERMITTED.</strong>
-
-CLIMB • EXPLORE • BUILD YOUR LEGACY
-
-<br>
-
-QEVRANO PC GAMES
-
+    NOTHING IS TRUE. EVERYTHING IS PERMITTED.
 </div>
 
 </main>
 
-</div>
-
-<div class="modal" id="imageModal" onclick="closeModal()">
-
-<span class="close">×</span>
-
-<img id="modalImage" src="" alt="Screenshot" onclick="event.stopPropagation()">
-
-</div>
-
 <footer>
 
-<div class="footer-links">
-<a href="./index.html">Home</a>
-<a href="./contact.html">Contact</a>
-<a href="./privacy.html">Privacy Policy</a>
-<a href="./terms.html">Terms & Conditions</a>
-<a href="./disclaimer.html">Disclaimer</a>
+```
+<div class="footer-logo">
+    QEVRANO <span>PC GAMES</span>
 </div>
 
-© 2026 QEVRANO PC GAMES — All Rights Reserved
+<div class="footer-links">
+    <a href="./index.html">Home</a>
+    <a href="#">Contact</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms & Conditions</a>
+    <a href="#">Disclaimer</a>
+</div>
+
+<p>
+    © 2026 QEVRANO PC GAMES. All rights reserved.
+</p>
+```
 
 </footer>
 
+<div class="modal" id="imageModal" onclick="closeModal()">
+
+```
+<span class="close">&times;</span>
+
+<img
+    id="modalImage"
+    src=""
+    alt="Screenshot preview"
+>
+```
+
+</div>
+
 <script>
 
-const games=[
-{name:"Far Cry 2",file:"./farcry2.html"},
-{name:"Far Cry 3",file:"./farcry3.html"},
-{name:"Assassin's Creed II",file:"./ac2.html"},
-{name:"GTA V",file:"./gta5.html"},
-{name:"GTA IV",file:"./gta4.html"},
-{name:"FIFA",file:"./fifa.html"},
-{name:"Don Bradman Cricket",file:"./cricket.html"},
-{name:"Call of Duty 1",file:"./cod1.html"},
-{name:"The Witcher 2",file:"./witcher2.html"},
-{name:"GTA VI",file:"./gtavi.html"},
-{name:"Assassin's Creed Syndicate",file:"./acs.html"},
-{name:"Need for Speed II",file:"./nfs2.html"}
+const games = [
+    {
+        name:"Far Cry 2",
+        url:"./farcry2.html"
+    },
+    {
+        name:"Far Cry 3",
+        url:"./farcry3.html"
+    },
+    {
+        name:"Assassin's Creed II",
+        url:"./ac2.html"
+    },
+    {
+        name:"GTA V",
+        url:"./gta5.html"
+    },
+    {
+        name:"GTA IV",
+        url:"./gta4.html"
+    },
+    {
+        name:"FIFA",
+        url:"./fifa.html"
+    },
+    {
+        name:"Don Bradman Cricket",
+        url:"./cricket.html"
+    },
+    {
+        name:"Call of Duty",
+        url:"./cod1.html"
+    },
+    {
+        name:"The Witcher 2",
+        url:"./witcher2.html"
+    },
+    {
+        name:"GTA VI",
+        url:"./gtavi.html"
+    },
+    {
+        name:"Assassin's Creed Syndicate",
+        url:"./acs.html"
+    },
+    {
+        name:"Need for Speed II",
+        url:"./nfs2.html"
+    }
 ];
 
-function toggleSearch(){
 
-const search=document.getElementById("headerSearch");
-const input=document.getElementById("headerSearchInput");
+function searchGames(){
 
-search.classList.toggle("active");
+    const input =
+        document.getElementById("searchInput");
 
-if(search.classList.contains("active")) input.focus();
+    const results =
+        document.getElementById("searchResults");
 
+    const search =
+        input.value.trim().toLowerCase();
+
+    results.innerHTML = "";
+
+    if(!search){
+        results.style.display = "none";
+        return;
+    }
+
+    const matches =
+        games.filter(game =>
+            game.name.toLowerCase().includes(search)
+        );
+
+    if(matches.length === 0){
+
+        results.innerHTML =
+            '<div style="padding:12px;color:#777;font-size:13px;">No games found</div>';
+
+    }else{
+
+        matches.forEach(game => {
+
+            const link =
+                document.createElement("a");
+
+            link.href = game.url;
+            link.textContent = game.name;
+
+            results.appendChild(link);
+
+        });
+
+    }
+
+    results.style.display = "block";
 }
 
-const input=document.getElementById("headerSearchInput");
-const results=document.getElementById("headerSearchResults");
 
-input.addEventListener("input",function(){
+document.addEventListener("click",function(event){
 
-const search=this.value.trim().toLowerCase();
+    const searchBox =
+        document.querySelector(".search-box");
 
-results.innerHTML="";
+    if(!searchBox.contains(event.target)){
 
-if(!search){
-results.style.display="none";
-return;
-}
+        document.getElementById("searchResults")
+            .style.display = "none";
 
-const matches=games.filter(game=>
-game.name.toLowerCase().startsWith(search)
-);
-
-if(!matches.length){
-
-results.innerHTML='<div class="search-no-result">No games found</div>';
-results.style.display="block";
-return;
-
-}
-
-matches.forEach(game=>{
-
-const link=document.createElement("a");
-
-link.className="search-result";
-link.href=game.file;
-link.textContent=game.name;
-
-results.appendChild(link);
+    }
 
 });
 
-results.style.display="block";
-
-});
-
-input.addEventListener("keydown",function(e){
-
-if(e.key==="Enter"){
-
-const search=this.value.trim().toLowerCase();
-
-const match=games.find(game=>
-game.name.toLowerCase().startsWith(search)
-);
-
-if(match) window.location.href=match.file;
-
-}
-
-});
-
-document.addEventListener("click",function(e){
-
-const container=document.querySelector(".search-container");
-
-if(!container.contains(e.target)){
-document.getElementById("headerSearch").classList.remove("active");
-}
-
-});
 
 function openModal(src){
 
-document.getElementById("modalImage").src=src;
-document.getElementById("imageModal").classList.add("active");
+    document.getElementById("modalImage").src = src;
 
+    document.getElementById("imageModal")
+        .style.display = "flex";
 }
+
 
 function closeModal(){
 
-document.getElementById("imageModal").classList.remove("active");
+    document.getElementById("imageModal")
+        .style.display = "none";
 
 }
+
+
+document.addEventListener("keydown",function(event){
+
+    if(event.key === "Escape"){
+
+        closeModal();
+
+    }
+
+});
 
 </script>
 
