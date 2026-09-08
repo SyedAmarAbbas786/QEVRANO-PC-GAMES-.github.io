@@ -595,6 +595,35 @@ header nav a:hover{
 
 
 /* =========================================================
+   WARFRAME FREE BUTTON
+========================================================= */
+
+.free-download-btn{
+    background:linear-gradient(
+        135deg,
+        #d80000,
+        #ff2020
+    );
+
+    border:1px solid rgba(255,80,80,.7);
+
+    box-shadow:
+        0 0 18px rgba(220,0,0,.20);
+}
+
+.free-download-btn:hover{
+    background:linear-gradient(
+        135deg,
+        #ff2020,
+        #ff3a3a
+    );
+
+    box-shadow:
+        0 8px 25px rgba(220,0,0,.35);
+}
+
+
+/* =========================================================
    SIDEBAR
 ========================================================= */
 
@@ -1210,7 +1239,6 @@ footer{
 
 <nav>
 
-```
 <a href="./index.html">
     HOME
 </a>
@@ -1226,7 +1254,6 @@ footer{
 <a href="./about.html">
     ABOUT
 </a>
-```
 
 </nav>
 
@@ -1240,7 +1267,6 @@ footer{
 
 <div class="hero-content">
 
-```
 <div class="hero-badge">
     YOUR PC GAMING HUB
 </div>
@@ -1256,15 +1282,15 @@ footer{
 
 <div class="hero-search">
 
-    <input
-        type="text"
-        id="heroSearch"
-        placeholder="Search for a game..."
-        autocomplete="off"
-    >
+<input
+type="text"
+id="heroSearch"
+placeholder="Search for a game..."
+autocomplete="off"
+
+>
 
 </div>
-```
 
 </div>
 
@@ -1278,37 +1304,31 @@ footer{
 
 <div class="stat">
 
-```
-<strong>12+</strong>
+<strong>13+</strong>
 
 <span>
     Featured Games
 </span>
-```
 
 </div>
 
 <div class="stat">
 
-```
 <strong>PC</strong>
 
 <span>
     Gaming Platform
 </span>
-```
 
 </div>
 
 <div class="stat">
 
-```
 <strong>24/7</strong>
 
 <span>
     Game Discovery
 </span>
-```
 
 </div>
 
@@ -1342,107 +1362,115 @@ HOME
 
 <div class="filter-item">
 
-```
 <select id="categoryFilter">
 
-    <option value="all">
-        CATEGORIES
-    </option>
+```
+<option value="all">
+    CATEGORIES
+</option>
 
-    <option value="action">
-        Action
-    </option>
+<option value="action">
+    Action
+</option>
 
-    <option value="adventure">
-        Adventure
-    </option>
+<option value="adventure">
+    Adventure
+</option>
 
-    <option value="racing">
-        Racing
-    </option>
+<option value="racing">
+    Racing
+</option>
 
-    <option value="sports">
-        Sports
-    </option>
+<option value="sports">
+    Sports
+</option>
 
-    <option value="open world">
-        Open World
-    </option>
+<option value="open world">
+    Open World
+</option>
+
+<option value="free to play">
+    Free to Play
+</option>
+```
 
 </select>
-```
 
 </div>
 
 <div class="filter-item">
 
-```
 <select id="packFilter">
 
-    <option value="all">
-        GAME PACKS
-    </option>
+```
+<option value="all">
+    GAME PACKS
+</option>
 
-    <option value="gta">
-        GTA
-    </option>
+<option value="gta">
+    GTA
+</option>
 
-    <option value="assassin">
-        Assassin's Creed
-    </option>
+<option value="assassin">
+    Assassin's Creed
+</option>
 
-    <option value="far cry">
-        Far Cry
-    </option>
+<option value="far cry">
+    Far Cry
+</option>
 
-    <option value="need for speed">
-        Need for Speed
-    </option>
+<option value="need for speed">
+    Need for Speed
+</option>
 
-    <option value="sports">
-        Sports
-    </option>
+<option value="sports">
+    Sports
+</option>
 
-    <option value="call of duty">
-        Call of Duty
-    </option>
+<option value="call of duty">
+    Call of Duty
+</option>
 
-    <option value="the witcher">
-        The Witcher
-    </option>
+<option value="the witcher">
+    The Witcher
+</option>
+
+<option value="free to play">
+    Free to Play
+</option>
+```
 
 </select>
-```
 
 </div>
 
 <div class="filter-item">
 
-```
 <select id="sizeFilter">
 
-    <option value="all">
-        BY SIZE
-    </option>
+```
+<option value="all">
+    BY SIZE
+</option>
 
-    <option value="1–5 GB">
-        1–5 GB
-    </option>
+<option value="1–5 GB">
+    1–5 GB
+</option>
 
-    <option value="5–10 GB">
-        5–10 GB
-    </option>
+<option value="5–10 GB">
+    5–10 GB
+</option>
 
-    <option value="10–20 GB">
-        10–20 GB
-    </option>
+<option value="10–20 GB">
+    10–20 GB
+</option>
 
-    <option value="20+ GB">
-        20+ GB
-    </option>
+<option value="20+ GB">
+    20+ GB
+</option>
+```
 
 </select>
-```
 
 </div>
 
@@ -2049,6 +2077,55 @@ VIEW DETAILS
 
 </div>
 
+<!-- =========================================================
+     WARFRAME
+========================================================= -->
+
+<div
+    class="game-card"
+    data-name="Warframe"
+    data-category="action adventure free to play"
+    data-pack="free to play"
+    data-size="20+ GB"
+>
+
+<img
+src="./images/warframe.jpg"
+alt="Warframe"
+class="game-cover"
+
+>
+
+<div class="game-info">
+
+<h3>
+    Warframe
+</h3>
+
+<p>
+    Action • Free to Play
+</p>
+
+<p class="game-size">
+    Officially Free • PC
+</p>
+
+<a
+href="./warframe.html"
+class="download-btn free-download-btn"
+
+>
+
+```
+DOWNLOAD OFFICIAL FOR FREE
+```
+
+</a>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -2266,6 +2343,34 @@ alt="Need for Speed II"
 
 <p>
     Racing • Arcade
+</p>
+
+</div>
+
+</a>
+
+<!-- WARFRAME POPULAR -->
+
+<a
+href="./warframe.html"
+class="popular-card"
+
+>
+
+<img
+src="./images/warframe.jpg"
+alt="Warframe"
+
+>
+
+<div class="popular-info">
+
+<h4>
+    Warframe
+</h4>
+
+<p>
+    Action • Free to Play
 </p>
 
 </div>
@@ -2528,7 +2633,6 @@ alt="The Witcher 2"
 
 <script>
 
-
 const games = [
 
     {
@@ -2589,6 +2693,11 @@ const games = [
     {
         name:"Need for Speed II",
         file:"./nfs2.html"
+    },
+
+    {
+        name:"Warframe",
+        file:"./warframe.html"
     }
 
 ];
