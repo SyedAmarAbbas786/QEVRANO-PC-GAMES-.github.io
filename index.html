@@ -16,6 +16,7 @@
 
 html{
     scroll-behavior:smooth;
+    width:100%;
 }
 
 body{
@@ -23,6 +24,9 @@ body{
     color:#eee;
     background:#050505;
     overflow-x:hidden;
+    width:100%;
+    margin:0;
+    padding:0;
 }
 
 a{
@@ -35,7 +39,8 @@ a{
 ========================= */
 
 header{
-    width:100%;
+    width:100vw;
+    max-width:100vw;
     height:70px;
 
     position:sticky;
@@ -55,15 +60,15 @@ header{
     background:
         linear-gradient(
             180deg,
-            rgba(15,15,15,.98),
-            rgba(5,5,5,.97)
+            #0d0707 0%,
+            #080606 55%,
+            #050505 100%
         );
 
-    border-bottom:1px solid #351313;
+    border-bottom:1px solid #461313;
 
     box-shadow:
-        0 6px 20px rgba(0,0,0,.35),
-        0 1px 0 rgba(255,0,0,.08);
+        0 12px 30px rgba(0,0,0,.25);
 }
 
 .logo{
@@ -608,7 +613,6 @@ nav a:hover::after{
 .game-image{
     width:100%;
 
-    /* LARGE ENOUGH FOR YOUR IMAGES */
     height:270px;
 
     overflow:hidden;
@@ -845,12 +849,13 @@ nav a:hover::after{
 
 /* =========================
    PREMIUM FOOTER
-   NORMAL HEIGHT
    FULL WIDTH
 ========================= */
 
 footer{
-    width:100%;
+    width:100vw;
+    max-width:100vw;
+
     margin:0;
 
     padding:32px 0 18px;
@@ -1009,7 +1014,8 @@ footer{
 @media(max-width:700px){
 
     header{
-        width:100%;
+        width:100vw;
+        max-width:100vw;
         height:68px;
 
         padding:0 18px;
@@ -1023,7 +1029,6 @@ footer{
         display:none;
     }
 
-    /* LEFT SIDE MENU */
     .menu-btn{
         left:15px;
         right:auto;
@@ -1056,7 +1061,6 @@ footer{
         grid-template-columns:1fr;
     }
 
-    /* KEEP IMAGE LARGE */
     .game-image{
         height:270px;
     }
@@ -1142,7 +1146,7 @@ footer{
             PACKS
         </a>
 
-        <a href="#about">
+        <a href="./about.html">
             ABOUT
         </a>
 
@@ -1166,7 +1170,6 @@ footer{
 
 <!-- =========================
      SIDEBAR OVERLAY
-     CLICKING THIS CLOSES MENU
 ========================= -->
 
 <div
@@ -1543,10 +1546,6 @@ footer{
     </main>
 
 
-    <!-- =========================
-         SIDEBAR
-    ========================= -->
-
     <aside class="sidebar">
 
         <div class="sidebar-box">
@@ -1742,10 +1741,6 @@ footer{
 
 <script>
 
-/* =========================
-   GAME DATA
-========================= */
-
 const games = [
 
     {
@@ -1913,18 +1908,10 @@ const games = [
 ];
 
 
-/* =========================
-   PAGINATION
-========================= */
-
 const gamesPerPage = 6;
 
 let currentPage = 1;
 
-
-/* =========================
-   DASHBOARD
-========================= */
 
 function openDashboard(){
 
@@ -1951,8 +1938,6 @@ function closeDashboard(){
 }
 
 
-/* ESC KEY CLOSE */
-
 document.addEventListener(
     "keydown",
     function(e){
@@ -1964,10 +1949,6 @@ document.addEventListener(
     }
 );
 
-
-/* =========================
-   FILTERED GAMES
-========================= */
 
 function getFilteredGames(){
 
@@ -1998,10 +1979,6 @@ function getFilteredGames(){
 
 }
 
-
-/* =========================
-   RENDER GAMES
-========================= */
 
 function renderGames(){
 
@@ -2170,10 +2147,6 @@ function renderGames(){
 }
 
 
-/* =========================
-   APPLY FILTERS
-========================= */
-
 function applyFilters(){
 
     currentPage = 1;
@@ -2182,10 +2155,6 @@ function applyFilters(){
 
 }
 
-
-/* =========================
-   SHOW ALL
-========================= */
 
 function showAllGames(){
 
@@ -2204,20 +2173,12 @@ function showAllGames(){
 }
 
 
-/* =========================
-   FEATURED
-========================= */
-
 function showFeatured(){
 
     showAllGames();
 
 }
 
-
-/* =========================
-   POPULAR
-========================= */
 
 function showPopular(){
 
@@ -2230,20 +2191,12 @@ function showPopular(){
 }
 
 
-/* =========================
-   NEW GAMES
-========================= */
-
 function showNewGames(){
 
     showAllGames();
 
 }
 
-
-/* =========================
-   FREE GAMES
-========================= */
 
 function showFreeGames(){
 
@@ -2269,10 +2222,6 @@ function showFreeGames(){
 }
 
 
-/* =========================
-   PAID GAMES
-========================= */
-
 function showPaidGames(){
 
     document
@@ -2297,10 +2246,6 @@ function showPaidGames(){
 }
 
 
-/* =========================
-   PRICE FILTER
-========================= */
-
 function openPriceFilter(){
 
     document
@@ -2311,10 +2256,6 @@ function openPriceFilter(){
 
 }
 
-
-/* =========================
-   CATEGORY
-========================= */
 
 function filterCategory(category){
 
@@ -2339,10 +2280,6 @@ function filterCategory(category){
 
 }
 
-
-/* =========================
-   HERO SEARCH
-========================= */
 
 function searchGame(){
 
@@ -2383,10 +2320,6 @@ function searchGame(){
 }
 
 
-/* =========================
-   SIDEBAR SEARCH
-========================= */
-
 function sidebarSearchGame(){
 
     const query =
@@ -2425,10 +2358,6 @@ function sidebarSearchGame(){
 
 }
 
-
-/* =========================
-   INITIAL LOAD
-========================= */
 
 renderGames();
 
